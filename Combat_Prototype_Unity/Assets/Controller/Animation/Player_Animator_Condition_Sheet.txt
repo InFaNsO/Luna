@@ -1,0 +1,14 @@
+Value		Animation
+
+0 		Idle
+1		Death
+2		Jump
+3		Walk
+4		Run
+5		Moving Jump
+6		Roll Dodge
+7		Crouch
+8		Stab Slow
+9 		Stab Fast
+
+

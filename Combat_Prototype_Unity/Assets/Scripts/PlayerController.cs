@@ -46,6 +46,8 @@ public class PlayerController : MonoBehaviour
             mMoveDir *= mSpeed;
         }
 
+
+
         mMoveDir.y -= mGravity * Time.deltaTime;
         mCharachterController.Move(mMoveDir * Time.deltaTime);
     }
