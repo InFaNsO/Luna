@@ -1,24 +1,48 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public abstract class Charactor : MonoBehaviour     
 {
+    [SerializeField] protected float mMaxHealth;
     protected float mCurrentHealth;
-    protected float mMaxHealth;
+
     public abstract void GetHit(float dmg);
+    public abstract void Die();
+
+    public void Awake()
+    {
+        mCurrentHealth = mMaxHealth;
+    }
+
+    public void Update()
+    {
+        if (mCurrentHealth <= 0.0f)
+        {
+            Die();
+        }
+    }
 }
 
-public class EnemyCharactor : Charactor
+public class Enemy : Charactor
 {
     [SerializeField] Weapon mWeapon;
 
-    public void Attack()
+    new public void Awake()
     {
-        mWeapon.Attack();
+        base.Awake();
+        Assert.IsNotNull(GetComponent<CapsuleCollider>(), "[Enemy] Dont have collider");     //|--- [SAFTY]: Check to see is there a Collider
+        mWeapon.gameObject.tag = "Enemy";
     }
 
-    public void Die()
+    public void Attack()
+    {
+        if (mWeapon != null)
+            mWeapon.Attack();
+    }
+
+    override public void Die()
     {
         //effect
         Debug.Log("enemy destory");
@@ -38,7 +62,7 @@ public class EnemyCharactor : Charactor
         }
     }
 
-    void OnTriggerEnter2D(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.tag != gameObject.tag)
         {
