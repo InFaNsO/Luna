@@ -106,5 +106,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mName: Small Knife
   mDamage: 10
-  mAttackSpeed: 1
+  mAttackSpeed: 4
   mBullet: {fileID: 1723740652297727002, guid: 0ce03085bd94ef244b853f0d85bc8112, type: 3}

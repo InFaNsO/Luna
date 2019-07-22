@@ -70,9 +70,14 @@ public class Bullet : MonoBehaviour
         }
     }
 
-    private void LateUpdate()
+    private void EarlyUpdate()
     {
         if (mIsMelee)
             Die();
+    }
+
+    private void LateUpdate()
+    {
+        
     }
 }

@@ -19,6 +19,7 @@ public class Knife : Weapon
     {
         Bullet newBullet = Instantiate(mBullet, new Vector3(0, 0, 0), Quaternion.identity);
         newBullet.Fire(gameObject.tag,mDamage, gameObject.transform.position + mFirePositionOffSet, gameObject.transform.forward, mType);
+        Debug.Log("attacked");
     }
     // Update is called once per frame
     void Update()
