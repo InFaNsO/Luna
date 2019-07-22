@@ -40,7 +40,7 @@ public class PlayerController : MonoBehaviour
             }
             if (Input.GetKeyUp(KeyCode.A))
             {
-                mMoveDir = new Vector3(-1, 0, 0);
+                mMoveDir = new Vector3(0, 0, 0);
             }
 
             mMoveDir *= mSpeed;
@@ -48,7 +48,7 @@ public class PlayerController : MonoBehaviour
 
 
 
-        mMoveDir.y -= mGravity * Time.deltaTime;
+        //mMoveDir.y -= mGravity * Time.deltaTime;
         mCharachterController.Move(mMoveDir * Time.deltaTime);
     }
 }
