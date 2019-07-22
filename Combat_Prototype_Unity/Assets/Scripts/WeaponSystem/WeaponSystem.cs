@@ -12,7 +12,7 @@ public enum Element                                                             
 {                                                                                 //|
     Luna = 0,                                                                     //|
     Fire,                                                                         //|
-    Liquir                                                                        //|
+    Water                                                                         //|
 }                                                                                 //|
                                                                                   //|
 public enum AttackState                                                           //|
@@ -26,16 +26,16 @@ public enum AttackState                                                         
 [Serializable]                                                                    //|
 public class ParryContext                                                         //|
 {                                                                                 //|
-    private AttackState mCurrentState;                                             //|
+    private AttackState mCurrentState;                                            //|
     public float[] mTimeSlicePropotion = new float[3];                            //|
     private float mTotalTime;                                                     //|
-    private float mCounter;                                                        //|
-    private bool isActive;                                                         //|
+    private float mCounter;                                                       //|
+    private bool isActive;                                                        //|
                                                                                   //|
     // Getter & Setter                                                            //|
     public float TotalTime { set { mTotalTime = value; } }                        //|
-    public AttackState CurrentState { get { return mCurrentState; } }
-    public bool Active { get { return isActive; } set { isActive = value; } }
+    public AttackState CurrentState { get { return mCurrentState; } }             //|
+    public bool Active { get { return isActive; } set { isActive = value; } }     //|
 
                                                                                   //|
     public void Update(float deltaTime)                                           //|

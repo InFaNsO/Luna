@@ -10,12 +10,12 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float mDamage;
     public float Damage { get { return mDamage; } set { mDamage = value; } }
 
-    [SerializeField] private Element mElement;
+    [SerializeField] private Element mElement = Element.Luna;
     public Element Element { get { return mElement; } }
 
-    [SerializeField] private float mSpeed;
+    [SerializeField] private float mSpeed = 1.0f;
 
-    [SerializeField] private float mLifeTime;
+    [SerializeField] private float mLifeTime = 10.0f;
     private float mLifeTimeCounter;
 
     private bool mIsMelee;
@@ -24,8 +24,8 @@ public class Bullet : MonoBehaviour
 
     public void Awake()
     {
-        Assert.IsNotNull(GetComponent<CapsuleCollider>(), "[Bullet] Dont have collider");     //|--- [SAFTY]: Check to see is there a Collider
-        Assert.AreNotEqual(mLifeTime > 0.0f, false, "[Bullet] Dont have lifeTime");     //|--- [SAFTY]: Check to see is there a 0 life time
+        Assert.IsNotNull(GetComponent<CapsuleCollider>(), "[Bullet] Dont have collider");       //|--- [SAFTY]: Check to see is there a Collider
+        Assert.AreNotEqual(mLifeTime > 0.0f, false, "[Bullet] Dont have lifeTime");             //|--- [SAFTY]: Check to see is there a 0 life time
     }
 
     public void Fire(string tag, float dmg, Vector3 initPos, Vector3 direction, WeaponType isMelee)
@@ -72,12 +72,12 @@ public class Bullet : MonoBehaviour
 
     private void EarlyUpdate()
     {
-        if (mIsMelee)
-            Die();
+        
     }
 
     private void LateUpdate()
     {
-        
+        if (mIsMelee)
+            Die();
     }
 }

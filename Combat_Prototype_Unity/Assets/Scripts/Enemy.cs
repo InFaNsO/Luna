@@ -28,6 +28,7 @@ public abstract class Charactor : MonoBehaviour
 public class Enemy : Charactor
 {
     [SerializeField] Weapon mWeapon;
+    [SerializeField] GameObject mParryStateIndicator;
     [SerializeField] ParryContext mParryContext = new ParryContext();
     private Animator mAnimator;
     bool mIsStuned = false;
@@ -96,6 +97,9 @@ public class Enemy : Charactor
     {
         mIsStuned = true;
         mStunCounter = stunHowLong;
+
+        //Do animation staff
+        mAnimator.SetInteger("Condition", 10);
     }
 
     void OnTriggerEnter(Collider other)
@@ -117,10 +121,19 @@ public class Enemy : Charactor
         mParryContext.Update(Time.deltaTime);
         if (mParryContext.Active)
         {
-            if ((mParryContext.CurrentState == AttackState.Attacking) && (mHaveAttack == false))
+            if (mParryContext.CurrentState == AttackState.Preparing)
+            {
+                mParryStateIndicator.GetComponent<MeshRenderer>().materials[0].color = Color.green;
+            }
+            else if ((mParryContext.CurrentState == AttackState.Attacking) && (mHaveAttack == false))
             {
                 mWeapon.Attack();
                 mHaveAttack = true;
+                mParryStateIndicator.GetComponent<MeshRenderer>().materials[0].color = Color.red;
+            }
+            else if (mParryContext.CurrentState == AttackState.Reseting)
+            {
+                mParryStateIndicator.GetComponent<MeshRenderer>().materials[0].color = Color.yellow;
             }
         }
 
