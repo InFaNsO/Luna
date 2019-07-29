@@ -491,6 +491,7 @@ GameObject:
   - component: {fileID: 1973619970}
   - component: {fileID: 1973619969}
   - component: {fileID: 1973619968}
+  - component: {fileID: 1973619974}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -529,6 +530,8 @@ MonoBehaviour:
   movementSpeed: 0
   jumpStrength: 0
   facingRight: 0
+  x: 0
+  y: 0
 --- !u!65 &1973619970
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -602,3 +605,25 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1973619974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1973619967}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 192b52e7fc1a9784d9b3a1692db7a542, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mMaxHealth: 0
+  mWeapon1: {fileID: 0}
+  mWeapon2: {fileID: 0}
+  mCurrentWeapon: {fileID: 0}
+  mIsIFrameOn: 1
+  mIFrameCD: 0
+  mIFrameDuration: 1
+  mMovementSpeed: 5
+  mJumpStrength: 20
+  mIFrameDistance: 150
