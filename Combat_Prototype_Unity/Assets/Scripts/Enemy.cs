@@ -1,105 +1,63 @@
-﻿using System.Collections;
+﻿//===========================================================================================================================================================
+// Filename:	Enemy.cs
+// Created by:	Mingzhuo Zhang
+// Description:	Store basic data structure for enemy game object
+//===========================================================================================================================================================
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
-public abstract class Charactor : MonoBehaviour     
+enum EnemyAnimation
 {
-    [SerializeField] protected float mMaxHealth;
-    protected float mCurrentHealth;
-
-    public abstract void GetHit(float dmg);
-    public abstract void Die();
-
-    public void Awake()
-    {
-        mCurrentHealth = mMaxHealth;
-    }
-
-    public void Update()
-    {
-        if (mCurrentHealth <= 0.0f)
-        {
-            Die();
-        }
-    }
+    None = 0,
+    ToIdel,
+    Stun,
+    Attack,
 }
 
-public class Enemy : Charactor
+public class Enemy : Character
 {
+    // Members ---------------------------------------------------------------------------------------------------------------
     [SerializeField] Weapon mWeapon;
-    [SerializeField] GameObject mParryStateIndicator;
-    [SerializeField] ParryContext mParryContext = new ParryContext();
+
     private Animator mAnimator;
     bool mIsStuned = false;
     float mStunCounter;
-    bool mHaveAttack = false;
 
-    private int behaviorCounter = 0; // For hard code behavior
-
+    // MonoBehaviour Functions -----------------------------------------------------------------------------------------------
     new public void Awake()
     {
         base.Awake();
-        Assert.IsNotNull(GetComponent<CapsuleCollider>(), "[Enemy] Dont have collider");                                      //|--- [SAFTY]: Check to see is there a Collider
-        Assert.AreNotEqual(mParryContext.mTimeSlicePropotion[0], 0.0f, "[Enemy] Parry context not initialized");              //|--- [SAFTY]: Check to see if parry context got initialized
-        Assert.AreNotEqual(mParryContext.mTimeSlicePropotion[1], 0.0f, "[Enemy] Parry context not initialized");              //|--- [SAFTY]: Check to see if parry context got initialized
-        Assert.AreNotEqual(mParryContext.mTimeSlicePropotion[2], 0.0f, "[Enemy] Parry context not initialized");              //|--- [SAFTY]: Check to see if parry context got initialized
-        Assert.AreEqual(mParryContext.mTimeSlicePropotion.Length, 3,   "[Enemy] Parry context TimeSlice count should be 3");  //|--- [SAFTY]: Check to see if parry context TimeSlice count is 3
+        Assert.IsNotNull(GetComponent<CapsuleCollider>(), "[Enemy] Dont have CapsuleCollider");                                      //|--- [SAFTY]: Check to see is there a Collider
 
-        mAnimator = gameObject.GetComponent<Animator>();
-        mParryContext.TotalTime = mWeapon.AttackSpeed;
-        mParryContext.Reset();
-        mWeapon.gameObject.tag = "Enemy";
+        mAnimator = gameObject.GetComponent<Animator>();                                                                             //|--- [INIT]: Initialize animator
     }
 
-    public void Attack()
+    new public void Update()
     {
-        if (mWeapon != null)
+        base.Update();
+
+        if (mIsStuned != true)
         {
-            if (mParryContext.Active == false)
+            //Do AI here
+            HardCodeBehavior();
+        }
+        else
+        {
+            if (mStunCounter <= 0.0f)
             {
-                Debug.Log("start attack");
-                mParryContext.Active = true;
-                mHaveAttack = false;
+                mIsStuned = false;
                 // Do animation
-                mAnimator.SetInteger("Condition", 8);
             }
+            mStunCounter -= Time.deltaTime;
         }
     }
 
-    override public void Die()
+    public void LateUpdate()
     {
-        //effect
-        Debug.Log("enemy destory");
-
-        // [Maybe] Update game Score
-        // [Maybe] Change anmation state
-
-        gameObject.SetActive(false);
-    }
-
-    override public void GetHit(float dmg)
-    {
-        mCurrentHealth -= dmg;
-
-        if (mParryContext.CurrentState == AttackState.Preparing)
-        {
-            // do animation staff
-        }
-
-        if (mCurrentHealth <= 0.0f)
-        {
-            Die();
-        }
-    }
-
-    public void GetStun(float stunHowLong)
-    {
-        mIsStuned = true;
-        mStunCounter = stunHowLong;
-
-        //Do animation staff
-        mAnimator.SetInteger("Condition", 10);
+        SetAnimator(EnemyAnimation.ToIdel);
     }
 
     void OnTriggerEnter(Collider other)
@@ -114,53 +72,80 @@ public class Enemy : Charactor
             }
         }
     }
+    // Self-define Functions -----------------------------------------------------------------------------------------------
 
-    new public void Update()
+    public void Attack()
     {
-        base.Update();
-        mParryContext.Update(Time.deltaTime);
-        if (mParryContext.Active)
+        mWeapon.Attack();
+        SetAnimator(EnemyAnimation.Attack);
+    }
+
+    override public void Die()
+    {
+        //effect
+        Debug.Log("enemy destory");
+
+        // [Maybe] Update game Score
+        // [Maybe] Change anmation state
+
+        //--------------------------//|
+        Destroy(gameObject);        //|--- Set this by routin function in future: For giveing time to died animation 
+        //--------------------------//|
+    }
+
+    override public void GetHit(float dmg)
+    {
+        mCurrentHealth -= dmg;
+
+        if (mWeapon.GetAttackState() == AttackState.AttackState_Parryable)
         {
-            if (mParryContext.CurrentState == AttackState.Preparing)
-            {
-                mParryStateIndicator.GetComponent<MeshRenderer>().materials[0].color = Color.green;
-            }
-            else if ((mParryContext.CurrentState == AttackState.Attacking) && (mHaveAttack == false))
-            {
-                mWeapon.Attack();
-                mHaveAttack = true;
-                mParryStateIndicator.GetComponent<MeshRenderer>().materials[0].color = Color.red;
-            }
-            else if (mParryContext.CurrentState == AttackState.Reseting)
-            {
-                mParryStateIndicator.GetComponent<MeshRenderer>().materials[0].color = Color.yellow;
-            }
+            GetStun(1.5f);
         }
 
-        if (mIsStuned != true)
+        if (mCurrentHealth <= 0.0f)
         {
-            //Do control
-        }
-        else
-        {
-            if (mStunCounter <= 0.0f)
-            {
-                mIsStuned = false;
-                // Do animation
-            }
-            mStunCounter -= Time.deltaTime;
-        }
-
-        // Hard code behavior
-        behaviorCounter++;
-        if (behaviorCounter % 100 == 0)
-        {
-            Attack();
+            Die();
         }
     }
 
-    public void LateUpdate()
+    public void GetStun(float stunHowLong)
     {
-        mAnimator.SetInteger("Condition", 0);
+        mIsStuned = true;
+        mStunCounter = stunHowLong;
+
+        SetAnimator(EnemyAnimation.Stun);
     }
+
+    void SetAnimator(EnemyAnimation animationType)
+    {
+        switch (animationType)
+        {
+            case EnemyAnimation.None:
+                break;
+            case EnemyAnimation.ToIdel:
+                mAnimator.SetInteger("Condition", 0);
+                break;
+            case EnemyAnimation.Stun:
+                mAnimator.SetInteger("Condition", 10);
+                break;
+            case EnemyAnimation.Attack:
+                mAnimator.SetInteger("Condition", 8);
+                break;
+            default:
+                break;
+        }
+    }
+
+    //-------------------------------------------------------------------------------//|
+    private int behaviorCounter = 0; // For hard code behavior                       //|
+    void HardCodeBehavior()                                                          //|
+    {                                                                                //|
+        // Hard code behavior                                                        //|
+        behaviorCounter++;                                                           //|
+        if (behaviorCounter % 100 == 0)                                              //|--- Hard code behavior, Delete this in future
+        {                                                                            //|
+            Attack();                                                                //|
+        }                                                                            //|
+    }                                                                                //|
+    //-------------------------------------------------------------------------------//|
 }

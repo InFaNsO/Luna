@@ -1,43 +1,36 @@
-﻿using System.Collections;
+﻿//===========================================================================================================================================================
+// Filename:	Bullet.cs
+// Created by:	Mingzhuo Zhang
+// Description:	Store basic data structure for bullet game object
+//===========================================================================================================================================================
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Assertions;
 
 public class Bullet : MonoBehaviour
 {
+    // Members --------------------------------------------------------------------------------------------------------------
     [SerializeField] private string mName;
-
     [SerializeField] private float mDamage;
-    public float Damage { get { return mDamage; } set { mDamage = value; } }
-
-    [SerializeField] private Element mElement = Element.Luna;
-    public Element Element { get { return mElement; } }
-
+    [SerializeField] private Element mElement;
     [SerializeField] private float mSpeed = 1.0f;
-
     [SerializeField] private float mLifeTime = 10.0f;
+
     private float mLifeTimeCounter;
-
     private bool mIsMelee;
-
     private Vector3 mFireDirection;
 
+    // Getter & Setter ------------------------------------------------------------------------------------------------------
+    public float Damage { get { return mDamage; } set { mDamage = value; } }
+    public Element Element { get { return mElement; } set { mElement = value; } }
+
+    // MonoBehaviour Functions -----------------------------------------------------------------------------------------------
     public void Awake()
     {
         Assert.IsNotNull(GetComponent<CapsuleCollider>(), "[Bullet] Dont have collider");       //|--- [SAFTY]: Check to see is there a Collider
         Assert.AreNotEqual(mLifeTime > 0.0f, false, "[Bullet] Dont have lifeTime");             //|--- [SAFTY]: Check to see is there a 0 life time
-    }
-
-    public void Fire(string tag, float dmg, Vector3 initPos, Vector3 direction, WeaponType isMelee)
-    {
-        gameObject.tag = tag;
-        mDamage = dmg;
-        mFireDirection = direction.normalized;
-        gameObject.transform.position = initPos;
-        mIsMelee = (isMelee == WeaponType.Melee);
-        mLifeTimeCounter = mLifeTime;
-
-        gameObject.SetActive(true);
     }
 
     public void Update()
@@ -54,30 +47,38 @@ public class Bullet : MonoBehaviour
 
     }
 
-    public void Die()
+    private void LateUpdate()
     {
-        gameObject.SetActive(false);
+        if (mIsMelee)
+            Die();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag != gameObject.tag)
         {
-            if (collision.GetComponent<Charactor>() != null)
+            if (collision.GetComponent<Character>() != null)
             {
                 Die();
             }
         }
     }
 
-    private void EarlyUpdate()
+    // Self-define functions --------------------------------------------------------------------------------------------------
+    public void Fire(string tag, float dmg, Vector3 initPos, Vector3 direction, WeaponType isMelee)
     {
-        
+        gameObject.tag = tag;
+        mDamage = dmg;
+        mFireDirection = direction.normalized;
+        gameObject.transform.position = initPos;
+        mIsMelee = (isMelee == WeaponType.Melee);
+        mLifeTimeCounter = mLifeTime;
+
+        gameObject.SetActive(true);
     }
 
-    private void LateUpdate()
+    public void Die()
     {
-        if (mIsMelee)
-            Die();
+        gameObject.SetActive(false);
     }
 }

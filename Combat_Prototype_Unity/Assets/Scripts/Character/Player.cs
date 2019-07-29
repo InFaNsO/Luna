@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : Charactor
+public class Player : Character
 {
     [SerializeField] private Weapon mWeapon;
     [SerializeField] private ParryContext mParryContext = new ParryContext();
