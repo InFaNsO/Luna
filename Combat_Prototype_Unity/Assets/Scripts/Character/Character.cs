@@ -9,8 +9,14 @@ using UnityEngine;
 
 public abstract class Character : MonoBehaviour
 {
-    [SerializeField] protected float mMaxHealth;
+    [SerializeField]
+    protected float mMaxHealth;
+    [SerializeField]
     protected float mCurrentHealth;
+    [SerializeField]
+    protected float mMovementSpeed;
+    [SerializeField]
+    protected float mJumpStrength;
 
     public abstract void GetHit(float dmg);
     public abstract void Die();

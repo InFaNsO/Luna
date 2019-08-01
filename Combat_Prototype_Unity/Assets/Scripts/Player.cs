@@ -12,22 +12,14 @@ public class Player : Character
     private Weapon mCurrentWeapon;
 
     [SerializeField]
-    private bool mIsIFrameOn = true;
+    private bool mIsIFrameOn;
     [SerializeField]
-    private float mIFrameCD = 4.0f;
+    private float mIFrameCD;
     [SerializeField]
-    private float mIFrameDuration = 1.0f;
+    private float mIFrameDuration;
+    [SerializeField]
+    private float mIFrameDistance;
 
-    [SerializeField]
-    private float mMovementSpeed = 5.0f;
-    [SerializeField]
-    private float mJumpStrength = 20.0f;
-    [SerializeField]
-    private float mIFrameDistance = 150.0f;
-
-
-
-    private Animator mAnimator;
 
     public float GetMoveSpeed()
     {
@@ -62,11 +54,13 @@ public class Player : Character
     {
         if(mCurrentWeapon == mWeapon1)
         {
+            Debug.Log("Weapon 1 dropped");
             mWeapon1 = null;
             mCurrentWeapon = null;
         }
         else if(mCurrentWeapon == mWeapon2)
         {
+            Debug.Log("Weapon 2 dropped");
             mWeapon2 = null;
             mCurrentWeapon = null;
         }
@@ -79,12 +73,14 @@ public class Player : Character
             if(mWeapon2 != null)
             {
                 mCurrentWeapon = mWeapon2;
+                Debug.Log("Switch to Weapon 2");
             }
         }else if(mCurrentWeapon == mWeapon2)
         {
             if (mWeapon1 != null)
             {
                 mCurrentWeapon = mWeapon1;
+                Debug.Log("Switch to Weapon 1");
             }
         }
     }
@@ -130,13 +126,41 @@ public class Player : Character
     public void Attack()
     {
         Debug.Log("[Player] Attack called");
-        mCurrentWeapon.Attack();
+        if ((mCurrentWeapon == null) && ((mWeapon1 != null) || (mWeapon2 != null)))
+        {
+            if(mWeapon1 != null)
+            {
+                mCurrentWeapon = mWeapon1;
+                Debug.Log("Weapon 1 equipped");
+                mCurrentWeapon.Attack();
+            }
+            else
+            {
+                mCurrentWeapon = mWeapon2;
+                Debug.Log("Weapon 2 equipped");
+                mCurrentWeapon.Attack();
+            }
+        }
+        else if(mCurrentWeapon != null)
+        {
+            mCurrentWeapon.Attack();
+        }
+        else
+        {
+            Debug.Log("No Available weapon to attack.");
+        }
     }
 
     new public void Awake()
     {
         base.Awake();
-    }
+        mIsIFrameOn = true;
+        mIFrameCD = 4.0f;
+        mIFrameDuration = 1.0f;
+        mMovementSpeed = 5.0f;
+        mJumpStrength = 20.0f;
+        mIFrameDistance = 150.0f;
+}
 
     new public void Update()
     {
@@ -152,7 +176,6 @@ public class Player : Character
 
     public void LateUpdate()
     {
-        mAnimator.SetInteger("Condition", 0);
     }
 
 }

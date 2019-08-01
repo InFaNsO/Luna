@@ -64,7 +64,7 @@ public class Controller_Player : MonoBehaviour
 
     private void DropWeapon()
     {
-        if (InputManager.IsButtonPressed(InputManager.GetDropInput()))
+        if (Input.GetButtonDown(InputManager.GetDropInput()))
         {
             player.DropWeapon();
         }
@@ -72,7 +72,7 @@ public class Controller_Player : MonoBehaviour
 
     private void SwitchWeapon()
     {
-        if (InputManager.IsButtonPressed(InputManager.GetSwitchInput()))
+        if (Input.GetButtonDown(InputManager.GetSwitchInput()))
         {
             player.SwitchWeapon();
         }
@@ -91,7 +91,11 @@ public class Controller_Player : MonoBehaviour
 
     void Start()
     {
-        player = new Player();
+        player = gameObject.GetComponent<Player>();
+        if (player == null)
+        {
+            Debug.Log("No [player");
+        }
 
         facingRight = true;
 
@@ -107,6 +111,8 @@ public class Controller_Player : MonoBehaviour
         Jump();
         Attack();
         Dodge();
+        DropWeapon();
+        SwitchWeapon();
         attackDelay -= Time.deltaTime;
     }
 }

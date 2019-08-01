@@ -26,10 +26,24 @@ public class Enemy : Character
     bool mIsStuned = false;
     float mStunCounter;
 
+    public float GetMoveSpeed()
+    {
+        return mMovementSpeed;
+    }
+
+    public float GetJumpStrength()
+    {
+        return mJumpStrength;
+    }
+
     // MonoBehaviour Functions -----------------------------------------------------------------------------------------------
     new public void Awake()
     {
         base.Awake();
+
+        mMovementSpeed = 5.0f;
+        mJumpStrength = 20.0f;
+
         Assert.IsNotNull(GetComponent<CapsuleCollider>(), "[Enemy] Dont have CapsuleCollider");                                      //|--- [SAFTY]: Check to see is there a Collider
 
         mAnimator = gameObject.GetComponent<Animator>();                                                                             //|--- [INIT]: Initialize animator
