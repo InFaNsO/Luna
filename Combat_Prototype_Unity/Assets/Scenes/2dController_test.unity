@@ -173,7 +173,7 @@ PrefabInstance:
     - target: {fileID: 8252776005217318586, guid: 239b63c414461b143b8ea8204a9151e8,
         type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8252776005217318586, guid: 239b63c414461b143b8ea8204a9151e8,
         type: 3}
@@ -183,7 +183,7 @@ PrefabInstance:
     - target: {fileID: 8252776005217318586, guid: 239b63c414461b143b8ea8204a9151e8,
         type: 3}
       propertyPath: m_LocalRotation.w
-      value: 1
+      value: 0.7071068
       objectReference: {fileID: 0}
     - target: {fileID: 8252776005217318586, guid: 239b63c414461b143b8ea8204a9151e8,
         type: 3}
@@ -198,12 +198,27 @@ PrefabInstance:
     - target: {fileID: 8252776005217318586, guid: 239b63c414461b143b8ea8204a9151e8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
+      value: 90
       objectReference: {fileID: 0}
     - target: {fileID: 8252776005217318586, guid: 239b63c414461b143b8ea8204a9151e8,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904840310412943873, guid: 239b63c414461b143b8ea8204a9151e8,
+        type: 3}
+      propertyPath: mType
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904840310412943873, guid: 239b63c414461b143b8ea8204a9151e8,
+        type: 3}
+      propertyPath: mParryContext.mTimeSlicePropotion.Array.data[0]
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8904840310412943873, guid: 239b63c414461b143b8ea8204a9151e8,
+        type: 3}
+      propertyPath: mAttackSpeed
+      value: 0.001
       objectReference: {fileID: 0}
     - target: {fileID: 2897126255773540854, guid: 239b63c414461b143b8ea8204a9151e8,
         type: 3}
@@ -320,6 +335,12 @@ PrefabInstance:
       propertyPath: mAttackSpeed
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 668635450549935853, guid: 27fb69feef745ba4e8ec9bb774d597b0,
+        type: 3}
+      propertyPath: mBullet
+      value: 
+      objectReference: {fileID: -4088867604108694793, guid: eb2e006d7b8682d488e285db3476b8ee,
+        type: 3}
     - target: {fileID: 2241508395844314240, guid: 27fb69feef745ba4e8ec9bb774d597b0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -394,7 +415,7 @@ GameObject:
   - component: {fileID: 1242647620}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

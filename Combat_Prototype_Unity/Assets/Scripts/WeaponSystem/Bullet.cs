@@ -37,7 +37,7 @@ public class Bullet : MonoBehaviour
     {
         if (mLifeTimeCounter > 0.0f)
         {
-            gameObject.transform.position += mFireDirection * mSpeed;
+            gameObject.transform.position += mFireDirection * mSpeed * Time.deltaTime;
             mLifeTimeCounter -= Time.deltaTime;
         }
         else

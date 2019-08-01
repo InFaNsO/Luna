@@ -35,9 +35,9 @@ public class Weapon : MonoBehaviour
     public void Awake()
     {
         Assert.IsNotNull(mBullet, "[Weapon] Dont have bullet");     //|--- [SAFTY]: Check to see is there a Collider
-        Assert.AreNotEqual(mParryContext.mTimeSlicePropotion[0], 0.0f, "[Enemy] Parry context not initialized");              //|--- [SAFTY]: Check to see if parry context got initialized
-        Assert.AreNotEqual(mParryContext.mTimeSlicePropotion[1], 0.0f, "[Enemy] Parry context not initialized");              //|--- [SAFTY]: Check to see if parry context got initialized
-        Assert.AreEqual(mParryContext.mTimeSlicePropotion.Length, 2, "[Enemy] Parry context TimeSlice count should be 3");    //|--- [SAFTY]: Check to see if parry context TimeSlice count is 3
+        Assert.AreNotEqual(mParryContext.mTimeSlicePropotion[0], 0.0f, "[Weapon] Parry context not initialized");              //|--- [SAFTY]: Check to see if parry context got initialized
+        Assert.AreNotEqual(mParryContext.mTimeSlicePropotion[1], 0.0f, "[Weapon] Parry context not initialized");              //|--- [SAFTY]: Check to see if parry context got initialized
+        Assert.AreEqual(mParryContext.mTimeSlicePropotion.Length, 2, "[Weapon] Parry context TimeSlice count should be 3");    //|--- [SAFTY]: Check to see if parry context TimeSlice count is 3
 
         mParryContext.TotalTime = AttackSpeed;                                                                                //|--- [INIT]: Initliaze the total time cycle for parry system in ParryContext
         mParryContext.Reset();
