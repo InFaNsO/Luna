@@ -5,10 +5,6 @@ using UnityEngine;
 public class Controller_Player : MonoBehaviour
 {
     [SerializeField]
-    private float movementSpeed;
-    [SerializeField]
-    private float jumpStrength;
-    [SerializeField]
     private bool facingRight;
     [SerializeField]
     private float x;
@@ -16,7 +12,7 @@ public class Controller_Player : MonoBehaviour
     private float y;
     private float attackDelay;
     private float iFrameDistance;
-    private float distanceToGround;
+    private bool isGrounded;
     Player player;
 
     private void Move()
@@ -34,7 +30,7 @@ public class Controller_Player : MonoBehaviour
 
     private void Jump()
     {
-        if (InputManager.IsButtonPressed(InputManager.GetJumpInput()) && isGrounded())
+        if (InputManager.IsButtonPressed(InputManager.GetJumpInput()) && isGrounded)
         {
             y = Input.GetAxisRaw(InputManager.GetJumpInput()) * Time.deltaTime * player.GetJumpStrength();
             transform.Translate(0f, y, 0f);
@@ -92,9 +88,20 @@ public class Controller_Player : MonoBehaviour
         transform.Rotate(0f, 180f, 0f);
     }
 
-    private bool isGrounded()
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        return (transform.position.y - distanceToGround <= 0.0f);
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = true;
+        }
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
     }
 
     void Start()
@@ -102,13 +109,10 @@ public class Controller_Player : MonoBehaviour
         player = gameObject.GetComponent<Player>();
         if (player == null)
         {
-            Debug.Log("No [player");
+            Debug.Log("No [player]");
         }
 
         facingRight = true;
-
-        //object's mid to ground
-        distanceToGround = 0.5f;
 
         attackDelay = player.GetAttackSpeed();
     }

@@ -330,17 +330,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knife 1
       objectReference: {fileID: 0}
-    - target: {fileID: 668635450549935853, guid: 27fb69feef745ba4e8ec9bb774d597b0,
-        type: 3}
-      propertyPath: mAttackSpeed
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 668635450549935853, guid: 27fb69feef745ba4e8ec9bb774d597b0,
-        type: 3}
-      propertyPath: mBullet
-      value: 
-      objectReference: {fileID: -4088867604108694793, guid: eb2e006d7b8682d488e285db3476b8ee,
-        type: 3}
     - target: {fileID: 2241508395844314240, guid: 27fb69feef745ba4e8ec9bb774d597b0,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -396,6 +385,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 668635450549935853, guid: 27fb69feef745ba4e8ec9bb774d597b0,
+        type: 3}
+      propertyPath: mAttackSpeed
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 668635450549935853, guid: 27fb69feef745ba4e8ec9bb774d597b0,
+        type: 3}
+      propertyPath: mBullet
+      value: 
+      objectReference: {fileID: -4088867604108694793, guid: eb2e006d7b8682d488e285db3476b8ee,
+        type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27fb69feef745ba4e8ec9bb774d597b0, type: 3}
 --- !u!1 &1242647613
@@ -443,6 +443,7 @@ MonoBehaviour:
   mIFrameCD: 4
   mIFrameDuration: 1
   mIFrameDistance: 150
+  mLaserDamage: 0
 --- !u!114 &1242647615
 MonoBehaviour:
   m_ObjectHideFlags: 0
