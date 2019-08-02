@@ -66,17 +66,24 @@ public class Player : Character
 
     public void DropWeapon()
     {
-        if(mCurrentWeapon == mWeapon1)
+        if ((mWeapon1 != null) && (mWeapon2 != null))
         {
-            Debug.Log("Weapon 1 dropped");
-            mWeapon1 = null;
-            mCurrentWeapon = null;
+            if (mCurrentWeapon == mWeapon1)
+            {
+                Debug.Log("Weapon 1 dropped");
+                mWeapon1 = null;
+                mCurrentWeapon = null;
+            }
+            else if (mCurrentWeapon == mWeapon2)
+            {
+                Debug.Log("Weapon 2 dropped");
+                mWeapon2 = null;
+                mCurrentWeapon = null;
+            }
         }
-        else if(mCurrentWeapon == mWeapon2)
+        else
         {
-            Debug.Log("Weapon 2 dropped");
-            mWeapon2 = null;
-            mCurrentWeapon = null;
+            Debug.Log("There are no weapons to drop.");
         }
     }
 
