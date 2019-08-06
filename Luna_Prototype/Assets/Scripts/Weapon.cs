@@ -26,7 +26,7 @@ public class Weapon : MonoBehaviour
     [SerializeField] protected Bullet mBullet;
     [SerializeField] protected Vector3 mFirePositionOffSet;
 
-    Animator mAnimator;
+    protected Animator mAnimator;
 
     bool mHaveAttack = false;
 
@@ -70,7 +70,10 @@ public class Weapon : MonoBehaviour
 
     void LateUpdate()
     {
-        mAnimator.SetInteger("State", 0);
+        if (mAnimator.gameObject.activeSelf)
+        {
+            mAnimator.SetInteger("State", 0);
+        }
     }
 
     // Self-define functions --------------------------------------------------------------------------------------------------
@@ -99,7 +102,12 @@ public class Weapon : MonoBehaviour
             Debug.Log("[Weapon] start attack 1");
             mParryContext.Active = true;
             mHaveAttack = false;
-            mAnimator.SetInteger("State", 1);
+
+            if (mAnimator.gameObject.activeSelf)
+            {
+                mAnimator.SetInteger("State", 1);
+            }
+
             Debug.Log(mParryContext.Active);
         }
 
