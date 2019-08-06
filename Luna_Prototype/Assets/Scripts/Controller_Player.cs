@@ -39,11 +39,10 @@ public class Controller_Player : MonoBehaviour
 
     private void Attack()
     {
-        if (InputManager.IsButtonPressed(InputManager.GetAttackInput()) && attackDelay <= 0.0f)
+        if (InputManager.IsButtonPressed(InputManager.GetAttackInput()) /*&& attackDelay <= 0.0f*/) // [Mingzhuo Zhang edit]--- attack delay is in the weapon no need to check here
         {
-
             player.Attack();
-            attackDelay = player.GetAttackSpeed();
+            //attackDelay = player.GetAttackSpeed();                                                // [Mingzhuo Zhang edit]--- attack delay is in the weapon no need to check here
         }
     }
 

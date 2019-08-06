@@ -164,6 +164,7 @@ public class Player : Character
         }
         else if(mCurrentWeapon != null)
         {
+            Debug.Log("current weapon attack");
             mCurrentWeapon.Attack();
         }
         else
