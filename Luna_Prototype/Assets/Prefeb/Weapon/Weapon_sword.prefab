@@ -121,8 +121,7 @@ MonoBehaviour:
   mAttackSpeed: 1
   mParryContext:
     mTimeSlicePropotion:
-    - 0.5
-    - 0.5
+    - 0.3
+    - 0.7
   mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05, type: 3}
   mFirePositionOffSet: {x: 0.25, y: 0, z: 0}
-  mAnimator: {fileID: 5572751645561366425}

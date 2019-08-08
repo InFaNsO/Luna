@@ -22,6 +22,12 @@ public class Player : Character
     [SerializeField]
     private int mLaserDamage;
 
+    private bool isDouleJumpEnabled;
+
+    public bool GetDoubleJumpEnable()
+    {
+        return isDouleJumpEnabled;
+    }
 
     public float GetMoveSpeed()
     {
@@ -66,7 +72,7 @@ public class Player : Character
 
     public void DropWeapon()
     {
-        if ((mWeapon1 != null) && (mWeapon2 != null))
+        if ((mWeapon1 != null) || (mWeapon2 != null))
         {
             if (mCurrentWeapon == mWeapon1)
             {
@@ -180,9 +186,10 @@ public class Player : Character
         mIFrameCD = 4.0f;
         mIFrameDuration = 1.0f;
         mMovementSpeed = 5.0f;
-        mJumpStrength = 20.0f;
-        mIFrameDistance = 150.0f;
+        mJumpStrength = 150.0f;
+        mIFrameDistance = 40.0f;
         mLaserDamage = 0;
+        isDouleJumpEnabled = true;
 }
 
     new public void Update()

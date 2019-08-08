@@ -14,6 +14,8 @@ public class Controller_Player : MonoBehaviour
     private float iFrameDistance;
     private bool isGrounded;
     Player player;
+    private int jumpCount;
+    private Rigidbody2D rb;
 
     private void Move()
     {
@@ -30,19 +32,24 @@ public class Controller_Player : MonoBehaviour
 
     private void Jump()
     {
-        if (InputManager.IsButtonPressed(InputManager.GetJumpInput()) && isGrounded)
+        if (InputManager.IsButtonDown(InputManager.GetJumpInput()) && jumpCount > 0)
         {
             y = Input.GetAxisRaw(InputManager.GetJumpInput()) * Time.deltaTime * player.GetJumpStrength();
-            transform.Translate(0f, y, 0f);
+            //y = player.GetJumpStrength();
+            //transform.Translate(0f, y, 0f);
+            rb.velocity = new Vector2(rb.velocity.x, 0.0f);
+            rb.AddForce(new Vector2(0.0f, y), ForceMode2D.Impulse);
+            //rb.AddForce(new Vector2(0.0f, y), ForceMode2D.Impulse);
+            Debug.Log(jumpCount);
+            jumpCount--;
         }
     }
 
     private void Attack()
     {
-        if (InputManager.IsButtonPressed(InputManager.GetAttackInput()) /*&& attackDelay <= 0.0f*/) // [Mingzhuo Zhang edit]--- attack delay is in the weapon no need to check here
+        if (InputManager.IsButtonPressed(InputManager.GetAttackInput()))
         {
             player.Attack();
-            //attackDelay = player.GetAttackSpeed();                                                // [Mingzhuo Zhang edit]--- attack delay is in the weapon no need to check here
         }
     }
 
@@ -91,19 +98,18 @@ public class Controller_Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
-            isGrounded = true;
+            if(player.GetDoubleJumpEnable())
+            {
+                jumpCount = 2;
+            }
+            else
+            {
+                jumpCount = 1;
+            }
         }
-    }
+    } 
 
-    private void OnCollisionExit2D(Collision2D collision)
-    {
-        if (collision.gameObject.CompareTag("Ground"))
-        {
-            isGrounded = false;
-        }
-    }
-
-    void Start()
+    void Awake()
     {
         player = gameObject.GetComponent<Player>();
         if (player == null)
@@ -114,12 +120,26 @@ public class Controller_Player : MonoBehaviour
         facingRight = true;
 
         attackDelay = player.GetAttackSpeed();
+        if (player.GetDoubleJumpEnable())
+        {
+            jumpCount = 2;
+        }
+        else
+        {
+            jumpCount = 1;
+        }
+
+        rb = GetComponent<Rigidbody2D>();
+        if (rb == null)
+        {
+            Debug.Log("[rb is null]");
+        }
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        Move();
         Jump();
+        Move();
         Attack();
         Dodge();
         DropWeapon();
@@ -127,4 +147,5 @@ public class Controller_Player : MonoBehaviour
         LaserAttack();
         attackDelay -= Time.deltaTime;
     }
+
 }
