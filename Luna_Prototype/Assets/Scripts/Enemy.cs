@@ -22,7 +22,7 @@ public class Enemy : Character
     // Members ---------------------------------------------------------------------------------------------------------------
     [SerializeField] Weapon mWeapon;
 
-    private Animator mAnimator;
+    //private Animator mAnimator;
     bool mIsStuned = false;
     float mStunCounter;
 
@@ -46,7 +46,7 @@ public class Enemy : Character
 
         Assert.IsNotNull(GetComponent<CapsuleCollider>(), "[Enemy] Dont have CapsuleCollider");                                      //|--- [SAFTY]: Check to see is there a Collider
 
-        mAnimator = gameObject.GetComponent<Animator>();                                                                             //|--- [INIT]: Initialize animator
+        //mAnimator = gameObject.GetComponent<Animator>();                                                                             //|--- [INIT]: Initialize animator
     }
 
     new public void Update()
@@ -137,13 +137,13 @@ public class Enemy : Character
             case EnemyAnimation.None:
                 break;
             case EnemyAnimation.ToIdel:
-                mAnimator.SetInteger("Condition", 0);
+               // mAnimator.SetInteger("Condition", 0);
                 break;
             case EnemyAnimation.Stun:
-                mAnimator.SetInteger("Condition", 10);
+               // mAnimator.SetInteger("Condition", 10);
                 break;
             case EnemyAnimation.Attack:
-                mAnimator.SetInteger("Condition", 8);
+               // mAnimator.SetInteger("Condition", 8);
                 break;
             default:
                 break;

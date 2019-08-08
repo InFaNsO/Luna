@@ -21,8 +21,10 @@ public class Player : Character
     private float mIFrameDistance;
     [SerializeField]
     private int mLaserDamage;
-
     private bool isDouleJumpEnabled;
+
+    public GameObject laserObj;
+    private float laserDuration;
 
     public bool GetDoubleJumpEnable()
     {
@@ -44,16 +46,16 @@ public class Player : Character
         return mIFrameDistance;
     }
 
-    public int LaserAttack()
+    public void LaserAttack()
     {
         if((mWeapon1 == null) && (mWeapon2 == null))
         {
+            laserObj.SetActive(true);
+            laserDuration = 1.0f;
             mLaserDamage = 10;
             mCurrentHealth -= 10;
             Debug.Log("laser damage = 10, health - 10");
-            return mLaserDamage;
         }
-        return 0;
     }
 
     public void ObtainNewWeapon(Weapon newWeapon)
@@ -190,6 +192,7 @@ public class Player : Character
         mIFrameDistance = 40.0f;
         mLaserDamage = 0;
         isDouleJumpEnabled = true;
+        laserObj.SetActive(false);
 }
 
     new public void Update()
@@ -198,9 +201,14 @@ public class Player : Character
         base.Update();
         mIFrameCD -= Time.deltaTime;
         mIFrameDuration -= Time.deltaTime;
-        if(mIFrameDuration <= 0)
+        laserDuration -= Time.deltaTime;
+        if (mIFrameDuration <= 0)
         {
             mIsIFrameOn = false;
+        }
+        if(laserDuration <= 0)
+        {
+            laserObj.SetActive(false);
         }
     }
 
