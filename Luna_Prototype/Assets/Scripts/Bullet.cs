@@ -26,6 +26,7 @@ public class Bullet : MonoBehaviour
     public float Damage { get { return mDamage; } set { mDamage = value; } }
     public Element Element { get { return mElement; } set { mElement = value; } }
 
+    int exitFrameCount = 1;
     // MonoBehaviour Functions -----------------------------------------------------------------------------------------------
     public void Awake()
     {
@@ -47,10 +48,18 @@ public class Bullet : MonoBehaviour
 
     }
 
-    private void LateUpdate()
+    private void FixedUpdate()
     {
-        if (mIsMelee)
-           Die();
+        if (mIsMelee && exitFrameCount == 0)
+        {
+            Die();
+            exitFrameCount = 1;
+        }
+        else if(mIsMelee)
+        {
+            exitFrameCount--;
+        }
+
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -65,15 +74,19 @@ public class Bullet : MonoBehaviour
     }
 
     // Self-define functions --------------------------------------------------------------------------------------------------
-    public void Fire(string tag, float dmg, Vector3 initPos, Vector3 direction, WeaponType isMelee)
+    public void Fire(string tag, float dmg, Vector3 initPos, Vector3 direction, WeaponType weaponType)
     {
         gameObject.tag = tag;
         mDamage = dmg;
         mFireDirection = direction.normalized;
         gameObject.transform.position = initPos;
-        mIsMelee = (isMelee == WeaponType.Melee);
+        mIsMelee = (weaponType == WeaponType.Melee);
         mLifeTimeCounter = mLifeTime;
 
+        if (weaponType == WeaponType.Melee)
+        {
+            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+        }
         gameObject.SetActive(true);
     }
 

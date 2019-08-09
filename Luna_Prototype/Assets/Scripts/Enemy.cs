@@ -86,6 +86,8 @@ public class Enemy : Character
             }
         }
     }
+
+ 
     // Self-define Functions -----------------------------------------------------------------------------------------------
 
     public void Attack()
