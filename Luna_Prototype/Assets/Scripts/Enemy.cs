@@ -44,8 +44,7 @@ public class Enemy : Character
         mMovementSpeed = 5.0f;
         mJumpStrength = 20.0f;
 
-        Assert.IsNotNull(GetComponent<CapsuleCollider>(), "[Enemy] Dont have CapsuleCollider");                                      //|--- [SAFTY]: Check to see is there a Collider
-
+        Assert.IsNotNull(GetComponent<BoxCollider2D>(), "[Enemy] Dont have CapsuleCollider");                                      //|--- [SAFTY]: Check to see is there a Collider
         //mAnimator = gameObject.GetComponent<Animator>();                                                                             //|--- [INIT]: Initialize animator
     }
 
@@ -74,13 +73,14 @@ public class Enemy : Character
         SetAnimator(EnemyAnimation.ToIdel);
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag != gameObject.tag)
         {
+            Debug.Log("enemy collide with bullet!_1");
             if (other.GetComponent<Bullet>() != null)
             {
-                Debug.Log("enemy collide with bullet!");
+                Debug.Log("enemy collide with bullet!_2");
 
                 GetHit(other.GetComponent<Bullet>().Damage);
             }

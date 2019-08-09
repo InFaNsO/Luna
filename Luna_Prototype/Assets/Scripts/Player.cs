@@ -48,14 +48,14 @@ public class Player : Character
 
     public void LaserAttack()
     {
-        if((mWeapon1 == null) && (mWeapon2 == null))
-        {
+        //if((mWeapon1 == null) && (mWeapon2 == null))
+        //{
             laserObj.SetActive(true);
             laserDuration = 1.0f;
             mLaserDamage = 10;
             mCurrentHealth -= 10;
             Debug.Log("laser damage = 10, health - 10");
-        }
+        //}
     }
 
     public void ObtainNewWeapon(Weapon newWeapon)

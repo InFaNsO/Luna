@@ -50,7 +50,7 @@ public class Bullet : MonoBehaviour
     private void LateUpdate()
     {
         if (mIsMelee)
-            Die();
+           Die();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
