@@ -200,7 +200,7 @@ public class Player : Character
         mIFrameCD = 4.0f;
         mIFrameDuration = 1.0f;
         mMovementSpeed = 5.0f;
-        mJumpStrength = 150.0f;
+        mJumpStrength = 300.0f;
         mIFrameDistance = 40.0f;
         mLaserDamage = 0;
         isDouleJumpEnabled = true;
