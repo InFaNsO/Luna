@@ -211,11 +211,11 @@ public class Player : Character
         //----------------------------------------------------------------------------------//|
         if (mWeapon1 != null)                                                               //|
         {                                                                                   //|
-            mWeapon1.Picked(gameObject.transform, gameObject.transform.position);           //|    // second argument should be the [weapon position] as a individual variable in future
+            mWeapon1.Picked(gameObject, gameObject.transform.position);                     //|    // second argument should be the [weapon position] as a individual variable in future
         }                                                                                   //|
         if (mWeapon2 != null)                                                               //|
         {                                                                                   //|
-            mWeapon2.Picked(gameObject.transform, gameObject.transform.position);           //|    // second argument should be the [weapon position] as a individual variable in future
+            mWeapon2.Picked(gameObject, gameObject.transform.position);                     //|    // second argument should be the [weapon position] as a individual variable in future
         }                                                                                   //|
                                                                                             //|
         //----------------------------------------------------------------------------------//|
@@ -253,14 +253,14 @@ public class Player : Character
         if (mWeapon1 == null)                                                           //|
         {                                                                               //|
             mWeapon1 = newWeapon;                                                       //|
-            mWeapon1.Picked(gameObject.transform, gameObject.transform.position);       //|
+            mWeapon1.Picked(gameObject, gameObject.transform.position);                 //|
             if (mCurrentWeapon == null)                                                 //|
                 mCurrentWeapon = mWeapon1;                                              //|
         }                                                                               //|
         else if (mWeapon2 == null)                                                      //|--- [Mingzhuo Zhang] add a public function for pickUp weapon. This function will trigger by the collision of the weapon collider
         {                                                                               //|
             mWeapon2 = newWeapon;                                                       //|
-            mWeapon2.Picked(gameObject.transform, gameObject.transform.position);       //|
+            mWeapon2.Picked(gameObject, gameObject.transform.position);                 //|
             if (mCurrentWeapon == null)                                                 //|
                 mCurrentWeapon = mWeapon2;                                              //|
         }                                                                               //|

@@ -64,9 +64,9 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag != gameObject.tag)
+        if (collision.gameObject.tag != gameObject.tag)
         {
-            if (collision.GetComponent<Character>() != null)
+            if ((collision.GetComponent<Character>() != null) || (collision.CompareTag("Ground")))
             {
                 Die();
             }
