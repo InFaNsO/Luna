@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Ground
   - Enemy
+  - PickUp
   layers:
   - Default
   - TransparentFX
@@ -15,8 +16,8 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
+  - PickUp
+  - Character
   - 
   - 
   - 

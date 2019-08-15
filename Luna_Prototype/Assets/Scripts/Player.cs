@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class Player : Character
 {
@@ -76,17 +77,28 @@ public class Player : Character
     {
         if ((mWeapon1 != null) || (mWeapon2 != null))
         {
-            if (mCurrentWeapon == mWeapon1)
+            //                                 |  add a condition |                                                             //|--- [Mingzhuo Zhang] Edit: prevent trying drop NULL Weapon
+            //                                 v                  v                                                             //|
+            if ((mCurrentWeapon == mWeapon1) && (mWeapon1 != null))                                                             //|
             {
                 Debug.Log("Weapon 1 dropped");
+                mWeapon1.ThrowAway(new Vector3(gameObject.transform.right.x, gameObject.transform.up.y, 0.0f));
                 mWeapon1 = null;
                 mCurrentWeapon = null;
+                if (mWeapon2 != null)                                                                                           //|--- [Mingzhuo Zhang] Edit: achieve automatic switch weapon
+                    mCurrentWeapon = mWeapon2;                                                                                  //|
             }
-            else if (mCurrentWeapon == mWeapon2)
+            //                                 |  add a condition |                                                             //|--- [Mingzhuo Zhang] Edit: prevent trying drop NULL Weapon
+            //                                 v                  v                                                             //|
+            else if ((mCurrentWeapon == mWeapon2) && (mWeapon2 != null))                                                        //|
             {
                 Debug.Log("Weapon 2 dropped");
+                mWeapon2.ThrowAway(new Vector3(gameObject.transform.right.x, gameObject.transform.up.y, 0.0f));
                 mWeapon2 = null;
                 mCurrentWeapon = null;
+
+                if (mWeapon1 != null)                                                                                           //|--- [Mingzhuo Zhang] Edit: achieve automatic switch weapon
+                    mCurrentWeapon = mWeapon1;                                                                                  //|
             }
         }
         else
@@ -193,7 +205,23 @@ public class Player : Character
         mLaserDamage = 0;
         isDouleJumpEnabled = true;
         laserObj.SetActive(false);
-}
+
+        //----------------------------------------------------------------------------------//|
+        //- Mingzhuo Zhang Edit ------------------------------------------------------------//|
+        //----------------------------------------------------------------------------------//|
+        if (mWeapon1 != null)                                                               //|
+        {                                                                                   //|
+            mWeapon1.Picked(gameObject.transform, gameObject.transform.position);           //|    // second argument should be the [weapon position] as a individual variable in future
+        }                                                                                   //|
+        if (mWeapon2 != null)                                                               //|
+        {                                                                                   //|
+            mWeapon2.Picked(gameObject.transform, gameObject.transform.position);           //|    // second argument should be the [weapon position] as a individual variable in future
+        }                                                                                   //|
+                                                                                            //|
+        //----------------------------------------------------------------------------------//|
+        //- End Edit -----------------------------------------------------------------------//|
+        //----------------------------------------------------------------------------------//|
+    }
 
     new public void Update()
     {
@@ -216,4 +244,29 @@ public class Player : Character
     {
     }
 
+    //----------------------------------------------------------------------------------//|
+    //- Mingzhuo Zhang Edit ------------------------------------------------------------//|
+    //----------------------------------------------------------------------------------//|
+    public void PickWeaopn(Weapon newWeapon)                                            //|
+    {                                                                                   //|
+                                                                                        //|
+        if (mWeapon1 == null)                                                           //|
+        {                                                                               //|
+            mWeapon1 = newWeapon;                                                       //|
+            mWeapon1.Picked(gameObject.transform, gameObject.transform.position);       //|
+            if (mCurrentWeapon == null)                                                 //|
+                mCurrentWeapon = mWeapon1;                                              //|
+        }                                                                               //|
+        else if (mWeapon2 == null)                                                      //|--- [Mingzhuo Zhang] add a public function for pickUp weapon. This function will trigger by the collision of the weapon collider
+        {                                                                               //|
+            mWeapon2 = newWeapon;                                                       //|
+            mWeapon2.Picked(gameObject.transform, gameObject.transform.position);       //|
+            if (mCurrentWeapon == null)                                                 //|
+                mCurrentWeapon = mWeapon2;                                              //|
+        }                                                                               //|
+                                                                                        //|
+    }                                                                                   //|
+    //----------------------------------------------------------------------------------//|
+    //- End Edit -----------------------------------------------------------------------//|
+    //----------------------------------------------------------------------------------//|
 }

@@ -45,7 +45,12 @@ public class Enemy : Character
         mJumpStrength = 20.0f;
 
         Assert.IsNotNull(GetComponent<BoxCollider2D>(), "[Enemy] Dont have CapsuleCollider");                                      //|--- [SAFTY]: Check to see is there a Collider
-        //mAnimator = gameObject.GetComponent<Animator>();                                                                             //|--- [INIT]: Initialize animator
+        //mAnimator = gameObject.GetComponent<Animator>();                                                                         //|--- [INIT]: Initialize animator
+
+        if (mWeapon != null)
+        {
+            mWeapon.Picked(gameObject.transform, gameObject.transform.position); // second argument should be the [weapon position] as a individual variable in future
+        }
     }
 
     new public void Update()
