@@ -155,13 +155,15 @@ public class Weapon : MonoBehaviour
         Debug.Log("attacked");
     }
 
-    public void Picked(Transform ownerTransorm, Vector2 position)
+    public void Picked(GameObject owner, Vector2 position)
     {
+        gameObject.tag = owner.tag;
+
         InLevelBody.gameObject.SetActive(false);
         boxCollider.enabled = false;
         rb.isKinematic = true;
 
-        gameObject.transform.SetParent(ownerTransorm);
+        gameObject.transform.SetParent(owner.transform);
         gameObject.transform.position = position;
         gameObject.transform.rotation = new Quaternion();
     }
@@ -174,6 +176,8 @@ public class Weapon : MonoBehaviour
         boxCollider.enabled = true;
         InLevelBody.gameObject.SetActive(true);
         rb.AddForce(directionForce, ForceMode2D.Impulse);
+
+        gameObject.tag = "PickUp";
     }
 
     private void FixUpdate()

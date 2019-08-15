@@ -49,7 +49,7 @@ public class Enemy : Character
 
         if (mWeapon != null)
         {
-            mWeapon.Picked(gameObject.transform, gameObject.transform.position); // second argument should be the [weapon position] as a individual variable in future
+            mWeapon.Picked(gameObject, gameObject.transform.position); // second argument should be the [weapon position] as a individual variable in future
         }
     }
 
