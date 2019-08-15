@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 6546134547383184133}
   - component: {fileID: 362765046682594710}
   m_Layer: 8
-  m_Name: Weapon_ShotGun
+  m_Name: Weapon_shotgun
   m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -232,7 +232,7 @@ GameObject:
   - component: {fileID: 6600354966191971169}
   - component: {fileID: 1478221849226869436}
   m_Layer: 8
-  m_Name: sprite
+  m_Name: WeaponSprite
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -331,7 +331,7 @@ GameObject:
   - component: {fileID: 2484421366631451206}
   - component: {fileID: 8627927540468529358}
   m_Layer: 0
-  m_Name: pickupCollider
+  m_Name: PickupCollider
   m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
