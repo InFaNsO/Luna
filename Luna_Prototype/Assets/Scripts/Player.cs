@@ -24,8 +24,9 @@ public class Player : Character
     private int mLaserDamage;
     private bool isDouleJumpEnabled;
 
-    public GameObject laserObj;
+    public Laser laserObj;
     private float laserDuration;
+    private Animator laserAnimator;
 
     public bool GetDoubleJumpEnable()
     {
@@ -51,7 +52,9 @@ public class Player : Character
     {
         //if((mWeapon1 == null) && (mWeapon2 == null))
         //{
-            laserObj.SetActive(true);
+            laserObj.gameObject.SetActive(true);
+            laserObj.Fire();
+            laserAnimator.SetBool("IsShooting", true);
             laserDuration = 1.0f;
             mLaserDamage = 10;
             mCurrentHealth -= 10;
@@ -204,7 +207,7 @@ public class Player : Character
         mIFrameDistance = 40.0f;
         mLaserDamage = 0;
         isDouleJumpEnabled = true;
-        laserObj.SetActive(false);
+        laserObj.gameObject.SetActive(false);
 
         //----------------------------------------------------------------------------------//|
         //- Mingzhuo Zhang Edit ------------------------------------------------------------//|
@@ -218,6 +221,7 @@ public class Player : Character
             mWeapon2.Picked(gameObject, gameObject.transform.position);                     //|    // second argument should be the [weapon position] as a individual variable in future
         }                                                                                   //|
                                                                                             //|
+        laserAnimator = laserObj.GetComponentInChildren<Animator>();
         //----------------------------------------------------------------------------------//|
         //- End Edit -----------------------------------------------------------------------//|
         //----------------------------------------------------------------------------------//|
@@ -236,7 +240,7 @@ public class Player : Character
         }
         if(laserDuration <= 0)
         {
-            laserObj.SetActive(false);
+            laserObj.gameObject.SetActive(false);
         }
     }
 
@@ -264,6 +268,8 @@ public class Player : Character
             if (mCurrentWeapon == null)                                                 //|
                 mCurrentWeapon = mWeapon2;                                              //|
         }                                                                               //|
+                                                                                        //|
+        laserAnimator.SetBool("IsShooting", false);                                     //|
                                                                                         //|
     }                                                                                   //|
     //----------------------------------------------------------------------------------//|
