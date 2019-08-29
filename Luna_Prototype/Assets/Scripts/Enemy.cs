@@ -89,6 +89,12 @@ public class Enemy : Character
 
                 GetHit(other.GetComponent<Bullet>().Damage);
             }
+            else if (other.GetComponent<Laser>() != null)
+            {
+                Debug.Log("enemy collide with bullet!_2");
+
+                GetHit(other.GetComponent<Laser>().Damage);
+            }
         }
     }
 

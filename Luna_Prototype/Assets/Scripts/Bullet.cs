@@ -59,7 +59,6 @@ public class Bullet : MonoBehaviour
         {
             exitFrameCount--;
         }
-
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
