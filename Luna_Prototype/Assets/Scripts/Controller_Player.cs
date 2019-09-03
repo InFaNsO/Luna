@@ -17,6 +17,9 @@ public class Controller_Player : MonoBehaviour
     private int jumpCount;
     private Rigidbody2D rb;
 
+    private float dashRightWindow;
+    private float dashLeftWindow;
+
     private void Move()
     {
         if ((Input.GetAxisRaw(InputManager.GetMoveInput()) > 0 && !facingRight) || (Input.GetAxisRaw(InputManager.GetMoveInput()) < 0 && facingRight))
@@ -61,6 +64,32 @@ public class Controller_Player : MonoBehaviour
             {
                 transform.Translate(player.GetIFrameDistance() * Time.deltaTime, 0f, 0f);
             }
+        }
+    }
+
+    private void DashLeft()
+    {
+        if(Input.GetKeyDown("a"))
+        {
+            if(player.Dodge() && (dashLeftWindow > 0))
+            {
+                transform.Translate(player.GetIFrameDistance() * Time.deltaTime, 0f, 0f);
+            }
+            dashRightWindow = 0.0f;
+            dashLeftWindow = 1.0f;
+        }
+    }
+
+    private void DashRight()
+    {
+        if(Input.GetKeyDown("d"))
+        {
+            if (player.Dodge() && (dashRightWindow > 0))
+            {
+                transform.Translate(player.GetIFrameDistance() * Time.deltaTime, 0f, 0f);
+            }
+            dashLeftWindow = 0.0f;
+            dashRightWindow = 1.0f;
         }
     }
 
@@ -134,6 +163,8 @@ public class Controller_Player : MonoBehaviour
         {
             Debug.Log("[rb is null]");
         }
+        dashLeftWindow = 0.0f;
+        dashRightWindow = 0.0f;
     }
 
     void FixedUpdate()
@@ -145,6 +176,10 @@ public class Controller_Player : MonoBehaviour
         DropWeapon();
         SwitchWeapon();
         LaserAttack();
+        DashLeft();
+        DashRight();
+        dashLeftWindow -= Time.deltaTime;
+        dashRightWindow -= Time.deltaTime;
         attackDelay -= Time.deltaTime;
     }
 

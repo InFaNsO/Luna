@@ -28,6 +28,41 @@ public class Player : Character
     private float laserDuration;
     private Animator laserAnimator;
 
+
+    [SerializeField]
+    private int mLevel;
+    [SerializeField]
+    private int mCurrentExp;
+    [SerializeField]
+    private int mRequiredExp;
+    [SerializeField]
+    private int mAttack;
+    [SerializeField]
+    private int mDefense;
+
+    public void LevelUp()
+    {
+        mLevel++;
+        mCurrentExp = mCurrentExp - mRequiredExp;
+        mRequiredExp = 2 * mRequiredExp;
+        mAttack++;
+        mDefense++;
+    }
+
+    public void GainExp(int exp)
+    {
+        mCurrentExp += exp;
+    }
+
+    private void ExpCheck()
+    {
+        if(mCurrentExp >= mRequiredExp)
+        {
+            LevelUp();
+        }
+    }
+
+
     public bool GetDoubleJumpEnable()
     {
         return isDouleJumpEnabled;
@@ -242,6 +277,7 @@ public class Player : Character
         {
             laserObj.gameObject.SetActive(false);
         }
+        ExpCheck();
     }
 
     public void LateUpdate()
