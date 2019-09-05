@@ -11,10 +11,10 @@ GameObject:
   - component: {fileID: 109428899416447165}
   - component: {fileID: 109428899416447166}
   - component: {fileID: 109428899416447139}
+  - component: {fileID: 3975826814901664780}
   - component: {fileID: 109428899416447164}
   - component: {fileID: 109428899416447138}
   - component: {fileID: 109428899416447137}
-  - component: {fileID: 1025355741171563110}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -100,6 +100,20 @@ MonoBehaviour:
   facingRight: 0
   x: 0
   y: 0
+--- !u!114 &3975826814901664780
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109428899416447167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 11990ac667824744899f4d2aa0b39e1d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _EmptySprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
+  _player: {fileID: 109428899416447164}
 --- !u!114 &109428899416447164
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -115,7 +129,7 @@ MonoBehaviour:
   mMaxHealth: 100
   mCurrentHealth: 0
   mMovementSpeed: 0
-  mJumpStrength: 0
+  mJumpStrength: 300
   mWeapon1: {fileID: 0}
   mWeapon2: {fileID: 0}
   mCurrentWeapon: {fileID: 0}
@@ -125,6 +139,12 @@ MonoBehaviour:
   mIFrameDistance: 0
   mLaserDamage: 0
   laserObj: {fileID: 7919768267206995212}
+  mLevel: 0
+  mCurrentExp: 0
+  mRequiredExp: 0
+  mAttack: 0
+  mDefense: 0
+  _LocalLevelManager: {fileID: 0}
 --- !u!50 &109428899416447138
 Rigidbody2D:
   serializedVersion: 4
@@ -172,22 +192,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
---- !u!58 &1025355741171563110
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 109428899416447167}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.16
 --- !u!61 &7501919403433636403
 BoxCollider2D:
   m_ObjectHideFlags: 0
