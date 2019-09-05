@@ -20,6 +20,12 @@ public class Controller_Player : MonoBehaviour
     private float dashRightWindow;
     private float dashLeftWindow;
 
+    private float ratio;
+    [SerializeField]
+    private float totalAccelTime;
+    [SerializeField]
+    private float accelPercentagePerFrame;
+
     private void Move()
     {
         if ((Input.GetAxisRaw(InputManager.GetMoveInput()) > 0 && !facingRight) || (Input.GetAxisRaw(InputManager.GetMoveInput()) < 0 && facingRight))
@@ -28,8 +34,16 @@ public class Controller_Player : MonoBehaviour
         }
         if (InputManager.IsButtonPressed(InputManager.GetMoveInput()))
         {
-            x = Mathf.Abs(Input.GetAxisRaw(InputManager.GetMoveInput()) * Time.deltaTime * player.GetMoveSpeed());
+            if (ratio < totalAccelTime)
+            {
+                ratio += accelPercentagePerFrame * Time.deltaTime;
+            }
+            x = Mathf.Abs(Input.GetAxisRaw(InputManager.GetMoveInput()) * Time.deltaTime * player.GetMoveSpeed() * ratio);
             transform.Translate(x, 0f, 0f);
+        }
+        else
+        {
+            ratio = 0.0f;
         }
     }
 
@@ -165,6 +179,9 @@ public class Controller_Player : MonoBehaviour
         }
         dashLeftWindow = 0.0f;
         dashRightWindow = 0.0f;
+        ratio = 0.0f;
+        accelPercentagePerFrame = 1.6f;
+        totalAccelTime = 1.0f;
     }
 
     void FixedUpdate()

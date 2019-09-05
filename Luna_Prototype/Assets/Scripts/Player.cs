@@ -49,6 +49,8 @@ public class Player : Character
         mRequiredExp = 2 * mRequiredExp;
         mAttack++;
         mDefense++;
+        mMovementSpeed += 0.5f;
+        mJumpStrength += 25.0f;
     }
 
     public void GainExp(int exp)
@@ -245,12 +247,17 @@ public class Player : Character
         mIsIFrameOn = true;
         mIFrameCD = 4.0f;
         mIFrameDuration = 1.0f;
-        mMovementSpeed = 5.0f;
-        mJumpStrength = 300.0f;
+        mMovementSpeed = 3.5f;
+        mJumpStrength = 250.0f;
         mIFrameDistance = 40.0f;
         mLaserDamage = 0;
         isDouleJumpEnabled = true;
         laserObj.gameObject.SetActive(false);
+
+        mRequiredExp = 10;
+        mCurrentExp = 0;
+
+
 
         //----------------------------------------------------------------------------------//|
         //- Mingzhuo Zhang Edit ------------------------------------------------------------//|
