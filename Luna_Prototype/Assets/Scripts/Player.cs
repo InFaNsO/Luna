@@ -40,6 +40,8 @@ public class Player : Character
     [SerializeField]
     private int mDefense;
 
+    public LocalLevelManager _LocalLevelManager;                       //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
+
     public void LevelUp()
     {
         mLevel++;
@@ -92,7 +94,8 @@ public class Player : Character
             laserAnimator.SetBool("IsShooting", true);
             laserDuration = 1.0f;
             mLaserDamage = 10;
-            mCurrentHealth -= 10;
+            //mCurrentHealth -= 10;
+            UpdateHealth(-mLaserDamage);                                                                     //|--- [Mingzhuo Zhang] Edit: use update health function instead, so we can update UI
             Debug.Log("laser damage = 10, health - 10");
         //}
     }
@@ -187,7 +190,8 @@ public class Player : Character
         Debug.Log("[Player] Player receives damage");
         if (mIsIFrameOn == false)
         {
-            mCurrentHealth -= dmg;
+            //mCurrentHealth -= dmg;
+            UpdateHealth(-dmg);                                                                     //|--- [Mingzhuo Zhang] Edit: use update health function instead, so we can update UI
         }
 
         if(mCurrentHealth <= 0)
@@ -234,6 +238,10 @@ public class Player : Character
     new public void Awake()
     {
         base.Awake();
+
+        _LocalLevelManager = GameObject.Find("LocalLevelManager").GetComponent<LocalLevelManager>();    //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
+        Assert.IsNotNull(_LocalLevelManager, "[Player] _LocalLevelManager is null");                    //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
+
         mIsIFrameOn = true;
         mIFrameCD = 4.0f;
         mIFrameDuration = 1.0f;
@@ -307,6 +315,19 @@ public class Player : Character
                                                                                         //|
         laserAnimator.SetBool("IsShooting", false);                                     //|
                                                                                         //|
+    }                                                                                   //|
+    //----------------------------------------------------------------------------------//|
+    //- End Edit -----------------------------------------------------------------------//|
+    //----------------------------------------------------------------------------------//|
+
+
+    //----------------------------------------------------------------------------------//|
+    //- Mingzhuo Zhang Edit ------------------------------------------------------------//|
+    //----------------------------------------------------------------------------------//|
+    public void UpdateHealth(float changeValue)                                         //|
+    {                                                                                   //|
+        mCurrentHealth += changeValue;                                                  //|
+        _LocalLevelManager._InGameUI.UpdateHealthBar(mCurrentHealth / mMaxHealth);      //|--- [Mingzhuo Zhang] add a function for all heathchange event, that we can update ui all in one
     }                                                                                   //|
     //----------------------------------------------------------------------------------//|
     //- End Edit -----------------------------------------------------------------------//|
