@@ -247,7 +247,7 @@ public class Player : Character
         mIsIFrameOn = true;
         mIFrameCD = 4.0f;
         mIFrameDuration = 1.0f;
-        mMovementSpeed = 3.5f;
+        mMovementSpeed = 2.8f;
         mJumpStrength = 250.0f;
         mIFrameDistance = 40.0f;
         mLaserDamage = 0;
