@@ -1,13 +1,7 @@
-﻿//===========================================================================================================================================================
-// Filename:	Enemy.cs
-// Created by:	Mingzhuo Zhang
-// Description:	Store basic data structure for enemy game object
-//===========================================================================================================================================================
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Assertions;
+
 
 enum EnemyAnimation
 {
@@ -20,11 +14,25 @@ enum EnemyAnimation
 public class Enemy : Character
 {
     // Members ---------------------------------------------------------------------------------------------------------------
-    [SerializeField] Weapon mWeapon;
+    [SerializeField] private Weapon mWeapon;
+    [SerializeField] private SteeringModule mSteeringModule;
+    [SerializeField] private Agent mAgent;
+    [SerializeField] private World world;
 
     //private Animator mAnimator;
     bool mIsStuned = false;
     float mStunCounter;
+
+    public void Start()
+    {
+        mAgent = new Agent();
+        mSteeringModule = new SteeringModule();
+
+        mSteeringModule.Initialize();
+        mAgent.SetWorld(world);
+        mSteeringModule.SetAgent(mAgent);
+        world.AddAgent(mAgent);
+    }
 
     public float GetMoveSpeed()
     {
@@ -39,12 +47,14 @@ public class Enemy : Character
     // MonoBehaviour Functions -----------------------------------------------------------------------------------------------
     new public void Awake()
     {
-        base.Awake();
+        //base.Awake();
+
+        //Starter();
 
         mMovementSpeed = 5.0f;
         mJumpStrength = 20.0f;
 
-        Assert.IsNotNull(GetComponent<BoxCollider2D>(), "[Enemy] Dont have CapsuleCollider");                                      //|--- [SAFTY]: Check to see is there a Collider
+        //Assert.IsNotNull(GetComponent<BoxCollider2D>(), "[Enemy] Dont have CapsuleCollider");                                      //|--- [SAFTY]: Check to see is there a Collider
         //mAnimator = gameObject.GetComponent<Animator>();                                                                         //|--- [INIT]: Initialize animator
 
         if (mWeapon != null)
@@ -55,12 +65,13 @@ public class Enemy : Character
 
     new public void Update()
     {
-        base.Update();
+        Debug.Log("FUK!!!!!");
+        //base.Update();
 
         if (mIsStuned != true)
         {
             //Do AI here
-            HardCodeBehavior();
+            //HardCodeBehavior();
         }
         else
         {
@@ -71,10 +82,26 @@ public class Enemy : Character
             }
             mStunCounter -= Time.deltaTime;
         }
+        Vector2 pos = new Vector2(transform.position.x, transform.position.y);
+        mAgent.SetPosition(pos);
+
+        Vector2 v = mSteeringModule.Calculate();
+        v *= Time.deltaTime * mAgent.GetMaxSpeed();
+        mAgent.SetVelocity(v); 
+
+        v.x += transform.position.x;
+        v.y += transform.position.y;
+
+        Vector3 p = new Vector3(v.x, v.y, 0.0f);
+
+        transform.position = p;
+
+      //  transform.TransformVector(v.x, v.y, 0.0f);
     }
 
     public void LateUpdate()
     {
+        Debug.Log("FUK!!!!!");
         SetAnimator(EnemyAnimation.ToIdel);
     }
 
@@ -98,7 +125,7 @@ public class Enemy : Character
         }
     }
 
- 
+
     // Self-define Functions -----------------------------------------------------------------------------------------------
 
     public void Attack()
@@ -150,13 +177,13 @@ public class Enemy : Character
             case EnemyAnimation.None:
                 break;
             case EnemyAnimation.ToIdel:
-               // mAnimator.SetInteger("Condition", 0);
+                // mAnimator.SetInteger("Condition", 0);
                 break;
             case EnemyAnimation.Stun:
-               // mAnimator.SetInteger("Condition", 10);
+                // mAnimator.SetInteger("Condition", 10);
                 break;
             case EnemyAnimation.Attack:
-               // mAnimator.SetInteger("Condition", 8);
+                // mAnimator.SetInteger("Condition", 8);
                 break;
             default:
                 break;

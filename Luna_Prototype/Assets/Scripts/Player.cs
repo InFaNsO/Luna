@@ -237,9 +237,9 @@ public class Player : Character
         }
     }
 
-    new public void Awake()
+    public void Awake()
     {
-        base.Awake();
+        //base.Awake();
 
         _LocalLevelManager = GameObject.Find("LocalLevelManager").GetComponent<LocalLevelManager>();    //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
         Assert.IsNotNull(_LocalLevelManager, "[Player] _LocalLevelManager is null");                    //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
@@ -277,10 +277,10 @@ public class Player : Character
         //----------------------------------------------------------------------------------//|
     }
 
-    new public void Update()
+    public void Update()
     {
         //[TOFIX] in player move controller.cs ,  GetKeyUp vec3 should be (0,0,0) rather than (-1, 0, 0 )
-        base.Update();
+        //base.Update();
         mIFrameCD -= Time.deltaTime;
         mIFrameDuration -= Time.deltaTime;
         laserDuration -= Time.deltaTime;
