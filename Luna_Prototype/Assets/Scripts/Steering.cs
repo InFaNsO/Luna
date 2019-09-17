@@ -2,12 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum SteeringType
+{
+    Base,
+    Seek,
+    Arrive,
+    Wander,
+    WanderGround,
+    ObstacleAvoidance,
+}
+
 public abstract class SteeringBehaviour
 {
     protected bool mActive = false;
 
     public abstract Vector2 Calculate(Agent agent);
-    public abstract string GetName();
+    public abstract SteeringType GetName();
 
     public Vector2 Truncate(Vector2 v, float amount)
     {
@@ -36,9 +46,9 @@ public class SeekBehaviour : SteeringBehaviour
         return v;
     }
 
-    public override string GetName()
+    public override SteeringType GetName()
     {
-        return "Seek";
+        return SteeringType.Seek;
     }
 }
 
@@ -53,9 +63,9 @@ public class ArriveBehaviour : SteeringBehaviour
         return steer;
     }
 
-    public override string GetName()
+    public override SteeringType GetName()
     {
-        return "Arrive";
+        return SteeringType.Arrive;
     }
 }
 
@@ -90,12 +100,34 @@ public class WanderBehaviour : SteeringBehaviour
         steer = desired - agent.GetVelocity();
         steer /= agent.GetMass();
 
+        agent.SetDestination(target);
+
         return steer;
     }
 
-    public override string GetName()
+    public override SteeringType GetName()
     {
-        return "Wander";
+        return SteeringType.Wander;
+    }
+}
+
+public class WanderGrundBehaviour : SteeringBehaviour
+{
+    private struct Circle
+    {
+        public Vector2 center;
+        public float radius;
+    }
+
+
+    public override Vector2 Calculate(Agent agent)
+    {
+        return new Vector2(-1.0f, 1.0f);
+    }
+
+    public override SteeringType GetName()
+    {
+        return SteeringType.WanderGround;
     }
 }
 
@@ -281,9 +313,9 @@ public class ObstacleAvoidance : SteeringBehaviour
 
     }
 
-    public override string GetName()
+    public override SteeringType GetName()
     {
-        return "ObstacleAvoidance";
+        return SteeringType.ObstacleAvoidance;
     }
 }
 
@@ -302,17 +334,18 @@ public class SteeringModule
         WanderBehaviour wb = new WanderBehaviour();
         ObstacleAvoidance oa = new ObstacleAvoidance();
 
+        mBehaviours.Add(wb);
         mBehaviours.Add(sb);
         mBehaviours.Add(ab);
-        mBehaviours.Add(wb);
         mBehaviours.Add(oa);
+        mBehaviours.Add(new WanderGrundBehaviour());
 
         mBehaviours[0].SwichActive();
         mBehaviours[2].SwichActive();
         mBehaviours[3].SwichActive();
     }
 
-    public void SwitchActive(string name)
+    public void SwitchActive(SteeringType name)
     {
         for(int i = 0; i < mBehaviours.Count; ++i)
         {
@@ -331,7 +364,7 @@ public class SteeringModule
         }
     }
 
-    public bool IsActive(string name)
+    public bool IsActive(SteeringType name)
     {
         for (int i = 0; i < mBehaviours.Count; ++i)
         {
@@ -344,7 +377,7 @@ public class SteeringModule
     }
     public bool IsActive(int index)
     {
-        if(index < mBehaviours.Count)
+        if(index < mBehaviours.Count && index >=0)
         {
             return mBehaviours[index].IsActive();
         }
@@ -354,19 +387,19 @@ public class SteeringModule
     public Vector2 Calculate()
     {
         Vector2 total = new Vector2();
-        mAgent.SetDestination(mBehaviours[2].Calculate(mAgent));
-        total += mBehaviours[0].Calculate(mAgent);
-        return total;
-        //
-        //for(int i = 0; i < mBehaviours.Count; ++i)
-        //{
-        //    if(mBehaviours[i].IsActive())
-        //    {
-        //        total += (mBehaviours[i].Calculate(mAgent)).normalized;
-        //    }
-        //}
-        //
+        //mAgent.SetDestination(mBehaviours[2].Calculate(mAgent));
+        //total += mBehaviours[0].Calculate(mAgent);
         //return total;
+        //
+        for(int i = 0; i < mBehaviours.Count; ++i)
+        {
+            if(mBehaviours[i].IsActive())
+            {
+                total += (mBehaviours[i].Calculate(mAgent)).normalized;
+            }
+        }
+        
+        return total;
     }
 
 }

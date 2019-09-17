@@ -65,7 +65,6 @@ public class Enemy : Character
 
     new public void Update()
     {
-        Debug.Log("FUK!!!!!");
         //base.Update();
 
         if (mIsStuned != true)
@@ -85,8 +84,12 @@ public class Enemy : Character
         Vector2 pos = new Vector2(transform.position.x, transform.position.y);
         mAgent.SetPosition(pos);
 
+        SwitchWander(Time.deltaTime);
+
         Vector2 v = mSteeringModule.Calculate();
         v *= Time.deltaTime * mAgent.GetMaxSpeed();
+        v *= 0.1f;
+        SwitchWanderGround(v);
         mAgent.SetVelocity(v); 
 
         v.x += transform.position.x;
@@ -96,7 +99,11 @@ public class Enemy : Character
 
         transform.position = p;
 
-      //  transform.TransformVector(v.x, v.y, 0.0f);
+        //  transform.TransformVector(v.x, v.y, 0.0f);
+
+        //    Always turn off wanderer
+        if (mSteeringModule.IsActive(SteeringType.Wander))
+            mSteeringModule.SwitchActive(SteeringType.Wander);
     }
 
     public void LateUpdate()
@@ -201,5 +208,40 @@ public class Enemy : Character
             Attack();                                                                //|
         }                                                                            //|
     }                                                                                //|
-    //-------------------------------------------------------------------------------//|
+                                                                                     //-------------------------------------------------------------------------------//|
+
+    private float mTimerWander = 0.0f;
+    private float mMaxtimerWander = 5.0f;
+    private float mTimerWanderG = 0.0f;
+    private float mMaxtimerWanderG = 2.0f;
+
+    //Steering Handeler
+    private void SwitchWander(float deltaTime)
+    {
+        mTimerWander += deltaTime;
+        if(mTimerWander >= mMaxtimerWander)
+        {
+            mTimerWander = 0.0f;
+            mSteeringModule.SwitchActive(SteeringType.Wander);
+        }
+        else
+        {
+            Vector2 v = mAgent.GetDestination() - mAgent.GetPosition();
+            if(v.magnitude < 1f)
+            {
+                mTimerWander = 0.0f;
+                mSteeringModule.SwitchActive(SteeringType.Wander);
+            }
+        }
+    }
+    private void SwitchWanderGround(Vector2 v)
+    {
+        mTimerWanderG += Time.deltaTime;
+        if(mTimerWanderG > mMaxtimerWanderG)
+        {
+            mTimerWanderG = 0.0f;
+            v *= new Vector2(-1f, 1f);
+        }
+    }
+
 }
