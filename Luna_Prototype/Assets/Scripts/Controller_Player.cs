@@ -26,6 +26,10 @@ public class Controller_Player : MonoBehaviour
     [SerializeField]
     private float accelPercentagePerFrame;
 
+    [SerializeField]
+    private float airMoveRatio;
+    private float playerSpeed;
+
     private void Move()
     {
         if ((Input.GetAxisRaw(InputManager.GetMoveInput()) > 0 && !facingRight) || (Input.GetAxisRaw(InputManager.GetMoveInput()) < 0 && facingRight))
@@ -38,7 +42,15 @@ public class Controller_Player : MonoBehaviour
             {
                 ratio += accelPercentagePerFrame * Time.deltaTime;
             }
-            x = Mathf.Abs(Input.GetAxisRaw(InputManager.GetMoveInput()) * Time.deltaTime * player.GetMoveSpeed() * ratio);
+            if(!isGrounded)
+            {
+                playerSpeed = player.GetMoveSpeed() * airMoveRatio;
+            }
+            else
+            {
+                playerSpeed = player.GetMoveSpeed();
+            }
+            x = Mathf.Abs(Input.GetAxisRaw(InputManager.GetMoveInput()) * Time.deltaTime * playerSpeed * ratio);
             transform.Translate(x, 0f, 0f);
         }
         else
@@ -141,6 +153,7 @@ public class Controller_Player : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Ground"))
         {
+            isGrounded = true;
             if(player.GetDoubleJumpEnable())
             {
                 jumpCount = 2;
@@ -150,7 +163,15 @@ public class Controller_Player : MonoBehaviour
                 jumpCount = 1;
             }
         }
-    } 
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
+    {
+        if (collision.gameObject.CompareTag("Ground"))
+        {
+            isGrounded = false;
+        }
+    }
 
     void Awake()
     {
@@ -182,6 +203,8 @@ public class Controller_Player : MonoBehaviour
         ratio = 0.0f;
         accelPercentagePerFrame = 1.6f;
         totalAccelTime = 1.0f;
+        airMoveRatio = 0.5f;
+        playerSpeed = player.GetMoveSpeed();
     }
 
     void FixedUpdate()
