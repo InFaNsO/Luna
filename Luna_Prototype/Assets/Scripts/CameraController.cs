@@ -6,6 +6,7 @@ public class CameraController : MonoBehaviour
 {
 
     [Header("CameraFollowing")]
+    public bool following = true;
     /// <summary>
     /// camera look at
     /// </summary>
@@ -32,8 +33,7 @@ public class CameraController : MonoBehaviour
     [SerializeField]
     private Transform BottomRight;
 
-
-
+ 
     [Header("CameraShaking")] 
     [SerializeField]
     private float _shakeAmplitude = 0.1f;
@@ -47,15 +47,18 @@ public class CameraController : MonoBehaviour
         _pivot = transform.Find("Pivot");
 
         if (_pivot == null) Debug.Log("[CameraController] : no pivot  found ");
-        if (TopLeft == null) Debug.Log("[CameraController] : no TopLeft   found ");
-        if (BottomRight == null) Debug.Log("[CameraController] : no BottomRight found ");
+        if (TopLeft == null) Debug.Log("[CameraController] : no TopLeft Position  found ");
+        if (BottomRight == null) Debug.Log("[CameraController] : no BottomRight Position found ");
 
         SetCameraFocus(target);
         
     }
     private void FixedUpdate()
     {
-        cameraFollowing();
+        if (following)
+        {
+            cameraFollowing();
+        }
     }
 
     public void Shake()
@@ -82,33 +85,40 @@ public class CameraController : MonoBehaviour
 
     private void cameraFollowing()
     {
- 
+
+
         if ((_pivot.position.x > TopLeft.position.x && _pivot.position.x < BottomRight.position.x) && (Mathf.Abs(transform.position.x - _pivot.position.x) >= 0.0f))
         {
             transform.Translate((cameraFollowSpeedX * Time.deltaTime) * new Vector3((_pivot.position.x - transform.position.x), 0f, 0f));
+ 
         }
-        else if (_pivot.position.x < TopLeft.position.x)
+         else if ((_pivot.position.x < TopLeft.position.x) && ((TopLeft.position.x - transform.position.x) < 0.0f) )
         {
-            transform.position = new Vector3(TopLeft.position.x, transform.position.y, camera_z);
-        }
-        else if (_pivot.position.x > BottomRight.position.x)
+            transform.Translate((cameraFollowSpeedX * Time.deltaTime) * new Vector3((TopLeft.position.x - transform.position.x), 0f, 0f));
+
+         }
+        else if ((_pivot.position.x > BottomRight.position.x) && ((BottomRight.position.x - transform.position.x) > 0.0f))
         {
-            transform.position = new Vector3(BottomRight.position.x, transform.position.y, camera_z);
-        }
+            transform.Translate((cameraFollowSpeedX * Time.deltaTime) * new Vector3((BottomRight.position.x - transform.position.x), 0f, 0f));
+
+         }
 
 
         if ((_pivot.position.y < TopLeft.position.y && _pivot.position.y > BottomRight.position.y) && Mathf.Abs(transform.position.y - _pivot.position.y) >= 0.0f)
         {
             transform.Translate((cameraFollowSpeedY * Time.deltaTime) * new Vector3(0f, (_pivot.position.y - transform.position.y), 0f));
-        }
-        else if (_pivot.position.y > TopLeft.position.y)
+         }
+ 
+        else if ((_pivot.position.y > TopLeft.position.y) && ((TopLeft.position.y - transform.position.y) > 0.0f))
         {
-            transform.position = new Vector3(transform.position.x, TopLeft.position.y, camera_z);
-        }
-        else if (_pivot.position.y < BottomRight.position.y)
+            transform.Translate((cameraFollowSpeedY * Time.deltaTime) * new Vector3(0.0f, (TopLeft.position.y - transform.position.y), 0f));
+
+         }
+        else if ((_pivot.position.y < BottomRight.position.y) && ((BottomRight.position.y - transform.position.y) < 0.0f))
         {
-            transform.position = new Vector3(transform.position.x, BottomRight.position.y, camera_z);
-        }
+            transform.Translate((cameraFollowSpeedY * Time.deltaTime) * new Vector3(0.0f, (BottomRight.position.y - transform.position.y), 0f));
+
+         }
 
 
 
