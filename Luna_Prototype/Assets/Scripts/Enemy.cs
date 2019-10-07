@@ -108,7 +108,6 @@ public class Enemy : Character
 
     public void LateUpdate()
     {
-        Debug.Log("FUK!!!!!");
         SetAnimator(EnemyAnimation.ToIdel);
     }
 
