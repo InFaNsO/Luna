@@ -93,31 +93,31 @@ public class Controller_Player : MonoBehaviour
         }
     }
 
-    private void DashLeft()
-    {
-        if(Input.GetKeyDown("a"))
-        {
-            if(player.Dodge() && (dashLeftWindow > 0))
-            {
-                transform.Translate(player.GetIFrameDistance() * Time.deltaTime, 0f, 0f);
-            }
-            dashRightWindow = 0.0f;
-            dashLeftWindow = 1.0f;
-        }
-    }
+    //private void DashLeft()
+    //{
+    //    if(Input.GetKeyDown("a"))
+    //    {
+    //        if(player.Dodge() && (dashLeftWindow > 0))
+    //        {
+    //            transform.Translate(player.GetIFrameDistance() * Time.deltaTime, 0f, 0f);
+    //        }
+    //        dashRightWindow = 0.0f;
+    //        dashLeftWindow = 1.0f;
+    //    }
+    //}
 
-    private void DashRight()
-    {
-        if(Input.GetKeyDown("d"))
-        {
-            if (player.Dodge() && (dashRightWindow > 0))
-            {
-                transform.Translate(player.GetIFrameDistance() * Time.deltaTime, 0f, 0f);
-            }
-            dashLeftWindow = 0.0f;
-            dashRightWindow = 1.0f;
-        }
-    }
+    //private void DashRight()
+    //{
+    //    if(Input.GetKeyDown("d"))
+    //    {
+    //        if (player.Dodge() && (dashRightWindow > 0))
+    //        {
+    //            transform.Translate(player.GetIFrameDistance() * Time.deltaTime, 0f, 0f);
+    //        }
+    //        dashLeftWindow = 0.0f;
+    //        dashRightWindow = 1.0f;
+    //    }
+    //}
 
     private void DropWeapon()
     {
@@ -216,8 +216,8 @@ public class Controller_Player : MonoBehaviour
         DropWeapon();
         SwitchWeapon();
         LaserAttack();
-        DashLeft();
-        DashRight();
+        //DashLeft();
+        //DashRight();
         dashLeftWindow -= Time.deltaTime;
         dashRightWindow -= Time.deltaTime;
         attackDelay -= Time.deltaTime;
