@@ -6,11 +6,14 @@ public static class InputManager
 {
     private static string moveInput = "Move";
     private static string jumpInput = "Jump";
+    private static string moveJoyInput = "JoystickHorizontal";
+    private static string jumpJoyInput = "JoystickVertical";
     private static string attackInput = "Attack";
     private static string dodgeInput = "Dodge";
     private static string switchWeaponInput = "Switch";
     private static string dropWeaponInput = "Drop";
     private static string laserAttackInput = "Laser";
+
 
     public static string GetMoveInput()
     {
@@ -19,6 +22,16 @@ public static class InputManager
     public static string GetLaserAttackInput()
     {
         return laserAttackInput;
+    }
+
+    public static string GetJoystickHorizontal()
+    {
+        return moveJoyInput;
+    }
+
+    public static string GetJoystickVertical()
+    {
+        return jumpJoyInput;
     }
 
     public static string GetJumpInput()

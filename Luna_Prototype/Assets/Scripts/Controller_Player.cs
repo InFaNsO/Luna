@@ -36,7 +36,12 @@ public class Controller_Player : MonoBehaviour
         {
             Flip();
         }
-        if (InputManager.IsButtonPressed(InputManager.GetMoveInput()))
+        else if ((Input.GetAxisRaw(InputManager.GetJoystickHorizontal()) > 0 && !facingRight) || (Input.GetAxisRaw(InputManager.GetJoystickHorizontal()) < 0 && facingRight))
+        {
+            Flip();
+        }
+
+        if (InputManager.IsButtonPressed(InputManager.GetMoveInput()) || (Input.GetAxisRaw(InputManager.GetJoystickHorizontal()) != 0))
         {
             if (ratio < totalAccelTime)
             {
@@ -50,8 +55,20 @@ public class Controller_Player : MonoBehaviour
             {
                 playerSpeed = player.GetMoveSpeed();
             }
-            x = Mathf.Abs(Input.GetAxisRaw(InputManager.GetMoveInput()) * Time.deltaTime * playerSpeed * ratio);
-            transform.Translate(x, 0f, 0f);
+
+            if (InputManager.IsButtonPressed(InputManager.GetMoveInput()))
+            {
+                x = Mathf.Abs(Input.GetAxisRaw(InputManager.GetMoveInput()) * Time.deltaTime * playerSpeed * ratio);
+            }
+            //else if ((Input.GetAxisRaw(InputManager.GetJoystickHorizontal()) != 0))
+            //{
+            //    x = Mathf.Abs(Input.GetAxisRaw(InputManager.GetJoystickHorizontal()) * Time.deltaTime * playerSpeed * ratio);
+            //}
+            transform.Translate(x, 0.0f, 0.0f);
+            Vector3 pos = transform.position;
+            pos.z = 0.0f;
+            transform.position = pos;
+            x = 0.0f;
         }
         else
         {
@@ -146,7 +163,7 @@ public class Controller_Player : MonoBehaviour
     private void Flip()
     {
         facingRight = !facingRight;
-        transform.Rotate(0f, 180f, 0f);
+        transform.Rotate(0.0f, 180.0f, 0.0f);
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
