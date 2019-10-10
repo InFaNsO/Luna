@@ -54,7 +54,8 @@ public class Weapon : MonoBehaviour
         mParryContext.Reset();
         mBullet.Element = mElement;                                                                                            //|--- [INIT]: Initliaze the element of the bullet
 
-        mAnimator = gameObject.GetComponentInChildren<Animator>();                                                                                  //|--- [INIT]: Initliaze the animator
+        mAnimator = gameObject.GetComponentInChildren<Animator>();                                                             //|--- [INIT]: Initliaze the animator
+        mAnimator.speed = 1.0f / mAttackSpeed;
         Assert.IsNotNull(mAnimator, "[Weapon] Dont have an animtor");                                                          //|--- [SAFTY]: Check to see if Animator is null
 
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -84,7 +85,7 @@ public class Weapon : MonoBehaviour
         }
     }
 
-    void Update()
+    void FixedUpdate()
     {
         mParryContext.Update(Time.deltaTime);
 

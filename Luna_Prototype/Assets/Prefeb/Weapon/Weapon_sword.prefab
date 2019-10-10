@@ -84,7 +84,7 @@ MonoBehaviour:
   mType: 0
   mName: 
   mDamage: 50
-  mAttackSpeed: 1
+  mAttackSpeed: 0.5
   mParryContext:
     mTimeSlicePropotion:
     - 0.3
