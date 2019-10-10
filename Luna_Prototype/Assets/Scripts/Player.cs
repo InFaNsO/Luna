@@ -171,8 +171,14 @@ public class Player : Character
 
     public float GetAttackSpeed()
     {
-        return 1.0f;
-            //mCurrentWeapon.AttackSpeed;
+        if (mCurrentWeapon)
+        {
+            return mCurrentWeapon.AttackSpeed;
+        }
+        else
+        {
+            return 1.0f;
+        }
     }
 
     public bool Dodge()
