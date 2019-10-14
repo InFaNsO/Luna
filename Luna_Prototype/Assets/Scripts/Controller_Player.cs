@@ -20,6 +20,8 @@ public class Controller_Player : MonoBehaviour
     private float dashRightWindow;
     private float dashLeftWindow;
 
+    [SerializeField]
+    private bool isPlayerMoving;
     private float ratio;
     [SerializeField]
     private float totalAccelTime;
@@ -30,50 +32,58 @@ public class Controller_Player : MonoBehaviour
     private float airMoveRatio;
     private float playerSpeed;
 
+
+    [SerializeField]
+    private float joystickX;
     private void Move()
     {
-        if ((Input.GetAxisRaw(InputManager.GetMoveInput()) > 0 && !facingRight) || (Input.GetAxisRaw(InputManager.GetMoveInput()) < 0 && facingRight))
+        Flip();
+        //for movement, keyboard has priority over joystick
+        if (Input.GetAxisRaw(InputManager.GetMoveInput()) != 0.00f)
         {
-            Flip();
+            x = Mathf.Abs(Input.GetAxisRaw(InputManager.GetMoveInput()) * Time.deltaTime);
+            isPlayerMoving = true;
         }
-        else if ((Input.GetAxisRaw(InputManager.GetJoystickHorizontal()) > 0 && !facingRight) || (Input.GetAxisRaw(InputManager.GetJoystickHorizontal()) < 0 && facingRight))
+        else if(joystickX != 0)
         {
-            Flip();
+            x = Mathf.Abs(Input.GetAxisRaw(InputManager.GetJoystickHorizontal()) * Time.deltaTime);
+            isPlayerMoving = true;
+        }
+        else
+        {
+            x = 0.0f;
+            isPlayerMoving = false;
         }
 
-        if (InputManager.IsButtonPressed(InputManager.GetMoveInput()) || (Input.GetAxisRaw(InputManager.GetJoystickHorizontal()) != 0))
+        if(isPlayerMoving)
         {
             if (ratio < totalAccelTime)
             {
                 ratio += accelPercentagePerFrame * Time.deltaTime;
             }
-            if(!isGrounded)
+
+            x *= ratio;
+
+            if (!isGrounded)
             {
                 playerSpeed = player.GetMoveSpeed() * airMoveRatio;
+                x *= playerSpeed;
             }
             else
             {
                 playerSpeed = player.GetMoveSpeed();
+                x *= playerSpeed;
             }
-
-            if (InputManager.IsButtonPressed(InputManager.GetMoveInput()))
-            {
-                x = Mathf.Abs(Input.GetAxisRaw(InputManager.GetMoveInput()) * Time.deltaTime * playerSpeed * ratio);
-            }
-            //else if ((Input.GetAxisRaw(InputManager.GetJoystickHorizontal()) != 0))
-            //{
-            //    x = Mathf.Abs(Input.GetAxisRaw(InputManager.GetJoystickHorizontal()) * Time.deltaTime * playerSpeed * ratio);
-            //}
-            transform.Translate(x, 0.0f, 0.0f);
-            Vector3 pos = transform.position;
-            pos.z = 0.0f;
-            transform.position = pos;
-            x = 0.0f;
         }
         else
         {
             ratio = 0.0f;
         }
+
+        transform.Translate(x, 0.0f, 0.0f);
+        Vector3 pos = transform.position;
+        pos.z = 0.0f;
+        transform.position = pos;
     }
 
     private void Jump()
@@ -162,8 +172,17 @@ public class Controller_Player : MonoBehaviour
 
     private void Flip()
     {
-        facingRight = !facingRight;
-        transform.Rotate(0.0f, 180.0f, 0.0f);
+        joystickX = Mathf.Round(Input.GetAxisRaw(InputManager.GetJoystickHorizontal()) * 10) / 10;
+        if ((Input.GetAxisRaw(InputManager.GetMoveInput()) > 0 && !facingRight) || (Input.GetAxisRaw(InputManager.GetMoveInput()) < 0 && facingRight))
+        {
+            facingRight = !facingRight;
+            transform.Rotate(0.0f, 180.0f, 0.0f);
+        }
+        else if ((joystickX > 0 && !facingRight) || (joystickX < 0 && facingRight))
+        {
+            facingRight = !facingRight;
+            transform.Rotate(0.0f, 180.0f, 0.0f);
+        }
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -217,6 +236,7 @@ public class Controller_Player : MonoBehaviour
         }
         dashLeftWindow = 0.0f;
         dashRightWindow = 0.0f;
+        isPlayerMoving = false;
         ratio = 0.0f;
         accelPercentagePerFrame = 1.6f;
         totalAccelTime = 1.0f;
@@ -235,8 +255,8 @@ public class Controller_Player : MonoBehaviour
         LaserAttack();
         //DashLeft();
         //DashRight();
-        dashLeftWindow -= Time.deltaTime;
-        dashRightWindow -= Time.deltaTime;
+        //dashLeftWindow -= Time.deltaTime;
+        //dashRightWindow -= Time.deltaTime;
         attackDelay -= Time.deltaTime;
     }
 
