@@ -70,7 +70,7 @@ public class Enemy : Character
         if (mIsStuned != true)
         {
             //Do AI here
-            //HardCodeBehavior();
+            HardCodeBehavior();
         }
         else
         {
@@ -207,7 +207,7 @@ public class Enemy : Character
             Attack();                                                                //|
         }                                                                            //|
     }                                                                                //|
-                                                                                     //-------------------------------------------------------------------------------//|
+    //-------------------------------------------------------------------------------//|
 
     private float mTimerWander = 0.0f;
     private float mMaxtimerWander = 5.0f;

@@ -201,11 +201,6 @@ public class Player : Character
             //mCurrentHealth -= dmg;
             UpdateHealth(-dmg);                                                                     //|--- [Mingzhuo Zhang] Edit: use update health function instead, so we can update UI
         }
-
-        if(mCurrentHealth <= 0)
-        {
-            Die();
-        }
     }
     override public void Die()
     {
@@ -310,6 +305,27 @@ public class Player : Character
     //----------------------------------------------------------------------------------//|
     //- Mingzhuo Zhang Edit ------------------------------------------------------------//|
     //----------------------------------------------------------------------------------//|
+    void OnTriggerEnter2D(Collider2D other)                                             //|
+    {                                                                                   //|
+        if (other.tag != gameObject.tag)                                                //|
+        {                                                                               //|--- [Mingzhuo Zhang] make player can take dmage from bullet
+            Debug.Log("player collide with bullet!_1");                                 //|
+            if (other.GetComponent<Bullet>() != null)                                   //|
+            {                                                                           //|
+                Debug.Log("player collide with bullet!_2");                             //|
+                                                                                        //|
+                GetHit(other.GetComponent<Bullet>().Damage);                            //|
+            }                                                                           //|
+        }                                                                               //|
+    }                                                                                   //|
+    //----------------------------------------------------------------------------------//|
+    //- End Edit -----------------------------------------------------------------------//|
+    //----------------------------------------------------------------------------------//|
+
+
+    //----------------------------------------------------------------------------------//|
+    //- Mingzhuo Zhang Edit ------------------------------------------------------------//|
+    //----------------------------------------------------------------------------------//|
     public void PickWeaopn(Weapon newWeapon)                                            //|
     {                                                                                   //|
                                                                                         //|
@@ -343,6 +359,11 @@ public class Player : Character
     {                                                                                   //|
         mCurrentHealth += changeValue;                                                  //|
         _LocalLevelManager._InGameUI.UpdateHealthBar(mCurrentHealth / mMaxHealth);      //|--- [Mingzhuo Zhang] add a function for all heathchange event, that we can update ui all in one
+                                                                                        //|
+        if (mCurrentHealth <= 0)                                                        //|
+        {                                                                               //|
+            Die();                                                                      //|
+        }                                                                               //|
     }                                                                                   //|
     //----------------------------------------------------------------------------------//|
     //- End Edit -----------------------------------------------------------------------//|
