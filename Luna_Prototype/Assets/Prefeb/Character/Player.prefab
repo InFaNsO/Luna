@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 109428899416447165}
   - component: {fileID: 109428899416447166}
+  - component: {fileID: 4546233568323985899}
   - component: {fileID: 109428899416447139}
   - component: {fileID: 3975826814901664780}
   - component: {fileID: 109428899416447164}
@@ -85,6 +86,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &4546233568323985899
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109428899416447167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a7de60ed4e4ea3640a63e895a0e5a6ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &109428899416447139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -100,9 +113,11 @@ MonoBehaviour:
   facingRight: 0
   x: 0
   y: 0
+  isPlayerMoving: 0
   totalAccelTime: 0
   accelPercentagePerFrame: 0
   airMoveRatio: 0
+  joystickX: 0
 --- !u!114 &3975826814901664780
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -186,7 +201,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.282, y: 0.636}
+    oldSize: {x: 0.376, y: 0.848}
     newSize: {x: 0.6, y: 0.6}
     adaptiveTilingThreshold: 0.5
     drawMode: 0

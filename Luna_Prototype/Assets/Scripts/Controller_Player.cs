@@ -172,7 +172,7 @@ public class Controller_Player : MonoBehaviour
 
     private void Flip()
     {
-        joystickX = Mathf.Round(Input.GetAxisRaw(InputManager.GetJoystickHorizontal()) * 10) / 10;
+        joystickX = Mathf.Round(Input.GetAxisRaw(InputManager.GetJoystickHorizontal()));
         if ((Input.GetAxisRaw(InputManager.GetMoveInput()) > 0 && !facingRight) || (Input.GetAxisRaw(InputManager.GetMoveInput()) < 0 && facingRight))
         {
             facingRight = !facingRight;
