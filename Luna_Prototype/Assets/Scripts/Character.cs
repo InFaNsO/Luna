@@ -7,6 +7,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// merge test
 public abstract class Character : MonoBehaviour
 {
     [SerializeField]
