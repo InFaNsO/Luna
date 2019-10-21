@@ -16,7 +16,7 @@ public class Inventory : MonoBehaviour
     }
 
     public List<InventoryItemSlot> _slots = new List<InventoryItemSlot>();
-    int _totalSlot = 9;
+    private int _totalSlot = 9;
 
     void Awake()
     {
@@ -49,6 +49,10 @@ public class Inventory : MonoBehaviour
         {
             if (_slots[i].theItem.GetTypeName() == item.GetTypeName())
             {
+                _slots[i].itemCount++;
+                _slots[i].theItem = item;
+                _slots[i].theItem.DisableFromLevel();
+                _slots[i].sprite = item.GetSprite();
                 addSlot = i;
                 break;
             }
