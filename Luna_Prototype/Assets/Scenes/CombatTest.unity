@@ -2089,7 +2089,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &611535880
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2115,7 +2115,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 50, y: -189}
+  m_AnchoredPosition: {x: 50, y: -162}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &618036846
@@ -2367,7 +2367,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682335232}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -4.393, y: 0.682, z: 0}
+  m_LocalPosition: {x: -7.93, y: 1.11, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 678201490}
@@ -2391,7 +2391,7 @@ MonoBehaviour:
   mHeading: {x: 0, y: 0}
   mFinalDestination: {x: 0, y: 0}
   mMass: 100
-  mMaxSpeed: 10
+  mMaxSpeed: 5
   mSafeDistance: 10
   mRadius: 0.75
   world: {fileID: 1333234407}
@@ -3322,12 +3322,12 @@ MonoBehaviour:
   mHeading: {x: 0, y: 0}
   mFinalDestination: {x: 0, y: 0}
   mMass: 100
-  mMaxSpeed: 10
+  mMaxSpeed: 5
   mSafeDistance: 10
   mRadius: 0.75
   world: {fileID: 1333234407}
-  mMaxHealth: 10
-  mCurrentHealth: 1
+  mMaxHealth: 30
+  mCurrentHealth: 30
   mMovementSpeed: 30
   mJumpStrength: 0
   mWasTheCharacterInAnHazardInThePastSecond: 0
@@ -3395,7 +3395,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 918552309}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.99, y: 2.792, z: 0}
+  m_LocalPosition: {x: -3.61, y: 5.4, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 327585428}
@@ -4492,7 +4492,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -337, y: 169.91}
+  m_AnchoredPosition: {x: -439.2, y: 169.91}
   m_SizeDelta: {x: 48, y: 48}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1256853036
@@ -5716,8 +5716,8 @@ MonoBehaviour:
   mSafeDistance: 10
   mRadius: 0.75
   world: {fileID: 1333234407}
-  mMaxHealth: 10
-  mCurrentHealth: 1
+  mMaxHealth: 30
+  mCurrentHealth: 30
   mMovementSpeed: 30
   mJumpStrength: 0
   mWasTheCharacterInAnHazardInThePastSecond: 0
@@ -5785,7 +5785,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1596560154}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.543, y: 2.792, z: 0}
+  m_LocalPosition: {x: 7.47, y: 2.792, z: 0}
   m_LocalScale: {x: 0.25, y: 0.25, z: 0.25}
   m_Children:
   - {fileID: 1088888448}
