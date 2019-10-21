@@ -60,6 +60,7 @@ public class World : MonoBehaviour
     [SerializeField] private List<Wall> mWalls;
     [SerializeField] private List<Obstacle> mObstacles;
     [SerializeField] private List<Agent> mAgents;
+    [SerializeField] public Agent mPlayer;
 
     private int orientation(Vector2 p, Vector2 q, Vector2 r)
     {
@@ -147,13 +148,30 @@ public class World : MonoBehaviour
         w.from = new Vector2(-7.0f, 3.0f);
         w.to = new Vector2(-7.0f, 2.0f);
 
-        mWalls.Add(new Wall(new Vector2(-7.0f, 3.0f), new Vector2(-7.0f, 2.0f)));
-        mWalls.Add(new Wall(new Vector2(-7.0f, 2.0f), new Vector2(-1.0f, 2.0f)));
-        mWalls.Add(new Wall(new Vector2(-1.0f, 2.0f), new Vector2(-1.0f, 1.0f)));
-        mWalls.Add(new Wall(new Vector2(-1.0f, 1.0f), new Vector2(3.0f, 1.0f)));
-        mWalls.Add(new Wall(new Vector2(1.0f, 0.0f), new Vector2(-8.0f, 0.0f)));
-        mWalls.Add(new Wall(new Vector2(0.0f, 0.0f), new Vector2(0.0f, 1.0f)));
-        mWalls.Add(new Wall(new Vector2(-7.0f, 0.0f), new Vector2(-7.0f, 2.0f)));
+        // mWalls.Add(new Wall(new Vector2(-7.0f, 3.0f), new Vector2(-7.0f, 2.0f)));
+        // mWalls.Add(new Wall(new Vector2(-7.0f, 2.0f), new Vector2(-1.0f, 2.0f)));
+        // mWalls.Add(new Wall(new Vector2(-1.0f, 2.0f), new Vector2(-1.0f, 1.0f)));
+        // mWalls.Add(new Wall(new Vector2(-1.0f, 1.0f), new Vector2(3.0f, 1.0f)));
+        // mWalls.Add(new Wall(new Vector2(1.0f, 0.0f), new Vector2(-8.0f, 0.0f)));
+        // mWalls.Add(new Wall(new Vector2(0.0f, 0.0f), new Vector2(0.0f, 1.0f)));
+        // mWalls.Add(new Wall(new Vector2(-7.0f, 0.0f), new Vector2(-7.0f, 2.0f)));
+
+        mWalls.Add(new Wall(new Vector2(0.0f, 0.0f), new Vector2(1.0f, 0.0f)));
+        mWalls.Add(new Wall(new Vector2(1.0f, 0.0f), new Vector2(1.0f, 1.0f)));
+        mWalls.Add(new Wall(new Vector2(0.0f, 1.0f), new Vector2(0.0f, 0.0f)));
+        mWalls.Add(new Wall(new Vector2(0.0f, 1.0f), new Vector2(1.0f, 1.0f)));
+
+        mWalls.Add(new Wall(new Vector2(3.0f, 1.0f), new Vector2(4.0f, 1.0f)));
+        mWalls.Add(new Wall(new Vector2(4.0f, 1.0f), new Vector2(4.0f, 2.0f)));
+        mWalls.Add(new Wall(new Vector2(4.0f, 2.0f), new Vector2(3.0f, 2.0f)));
+        mWalls.Add(new Wall(new Vector2(3.0f, 2.0f), new Vector2(3.0f, 1.0f)));
+
+        mWalls.Add(new Wall(new Vector2(-2.0f, 1.0f), new Vector2(-3.0f, 1.0f)));
+        mWalls.Add(new Wall(new Vector2(-3.0f, 1.0f), new Vector2(-3.0f, 2.0f)));
+        mWalls.Add(new Wall(new Vector2(-3.0f, 2.0f), new Vector2(-2.0f, 2.0f)));
+        mWalls.Add(new Wall(new Vector2(-2.0f, 2.0f), new Vector2(-2.0f, 1.0f)));
+
+        mWalls.Add(new Wall(new Vector2(-6.0f, -2.0f), new Vector2(6.0f, 1.0f)));
     }
 
     public void AddWall(Wall w) { mWalls.Add(w); }
