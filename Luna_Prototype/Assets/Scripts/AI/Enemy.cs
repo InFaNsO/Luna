@@ -61,7 +61,7 @@ public class Enemy : Character
         }
     }
 
-    new public void Update()
+    public new void Update()
     {
         base.Update();
 
