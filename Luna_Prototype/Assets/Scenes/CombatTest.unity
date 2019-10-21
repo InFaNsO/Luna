@@ -3156,6 +3156,7 @@ GameObject:
   - component: {fileID: 1170277934}
   - component: {fileID: 1170277933}
   - component: {fileID: 1170277932}
+  - component: {fileID: 1170277935}
   m_Layer: 0
   m_Name: Platform (5)
   m_TagString: Untagged
@@ -3249,6 +3250,20 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1170277930}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1170277935
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1170277930}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 70394fe43f265364c93e8634bae9c35b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hazardDamage: 2
+  hazardDuration: 10
 --- !u!1 &1197795107
 GameObject:
   m_ObjectHideFlags: 0
@@ -3769,6 +3784,7 @@ GameObject:
   - component: {fileID: 1371492738}
   - component: {fileID: 1371492737}
   - component: {fileID: 1371492736}
+  - component: {fileID: 1371492739}
   m_Layer: 0
   m_Name: Platform (6)
   m_TagString: Untagged
@@ -3862,6 +3878,19 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1371492734}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &1371492739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371492734}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 531ff2660b9503540b0839061a0393bb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hazardDamage: 30
 --- !u!1 &1373211604
 GameObject:
   m_ObjectHideFlags: 0
@@ -4193,16 +4222,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2055398516}
     m_Modifications:
-    - target: {fileID: 4344426171327372247, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
-        type: 3}
-      propertyPath: m_Name
-      value: Weapon_ShotGun
-      objectReference: {fileID: 0}
-    - target: {fileID: 4344426171327372247, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5418935356144147944, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4257,6 +4276,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344426171327372247, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon_ShotGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344426171327372247, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdb806c51f2c08a48a1dd44476c2e4bc, type: 3}
@@ -5316,6 +5345,11 @@ PrefabInstance:
         type: 3}
       propertyPath: mMovementSpeed
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 109428899416447164, guid: d311b3f3097681b46a1df9b1524ca820,
+        type: 3}
+      propertyPath: mCurrentHealth
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 109428899416447137, guid: d311b3f3097681b46a1df9b1524ca820,
         type: 3}

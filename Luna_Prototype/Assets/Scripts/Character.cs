@@ -27,7 +27,7 @@ public abstract class Character : MonoBehaviour
     [SerializeField]
     private int mReceivedHazardDamage;
     [SerializeField]
-    private int mReceivedHazardDuration;
+    private float mReceivedHazardDuration;
 
     public bool isGrounded = false;                                    //|--- [Mingzhuo Zhang] Edit: I need to know is player is on ground or not for my weapon combo system
 
@@ -35,11 +35,31 @@ public abstract class Character : MonoBehaviour
     public abstract void Die();
 
 
-    public void ReceiveDebuff(int debuffDamage, int debuffDuration)
+    public void ReceiveDebuff(int debuffDamage, float debuffDuration)
     {
         mReceivedHazardDamage = debuffDamage;
         mReceivedHazardDuration = debuffDuration;
     }
+
+    public void DebuffTick()
+    {
+        if(mReceivedHazardDuration > 0)
+        {
+            GetHit(mReceivedHazardDamage);
+        }
+        Debug.Log("debuff tick");
+    }
+
+    public bool GetHazardBool()
+    {
+        return mWasTheCharacterInAnHazardInThePastSecond;
+    }
+
+    public void SetHazardBool()
+    {
+        mWasTheCharacterInAnHazardInThePastSecond = true;
+    }
+
 
     public void Awake()
     {
@@ -48,6 +68,7 @@ public abstract class Character : MonoBehaviour
         mReceiveHazardDebuffCD = 0.0f;
         mReceivedHazardDamage = 0;
         mReceivedHazardDuration = 0;
+        InvokeRepeating("DebuffTick", 0.1f, 1.0f);
     }
 
     public void Update()
@@ -57,7 +78,9 @@ public abstract class Character : MonoBehaviour
             Die();
         }
 
-        if(mWasTheCharacterInAnHazardInThePastSecond)
+        mReceivedHazardDuration -= Time.deltaTime;
+
+        if (mWasTheCharacterInAnHazardInThePastSecond)
         {
             mReceiveHazardDebuffCD += Time.deltaTime;
         }
@@ -67,6 +90,5 @@ public abstract class Character : MonoBehaviour
             mWasTheCharacterInAnHazardInThePastSecond = false;
             mReceiveHazardDebuffCD = 0.0f;
         }
-
     }
 }
