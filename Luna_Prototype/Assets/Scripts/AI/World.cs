@@ -144,10 +144,13 @@ public class World : MonoBehaviour
     }
     public void Start()
     {
+        mWalls = new List<Wall>();
+
         Wall w = new Wall();
         w.from = new Vector2(-7.0f, 3.0f);
         w.to = new Vector2(-7.0f, 2.0f);
 
+        mWalls.Add(w);
         // mWalls.Add(new Wall(new Vector2(-7.0f, 3.0f), new Vector2(-7.0f, 2.0f)));
         // mWalls.Add(new Wall(new Vector2(-7.0f, 2.0f), new Vector2(-1.0f, 2.0f)));
         // mWalls.Add(new Wall(new Vector2(-1.0f, 2.0f), new Vector2(-1.0f, 1.0f)));
@@ -172,6 +175,17 @@ public class World : MonoBehaviour
         mWalls.Add(new Wall(new Vector2(-2.0f, 2.0f), new Vector2(-2.0f, 1.0f)));
 
         mWalls.Add(new Wall(new Vector2(-6.0f, -2.0f), new Vector2(6.0f, 1.0f)));
+
+        mObstacles = new List<Obstacle>();
+        Obstacle o = new Obstacle();
+        o.center.x = 0.5f;
+        o.center.y = 0.5f;
+        o.radius = 0.5f;
+        mObstacles.Add(o);
+
+        o.center.x = 3.5f;
+        o.center.y = 1.5f;
+        mObstacles.Add(o);
     }
 
     public void AddWall(Wall w) { mWalls.Add(w); }

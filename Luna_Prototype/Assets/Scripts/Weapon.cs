@@ -218,6 +218,7 @@ public class Weapon : MonoBehaviour
         {
             if (other.GetComponent<Player>() != null)
             {
+                if (gameObject.CompareTag("PickUp"))
                 other.GetComponent<Player>().PickWeaopn(gameObject.GetComponent<Weapon>());
             }
         }

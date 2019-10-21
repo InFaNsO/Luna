@@ -2,19 +2,21 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class FlyEnemy : Enemy               //uses seek behaviour
+public class FlyingEnemy : Enemy               //uses seek behaviour
 {
     [SerializeField] private SteeringModule mSteeringModule;
 
+
+    private float timer = 0.0f;
     public new void Start()
     {
-        mAgent = new Agent();
+        //mAgent = new Agent();
         mSteeringModule = new SteeringModule();
 
         mSteeringModule.Initialize();
-        mAgent.SetWorld(world);
-        mSteeringModule.SetAgent(mAgent);
-        world.AddAgent(mAgent);
+        //mAgent.SetWorld(world);
+        mSteeringModule.SetAgent(this);
+        world.AddAgent(this);
 
         mSteeringModule.TurnAllOff();
         mSteeringModule.SetActive(SteeringType.Seek, true);
@@ -24,25 +26,30 @@ public class FlyEnemy : Enemy               //uses seek behaviour
     public new void Update()
     {
         Vector2 v = mSteeringModule.Calculate();
-        v *= Time.deltaTime * mAgent.GetMaxSpeed();
+        v *= Time.deltaTime * GetMaxSpeed();
         v *= 0.1f;
-        mAgent.SetVelocity(v);
+        SetVelocity(v);
 
 
         v.x += transform.position.x;
         v.y += transform.position.y;
 
+        SetHeading(v.normalized);
+
         Vector3 p = new Vector3(v.x, v.y, 0.0f);
 
         transform.position = p;
 
+        if (timer > 3.0f)
+            SetDestination(world.mPlayer.transform.position);
 
-        if ((mAgent.GetPosition() - world.mPlayer.GetPosition()).SqrMagnitude() > ((mAgent.GetRadius() + world.mPlayer.GetRadius()) * (mAgent.GetRadius() + world.mPlayer.GetRadius())))
+        if ((GetPosition() - world.mPlayer.GetPosition()).SqrMagnitude() < ((GetRadius() + world.mPlayer.GetRadius()) * (GetRadius() + world.mPlayer.GetRadius())))
         {
-            //do damage
+            mWeapon.Attack(false);
         }
 
-        mAgent.SetDestination(world.mPlayer.GetPosition());
+        SetDestination(world.mPlayer.GetPosition());
+        timer += Time.deltaTime;
     }
 }
 

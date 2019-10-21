@@ -15,8 +15,11 @@ public class Enemy : Character
 {
     // Members ---------------------------------------------------------------------------------------------------------------
     [SerializeField] protected Weapon mWeapon;
-    [SerializeField] protected Agent mAgent;
-    [SerializeField] protected World world;
+    [SerializeField] protected bool mIsDropping;
+    [SerializeField] protected Key mDropPrefbs;
+
+    //[SerializeField] protected Agent mAgent;
+    //[SerializeField] protected World world;
 
     //private Animator mAnimator;
     bool mIsStuned = false;
@@ -24,9 +27,9 @@ public class Enemy : Character
 
     public void Start()
     {
-        mAgent = new Agent();
-        mAgent.SetWorld(world);
-        world.AddAgent(mAgent);
+        //mAgent = new Agent();
+        //mAgent.SetWorld(world);
+        //world.AddAgent(mAgent);
     }
 
     public float GetMoveSpeed()
@@ -77,7 +80,7 @@ public class Enemy : Character
             mStunCounter -= Time.deltaTime;
         }
         Vector2 pos = new Vector2(transform.position.x, transform.position.y);
-        mAgent.SetPosition(pos);
+        SetPosition(pos);
     }
 
     public void LateUpdate()
@@ -118,6 +121,13 @@ public class Enemy : Character
     {
         //effect
         Debug.Log("enemy destory");
+
+        if(mIsDropping)
+        {
+            //spwn inventory
+            Instantiate(mDropPrefbs);
+
+        }
 
         // [Maybe] Update game Score
         // [Maybe] Change anmation state

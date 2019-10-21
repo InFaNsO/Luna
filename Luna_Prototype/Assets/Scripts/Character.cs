@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // merge test
-public abstract class Character : MonoBehaviour
+public abstract class Character : Agent
 {
     [SerializeField]
     protected float mMaxHealth;

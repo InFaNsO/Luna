@@ -231,7 +231,7 @@ public class ObstacleAvoidance : SteeringBehaviour
             {
                 Vector2 heading = it.point - agent.GetPosition();
                 float dot = Dot(heading, direction);
-                if (dot > 0.0f)
+                if (dot < 0.0f)
                 {
                     nearestWall = wall;
                     nearestDistance = it.distance;
@@ -248,8 +248,8 @@ public class ObstacleAvoidance : SteeringBehaviour
         Vector2 sight2 = agent.GetPosition() + (normVel * (agent.GetSafeDistance() * 0.5f));
         Vector2 desiredVelocity = new Vector2();
 
-        World.Obstacle nearestCircle = FindNearestObstacle(agent, normVel);
-        World.Wall nearestWall = FindNearestWall(agent, normVel);
+        World.Obstacle nearestCircle = FindNearestObstacle(agent, agent.GetHeading());
+        World.Wall nearestWall = FindNearestWall(agent, agent.GetHeading());
 
         bool wall = LineIntersectsWall(agent, sight1, sight2, nearestWall);
         if (nearestCircle.center.x < 0 && nearestCircle.center.y < 0)

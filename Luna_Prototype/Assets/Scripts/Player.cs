@@ -127,6 +127,7 @@ public class Player : Character
             {
                 Debug.Log("Weapon 1 dropped");
                 mWeapon1.ThrowAway(new Vector3(gameObject.transform.right.x, gameObject.transform.up.y, 0.0f));
+                mWeapon1.tag = "PickUp";
                 mWeapon1 = null;
                 mCurrentWeapon = null;
                 if (mWeapon2 != null)                                                                                           //|--- [Mingzhuo Zhang] Edit: achieve automatic switch weapon
@@ -138,6 +139,7 @@ public class Player : Character
             {
                 Debug.Log("Weapon 2 dropped");
                 mWeapon2.ThrowAway(new Vector3(gameObject.transform.right.x, gameObject.transform.up.y, 0.0f));
+                mWeapon2.tag = "PickUp";
                 mWeapon2 = null;
                 mCurrentWeapon = null;
 
