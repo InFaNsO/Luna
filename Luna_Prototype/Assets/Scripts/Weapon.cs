@@ -13,25 +13,34 @@ using UnityEngine.Serialization;
 public class Weapon : MonoBehaviour
 {
     // Members --------------------------------------------------------------------------------------------------------------
-    [SerializeField] protected Element mElement;
-    [SerializeField] protected WeaponGrade mGrade;
-    [SerializeField] protected WeaponType mType;
 
-    [SerializeField] protected string mName;
-    [SerializeField] protected int mDamage;
-    [SerializeField] protected float mAttackSpeed; // wait how many second to next attack
-    protected float mAttackSpeedCounter;
-    [SerializeField] ParryContext mParryContext;
+    //--------------------------------------------------------------------------//|
+    [SerializeField] protected Element mElement;                                //|
+    [SerializeField] protected WeaponGrade mGrade;                              //|--- TODO:: make them as WeaponPorperty struct
+    [SerializeField] public WeaponType mType;                                //|
+    [SerializeField] protected string mName;                                    //|
+                                                                                //--------------------------------------------------------------------------//|
 
-    [SerializeField] protected Bullet mBullet;
-    [SerializeField] protected Transform mFirePosition;
+    //[SerializeField] protected int mDamage;
+    //[SerializeField] protected float mAttackSpeed; // wait how many second to next attack
+    //protected float mAttackSpeedCounter;
+    //[SerializeField] ParryContext mParryContext;
+    //[SerializeField] protected Bullet mBullet;
+    //[SerializeField] protected Transform mFirePosition;
 
-    [SerializeField] protected GameObject InLevelBody;
-    [SerializeField] protected CircleCollider2D pickUpCollider;
-    [SerializeField] protected SpriteRenderer inlevelBody_spriteRender;
+    public WeaponMove[] mMoves;
+    [System.NonSerialized] public int mCurrentMoveIndex = 0;
+    public int mAirMoveIndex = 0;
+
+    //------------------------------------------------------------------------------------//|
+    [SerializeField] protected GameObject InLevelBody;                                    //|
+    [SerializeField] protected CircleCollider2D pickUpCollider;                           //|--- Render purpose
+    [SerializeField] protected SpriteRenderer inlevelBody_spriteRender;                   //|
+    //------------------------------------------------------------------------------------//|
 
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
+    public bool isOnGround = false;
 
     protected Animator mAnimator;
 
@@ -40,22 +49,13 @@ public class Weapon : MonoBehaviour
     private Transform _localLevelManagerTransform;
 
     // Getter & Setter -------------------------------------------------------------------------------------------------------
-    public float AttackSpeed { get { return mAttackSpeed; } set { mAttackSpeed = value; } }
+    //public float AttackSpeed { get { return mAttackSpeed; } set { mAttackSpeed = value; } }
 
     // MonoBehaviour Functions -----------------------------------------------------------------------------------------------
     public void Awake()
     {
-        Assert.IsNotNull(mBullet, "[Weapon] Dont have bullet");                                                                //|--- [SAFTY]: Check to see is there a bullet prefeb
-        Assert.AreNotEqual(mParryContext.mTimeSlicePropotion[0], 0.0f, "[Weapon] Parry context not initialized");              //|--- [SAFTY]: Check to see if parry context got initialized
-        Assert.AreNotEqual(mParryContext.mTimeSlicePropotion[1], 0.0f, "[Weapon] Parry context not initialized");              //|--- [SAFTY]: Check to see if parry context got initialized
-        Assert.AreEqual(mParryContext.mTimeSlicePropotion.Length, 2, "[Weapon] Parry context TimeSlice count should be 3");    //|--- [SAFTY]: Check to see if parry context TimeSlice count is 3
 
-        mParryContext.TotalTime = mAttackSpeed;                                                                                //|--- [INIT]: Initliaze the total time cycle for parry system in ParryContext
-        mParryContext.Reset();
-        mBullet.Element = mElement;                                                                                            //|--- [INIT]: Initliaze the element of the bullet
-
-        mAnimator = gameObject.GetComponentInChildren<Animator>();                                                             //|--- [INIT]: Initliaze the animator
-        mAnimator.speed = 1.0f / mAttackSpeed;
+        mAnimator = gameObject.GetComponentInChildren<Animator>();
         Assert.IsNotNull(mAnimator, "[Weapon] Dont have an animtor");                                                          //|--- [SAFTY]: Check to see if Animator is null
 
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -83,46 +83,49 @@ public class Weapon : MonoBehaviour
             default:
                 break;
         }
+
+        Assert.AreNotEqual(mMoves.Length, 0, "[Weapon] moves not initialized");
+
+        foreach (var move in mMoves)
+        {
+            move.Load(gameObject.GetComponent<Weapon>(), mAnimator, mElement);
+        }
     }
+
 
     void FixedUpdate()
     {
-        mParryContext.Update(Time.deltaTime);
-
-        if (mParryContext.Active)
+        if(mCurrentMoveIndex != -1)
         {
-            if (mParryContext.CurrentState == AttackState.AttackState_Parryable)
+            mMoves[mCurrentMoveIndex].Update(Time.deltaTime);
+            if (mMoves[mCurrentMoveIndex].IsFinish())
             {
-                //gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.green;
-            }
-            else if ((mParryContext.CurrentState == AttackState.AttackState_NonParryable) && (mHaveAttack == false))
-            {
-                ShootBullet();
-                mHaveAttack = true;
-                //gameObject.GetComponent<MeshRenderer>().materials[0].color = Color.red;
+                mCurrentMoveIndex = 0;
             }
         }
     }
 
     void LateUpdate()
     {
-        if (mAnimator.gameObject.activeSelf)
+        if ((mAnimator.gameObject.activeSelf)/*&&(mMoves[mCurrentMoveIndex].GetMoveCurrentTimeSliceType() == MoveTimeSliceType.Type_Reset)*/)
         {
             mAnimator.SetInteger("State", 0);
+            mAnimator.SetInteger("ToNextCombo", -1);
+            mAnimator.SetBool("IsReseting", false);
         }
     }
 
     // Self-define functions --------------------------------------------------------------------------------------------------
-    public AttackState GetAttackState()
+    public AttacState GetAttackState()
     {
-        AttackState ret = AttackState.AttackState_NonParryable;
+        AttacState ret = AttacState.State_NonParriable;
         switch (mType)
         {
             case WeaponType.Melee:
-                ret = mParryContext.CurrentState;
+                ret = mMoves[mCurrentMoveIndex].GetMoveCurrentTimeSliceType() == MoveTimeSliceType.Type_Parryable ? AttacState.State_Parriable : AttacState.State_NonParriable;
                 break;
             case WeaponType.Range:
-                ret = AttackState.AttackState_NonParryable;
+                ret = AttacState.State_NonParriable;
                 break;
             default:
                 break;
@@ -130,31 +133,51 @@ public class Weapon : MonoBehaviour
         return ret;
     }
 
-    public void Attack()
+    public void Attack(bool isOnGournd)
     {
-        Debug.Log("[Weapon] start attack 0");
-        if (mParryContext.Active == false)
+        var currentMove = mMoves[mCurrentMoveIndex];
+        if (!currentMove.IsActive())
         {
-            Debug.Log("[Weapon] start attack 1");
-            mParryContext.Active = true;
-            mHaveAttack = false;
-
-            if (mAnimator.gameObject.activeSelf)
+            if (isOnGournd)
             {
-                mAnimator.SetInteger("State", 1);
+                mAnimator.SetBool("IsOnGround", true);
+                mCurrentMoveIndex = mAirMoveIndex + 1;
+                mMoves[mCurrentMoveIndex].Enter();
+            }
+            else
+            {
+                mAnimator.SetBool("IsOnGround", false);
+                mCurrentMoveIndex = mAirMoveIndex;
+                mMoves[mCurrentMoveIndex].Enter();
             }
 
-            Debug.Log(mParryContext.Active);
+        }
+        else
+        {
+            if (currentMove.GetMoveCurrentTimeSliceType() == MoveTimeSliceType.Type_Transition)
+            {
+                mCurrentMoveIndex = currentMove.GetNextTransitionMoveIndex();
+                currentMove.Exit();
+                mMoves[mCurrentMoveIndex].Enter();
+            }
         }
 
     }
 
-    public void ShootBullet()
+    public void WeaponReset()
     {
-        Bullet newBullet = Instantiate(mBullet, new Vector3(0, 0, 0), Quaternion.identity);
-        newBullet.Fire(gameObject.tag, mDamage, gameObject.transform.TransformPoint(gameObject.transform.localPosition + mFirePosition.localPosition), gameObject.transform.right, mType);
-        Debug.Log("attacked");
+        mAnimator.SetBool("IsReseting", true);
+        foreach (var move in mMoves)
+        {
+            move.Reset();
+        }
     }
+
+    public float GetCurrentAttackTime()
+    {
+        return mMoves[mCurrentMoveIndex].mAttackSpendTime;
+    }
+
 
     public void Picked(GameObject owner, Vector2 position)
     {

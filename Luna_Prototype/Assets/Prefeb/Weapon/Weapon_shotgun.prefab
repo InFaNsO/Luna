@@ -53,17 +53,46 @@ MonoBehaviour:
   mGrade: 2
   mType: 1
   mName: 
-  mDamage: 10
-  mAttackSpeed: 0.5
-  mParryContext:
-    mTimeSlicePropotion:
-    - 0.1
-    - 0.1
-  mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05, type: 3}
-  mFirePosition: {fileID: 5993130400498516385}
+  mMoves:
+  - mDamage: 10
+    mAttackSpeedMutiplier: 1
+    mMoveContext:
+      mMoveTimeSlices:
+      - mType: 1
+        mTimeSlicePropotion: 0.2
+      - mType: 2
+        mTimeSlicePropotion: 0.3
+      - mType: 3
+        mTimeSlicePropotion: 0.7
+      - mType: 4
+        mTimeSlicePropotion: 1
+    mToMoveId: 00000000
+    mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05,
+      type: 3}
+    mFirePosition: {fileID: 5993130400498516385}
+    mAnimationClip: {fileID: 7400000, guid: 0f5811181193cf54196f396775932080, type: 2}
+  - mDamage: 10
+    mAttackSpeedMutiplier: 1
+    mMoveContext:
+      mMoveTimeSlices:
+      - mType: 1
+        mTimeSlicePropotion: 0.2
+      - mType: 2
+        mTimeSlicePropotion: 0.3
+      - mType: 3
+        mTimeSlicePropotion: 0.7
+      - mType: 0
+        mTimeSlicePropotion: 1
+    mToMoveId: 00000000
+    mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05,
+      type: 3}
+    mFirePosition: {fileID: 5993130400498516385}
+    mAnimationClip: {fileID: 7400000, guid: 0f5811181193cf54196f396775932080, type: 2}
+  mAirMoveIndex: 0
   InLevelBody: {fileID: 5109421896086811871}
   pickUpCollider: {fileID: 8627927540468529358}
   inlevelBody_spriteRender: {fileID: 2034812478211811839}
+  isOnGround: 0
 --- !u!50 &6546134547383184133
 Rigidbody2D:
   serializedVersion: 4

@@ -190,7 +190,9 @@ public class Controller_Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = true;
-            if(player.GetDoubleJumpEnable())
+            player.isGrounded = true; //|--- [Mingzhuo Zhang] Edit: I need to know is player is on ground or not for my weapon combo system
+
+            if (player.GetDoubleJumpEnable())
             {
                 jumpCount = 2;
             }
@@ -206,6 +208,7 @@ public class Controller_Player : MonoBehaviour
         if (collision.gameObject.CompareTag("Ground"))
         {
             isGrounded = false;
+            player.isGrounded = false;  //|--- [Mingzhuo Zhang] Edit: I need to know is player is on ground or not for my weapon combo system
         }
     }
 

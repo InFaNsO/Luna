@@ -136,7 +136,7 @@ public class Enemy : Character
 
     public void Attack()
     {
-        mWeapon.Attack();
+        mWeapon.Attack(isGrounded);
         SetAnimator(EnemyAnimation.Attack);
     }
 
@@ -157,7 +157,7 @@ public class Enemy : Character
     {
         mCurrentHealth -= dmg;
 
-        if (mWeapon.GetAttackState() == AttackState.AttackState_Parryable)
+        if (mWeapon.GetAttackState() == AttacState.State_Parriable)
         {
             GetStun(1.5f);
         }
