@@ -29,6 +29,8 @@ public abstract class Character : MonoBehaviour
     [SerializeField]
     private int mReceivedHazardDuration;
 
+    public bool isGrounded = false;                                    //|--- [Mingzhuo Zhang] Edit: I need to know is player is on ground or not for my weapon combo system
+
     public abstract void GetHit(float dmg);
     public abstract void Die();
 

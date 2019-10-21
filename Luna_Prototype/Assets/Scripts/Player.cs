@@ -41,6 +41,7 @@ public class Player : Character
     private int mDefense;
 
     public LocalLevelManager _LocalLevelManager;                       //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
+    
 
     public void LevelUp()
     {
@@ -173,7 +174,7 @@ public class Player : Character
     {
         if (mCurrentWeapon)
         {
-            return mCurrentWeapon.AttackSpeed;
+            return mCurrentWeapon.GetCurrentAttackTime();
         }
         else
         {
@@ -220,19 +221,19 @@ public class Player : Character
             {
                 mCurrentWeapon = mWeapon1;
                 Debug.Log("Weapon 1 equipped");
-                mCurrentWeapon.Attack();
+                mCurrentWeapon.Attack(isGrounded);
             }
             else
             {
                 mCurrentWeapon = mWeapon2;
                 Debug.Log("Weapon 2 equipped");
-                mCurrentWeapon.Attack();
+                mCurrentWeapon.Attack(isGrounded);
             }
         }
         else if(mCurrentWeapon != null)
         {
             Debug.Log("current weapon attack");
-            mCurrentWeapon.Attack();
+            mCurrentWeapon.Attack(isGrounded);
         }
         else
         {
