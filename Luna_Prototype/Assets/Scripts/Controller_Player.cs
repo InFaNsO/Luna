@@ -109,16 +109,16 @@ public class Controller_Player : MonoBehaviour
         }
     }
 
-    private void Dodge()
-    {
-        if (InputManager.IsButtonPressed(InputManager.GetDodgeInput()))
-        {
-            if (player.Dodge())
-            {
-                transform.Translate(player.GetIFrameDistance() * Time.deltaTime, 0f, 0f);
-            }
-        }
-    }
+    //private void Dodge()
+    //{
+    //    if (InputManager.IsButtonPressed(InputManager.GetDodgeInput()))
+    //    {
+    //        if (player.Dodge())
+    //        {
+    //            transform.Translate(player.GetIFrameDistance() * Time.deltaTime, 0f, 0f);
+    //        }
+    //    }
+    //}
 
     //private void DashLeft()
     //{
@@ -252,7 +252,7 @@ public class Controller_Player : MonoBehaviour
         Jump();
         Move();
         Attack();
-        Dodge();
+        //Dodge();
         DropWeapon();
         SwitchWeapon();
         LaserAttack();

@@ -45,7 +45,7 @@ public class Enemy : Character
     // MonoBehaviour Functions -----------------------------------------------------------------------------------------------
     new public void Awake()
     {
-        //base.Awake();
+        base.Awake();
 
         //Starter();
 
@@ -63,7 +63,7 @@ public class Enemy : Character
 
     new public void Update()
     {
-        //base.Update();
+        base.Update();
 
         if (mIsStuned != true)
         {

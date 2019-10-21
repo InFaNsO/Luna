@@ -12,14 +12,14 @@ public class Player : Character
     [SerializeField]
     private Weapon mCurrentWeapon;
 
-    [SerializeField]
-    private bool mIsIFrameOn;
-    [SerializeField]
-    private float mIFrameCD;
-    [SerializeField]
-    private float mIFrameDuration;
-    [SerializeField]
-    private float mIFrameDistance;
+    //[SerializeField]
+    //private bool mIsIFrameOn;
+    //[SerializeField]
+    //private float mIFrameCD;
+    //[SerializeField]
+    //private float mIFrameDuration;
+    //[SerializeField]
+    //private float mIFrameDistance;
     [SerializeField]
     private int mLaserDamage;
     private bool isDouleJumpEnabled;
@@ -83,10 +83,10 @@ public class Player : Character
         return mJumpStrength;
     }
 
-    public float GetIFrameDistance()
-    {
-        return mIFrameDistance;
-    }
+    //public float GetIFrameDistance()
+    //{
+    //    return mIFrameDistance;
+    //}
 
     public void LaserAttack()
     {
@@ -184,26 +184,24 @@ public class Player : Character
         }
     }
 
-    public bool Dodge()
-    {
-        if(mIFrameCD <= 0)
-        {
-            mIsIFrameOn = true;
-            mIFrameDuration = 1;
-            mIFrameCD = 4;
-            return true;
-        }
-        return false;
-    }
+    //public bool Dodge()
+    //{
+    //    if(mIFrameCD <= 0)
+    //    {
+    //        mIsIFrameOn = true;
+    //        mIFrameDuration = 1;
+    //        mIFrameCD = 4;
+    //        return true;
+    //    }
+    //    return false;
+    //}
 
     override public void GetHit(float dmg)
     {
         Debug.Log("[Player] Player receives damage");
-        if (mIsIFrameOn == false)
-        {
+        //if (mIsIFrameOn == false)
             //mCurrentHealth -= dmg;
             UpdateHealth(-dmg);                                                                     //|--- [Mingzhuo Zhang] Edit: use update health function instead, so we can update UI
-        }
     }
     override public void Die()
     {
@@ -245,17 +243,17 @@ public class Player : Character
 
     public void Awake()
     {
-        //base.Awake();
+        base.Awake();
 
         _LocalLevelManager = GameObject.Find("LocalLevelManager").GetComponent<LocalLevelManager>();    //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
         Assert.IsNotNull(_LocalLevelManager, "[Player] _LocalLevelManager is null");                    //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
 
-        mIsIFrameOn = true;
-        mIFrameCD = 4.0f;
-        mIFrameDuration = 1.0f;
+        //mIsIFrameOn = true;
+        //mIFrameCD = 4.0f;
+        //mIFrameDuration = 1.0f;
         mMovementSpeed = 2.8f;
         mJumpStrength = 250.0f;
-        mIFrameDistance = 40.0f;
+        //mIFrameDistance = 40.0f;
         mLaserDamage = 0;
         isDouleJumpEnabled = true;
         laserObj.gameObject.SetActive(false);
@@ -286,14 +284,14 @@ public class Player : Character
     public void Update()
     {
         //[TOFIX] in player move controller.cs ,  GetKeyUp vec3 should be (0,0,0) rather than (-1, 0, 0 )
-        //base.Update();
-        mIFrameCD -= Time.deltaTime;
-        mIFrameDuration -= Time.deltaTime;
+        base.Update();
+        //mIFrameCD -= Time.deltaTime;
+        //mIFrameDuration -= Time.deltaTime;
         laserDuration -= Time.deltaTime;
-        if (mIFrameDuration <= 0)
-        {
-            mIsIFrameOn = false;
-        }
+        //if (mIFrameDuration <= 0)
+        //{
+        //    mIsIFrameOn = false;
+        //}
         if(laserDuration <= 0)
         {
             laserObj.gameObject.SetActive(false);
