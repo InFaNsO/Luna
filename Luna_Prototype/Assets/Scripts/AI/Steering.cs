@@ -30,6 +30,7 @@ public abstract class SteeringBehaviour
     }
 
     public void SwichActive() { mActive = !mActive; }
+    public void SetActive(bool act) { mActive = act; }
     public bool IsActive() { return mActive; }
 }
 
@@ -41,7 +42,7 @@ public class SeekBehaviour : SteeringBehaviour
         v = agent.GetDestination() - agent.GetPosition();
         v.Normalize();
         v *= agent.GetMaxSpeed();
-        v -= agent.GetVelocity();
+       // v -= agent.GetVelocity();
         v /= agent.GetMass();
         return v;
     }
@@ -345,6 +346,21 @@ public class SteeringModule
         mBehaviours[3].SwichActive();
     }
 
+    public void TurnAllOn()
+    {
+        for (int i = 0; i < mBehaviours.Count; ++i)
+        {
+            mBehaviours[i].SetActive(true);
+        }
+    }
+    public void TurnAllOff()
+    {
+        for (int i = 0; i < mBehaviours.Count; ++i)
+        {
+            mBehaviours[i].SetActive(false);
+        }
+    }
+
     public void SwitchActive(SteeringType name)
     {
         for(int i = 0; i < mBehaviours.Count; ++i)
@@ -382,6 +398,25 @@ public class SteeringModule
             return mBehaviours[index].IsActive();
         }
         return false;
+    }
+
+    public void SetActive(SteeringType name, bool active)
+    {
+        for (int i = 0; i < mBehaviours.Count; ++i)
+        {
+            if (mBehaviours[i].GetName() == name)
+            {
+                mBehaviours[i].SetActive(active);
+                return;
+            }
+        }
+    }
+    public void SetActive(int index, bool active)
+    {
+        if (index < mBehaviours.Count && index >= 0)
+        {
+            mBehaviours[index].SetActive(active);
+        }
     }
 
     public Vector2 Calculate()
