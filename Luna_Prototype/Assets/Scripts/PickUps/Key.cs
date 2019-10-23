@@ -6,7 +6,6 @@ using System;
 public class Key : MonoBehaviour, IInventoryItem
 {
     public Sprite _sprite;
-
     public void DisableFromLevel()
     {
         gameObject.SetActive(false);
@@ -26,45 +25,27 @@ public class Key : MonoBehaviour, IInventoryItem
     {
         //unlock door
         GameObject[] doors = GameObject.FindGameObjectsWithTag("Door");
-        GameObject door = null; //to-be closest door
+        doors = GameObject.FindGameObjectsWithTag("Door");
+        EnvObj_Door door = null; //to-be closest door
         float nd = 0;
         float d = 0;
         for (int i = 0; i < doors.Length; i++)
         {
-            if(doors.Length == 1) // there is only one door
+            door = doors[i].GetComponent<EnvObj_Door>();
+            if (door != null)
             {
-                door = doors[i];
-                break;
-            }
-            else
-            {
-                Vector2 player_pos = thePlayer.transform.position;
-                Vector2 door_pos = doors[i].transform.position;
-                if (i == 0)
+                if (door.collidePlayer && door.locked && door.isActiveAndEnabled)
                 {
-                    d = Vector2.Distance(player_pos, door_pos);
-                    nd = Vector2.Distance(player_pos, door_pos);
-                    door = doors[i];
+                    break;
                 }
-                else
-                {
-                    nd = Vector2.Distance(player_pos, door_pos);
-                }
-
-                if(nd < d)
-                {
-                    door = doors[i];
-                }
-                ++i;
             }
         } //find closest door
 
-        if (door != null) //Unlock the door
+        if (door != null && door.locked) //Unlock the door
         {
-            EnvObj_Door mDoor = door.GetComponent<EnvObj_Door>();
-            if (mDoor.collidePlayer)
+            if (door.collidePlayer)
             {
-                mDoor.Unlock();
+                door.Unlock();
                 return false; //Place holder
             }
         }
