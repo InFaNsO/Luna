@@ -2,24 +2,22 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class PoisonHazard : Hazard
+public class DamageHazard : Hazard
 {
-    [SerializeField]
-    private float hazardDuration;
-
-    private void OnCollisionStay2D(Collision2D collision)
+    public void OnCollisionStay2D(Collision2D collision)
     {
         Character cha = collision.gameObject.GetComponent<Character>();
-        if (cha != null)
-            cha.ReceiveDebuff(hazardDamage, hazardDuration);
-            Debug.Log("PoisonDebuff");
+        if (cha != null && !cha.GetHazardBool())
+        {
+            cha.GetHit(hazardDamage);
+            cha.SetHazardBool();
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        hazardDamage = 2;
-        hazardDuration = 10;
+        hazardDamage = 10;
     }
 
     // Update is called once per frame

@@ -5,6 +5,9 @@ using UnityEngine;
 public class Controller_Player : MonoBehaviour
 {
     [SerializeField]
+    private Animator anim;
+
+    [SerializeField]
     private bool facingRight;
     [SerializeField]
     private float x;
@@ -17,8 +20,8 @@ public class Controller_Player : MonoBehaviour
     private int jumpCount;
     private Rigidbody2D rb;
 
-    private float dashRightWindow;
-    private float dashLeftWindow;
+    //private float dashRightWindow;
+    //private float dashLeftWindow;
 
     [SerializeField]
     private bool isPlayerMoving;
@@ -84,12 +87,22 @@ public class Controller_Player : MonoBehaviour
         Vector3 pos = transform.position;
         pos.z = 0.0f;
         transform.position = pos;
+
+        if(isPlayerMoving)
+        {
+            anim.SetBool("isRunning", true);
+        }
+        else
+        {
+            anim.SetBool("isRunning", false);
+        }
     }
 
     private void Jump()
     {
         if (InputManager.IsButtonDown(InputManager.GetJumpInput()) && jumpCount > 0)
         {
+            anim.SetTrigger("jump");
             y = Input.GetAxisRaw(InputManager.GetJumpInput()) * Time.deltaTime * player.GetJumpStrength();
             //y = player.GetJumpStrength();
             //transform.Translate(0f, y, 0f);
@@ -216,6 +229,8 @@ public class Controller_Player : MonoBehaviour
 
     void Awake()
     {
+        anim = GetComponent<Animator>();
+
         player = gameObject.GetComponent<Player>();
         if (player == null)
         {
@@ -239,14 +254,15 @@ public class Controller_Player : MonoBehaviour
         {
             Debug.Log("[rb is null]");
         }
-        dashLeftWindow = 0.0f;
-        dashRightWindow = 0.0f;
+        //dashLeftWindow = 0.0f;
+        //dashRightWindow = 0.0f;
         isPlayerMoving = false;
         ratio = 0.0f;
         accelPercentagePerFrame = 1.6f;
         totalAccelTime = 1.0f;
         airMoveRatio = 0.5f;
         playerSpeed = player.GetMoveSpeed();
+
     }
 
     void FixedUpdate()
