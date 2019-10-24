@@ -175,11 +175,13 @@ public class Controller_Player : MonoBehaviour
         joystickX = Mathf.Round(Input.GetAxisRaw(InputManager.GetJoystickHorizontal()));
         if ((Input.GetAxisRaw(InputManager.GetMoveInput()) > 0 && !facingRight) || (Input.GetAxisRaw(InputManager.GetMoveInput()) < 0 && facingRight))
         {
+            Debug.Log("keyboard working");
             facingRight = !facingRight;
             transform.Rotate(0.0f, 180.0f, 0.0f);
         }
         else if ((joystickX > 0 && !facingRight) || (joystickX < 0 && facingRight))
         {
+            Debug.Log("contoller working");
             facingRight = !facingRight;
             transform.Rotate(0.0f, 180.0f, 0.0f);
         }
