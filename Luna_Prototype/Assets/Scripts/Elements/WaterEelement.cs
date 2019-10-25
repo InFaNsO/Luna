@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class WaterEelement : MonoBehaviour
+public class WaterEelement : BaseElement
 {
     // Start is called before the first frame update
     void Start()
