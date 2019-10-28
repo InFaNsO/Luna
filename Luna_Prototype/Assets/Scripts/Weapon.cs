@@ -185,6 +185,7 @@ public class Weapon : MonoBehaviour
 
         InLevelBody.gameObject.SetActive(false);
         boxCollider.enabled = false;
+        rb.velocity = Vector2.zero;
         rb.isKinematic = true;
 
         gameObject.transform.SetParent(owner.transform);
