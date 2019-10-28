@@ -42,6 +42,7 @@ public class Weapon : MonoBehaviour
     private BoxCollider2D boxCollider;
     public bool isOnGround = false;
 
+    public Animation mAnimation;
     protected Animator mAnimator;
 
     bool mHaveAttack = false;
@@ -86,9 +87,10 @@ public class Weapon : MonoBehaviour
 
         Assert.AreNotEqual(mMoves.Length, 0, "[Weapon] moves not initialized");
 
-        foreach (var move in mMoves)
+
+        for (int i = 0; i < mMoves.Length; ++i)
         {
-            move.Load(gameObject.GetComponent<Weapon>(), mAnimator, mElement);
+            mMoves[i].Load(gameObject.GetComponent<Weapon>(), mAnimator, i, mElement);
         }
     }
 

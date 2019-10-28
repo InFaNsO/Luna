@@ -9,6 +9,7 @@ public class WeaponMove
     [SerializeField] protected int mDamage;
     [System.NonSerialized] public float mAnimationPlayTime;
     [System.NonSerialized] public float mAttackSpendTime;
+    [System.NonSerialized] public int mMoveID;
     [SerializeField] protected float mAttackSpeedMutiplier = 1.0f; // wait how many second to next attack
     protected float mAttackSpeedCounter;
     [SerializeField] MoveContext mMoveContext;
@@ -26,9 +27,10 @@ public class WeaponMove
     public float AttackSpeed { get { return mAttackSpendTime; } set { mAttackSpendTime = value; } }
     public Element Element { set { mElement = value; } }
 
-    public void Load(Weapon weapon, Animator animator, Element element = Element.Luna)
+    public void Load(Weapon weapon, Animator animator, int index, Element element = Element.Luna)
     {
         mWeapon = weapon;
+        mMoveID = index;
 
         Assert.IsNotNull(mBullet, "[Weapon] Dont have bullet");                                                                //|--- [SAFTY]: Check to see is there a bullet prefeb
         Assert.AreNotEqual(mAttackSpeedMutiplier, 0.0f, "[Weapon] mAttackSpeedMutiplier not initialized");              //|--- [SAFTY]: Check to see if parry context got initialized
@@ -37,22 +39,25 @@ public class WeaponMove
         mWeaponAnimator = animator;
 
         mAnimationPlayTime = mAnimationClip.length;
-        mAttackSpendTime = mAnimationPlayTime * mAttackSpeedMutiplier;
+        mAttackSpendTime = mAnimationPlayTime / mAttackSpeedMutiplier;
 
-        mMoveContext.Load(mAttackSpendTime, mToMoveId.Length);
+        mMoveContext.Load(mAttackSpendTime, mToMoveId.Length, mMoveID);
 
         mElement = element;
     }
 
     public void Enter()
     {
-        mWeaponAnimator.SetInteger("State", 1);
+        mWeaponAnimator.SetInteger("ToNextCombo", mMoveID);
+        mWeaponAnimator.SetFloat("PlaySpeed", mAttackSpeedMutiplier);
+        Core.Debug.Log($"{mAttackSpeedMutiplier}, {mMoveID}");
         mMoveContext.Active = true;
     }
 
     public void Exit()
     {
-        mWeaponAnimator.SetInteger("ToNextCombo", mMoveContext.GetTransitionSliceCount());
+        //mWeaponAnimator.SetInteger("ToNextCombo", mToMoveId[ mMoveContext.GetTransitionSliceCount()]);
+        mWeaponAnimator.SetFloat("PlaySpeed", 1.0f);
         mMoveContext.Reset();
     }
 
@@ -86,6 +91,7 @@ public class WeaponMove
         Bullet newBullet = Object.Instantiate(mBullet, new Vector3(0, 0, 0), Quaternion.identity);
         newBullet.Fire(mWeapon.tag, mDamage, mWeapon.transform.TransformPoint(mWeapon.transform.localPosition + mFirePosition.localPosition), mWeapon.transform.right, mWeapon.mType);
         Debug.Log("attacked");
+        Core.Debug.Log($"whichMove: {mMoveID} Typed: {GetMoveCurrentTimeSliceType()}");
     }
 
     public MoveTimeSliceType GetMoveCurrentTimeSliceType()
