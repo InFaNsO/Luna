@@ -215,6 +215,7 @@ public class Player : Character
 
     public void Attack()
     {
+        Core.Debug.Log("Attack");
         Debug.Log("[Player] Attack called");
         if ((mCurrentWeapon == null) && ((mWeapon1 != null) || (mWeapon2 != null)))
         {
