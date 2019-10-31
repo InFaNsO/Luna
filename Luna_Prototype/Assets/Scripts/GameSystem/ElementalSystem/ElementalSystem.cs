@@ -18,7 +18,8 @@ using UnityEngine;
 
 public enum ElementIndex //for parsing into an array for later calculations, like evaluate final element values
 {
-    fire = 0,
+    voidType = 0,
+    fire = 1,
     earth,
     metal,
     water,
