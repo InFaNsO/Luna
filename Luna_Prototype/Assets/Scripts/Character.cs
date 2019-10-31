@@ -47,7 +47,7 @@ public abstract class Character : Agent
         {
             GetHit(mReceivedHazardDamage);
         }
-        Debug.Log("debuff tick");
+        //Debug.Log("debuff tick");
     }
 
     public bool GetHazardBool()
@@ -78,7 +78,8 @@ public abstract class Character : Agent
             Die();
         }
 
-        mReceivedHazardDuration -= Time.deltaTime;
+        if(mReceivedHazardDuration > 0.0f)
+            mReceivedHazardDuration -= Time.deltaTime;
 
         if (mWasTheCharacterInAnHazardInThePastSecond)
         {
