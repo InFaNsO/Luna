@@ -129,7 +129,7 @@ public class InputController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""fd561ccf-3a16-40cf-938d-1bbac0011770"",
-                    ""path"": ""<Mouse>/scroll"",
+                    ""path"": ""<Keyboard>/f"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard and Mouse"",
