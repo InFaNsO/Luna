@@ -250,12 +250,6 @@ public class Player : Character
         _LocalLevelManager = GameObject.Find("LocalLevelManager").GetComponent<LocalLevelManager>();    //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
         Assert.IsNotNull(_LocalLevelManager, "[Player] _LocalLevelManager is null");                    //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
 
-        //mIsIFrameOn = true;
-        //mIFrameCD = 4.0f;
-        //mIFrameDuration = 1.0f;
-        mMovementSpeed = 2.8f;
-        mJumpStrength = 150.0f;
-        //mIFrameDistance = 40.0f;
         mLaserDamage = 0;
         isDouleJumpEnabled = true;
         laserObj.gameObject.SetActive(false);

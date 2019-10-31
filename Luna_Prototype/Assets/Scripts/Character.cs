@@ -10,14 +10,11 @@ using UnityEngine;
 // merge test
 public abstract class Character : Agent
 {
-    [SerializeField]
-    protected float mMaxHealth;
-    [SerializeField]
-    protected float mCurrentHealth;
-    [SerializeField]
-    protected float mMovementSpeed;
-    [SerializeField]
-    protected float mJumpStrength;
+    
+    public float mMaxHealth;
+    public float mCurrentHealth;
+    public float mMovementSpeed;
+    public float mJumpStrength;
 
     //the four variables below are used for hazard damage  - william
     [SerializeField]

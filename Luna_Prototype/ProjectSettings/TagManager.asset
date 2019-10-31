@@ -9,6 +9,9 @@ TagManager:
   - PickUp
   - Services
   - Door
+  - Wall
+  - Platform
+  - Roof
   layers:
   - Default
   - TransparentFX
