@@ -93,7 +93,6 @@ public class PlayerController : MonoBehaviour
             jumpVec.y *= Time.deltaTime * player.GetJumpStrength();
             rb.velocity = new Vector2(rb.velocity.x, 0.0f);
             rb.AddForce(jumpVec, ForceMode2D.Impulse);
-            isGrounded = false;
         }
     }
 
@@ -134,12 +133,11 @@ public class PlayerController : MonoBehaviour
                         jumpCount = player.GetDoubleJumpEnable() ? 2 : 1;
                         Debug.Log(hit.collider.tag);
                     }
-                        
+                    else
+                    {
+                        isGrounded = false;
+                    }
                 }
-            }
-            else
-            {
-                isGrounded = false;
             }
         }
 
