@@ -127,14 +127,16 @@ public class PlayerController : MonoBehaviour
             {
                 if(hit.collider != playerCollider)
                 {
-                    if (hit.collider.tag != "PickUp")
+                    if ((hit.collider.tag != "PickUp") && (hit.collider.tag != "Player") && (hit.collider.tag != "Enemy"))
                     {
+                        player.isGrounded = true;
                         isGrounded = true;
                         jumpCount = player.GetDoubleJumpEnable() ? 2 : 1;
                         Debug.Log(hit.collider.tag);
                     }
                     else
                     {
+                        player.isGrounded = false;
                         isGrounded = false;
                     }
                 }
