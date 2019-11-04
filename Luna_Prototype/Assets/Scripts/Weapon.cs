@@ -43,7 +43,7 @@ public class Weapon : MonoBehaviour
     public bool isOnGround = false;
 
     public Animation mAnimation;
-    protected Animator mAnimator;
+    [System.NonSerialized] public Animator mAnimator;
 
     bool mHaveAttack = false;
 

@@ -30,7 +30,7 @@ public class Bullet : MonoBehaviour
     // MonoBehaviour Functions -----------------------------------------------------------------------------------------------
     public void Awake()
     {
-        Assert.IsNotNull(GetComponent<CircleCollider2D>(), "[Bullet] Dont have collider");       //|--- [SAFTY]: Check to see is there a Collider
+        Assert.IsNotNull(GetComponent<Collider2D>(), "[Bullet] Dont have collider");       //|--- [SAFTY]: Check to see is there a Collider
         Assert.AreNotEqual(mLifeTime > 0.0f, false, "[Bullet] Dont have lifeTime");             //|--- [SAFTY]: Check to see is there a 0 life time
     }
 
@@ -65,7 +65,7 @@ public class Bullet : MonoBehaviour
     {
         if (collision.gameObject.tag != gameObject.tag)
         {
-            if ((collision.GetComponent<Character>() != null) || (collision.CompareTag("Ground")))
+            if ((collision.GetComponent<Character>() != null) || ( !mIsMelee && collision.CompareTag("Ground")))
             {
                 Die();
             }

@@ -23,7 +23,7 @@ public class Enemy : Character
     //[SerializeField] protected World world;
 
     //private Animator mAnimator;
-    bool mIsStuned = false;
+    public bool mIsStuned = false;
     float mStunCounter;
 
     public LAI.SteeringModule GetSteeringModule() { return mSteeringModule; }
@@ -162,6 +162,8 @@ public class Enemy : Character
         mIsStuned = true;
         mStunCounter = stunHowLong;
 
+        mWeapon.WeaponReset();
+
         SetAnimator(EnemyAnimation.Stun);
     }
 
@@ -191,7 +193,7 @@ public class Enemy : Character
     {                                                                                //|
         // Hard code behavior                                                        //|
         behaviorCounter++;                                                           //|
-        if (behaviorCounter % 100 == 0)                                              //|--- Hard code behavior, Delete this in future
+        if (behaviorCounter % 200 == 0)                                              //|--- Hard code behavior, Delete this in future
         {                                                                            //|
             Attack();                                                                //|
         }                                                                            //|
