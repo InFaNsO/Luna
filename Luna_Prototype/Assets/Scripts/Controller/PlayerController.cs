@@ -30,6 +30,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float groundDec = 70;
 
+    [SerializeField]
+    LayerMask groundLayerMask = ~0;
+
 
     private void Awake()
     {
@@ -120,27 +123,23 @@ public class PlayerController : MonoBehaviour
 
     void GroundCheck()
     {
-        RaycastHit2D[] raycastHits = Physics2D.BoxCastAll(playerCollider.bounds.center, playerCollider.bounds.size/2, 0f, Vector3.down, playerCollider.bounds.extents.y);
+        player.isGrounded = false;
+        isGrounded = false;
+
+        RaycastHit2D[] raycastHits = Physics2D.BoxCastAll(playerCollider.bounds.center + Vector3.up * 0.02f, playerCollider.bounds.size, 0f, Vector3.down, 0.04f, groundLayerMask);
         foreach (var hit in raycastHits)
         {
-            if(hit.collider != null)
+            //if (hit.collider != playerCollider && hit.collider.tag != "PickUp" && hit.collider.tag != "Player" && hit.collider.tag != "Enemy")
+            //{
+
+            float angle = Vector2.Angle(hit.normal, Vector2.up);
+            if (angle < 70)
             {
-                if(hit.collider != playerCollider)
-                {
-                    if ((hit.collider.tag != "PickUp") && (hit.collider.tag != "Player") && (hit.collider.tag != "Enemy"))
-                    {
-                        player.isGrounded = true;
-                        isGrounded = true;
-                        jumpCount = player.GetDoubleJumpEnable() ? 2 : 1;
-                        Debug.Log(hit.collider.tag);
-                    }
-                    else
-                    {
-                        player.isGrounded = false;
-                        isGrounded = false;
-                    }
-                }
+                player.isGrounded = true;
+                isGrounded = true;
+                jumpCount = player.GetDoubleJumpEnable() ? 2 : 1;
             }
+            //}
         }
 
         //Collider2D[] hits = Physics2D.OverlapBoxAll(transform.position, playerCollider.size, 0);
@@ -168,7 +167,6 @@ public class PlayerController : MonoBehaviour
         //    }
         //}
     }
-
 
     private void OnEnable()
     {

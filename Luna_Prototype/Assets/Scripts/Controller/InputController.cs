@@ -74,7 +74,7 @@ public class InputController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""44188d62-2ab7-457b-9bff-b33b5ede1cf1"",
-                    ""path"": ""<XInputController>/buttonWest"",
+                    ""path"": ""<XInputController>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -96,7 +96,7 @@ public class InputController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""0d7a4cd3-c4fa-4b45-ad85-51f80ac73945"",
-                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""path"": ""<XInputController>/buttonWest"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -162,7 +162,7 @@ public class InputController : IInputActionCollection, IDisposable
                 {
                     ""name"": ""negative"",
                     ""id"": ""f5f1c31c-8f72-4836-8046-d976ef4af6ec"",
-                    ""path"": ""<Keyboard>/leftArrow"",
+                    ""path"": ""<XInputController>/dpad/left"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard and Mouse"",
@@ -173,7 +173,7 @@ public class InputController : IInputActionCollection, IDisposable
                 {
                     ""name"": ""positive"",
                     ""id"": ""646cb1c9-6565-4827-b011-6460dd3e973b"",
-                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""path"": ""<XInputController>/dpad/right"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard and Mouse"",
