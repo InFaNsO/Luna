@@ -20,7 +20,14 @@ public class EnvObj_Door : MonoBehaviour, EnvironmentalObject
 
     public void interact(ref Player thePlayer)
     {
-        
+        if(locked)
+        {
+            locked = false;
+        }
+        else
+        {
+            locked = true;
+        }
     }
 
     EnvironmentObjType EnvironmentalObject.GetTypeEnum()

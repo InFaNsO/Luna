@@ -85,6 +85,7 @@ public class MoveContext
     [System.NonSerialized] public MoveTimeSliceType mCurrentTimeSliceType;
     [System.NonSerialized] public float mCounter;
     [System.NonSerialized] public bool mHaveDealtDmg = false;
+    private int mOwnerMoveIndex;
 
     private int totalSliceCount;
     private bool isActive;                                                       
@@ -92,9 +93,9 @@ public class MoveContext
     // Getter & Setter        
     public bool Active { get { return isActive; } set { isActive = value; } }    
                                                                                  
-    public void Load(float totalTime, int totalTransitionMove)
+    public void Load(float totalTime, int totalTransitionMove, int moveId)
     {
-
+            
 
         mTotalTime = totalTime;
 
@@ -109,7 +110,8 @@ public class MoveContext
             lastTimeSlicePropotion = timeSlice.mTimeSlicePropotion;
         }
 
-        Assert.AreEqual(totalTransitionSlice, totalTransitionMove, "MoveContext [transition time slice] count not match [transition move count]");
+        mOwnerMoveIndex = moveId;
+        Assert.AreEqual(totalTransitionSlice, totalTransitionMove, $"{mOwnerMoveIndex }MoveContext [transition time slice] count not match [transition move count]");
 
         totalSliceCount = mMoveTimeSlices.Length;
         Reset();
@@ -128,6 +130,7 @@ public class MoveContext
                 }                                                                                //|
                 //-------------------------------------------------------------------------------//|
 
+                Core.Debug.Log($"{mMoveTimeSlices[mCurrentSlice].mType } {mCurrentSlice} {mOwnerMoveIndex}");
                 mCurrentSlice++;
                 mHaveDealtDmg = false;
                 if (mCurrentSlice == totalSliceCount)                

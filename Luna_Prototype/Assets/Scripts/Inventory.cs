@@ -25,7 +25,7 @@ public class Inventory : MonoBehaviour
 
     public void UsingItem(int whichSlot)
     {
-        if (whichSlot > _slots.Count)
+        if (whichSlot > _slots.Count - 1)
             return;
         if (_slots[whichSlot].theItem == null)
             return;
@@ -35,9 +35,10 @@ public class Inventory : MonoBehaviour
             _slots[whichSlot].itemCount -= 1;
             if (_slots[whichSlot].itemCount == 0)
             {
-                _slots[whichSlot].theItem = null;
                 _slots[whichSlot].sprite = _EmptySprite;
+                _slots[whichSlot].theItem = null;
                 UpdateUI(whichSlot);
+                _slots.RemoveAt(whichSlot);
             }
         }
     }
@@ -50,9 +51,9 @@ public class Inventory : MonoBehaviour
             if (_slots[i].theItem.GetTypeName() == item.GetTypeName())
             {
                 _slots[i].itemCount++;
-                _slots[i].theItem = item;
-                _slots[i].theItem.DisableFromLevel();
-                _slots[i].sprite = item.GetSprite();
+                //_slots[i].theItem = item;
+                item.DisableFromLevel();
+                //_slots[i].sprite = item.GetSprite();
                 addSlot = i;
                 break;
             }

@@ -41,6 +41,7 @@ public class Player : Character
     private int mDefense;
 
     public LocalLevelManager _LocalLevelManager;                       //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
+    public GameObject mWeaponPosition;
     
 
     public void LevelUp()
@@ -214,6 +215,7 @@ public class Player : Character
 
     public void Attack()
     {
+        Core.Debug.Log("Attack");
         Debug.Log("[Player] Attack called");
         if ((mCurrentWeapon == null) && ((mWeapon1 != null) || (mWeapon2 != null)))
         {
@@ -248,12 +250,6 @@ public class Player : Character
         _LocalLevelManager = GameObject.Find("LocalLevelManager").GetComponent<LocalLevelManager>();    //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
         Assert.IsNotNull(_LocalLevelManager, "[Player] _LocalLevelManager is null");                    //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
 
-        //mIsIFrameOn = true;
-        //mIFrameCD = 4.0f;
-        //mIFrameDuration = 1.0f;
-        mMovementSpeed = 2.8f;
-        mJumpStrength = 250.0f;
-        //mIFrameDistance = 40.0f;
         mLaserDamage = 0;
         isDouleJumpEnabled = true;
         laserObj.gameObject.SetActive(false);
@@ -268,11 +264,11 @@ public class Player : Character
         //----------------------------------------------------------------------------------//|
         if (mWeapon1 != null)                                                               //|
         {                                                                                   //|
-            mWeapon1.Picked(gameObject, gameObject.transform.position);                     //|    // second argument should be the [weapon position] as a individual variable in future
+            mWeapon1.Picked(gameObject, mWeaponPosition.transform.position);                     //|    // second argument should be the [weapon position] as a individual variable in future
         }                                                                                   //|
         if (mWeapon2 != null)                                                               //|
         {                                                                                   //|
-            mWeapon2.Picked(gameObject, gameObject.transform.position);                     //|    // second argument should be the [weapon position] as a individual variable in future
+            mWeapon2.Picked(gameObject, mWeaponPosition.transform.position);                     //|    // second argument should be the [weapon position] as a individual variable in future
         }                                                                                   //|
                                                                                             //|
         laserAnimator = laserObj.GetComponentInChildren<Animator>();
@@ -333,14 +329,14 @@ public class Player : Character
         if (mWeapon1 == null)                                                           //|
         {                                                                               //|
             mWeapon1 = newWeapon;                                                       //|
-            mWeapon1.Picked(gameObject, gameObject.transform.position);                 //|
+            mWeapon1.Picked(gameObject, mWeaponPosition.transform.position);                 //|
             if (mCurrentWeapon == null)                                                 //|
                 mCurrentWeapon = mWeapon1;                                              //|
         }                                                                               //|
         else if (mWeapon2 == null)                                                      //|--- [Mingzhuo Zhang] add a public function for pickUp weapon. This function will trigger by the collision of the weapon collider
         {                                                                               //|
             mWeapon2 = newWeapon;                                                       //|
-            mWeapon2.Picked(gameObject, gameObject.transform.position);                 //|
+            mWeapon2.Picked(gameObject, mWeaponPosition.transform.position);                 //|
             if (mCurrentWeapon == null)                                                 //|
                 mCurrentWeapon = mWeapon2;                                              //|
         }                                                                               //|

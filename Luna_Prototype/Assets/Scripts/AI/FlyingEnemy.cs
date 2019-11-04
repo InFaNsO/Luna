@@ -4,23 +4,26 @@ using UnityEngine;
 
 public class FlyingEnemy : Enemy               //uses seek behaviour
 {
-    [SerializeField] private SteeringModule mSteeringModule;
+    //[SerializeField] private LAI.SteeringModule mSteeringModule;
 
 
     private float timer = 0.0f;
     public new void Start()
     {
         //mAgent = new Agent();
-        mSteeringModule = new SteeringModule();
+        mSteeringModule = new LAI.SteeringModule();
 
         mSteeringModule.Initialize();
         //mAgent.SetWorld(world);
         mSteeringModule.SetAgent(this);
         world.AddAgent(this);
 
+        mSteeringModule.AddState<LAI.BehaviourSeek>();
+        mSteeringModule.AddState<LAI.BehaviourObstacleAvoidance>();
+
         mSteeringModule.TurnAllOff();
-        mSteeringModule.SetActive(SteeringType.Seek, true);
-        mSteeringModule.SetActive(SteeringType.ObstacleAvoidance, true);
+        mSteeringModule.SetActive(LAI.SteeringType.Seek, true);
+        mSteeringModule.SetActive(LAI.SteeringType.ObstacleAvoidance, true);
     }
 
     public new void Update()

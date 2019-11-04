@@ -10,14 +10,11 @@ using UnityEngine;
 // merge test
 public abstract class Character : Agent
 {
-    [SerializeField]
-    protected float mMaxHealth;
-    [SerializeField]
-    protected float mCurrentHealth;
-    [SerializeField]
-    protected float mMovementSpeed;
-    [SerializeField]
-    protected float mJumpStrength;
+    
+    public float mMaxHealth;
+    public float mCurrentHealth;
+    public float mMovementSpeed;
+    public float mJumpStrength;
 
     //the four variables below are used for hazard damage  - william
     [SerializeField]
@@ -47,7 +44,7 @@ public abstract class Character : Agent
         {
             GetHit(mReceivedHazardDamage);
         }
-        Debug.Log("debuff tick");
+        //Debug.Log("debuff tick");
     }
 
     public bool GetHazardBool()
@@ -78,7 +75,8 @@ public abstract class Character : Agent
             Die();
         }
 
-        mReceivedHazardDuration -= Time.deltaTime;
+        if(mReceivedHazardDuration > 0.0f)
+            mReceivedHazardDuration -= Time.deltaTime;
 
         if (mWasTheCharacterInAnHazardInThePastSecond)
         {

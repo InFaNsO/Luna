@@ -17,6 +17,7 @@ public class Enemy : Character
     [SerializeField] protected Weapon mWeapon;
     [SerializeField] protected bool mIsDropping;
     [SerializeField] protected Key mDropPrefbs;
+    [SerializeField] protected LAI.SteeringModule mSteeringModule;
 
     //[SerializeField] protected Agent mAgent;
     //[SerializeField] protected World world;
@@ -25,11 +26,14 @@ public class Enemy : Character
     bool mIsStuned = false;
     float mStunCounter;
 
+    public LAI.SteeringModule GetSteeringModule() { return mSteeringModule; }
+
     public void Start()
     {
         //mAgent = new Agent();
         //mAgent.SetWorld(world);
-        //world.AddAgent(mAgent);
+        world.AddAgent(this);
+        
     }
 
     public float GetMoveSpeed()
@@ -64,6 +68,7 @@ public class Enemy : Character
     public new void Update()
     {
         base.Update();
+        mVelocity += mSteeringModule.Calculate();
 
         if (mIsStuned != true)
         {

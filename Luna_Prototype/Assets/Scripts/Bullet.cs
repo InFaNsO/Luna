@@ -84,7 +84,8 @@ public class Bullet : MonoBehaviour
 
         if (weaponType == WeaponType.Melee)
         {
-            gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            //gameObject.GetComponent<SpriteRenderer>().enabled = false;
+            mSpeed = 0.0f;
         }
         gameObject.SetActive(true);
     }
