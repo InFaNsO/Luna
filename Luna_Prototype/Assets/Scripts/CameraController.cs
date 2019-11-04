@@ -7,24 +7,23 @@ public class CameraController : MonoBehaviour
 
     [Header("CameraFollowing")]
     public bool following = true;
-    /// <summary>
-    /// camera look at
-    /// </summary>
     [Tooltip("Camera focus")]
     public Transform target;
     //actual location camera looks at depends on [offset]
+    [Tooltip("Actual location camera looks at, depends on [offset]")]
     [SerializeField]
     private Transform _pivot;
 
+    
     public float offsetX;
     public float cameraFollowSpeedX;
     public float cameraFollowSpeedY;
 
     public float camera_z = -10.0f;
 
-
-    /// <summary>
+     /// <summary>
     /// take two transforms to form a boundary for camera to stop following
+    /// default 9999 if no custom transorm used
     /// </summary>
     [Tooltip("Boundary allows camera to stop following")]
     [SerializeField]
@@ -45,10 +44,26 @@ public class CameraController : MonoBehaviour
     private void Awake()
     {
         _pivot = transform.Find("Pivot");
+        if (_pivot == null)
+        {
+            _pivot = Instantiate(new GameObject(), transform).transform;
+            _pivot.name = "Pivot";
+         }
+        if (TopLeft == null)
+        {
+            Debug.Log("[CameraController] : no TopLeft Position  found ");
+            TopLeft = Instantiate(new GameObject(), transform).transform;
+            TopLeft.name = "TopLeft";
+            TopLeft.position = new Vector3(-9999f, 9999f, 0f);
+        }
+        if (BottomRight == null)
+        {
+            Debug.Log("[CameraController] : no BottomRight Position found ");
+            BottomRight = Instantiate(new GameObject(), transform).transform;
+            BottomRight.name = "BottomRight";
+            BottomRight.position = new Vector3(9999f, -9999f, 0f);
+        }
 
-        if (_pivot == null) Debug.Log("[CameraController] : no pivot  found ");
-        if (TopLeft == null) Debug.Log("[CameraController] : no TopLeft Position  found ");
-        if (BottomRight == null) Debug.Log("[CameraController] : no BottomRight Position found ");
 
         SetCameraFocus(target);
         
