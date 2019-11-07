@@ -31,7 +31,7 @@ Transform:
   m_LocalPosition: {x: -4.43, y: 0.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5672191182686895261}
+  - {fileID: 5732512303822722358}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 43c89e689154c304dbcbd9887ceba705, type: 3}
-  m_Color: {r: 0.8490566, g: 0.04405483, b: 0.27068576, a: 1}
+  m_Color: {r: 0.79041475, g: 0.8509804, b: 0.043137256, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -147,14 +147,14 @@ MonoBehaviour:
   mHeading: {x: 0, y: 0}
   mFinalDestination: {x: 0, y: 0}
   mMass: 100
-  mMaxSpeed: 10
-  mSafeDistanceReduced: 5
-  mSafeDistance: 10
-  mSafeDistanceExtended: 15
+  mMaxSpeed: 1
+  mSafeDistanceReduced: 1
+  mSafeDistance: 1
+  mSafeDistanceExtended: 2.2
   mRadius: 0.75
   world: {fileID: 0}
-  mMaxHealth: 0
-  mCurrentHealth: 0
+  mMaxHealth: 10
+  mCurrentHealth: 10
   mMovementSpeed: 0
   mJumpStrength: 0
   mWasTheCharacterInAnHazardInThePastSecond: 0
@@ -162,13 +162,13 @@ MonoBehaviour:
   mReceivedHazardDamage: 0
   mReceivedHazardDuration: 0
   isGrounded: 0
-  mWeapon: {fileID: 4923309852179702265}
+  mWeapon: {fileID: 5001615152560556114}
   mIsDropping: 0
   mDropPrefbs: {fileID: 0}
   mSteeringModule:
     mAgent: {fileID: 0}
   mIsStuned: 0
---- !u!1001 &2404595243252865815
+--- !u!1001 &2334136607636009660
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -237,17 +237,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a31afef3ea2353845847fc556dbee13b, type: 3}
---- !u!4 &5672191182686895261 stripped
+--- !u!4 &5732512303822722358 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8064114535432841098, guid: a31afef3ea2353845847fc556dbee13b,
     type: 3}
-  m_PrefabInstance: {fileID: 2404595243252865815}
+  m_PrefabInstance: {fileID: 2334136607636009660}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &4923309852179702265 stripped
+--- !u!114 &5001615152560556114 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7281698943840582382, guid: a31afef3ea2353845847fc556dbee13b,
     type: 3}
-  m_PrefabInstance: {fileID: 2404595243252865815}
+  m_PrefabInstance: {fileID: 2334136607636009660}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
