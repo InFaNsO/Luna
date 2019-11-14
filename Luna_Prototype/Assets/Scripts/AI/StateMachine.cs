@@ -8,8 +8,13 @@ namespace LAI
     public class StateMachine <AgentType> where AgentType : Enemy
     {
         [SerializeField] private AgentType mAgent;
-        [SerializeField] private List<State<AgentType>> mStates;
+        [SerializeField] private List<State<AgentType>> mStates = new List<State<AgentType>>();
         private int mCurrentState = -1;
+
+        public void SetAgent(AgentType at)
+        {
+            mAgent = at;
+        }
 
         public void Initialize(AgentType agent)
         {

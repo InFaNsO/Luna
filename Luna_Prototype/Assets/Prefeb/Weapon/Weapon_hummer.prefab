@@ -119,7 +119,7 @@ MonoBehaviour:
     mAttackSpeedMutiplier: 1
     mMoveContext:
       mMoveTimeSlices:
-      - mType: 1
+      - mType: 0
         mTimeSlicePropotion: 0.2
       - mType: 2
         mTimeSlicePropotion: 0.5
@@ -136,9 +136,9 @@ MonoBehaviour:
     mMoveContext:
       mMoveTimeSlices:
       - mType: 1
-        mTimeSlicePropotion: 0.4
-      - mType: 0
         mTimeSlicePropotion: 0.6
+      - mType: 0
+        mTimeSlicePropotion: 0.65
       - mType: 2
         mTimeSlicePropotion: 0.7
       - mType: 3

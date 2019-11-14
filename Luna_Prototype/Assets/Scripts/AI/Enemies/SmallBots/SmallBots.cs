@@ -20,17 +20,19 @@ public class SmallBots : Enemy
     public new void Awake()
     {
         base.Awake();
+        gameObject.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
         transform.Rotate(new Vector3(0.0f, 0.0f, 180.0f));
 
         LAI.PathFollowingState<SmallBots> pf = new LAI.PathFollowingState<SmallBots>();
-        pf.AddPath(new Vector3(-6.0f, 2.84f, 0.0f));
-        pf.AddPath(new Vector3(4.0f, 2.84f, 0.0f));
+        pf.AddPath(new Vector3(4.0f, 2.2f, 0.0f));
+        pf.AddPath(new Vector3(-4.0f, 2.2f, 0.0f));
 
         mStateMachine.AddState(pf);                                         //0
         mStateMachine.AddState<LAI.SBStateGoToPlayer<SmallBots>>();         //1
         mStateMachine.AddState<LAI.SBStateAttack<SmallBots>>();             //2
 
         mCurrentState = 0;
+        mStateMachine.SetAgent(this);
         mStateMachine.ChangeState((int)mCurrentState);
 
         mSteeringModule.AddState<LAI.BehaviourSeek>();
@@ -63,11 +65,6 @@ public class SmallBots : Enemy
 
         mStateMachine.Update();
 
-        if(mIsOnRoof)
-        {
-            mVelocity.y += 9.8f;        //so that it doesnt fall
-        }
-
         //See if player is close
             //Test line of sight
                 //change state
@@ -87,11 +84,15 @@ public class SmallBots : Enemy
                     {
                         mCurrentState = States.attack;
                         mStateMachine.ChangeState((int)mCurrentState);
+                        mIsOnRoof = false;
+                        gameObject.GetComponent<Rigidbody2D>().gravityScale = 1f;
                     }
                     else                                    //Go to player
                     {
                         mCurrentState = States.goTo;
                         mStateMachine.ChangeState((int)mCurrentState);
+                        mIsOnRoof = false;
+                        gameObject.GetComponent<Rigidbody2D>().gravityScale = 1f;
                     }
                 }
             }
