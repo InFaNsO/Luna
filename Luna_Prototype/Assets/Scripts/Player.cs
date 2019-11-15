@@ -210,7 +210,7 @@ public class Player : Character
 
         gameObject.SetActive(false);
 
-        ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.MainMenu);             //|--- [Rick H] Edit: Call GameMngr
+        ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);             //|--- [Rick H] Edit: Call GameMngr
     }
 
     public void Attack()

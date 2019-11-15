@@ -7,9 +7,10 @@ using UnityEngine.Assertions;
 public class LocalLevelManager : MonoBehaviour
 {
     public InGameUI _InGameUI;
+    //public UI_InGame _InGameUI; // [Rick H  replaced ]
 
     void Awake()
     {
-        Assert.IsNotNull(_InGameUI, "[LocalLevelManager] _InGameUI is null");
+        //Assert.IsNotNull(_InGameUI, "[LocalLevelManager] _InGameUI is null"); [Rick H Removed]
     }
 }

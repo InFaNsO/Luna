@@ -7,8 +7,14 @@ using UnityEngine.UI;
 /// 2019-11-14 [Rick H]
 /// Control in-game UI,  ui object naming : all [lower case]
 /// </summary>
-public class UI_InGame : MonoBehaviour
+public class UI_InGame : MonoBehaviour, UI_Interface
 {
+    //quick slots
+    [Header("Quick Slots")]
+    public List<Image> quickSlots = new List<Image>();
+    [SerializeField] private Sprite _EmptySlot;
+
+
     //pop up pause menu
     [Header("Pause")]
     [SerializeField]
@@ -34,38 +40,59 @@ public class UI_InGame : MonoBehaviour
     [SerializeField]
     private float msgBox_stay_time = 1f;
 
+
+    private List<GameObject> _uiPopUpComponents = new List<GameObject>();//list of ref to popup comps
     private float msgBox_timer = 0f;// used by movebox function
     private bool msgBox_isActive = false;//is msg box currently functioning 
 
     //
     private void Awake()
     {
-        if (popUp_pauseGame == null)
+        //if (popUp_pauseGame == null)
         {
             popUp_pauseGame = transform.Find("popup_pausegame").gameObject;
+            _uiPopUpComponents.Add(popUp_pauseGame);
             popUp_pauseGame.SetActive(false);
         }
 
-        if (popUp_msgbox == null)
+        //if (popUp_msgbox == null)
         {
-            popUp_msgbox = transform.Find("popup_msgbox").gameObject;
-            msgBox_From = transform.Find("msgbox_from").gameObject.transform;
-            msgBox_To = transform.Find("msgbox_to").gameObject.transform;
+            Transform msgboxtrans = transform.Find("MsgBox");
+            popUp_msgbox = msgboxtrans.Find("popup_msgbox").gameObject;
+            msgBox_From = msgboxtrans.Find("msgbox_from").gameObject.transform;
+            msgBox_To = msgboxtrans.Find("msgbox_to").gameObject.transform;
             popUp_msgbox.transform.position = msgBox_From.position;
+            _uiPopUpComponents.Add(popUp_msgbox);
             popUp_msgbox.SetActive(false);
         }
 
+    }
+    public void ResetUI()
+    {
+        foreach (var comp in _uiPopUpComponents)
+        {
+            comp.SetActive(false);
+        }
+        foreach (var s in quickSlots)
+        {
+            s.sprite = null;
+        }
     }
 
 
     #region PopUp_MsgBox
     public void PopUp_MsgBox()
     {
-        popUp_msgbox.SetActive(true);
-        StartCoroutine("movebox");
+        if (!msgBox_isActive)
+        {
+            popUp_msgbox.SetActive(true);
+            StartCoroutine("movebox");
+        }
     }
     private IEnumerator movebox()
     {
+        msgBox_isActive = true;
+
         //move in
         msgBox_timer = 0.0f;
         while (msgBox_timer < msgBox_move_time)
@@ -90,6 +117,7 @@ public class UI_InGame : MonoBehaviour
         //double check
         popUp_msgbox.transform.position = msgBox_From.position;
         popUp_pauseGame.SetActive(false);
+        msgBox_isActive = false;
         yield return null;
     }
     #endregion
@@ -110,8 +138,9 @@ public class UI_InGame : MonoBehaviour
     public void Button_Quit()
     {
         Debug.Log("Button_Quit pressed");
-        ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.MainMenu);
+        ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);
     }
+
     #endregion
 
 }

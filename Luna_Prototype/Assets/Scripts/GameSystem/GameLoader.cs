@@ -2,7 +2,8 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
- 
+using UnityEngine.Assertions;
+
 public class GameLoader : AsyncLoader
 {
     public int sceneIndexToLoad = 1;
@@ -84,20 +85,20 @@ public class GameLoader : AsyncLoader
         // Setup Core Systems
         Debug.Log("Loading Core Systems");
 
- 
-        ////
-        //GameObject UIManagerGO = new GameObject("UIManager");
-        //UIManagerGO.transform.SetParent(systemsParent);
-        //UIManager UIMngrComp = UIManagerGO.AddComponent<UIManager>();
-        //ServiceLocator.Register<UIManager>(UIMngrComp);
-        //yield return null;
+
+        ////UI Manager requires prefab, grab from scene [Gameloader]
+        UIManager UIManageComp = FindObjectOfType<UIManager>();
+        Assert.IsNotNull(UIManageComp, "[GameLoader] UIManager not found in scene [GameLoader]");
+        UIManageComp.transform.SetParent(systemsParent);
+        ServiceLocator.Register<UIManager>(UIManageComp);
+        yield return null;
 
         //
         //GameObject DataSourceManagerGO = new GameObject("DataSourceManager");
         //DataSourceManagerGO.transform.SetParent(systemsParent);
         //DataSourceManager DataSourceMngrComp = DataSourceManagerGO.AddComponent<DataSourceManager>();
         //ServiceLocator.Register<DataSourceManager>(DataSourceMngrComp);
- 
+
         //yield return null;
 
         //example
