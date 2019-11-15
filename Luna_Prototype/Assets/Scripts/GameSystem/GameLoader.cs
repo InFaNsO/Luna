@@ -100,14 +100,14 @@ public class GameLoader : AsyncLoader
  
         //yield return null;
 
-        //
+        //example
         GameObject gameManagerGO = new GameObject("GameManager");
         gameManagerGO.transform.SetParent(systemsParent);
         GameManager gameMngrComp = gameManagerGO.AddComponent<GameManager>();
         ServiceLocator.Register<GameManager>(gameMngrComp);
         yield return null;
 
-
+        //add managers here
 
     }
 
