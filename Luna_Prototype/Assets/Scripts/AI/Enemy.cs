@@ -17,7 +17,7 @@ public class Enemy : Character
     [SerializeField] protected Weapon mWeapon;
     [SerializeField] protected bool mIsDropping;
     [SerializeField] protected Key mDropPrefbs;
-    [SerializeField] protected LAI.SteeringModule mSteeringModule;
+    [SerializeField] protected LAI.SteeringModule mSteeringModule = new LAI.SteeringModule();
 
     //[SerializeField] protected Agent mAgent;
     //[SerializeField] protected World world;
@@ -33,7 +33,12 @@ public class Enemy : Character
         //mAgent = new Agent();
         //mAgent.SetWorld(world);
         world.AddAgent(this);
-        
+        mSteeringModule.SetAgent(this);
+
+        if (mWeapon != null)
+        {
+            mWeapon.Picked(gameObject, gameObject.transform.position); // second argument should be the [weapon position] as a individual variable in future
+        }
     }
 
     public float GetMoveSpeed()
@@ -59,21 +64,18 @@ public class Enemy : Character
         //Assert.IsNotNull(GetComponent<BoxCollider2D>(), "[Enemy] Dont have CapsuleCollider");                                      //|--- [SAFTY]: Check to see is there a Collider
         //mAnimator = gameObject.GetComponent<Animator>();                                                                         //|--- [INIT]: Initialize animator
 
-        if (mWeapon != null)
-        {
-            mWeapon.Picked(gameObject, gameObject.transform.position); // second argument should be the [weapon position] as a individual variable in future
-        }
+        
     }
 
     public new void Update()
     {
-        base.Update();
         mVelocity += mSteeringModule.Calculate();
+        base.Update();
 
         if (mIsStuned != true)
         {
             //Do AI here
-            HardCodeBehavior();
+
         }
         else
         {
@@ -187,17 +189,6 @@ public class Enemy : Character
         }
     }
 
-    //-------------------------------------------------------------------------------//|
-    private int behaviorCounter = 0; // For hard code behavior                       //|
-    void HardCodeBehavior()                                                          //|
-    {                                                                                //|
-        // Hard code behavior                                                        //|
-        behaviorCounter++;                                                           //|
-        if (behaviorCounter % 200 == 0)                                              //|--- Hard code behavior, Delete this in future
-        {                                                                            //|
-            Attack();                                                                //|
-        }                                                                            //|
-    }                                                                                //|
-    //-------------------------------------------------------------------------------//|
+   
 }
 

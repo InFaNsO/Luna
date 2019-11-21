@@ -68,8 +68,9 @@ public abstract class Character : Agent
         InvokeRepeating("DebuffTick", 0.1f, 1.0f);
     }
 
-    public void Update()
+    public new void Update()
     {
+        base.Update();
         if (mCurrentHealth <= 0.0f)
         {
             Die();
