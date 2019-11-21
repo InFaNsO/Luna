@@ -1,27 +1,38 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 public class Enemy_Bat : Enemy
 {
+    public Bullet mBullet;
+    public int mDamage = 10;
+
     public enum States
     {
         none = -1,
         Idel = 0,
         goTo,
-        attack,
+        rangeAttack,
+        meleeAttack
     }
 
-    [SerializeField] private LAI.StateMachine<Enemy_Bat> mStateMachine = new LAI.StateMachine<Enemy_Bat>();
+    [SerializeField] public LAI.StateMachine<Enemy_Bat> mStateMachine = new LAI.StateMachine<Enemy_Bat>();
     private States mCurrentState = States.none;
 
     new void Awake()
     {
+        Assert.IsNotNull(mBullet, "[Enemy_Bat] mBullet is Null");
+
         base.Awake();
         gameObject.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
 
         //Add State
+        mStateMachine.AddState<LAI.EnemyBatState_idel<Enemy_Bat>>();         //0
+        mStateMachine.AddState<LAI.EnemyBatState_goTo<Enemy_Bat>>();         //1
+        mStateMachine.AddState<LAI.EnemyBatState_rangeAttack<Enemy_Bat>>();         //2
 
+        mCurrentState = 0;
         mStateMachine.SetAgent(this);
         mStateMachine.ChangeState((int)mCurrentState);
 
@@ -50,12 +61,9 @@ public class Enemy_Bat : Enemy
 
     public bool IsNear(float distance)
     {
-        if (transform.position.x + distance > world.mPlayer.transform.position.x &&
-            transform.position.x - distance < world.mPlayer.transform.position.x)
+        if (Vector3.Distance(gameObject.transform.position, GetWorld().mPlayer.transform.position) < distance)
         {
-            if (transform.position.y + distance > world.mPlayer.transform.position.y &&
-                transform.position.y - distance < world.mPlayer.transform.position.y)
-                return true;
+            return true;
         }
         return false;
     }

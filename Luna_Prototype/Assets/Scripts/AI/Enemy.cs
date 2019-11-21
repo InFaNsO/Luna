@@ -34,7 +34,11 @@ public class Enemy : Character
         //mAgent.SetWorld(world);
         world.AddAgent(this);
         mSteeringModule.SetAgent(this);
-        
+
+        if (mWeapon != null)
+        {
+            mWeapon.Picked(gameObject, gameObject.transform.position); // second argument should be the [weapon position] as a individual variable in future
+        }
     }
 
     public float GetMoveSpeed()
@@ -60,10 +64,7 @@ public class Enemy : Character
         //Assert.IsNotNull(GetComponent<BoxCollider2D>(), "[Enemy] Dont have CapsuleCollider");                                      //|--- [SAFTY]: Check to see is there a Collider
         //mAnimator = gameObject.GetComponent<Animator>();                                                                         //|--- [INIT]: Initialize animator
 
-        if (mWeapon != null)
-        {
-            mWeapon.Picked(gameObject, gameObject.transform.position); // second argument should be the [weapon position] as a individual variable in future
-        }
+        
     }
 
     public new void Update()
@@ -74,7 +75,7 @@ public class Enemy : Character
         if (mIsStuned != true)
         {
             //Do AI here
-            HardCodeBehavior();
+
         }
         else
         {
@@ -188,17 +189,6 @@ public class Enemy : Character
         }
     }
 
-    //-------------------------------------------------------------------------------//|
-    private int behaviorCounter = 0; // For hard code behavior                       //|
-    void HardCodeBehavior()                                                          //|
-    {                                                                                //|
-        // Hard code behavior                                                        //|
-        behaviorCounter++;                                                           //|
-        if (behaviorCounter % 200 == 0)                                              //|--- Hard code behavior, Delete this in future
-        {                                                                            //|
-            Attack();                                                                //|
-        }                                                                            //|
-    }                                                                                //|
-    //-------------------------------------------------------------------------------//|
+   
 }
 
