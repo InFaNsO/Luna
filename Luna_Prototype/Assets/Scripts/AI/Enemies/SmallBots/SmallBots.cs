@@ -43,7 +43,6 @@ public class SmallBots : Enemy
     public new void Start()
     {
         base.Start();
-       
     }
 
     private bool IsNear(float distance)

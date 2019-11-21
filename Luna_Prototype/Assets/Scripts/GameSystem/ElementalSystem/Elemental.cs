@@ -1,0 +1,160 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class Elemental
+{
+    public ElementalAttributes mElementalAttribute;
+    //Elemental Data for the gameObject that's running this component
+    public ElementalType type;
+    public int i;
+    public float potency;
+    public float resistance;
+    public float duration;
+    public float procChance;
+    public float intensityStatus;
+    public bool immune = false;
+    public bool flag = false;
+    private GameObject other; 
+
+    //Data for currently active status ailments (buffs/debuffs), these values are set by other classes as they apply status ailments to this object
+    public bool mStatusActive = false;
+    public float mActiveDuration = 0;
+    private float mActiveIntensity = 0;
+    public float mCount = 0;
+    public void SetElement(ElementalType _type, ElementIndex _index, float _potency, float _resistance, float _duration, float _procChance, float _intensityStatus, bool _flag, ElementalAttributes mElementalAttributes)
+    {
+        type = _type;
+        i = (int)_index;
+        potency = _potency;
+        resistance = _resistance;
+        duration = _duration;
+        procChance = _procChance;
+        intensityStatus = _intensityStatus;
+        flag = _flag;
+        mElementalAttribute = mElementalAttributes;
+    }
+    public float GetActiveIntensity() { return mActiveIntensity; }
+    public void ApplyStatusEffect(ref Enemy target, float _intensity, float _duration) //Apply status to target - Enemy overload
+    {
+        ElementalAttributes t = target.GetComponent<ElementalAttributes>();
+        if (t != null)
+        {
+            float c = Random.Range(0.0f, 100.0f);
+            if (c <= procChance)
+            {
+                t.mElement[i].mSetActiveEffect(intensityStatus, duration);
+            }
+        }
+        
+    }
+    public void ApplyStatusEffect(ref Player target, float _intensity, float _duration) //Apply status to target - Player overload
+    {
+        ElementalAttributes t = target.GetComponent<ElementalAttributes>();
+        if (t != null)
+        {
+            float c = Random.Range(0.0f, 100.0f);
+            if (c <= procChance)
+            {
+                t.mElement[i].mSetActiveEffect(intensityStatus, duration);
+            }
+        }
+    }
+    public void ApplyElementalDamage(Enemy target, float potency, bool applyStatus) //Do elemental damage to target based on potency - Enemy overload
+    {
+        ElementalAttributes t = target.GetComponent<ElementalAttributes>();
+        if (t != null)
+        {
+            target.GetHit(potency * (t.mElement[i].resistance / 100));
+            if(applyStatus)
+            {
+                ApplyStatusEffect(ref target, mActiveIntensity, mActiveDuration);
+            }
+        }
+    }
+    public void ApplyElementalDamage(Player target, float potency, bool applyStatus) //Do elemental damage to target based on potency - Player overload
+    {
+        ElementalAttributes t = target.GetComponent<ElementalAttributes>();
+        if (t != null)
+        {
+            target.GetHit(potency * (t.mElement[i].resistance / 100));
+            if(applyStatus)
+            {
+                ApplyStatusEffect(ref target, mActiveIntensity, mActiveDuration);
+            }
+        }
+    }
+    public abstract void EffectTick();
+    public void mSetActiveEffect(float _intensity, float _duration) //Set data for currently active status effect
+    {
+        mActiveIntensity = _intensity;
+        //mActiveDuration = duration;
+        mCount = duration;
+        mStatusActive = true;
+    }
+    public void TakeElementalDamage(float dmg)
+    {
+        if(mElementalAttribute.mPlayer != null)
+        {
+            Debug.Log("Player Elemental damage taken");
+            mElementalAttribute.mPlayer.mCurrentHealth -= dmg * (resistance / 100);
+        }
+        if(mElementalAttribute.mEnemy != null)
+        {
+            Debug.Log("Enemy Elemental damage taken");
+            mElementalAttribute.mEnemy.mCurrentHealth -= dmg * (resistance / 100);
+        }
+    }
+    public ElementalAttributes GetAttribute()
+    {
+        if (mElementalAttribute != null)
+        {
+            return mElementalAttribute;
+        }
+        else
+        {
+            return null;
+        }
+    }
+    public Player GetPlayer()
+    {
+        if(mElementalAttribute.mPlayer != null)
+        {
+            return mElementalAttribute.mPlayer;
+        }
+        else
+        {
+            return null;
+        }
+    }
+    public Enemy GetEnemy()
+    {
+        if(mElementalAttribute.mEnemy != null)
+        {
+            return mElementalAttribute.mEnemy;
+        }
+        else
+        {
+            return null;
+        }
+    }
+    public void SetOther(GameObject t)
+    {
+        other = t;
+    }
+    public GameObject GetOther() { return other; }
+    public void mSetImmune(bool isImmune) { immune = isImmune; }
+    public void ElementalUpdate()
+    {
+        if(mCount <= 0)
+        {
+            mCount = 0;
+            mStatusActive = false;
+        }
+        if(mStatusActive && !immune && mCount > 0)
+        {
+            EffectTick();
+        }
+        //EffectTick();
+    }
+}
