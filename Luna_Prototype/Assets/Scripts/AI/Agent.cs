@@ -45,6 +45,6 @@ public class Agent : MonoBehaviour
 
     public void Update()
     {
-     
+        transform.position = new Vector2(transform.position.x + (mVelocity.x * Time.deltaTime), transform.position.y + (mVelocity.y * Time.deltaTime));
     }
 }
