@@ -10,8 +10,8 @@ public class CameraController : MonoBehaviour
     [Tooltip("Camera focus")]
     public Transform target;
     //actual location camera looks at depends on [offset]
-    [Tooltip("Actual location camera looks at, depends on [offset]")]
-    [SerializeField]
+    //[Tooltip("Actual location camera looks at, depends on [offset]")]
+    //[SerializeField]
     private Transform _pivot;
 
     
@@ -35,7 +35,7 @@ public class CameraController : MonoBehaviour
  
     [Header("CameraShaking")] 
     [SerializeField]
-    private float _shakeAmplitude = 0.1f;
+    private float _shakeAmplitude = 2.0f;
     [SerializeField]
     private float _shakeFrequency = 0.1f;
  
@@ -145,7 +145,7 @@ public class CameraController : MonoBehaviour
         this.transform.Translate(new Vector3(0.0f, _shakeFrequency, 0.0f));
         yield return new WaitForSeconds(_shakeFrequency);
 
-        this.transform.Translate(new Vector3(0.0f, -2.0f * _shakeFrequency, 0.0f));
+        this.transform.Translate(new Vector3(0.0f, -_shakeAmplitude * _shakeFrequency, 0.0f));
         yield return new WaitForSeconds(_shakeFrequency);
 
 

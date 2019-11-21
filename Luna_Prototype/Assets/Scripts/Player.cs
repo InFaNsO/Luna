@@ -42,7 +42,10 @@ public class Player : Character
 
     public LocalLevelManager _LocalLevelManager;                       //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
     public GameObject mWeaponPosition;
-    
+
+    public Vector3 LastGotHitPosition { get { return mLastGotHitPosition; } }       //|--- [Mingzhuo Zhang] Edit:  For Kevin(Element system)
+    private Vector3 mLastGotHitPosition;
+
 
     public void LevelUp()
     {
@@ -210,7 +213,7 @@ public class Player : Character
 
         gameObject.SetActive(false);
 
-        ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.MainMenu);             //|--- [Rick H] Edit: Call GameMngr
+        ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);             //|--- [Rick H] Edit: Call GameMngr
     }
 
     public void Attack()
@@ -312,6 +315,7 @@ public class Player : Character
                 Debug.Log("player collide with bullet!_2");                             //|
                                                                                         //|
                 GetHit(other.GetComponent<Bullet>().Damage);                            //|
+                mLastGotHitPosition = other.gameObject.transform.position;              //|
             }                                                                           //|
         }                                                                               //|
     }                                                                                   //|

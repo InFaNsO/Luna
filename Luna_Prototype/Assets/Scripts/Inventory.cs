@@ -76,7 +76,10 @@ public class Inventory : MonoBehaviour
 
     private void UpdateUI(int whichSlot)
     {
-        var image = _player._LocalLevelManager._InGameUI._InventoryItemButtons[whichSlot].GetComponent<Image>();
+        //var image = _player._LocalLevelManager._InGameUI._InventoryItemButtons[whichSlot].GetComponent<Image>();
+
+        var image = ServiceLocator.Get<UIManager>().GetQuickSlot()[whichSlot];//[Rick H] replaced with UIManager service
+
         image.sprite = _slots[whichSlot].sprite;
     }
 

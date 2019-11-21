@@ -11,7 +11,8 @@ public class GameManager : MonoBehaviour
 {
     public enum ESceneIndex //start at 1
     {
-        MainMenu = 1 // Title Scene index 1
+        Mainmenu = 1, // Title Scene index 1
+        Level1 = 2 // need a document names all scenes
     }
 
     //private Player Player;

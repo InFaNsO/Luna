@@ -7,7 +7,7 @@ namespace LAI
     [System.Serializable]
     public class PathFollowingState <AgentType> : State<AgentType> where AgentType : Enemy
     {
-        [SerializeField] private List<Vector3> mPath;
+        [SerializeField] private List<Vector3> mPath = new List<Vector3>();
         [SerializeField] private bool mLooped = false;
         [SerializeField] private bool mStay = false;
         [SerializeField] private float mStayTime = 2.0f;
@@ -34,13 +34,13 @@ namespace LAI
         {
             agent.GetSteeringModule().TurnAllOff();
 
-            if (!agent.GetSteeringModule().Exists(SteeringType.Seek))
+            if (!agent.GetSteeringModule().Exists(SteeringType.Arrive))
             {
-                agent.GetSteeringModule().AddState<BehaviourSeek>();
+                agent.GetSteeringModule().AddState<BehaviourArrive>();
             }
-            if(!agent.GetSteeringModule().IsActive(SteeringType.Seek))
+            if(!agent.GetSteeringModule().IsActive(SteeringType.Arrive))
             {
-                agent.GetSteeringModule().SetActive(SteeringType.Seek, true);
+                agent.GetSteeringModule().SetActive(SteeringType.Arrive, true);
                 setActive = true;
             }
         }
@@ -56,7 +56,7 @@ namespace LAI
                 }
                 else
                 {
-                    mNext--;
+                    mNext -= 2;
                 }
             }
             agent.SetDestination(new Vector2(mPath[mNext].x, mPath[mNext].y));
