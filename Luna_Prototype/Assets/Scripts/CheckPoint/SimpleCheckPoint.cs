@@ -7,17 +7,8 @@ public class SimpleCheckPoint : MonoBehaviour
     public bool activated = false;
     public bool currentPoint = false;
     public GameObject Player;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-    }
-
+    // Checkpoint Trigger Function
     private void OnTriggerEnter2D(Collider2D collider)
     {
         if(collider.CompareTag("Player") && activated == false && currentPoint == false)
