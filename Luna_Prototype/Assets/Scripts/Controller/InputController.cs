@@ -57,6 +57,14 @@ public class InputController : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""Dash"",
+                    ""type"": ""Button"",
+                    ""id"": ""5db48c35-4a10-4608-9c67-9b8eaad0651b"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -246,6 +254,28 @@ public class InputController : IInputActionCollection, IDisposable
                     ""action"": ""Move"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""78eecb8c-0e0c-4888-b99c-68b8307c8d9d"",
+                    ""path"": ""<Keyboard>/c"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""527a181d-38c1-45ba-ba91-318f5bc2fddc"",
+                    ""path"": ""<XInputController>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""Dash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -287,6 +317,7 @@ public class InputController : IInputActionCollection, IDisposable
         m_PlayerControl_Attack = m_PlayerControl.FindAction("Attack", throwIfNotFound: true);
         m_PlayerControl_DropWeapon = m_PlayerControl.FindAction("DropWeapon", throwIfNotFound: true);
         m_PlayerControl_SwitchWeapon = m_PlayerControl.FindAction("SwitchWeapon", throwIfNotFound: true);
+        m_PlayerControl_Dash = m_PlayerControl.FindAction("Dash", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -341,6 +372,7 @@ public class InputController : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerControl_Attack;
     private readonly InputAction m_PlayerControl_DropWeapon;
     private readonly InputAction m_PlayerControl_SwitchWeapon;
+    private readonly InputAction m_PlayerControl_Dash;
     public struct PlayerControlActions
     {
         private InputController m_Wrapper;
@@ -350,6 +382,7 @@ public class InputController : IInputActionCollection, IDisposable
         public InputAction @Attack => m_Wrapper.m_PlayerControl_Attack;
         public InputAction @DropWeapon => m_Wrapper.m_PlayerControl_DropWeapon;
         public InputAction @SwitchWeapon => m_Wrapper.m_PlayerControl_SwitchWeapon;
+        public InputAction @Dash => m_Wrapper.m_PlayerControl_Dash;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -374,6 +407,9 @@ public class InputController : IInputActionCollection, IDisposable
                 SwitchWeapon.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSwitchWeapon;
                 SwitchWeapon.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSwitchWeapon;
                 SwitchWeapon.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSwitchWeapon;
+                Dash.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnDash;
+                Dash.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnDash;
+                Dash.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnDash;
             }
             m_Wrapper.m_PlayerControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -393,6 +429,9 @@ public class InputController : IInputActionCollection, IDisposable
                 SwitchWeapon.started += instance.OnSwitchWeapon;
                 SwitchWeapon.performed += instance.OnSwitchWeapon;
                 SwitchWeapon.canceled += instance.OnSwitchWeapon;
+                Dash.started += instance.OnDash;
+                Dash.performed += instance.OnDash;
+                Dash.canceled += instance.OnDash;
             }
         }
     }
@@ -422,5 +461,6 @@ public class InputController : IInputActionCollection, IDisposable
         void OnAttack(InputAction.CallbackContext context);
         void OnDropWeapon(InputAction.CallbackContext context);
         void OnSwitchWeapon(InputAction.CallbackContext context);
+        void OnDash(InputAction.CallbackContext context);
     }
 }

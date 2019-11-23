@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
         controls.PlayerControl.Attack.performed += _attack => Attack();
         controls.PlayerControl.SwitchWeapon.performed += _switch => SwitchWeapon();
         controls.PlayerControl.DropWeapon.performed += _drop => DropWeapon();
+        controls.PlayerControl.Dash.performed += _dash => Dash();
 
         moveVec = new Vector3(0f, 0f, 0f);
         jumpVec = new Vector3(0f, 0f);
@@ -119,6 +120,14 @@ public class PlayerController : MonoBehaviour
     public void SwitchWeapon()
     {
         player.SwitchWeapon();
+    }
+
+    public void Dash()
+    {
+        if(player.Dodge())
+        {
+            transform.Translate(player.GetIFrameDistance() * Time.deltaTime, 0f, 0f);
+        }
     }
 
     void GroundCheck()
