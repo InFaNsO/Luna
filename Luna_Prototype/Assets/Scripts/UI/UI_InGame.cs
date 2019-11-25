@@ -25,6 +25,8 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     [Header("Pause")]
     [SerializeField]
     private GameObject popUp_pauseGame;
+    [SerializeField]
+    private GameObject popUp_sureToQuit;
 
 
     //pop up message box
@@ -59,6 +61,10 @@ public class UI_InGame : MonoBehaviour, UI_Interface
             popUp_pauseGame = transform.Find("popup_pausegame").gameObject;
             _uiPopUpComponents.Add(popUp_pauseGame);
             popUp_pauseGame.SetActive(false);
+
+            popUp_sureToQuit = transform.Find("popup_suretoquit").gameObject;
+            _uiPopUpComponents.Add(popUp_sureToQuit);
+            popUp_sureToQuit.SetActive(false);
         }
 
         //if (popUp_msgbox == null)
@@ -152,9 +158,23 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     public void Button_Quit()
     {
         Debug.Log("Button_Quit pressed");
-        ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);
+        popUp_sureToQuit.SetActive(true);
+        popUp_pauseGame.SetActive(false);
+
     }
 
+    public void Button_SureToQuit(int val)//0 no 1 yes
+    {
+        if (val == 0)
+        {
+            popUp_sureToQuit.SetActive(false);
+        }
+        else
+        {
+            ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);
+        }
+
+    }
     #endregion
 
 }
