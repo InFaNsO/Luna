@@ -9,6 +9,12 @@ using UnityEngine.UI;
 /// </summary>
 public class UI_InGame : MonoBehaviour, UI_Interface
 {
+    //Gauges
+    [Header("Gauges")]
+    public Image hp_Image;
+
+
+
     //quick slots
     [Header("Quick Slots")]
     public List<Image> quickSlots = new List<Image>();
@@ -78,6 +84,14 @@ public class UI_InGame : MonoBehaviour, UI_Interface
             s.sprite = null;
         }
     }
+
+    #region HPGauge
+    public void UpdateHPGauge(float value)
+    {
+        hp_Image.fillAmount = value;
+    }
+
+    #endregion
 
 
     #region PopUp_MsgBox

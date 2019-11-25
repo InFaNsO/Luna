@@ -71,6 +71,11 @@ public class UIManager : MonoBehaviour
 
     #region public In-game UI Services
 
+    public void UpdateHPGauge(float val)
+    {
+        _uiInGame.UpdateHPGauge(val);
+    }
+
     public List<Image> GetQuickSlot()
     {
         if (currentCanvas == _uiInstances[(int)ECanvasType.InGame])
