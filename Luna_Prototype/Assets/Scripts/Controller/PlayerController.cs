@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
     LayerMask groundLayerMask = ~0;
 
     [SerializeField]
-    float dashDuration;
+    float dashDuration = 0.14f;
     float dashCounter;
 
 
@@ -56,7 +56,6 @@ public class PlayerController : MonoBehaviour
         isPlayerFacingRight = true;
         isGrounded = true;
 
-        dashDuration = 0.3f;
         dashCounter = 1.0f;
     }
 

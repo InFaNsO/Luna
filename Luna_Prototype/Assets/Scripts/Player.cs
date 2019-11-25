@@ -20,7 +20,7 @@ public class Player : Character
     [SerializeField]
     private float mIFrameDuration;
     [SerializeField]
-    private float mDashSpeed;
+    private float mDashSpeed = 14f;
     [SerializeField]
     private int mLaserDamage;
     private bool isDouleJumpEnabled;
@@ -260,8 +260,6 @@ public class Player : Character
 
         mRequiredExp = 10;
         mCurrentExp = 0;
-
-        mDashSpeed = 10f;
 
         //----------------------------------------------------------------------------------//|
         //- Mingzhuo Zhang Edit ------------------------------------------------------------//|
