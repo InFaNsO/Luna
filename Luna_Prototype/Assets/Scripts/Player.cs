@@ -13,14 +13,14 @@ public class Player : Character
     [SerializeField]
     private Weapon mCurrentWeapon;
 
-    //[SerializeField]
-    //private bool mIsIFrameOn;
-    //[SerializeField]
-    //private float mIFrameCD;
-    //[SerializeField]
-    //private float mIFrameDuration;
-    //[SerializeField]
-    //private float mIFrameDistance;
+    [SerializeField]
+    private bool mIsIFrameOn;
+    [SerializeField]
+    private float mIFrameCD;
+    [SerializeField]
+    private float mIFrameDuration;
+    [SerializeField]
+    private float mDashSpeed = 14f;
     [SerializeField]
     private int mLaserDamage;
     private bool isDouleJumpEnabled;
@@ -93,10 +93,10 @@ public class Player : Character
         return mJumpStrength;
     }
 
-    //public float GetIFrameDistance()
-    //{
-    //    return mIFrameDistance;
-    //}
+    public float GetDashSpeed()
+    {
+        return mDashSpeed;
+    }
 
     public void LaserAttack()
     {
@@ -194,17 +194,17 @@ public class Player : Character
         }
     }
 
-    //public bool Dodge()
-    //{
-    //    if(mIFrameCD <= 0)
-    //    {
-    //        mIsIFrameOn = true;
-    //        mIFrameDuration = 1;
-    //        mIFrameCD = 4;
-    //        return true;
-    //    }
-    //    return false;
-    //}
+    public bool Dodge()
+    {
+        if (mIFrameCD <= 0)
+        {
+            mIsIFrameOn = true;
+            mIFrameDuration = 1;
+            mIFrameCD = 2;
+            return true;
+        }
+        return false;
+    }
 
     override public void GetHit(float dmg)
     {
@@ -273,8 +273,6 @@ public class Player : Character
         mRequiredExp = 10;
         mCurrentExp = 0;
 
-
-
         //----------------------------------------------------------------------------------//|
         //- Mingzhuo Zhang Edit ------------------------------------------------------------//|
         //----------------------------------------------------------------------------------//|
@@ -293,17 +291,20 @@ public class Player : Character
         //----------------------------------------------------------------------------------//|
     }
 
+    private void FixedUpdate()
+    {
+        mIFrameCD -= Time.deltaTime;
+        mIFrameDuration -= Time.deltaTime;
+        if (mIFrameDuration <= 0)
+        {
+            mIsIFrameOn = false;
+        }
+    }
+
     public void Update()
     {
-        //[TOFIX] in player move controller.cs ,  GetKeyUp vec3 should be (0,0,0) rather than (-1, 0, 0 )
         base.Update();
-        //mIFrameCD -= Time.deltaTime;
-        //mIFrameDuration -= Time.deltaTime;
         laserDuration -= Time.deltaTime;
-        //if (mIFrameDuration <= 0)
-        //{
-        //    mIsIFrameOn = false;
-        //}
         if(laserDuration <= 0)
         {
             laserObj.gameObject.SetActive(false);

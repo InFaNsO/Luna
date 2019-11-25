@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     LayerMask groundLayerMask = ~0;
 
+    [SerializeField]
+    float dashDuration = 0.14f;
+    float dashCounter;
+
 
     private void Awake()
     {
@@ -45,11 +49,14 @@ public class PlayerController : MonoBehaviour
         controls.PlayerControl.Attack.performed += _attack => Attack();
         controls.PlayerControl.SwitchWeapon.performed += _switch => SwitchWeapon();
         controls.PlayerControl.DropWeapon.performed += _drop => DropWeapon();
+        controls.PlayerControl.Dash.performed += _dash => Dash();
 
         moveVec = new Vector3(0f, 0f, 0f);
         jumpVec = new Vector3(0f, 0f);
         isPlayerFacingRight = true;
         isGrounded = true;
+
+        dashCounter = 1.0f;
     }
 
     private void FixedUpdate()
@@ -57,6 +64,7 @@ public class PlayerController : MonoBehaviour
         GroundCheck();
         Move();
         JumpUpdate();
+        DashMovement();
         Resets();
     }
 
@@ -119,6 +127,30 @@ public class PlayerController : MonoBehaviour
     public void SwitchWeapon()
     {
         player.SwitchWeapon();
+    }
+
+    public void Dash()
+    {
+        if(player.Dodge())
+        {
+            //if(isPlayerFacingRight)
+            //    rb.AddForce(new Vector2(player.GetIFrameDistance(), 0f));
+            //else
+            //    rb.AddForce(new Vector2(-player.GetIFrameDistance(), 0f));
+            //transform.Translate(player.GetIFrameDistance() * Time.deltaTime, 0f, 0f);
+            dashCounter = 0.0f;
+        }
+
+    }
+
+    void DashMovement()
+    {
+        if(dashCounter < dashDuration)
+        {
+            transform.Translate(player.GetDashSpeed() * Time.deltaTime, 0f, 0f);
+        }
+        if (dashCounter < 5.0f)
+            dashCounter += Time.deltaTime;
     }
 
     void GroundCheck()
