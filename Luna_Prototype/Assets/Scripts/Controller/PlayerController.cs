@@ -33,6 +33,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     LayerMask groundLayerMask = ~0;
 
+    [SerializeField]
+    float dashDuration;
+    float dashCounter;
+
 
     private void Awake()
     {
@@ -51,6 +55,9 @@ public class PlayerController : MonoBehaviour
         jumpVec = new Vector3(0f, 0f);
         isPlayerFacingRight = true;
         isGrounded = true;
+
+        dashDuration = 0.3f;
+        dashCounter = 1.0f;
     }
 
     private void FixedUpdate()
@@ -58,6 +65,7 @@ public class PlayerController : MonoBehaviour
         GroundCheck();
         Move();
         JumpUpdate();
+        DashMovement();
         Resets();
     }
 
@@ -126,8 +134,24 @@ public class PlayerController : MonoBehaviour
     {
         if(player.Dodge())
         {
-            transform.Translate(player.GetIFrameDistance() * Time.deltaTime, 0f, 0f);
+            //if(isPlayerFacingRight)
+            //    rb.AddForce(new Vector2(player.GetIFrameDistance(), 0f));
+            //else
+            //    rb.AddForce(new Vector2(-player.GetIFrameDistance(), 0f));
+            //transform.Translate(player.GetIFrameDistance() * Time.deltaTime, 0f, 0f);
+            dashCounter = 0.0f;
         }
+
+    }
+
+    void DashMovement()
+    {
+        if(dashCounter < dashDuration)
+        {
+            transform.Translate(player.GetDashSpeed() * Time.deltaTime, 0f, 0f);
+        }
+        if (dashCounter < 5.0f)
+            dashCounter += Time.deltaTime;
     }
 
     void GroundCheck()

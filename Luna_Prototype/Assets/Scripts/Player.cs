@@ -20,7 +20,7 @@ public class Player : Character
     [SerializeField]
     private float mIFrameDuration;
     [SerializeField]
-    private float mIFrameDistance;
+    private float mDashSpeed;
     [SerializeField]
     private int mLaserDamage;
     private bool isDouleJumpEnabled;
@@ -88,9 +88,9 @@ public class Player : Character
         return mJumpStrength;
     }
 
-    public float GetIFrameDistance()
+    public float GetDashSpeed()
     {
-        return mIFrameDistance;
+        return mDashSpeed;
     }
 
     public void LaserAttack()
@@ -261,7 +261,7 @@ public class Player : Character
         mRequiredExp = 10;
         mCurrentExp = 0;
 
-        mIFrameDistance = 100f;
+        mDashSpeed = 10f;
 
         //----------------------------------------------------------------------------------//|
         //- Mingzhuo Zhang Edit ------------------------------------------------------------//|
