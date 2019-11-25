@@ -16,7 +16,7 @@ using UnityEngine;
 
  }
 
-public enum ElementIndex //for parsing into an array for later calculations, like evaluate final element values
+public enum ElementIndex //for putting into an array for later calculations, like evaluating the final element values
 {
     voidType = 0,
     fire = 1,

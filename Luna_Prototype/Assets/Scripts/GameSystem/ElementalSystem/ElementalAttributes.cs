@@ -7,6 +7,7 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
     public bool debugMode = false;
     public bool inclusiveElement = false;
     public bool initialized = false;
+    public bool isEquipment = false;
     //For weapons/enemy attacks, these are flat damages, 150 fire means the weapon will do 150 fire damage, NOT 1.5x fire damage
     //voidType is a damage type that ignores all enemental resistances target has and always deal the full damage assgned
     //voidType does not affect damage taken
@@ -22,7 +23,7 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
     //For enemies 100 means 1.00x damage is taken from that element
     //If above 100 enemy takes extra damage (example: 150 will result in enemy taking 1.50x from that element alone)
     //Like wise if below 100 enemy will take less damage (example: 50 will result in enemy taking 0.50x damage from that element)
-    public float voidTypeRes    = 100.0f; //void resistances does not do anything, it's just here
+    private float voidTypeRes    = 100.0f; //void resistances does not do anything, it's just here
     public float fireRes        = 100.0f;
     public float earthRes       = 100.0f;
     public float metalRes       = 100.0f;
@@ -33,7 +34,7 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
 
     //Chance is the chance of element effect being applied
     //Chance that an effect will occur, 100 for 100% chance and 0 being 0% chance, will not have any effect above 100
-    private float voidTypeEffectChance      = 100.0f;
+    private float voidTypeEffectChance      = 0.0f;
     public float fireEffectChance           = 100.0f;
     public float earthEffectChance          = 100.0f;
     public float metalEffectChance          = 100.0f;
@@ -104,9 +105,140 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
         }
         return ElementalType.none;
     }
+
+    private float voidTypeTemp = 0.0f;
+    private float fireTemp = 0.0f;
+    private float earthTemp = 0.0f;
+    private float metalTemp = 0.0f;
+    private float waterTemp = 0.0f;
+    private float woodTemp = 0.0f;
+    private float windTemp = 0.0f;
+    private float lightningTemp = 0.0f;
+
+    public void ApplyDamage(ref Enemy t, bool applyStatus)
+    {
+        if (t != null)
+        {
+            for (int i = 0; i < mElement.Length; i++)
+            {
+                switch (i)
+                {
+                    case (int)ElementIndex.wind: //Wind gives a buff to the use, therefore should not apply status to target
+                        {
+                            mElement[i].ApplyElementalDamage(t, mElement[i].potency, false); //do damage to t without applying status
+                            //TODO: Apply status buff only to player
+                            break;
+                        }
+                    default:
+                        {
+                            mElement[i].ApplyElementalDamage(t, mElement[i].potency, applyStatus);
+                            break;
+                        }
+
+                }
+            }
+        }
+    }
+    public void ApplyDamage(ref Player t, bool applyStatus)
+    {
+        if (t != null)
+        {
+            for (int i = 0; i < mElement.Length; i++)
+            {
+                switch (i)
+                {
+                    case (int)ElementIndex.wind: //Wind gives a buff to the user, therefore should not apply status to target
+                        {
+                            mElement[i].ApplyElementalDamage(t, mElement[i].potency, false); //do damage to t without applying status
+                            //TODO: Apply status buff only to self
+                            break;
+                        }
+                    default:
+                        {
+                            mElement[i].ApplyElementalDamage(t, mElement[i].potency, applyStatus);
+                            break;
+                        }
+
+                }
+            }
+        }
+    }
     public void EvaluateElementValues()
     {
         //to do, if player have elements that can be combined into secondary element, calculate for new element values
+        if(inclusiveElement)
+        {
+            if(water > 0 && metal > 0) //lightning
+            {
+                lightning += water + metal;
+                lightningDuration += waterDuration + metalDuration;
+                lightningEffectIntensity += waterEffectIntensity + metalEffectIntensity;
+                lightningEffectChance = (lightningEffectChance + waterEffectChance + metalEffectChance) / 3;
+            }
+            if (fire > 0 && wood > 0) //wind
+            {
+                wind += fire + wood;
+                windDuration += fireDuration + woodDuration;
+                windEffectIntensity += fireEffectIntensity + woodEffectIntensity;
+                windEffectChance = (windEffectChance + fireEffectChance + woodEffectChance) / 3;
+            }
+        }
+        else
+        {
+            if (water > 0 && metal > 0) //lightning
+            {
+                lightning += water + metal;
+                lightningDuration += waterDuration + metalDuration;
+                lightningEffectIntensity += waterEffectIntensity + metalEffectIntensity;
+                lightningEffectChance = (lightningEffectChance + waterEffectChance + metalEffectChance) / 3;
+
+                water = 0;
+                metal = 0;
+                waterEffectChance = 0;
+                metalEffectChance = 0;
+            }
+            if (fire > 0 && wood > 0) //wind
+            {
+                wind += fire + wood;
+                windDuration += fireDuration + woodDuration;
+                windEffectIntensity += fireEffectIntensity + woodEffectIntensity;
+                windEffectChance = (windEffectChance + fireEffectChance + woodEffectChance) / 3;
+
+                fire = 0;
+                wood = 0;
+                fireEffectChance = 0;
+                woodEffectChance = 0;
+            }
+        }
+    }
+
+    public void RefreshStats()
+    {
+        EvaluateElementValues();
+
+        mElement[Indexer(ElementalType.voidType)] = new VoidType();
+        mElement[Indexer(ElementalType.voidType)].SetElement(ElementalType.voidType, ElementIndex.voidType, voidType, voidTypeRes, voidTypeDuration, voidTypeEffectChance, voidTypeIntensity, false, this);
+
+        mElement[Indexer(ElementalType.fire)] = new Fire();
+        mElement[Indexer(ElementalType.fire)].SetElement(ElementalType.fire, ElementIndex.fire, fire, fireRes, fireDuration, fireEffectChance, fireEffectIntensity, false, this);
+
+        mElement[Indexer(ElementalType.earth)] = new Earth();
+        mElement[Indexer(ElementalType.earth)].SetElement(ElementalType.earth, ElementIndex.earth, earth, earthRes, earthDuration, earthEffectChance, earthEffectIntensity, false, this);
+
+        mElement[Indexer(ElementalType.metal)] = new Metal();
+        mElement[Indexer(ElementalType.metal)].SetElement(ElementalType.metal, ElementIndex.metal, metal, metalRes, metalDuration, metalEffectChance, metalEffectIntensity, false, this);
+
+        mElement[Indexer(ElementalType.water)] = new Water();
+        mElement[Indexer(ElementalType.water)].SetElement(ElementalType.water, ElementIndex.water, water, waterRes, waterDuration, waterEffectChance, waterEffectIntensity, false, this);
+
+        mElement[Indexer(ElementalType.wood)] = new Wood();
+        mElement[Indexer(ElementalType.wood)].SetElement(ElementalType.wood, ElementIndex.wood, wood, woodRes, woodDuration, woodEffectChance, woodEffectIntensity, false, this);
+
+        mElement[Indexer(ElementalType.wind)] = new Wind();
+        mElement[Indexer(ElementalType.wind)].SetElement(ElementalType.wind, ElementIndex.wind, wind, windRes, windDuration, windEffectChance, windEffectIntensity, false, this);
+
+        mElement[Indexer(ElementalType.lightning)] = new Lightning();
+        mElement[Indexer(ElementalType.lightning)].SetElement(ElementalType.lightning, ElementIndex.lightning, lightning, lightningRes, lightningDuration, lightningEffectChance, lightningEffectIntensity, false, this);
     }
 
     void Start() //initialize element data, append this to add new elements, do not forget to add new enums in ElementalSystem.cs
