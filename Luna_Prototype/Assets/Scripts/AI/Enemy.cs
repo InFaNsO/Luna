@@ -97,20 +97,12 @@ public class Enemy : Character
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag != gameObject.tag)
+        if (((1 << other.gameObject.layer) & 1 << gameObject.layer) == 0)
         {
-            Debug.Log("enemy collide with bullet!_1");
+            
             if (other.GetComponent<Bullet>() != null)
             {
-                Debug.Log("enemy collide with bullet!_2");
-
-                GetHit(other.GetComponent<Bullet>().Damage);
-            }
-            else if (other.GetComponent<Laser>() != null)
-            {
-                Debug.Log("enemy collide with bullet!_2");
-
-                GetHit(other.GetComponent<Laser>().Damage);
+                GetHit(other.GetComponent<Bullet>().Damage, other.tag);
             }
         }
     }
@@ -144,11 +136,26 @@ public class Enemy : Character
         //--------------------------//|
     }
 
-    override public void GetHit(float dmg)
+    public override void GetHit(float dmg)
     {
         mCurrentHealth -= dmg;
 
-        if (mWeapon.GetAttackState() == AttacState.State_Parriable)
+        if ((mWeapon.GetAttackState() == AttacState.State_Parriable))
+        {
+            GetStun(1.5f);
+        }
+
+        if (mCurrentHealth <= 0.0f)
+        {
+            Die();
+        }
+    }
+
+    public void GetHit(float dmg, string tag)
+    {
+        mCurrentHealth -= dmg;
+
+        if ((mWeapon.GetAttackState() == AttacState.State_Parriable) && (tag == "Parry"))
         {
             GetStun(1.5f);
         }

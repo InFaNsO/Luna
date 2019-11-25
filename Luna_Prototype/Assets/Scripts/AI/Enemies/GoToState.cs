@@ -61,7 +61,7 @@ namespace LAI
             }
 
             //check if there is a jump object then jump to most optimal one
-            if(!agent.IsJumpCapable() || diff.y < agent.GetSafeDistanceReduced())       //see if enemy can jump or is there a need to jump
+            if(/*!agent.IsJumpCapable() || */diff.y < agent.GetSafeDistanceReduced())       //see if enemy can jump or is there a need to jump
             {
                 //end the update
                 return;

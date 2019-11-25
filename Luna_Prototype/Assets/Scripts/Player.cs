@@ -1,4 +1,4 @@
-﻿
+﻿ 
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -311,7 +311,7 @@ public class Player : Character
         if (other.tag != gameObject.tag)                                                //|
         {                                                                               //|--- [Mingzhuo Zhang] make player can take dmage from bullet
             Debug.Log("player collide with bullet!_1");                                 //|
-            if (other.GetComponent<Bullet>() != null)                                   //|
+            if ((other.GetComponent<Bullet>() != null) && (other.tag != "Parry"))                                   //|
             {                                                                           //|
                 Debug.Log("player collide with bullet!_2");                             //|
                                                                                         //|

@@ -63,7 +63,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag != gameObject.tag)
+        if ((collision.gameObject.tag != gameObject.tag) && (gameObject.tag != "Parry"))
         {
             if ((collision.GetComponent<Character>() != null) || ( !mIsMelee && collision.CompareTag("Ground")))
             {
