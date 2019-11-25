@@ -47,6 +47,11 @@ public class Player : Character
     public Vector3 LastGotHitPosition { get { return mLastGotHitPosition; } }       //|--- [Mingzhuo Zhang] Edit:  For Kevin(Element system)
     private Vector3 mLastGotHitPosition;
 
+    private ParryAttackable mParryAttackable;
+
+
+    // Getter & Setter
+    public Weapon CurrentWeapon { get { return mCurrentWeapon; } }
 
     public void LevelUp()
     {
@@ -221,6 +226,10 @@ public class Player : Character
     {
         Core.Debug.Log("Attack");
         Debug.Log("[Player] Attack called");
+
+        if (mParryAttackable.IsParrying())
+            return;
+
         if ((mCurrentWeapon == null) && ((mWeapon1 != null) || (mWeapon2 != null)))
         {
             if(mWeapon1 != null)
@@ -247,12 +256,15 @@ public class Player : Character
         }
     }
 
-    public void Awake()
+    public new void Awake()
     {
         base.Awake();
 
         _LocalLevelManager = GameObject.Find("LocalLevelManager").GetComponent<LocalLevelManager>();    //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
         Assert.IsNotNull(_LocalLevelManager, "[Player] _LocalLevelManager is null");                    //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
+
+        mParryAttackable = GetComponent<ParryAttackable>();
+        Assert.IsNotNull(mParryAttackable, "[Player] _LocalLevelManager is null");
 
         mLaserDamage = 0;
         isDouleJumpEnabled = true;

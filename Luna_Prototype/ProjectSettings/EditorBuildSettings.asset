@@ -9,11 +9,14 @@ EditorBuildSettings:
     path: Assets/Scenes/GameLoader.unity
     guid: 5e66d92fa2b5ecc459e6ac11d465a538
   - enabled: 1
-    path: Assets/Scenes/CombatTest.unity
-    guid: a2b22303193184944ac21576674b7d32
-  - enabled: 0
     path: Assets/Scenes/SampleTitle.unity
     guid: d046ce46e74c52147bc68a4079b4f331
+  - enabled: 1
+    path: Assets/Scenes/Week6_MignzhuoBranch/UITest 1.unity
+    guid: 98111d674d62a5748998c80db359eb77
+  - enabled: 1
+    path: Assets/Scenes/CombatTest.unity
+    guid: a2b22303193184944ac21576674b7d32
   - enabled: 0
     path: 
     guid: 00000000000000000000000000000000

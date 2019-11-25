@@ -5,14 +5,20 @@ using UnityEngine;
 public class ParryAttackable : MonoBehaviour
 {
     public Bullet mParryCollider;
-    Character mOwner;
+    Player mOwner;
 
     public float mParryCooldown = 1.0f;
     float mParryCounter = 0.0f;
-    
+
+    // Getter & Setter
+    public bool IsParrying() { return mParryCounter < mParryCooldown; }
+    public int ParryCooldown { set { mParryCooldown = value; } }
+
+    public 
     void Awake()
     {
-        mOwner = GetComponent<Character>();
+        mOwner = GetComponent<Player>();
+        mParryCounter = mParryCooldown;
     }
 
     void Update()
@@ -32,11 +38,12 @@ public class ParryAttackable : MonoBehaviour
 
     public void Parry()
     {
-        if (mParryCounter > mParryCooldown)
+        if (mParryCounter >= mParryCooldown)
         {
+            mOwner.CurrentWeapon.WeaponReset();
             Bullet newBullet = Object.Instantiate(mParryCollider, new Vector3(0, 0, 0), Quaternion.identity);
-            
             newBullet.Fire("Parry", 0, mOwner.transform.position, mOwner.transform.right, WeaponType.Melee);
+            mParryCounter = 0.0f;
         }
     }
 }
