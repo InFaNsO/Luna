@@ -372,7 +372,8 @@ public class Player : Character
     public void UpdateHealth(float changeValue)                                         //|
     {                                                                                   //|
         mCurrentHealth += changeValue;                                                  //|
-        _LocalLevelManager._InGameUI.UpdateHealthBar(mCurrentHealth / mMaxHealth);      //|--- [Mingzhuo Zhang] add a function for all heathchange event, that we can update ui all in one
+        //_LocalLevelManager._InGameUI.UpdateHealthBar(mCurrentHealth / mMaxHealth);      //|--- [Mingzhuo Zhang] add a function for all heathchange event, that we can update ui all in one
+        ServiceLocator.Get<UIManager>().UpdateHPGauge(mCurrentHealth / mMaxHealth);
                                                                                         //|
         if (mCurrentHealth <= 0)                                                        //|
         {                                                                               //|
