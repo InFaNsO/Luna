@@ -97,9 +97,8 @@ public class Enemy : Character
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (((1 << other.gameObject.layer) & 1 << gameObject.layer) == 0)
+        if (other.tag != gameObject.tag)
         {
-            
             if (other.GetComponent<Bullet>() != null)
             {
                 GetHit(other.GetComponent<Bullet>().Damage, other.tag);

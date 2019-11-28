@@ -324,7 +324,7 @@ public class Player : Character
         if (other.tag != gameObject.tag)                                                //|
         {                                                                               //|--- [Mingzhuo Zhang] make player can take dmage from bullet
             Debug.Log("player collide with bullet!_1");                                 //|
-            if ((other.GetComponent<Bullet>() != null) && (other.tag != "Parry"))                                   //|
+            if ((other.GetComponent<Bullet>() != null) && (other.tag != "Parry"))       //|
             {                                                                           //|
                 Debug.Log("player collide with bullet!_2");                             //|
                                                                                         //|

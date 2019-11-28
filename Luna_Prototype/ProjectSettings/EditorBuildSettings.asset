@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleTitle.unity
     guid: d046ce46e74c52147bc68a4079b4f331
   - enabled: 1
+    path: Assets/Scenes/Week6_MignzhuoBranch/CombatTest.unity
+    guid: 5a1aa26d27ccb1047b6c120292580298
+  - enabled: 1
     path: Assets/Scenes/Week6_MignzhuoBranch/UITest 1.unity
     guid: 98111d674d62a5748998c80db359eb77
   - enabled: 1
