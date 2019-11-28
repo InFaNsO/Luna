@@ -35,7 +35,7 @@ public abstract class Elemental
         mElementalAttribute = mElementalAttributes;
     }
     public float GetActiveIntensity() { return mActiveIntensity; }
-    public void ApplyStatusEffect(ref Enemy target, float _intensity, float _duration) //Apply status to target - Enemy overload
+    public void ApplyStatusEffect(ref Enemy target) //Apply status to target - Enemy overload
     {
         ElementalAttributes t = target.GetComponent<ElementalAttributes>();
         if (t != null)
@@ -48,7 +48,7 @@ public abstract class Elemental
         }
         
     }
-    public void ApplyStatusEffect(ref Player target, float _intensity, float _duration) //Apply status to target - Player overload
+    public void ApplyStatusEffect(ref Player target) //Apply status to target - Player overload
     {
         ElementalAttributes t = target.GetComponent<ElementalAttributes>();
         if (t != null)
@@ -60,7 +60,7 @@ public abstract class Elemental
             }
         }
     }
-    public void ApplyElementalDamage(Enemy target, float potency, bool applyStatus) //Do elemental damage to target based on potency - Enemy overload
+    public void ApplyElementalDamage(Enemy target, bool applyStatus) //Do elemental damage to target based on potency - Enemy overload
     {
         ElementalAttributes t = target.GetComponent<ElementalAttributes>();
         if (t != null)
@@ -68,11 +68,11 @@ public abstract class Elemental
             target.GetHit(potency * (t.mElement[i].resistance / 100));
             if(applyStatus)
             {
-                ApplyStatusEffect(ref target, mActiveIntensity, mActiveDuration);
+                ApplyStatusEffect(ref target);
             }
         }
     }
-    public void ApplyElementalDamage(Player target, float potency, bool applyStatus) //Do elemental damage to target based on potency - Player overload
+    public void ApplyElementalDamage(Player target, bool applyStatus) //Do elemental damage to target based on potency - Player overload
     {
         ElementalAttributes t = target.GetComponent<ElementalAttributes>();
         if (t != null)
@@ -80,7 +80,7 @@ public abstract class Elemental
             target.GetHit(potency * (t.mElement[i].resistance / 100));
             if(applyStatus)
             {
-                ApplyStatusEffect(ref target, mActiveIntensity, mActiveDuration);
+                ApplyStatusEffect(ref target);
             }
         }
     }
@@ -104,7 +104,7 @@ public abstract class Elemental
             Debug.Log("Enemy Elemental damage taken");
             mElementalAttribute.mEnemy.mCurrentHealth -= dmg * (resistance / 100);
         }
-    }
+    } //Mainly for debug only, do not use unless you know what you are doing
     public ElementalAttributes GetAttribute()
     {
         if (mElementalAttribute != null)
@@ -156,5 +156,55 @@ public abstract class Elemental
             EffectTick();
         }
         //EffectTick();
+    }
+    public Elemental CopyStats(Elemental destination, Elemental src) //Copy src stats into destination
+    {
+        destination.potency = src.potency;
+        destination.resistance = src.resistance;
+        destination.duration = src.duration;
+        destination.procChance = src.procChance;
+        destination.intensityStatus = src.intensityStatus;
+        return destination;
+
+    }
+    public static Elemental operator+(Elemental a, Elemental b)
+    {
+        VoidType c = new VoidType();
+        c.potency = a.potency + b.potency;
+        c.resistance = a.resistance + b.resistance;
+        c.duration = a.duration + b.duration;
+        c.procChance = a.procChance + b.procChance;
+        c.intensityStatus = a.intensityStatus + b.intensityStatus;
+        return c;
+    }
+    public static Elemental operator -(Elemental a, Elemental b)
+    {
+        VoidType c = new VoidType();
+        c.potency = a.potency - b.potency;
+        c.resistance = a.resistance - b.resistance;
+        c.duration = a.duration - b.duration;
+        c.procChance = a.procChance - b.procChance;
+        c.intensityStatus = a.intensityStatus - b.intensityStatus;
+        return c;
+    }
+    public static Elemental operator *(Elemental a, Elemental b)
+    {
+        VoidType c = new VoidType();
+        c.potency = a.potency * b.potency;
+        c.resistance = a.resistance * b.resistance;
+        c.duration = a.duration * b.duration;
+        c.procChance = a.procChance * b.procChance;
+        c.intensityStatus = a.intensityStatus * b.intensityStatus;
+        return c;
+    }
+    public static Elemental operator /(Elemental a, Elemental b)
+    {
+        VoidType c = new VoidType();
+        c.potency = a.potency / b.potency;
+        c.resistance = a.resistance / b.resistance;
+        c.duration = a.duration / b.duration;
+        c.procChance = a.procChance / b.procChance;
+        c.intensityStatus = a.intensityStatus / b.intensityStatus;
+        return c;
     }
 }

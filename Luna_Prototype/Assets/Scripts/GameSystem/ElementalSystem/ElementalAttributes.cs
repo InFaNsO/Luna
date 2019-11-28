@@ -65,9 +65,18 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
     public float windDuration = 0.0f;
     public float lightningDuration = 0.0f;
 
+    //Debug variables, please ignore
+    private float voidTypeTemp = 0.0f;
+    private float fireTemp = 0.0f;
+    private float earthTemp = 0.0f;
+    private float metalTemp = 0.0f;
+    private float waterTemp = 0.0f;
+    private float woodTemp = 0.0f;
+    private float windTemp = 0.0f;
+    private float lightningTemp = 0.0f;
+
     public Player mPlayer { get; private set; }
     public Enemy mEnemy { get; private set; }
-    //public ElementData dfire;
 
     public Elemental[] mElement = new Elemental[(int)ElementIndex.count];
 
@@ -105,17 +114,9 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
         }
         return ElementalType.none;
     }
+    
 
-    private float voidTypeTemp = 0.0f;
-    private float fireTemp = 0.0f;
-    private float earthTemp = 0.0f;
-    private float metalTemp = 0.0f;
-    private float waterTemp = 0.0f;
-    private float woodTemp = 0.0f;
-    private float windTemp = 0.0f;
-    private float lightningTemp = 0.0f;
-
-    public void ApplyDamage(ref Enemy t, bool applyStatus)
+    public void ApplyDamage(ref Enemy t, bool applyStatus) //Most basic form of applying elemental damage, it takes all elemental stats into calculation
     {
         if (t != null)
         {
@@ -125,13 +126,13 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
                 {
                     case (int)ElementIndex.wind: //Wind gives a buff to the use, therefore should not apply status to target
                         {
-                            mElement[i].ApplyElementalDamage(t, mElement[i].potency, false); //do damage to t without applying status
+                            mElement[i].ApplyElementalDamage(t, false); //do damage to t without applying status
                             //TODO: Apply status buff only to player
                             break;
                         }
                     default:
                         {
-                            mElement[i].ApplyElementalDamage(t, mElement[i].potency, applyStatus);
+                            mElement[i].ApplyElementalDamage(t, applyStatus);
                             break;
                         }
 
@@ -139,7 +140,7 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
             }
         }
     }
-    public void ApplyDamage(ref Player t, bool applyStatus)
+    public void ApplyDamage(ref Player t, bool applyStatus)//Most basic form of applying elemental damage, it takes all elemental stats into calculation
     {
         if (t != null)
         {
@@ -149,13 +150,14 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
                 {
                     case (int)ElementIndex.wind: //Wind gives a buff to the user, therefore should not apply status to target
                         {
-                            mElement[i].ApplyElementalDamage(t, mElement[i].potency, false); //do damage to t without applying status
+                            mElement[i].ApplyElementalDamage(t, false); //do damage to t without applying status
                             //TODO: Apply status buff only to self
+                            mElement[i].ApplyStatusEffect(ref t);
                             break;
                         }
                     default:
                         {
-                            mElement[i].ApplyElementalDamage(t, mElement[i].potency, applyStatus);
+                            mElement[i].ApplyElementalDamage(t, applyStatus);
                             break;
                         }
 
@@ -211,7 +213,6 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
             }
         }
     }
-
     public void RefreshStats()
     {
         EvaluateElementValues();
@@ -240,7 +241,36 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
         mElement[Indexer(ElementalType.lightning)] = new Lightning();
         mElement[Indexer(ElementalType.lightning)].SetElement(ElementalType.lightning, ElementIndex.lightning, lightning, lightningRes, lightningDuration, lightningEffectChance, lightningEffectIntensity, false, this);
     }
-
+    public ElementalAttributes SumStats(ElementalAttributes mEle, ElementalAttributes tEle) //return the sum of tEle stats and mEle stats
+    {
+        ElementalAttributes ele = new ElementalAttributes();
+        for (int i = 0; i < mElement.Length; i++)
+        {
+            ele.mElement[i] = mEle.mElement[i] + tEle.mElement[i];
+        }
+        return ele;
+    }
+    public ElementalAttributes SubStats(ElementalAttributes mEle, ElementalAttributes tEle) //returns mEle - tEle
+    {
+        ElementalAttributes ele = new ElementalAttributes();
+        for (int i = 0; i < mElement.Length; i++)
+        {
+            ele.mElement[i] = mEle.mElement[i] - tEle.mElement[i];
+        }
+        return ele;
+    }
+    public static ElementalAttributes operator+(ElementalAttributes a, ElementalAttributes b)
+    {
+        ElementalAttributes c = new ElementalAttributes();
+        c = c.SumStats(a, b);
+        return c;
+    }
+    public static ElementalAttributes operator-(ElementalAttributes a, ElementalAttributes b)
+    {
+        ElementalAttributes c = new ElementalAttributes();
+        c = c.SubStats(a, b);
+        return c;
+    }
     void Start() //initialize element data, append this to add new elements, do not forget to add new enums in ElementalSystem.cs
     {
         mPlayer = GetComponent<Player>();
@@ -270,7 +300,6 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
         mElement[Indexer(ElementalType.lightning)] = new Lightning();
         mElement[Indexer(ElementalType.lightning)].SetElement(ElementalType.lightning, ElementIndex.lightning, lightning, lightningRes, lightningDuration, lightningEffectChance, lightningEffectIntensity, false, this);
     }
-
     void Update() //Should not be touched unless you know what you are doing
     {
         if (!initialized)
@@ -288,7 +317,6 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
             }
         }
     }
-
     private void OnMouseDown() //Debug Mode only
     {
         if (debugMode)
@@ -301,27 +329,27 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
                     {
                         case (int)ElementIndex.wind:
                         {
-                                mElement[i].ApplyElementalDamage(mPlayer, mElement[i].potency, false);
+                                mElement[i].ApplyElementalDamage(mPlayer, false);
                                 //Apply status only to player
                                 break;
                         }
                         default:
                         {
-                                mElement[i].ApplyElementalDamage(mPlayer, mElement[i].potency, true);
+                                mElement[i].ApplyElementalDamage(mPlayer, true);
                                 break;
                         }
 
                     }
 
-                    if (i == (int)ElementIndex.wind) { mElement[i].ApplyElementalDamage(mPlayer, mElement[i].potency, true); }
-                    else { mElement[i].ApplyElementalDamage(mPlayer, mElement[i].potency, true); }
+                    if (i == (int)ElementIndex.wind) { mElement[i].ApplyElementalDamage(mPlayer, true); }
+                    else { mElement[i].ApplyElementalDamage(mPlayer, true); }
                 }
             }
             if (mEnemy != null)
             {
                 for (int i = 0; i < mElement.Length; i++)
                 {
-                    mElement[i].ApplyElementalDamage(mEnemy, mElement[i].potency, true);
+                    mElement[i].ApplyElementalDamage(mEnemy, true);
                 }
             }
         }
