@@ -61,6 +61,9 @@ public class World : MonoBehaviour
     [SerializeField] private List<Agent> mAgents;
     [SerializeField] public Agent mPlayer;
     [SerializeField] public List<JumpNode> mJumpNodes;
+    [SerializeField] public List<Platform> mPlatforms;
+    [SerializeField] public List<Platform> mGround;
+    [SerializeField] public List<Platform> mRoof;
 
     private int orientation(Vector2 p, Vector2 q, Vector2 r)
     {

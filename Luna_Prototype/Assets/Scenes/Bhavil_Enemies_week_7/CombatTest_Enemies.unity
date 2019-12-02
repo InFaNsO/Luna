@@ -872,11 +872,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 918552313}
     m_Modifications:
-    - target: {fileID: 4344426171327372247, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
-        type: 3}
-      propertyPath: m_Name
-      value: Weapon_shotgun
-      objectReference: {fileID: 0}
     - target: {fileID: 5418935356144147944, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -941,6 +936,11 @@ PrefabInstance:
         type: 3}
       propertyPath: mMoves.Array.data[0].mMoveContext.mMoveTimeSlices.Array.data[0].mType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344426171327372247, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon_shotgun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdb806c51f2c08a48a1dd44476c2e4bc, type: 3}
@@ -1745,7 +1745,7 @@ SpriteRenderer:
   m_Size: {x: 206.43524, y: 156.54001}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &498229387
@@ -1921,7 +1921,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   following: 1
   target: {fileID: 371630414}
-  _pivot: {fileID: 102897274}
   offsetX: 2
   cameraFollowSpeedX: 2
   cameraFollowSpeedY: 5
@@ -3076,10 +3075,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2128419624135272632, guid: a31afef3ea2353845847fc556dbee13b,
+    - target: {fileID: 7281698943840582382, guid: a31afef3ea2353845847fc556dbee13b,
         type: 3}
-      propertyPath: m_Enabled
-      value: 1
+      propertyPath: mMoves.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281698943840582382, guid: a31afef3ea2353845847fc556dbee13b,
+        type: 3}
+      propertyPath: mMoves.Array.data[1].mToMoveId.Array.size
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281698943840582382, guid: a31afef3ea2353845847fc556dbee13b,
+        type: 3}
+      propertyPath: mMoves.Array.data[1].mAttackSpeedMutiplier
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6606600559324767001, guid: a31afef3ea2353845847fc556dbee13b,
         type: 3}
@@ -3116,21 +3125,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: 0.08
       objectReference: {fileID: 0}
-    - target: {fileID: 7281698943840582382, guid: a31afef3ea2353845847fc556dbee13b,
-        type: 3}
-      propertyPath: mMoves.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 7281698943840582382, guid: a31afef3ea2353845847fc556dbee13b,
-        type: 3}
-      propertyPath: mMoves.Array.data[1].mToMoveId.Array.size
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7281698943840582382, guid: a31afef3ea2353845847fc556dbee13b,
-        type: 3}
-      propertyPath: mMoves.Array.data[1].mAttackSpeedMutiplier
-      value: 2
-      objectReference: {fileID: 0}
     - target: {fileID: 6265158075424372803, guid: a31afef3ea2353845847fc556dbee13b,
         type: 3}
       propertyPath: m_Size.y
@@ -3140,6 +3134,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Offset.y
       value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 2128419624135272632, guid: a31afef3ea2353845847fc556dbee13b,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a31afef3ea2353845847fc556dbee13b, type: 3}
@@ -4290,7 +4289,7 @@ SpriteRenderer:
   m_Size: {x: 68.811745, y: 52.18}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1001 &1088888446
@@ -4300,11 +4299,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1596560158}
     m_Modifications:
-    - target: {fileID: 4344426171327372247, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
-        type: 3}
-      propertyPath: m_Name
-      value: Weapon_shotgun
-      objectReference: {fileID: 0}
     - target: {fileID: 5418935356144147944, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4364,6 +4358,11 @@ PrefabInstance:
         type: 3}
       propertyPath: mMoves.Array.data[0].mMoveContext.mMoveTimeSlices.Array.data[1].mType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344426171327372247, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon_shotgun
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fdb806c51f2c08a48a1dd44476c2e4bc, type: 3}
@@ -4605,7 +4604,7 @@ SpriteRenderer:
   m_Size: {x: 30.88, y: 24.396406}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1256853034
@@ -4846,8 +4845,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1291892604}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.37, y: -0.05, z: 0}
-  m_LocalScale: {x: 15.550461, y: 17.204185, z: 10.04624}
+  m_LocalPosition: {x: -2.288, y: -0.123, z: 0}
+  m_LocalScale: {x: 15.410506, y: 15.879463, z: 10.04624}
   m_Children: []
   m_Father: {fileID: 881526269}
   m_RootOrder: 0
@@ -4924,7 +4923,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.18, y: 0.11}
+  m_Size: {x: 1.17, y: 0.11}
   m_EdgeRadius: 0
 --- !u!1 &1333234406
 GameObject:
@@ -4973,6 +4972,9 @@ MonoBehaviour:
   - {fileID: 99849123}
   - {fileID: 1117057872}
   - {fileID: 1000711447}
+  mPlatforms: []
+  mGround: []
+  mRoof: []
 --- !u!4 &1333234408
 Transform:
   m_ObjectHideFlags: 0
@@ -5475,16 +5477,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2055398516}
     m_Modifications:
-    - target: {fileID: 4344426171327372247, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
-        type: 3}
-      propertyPath: m_Name
-      value: Weapon_ShotGun
-      objectReference: {fileID: 0}
-    - target: {fileID: 4344426171327372247, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5418935356144147944, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5538,6 +5530,16 @@ PrefabInstance:
     - target: {fileID: 5418935356144147944, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344426171327372247, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon_ShotGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344426171327372247, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -5946,6 +5948,7 @@ MonoBehaviour:
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 4294967295
+  dashDuration: 0.14
 --- !u!1 &1837855912
 GameObject:
   m_ObjectHideFlags: 0
