@@ -6,6 +6,7 @@ using UnityEngine.Assertions;
 public class Enemy_Bat : Enemy
 {
     public Bullet mBullet;
+    public Bullet mMeleeBullet;
     public int mDamage = 10;
 
     public enum States
@@ -28,9 +29,10 @@ public class Enemy_Bat : Enemy
         gameObject.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
 
         //Add State
-        mStateMachine.AddState<LAI.EnemyBatState_idel<Enemy_Bat>>();         //0
-        mStateMachine.AddState<LAI.EnemyBatState_goTo<Enemy_Bat>>();         //1
-        mStateMachine.AddState<LAI.EnemyBatState_rangeAttack<Enemy_Bat>>();         //2
+        mStateMachine.AddState<LAI.EnemyBatState_idel<Enemy_Bat>>();                  //0
+        mStateMachine.AddState<LAI.EnemyBatState_goTo<Enemy_Bat>>();                  //1
+        mStateMachine.AddState<LAI.EnemyBatState_rangeAttack<Enemy_Bat>>();           //2
+        mStateMachine.AddState<LAI.EnemyBatState_meleeAttack<Enemy_Bat>>();           //3
 
         mCurrentState = 0;
         mStateMachine.SetAgent(this);
