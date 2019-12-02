@@ -471,7 +471,7 @@ PrefabInstance:
     - target: {fileID: 1382053527553314527, guid: 7e2fb884ba2dde84ca387e320bd5e24b,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 2.2
+      value: -0.89
       objectReference: {fileID: 0}
     - target: {fileID: 1382053527553314527, guid: 7e2fb884ba2dde84ca387e320bd5e24b,
         type: 3}
@@ -523,6 +523,16 @@ PrefabInstance:
       propertyPath: world
       value: 
       objectReference: {fileID: 1333234407}
+    - target: {fileID: 7442752176976350015, guid: 7e2fb884ba2dde84ca387e320bd5e24b,
+        type: 3}
+      propertyPath: mSafeDistanceReduced
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7442752176976350015, guid: 7e2fb884ba2dde84ca387e320bd5e24b,
+        type: 3}
+      propertyPath: mRadius
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7e2fb884ba2dde84ca387e320bd5e24b, type: 3}
 --- !u!1 &86923120
