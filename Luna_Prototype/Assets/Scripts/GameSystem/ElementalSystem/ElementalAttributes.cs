@@ -12,58 +12,58 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
     //voidType is a damage type that ignores all enemental resistances target has and always deal the full damage assgned
     //voidType does not affect damage taken
     public float voidType =     0.0f;
-    public float fire =         0.0f;
-    public float earth =        0.0f;
-    public float metal =        0.0f;
-    public float water =        0.0f;
-    public float wood =         0.0f;
-    public float wind =         0.0f;
-    public float lightning =    0.0f;
+    [SerializeField] public float fire =         0.0f;
+    [SerializeField] public float earth =        0.0f;
+    [SerializeField] public float metal =        0.0f;
+    [SerializeField] public float water =        0.0f;
+    [SerializeField] public float wood =         0.0f;
+    [SerializeField] public float wind =         0.0f;
+    [SerializeField] public float lightning =    0.0f;
 
     //For enemies 100 means 1.00x damage is taken from that element
     //If above 100 enemy takes extra damage (example: 150 will result in enemy taking 1.50x from that element alone)
     //Like wise if below 100 enemy will take less damage (example: 50 will result in enemy taking 0.50x damage from that element)
     private float voidTypeRes    = 100.0f; //void resistances does not do anything, it's just here
-    public float fireRes        = 100.0f;
-    public float earthRes       = 100.0f;
-    public float metalRes       = 100.0f;
-    public float waterRes       = 100.0f;
-    public float woodRes        = 100.0f;
-    public float windRes        = 100.0f;
-    public float lightningRes   = 100.0f;
+    [SerializeField] public float fireRes        = 100.0f;
+    [SerializeField] public float earthRes       = 100.0f;
+    [SerializeField] public float metalRes       = 100.0f;
+    [SerializeField] public float waterRes       = 100.0f;
+    [SerializeField] public float woodRes        = 100.0f;
+    [SerializeField] public float windRes        = 100.0f;
+    [SerializeField] public float lightningRes   = 100.0f;
 
     //Chance is the chance of element effect being applied
     //Chance that an effect will occur, 100 for 100% chance and 0 being 0% chance, will not have any effect above 100
     private float voidTypeEffectChance      = 0.0f;
-    public float fireEffectChance           = 100.0f;
-    public float earthEffectChance          = 100.0f;
-    public float metalEffectChance          = 100.0f;
-    public float waterEffectChance          = 100.0f;
-    public float woodEffectChance           = 100.0f;
-    public float windEffectChance           = 100.0f;
-    public float lightningEffectChance      = 100.0f;
+    [SerializeField] public float fireEffectChance           = 100.0f;
+    [SerializeField] public float earthEffectChance          = 100.0f;
+    [SerializeField] public float metalEffectChance          = 100.0f;
+    [SerializeField] public float waterEffectChance          = 100.0f;
+    [SerializeField] public float woodEffectChance           = 100.0f;
+    [SerializeField] public float windEffectChance           = 100.0f;
+    [SerializeField] public float lightningEffectChance      = 100.0f;
 
     //Intensity is the strength of the effect the element applies
     //The intensity is a flat value, not a multiplier
     private float voidTypeIntensity = 0.0f;
-    public float fireEffectIntensity = 0.0f;
-    public float earthEffectIntensity = 0.0f;
-    public float metalEffectIntensity = 0.0f;
-    public float waterEffectIntensity = 0.0f;
-    public float woodEffectIntensity = 0.0f;
-    public float windEffectIntensity = 0.0f;
-    public float lightningEffectIntensity = 0.0f;
+    [SerializeField] public float fireEffectIntensity = 0.0f;
+    [SerializeField] public float earthEffectIntensity = 0.0f;
+    [SerializeField] public float metalEffectIntensity = 0.0f;
+    [SerializeField] public float waterEffectIntensity = 0.0f;
+    [SerializeField] public float woodEffectIntensity = 0.0f;
+    [SerializeField] public float windEffectIntensity = 0.0f;
+    [SerializeField] public float lightningEffectIntensity = 0.0f;
 
 
     //Effect duration, how long effects lasts
     private float voidTypeDuration = 0.0f;
-    public float fireDuration = 0.0f;
-    public float earthDuration = 0.0f;
-    public float metalDuration = 0.0f;
-    public float waterDuration = 0.0f;
-    public float woodDuration = 0.0f;
-    public float windDuration = 0.0f;
-    public float lightningDuration = 0.0f;
+    [SerializeField] public float fireDuration = 0.0f;
+    [SerializeField] public float earthDuration = 0.0f;
+    [SerializeField] public float metalDuration = 0.0f;
+    [SerializeField] public float waterDuration = 0.0f;
+    [SerializeField] public float woodDuration = 0.0f;
+    [SerializeField] public float windDuration = 0.0f;
+    [SerializeField] public float lightningDuration = 0.0f;
 
     //Debug variables, please ignore
     private float voidTypeTemp = 0.0f;
@@ -75,8 +75,8 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
     private float windTemp = 0.0f;
     private float lightningTemp = 0.0f;
 
-    public Player mPlayer { get; private set; }
-    public Enemy mEnemy { get; private set; }
+    public Player mPlayer;
+    public Enemy mEnemy;
 
     public Elemental[] mElement = new Elemental[(int)ElementIndex.count];
 
@@ -127,7 +127,7 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
                     case (int)ElementIndex.wind: //Wind gives a buff to the use, therefore should not apply status to target
                         {
                             mElement[i].ApplyElementalDamage(t, false); //do damage to t without applying status
-                            //TODO: Apply status buff only to player
+                            mElement[i].ApplyStatusEffectSelf();
                             break;
                         }
                     default:
@@ -151,8 +151,31 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
                     case (int)ElementIndex.wind: //Wind gives a buff to the user, therefore should not apply status to target
                         {
                             mElement[i].ApplyElementalDamage(t, false); //do damage to t without applying status
-                            //TODO: Apply status buff only to self
-                            mElement[i].ApplyStatusEffect(ref t);
+                            mElement[i].ApplyStatusEffectSelf();
+                            break;
+                        }
+                    default:
+                        {
+                            mElement[i].ApplyElementalDamage(t, applyStatus);
+                            break;
+                        }
+
+                }
+            }
+        }
+    }
+    public void ApplyDamage(ref Character t, bool applyStatus)//Most basic form of applying elemental damage, it takes all elemental stats into calculation
+    {
+        if (t != null)
+        {
+            for (int i = 0; i < mElement.Length; i++)
+            {
+                switch (i)
+                {
+                    case (int)ElementIndex.wind: //Wind gives a buff to the user, therefore should not apply status to target
+                        {
+                            mElement[i].ApplyElementalDamage(t, false); //do damage to t without applying status
+                            mElement[i].ApplyStatusEffectSelf(); //Apply buff to self
                             break;
                         }
                     default:
@@ -323,34 +346,11 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
         {
             if (mPlayer != null)
             {
-                for (int i = 0; i < mElement.Length; i++)
-                {
-                    switch(i)
-                    {
-                        case (int)ElementIndex.wind:
-                        {
-                                mElement[i].ApplyElementalDamage(mPlayer, false);
-                                //Apply status only to player
-                                break;
-                        }
-                        default:
-                        {
-                                mElement[i].ApplyElementalDamage(mPlayer, true);
-                                break;
-                        }
-
-                    }
-
-                    if (i == (int)ElementIndex.wind) { mElement[i].ApplyElementalDamage(mPlayer, true); }
-                    else { mElement[i].ApplyElementalDamage(mPlayer, true); }
-                }
+                ApplyDamage(ref mPlayer, true);
             }
             if (mEnemy != null)
             {
-                for (int i = 0; i < mElement.Length; i++)
-                {
-                    mElement[i].ApplyElementalDamage(mEnemy, true);
-                }
+                ApplyDamage(ref mEnemy, true);
             }
         }
     }

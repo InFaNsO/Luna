@@ -46,7 +46,6 @@ public abstract class Elemental
                 t.mElement[i].mSetActiveEffect(intensityStatus, duration);
             }
         }
-        
     }
     public void ApplyStatusEffect(ref Player target) //Apply status to target - Player overload
     {
@@ -58,6 +57,26 @@ public abstract class Elemental
             {
                 t.mElement[i].mSetActiveEffect(intensityStatus, duration);
             }
+        }
+    }
+    public void ApplyStatusEffect(ref Character target) //Apply status to target - Character overload
+    {
+        ElementalAttributes t = target.GetComponent<ElementalAttributes>();
+        if (t != null)
+        {
+            float c = Random.Range(0.0f, 100.0f);
+            if (c <= procChance)
+            {
+                t.mElement[i].mSetActiveEffect(intensityStatus, duration);
+            }
+        }
+    }
+    public void ApplyStatusEffectSelf() //Apply status to self
+    {
+        float c = Random.Range(0.0f, 100.0f);
+        if (c <= procChance)
+        {
+            mSetActiveEffect(intensityStatus, duration);
         }
     }
     public void ApplyElementalDamage(Enemy target, bool applyStatus) //Do elemental damage to target based on potency - Enemy overload
@@ -79,6 +98,18 @@ public abstract class Elemental
         {
             target.GetHit(potency * (t.mElement[i].resistance / 100));
             if(applyStatus)
+            {
+                ApplyStatusEffect(ref target);
+            }
+        }
+    }
+    public void ApplyElementalDamage(Character target, bool applyStatus) //Do elemental damage to target based on potency - Character overload
+    {
+        ElementalAttributes t = target.GetComponent<ElementalAttributes>();
+        if (t != null)
+        {
+            target.GetHit(potency * (t.mElement[i].resistance / 100));
+            if (applyStatus)
             {
                 ApplyStatusEffect(ref target);
             }
