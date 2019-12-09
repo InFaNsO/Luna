@@ -5,8 +5,9 @@ public class MovingPlatform : MonoBehaviour
 {
     public GameObject player;
 
+
     // Enter Platform
-    private void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter2D (Collider2D other)
     {
         if (other.gameObject == player)
         {
@@ -15,7 +16,7 @@ public class MovingPlatform : MonoBehaviour
     }
 
     // Exit Platform
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerExit2D (Collider2D other)
     {
         if (other.gameObject == player)
         {
