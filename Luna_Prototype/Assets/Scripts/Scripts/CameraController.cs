@@ -43,6 +43,7 @@ public class CameraController : MonoBehaviour
 
     private void Awake()
     {
+
         _pivot = transform.Find("Pivot");
         if (_pivot == null)
         {
@@ -94,7 +95,10 @@ public class CameraController : MonoBehaviour
         _pivot.transform.SetParent(newTarget);
         
     }
-
+    public void CameraZoom(float destSize, float time)
+    {
+        StartCoroutine(cameraZoom(destSize, time));
+    }
 
     #region private functions
 
@@ -153,6 +157,18 @@ public class CameraController : MonoBehaviour
 
     }
 
+    private IEnumerator cameraZoom(float destSize,float time)
+    {
+        float currSize = this.GetComponent<Camera>().orthographicSize;
+        float t = 0.0f;
+        while (t < time)
+        {
+            this.GetComponent<Camera>().orthographicSize = Mathf.Lerp(currSize, destSize, t / time);
+            t += t + Time.deltaTime > time ? time - t : Time.deltaTime;
+            yield return null;
+        }
+
+    }
 
     #endregion
 
