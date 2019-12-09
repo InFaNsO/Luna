@@ -101,6 +101,8 @@ public class Enemy : Character
         {
             if (other.GetComponent<Bullet>() != null)
             {
+                //1. Bullet.ElementAttribute = Player.ElementAttribute + Weapon.ElementAttribute                \\ TODO
+                //2. Bullet.ApplyDamage()                                                                       \\ TODO
                 GetHit(other.GetComponent<Bullet>().Damage, other.tag);
             }
         }

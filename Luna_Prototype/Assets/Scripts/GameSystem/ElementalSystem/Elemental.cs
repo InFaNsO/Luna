@@ -108,7 +108,7 @@ public abstract class Elemental
         ElementalAttributes t = target.GetComponent<ElementalAttributes>();
         if (t != null)
         {
-            target.GetHit(potency * (t.mElement[i].resistance / 100));
+            target.GetHit(potency * (t.mElement[i].resistance / 100.0f));
             OnHit();
             if(applyStatus)
             {
@@ -121,7 +121,7 @@ public abstract class Elemental
         ElementalAttributes t = target.GetComponent<ElementalAttributes>();
         if (t != null)
         {
-            target.GetHit(potency * (t.mElement[i].resistance / 100));
+            target.GetHit(potency * (t.mElement[i].resistance / 100.0f));
             OnHit();
             if(applyStatus)
             {
@@ -134,7 +134,7 @@ public abstract class Elemental
         ElementalAttributes t = target.GetComponent<ElementalAttributes>();
         if (t != null)
         {
-            target.GetHit(potency * (t.mElement[i].resistance / 100));
+            target.GetHit(potency * (t.mElement[i].resistance / 100.0f));
             OnHit();
             if (applyStatus)
             {
@@ -155,12 +155,12 @@ public abstract class Elemental
         if(mElementalAttribute.mPlayer != null)
         {
             Debug.Log("Player Elemental damage taken");
-            mElementalAttribute.mPlayer.mCurrentHealth -= dmg * (resistance / 100);
+            mElementalAttribute.mPlayer.mCurrentHealth -= dmg * (resistance / 100.0f);
         }
         if(mElementalAttribute.mEnemy != null)
         {
             Debug.Log("Enemy Elemental damage taken");
-            mElementalAttribute.mEnemy.mCurrentHealth -= dmg * (resistance / 100);
+            mElementalAttribute.mEnemy.mCurrentHealth -= dmg * (resistance / 100.0f);
         }
     } //Mainly for debug only, do not use unless you know what you are doing
     public ElementalAttributes GetAttribute()
