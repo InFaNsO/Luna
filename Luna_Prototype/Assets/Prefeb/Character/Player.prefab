@@ -173,6 +173,10 @@ MonoBehaviour:
   mWeapon1: {fileID: 0}
   mWeapon2: {fileID: 0}
   mCurrentWeapon: {fileID: 0}
+  mIsIFrameOn: 0
+  mIFrameCD: 0
+  mIFrameDuration: 0
+  mDashSpeed: 14
   mLaserDamage: 0
   laserObj: {fileID: 7919768267206995212}
   mLevel: 0
@@ -270,7 +274,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 109428899416447167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f03dd47ee9194dc4f8ed5bd07a178a5e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4eaf56603217b8d428baef0ee62921fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mParryCollider: {fileID: 679799675015805979, guid: b807743634ab2a64cbd581ab749fb03f,

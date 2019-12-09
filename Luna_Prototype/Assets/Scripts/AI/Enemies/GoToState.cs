@@ -60,21 +60,13 @@ namespace LAI
                 agent.SetDestination(dest);
             }
 
-<<<<<<< HEAD:Luna_Prototype/Assets/Scripts/AI/Enemies/GoToState.cs
-           // //check if there is a jump object then jump to most optimal one
+          /* // //check if there is a jump object then jump to most optimal one
            // if(!agent.IsJumpCapable() || diff.y < agent.GetSafeDistanceReduced())       //see if enemy can jump or is there a need to jump
            // {
            //     //end the update
            //     return;
            // }
-=======
-            //check if there is a jump object then jump to most optimal one
-            if(/*!agent.IsJumpCapable() ||*/ diff.y < agent.GetSafeDistanceReduced())       //see if enemy can jump or is there a need to jump
-            {
-                //end the update
-                return;
-            }
->>>>>>> master:Luna_Prototype/Assets/Scenes/Scripts/AI/Enemies/GoToState.cs
+
             for(int i = 0; i < agent.GetWorld().mJumpNodes.Count; ++i)
             {
                 diff = agent.transform.position - agent.GetWorld().mJumpNodes[i].transform.position;
@@ -104,7 +96,7 @@ namespace LAI
 
                     }
                 }
-            }
+            }*/
         }
 
         public override void Exit(AgentType agent)

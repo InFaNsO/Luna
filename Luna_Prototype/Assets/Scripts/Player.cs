@@ -264,7 +264,7 @@ public class Player : Character
         Assert.IsNotNull(_LocalLevelManager, "[Player] _LocalLevelManager is null");                    //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
 
         mParryAttackable = GetComponent<ParryAttackable>();
-        Assert.IsNotNull(mParryAttackable, "[Player] _LocalLevelManager is null");
+        Assert.IsNotNull(mParryAttackable, "[Player] _ParryAttackable is null");
 
         mLaserDamage = 0;
         isDouleJumpEnabled = true;
