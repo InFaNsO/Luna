@@ -22,6 +22,30 @@ public abstract class Elemental
     public float mActiveDuration = 0;
     private float mActiveIntensity = 0;
     public float mCount = 0;
+
+    public void OnHit() //This is called whenever the player hits a valid target, intended for adding particle codes
+    {
+        switch (type)
+        {
+            case ElementalType.fire:
+                break;
+            case ElementalType.earth:
+                break;
+            case ElementalType.metal:
+                break;
+            case ElementalType.water:
+                break;
+            case ElementalType.wind:
+                break;
+            case ElementalType.wood:
+                break;
+            case ElementalType.lightning:
+                break;
+            default:
+                break;
+        }
+    }
+
     public void SetElement(ElementalType _type, ElementIndex _index, float _potency, float _resistance, float _duration, float _procChance, float _intensityStatus, bool _flag, ElementalAttributes mElementalAttributes)
     {
         type = _type;
@@ -85,6 +109,7 @@ public abstract class Elemental
         if (t != null)
         {
             target.GetHit(potency * (t.mElement[i].resistance / 100));
+            OnHit();
             if(applyStatus)
             {
                 ApplyStatusEffect(ref target);
@@ -97,6 +122,7 @@ public abstract class Elemental
         if (t != null)
         {
             target.GetHit(potency * (t.mElement[i].resistance / 100));
+            OnHit();
             if(applyStatus)
             {
                 ApplyStatusEffect(ref target);
@@ -109,6 +135,7 @@ public abstract class Elemental
         if (t != null)
         {
             target.GetHit(potency * (t.mElement[i].resistance / 100));
+            OnHit();
             if (applyStatus)
             {
                 ApplyStatusEffect(ref target);

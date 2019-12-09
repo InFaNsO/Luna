@@ -66,14 +66,14 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
     [SerializeField] public float lightningDuration = 0.0f;
 
     //Debug variables, please ignore
-    private float voidTypeTemp = 0.0f;
-    private float fireTemp = 0.0f;
-    private float earthTemp = 0.0f;
-    private float metalTemp = 0.0f;
-    private float waterTemp = 0.0f;
-    private float woodTemp = 0.0f;
-    private float windTemp = 0.0f;
-    private float lightningTemp = 0.0f;
+    //private float voidTypeTemp = 0.0f;
+    //private float fireTemp = 0.0f;
+    //private float earthTemp = 0.0f;
+    //private float metalTemp = 0.0f;
+    //private float waterTemp = 0.0f;
+    //private float woodTemp = 0.0f;
+    //private float windTemp = 0.0f;
+    //private float lightningTemp = 0.0f;
 
     public Player mPlayer;
     public Enemy mEnemy;
