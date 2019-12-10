@@ -13,13 +13,11 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     [Header("Gauges")]
     public Image hp_Image;
 
-
-
     //quick slots
     [Header("Quick Slots")]
     public List<Image> quickSlots = new List<Image>();
     [SerializeField] private Sprite _EmptySlot;
-
+    public int currentSelectedSlot { get; set; }
 
     //pop up pause menu
     [Header("Pause")]
@@ -78,6 +76,8 @@ public class UI_InGame : MonoBehaviour, UI_Interface
             popUp_msgbox.SetActive(false);
         }
 
+
+        currentSelectedSlot = 0;
     }
     public void ResetUI()
     {
@@ -89,6 +89,8 @@ public class UI_InGame : MonoBehaviour, UI_Interface
         {
             s.sprite = null;
         }
+        currentSelectedSlot = 0;
+
     }
 
     #region HPGauge
@@ -173,6 +175,14 @@ public class UI_InGame : MonoBehaviour, UI_Interface
         {
             ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);
         }
+
+    }
+    #endregion
+
+    #region UpdateUI_Img
+
+    void UpdateQuickSlot_Img(int currChoose)
+    {
 
     }
     #endregion

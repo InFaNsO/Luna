@@ -1902,8 +1902,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp_Image: {fileID: 9083532986169861959}
   quickSlots:
-  - {fileID: 9083532985067467046}
   - {fileID: 9083532984943789702}
+  - {fileID: 9083532985067467046}
   - {fileID: 9083532986589904417}
   _EmptySlot: {fileID: 0}
   popUp_pauseGame: {fileID: 9083532986769632388}

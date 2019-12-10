@@ -78,9 +78,19 @@ public class Inventory : MonoBehaviour
     {
         //var image = _player._LocalLevelManager._InGameUI._InventoryItemButtons[whichSlot].GetComponent<Image>();
 
-        var image = ServiceLocator.Get<UIManager>().GetQuickSlot()[whichSlot];//[Rick H] replaced with UIManager service
+        int prevIdx = whichSlot - 1 < 0 ? _slots.Count - 1 : whichSlot - 1;
 
-        image.sprite = _slots[whichSlot].sprite;
+        int nextIdx = whichSlot + 1 > _slots.Count - 1 ? 0 : whichSlot + 1;
+
+
+        var image_centre = ServiceLocator.Get<UIManager>().GetQuickSlot()[0];//[Rick H] replaced with UIManager service
+        image_centre.sprite = _slots[whichSlot].sprite;
+
+        var image_prev = ServiceLocator.Get<UIManager>().GetQuickSlot()[1];//[Rick H] replaced with UIManager service
+        image_prev.sprite = _slots[prevIdx].sprite;
+
+        var image_next = ServiceLocator.Get<UIManager>().GetQuickSlot()[2];//[Rick H] replaced with UIManager service
+        image_next.sprite = _slots[nextIdx].sprite;
     }
 
 }
