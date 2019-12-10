@@ -85,6 +85,48 @@ public class UIManager : MonoBehaviour
         Debug.Log("[UIManager] quick slot not avaliable, current scene does not contain such ui");
         return null;
     }
+
+    public int GetSelectedItemInInventory()
+    {
+        if (currentCanvas == _uiInstances[(int)ECanvasType.InGame])
+        {
+            return _uiInGame.selectedSlotInInventory;
+        }
+        Debug.Log("[UIManager] quick slot not avaliable, current scene does not contain such ui");
+        return 0;
+    }
+
+    /// <summary>
+    /// update the [selectedItemIndex] when [inventory] size changed
+    /// </summary>
+    /// <param name="moveToIndex"></param>
+    public void MoveSelectedItemIndex(int moveToIndex)
+    {
+        if (currentCanvas == _uiInstances[(int)ECanvasType.InGame])
+        {
+            _uiInGame.selectedSlotInInventory = moveToIndex;
+        }else
+        Debug.Log("[UIManager] quick slot not avaliable, current scene does not contain such ui");
+     }
+
+    public void SelectPrevItem(int inventoryCount)
+    {
+        if (currentCanvas == _uiInstances[(int)ECanvasType.InGame])
+        {
+            _uiInGame.SelectPrevItem(inventoryCount);
+        }else
+        Debug.Log("[UIManager] quick slot not avaliable, current scene does not contain such ui");
+     }
+    public void SelectNextItem(int inventoryCount)
+    {
+        if (currentCanvas == _uiInstances[(int)ECanvasType.InGame])
+        {
+            _uiInGame.SelectNextItem(inventoryCount);
+        }else
+        Debug.Log("[UIManager] quick slot not avaliable, current scene does not contain such ui");
+    }
+
+
     public void PopUpMessageBox()
     {
         if (currentCanvas == inGamePrefab)
