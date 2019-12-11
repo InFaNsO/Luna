@@ -6412,6 +6412,11 @@ PrefabInstance:
       propertyPath: mMovementSpeed
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 109428899416447164, guid: d311b3f3097681b46a1df9b1524ca820,
+        type: 3}
+      propertyPath: _LocalLevelManager
+      value: 
+      objectReference: {fileID: 2055398517}
     - target: {fileID: 109428899416447165, guid: d311b3f3097681b46a1df9b1524ca820,
         type: 3}
       propertyPath: m_LocalPosition.x
