@@ -28,7 +28,7 @@ public class Hazard : MonoBehaviour
             //cha.ReceiveDebuff(hazardDamage, hazardDuration);
             if (timePerTick >= 1.0f)
             {
-                GetComponent<ElementalAttributes>().ApplyDamage(ref cha, applyDebuff);
+                GetComponent<ElementalAttributes>().ApplyDamage(cha, applyDebuff);
                 timePerTick = 0.0f;
             }
             timePerTick += Time.deltaTime;
@@ -44,7 +44,7 @@ public class Hazard : MonoBehaviour
             //cha.ReceiveDebuff(hazardDamage, hazardDuration);
             if (timePerTick >= 1.0f)
             {
-                GetComponent<ElementalAttributes>().ApplyDamage(ref cha, applyDebuff);
+                GetComponent<ElementalAttributes>().ApplyDamage(cha, applyDebuff);
                 timePerTick = 0.0f;
             }
             timePerTick += Time.deltaTime;
