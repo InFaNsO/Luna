@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace LAI
 {
-    public class SBStateGoToPlayer: State
+    /*public class SBStateGoToPlayer: State
     {
         private bool setOA;
         private bool setAr;
@@ -48,5 +48,5 @@ namespace LAI
                 agent.GetSteeringModule().SetActive(SteeringType.ObstacleAvoidance, false);
 
         }
-    }
+    }*/
 }

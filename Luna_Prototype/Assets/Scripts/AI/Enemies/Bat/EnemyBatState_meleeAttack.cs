@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace LAI
 {
-    public class EnemyBatState_meleeAttack: State
+    public class EnemyBatState_meleeAttack : State 
     {
         public float toIdelDelay = 3.0f;
         private float toIdelCounter = 0.0f;
@@ -12,6 +12,11 @@ namespace LAI
         float yDifferent = 0.0f;
         Vector3 destPos;
         bool isAttacked = false;
+
+        public override States Name()
+        {
+            return States.Attack;
+        }
 
         public override void Enter(Enemy agent)
         {
@@ -61,13 +66,13 @@ namespace LAI
                     agent.SetDestination(destPos + new Vector3(0.0f, yDifferent * 2.0f, 0.0f));
             }
 
-            //if (Vector3.SqrMagnitude(agent.GetWorld().mPlayer.transform.position - agent.transform.position) < 0.25f && !isAttacked)
-            //{
-            //    Bullet newBullet = Object.Instantiate(agent.mMeleeBullet, new Vector3(0, 0, 0), Quaternion.identity);
-            //    newBullet.Awake();
-            //    newBullet.Fire(agent.tag, agent.mDamage, agent.transform.position, Vector3.down, WeaponType.Melee);
-            //    isAttacked = true;
-            //}
+            if (Vector3.SqrMagnitude(agent.GetWorld().mPlayer.transform.position - agent.transform.position) < 0.25f && !isAttacked)
+            {
+                //Bullet newBullet = Object.Instantiate(agent.mMeleeBullet, new Vector3(0, 0, 0), Quaternion.identity);
+                //newBullet.Awake();
+                //newBullet.Fire(agent.tag, agent.mDamage, agent.transform.position, Vector3.down, WeaponType.Melee);
+                //isAttacked = true;
+            }
 
             toIdelCounter += Time.deltaTime;
         }

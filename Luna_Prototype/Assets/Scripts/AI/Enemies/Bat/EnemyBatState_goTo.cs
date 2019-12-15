@@ -17,6 +17,10 @@ namespace LAI
         private float delayCounter = 0.0f;
         private bool startDelay = false;
 
+        public override States Name()
+        {
+            return States.GoToPlayer;
+        }
 
         public override void Enter(Enemy agent)
         {

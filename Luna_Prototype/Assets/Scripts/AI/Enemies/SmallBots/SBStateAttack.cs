@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace LAI
 {
-    public class SBStateAttack : State
+   /* public class SBStateAttack : State
     {
         public override void Enter(Enemy agent)
         {
@@ -20,5 +20,5 @@ namespace LAI
         {
 
         }
-    }
+    }*/
 }

@@ -58,7 +58,7 @@ public class World : MonoBehaviour
 
     [SerializeField] private List<Wall> mWalls;
     [SerializeField] private List<Obstacle> mObstacles;
-    [SerializeField] private List<Agent> mAgents;
+    [SerializeField] public List<Agent> mAgents;
     [SerializeField] public Agent mPlayer;
     [SerializeField] public List<Platform> mPlatforms;
     [SerializeField] public List<Platform> mGround;

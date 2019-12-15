@@ -18,6 +18,8 @@ public class Agent : MonoBehaviour
     [SerializeField] protected float mSafeDistanceExtended = 15.0f;
     [SerializeField] protected float mRadius = 0.75f;
     [SerializeField] protected World world;
+    public float mMaxHealth = 10.0f;
+    public float mCurrentHealth = 10.0f;
 
     public Vector2 GetPosition()                                    { return transform.position; }
     public Vector2 GetDestination()                                 { return mDestination; }

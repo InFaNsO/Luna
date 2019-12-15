@@ -17,9 +17,10 @@ public class Enemy : Character
     [SerializeField] protected Weapon mWeapon;
     [SerializeField] protected bool mIsDropping;
     [SerializeField] protected Key mDropPrefbs;
-    [SerializeField] protected LAI.SteeringModule mSteeringModule = new LAI.SteeringModule();
-    [SerializeField] protected LAI.Grid_PathFinding pathFinder = new LAI.Grid_PathFinding();
-    [SerializeField] public LAI.StateMachine mStateMachine = new LAI.StateMachine();
+    [SerializeField] public List<Platform> platformsAccesible = new List<Platform>();
+    protected LAI.SteeringModule mSteeringModule = new LAI.SteeringModule();
+    protected LAI.Grid_PathFinding pathFinder = new LAI.Grid_PathFinding();
+    public LAI.StateMachine mStateMachine = new LAI.StateMachine();
 
     //[SerializeField] protected Agent mAgent;
     //[SerializeField] protected World world;
@@ -35,7 +36,6 @@ public class Enemy : Character
         //mAgent = new Agent();
         //mAgent.SetWorld(world);
         world.AddAgent(this);
-        mStateMachine.SetAgent(this);
         mSteeringModule.SetAgent(this);
 
         pathFinder.gameWorld = world;
@@ -75,6 +75,7 @@ public class Enemy : Character
 
     public new void Update()
     {
+        mStateMachine.Update();
         mVelocity += mSteeringModule.Calculate();
         mVelocity *= Time.deltaTime;
         base.Update();
