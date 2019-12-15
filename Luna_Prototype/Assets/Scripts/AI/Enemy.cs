@@ -99,11 +99,13 @@ public class Enemy : Character
     {
         if (other.tag != gameObject.tag)
         {
-            if (other.GetComponent<Bullet>() != null)
+            var bullet = other.GetComponent<Bullet>();
+            if (bullet != null)
             {
                 //1. Bullet.ElementAttribute = Player.ElementAttribute + Weapon.ElementAttribute                \\ TODO
                 //2. Bullet.ApplyDamage()                                                                       \\ TODO
-                GetHit(other.GetComponent<Bullet>().Damage, other.tag);
+                GetHit(bullet.mElement);
+                GetHit(bullet.Damage, other.tag);
             }
         }
     }
@@ -141,10 +143,10 @@ public class Enemy : Character
     {
         mCurrentHealth -= dmg;
 
-        if ((mWeapon.GetAttackState() == AttacState.State_Parriable))
-        {
-            GetStun(1.5f);
-        }
+        //if ((mWeapon.GetAttackState() == AttacState.State_Parriable))
+        //{
+        //    GetStun(1.5f);
+        //}
 
         if (mCurrentHealth <= 0.0f)
         {

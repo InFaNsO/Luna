@@ -24,11 +24,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2407043931451807729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9, y: 0.036, z: 0}
+  m_LocalPosition: {x: 1.05, y: -0.11, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8064114535432841098}
-  m_RootOrder: 3
+  m_Father: {fileID: 4200400677158447687}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4199664946097683278
 GameObject:
@@ -54,11 +54,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4199664946097683278}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.08, y: 0.01, z: -1.599683}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.050000004, y: 0.029999994, z: -0.7998415}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
-  m_Father: {fileID: 8064114535432841098}
-  m_RootOrder: 4
+  m_Father: {fileID: 5262413194630774346}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5913526906705443303
 GameObject:
@@ -72,9 +72,8 @@ GameObject:
   - component: {fileID: 7281698943840582382}
   - component: {fileID: 2856706057600177519}
   - component: {fileID: 6265158075424372803}
-  - component: {fileID: 7566316449759822973}
   m_Layer: 8
-  m_Name: Weapon_sword
+  m_Name: Weapon_Wood
   m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -94,9 +93,7 @@ Transform:
   - {fileID: 6606600559324767001}
   - {fileID: 5262413194630774346}
   - {fileID: 6326453952179043090}
-  - {fileID: 4618335564853006436}
-  - {fileID: 8135096088201637637}
-  - {fileID: 7576862504306509515}
+  - {fileID: 4200400677158447687}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -112,16 +109,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17c4cd7d81885741a5884f2cb273b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mGrade: 0
+  mElement: 0
+  mGrade: 1
   mType: 0
-  mName: 
+  mName: Plank Of Wood
   mMoves:
   - name: air_attack
-    mDamage: 10
-    mAttackSpeedMutiplier: 1
+    mDamage: 2
+    mAttackSpeedMutiplier: 2
     mMoveContext:
       mMoveTimeSlices:
-      - mType: 1
+      - mType: 0
         mTimeSlicePropotion: 0.2
       - mType: 2
         mTimeSlicePropotion: 0.5
@@ -131,33 +129,51 @@ MonoBehaviour:
     mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05,
       type: 3}
     mFirePosition: {fileID: 7576862504306509515}
-    mAnimationClip: {fileID: 7400000, guid: 1a41ae6a6cd12fa40b541d96f3bc3139, type: 2}
-  - name: basic_attack_combo_0
-    mDamage: 10
+    mAnimationClip: {fileID: 0}
+  - name: light_attack
+    mDamage: 2
     mAttackSpeedMutiplier: 2
     mMoveContext:
       mMoveTimeSlices:
       - mType: 1
+        mTimeSlicePropotion: 0.1
+      - mType: 0
         mTimeSlicePropotion: 0.2
       - mType: 2
-        mTimeSlicePropotion: 0.4
-      - mType: 0
+        mTimeSlicePropotion: 0.5
+      - mType: 3
         mTimeSlicePropotion: 0.9
       - mType: 4
         mTimeSlicePropotion: 1
-    mToMoveId: 
+    mToMoveId: 02000000
     mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05,
       type: 3}
     mFirePosition: {fileID: 4618335564853006436}
-    mAnimationClip: {fileID: 7400000, guid: fca20ea067bf12747be893a141cf859f, type: 2}
+    mAnimationClip: {fileID: 0}
+  - name: heavy_attack
+    mDamage: 5
+    mAttackSpeedMutiplier: 1.25
+    mMoveContext:
+      mMoveTimeSlices:
+      - mType: 1
+        mTimeSlicePropotion: 0.3
+      - mType: 0
+        mTimeSlicePropotion: 0.4
+      - mType: 2
+        mTimeSlicePropotion: 0.5
+      - mType: 0
+        mTimeSlicePropotion: 0.8
+    mToMoveId: 
+    mBullet: {fileID: 679799675015805979, guid: 1c55d9edcda61044f8a772448720645b,
+      type: 3}
+    mFirePosition: {fileID: 8135096088201637637}
+    mAnimationClip: {fileID: 7400000, guid: 0e13309198af10c4fb7043d7b84243ee, type: 2}
   mAirMoveIndex: 0
   InLevelBody: {fileID: 8750058408465014227}
   pickUpCollider: {fileID: 4321841681249314965}
   inlevelBody_spriteRender: {fileID: 2128419624135272632}
   isOnGround: 0
   mAnimation: {fileID: 0}
-  mElement: {fileID: 0}
-  mOwnerElement: {fileID: 0}
 --- !u!50 &2856706057600177519
 Rigidbody2D:
   serializedVersion: 4
@@ -205,60 +221,38 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.47}
   m_EdgeRadius: 0
---- !u!114 &7566316449759822973
-MonoBehaviour:
+--- !u!1 &5929193953065275667
+GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5913526906705443303}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9751d8a01058ae409131f9872d21e8b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  debugMode: 0
-  inclusiveElement: 0
-  initialized: 0
-  isEquipment: 0
-  voidType: 0
-  fire: 0
-  earth: 0
-  metal: 0
-  water: 0
-  wood: 0
-  wind: 0
-  lightning: 0
-  fireRes: 100
-  earthRes: 100
-  metalRes: 100
-  waterRes: 100
-  woodRes: 100
-  windRes: 100
-  lightningRes: 100
-  fireEffectChance: 100
-  earthEffectChance: 100
-  metalEffectChance: 100
-  waterEffectChance: 100
-  woodEffectChance: 100
-  windEffectChance: 100
-  lightningEffectChance: 100
-  fireEffectIntensity: 0
-  earthEffectIntensity: 0
-  metalEffectIntensity: 0
-  waterEffectIntensity: 0
-  woodEffectIntensity: 0
-  windEffectIntensity: 0
-  lightningEffectIntensity: 0
-  fireDuration: 0
-  earthDuration: 0
-  metalDuration: 0
-  waterDuration: 0
-  woodDuration: 0
-  windDuration: 0
-  lightningDuration: 0
-  mPlayer: {fileID: 0}
-  mEnemy: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4200400677158447687}
+  m_Layer: 0
+  m_Name: FirePositionHolder
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4200400677158447687
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5929193953065275667}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.027999997, y: 0.19999999, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 4618335564853006436}
+  - {fileID: 7576862504306509515}
+  m_Father: {fileID: 8064114535432841098}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6511158193159856056
 GameObject:
   m_ObjectHideFlags: 0
@@ -287,7 +281,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.028, y: 0.2, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
-  m_Children: []
+  m_Children:
+  - {fileID: 8135096088201637637}
   m_Father: {fileID: 8064114535432841098}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -328,16 +323,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 3369475542543088110, guid: 6824c362ee3e6fd41b4c70af23f7aad7,
-    type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 2.56, y: 0.6449999}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!95 &6173759303117096049
@@ -350,7 +344,7 @@ Animator:
   m_GameObject: {fileID: 6511158193159856056}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 54ae53456e7504245976c38c7e98358f, type: 2}
+  m_Controller: {fileID: 9100000, guid: f79911b45fd15f648a7ddb6f56356866, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -430,11 +424,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7824953579075252853}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.166, y: -0.245, z: -1.599683}
+  m_LocalPosition: {x: 0.29, y: -0.03, z: -1.599683}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 8064114535432841098}
-  m_RootOrder: 5
+  m_Father: {fileID: 4200400677158447687}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8750058408465014227
 GameObject:

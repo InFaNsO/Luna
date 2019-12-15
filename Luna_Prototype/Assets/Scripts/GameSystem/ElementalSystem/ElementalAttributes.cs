@@ -164,7 +164,7 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
             }
         }
     }
-    public void ApplyDamage(ref Character t, bool applyStatus)//Most basic form of applying elemental damage, it takes all elemental stats into calculation
+    public void ApplyDamage(Character t, bool applyStatus)//Most basic form of applying elemental damage, it takes all elemental stats into calculation
     {
         if (t != null)
         {
@@ -294,7 +294,7 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
         c = c.SubStats(a, b);
         return c;
     }
-    void Start() //initialize element data, append this to add new elements, do not forget to add new enums in ElementalSystem.cs
+    void Awake() //initialize element data, append this to add new elements, do not forget to add new enums in ElementalSystem.cs
     {
         mPlayer = GetComponent<Player>();
         mEnemy = GetComponent<Enemy>();
@@ -342,16 +342,16 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
     }
     private void OnMouseDown() //Debug Mode only
     {
-        if (debugMode)
-        {
-            if (mPlayer != null)
-            {
-                ApplyDamage(ref mPlayer, true);
-            }
-            if (mEnemy != null)
-            {
-                ApplyDamage(ref mEnemy, true);
-            }
-        }
+        //if (debugMode)
+        //{
+        //    if (mPlayer != null)
+        //    {
+        //        ApplyDamage(ref mPlayer, true);
+        //    }
+        //    if (mEnemy != null)
+        //    {
+        //        ApplyDamage(ref mEnemy, true);
+        //    }
+        //}
     }
 }
