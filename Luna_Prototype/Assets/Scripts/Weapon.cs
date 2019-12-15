@@ -41,7 +41,7 @@ public class Weapon : MonoBehaviour
 
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
-    public bool isOnGround = false;
+    //public bool isOnGround = false;
 
     public Animation mAnimation;
     [System.NonSerialized] public Animator mAnimator;
@@ -149,11 +149,8 @@ public class Weapon : MonoBehaviour
     public void Attack(bool isOnGournd, float targetPosX = float.NegativeInfinity, float targetPosY = float.NegativeInfinity, float targetPosZ = float.NegativeInfinity)    // This function is for all the previous work which dont have the targetPos paramater
     {
         Vector3 targetPos = new Vector3(targetPosX, targetPosY, targetPosZ);
-        if (targetPos == Vector3.negativeInfinity)
-        {
-            targetPos = transform.position + transform.right;
-        }
-        Attack(isOnGround, targetPos);
+        
+        Attack(isOnGournd, targetPos);
     }
 
     public void Attack(bool isOnGournd, Vector3 targetPos)
