@@ -5,7 +5,7 @@ using UnityEngine;
 namespace LAI
 {
     [System.Serializable]
-    public class PathFollowingState <AgentType> : State<AgentType> where AgentType : Enemy
+    public class PathFollowingState : State
     {
         [SerializeField] private List<Vector3> mPath = new List<Vector3>();
         [SerializeField] private bool mLooped = false;
@@ -30,7 +30,7 @@ namespace LAI
             mStayTime = stayTime;
         }
 
-        public override void Enter(AgentType agent)
+        public override void Enter(Enemy agent)
         {
             agent.GetSteeringModule().TurnAllOff();
 
@@ -45,7 +45,7 @@ namespace LAI
             }
         }
 
-        private void SetDestination(AgentType agent)
+        private void SetDestination(Enemy agent)
         {
             mNext++;
             if (mNext == mPath.Count)
@@ -62,7 +62,7 @@ namespace LAI
             agent.SetDestination(new Vector2(mPath[mNext].x, mPath[mNext].y));
         }
 
-        private bool IsNear(AgentType agent)
+        private bool IsNear(Enemy agent)
         {
             if (agent.transform.position.x < (mPath[mNext].x + agent.GetSafeDistance()) &&
                 agent.transform.position.x > (mPath[mNext].x - agent.GetSafeDistance()))
@@ -76,7 +76,7 @@ namespace LAI
             return false;
         }
 
-        public override void Update(AgentType agent)
+        public override void Update(Enemy agent)
         {
             if(IsNear(agent))
             {
@@ -100,7 +100,7 @@ namespace LAI
                 mNext -= 1;
         }
 
-        public override void Exit(AgentType agent)
+        public override void Exit(Enemy agent)
         {
             if(setActive)
             {

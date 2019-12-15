@@ -12,7 +12,6 @@ public class SmallBots : Enemy
         attack = 2
     }
     
-    [SerializeField] private LAI.StateMachine<SmallBots> mStateMachine = new LAI.StateMachine<SmallBots>();
     private bool mIsOnRoof = true;
     private States mCurrentState = States.none;
 
@@ -23,13 +22,13 @@ public class SmallBots : Enemy
         gameObject.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
         transform.Rotate(new Vector3(0.0f, 0.0f, 180.0f));
 
-        LAI.PathFollowingState<SmallBots> pf = new LAI.PathFollowingState<SmallBots>();
+        LAI.PathFollowingState pf = new LAI.PathFollowingState();
         pf.AddPath(new Vector3(4.0f, 2.2f, 0.0f));
         pf.AddPath(new Vector3(-4.0f, 2.2f, 0.0f));
 
         mStateMachine.AddState(pf);                                         //0
-        mStateMachine.AddState<LAI.SBStateGoToPlayer<SmallBots>>();         //1
-        mStateMachine.AddState<LAI.SBStateAttack<SmallBots>>();             //2
+        mStateMachine.AddState<LAI.SBStateGoToPlayer>();         //1
+        mStateMachine.AddState<LAI.SBStateAttack>();             //2
 
         mCurrentState = 0;
         mStateMachine.SetAgent(this);
