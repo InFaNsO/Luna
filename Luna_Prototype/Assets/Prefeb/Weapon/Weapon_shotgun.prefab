@@ -50,9 +50,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17c4cd7d81885741a5884f2cb273b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Range: 6
+  mName: 
   mGrade: 2
   mType: 1
-  mName: 
+  mParryCD: 1
   mMoves:
   - name: 
     mDamage: 10
@@ -94,10 +96,10 @@ MonoBehaviour:
   InLevelBody: {fileID: 5109421896086811871}
   pickUpCollider: {fileID: 8627927540468529358}
   inlevelBody_spriteRender: {fileID: 2034812478211811839}
-  isOnGround: 0
   mAnimation: {fileID: 0}
   mElement: {fileID: 0}
   mOwnerElement: {fileID: 0}
+  mTargetPos: {x: 0, y: 0, z: 0}
 --- !u!50 &6546134547383184133
 Rigidbody2D:
   serializedVersion: 4

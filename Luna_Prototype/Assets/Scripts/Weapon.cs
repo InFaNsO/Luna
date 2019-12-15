@@ -15,7 +15,8 @@ public class Weapon : MonoBehaviour
     // Members --------------------------------------------------------------------------------------------------------------
 
     //--------------------------------------------------------------------------//|
-   
+
+    public float Range;
     [SerializeField] protected string mName;                                    //|
     [SerializeField] protected WeaponGrade mGrade;                              //|--- TODO:: make them as WeaponPorperty struct
     [SerializeField] public WeaponType mType;                                //|
