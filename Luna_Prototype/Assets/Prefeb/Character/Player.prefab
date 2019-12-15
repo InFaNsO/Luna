@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 109428899416447137}
   - component: {fileID: 50951405}
   - component: {fileID: -3068176382593199672}
+  - component: {fileID: -1040440155085845068}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -35,7 +36,7 @@ Transform:
   m_GameObject: {fileID: 109428899416447167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.26, y: 2.54, z: 0}
-  m_LocalScale: {x: 2.175164, y: 2.175164, z: 2.175164}
+  m_LocalScale: {x: 0.6902068, y: 0.6902068, z: 0.6902068}
   m_Children:
   - {fileID: 7121127766758587546}
   - {fileID: 199907317319625109}
@@ -79,13 +80,13 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4163850496785918271, guid: 01d0b33379faff142996a8b740cf3ba4,
+  m_Sprite: {fileID: 1195458779362535816, guid: 27ffce792435078428dea9183687b9e3,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 1, y: 0.59}
+  m_Size: {x: 2.11, y: 3.63}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -170,9 +171,14 @@ MonoBehaviour:
   mReceivedHazardDamage: 0
   mReceivedHazardDuration: 0
   isGrounded: 0
+  mElement: {fileID: 0}
   mWeapon1: {fileID: 0}
   mWeapon2: {fileID: 0}
   mCurrentWeapon: {fileID: 0}
+  mIsIFrameOn: 0
+  mIFrameCD: 0
+  mIFrameDuration: 0
+  mDashSpeed: 14
   mLaserDamage: 0
   laserObj: {fileID: 7919768267206995212}
   mLevel: 0
@@ -229,18 +235,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0037145615, y: 0.0027104765}
+  m_Offset: {x: -0.18787569, y: 0.009287477}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.61, y: 0.61}
-    newSize: {x: 1, y: 0.59}
+    oldSize: {x: 2.11, y: 3.63}
+    newSize: {x: 2.11, y: 3.63}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6097343, y: 0.60591316}
+  m_Size: {x: 1.7147008, y: 3.565645}
   m_EdgeRadius: 0
 --- !u!95 &50951405
 Animator:
@@ -270,12 +276,66 @@ MonoBehaviour:
   m_GameObject: {fileID: 109428899416447167}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f03dd47ee9194dc4f8ed5bd07a178a5e, type: 3}
+  m_Script: {fileID: 11500000, guid: 4eaf56603217b8d428baef0ee62921fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mParryCollider: {fileID: 679799675015805979, guid: b807743634ab2a64cbd581ab749fb03f,
     type: 3}
   mParryCooldown: 1
+--- !u!114 &-1040440155085845068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109428899416447167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9751d8a01058ae409131f9872d21e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 0
+  inclusiveElement: 0
+  initialized: 0
+  isEquipment: 0
+  voidType: 0
+  fire: 0
+  earth: 0
+  metal: 0
+  water: 0
+  wood: 0
+  wind: 0
+  lightning: 0
+  fireRes: 5
+  earthRes: 100
+  metalRes: 100
+  waterRes: 100
+  woodRes: 100
+  windRes: 100
+  lightningRes: 100
+  fireEffectChance: 100
+  earthEffectChance: 100
+  metalEffectChance: 100
+  waterEffectChance: 100
+  woodEffectChance: 100
+  windEffectChance: 100
+  lightningEffectChance: 100
+  fireEffectIntensity: 0
+  earthEffectIntensity: 0
+  metalEffectIntensity: 0
+  waterEffectIntensity: 0
+  woodEffectIntensity: 0
+  windEffectIntensity: 0
+  lightningEffectIntensity: 0
+  fireDuration: 0
+  earthDuration: 0
+  metalDuration: 0
+  waterDuration: 0
+  woodDuration: 0
+  windDuration: 0
+  lightningDuration: 0
+  mPlayer: {fileID: 0}
+  mEnemy: {fileID: 0}
 --- !u!61 &7501919403433636403
 BoxCollider2D:
   m_ObjectHideFlags: 0

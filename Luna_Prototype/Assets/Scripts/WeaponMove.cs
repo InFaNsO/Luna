@@ -22,20 +22,19 @@ public class WeaponMove
     
     [System.NonSerialized] public Animator mWeaponAnimator;
 
-    private Element mElement;
+    private ElementalAttributes mElement;
 
     // Getter & Setter -------------------------------------------------------------------------------------------------------
     public float AttackSpeed { get { return mAttackSpendTime; } set { mAttackSpendTime = value; } }
-    public Element Element { set { mElement = value; } }
 
-    public void Load(Weapon weapon, Animator animator, int index, Element element = Element.Luna)
+    public void Load(Weapon weapon, Animator animator, int index, ElementalAttributes element)
     {
         mWeapon = weapon;
         mMoveID = index;
 
-        Assert.IsNotNull(mBullet, "[Weapon] Dont have bullet");                                                                //|--- [SAFTY]: Check to see is there a bullet prefeb
-        Assert.AreNotEqual(mAttackSpeedMutiplier, 0.0f, "[Weapon] mAttackSpeedMutiplier not initialized");              //|--- [SAFTY]: Check to see if parry context got initialized
-        Assert.IsNotNull(mAnimationClip, "[Weapon] mAnimationClip not initialized");              //|--- [SAFTY]: Check to see if parry context got initialized
+        Assert.IsNotNull(mBullet, "[Weapon] Dont have bullet");                                                                  //|--- [SAFTY]: Check to see is there a bullet prefeb
+        Assert.AreNotEqual(mAttackSpeedMutiplier, 0.0f, "[Weapon] mAttackSpeedMutiplier not initialized");                       //|--- [SAFTY]: Check to see if parry context got initialized
+        Assert.IsNotNull(mAnimationClip, "[Weapon] mAnimationClip not initialized");                                             //|--- [SAFTY]: Check to see if parry context got initialized
 
         mWeaponAnimator = animator;
 
@@ -44,7 +43,8 @@ public class WeaponMove
 
         mMoveContext.Load(mAttackSpendTime, mToMoveId.Length, mMoveID);
 
-        mElement = element;
+        mElement = element;                 // Take this line out if want each move has its own element
+        Assert.IsNotNull(mElement);
     }
 
     public void Enter()
@@ -89,8 +89,12 @@ public class WeaponMove
 
     public void ShootBullet()
     {
-        Bullet newBullet = Object.Instantiate(mBullet, new Vector3(0, 0, 0), Quaternion.identity);
+        Bullet newBullet = GameObject.Instantiate(mBullet, new Vector3(0, 0, 0), Quaternion.identity);
         newBullet.Fire(mWeapon.tag, mDamage, mWeapon.transform.TransformPoint(mWeapon.transform.localPosition + mFirePosition.localPosition), mWeapon.transform.right, mWeapon.mType);
+        newBullet.Awake();
+        newBullet.mElement = mWeapon.mOwnerElement + mElement;
+        Core.Debug.Log(newBullet.mElement.ToString() + newBullet.mElement.fire);
+
         Debug.Log("attacked");
         Core.Debug.Log($"whichMove: {mMoveID} Typed: {GetMoveCurrentTimeSliceType()}");
     }

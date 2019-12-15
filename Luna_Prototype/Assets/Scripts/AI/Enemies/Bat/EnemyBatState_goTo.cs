@@ -63,7 +63,13 @@ namespace LAI
             }
 
             if (delayCounter >= attackDelay)
-                agent.mStateMachine.ChangeState((int)Enemy_Bat.States.rangeAttack);
+            {
+                int rand = Random.Range(1, 2);
+                if (rand == 0)
+                    agent.mStateMachine.ChangeState((int)Enemy_Bat.States.rangeAttack);
+                else
+                    agent.mStateMachine.ChangeState((int)Enemy_Bat.States.meleeAttack);
+            }
         }
 
         public override void Exit(Enemy agent)

@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 5186604371122590862}
   - component: {fileID: 6546134547383184133}
   - component: {fileID: 362765046682594710}
+  - component: {fileID: 5092738349595434601}
   m_Layer: 8
   m_Name: Weapon_shotgun
   m_TagString: PickUp
@@ -49,12 +50,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17c4cd7d81885741a5884f2cb273b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mElement: 0
   mGrade: 2
   mType: 1
   mName: 
   mMoves:
-  - mDamage: 10
+  - name: 
+    mDamage: 10
     mAttackSpeedMutiplier: 1
     mMoveContext:
       mMoveTimeSlices:
@@ -71,7 +72,8 @@ MonoBehaviour:
       type: 3}
     mFirePosition: {fileID: 5993130400498516385}
     mAnimationClip: {fileID: 7400000, guid: 0f5811181193cf54196f396775932080, type: 2}
-  - mDamage: 10
+  - name: 
+    mDamage: 10
     mAttackSpeedMutiplier: 1
     mMoveContext:
       mMoveTimeSlices:
@@ -93,6 +95,9 @@ MonoBehaviour:
   pickUpCollider: {fileID: 8627927540468529358}
   inlevelBody_spriteRender: {fileID: 2034812478211811839}
   isOnGround: 0
+  mAnimation: {fileID: 0}
+  mElement: {fileID: 0}
+  mOwnerElement: {fileID: 0}
 --- !u!50 &6546134547383184133
 Rigidbody2D:
   serializedVersion: 4
@@ -140,6 +145,60 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.26731306, y: 0.43421042}
   m_EdgeRadius: 0
+--- !u!114 &5092738349595434601
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4344426171327372247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9751d8a01058ae409131f9872d21e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 0
+  inclusiveElement: 0
+  initialized: 0
+  isEquipment: 0
+  voidType: 0
+  fire: 0
+  earth: 0
+  metal: 0
+  water: 0
+  wood: 0
+  wind: 0
+  lightning: 0
+  fireRes: 100
+  earthRes: 100
+  metalRes: 100
+  waterRes: 100
+  woodRes: 100
+  windRes: 100
+  lightningRes: 100
+  fireEffectChance: 100
+  earthEffectChance: 100
+  metalEffectChance: 100
+  waterEffectChance: 100
+  woodEffectChance: 100
+  windEffectChance: 100
+  lightningEffectChance: 100
+  fireEffectIntensity: 0
+  earthEffectIntensity: 0
+  metalEffectIntensity: 0
+  waterEffectIntensity: 0
+  woodEffectIntensity: 0
+  windEffectIntensity: 0
+  lightningEffectIntensity: 0
+  fireDuration: 0
+  earthDuration: 0
+  metalDuration: 0
+  waterDuration: 0
+  woodDuration: 0
+  windDuration: 0
+  lightningDuration: 0
+  mPlayer: {fileID: 0}
+  mEnemy: {fileID: 0}
 --- !u!1 &4410164344609634611
 GameObject:
   m_ObjectHideFlags: 0

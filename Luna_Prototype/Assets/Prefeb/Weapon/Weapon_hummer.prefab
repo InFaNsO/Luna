@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 7281698943840582382}
   - component: {fileID: 2856706057600177519}
   - component: {fileID: 6265158075424372803}
+  - component: {fileID: 3273979103530575280}
   m_Layer: 8
   m_Name: Weapon_hummer
   m_TagString: PickUp
@@ -109,7 +110,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b17c4cd7d81885741a5884f2cb273b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mElement: 0
   mGrade: 1
   mType: 0
   mName: Hummer
@@ -178,6 +178,8 @@ MonoBehaviour:
   inlevelBody_spriteRender: {fileID: 2128419624135272632}
   isOnGround: 0
   mAnimation: {fileID: 0}
+  mElement: {fileID: 0}
+  mOwnerElement: {fileID: 0}
 --- !u!50 &2856706057600177519
 Rigidbody2D:
   serializedVersion: 4
@@ -225,6 +227,60 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.25, y: 0.47}
   m_EdgeRadius: 0
+--- !u!114 &3273979103530575280
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5913526906705443303}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9751d8a01058ae409131f9872d21e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 0
+  inclusiveElement: 0
+  initialized: 0
+  isEquipment: 0
+  voidType: 0
+  fire: 0
+  earth: 0
+  metal: 0
+  water: 0
+  wood: 0
+  wind: 0
+  lightning: 0
+  fireRes: 100
+  earthRes: 100
+  metalRes: 100
+  waterRes: 100
+  woodRes: 100
+  windRes: 100
+  lightningRes: 100
+  fireEffectChance: 100
+  earthEffectChance: 100
+  metalEffectChance: 100
+  waterEffectChance: 100
+  woodEffectChance: 100
+  windEffectChance: 100
+  lightningEffectChance: 100
+  fireEffectIntensity: 0
+  earthEffectIntensity: 0
+  metalEffectIntensity: 0
+  waterEffectIntensity: 0
+  woodEffectIntensity: 0
+  windEffectIntensity: 0
+  lightningEffectIntensity: 0
+  fireDuration: 0
+  earthDuration: 0
+  metalDuration: 0
+  waterDuration: 0
+  woodDuration: 0
+  windDuration: 0
+  lightningDuration: 0
+  mPlayer: {fileID: 0}
+  mEnemy: {fileID: 0}
 --- !u!1 &5929193953065275667
 GameObject:
   m_ObjectHideFlags: 0

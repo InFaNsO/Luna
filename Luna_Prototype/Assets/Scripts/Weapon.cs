@@ -15,10 +15,11 @@ public class Weapon : MonoBehaviour
     // Members --------------------------------------------------------------------------------------------------------------
 
     //--------------------------------------------------------------------------//|
-    [SerializeField] protected Element mElement;                                //|
+   
+    [SerializeField] protected string mName;                                    //|
     [SerializeField] protected WeaponGrade mGrade;                              //|--- TODO:: make them as WeaponPorperty struct
     [SerializeField] public WeaponType mType;                                //|
-    [SerializeField] protected string mName;                                    //|
+    public float mParryCD = 1.0f;
                                                                                 //--------------------------------------------------------------------------//|
 
     //[SerializeField] protected int mDamage;
@@ -48,6 +49,10 @@ public class Weapon : MonoBehaviour
     bool mHaveAttack = false;
 
     private Transform _localLevelManagerTransform;
+
+
+    public ElementalAttributes mElement;
+    public ElementalAttributes mOwnerElement;
 
     // Getter & Setter -------------------------------------------------------------------------------------------------------
     //public float AttackSpeed { get { return mAttackSpeed; } set { mAttackSpeed = value; } }
@@ -87,7 +92,11 @@ public class Weapon : MonoBehaviour
 
         Assert.AreNotEqual(mMoves.Length, 0, "[Weapon] moves not initialized");
 
+        mElement = GetComponent<ElementalAttributes>();
+        if (mElement == null)
+            mElement = new ElementalAttributes();
 
+        Assert.IsNotNull(mElement);
         for (int i = 0; i < mMoves.Length; ++i)
         {
             mMoves[i].Load(gameObject.GetComponent<Weapon>(), mAnimator, i, mElement);
@@ -184,6 +193,14 @@ public class Weapon : MonoBehaviour
     public void Picked(GameObject owner, Vector2 position)
     {
         gameObject.tag = owner.tag;
+
+        Character chara = owner.GetComponent<Character>();
+        mOwnerElement = chara.mElement;
+        Assert.IsNotNull(mOwnerElement);
+
+        var parry = owner.GetComponent<ParryAttackable>();
+        if (parry)
+            parry.mParryCooldown = mParryCD;
 
         InLevelBody.gameObject.SetActive(false);
         boxCollider.enabled = false;

@@ -104,12 +104,15 @@ public class Enemy : Character
 
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (((1 << other.gameObject.layer) & 1 << gameObject.layer) == 0)
+        if (other.tag != gameObject.tag)
         {
-            
-            if (other.GetComponent<Bullet>() != null)
+            var bullet = other.GetComponent<Bullet>();
+            if (bullet != null)
             {
-                GetHit(other.GetComponent<Bullet>().Damage, other.tag);
+                //1. Bullet.ElementAttribute = Player.ElementAttribute + Weapon.ElementAttribute                \\ TODO
+                //2. Bullet.ApplyDamage()                                                                       \\ TODO
+                GetHit(bullet.mElement);
+                GetHit(bullet.Damage, other.tag);
             }
         }
     }
@@ -147,10 +150,10 @@ public class Enemy : Character
     {
         mCurrentHealth -= dmg;
 
-        if ((mWeapon.GetAttackState() == AttacState.State_Parriable))
-        {
-            GetStun(1.5f);
-        }
+        //if ((mWeapon.GetAttackState() == AttacState.State_Parriable))
+        //{
+        //    GetStun(1.5f);
+        //}
 
         if (mCurrentHealth <= 0.0f)
         {
