@@ -19,6 +19,11 @@ namespace LAI
             idelCounter = 0.0f;
         }
 
+        public override States Name()
+        {
+            return States.Wander;
+        }
+
         public override void Update(Enemy agent)
         {
             time += Time.deltaTime * 5.0f;

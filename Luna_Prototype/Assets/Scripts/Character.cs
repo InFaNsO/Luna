@@ -11,9 +11,6 @@ using UnityEngine.Assertions;
 // merge test
 public abstract class Character : Agent
 {
-    
-    public float mMaxHealth;
-    public float mCurrentHealth;
     public float mMovementSpeed;
     public float mJumpStrength;
 

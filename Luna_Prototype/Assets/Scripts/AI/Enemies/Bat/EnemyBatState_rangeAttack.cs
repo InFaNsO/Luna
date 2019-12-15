@@ -11,7 +11,10 @@ namespace LAI
         public float attackSpeed = 1.0f;
         private float attackSpeedCounter = 0.0f;
 
-
+        public override States Name()
+        {
+            return States.Attack;
+        }
         public override void Enter(Enemy agent)
         {
             agent.SetVelocity(Vector2.zero);
