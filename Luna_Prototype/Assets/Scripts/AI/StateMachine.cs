@@ -5,23 +5,23 @@ using UnityEngine;
 namespace LAI
 {
     [System.Serializable]
-    public class StateMachine <AgentType> where AgentType : Enemy
+    public class StateMachine
     {
-        [SerializeField] private AgentType mAgent;
-        [SerializeField] private List<State<AgentType>> mStates = new List<State<AgentType>>();
+        [SerializeField] private Enemy mAgent;
+        [SerializeField] private List<State> mStates = new List<State>();
         private int mCurrentState = -1;
 
-        public void SetAgent(AgentType at)
+        public void SetAgent(Enemy at)
         {
             mAgent = at;
         }
 
-        public void Initialize(AgentType agent)
+        public void Initialize(Enemy agent)
         {
             mAgent = agent;
         }
 
-        public void AddState<StateType>(StateType state = null) where StateType : State<AgentType>, new()
+        public void AddState<StateType>(StateType state = null) where StateType : State, new()
         {
             if (state == null)
                 mStates.Add(new StateType());

@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace LAI
 {
-    public class GridNode
+   /* public class GridNode
     {
         public Vector3 pos = new Vector3();
         public int ID = -1;
@@ -242,7 +242,7 @@ namespace LAI
         {
 
         }
-    }
+    }*/
 }
 
 

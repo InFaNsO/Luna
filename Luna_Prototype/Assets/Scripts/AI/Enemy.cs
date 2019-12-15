@@ -18,6 +18,8 @@ public class Enemy : Character
     [SerializeField] protected bool mIsDropping;
     [SerializeField] protected Key mDropPrefbs;
     [SerializeField] protected LAI.SteeringModule mSteeringModule = new LAI.SteeringModule();
+    [SerializeField] protected LAI.Grid_PathFinding pathFinder = new LAI.Grid_PathFinding();
+    [SerializeField] public LAI.StateMachine mStateMachine = new LAI.StateMachine();
 
     //[SerializeField] protected Agent mAgent;
     //[SerializeField] protected World world;
@@ -33,7 +35,11 @@ public class Enemy : Character
         //mAgent = new Agent();
         //mAgent.SetWorld(world);
         world.AddAgent(this);
+        mStateMachine.SetAgent(this);
         mSteeringModule.SetAgent(this);
+
+        pathFinder.gameWorld = world;
+        pathFinder.Initialize();
 
         if (mWeapon != null)
         {
@@ -70,6 +76,7 @@ public class Enemy : Character
     public new void Update()
     {
         mVelocity += mSteeringModule.Calculate();
+        mVelocity *= Time.deltaTime;
         base.Update();
 
         if (mIsStuned != true)
@@ -86,7 +93,7 @@ public class Enemy : Character
             }
             mStunCounter -= Time.deltaTime;
         }
-        Vector2 pos = new Vector2(transform.position.x, transform.position.y);
+        Vector2 pos = new Vector2(transform.position.x + mVelocity.x, transform.position.y + mVelocity.y);
         SetPosition(pos);
     }
 
@@ -196,6 +203,23 @@ public class Enemy : Character
         }
     }
 
-   
+
+    public bool IsNearPlayer(float distance)
+    {
+        if (Vector3.Distance(gameObject.transform.position, GetWorld().mPlayer.transform.position) < distance)
+        {
+            return true;
+        }
+        return false;
+    }
+    public bool IsNearDestination(float distance)
+    {
+        if (Vector3.Distance(transform.position, mDestination) < distance)
+        {
+            return true;
+        }
+        return false;
+    }
+
 }
 

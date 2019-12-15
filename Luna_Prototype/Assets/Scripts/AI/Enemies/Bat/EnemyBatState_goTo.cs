@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace LAI
 {
-    public class EnemyBatState_goTo<AgentType> : State<AgentType> where AgentType : Enemy_Bat
+    public class EnemyBatState_goTo : State
     {
         private bool setOA;
         private bool setSeek;
@@ -18,7 +18,7 @@ namespace LAI
         private bool startDelay = false;
 
 
-        public override void Enter(AgentType agent)
+        public override void Enter(Enemy agent)
         {
             delayCounter = 0.0f;
             startDelay = false;
@@ -50,7 +50,7 @@ namespace LAI
             agent.SetDestination(attackPos);
         }
 
-        public override void Update(AgentType agent)
+        public override void Update(Enemy agent)
         {
             if (Vector3.Distance(agent.GetPosition(), agent.GetDestination()) < attackPosOffSet)
             {
@@ -66,7 +66,7 @@ namespace LAI
                 agent.mStateMachine.ChangeState((int)Enemy_Bat.States.rangeAttack);
         }
 
-        public override void Exit(AgentType agent)
+        public override void Exit(Enemy agent)
         {
             if (setSeek)
                 agent.GetSteeringModule().SetActive(SteeringType.Arrive, false);

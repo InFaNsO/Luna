@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace LAI
 {
-    public class EnemyBatState_rangeAttack<AgentType> : State<AgentType> where AgentType : Enemy_Bat
+    public class EnemyBatState_rangeAttack: State
     {
         public float toIdelDelay = 3.0f;
         private float toIdelCounter = 0.0f;
@@ -12,7 +12,7 @@ namespace LAI
         private float attackSpeedCounter = 0.0f;
 
 
-        public override void Enter(AgentType agent)
+        public override void Enter(Enemy agent)
         {
             agent.SetVelocity(Vector2.zero);
             agent.GetSteeringModule().TurnAllOff();
@@ -30,7 +30,7 @@ namespace LAI
             attackSpeedCounter = 0.0f;
         }
 
-        public override void Update(AgentType agent)
+        public override void Update(Enemy agent)
         {
             if (toIdelCounter >= toIdelDelay)
             {
@@ -41,14 +41,14 @@ namespace LAI
             if(attackSpeedCounter >= attackSpeed)
             {
                 //agent.RangeAttack
-                Bullet newBullet = Object.Instantiate(agent.mBullet, new Vector3(0, 0, 0), Quaternion.identity);
-                Vector3 dir = Vector3.Normalize(agent.transform.position - agent.GetWorld().mPlayer.transform.position);
-                newBullet.Fire(agent.tag, agent.mDamage, agent.transform.position, -dir, WeaponType.Range);
+                //Bullet newBullet = Object.Instantiate(agent.mBullet, new Vector3(0, 0, 0), Quaternion.identity);
+                //Vector3 dir = Vector3.Normalize(agent.transform.position - agent.GetWorld().mPlayer.transform.position);
+                //newBullet.Fire(agent.tag, agent.mDamage, agent.transform.position, -dir, WeaponType.Range);
                 //recoil force to make it looks good
-                agent.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                agent.gameObject.GetComponent<Rigidbody2D>().AddForce(dir * 100.0f * Time.deltaTime, ForceMode2D.Impulse);
-
-                attackSpeedCounter = 0.0f;
+                //agent.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                //agent.gameObject.GetComponent<Rigidbody2D>().AddForce(dir * 100.0f * Time.deltaTime, ForceMode2D.Impulse);
+                //
+                //attackSpeedCounter = 0.0f;
             }
 
             toIdelCounter += Time.deltaTime;
@@ -56,7 +56,7 @@ namespace LAI
 
         }
 
-        public override void Exit(AgentType agent)
+        public override void Exit(Enemy agent)
         {
             agent.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }

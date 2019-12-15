@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace LAI
 {
-    public class GoToState<AgentType> : State<AgentType> where AgentType : Enemy
+    public class GoToState : State
     {
         private bool setOA;
         private bool setAr;
 
-        public override void Enter(AgentType agent)
+        public override void Enter(Enemy agent)
         {
             agent.GetSteeringModule().TurnAllOff();
             if (!agent.GetSteeringModule().Exists(SteeringType.Arrive))
@@ -35,7 +35,7 @@ namespace LAI
             agent.SetFinalDestination(agent.GetWorld().mPlayer.transform.position);
         }
 
-        public override void Update(AgentType agent)
+        public override void Update(Enemy agent)
         {
             agent.SetFinalDestination(agent.GetWorld().mPlayer.transform.position);
 
@@ -66,7 +66,7 @@ namespace LAI
                 //end the update
                 return;
             }
-            for(int i = 0; i < agent.GetWorld().mJumpNodes.Count; ++i)
+            /*for(int i = 0; i < agent.GetWorld().mJumpNodes.Count; ++i)
             {
                 diff = agent.transform.position - agent.GetWorld().mJumpNodes[i].transform.position;
                 if (diff.sqrMagnitude >= agent.GetSafeDistanceReduced() * agent.GetSafeDistanceReduced())
@@ -95,10 +95,10 @@ namespace LAI
 
                     }
                 }
-            }
+            }*/
         }
 
-        public override void Exit(AgentType agent)
+        public override void Exit(Enemy agent)
         {
             if (setAr)
                 agent.GetSteeringModule().SetActive(SteeringType.Arrive, false);
