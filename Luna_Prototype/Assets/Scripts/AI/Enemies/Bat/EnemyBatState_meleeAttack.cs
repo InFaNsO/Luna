@@ -31,9 +31,10 @@ namespace LAI
             isOnPlayerleft = agent.transform.position.x < agent.GetWorld().mPlayer.transform.position.x;
             yDifferent = agent.transform.position.y - agent.GetWorld().mPlayer.transform.position.y;
 
-            Vector3 dir = Vector3.Normalize(agent.GetWorld().mPlayer.transform.position - agent.transform.position);
-            float distance = Vector3.Magnitude(agent.GetWorld().mPlayer.transform.position - agent.transform.position);
-            destPos = dir * distance * 2.0f;
+            var playerPos = agent.GetWorld().mPlayer.transform.position;
+            Vector3 dir = Vector3.Normalize(playerPos - agent.transform.position);
+            float distance = Vector3.Magnitude(playerPos - agent.transform.position);
+            destPos = playerPos + dir * distance * 2.0f;
             agent.SetDestination(destPos);
 
             toIdelCounter = 0.0f;
@@ -53,12 +54,12 @@ namespace LAI
             if (isOnPlayerleft)
             {
                 if (agentPos.x > playerPos.x || agentPos.y < playerPos.y)
-                    agent.SetDestination(destPos + new Vector3(0.0f, yDifferent * 2.0f, 0.0f));
+                    agent.SetDestination(destPos + new Vector3(0.0f, yDifferent * 2.5f, 0.0f));
             }
             else
             {
                 if (agentPos.x < playerPos.x || agentPos.y < playerPos.y)
-                    agent.SetDestination(destPos + new Vector3(0.0f, yDifferent * 2.0f, 0.0f));
+                    agent.SetDestination(destPos + new Vector3(0.0f, yDifferent * 2.5f, 0.0f));
             }
 
             if (Vector3.SqrMagnitude(agent.GetWorld().mPlayer.transform.position - agent.transform.position) < 0.25f && !isAttacked)

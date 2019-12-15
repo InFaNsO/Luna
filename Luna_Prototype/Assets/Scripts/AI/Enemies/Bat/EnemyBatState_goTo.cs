@@ -44,8 +44,9 @@ namespace LAI
                 setOA = true;
             }
 
-            Vector3 dir = Vector3.Normalize(agent.transform.position - agent.GetWorld().mPlayer.transform.position);
-            Vector3 attackPos = dir * attackRange;
+            var playerPos = agent.GetWorld().mPlayer.transform.position;
+            Vector3 dir = Vector3.Normalize(agent.transform.position - playerPos);
+            Vector3 attackPos =  playerPos + dir * attackRange;
             attackPos.y = agent.GetWorld().mPlayer.transform.position.y + attackRange;
             agent.SetDestination(attackPos);
         }
