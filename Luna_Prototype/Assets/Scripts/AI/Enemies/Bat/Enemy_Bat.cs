@@ -30,6 +30,7 @@ public class Enemy_Bat : Enemy
         mStateMachine.AddState<LAI.EnemyBatState_idel>();         //0
         mStateMachine.AddState<LAI.EnemyBatState_goTo>();         //1
         mStateMachine.AddState<LAI.EnemyBatState_rangeAttack>();         //2
+        mStateMachine.AddState<LAI.EnemyBatState_meleeAttack>();        //3
 
         mCurrentState = 0;
         mStateMachine.SetAgent(this);

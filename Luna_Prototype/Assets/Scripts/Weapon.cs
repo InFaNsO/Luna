@@ -54,6 +54,8 @@ public class Weapon : MonoBehaviour
     public ElementalAttributes mElement;
     public ElementalAttributes mOwnerElement;
 
+    public Vector3 mTargetPos;
+
     // Getter & Setter -------------------------------------------------------------------------------------------------------
     //public float AttackSpeed { get { return mAttackSpeed; } set { mAttackSpeed = value; } }
 
@@ -144,8 +146,19 @@ public class Weapon : MonoBehaviour
         return ret;
     }
 
-    public void Attack(bool isOnGournd)
+    public void Attack(bool isOnGournd, float targetPosX = float.NegativeInfinity, float targetPosY = float.NegativeInfinity, float targetPosZ = float.NegativeInfinity)    // This function is for all the previous work which dont have the targetPos paramater
     {
+        Vector3 targetPos = new Vector3(targetPosX, targetPosY, targetPosZ);
+        if (targetPos == Vector3.negativeInfinity)
+        {
+            targetPos = transform.position + transform.right;
+        }
+        Attack(isOnGround, targetPos);
+    }
+
+    public void Attack(bool isOnGournd, Vector3 targetPos)
+    {
+        mTargetPos = targetPos;
         var currentMove = mMoves[mCurrentMoveIndex];
         if (!currentMove.IsActive())
         {
