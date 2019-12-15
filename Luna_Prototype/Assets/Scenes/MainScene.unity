@@ -1742,6 +1742,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugPlayer: {fileID: 0}
+  delay: 5
 --- !u!1 &77785005
 GameObject:
   m_ObjectHideFlags: 0
@@ -5383,6 +5384,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugPlayer: {fileID: 0}
+  delay: 0
 --- !u!1 &248513086
 GameObject:
   m_ObjectHideFlags: 0
@@ -5963,7 +5965,7 @@ PrefabInstance:
     - target: {fileID: 5793445532019093529, guid: 8899678ab56485642901e94ad8122557,
         type: 3}
       propertyPath: timePerTick
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5793445532019093529, guid: 8899678ab56485642901e94ad8122557,
         type: 3}
@@ -5978,17 +5980,17 @@ PrefabInstance:
     - target: {fileID: 5793445532019093530, guid: 8899678ab56485642901e94ad8122557,
         type: 3}
       propertyPath: fire
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 5793445532019093530, guid: 8899678ab56485642901e94ad8122557,
-        type: 3}
-      propertyPath: fireEffectIntensity
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5793445532019093530, guid: 8899678ab56485642901e94ad8122557,
         type: 3}
+      propertyPath: fireEffectIntensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5793445532019093530, guid: 8899678ab56485642901e94ad8122557,
+        type: 3}
       propertyPath: fireDuration
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8899678ab56485642901e94ad8122557, type: 3}
@@ -18268,7 +18270,12 @@ PrefabInstance:
     - target: {fileID: 5793445532019093529, guid: 8899678ab56485642901e94ad8122557,
         type: 3}
       propertyPath: applyDebuff
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5793445532019093529, guid: 8899678ab56485642901e94ad8122557,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5793445532019093530, guid: 8899678ab56485642901e94ad8122557,
         type: 3}
@@ -34008,7 +34015,9 @@ MonoBehaviour:
   mObstacles: []
   mAgents: []
   mPlayer: {fileID: 50951400}
-  mJumpNodes: []
+  mPlatforms: []
+  mGround: []
+  mRoof: []
 --- !u!4 &1333234408
 Transform:
   m_ObjectHideFlags: 0
@@ -40492,6 +40501,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugPlayer: {fileID: 0}
+  delay: 0
 --- !u!1 &1611728684
 GameObject:
   m_ObjectHideFlags: 0
@@ -49775,7 +49785,7 @@ PrefabInstance:
     - target: {fileID: 5793445532019093529, guid: 8899678ab56485642901e94ad8122557,
         type: 3}
       propertyPath: timePerTick
-      value: 3
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5793445532019093529, guid: 8899678ab56485642901e94ad8122557,
         type: 3}
@@ -49790,17 +49800,17 @@ PrefabInstance:
     - target: {fileID: 5793445532019093530, guid: 8899678ab56485642901e94ad8122557,
         type: 3}
       propertyPath: fire
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 5793445532019093530, guid: 8899678ab56485642901e94ad8122557,
-        type: 3}
-      propertyPath: fireEffectIntensity
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 5793445532019093530, guid: 8899678ab56485642901e94ad8122557,
         type: 3}
+      propertyPath: fireEffectIntensity
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5793445532019093530, guid: 8899678ab56485642901e94ad8122557,
+        type: 3}
       propertyPath: fireDuration
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8899678ab56485642901e94ad8122557, type: 3}
@@ -54813,6 +54823,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugPlayer: {fileID: 0}
+  delay: 0
 --- !u!1 &2138590109
 GameObject:
   m_ObjectHideFlags: 0
@@ -55187,12 +55198,12 @@ PrefabInstance:
     - target: {fileID: 109428899416447165, guid: d311b3f3097681b46a1df9b1524ca820,
         type: 3}
       propertyPath: m_LocalPosition.x
-      value: 55.07
+      value: 53.33
       objectReference: {fileID: 0}
     - target: {fileID: 109428899416447165, guid: d311b3f3097681b46a1df9b1524ca820,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 9.45
+      value: -0.77
       objectReference: {fileID: 0}
     - target: {fileID: 109428899416447165, guid: d311b3f3097681b46a1df9b1524ca820,
         type: 3}
@@ -55328,6 +55339,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1040440155085845068, guid: d311b3f3097681b46a1df9b1524ca820,
+        type: 3}
+      propertyPath: fireRes
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 109428899416447139, guid: d311b3f3097681b46a1df9b1524ca820, type: 3}

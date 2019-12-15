@@ -217,9 +217,20 @@ public class Player : Character
     {
         Debug.Log("[Player] Player Dead, curr hp : " + mCurrentHealth + "max hp " + mMaxHealth);
 
-        gameObject.SetActive(false);
-
-        ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);             //|--- [Rick H] Edit: Call GameMngr
+        if (gameObject.GetComponent<CheckPointTracker>() != null)
+        {
+            if (gameObject.GetComponent<CheckPointTracker>().respawnPoint != null)
+            {
+                gameObject.GetComponent<CheckPointTracker>().Respawn(true);
+                ServiceLocator.Get<UIManager>().UpdateHPGauge(mCurrentHealth / mMaxHealth);
+            }
+            else
+            {
+                ServiceLocator.Get<UIManager>().UpdateHPGauge(mCurrentHealth / mMaxHealth);
+                gameObject.SetActive(false);
+                ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);             //|--- [Rick H] Edit: Call GameMngr
+            }
+        }
     }
 
     public void Attack()

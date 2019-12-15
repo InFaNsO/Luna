@@ -5,31 +5,73 @@ using UnityEngine;
 public class GoToCheckPoint : MonoBehaviour
 {
     public GameObject debugPlayer;
-    public float delay;
-    private void OnCollisionStay2D(Collision2D collision)
-    {
-        debugPlayer = collision.gameObject;
-        if(collision.gameObject.GetComponent<CheckPointTracker>() != null)
-        {
-            for (float i = delay; i > 0.0f; i -= Time.deltaTime)
-            {
+    public float delay; //do -1 if u dont want a delay
+    private float i;
+    private bool triggerFlag = false;
 
-            }
-            collision.gameObject.GetComponent<CheckPointTracker>().Respawn(false);
+
+    private void Start()
+    {
+        i = delay;
+    }
+    void Update()
+    {
+        if(triggerFlag)
+        {
+            i -= Time.deltaTime;
         }
 
     }
-    private void OnTriggerStay2D(Collider2D collision)
+    private void OnCollisionStay2D(Collision2D collision)
+    {
+        debugPlayer = collision.gameObject;
+        if (collision == null)
+        { }
+        else if (collision.gameObject.GetComponent<CheckPointTracker>() != null)
+        {
+            triggerFlag = true;
+            if (i < 0.0f)
+            {
+                collision.gameObject.GetComponent<CheckPointTracker>().Respawn(false);
+                collision = null;
+                return;
+            }
+        }
+
+    }
+
+    private void OnCollisionExit2D(Collision2D collision)
     {
         debugPlayer = collision.gameObject;
         if (collision.gameObject.GetComponent<CheckPointTracker>() != null)
         {
-            for (float i = delay; i > 0.0f; i -= Time.deltaTime)
-            {
-
-            }
-            collision.gameObject.GetComponent<CheckPointTracker>().Respawn(false);
+            triggerFlag = false;
+            i = delay;
         }
-
+    }
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        debugPlayer = collision.gameObject;
+        if(collision == null)
+        { }
+        else if (collision.gameObject.GetComponent<CheckPointTracker>() != null)
+        {
+            triggerFlag = true;
+            if (i < 0.0f)
+            {
+                collision.gameObject.GetComponent<CheckPointTracker>().Respawn(false);
+                collision = null;
+                return;
+            }
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        debugPlayer = collision.gameObject;
+        if (collision.gameObject.GetComponent<CheckPointTracker>() != null)
+        {
+            triggerFlag = false;
+            i = delay;
+        }
     }
 }
