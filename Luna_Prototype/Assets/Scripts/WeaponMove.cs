@@ -49,6 +49,8 @@ public class WeaponMove
 
     public void Enter()
     {
+        mWeapon.mIsAttacking = true;
+
         mWeaponAnimator.SetInteger("ToNextCombo", mMoveID);
         mWeaponAnimator.SetFloat("PlaySpeed", mAttackSpeedMutiplier);
         Core.Debug.Log($"{mAttackSpeedMutiplier}, {mMoveID}");
@@ -57,6 +59,7 @@ public class WeaponMove
 
     public void Exit()
     {
+        mWeapon.mIsAttacking = false;
         //mWeaponAnimator.SetInteger("ToNextCombo", mToMoveId[ mMoveContext.GetTransitionSliceCount()]);
         mWeaponAnimator.SetFloat("PlaySpeed", 1.0f);
         mMoveContext.Reset();

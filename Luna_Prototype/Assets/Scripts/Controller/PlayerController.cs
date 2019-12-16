@@ -100,11 +100,14 @@ public class PlayerController : MonoBehaviour
     {
         moveVec.x = controls.PlayerControl.Move.ReadValue<float>();
         Flip();
-
         float acc = isGrounded ? walkAcc : airAcc;
         float dec = isGrounded ? groundDec : 0;
 
-        moveVec.x = Mathf.MoveTowards(Mathf.Abs(moveVec.x), player.GetMoveSpeed() * Mathf.Abs(moveVec.x), acc * Time.deltaTime);
+        moveVec.x = Mathf.MoveTowards(moveVec.x, player.GetMoveSpeed() * moveVec.x, acc * Time.deltaTime);
+        if(!isPlayerFacingRight && moveVec.x < 0.0f || !isPlayerFacingRight && moveVec.x > 0.0f)
+        {
+            moveVec.x = -moveVec.x;
+        }
         transform.Translate(moveVec * Time.deltaTime);
     }
 
@@ -112,8 +115,11 @@ public class PlayerController : MonoBehaviour
     {
         if ((moveVec.x > 0 && !isPlayerFacingRight) || (moveVec.x < 0 && isPlayerFacingRight))
         {
-            isPlayerFacingRight = !isPlayerFacingRight;
-            transform.Rotate(0f, 180f, 0f);
+            if (player.mCurrentWeapon == null || !player.mCurrentWeapon.mIsAttacking)
+            {
+                isPlayerFacingRight = !isPlayerFacingRight;
+                transform.Rotate(0f, 180f, 0f);
+            }
         }
     }
 

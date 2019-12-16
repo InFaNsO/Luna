@@ -11,7 +11,7 @@ public class Player : Character
     [SerializeField]
     private Weapon mWeapon2;
     [SerializeField]
-    private Weapon mCurrentWeapon;
+    public Weapon mCurrentWeapon;
 
     [SerializeField]
     private bool mIsIFrameOn;
