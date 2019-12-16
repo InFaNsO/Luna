@@ -98,20 +98,20 @@ public class World : MonoBehaviour
 
             // General case
             if (o1 != o2 && o3 != o4)
-                return true;
+                return false;
 
             // Special Cases
             // p1, q1 and p2 are colinear and p2 lies on segment p1q1
-            if (o1 == 0 && onSegment(line.from, lineOfSight.from, line.to)) return true;
+            if (o1 == 0 && onSegment(line.from, lineOfSight.from, line.to)) return false;
 
             // p1, q1 and q2 are colinear and q2 lies on segment p1q1
-            if (o2 == 0 && onSegment(line.from, lineOfSight.to, line.to)) return true;
+            if (o2 == 0 && onSegment(line.from, lineOfSight.to, line.to)) return false;
 
             // p2, q2 and p1 are colinear and p1 lies on segment p2q2
-            if (o3 == 0 && onSegment(lineOfSight.from, line.from, lineOfSight.to)) return true;
+            if (o3 == 0 && onSegment(lineOfSight.from, line.from, lineOfSight.to)) return false;
 
             // p2, q2 and q1 are colinear and q1 lies on segment p2q2
-            if (o4 == 0 && onSegment(lineOfSight.from, line.to, lineOfSight.to)) return true;
+            if (o4 == 0 && onSegment(lineOfSight.from, line.to, lineOfSight.to)) return false;
         }
         Line l = new Line();
         l.SetMB(lineOfSight.from, lineOfSight.to);
@@ -131,11 +131,11 @@ public class World : MonoBehaviour
                 //the point is on line
                 if((pointOnLine - circle.center).SqrMagnitude() <= (circle.radius * circle.radius))
                 {
-                    return true;
+                    return false;
                 }
             }
         }
-        return false;
+        return true;
     }
 
     public void AddAgent(Agent a) { mAgents.Add(a); }

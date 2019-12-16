@@ -43,15 +43,16 @@ namespace LAI
 
             if(attackSpeedCounter >= attackSpeed)
             {
-                //agent.RangeAttack
-                //Bullet newBullet = Object.Instantiate(agent.mBullet, new Vector3(0, 0, 0), Quaternion.identity);
-                //Vector3 dir = Vector3.Normalize(agent.transform.position - agent.GetWorld().mPlayer.transform.position);
-                //newBullet.Fire(agent.tag, agent.mDamage, agent.transform.position, -dir, WeaponType.Range);
+                Enemy_Bat batAgent = (Enemy_Bat)agent;
+                
+                Bullet newBullet = Object.Instantiate(batAgent.mBullet, new Vector3(0, 0, 0), Quaternion.identity);
+                Vector3 dir = Vector3.Normalize(agent.transform.position - agent.GetWorld().mPlayer.transform.position);
+                newBullet.Fire(agent.tag, batAgent.mDamage, agent.transform.position, -dir, WeaponType.Range);
                 //recoil force to make it looks good
-                //agent.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-                //agent.gameObject.GetComponent<Rigidbody2D>().AddForce(dir * 100.0f * Time.deltaTime, ForceMode2D.Impulse);
-                //
-                //attackSpeedCounter = 0.0f;
+                agent.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+                agent.gameObject.GetComponent<Rigidbody2D>().AddForce(dir * 100.0f * Time.deltaTime, ForceMode2D.Impulse);
+
+                attackSpeedCounter = 0.0f;
             }
 
             toIdelCounter += Time.deltaTime;

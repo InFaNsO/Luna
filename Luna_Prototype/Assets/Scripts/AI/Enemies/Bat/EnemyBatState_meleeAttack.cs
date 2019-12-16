@@ -68,10 +68,11 @@ namespace LAI
 
             if (Vector3.SqrMagnitude(agent.GetWorld().mPlayer.transform.position - agent.transform.position) < 0.25f && !isAttacked)
             {
-                //Bullet newBullet = Object.Instantiate(agent.mMeleeBullet, new Vector3(0, 0, 0), Quaternion.identity);
-                //newBullet.Awake();
-                //newBullet.Fire(agent.tag, agent.mDamage, agent.transform.position, Vector3.down, WeaponType.Melee);
-                //isAttacked = true;
+                Enemy_Bat batAgent = (Enemy_Bat)agent;
+                Bullet newBullet = Object.Instantiate(batAgent.mMeleeBullet, new Vector3(0, 0, 0), Quaternion.identity);
+                newBullet.Awake();
+                newBullet.Fire(agent.tag, batAgent.mDamage, agent.transform.position, Vector3.down, WeaponType.Melee);
+                isAttacked = true;
             }
 
             toIdelCounter += Time.deltaTime;
