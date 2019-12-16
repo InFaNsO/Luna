@@ -106,20 +106,24 @@ public class Inventory : MonoBehaviour
             _uiMngr.MoveSelectedItemIndex(_slots.Count - 1);
             selected = _uiMngr.GetSelectedItemInInventory();
         }
-        //selected = selected > _slots.Count - 1 ? _slots.Count - 1 : selected;
 
-        int prevIdx = selected - 1 < 0 ? _slots.Count - 1 : selected - 1;
+        //prev code,
+        //int prevIdx = selected - 1 < 0 ? _slots.Count - 1 : selected - 1;
+        //int nextIdx = selected + 1 > _slots.Count - 1 ? 0 : selected + 1;
 
-        int nextIdx = selected + 1 > _slots.Count - 1 ? 0 : selected + 1;
+        //new 
+        int prevIdx =   selected - 1;
 
-        Debug.Log("[-=prev,sele,next,slotcount-] " + prevIdx.ToString() +","+ selected.ToString() + "," + nextIdx.ToString() + ","+ _slots.Count.ToString());
+        int nextIdx =   selected + 1;
+
+        //Debug.Log("[-=prev,sele,next,slotcount-] " + prevIdx.ToString() +","+ selected.ToString() + "," + nextIdx.ToString() + ","+ _slots.Count.ToString());
 
 
-        image_prev.sprite = _slots[prevIdx].sprite;
+        image_prev.sprite = prevIdx < 0 ? _EmptySprite : _slots[prevIdx].sprite;
 
         image_centre.sprite = _slots[selected].sprite;
 
-        image_next.sprite = _slots[nextIdx].sprite;
+        image_next.sprite = nextIdx > _slots.Count - 1 ? _EmptySprite : _slots[nextIdx].sprite;
     }
 
     public int GetCount() { return _slots.Count; }
