@@ -6,13 +6,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Assertions;
 
 // merge test
 public abstract class Character : Agent
 {
-    
-    public float mMaxHealth;
-    public float mCurrentHealth;
     public float mMovementSpeed;
     public float mJumpStrength;
 
@@ -28,9 +26,19 @@ public abstract class Character : Agent
 
     public bool isGrounded = false;                                    //|--- [Mingzhuo Zhang] Edit: I need to know is player is on ground or not for my weapon combo system
 
+    public ElementalAttributes mElement;
+
     public abstract void GetHit(float dmg);
     public abstract void Die();
-
+    public void GetHit(ElementalAttributes element)
+    {
+        element.ApplyDamage(this, false);
+        if (mCurrentHealth <= 0.0f)
+        {
+            Die();
+        }
+        Core.Debug.Log( this + mCurrentHealth.ToString());
+    }
 
     public void ReceiveDebuff(int debuffDamage, float debuffDuration)
     {
@@ -65,6 +73,14 @@ public abstract class Character : Agent
         mReceiveHazardDebuffCD = 0.0f;
         mReceivedHazardDamage = 0;
         mReceivedHazardDuration = 0;
+
+        mElement = GetComponent<ElementalAttributes>();
+        if (mElement == null)
+            mElement = new ElementalAttributes();
+
+        Assert.IsNotNull(mElement);
+
+
         InvokeRepeating("DebuffTick", 0.1f, 1.0f);
     }
 

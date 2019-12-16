@@ -4,12 +4,13 @@ using UnityEngine;
 
 namespace LAI
 {
-    public class GoToState<AgentType> : State<AgentType> where AgentType : Enemy
+    /*
+    public class GoToState : State
     {
         private bool setOA;
         private bool setAr;
 
-        public override void Enter(AgentType agent)
+        public override void Enter(Enemy agent)
         {
             agent.GetSteeringModule().TurnAllOff();
             if (!agent.GetSteeringModule().Exists(SteeringType.Arrive))
@@ -35,7 +36,7 @@ namespace LAI
             agent.SetFinalDestination(agent.GetWorld().mPlayer.transform.position);
         }
 
-        public override void Update(AgentType agent)
+        public override void Update(Enemy agent)
         {
             agent.SetFinalDestination(agent.GetWorld().mPlayer.transform.position);
 
@@ -60,13 +61,12 @@ namespace LAI
                 agent.SetDestination(dest);
             }
 
-          /* // //check if there is a jump object then jump to most optimal one
-           // if(!agent.IsJumpCapable() || diff.y < agent.GetSafeDistanceReduced())       //see if enemy can jump or is there a need to jump
-           // {
-           //     //end the update
-           //     return;
-           // }
-
+            //check if there is a jump object then jump to most optimal one
+            if(!agent.IsJumpCapable() || diff.y < agent.GetSafeDistanceReduced())       //see if enemy can jump or is there a need to jump
+            {
+                //end the update
+                return;
+            }
             for(int i = 0; i < agent.GetWorld().mJumpNodes.Count; ++i)
             {
                 diff = agent.transform.position - agent.GetWorld().mJumpNodes[i].transform.position;
@@ -96,10 +96,10 @@ namespace LAI
 
                     }
                 }
-            }*/
+            }
         }
 
-        public override void Exit(AgentType agent)
+        public override void Exit(Enemy agent)
         {
             if (setAr)
                 agent.GetSteeringModule().SetActive(SteeringType.Arrive, false);
@@ -108,6 +108,6 @@ namespace LAI
 
         }
     }
-
+*/
 }
 

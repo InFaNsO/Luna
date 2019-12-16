@@ -17,7 +17,10 @@ public class Enemy : Character
     [SerializeField] protected Weapon mWeapon;
     [SerializeField] protected bool mIsDropping;
     [SerializeField] protected Key mDropPrefbs;
-    [SerializeField] protected LAI.SteeringModule mSteeringModule = new LAI.SteeringModule();
+    [SerializeField] public List<Platform> platformsAccesible = new List<Platform>();
+    protected LAI.SteeringModule mSteeringModule = new LAI.SteeringModule();
+    protected LAI.Grid_PathFinding pathFinder = new LAI.Grid_PathFinding();
+    public LAI.StateMachine mStateMachine = new LAI.StateMachine();
 
     //[SerializeField] protected Agent mAgent;
     //[SerializeField] protected World world;
@@ -34,6 +37,9 @@ public class Enemy : Character
         //mAgent.SetWorld(world);
         world.AddAgent(this);
         mSteeringModule.SetAgent(this);
+
+        pathFinder.gameWorld = world;
+        pathFinder.Initialize();
 
         if (mWeapon != null)
         {
@@ -69,7 +75,9 @@ public class Enemy : Character
 
     public new void Update()
     {
+        mStateMachine.Update();
         mVelocity += mSteeringModule.Calculate();
+        mVelocity *= Time.deltaTime;
         base.Update();
 
         if (mIsStuned != true)
@@ -86,7 +94,7 @@ public class Enemy : Character
             }
             mStunCounter -= Time.deltaTime;
         }
-        Vector2 pos = new Vector2(transform.position.x, transform.position.y);
+        Vector2 pos = new Vector2(transform.position.x + mVelocity.x, transform.position.y + mVelocity.y);
         SetPosition(pos);
     }
 
@@ -99,11 +107,13 @@ public class Enemy : Character
     {
         if (other.tag != gameObject.tag)
         {
-            if (other.GetComponent<Bullet>() != null)
+            var bullet = other.GetComponent<Bullet>();
+            if (bullet != null)
             {
                 //1. Bullet.ElementAttribute = Player.ElementAttribute + Weapon.ElementAttribute                \\ TODO
                 //2. Bullet.ApplyDamage()                                                                       \\ TODO
-                GetHit(other.GetComponent<Bullet>().Damage, other.tag);
+                GetHit(bullet.mElement);
+                GetHit(bullet.Damage, other.tag);
             }
         }
     }
@@ -141,10 +151,10 @@ public class Enemy : Character
     {
         mCurrentHealth -= dmg;
 
-        if ((mWeapon.GetAttackState() == AttacState.State_Parriable))
-        {
-            GetStun(1.5f);
-        }
+        //if ((mWeapon.GetAttackState() == AttacState.State_Parriable))
+        //{
+        //    GetStun(1.5f);
+        //}
 
         if (mCurrentHealth <= 0.0f)
         {
@@ -197,6 +207,23 @@ public class Enemy : Character
         }
     }
 
-   
+
+    public bool IsNearPlayer(float distance)
+    {
+        if (Vector3.Distance(gameObject.transform.position, GetWorld().mPlayer.transform.position) < distance)
+        {
+            return true;
+        }
+        return false;
+    }
+    public bool IsNearDestination(float distance)
+    {
+        if (Vector3.Distance(transform.position, mDestination) < distance)
+        {
+            return true;
+        }
+        return false;
+    }
+
 }
 

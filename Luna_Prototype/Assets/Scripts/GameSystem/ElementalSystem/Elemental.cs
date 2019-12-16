@@ -147,7 +147,7 @@ public abstract class Elemental
     {
         mActiveIntensity = _intensity;
         //mActiveDuration = duration;
-        mCount = duration;
+        mCount = _duration;
         mStatusActive = true;
     }
     public void TakeElementalDamage(float dmg)

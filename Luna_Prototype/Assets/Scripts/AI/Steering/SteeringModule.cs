@@ -4,11 +4,10 @@ using UnityEngine;
 
 namespace LAI
 {
-    [System.Serializable]
     public class SteeringModule
     {
-        [SerializeField] private Agent mAgent;
-        [SerializeField] private List<SteeringBehaviourBase> mBehaviours = new List<SteeringBehaviourBase>();
+        private Agent mAgent;
+        private List<SteeringBehaviourBase> mBehaviours = new List<SteeringBehaviourBase>();
 
         public void SetAgent(Agent a) { mAgent = a; }
         public void Initialize()

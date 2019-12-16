@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace LAI
 {
-    public class EnemyBatState_meleeAttack<AgentType> : State<AgentType> where AgentType : Enemy_Bat
+    public class EnemyBatState_meleeAttack : State 
     {
         public float toIdelDelay = 3.0f;
         private float toIdelCounter = 0.0f;
@@ -13,7 +13,12 @@ namespace LAI
         Vector3 destPos;
         bool isAttacked = false;
 
-        public override void Enter(AgentType agent)
+        public override States Name()
+        {
+            return States.Attack;
+        }
+
+        public override void Enter(Enemy agent)
         {
             agent.SetVelocity(Vector2.zero);
             agent.GetSteeringModule().TurnAllOff();
@@ -39,7 +44,7 @@ namespace LAI
             toIdelCounter = 0.0f;
         }
 
-        public override void Update(AgentType agent)
+        public override void Update(Enemy agent)
         {
             if (toIdelCounter >= toIdelDelay)
             {
@@ -63,15 +68,17 @@ namespace LAI
 
             if (Vector3.SqrMagnitude(agent.GetWorld().mPlayer.transform.position - agent.transform.position) < 0.25f && !isAttacked)
             {
-                Bullet newBullet = Object.Instantiate(agent.mMeleeBullet, new Vector3(0, 0, 0), Quaternion.identity);
-                newBullet.Fire(agent.tag, agent.mDamage, agent.transform.position, Vector3.down, WeaponType.Melee);
+                Enemy_Bat batAgent = (Enemy_Bat)agent;
+                Bullet newBullet = Object.Instantiate(batAgent.mMeleeBullet, new Vector3(0, 0, 0), Quaternion.identity);
+                newBullet.Awake();
+                newBullet.Fire(agent.tag, batAgent.mDamage, agent.transform.position, Vector3.down, WeaponType.Melee);
                 isAttacked = true;
             }
 
             toIdelCounter += Time.deltaTime;
         }
 
-        public override void Exit(AgentType agent)
+        public override void Exit(Enemy agent)
         {
             agent.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
         }

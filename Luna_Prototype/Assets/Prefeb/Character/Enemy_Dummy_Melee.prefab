@@ -16,6 +16,8 @@ GameObject:
   - component: {fileID: 889444038567034651}
   - component: {fileID: 2432574230519267109}
   - component: {fileID: 612883444155909257}
+  - component: {fileID: 920167454}
+  - component: {fileID: 920167461}
   m_Layer: 9
   m_Name: Enemy_Dummy_Melee
   m_TagString: Enemy
@@ -118,6 +120,7 @@ MonoBehaviour:
   mReceivedHazardDamage: 0
   mReceivedHazardDuration: 0
   isGrounded: 0
+  mElement: {fileID: 0}
   mWeapon: {fileID: 3806285672904325702}
   mIsDropping: 0
   mDropPrefbs: {fileID: 0}
@@ -208,6 +211,73 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackSpeed: 2
+--- !u!114 &920167454
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382053527553314530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9751d8a01058ae409131f9872d21e8b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  debugMode: 0
+  inclusiveElement: 0
+  initialized: 0
+  isEquipment: 0
+  voidType: 0
+  fire: 0
+  earth: 0
+  metal: 0
+  water: 0
+  wood: 0
+  wind: 0
+  lightning: 0
+  fireRes: 50
+  earthRes: 100
+  metalRes: 100
+  waterRes: 100
+  woodRes: 100
+  windRes: 100
+  lightningRes: 100
+  fireEffectChance: 100
+  earthEffectChance: 100
+  metalEffectChance: 100
+  waterEffectChance: 100
+  woodEffectChance: 100
+  windEffectChance: 100
+  lightningEffectChance: 100
+  fireEffectIntensity: 0
+  earthEffectIntensity: 0
+  metalEffectIntensity: 0
+  waterEffectIntensity: 0
+  woodEffectIntensity: 0
+  windEffectIntensity: 0
+  lightningEffectIntensity: 0
+  fireDuration: 0
+  earthDuration: 0
+  metalDuration: 0
+  waterDuration: 0
+  woodDuration: 0
+  windDuration: 0
+  lightningDuration: 0
+  mPlayer: {fileID: 0}
+  mEnemy: {fileID: 0}
+--- !u!114 &920167461
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382053527553314530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7455f653bbe4cce4b887ab6685fd161a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  attackSpeed: 2
 --- !u!1001 &5899555244545310888
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -215,6 +285,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1382053527553314527}
     m_Modifications:
+    - target: {fileID: 5913526906705443303, guid: 5cb4447c125519840808fe0cfa5ea2be,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon_hummer
+      objectReference: {fileID: 0}
     - target: {fileID: 8064114535432841098, guid: 5cb4447c125519840808fe0cfa5ea2be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -269,11 +344,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5913526906705443303, guid: 5cb4447c125519840808fe0cfa5ea2be,
-        type: 3}
-      propertyPath: m_Name
-      value: Weapon_hummer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cb4447c125519840808fe0cfa5ea2be, type: 3}

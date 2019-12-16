@@ -4,24 +4,23 @@ using UnityEngine;
 
 namespace LAI
 {
-    [System.Serializable]
-    public class StateMachine <AgentType> where AgentType : Enemy
+    public class StateMachine
     {
-        [SerializeField] private AgentType mAgent;
-        [SerializeField] private List<State<AgentType>> mStates = new List<State<AgentType>>();
+        private Enemy mAgent;
+        private List<State> mStates = new List<State>();
         private int mCurrentState = -1;
 
-        public void SetAgent(AgentType at)
+        public void SetAgent(Enemy at)
         {
             mAgent = at;
         }
 
-        public void Initialize(AgentType agent)
+        public void Initialize(Enemy agent)
         {
             mAgent = agent;
         }
 
-        public void AddState<StateType>(StateType state = null) where StateType : State<AgentType>, new()
+        public void AddState<StateType>(StateType state = null) where StateType : State, new()
         {
             if (state == null)
                 mStates.Add(new StateType());
@@ -44,6 +43,18 @@ namespace LAI
             }
             mCurrentState = stateID;
             mStates[mCurrentState].Enter(mAgent);
+        }
+
+        public void ChangeState(States state)
+        {
+            for(int i = 0; i < mStates.Count; ++i)
+            {
+                if(mStates[i].Name() == state)
+                {
+                    ChangeState(i);
+                    return;
+                }
+            }
         }
     }
 }

@@ -4,12 +4,12 @@ using UnityEngine;
 
 namespace LAI
 {
-    public class SBStateGoToPlayer<AgentType> : State<AgentType> where AgentType : Enemy
+    /*public class SBStateGoToPlayer: State
     {
         private bool setOA;
         private bool setAr;
 
-        public override void Enter(AgentType agent)
+        public override void Enter(Enemy agent)
         {
             agent.GetSteeringModule().TurnAllOff();
             if (!agent.GetSteeringModule().Exists(SteeringType.Arrive))
@@ -35,12 +35,12 @@ namespace LAI
             agent.SetDestination(agent.GetWorld().mPlayer.transform.position);
         }
 
-        public override void Update(AgentType agent)
+        public override void Update(Enemy agent)
         {
 
         }
 
-        public override void Exit(AgentType agent)
+        public override void Exit(Enemy agent)
         {
             if(setAr)
                 agent.GetSteeringModule().SetActive(SteeringType.Arrive, false);
@@ -48,5 +48,5 @@ namespace LAI
                 agent.GetSteeringModule().SetActive(SteeringType.ObstacleAvoidance, false);
 
         }
-    }
+    }*/
 }

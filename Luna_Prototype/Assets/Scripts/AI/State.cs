@@ -4,10 +4,20 @@ using UnityEngine;
 
 namespace LAI
 {
-    public abstract class State <AgentType> where AgentType : Enemy
+    public enum States
     {
-        public abstract void Enter(AgentType agent);
-        public abstract void Update(AgentType agent);
-        public abstract void Exit(AgentType agent);
+        None,
+        Wander,
+        GoToPlayer,
+        Attack,
+        Suprise
+    }
+
+    public abstract class State
+    {
+        public abstract void Enter(Enemy agent);
+        public abstract void Update(Enemy agent);
+        public abstract void Exit(Enemy agent);
+        public abstract States Name();
     }
 }

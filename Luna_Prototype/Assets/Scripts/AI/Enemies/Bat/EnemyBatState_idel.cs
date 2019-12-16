@@ -5,13 +5,13 @@ using UnityEngine;
 
 namespace LAI
 {
-    public class EnemyBatState_idel<AgentType> : State<AgentType> where AgentType : Enemy_Bat
+    public class EnemyBatState_idel : State
     {
         private float idelTime = 2.0f;
         private float idelCounter = 0.0f;
         private float time;
         private Vector3 newPos;
-        public override void Enter(AgentType agent)
+        public override void Enter(Enemy agent)
         {
             agent.GetSteeringModule().TurnAllOff();
             agent.SetVelocity(Vector2.zero);
@@ -19,7 +19,12 @@ namespace LAI
             idelCounter = 0.0f;
         }
 
-        public override void Update(AgentType agent)
+        public override States Name()
+        {
+            return States.Wander;
+        }
+
+        public override void Update(Enemy agent)
         {
             time += Time.deltaTime * 5.0f;
             newPos.x = agent.transform.position.x + Mathf.Sin(time * 2.0f) * 0.01f;
@@ -30,11 +35,11 @@ namespace LAI
             if (idelCounter < idelTime)
                 return;
 
-            if (agent.IsNear(agent.GetSafeDistanceExtended()))
+            if (agent.IsNearPlayer(agent.GetSafeDistanceExtended()))
             {
                 if (agent.GetWorld().HasLineOfSight(new World.Wall(agent.transform.position, agent.GetWorld().mPlayer.transform.position)))
                 {
-                    if (agent.IsNear(agent.GetSafeDistanceReduced()))        //ready to attack
+                    if (agent.IsNearPlayer(agent.GetSafeDistanceReduced()))        //ready to attack
                     {
                         agent.mStateMachine.ChangeState((int)Enemy_Bat.States.rangeAttack);
                     }
@@ -47,7 +52,7 @@ namespace LAI
 
         }
 
-        public override void Exit(AgentType agent)
+        public override void Exit(Enemy agent)
         {
 
         }

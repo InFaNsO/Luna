@@ -18,7 +18,6 @@ public class Enemy_Bat : Enemy
         meleeAttack
     }
 
-    [SerializeField] public LAI.StateMachine<Enemy_Bat> mStateMachine = new LAI.StateMachine<Enemy_Bat>();
     private States mCurrentState = States.none;
 
     new void Awake()
@@ -29,10 +28,10 @@ public class Enemy_Bat : Enemy
         gameObject.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
 
         //Add State
-        mStateMachine.AddState<LAI.EnemyBatState_idel<Enemy_Bat>>();                  //0
-        mStateMachine.AddState<LAI.EnemyBatState_goTo<Enemy_Bat>>();                  //1
-        mStateMachine.AddState<LAI.EnemyBatState_rangeAttack<Enemy_Bat>>();           //2
-        mStateMachine.AddState<LAI.EnemyBatState_meleeAttack<Enemy_Bat>>();           //3
+        mStateMachine.AddState<LAI.EnemyBatState_idel>();         //0
+        mStateMachine.AddState<LAI.EnemyBatState_goTo>();         //1
+        mStateMachine.AddState<LAI.EnemyBatState_meleeAttack>();        //3
+        mStateMachine.AddState<LAI.EnemyBatState_rangeAttack>();         //2
 
         mCurrentState = 0;
         mStateMachine.SetAgent(this);
@@ -61,12 +60,5 @@ public class Enemy_Bat : Enemy
         transform.Rotate(new Vector3(0.0f, 0.0f, 180.0f));
     }
 
-    public bool IsNear(float distance)
-    {
-        if (Vector3.Distance(gameObject.transform.position, GetWorld().mPlayer.transform.position) < distance)
-        {
-            return true;
-        }
-        return false;
-    }
+
 }
