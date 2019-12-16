@@ -4,7 +4,6 @@ using UnityEngine;
 
 namespace LAI
 {
-    [System.Serializable]
     public class Grid_PathFinding
     {
         public class Node
@@ -351,7 +350,7 @@ namespace LAI
             closedList.Clear();
         }
 
-        private int GetNearestNodeID(Vector3 pos)
+        public int GetNearestNodeID(Vector3 pos)
         {
             int nID = 0;
             Node nearest = mNodes[nID];

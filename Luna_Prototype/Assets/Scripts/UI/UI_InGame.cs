@@ -13,13 +13,11 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     [Header("Gauges")]
     public Image hp_Image;
 
-
-
     //quick slots
     [Header("Quick Slots")]
     public List<Image> quickSlots = new List<Image>();
     [SerializeField] private Sprite _EmptySlot;
-
+    public int selectedSlotInInventory { get; set; }
 
     //pop up pause menu
     [Header("Pause")]
@@ -78,6 +76,8 @@ public class UI_InGame : MonoBehaviour, UI_Interface
             popUp_msgbox.SetActive(false);
         }
 
+
+        selectedSlotInInventory = 0;
     }
     public void ResetUI()
     {
@@ -89,6 +89,8 @@ public class UI_InGame : MonoBehaviour, UI_Interface
         {
             s.sprite = null;
         }
+        selectedSlotInInventory = 0;
+
     }
 
     #region HPGauge
@@ -175,6 +177,63 @@ public class UI_InGame : MonoBehaviour, UI_Interface
         }
 
     }
+    #endregion
+
+    #region SelectItem/roll up down
+    public void SelectPrevItem(int inventoryCount)
+    {
+        if (inventoryCount <= 0)
+            return;
+        selectedSlotInInventory = selectedSlotInInventory - 1 < 0 ? inventoryCount - 1 : selectedSlotInInventory - 1;
+        Debug.Log("prev: curr = " + selectedSlotInInventory.ToString());
+    }
+
+    public void SelectNextItem(int inventoryCount)
+    {
+        if (inventoryCount <= 0)
+             return;
+         selectedSlotInInventory = selectedSlotInInventory + 1 > inventoryCount - 1 ? 0 : selectedSlotInInventory + 1;
+        Debug.Log("next: curr = " + selectedSlotInInventory.ToString());
+
+    }
+
+    #endregion
+
+    #region UpdateUI_Img
+
+    //void UpdateQuickSlot_Img(List<Inventory.InventoryItemSlot> invSlots)
+    //{
+    //    UIManager UIMngr = ServiceLocator.Get<UIManager>();
+    //    var quickSlots = UIMngr.GetQuickSlot();
+    //    var image_prev = quickSlots[0];//[Rick H] replaced with UIManager service
+    //    var image_centre = quickSlots[1];//[Rick H] replaced with UIManager service
+    //    var image_next = quickSlots[2];//[Rick H] replaced with UIManager service
+
+    //    if (invSlots.Count <= 0)
+    //    {
+    //        image_prev.sprite = _EmptySprite;
+    //        image_centre.sprite = _EmptySprite;
+    //        image_next.sprite = _EmptySprite;
+
+    //        return;
+    //    }
+
+    //    int selected = UIMngr.GetSelectedItemInInventory();
+
+    //    int prevIdx = selected - 1 < 0 ? _slots.Count - 1 : selected - 1;
+
+    //    int nextIdx = selected + 1 > _slots.Count - 1 ? 0 : selected + 1;
+
+    //    //Debug.Log("[-=prev,sele,next,slotcount-] " + prevIdx.ToString() +","+ selected.ToString() + "," + nextIdx.ToString() + ","+ _slots.Count.ToString());
+
+
+    //    image_prev.sprite = _slots[prevIdx].sprite;
+
+    //    image_centre.sprite = _slots[selected].sprite;
+
+    //    image_next.sprite = _slots[nextIdx].sprite;
+
+    //}
     #endregion
 
 }

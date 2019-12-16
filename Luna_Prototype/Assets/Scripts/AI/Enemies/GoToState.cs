@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace LAI
 {
+    /*
     public class GoToState : State
     {
         private bool setOA;
@@ -61,12 +62,12 @@ namespace LAI
             }
 
             //check if there is a jump object then jump to most optimal one
-            if(/*!agent.IsJumpCapable() ||*/ diff.y < agent.GetSafeDistanceReduced())       //see if enemy can jump or is there a need to jump
+            if(!agent.IsJumpCapable() || diff.y < agent.GetSafeDistanceReduced())       //see if enemy can jump or is there a need to jump
             {
                 //end the update
                 return;
             }
-            /*for(int i = 0; i < agent.GetWorld().mJumpNodes.Count; ++i)
+            for(int i = 0; i < agent.GetWorld().mJumpNodes.Count; ++i)
             {
                 diff = agent.transform.position - agent.GetWorld().mJumpNodes[i].transform.position;
                 if (diff.sqrMagnitude >= agent.GetSafeDistanceReduced() * agent.GetSafeDistanceReduced())
@@ -95,7 +96,7 @@ namespace LAI
 
                     }
                 }
-            }*/
+            }
         }
 
         public override void Exit(Enemy agent)
@@ -107,6 +108,6 @@ namespace LAI
 
         }
     }
-
+*/
 }
 

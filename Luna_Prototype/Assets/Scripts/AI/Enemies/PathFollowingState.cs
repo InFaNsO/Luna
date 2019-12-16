@@ -4,6 +4,7 @@ using UnityEngine;
 
 namespace LAI
 {
+    /*
     [System.Serializable]
     public class PathFollowingState : State
     {
@@ -107,5 +108,5 @@ namespace LAI
                 agent.GetSteeringModule().SetActive(SteeringType.Seek, false);
             }
         }
-    }
+    }*/
 }

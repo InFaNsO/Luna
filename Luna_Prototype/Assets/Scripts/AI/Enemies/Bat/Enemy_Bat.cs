@@ -6,6 +6,7 @@ using UnityEngine.Assertions;
 public class Enemy_Bat : Enemy
 {
     public Bullet mBullet;
+    public Bullet mMeleeBullet;
     public int mDamage = 10;
 
     public enum States
@@ -29,6 +30,7 @@ public class Enemy_Bat : Enemy
         //Add State
         mStateMachine.AddState<LAI.EnemyBatState_idel>();         //0
         mStateMachine.AddState<LAI.EnemyBatState_goTo>();         //1
+        mStateMachine.AddState<LAI.EnemyBatState_meleeAttack>();        //3
         mStateMachine.AddState<LAI.EnemyBatState_rangeAttack>();         //2
 
         mCurrentState = 0;

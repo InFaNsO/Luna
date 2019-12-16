@@ -21,12 +21,11 @@ public class SmallBots : Enemy
         base.Awake();
         gameObject.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
         transform.Rotate(new Vector3(0.0f, 0.0f, 180.0f));
-
-        LAI.PathFollowingState pf = new LAI.PathFollowingState();
+        /*        LAI.PathFollowingState pf = new LAI.PathFollowingState();
         pf.AddPath(new Vector3(4.0f, 2.2f, 0.0f));
         pf.AddPath(new Vector3(-4.0f, 2.2f, 0.0f));
 
-        mStateMachine.AddState(pf);                                         //0
+        mStateMachine.AddState(pf);                              //0
         mStateMachine.AddState<LAI.SBStateGoToPlayer>();         //1
         mStateMachine.AddState<LAI.SBStateAttack>();             //2
 
@@ -36,7 +35,7 @@ public class SmallBots : Enemy
 
         mSteeringModule.AddState<LAI.BehaviourSeek>();
         mSteeringModule.AddState<LAI.BehaviourArrive>();
-        mSteeringModule.AddState<LAI.BehaviourObstacleAvoidance>();
+        mSteeringModule.AddState<LAI.BehaviourObstacleAvoidance>();*/
     }
 
     public new void Start()
@@ -60,8 +59,6 @@ public class SmallBots : Enemy
     public new void Update()
     {
         base.Update();
-
-        mStateMachine.Update();
 
         //See if player is close
             //Test line of sight

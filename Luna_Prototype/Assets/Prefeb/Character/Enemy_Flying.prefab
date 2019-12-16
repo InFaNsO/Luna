@@ -150,8 +150,8 @@ MonoBehaviour:
   mMass: 100
   mMaxSpeed: 0.1
   mSafeDistanceReduced: 1
-  mSafeDistance: 1.8
-  mSafeDistanceExtended: 2.2
+  mSafeDistance: 1.5
+  mSafeDistanceExtended: 5
   mRadius: 0.75
   world: {fileID: 0}
   mMaxHealth: 10
@@ -167,10 +167,9 @@ MonoBehaviour:
   mWeapon: {fileID: 5001615152560556114}
   mIsDropping: 0
   mDropPrefbs: {fileID: 0}
-  mSteeringModule:
-    mAgent: {fileID: 0}
+  platformsAccesible: []
   mIsStuned: 0
-  mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05, type: 3}
+  mBullet: {fileID: 679799675015805979, guid: 68a8562ed65b5fc47a4de5c328a38945, type: 3}
   mMeleeBullet: {fileID: 679799675015805979, guid: 6c01c024dc34da940be37926f2f4bf7e,
     type: 3}
   mDamage: 10
@@ -240,11 +239,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Weapon_sword
       objectReference: {fileID: 0}
-    - target: {fileID: 5913526906705443303, guid: a31afef3ea2353845847fc556dbee13b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8064114535432841098, guid: a31afef3ea2353845847fc556dbee13b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -309,11 +303,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.y
       value: 0.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6511158193159856056, guid: a31afef3ea2353845847fc556dbee13b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9155987423641656648, guid: a31afef3ea2353845847fc556dbee13b,
         type: 3}

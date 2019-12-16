@@ -90,7 +90,13 @@ public class WeaponMove
     public void ShootBullet()
     {
         Bullet newBullet = GameObject.Instantiate(mBullet, new Vector3(0, 0, 0), Quaternion.identity);
-        newBullet.Fire(mWeapon.tag, mDamage, mWeapon.transform.TransformPoint(mWeapon.transform.localPosition + mFirePosition.localPosition), mWeapon.transform.right, mWeapon.mType);
+        Vector3 shootPos = mWeapon.transform.TransformPoint(mWeapon.transform.localPosition + mFirePosition.localPosition);
+        if (mWeapon.mTargetPos.Equals(Vector3.negativeInfinity))
+        {
+            mWeapon.mTargetPos = mWeapon.transform.position + mWeapon.transform.right;
+        }
+        Vector3 dir = Vector3.Normalize(mWeapon.mTargetPos - mWeapon.transform.position);
+        newBullet.Fire(mWeapon.tag, mDamage, shootPos, dir, mWeapon.mType);
         newBullet.Awake();
         newBullet.mElement = mWeapon.mOwnerElement + mElement;
         Core.Debug.Log(newBullet.mElement.ToString() + newBullet.mElement.fire);

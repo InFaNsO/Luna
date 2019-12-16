@@ -18,9 +18,14 @@ public class Inventory : MonoBehaviour
     public List<InventoryItemSlot> _slots = new List<InventoryItemSlot>();
     private int _totalSlot = 9;
 
+
+    //[Rick H], 2019-12-09, uimanager cache
+    private UIManager _uiMngr = null;
+
     void Awake()
     {
         Assert.IsNotNull(_player, "[Inventroy] _Player is null");
+        _uiMngr = ServiceLocator.Get<UIManager>();
     }
 
     public void UsingItem(int whichSlot)
@@ -37,8 +42,8 @@ public class Inventory : MonoBehaviour
             {
                 _slots[whichSlot].sprite = _EmptySprite;
                 _slots[whichSlot].theItem = null;
+                _slots.RemoveAt(whichSlot);//[Rick H], 2019-12-09, swaped this line with the one below
                 UpdateUI(whichSlot);
-                _slots.RemoveAt(whichSlot);
             }
         }
     }
@@ -74,13 +79,66 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void UpdateUI(int whichSlot)
+    public void UpdateUI(int whichSlot)
     {
         //var image = _player._LocalLevelManager._InGameUI._InventoryItemButtons[whichSlot].GetComponent<Image>();
 
-        var image = ServiceLocator.Get<UIManager>().GetQuickSlot()[whichSlot];//[Rick H] replaced with UIManager service
+        //[Rick H], 2019-12-09, spirte for items should be kept by [UI_Ingame] instead of [Inventory]
+        //[Rick H], 2019-12-09, following code might need to be put into [UI_Ingame] and [UIManager]
+        //UIManager UIMngr = ServiceLocator.Get<UIManager>();
+        var quickSlots = _uiMngr.GetQuickSlot();
+        var image_prev = quickSlots[0];//[Rick H] replaced with UIManager service
+        var image_centre = quickSlots[1];//[Rick H] replaced with UIManager service
+        var image_next = quickSlots[2];//[Rick H] replaced with UIManager service
 
-        image.sprite = _slots[whichSlot].sprite;
+        if (_slots.Count <= 0)
+        {
+            image_prev.sprite = _EmptySprite;
+            image_centre.sprite = _EmptySprite;
+            image_next.sprite = _EmptySprite;
+
+            return;
+        }
+
+        int selected = _uiMngr.GetSelectedItemInInventory();
+        if (selected > _slots.Count - 1)
+        {
+            _uiMngr.MoveSelectedItemIndex(_slots.Count - 1);
+            selected = _uiMngr.GetSelectedItemInInventory();
+        }
+        //selected = selected > _slots.Count - 1 ? _slots.Count - 1 : selected;
+
+        int prevIdx = selected - 1 < 0 ? _slots.Count - 1 : selected - 1;
+
+        int nextIdx = selected + 1 > _slots.Count - 1 ? 0 : selected + 1;
+
+        Debug.Log("[-=prev,sele,next,slotcount-] " + prevIdx.ToString() +","+ selected.ToString() + "," + nextIdx.ToString() + ","+ _slots.Count.ToString());
+
+
+        image_prev.sprite = _slots[prevIdx].sprite;
+
+        image_centre.sprite = _slots[selected].sprite;
+
+        image_next.sprite = _slots[nextIdx].sprite;
     }
 
+    public int GetCount() { return _slots.Count; }
+
+    public void UseItem()
+    {
+        UsingItem(_uiMngr.GetSelectedItemInInventory());
+        UpdateUI(0);
+    }
+
+    public void SelectPrevItem()
+    {
+        _uiMngr.SelectPrevItem(_slots.Count);
+        UpdateUI(0);
+    }
+
+    public void SelectNextItem()
+    {
+        _uiMngr.SelectNextItem(_slots.Count);
+        UpdateUI(0);
+    }
 }

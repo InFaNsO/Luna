@@ -15,7 +15,8 @@ public class Weapon : MonoBehaviour
     // Members --------------------------------------------------------------------------------------------------------------
 
     //--------------------------------------------------------------------------//|
-   
+
+    public float Range;
     [SerializeField] protected string mName;                                    //|
     [SerializeField] protected WeaponGrade mGrade;                              //|--- TODO:: make them as WeaponPorperty struct
     [SerializeField] public WeaponType mType;                                //|
@@ -41,7 +42,7 @@ public class Weapon : MonoBehaviour
 
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
-    public bool isOnGround = false;
+    //public bool isOnGround = false;
 
     public Animation mAnimation;
     [System.NonSerialized] public Animator mAnimator;
@@ -53,6 +54,8 @@ public class Weapon : MonoBehaviour
 
     public ElementalAttributes mElement;
     public ElementalAttributes mOwnerElement;
+
+    public Vector3 mTargetPos;
 
     // Getter & Setter -------------------------------------------------------------------------------------------------------
     //public float AttackSpeed { get { return mAttackSpeed; } set { mAttackSpeed = value; } }
@@ -144,8 +147,16 @@ public class Weapon : MonoBehaviour
         return ret;
     }
 
-    public void Attack(bool isOnGournd)
+    public void Attack(bool isOnGournd, float targetPosX = float.NegativeInfinity, float targetPosY = float.NegativeInfinity, float targetPosZ = float.NegativeInfinity)    // This function is for all the previous work which dont have the targetPos paramater
     {
+        Vector3 targetPos = new Vector3(targetPosX, targetPosY, targetPosZ);
+        
+        Attack(isOnGournd, targetPos);
+    }
+
+    public void Attack(bool isOnGournd, Vector3 targetPos)
+    {
+        mTargetPos = targetPos;
         var currentMove = mMoves[mCurrentMoveIndex];
         if (!currentMove.IsActive())
         {

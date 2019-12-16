@@ -65,6 +65,30 @@ public class InputController : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""UseItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""d9424452-2a4b-480a-a0e3-34a53cf624a7"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SelectPrevItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""d3e6c636-3e09-4dce-a0ca-0d613efbc649"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""SelectNextItem"",
+                    ""type"": ""Button"",
+                    ""id"": ""f96bdf43-a135-4682-a47b-081bbf447e50"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -148,7 +172,7 @@ public class InputController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""bc6020f0-3dfe-4a96-bae7-3a2a3f766fc9"",
-                    ""path"": ""<XInputController>/buttonEast"",
+                    ""path"": ""<XInputController>/rightShoulder"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -276,6 +300,72 @@ public class InputController : IInputActionCollection, IDisposable
                     ""action"": ""Dash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aaf9dd28-cbc0-425a-9051-228aa163b23f"",
+                    ""path"": ""<Keyboard>/rightArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""UseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""bb75f05e-e704-42be-a305-4eb39bff69a7"",
+                    ""path"": ""<XInputController>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""UseItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""6d0f1e23-1cda-47c8-91d1-ad4b0453c9b5"",
+                    ""path"": ""<Keyboard>/upArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""SelectPrevItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d66cbd79-592c-4c1c-bb92-5e888f575de9"",
+                    ""path"": ""<XInputController>/dpad/up"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""SelectPrevItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a8e6c352-3887-4df4-8235-de6fa8656932"",
+                    ""path"": ""<Keyboard>/downArrow"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""SelectNextItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""33c3ce34-116c-4e73-bab0-1b2c557613eb"",
+                    ""path"": ""<XInputController>/dpad/down"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""SelectNextItem"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -318,6 +408,9 @@ public class InputController : IInputActionCollection, IDisposable
         m_PlayerControl_DropWeapon = m_PlayerControl.FindAction("DropWeapon", throwIfNotFound: true);
         m_PlayerControl_SwitchWeapon = m_PlayerControl.FindAction("SwitchWeapon", throwIfNotFound: true);
         m_PlayerControl_Dash = m_PlayerControl.FindAction("Dash", throwIfNotFound: true);
+        m_PlayerControl_UseItem = m_PlayerControl.FindAction("UseItem", throwIfNotFound: true);
+        m_PlayerControl_SelectPrevItem = m_PlayerControl.FindAction("SelectPrevItem", throwIfNotFound: true);
+        m_PlayerControl_SelectNextItem = m_PlayerControl.FindAction("SelectNextItem", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -373,6 +466,9 @@ public class InputController : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerControl_DropWeapon;
     private readonly InputAction m_PlayerControl_SwitchWeapon;
     private readonly InputAction m_PlayerControl_Dash;
+    private readonly InputAction m_PlayerControl_UseItem;
+    private readonly InputAction m_PlayerControl_SelectPrevItem;
+    private readonly InputAction m_PlayerControl_SelectNextItem;
     public struct PlayerControlActions
     {
         private InputController m_Wrapper;
@@ -383,6 +479,9 @@ public class InputController : IInputActionCollection, IDisposable
         public InputAction @DropWeapon => m_Wrapper.m_PlayerControl_DropWeapon;
         public InputAction @SwitchWeapon => m_Wrapper.m_PlayerControl_SwitchWeapon;
         public InputAction @Dash => m_Wrapper.m_PlayerControl_Dash;
+        public InputAction @UseItem => m_Wrapper.m_PlayerControl_UseItem;
+        public InputAction @SelectPrevItem => m_Wrapper.m_PlayerControl_SelectPrevItem;
+        public InputAction @SelectNextItem => m_Wrapper.m_PlayerControl_SelectNextItem;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -410,6 +509,15 @@ public class InputController : IInputActionCollection, IDisposable
                 Dash.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnDash;
                 Dash.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnDash;
                 Dash.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnDash;
+                UseItem.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnUseItem;
+                UseItem.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnUseItem;
+                UseItem.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnUseItem;
+                SelectPrevItem.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSelectPrevItem;
+                SelectPrevItem.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSelectPrevItem;
+                SelectPrevItem.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSelectPrevItem;
+                SelectNextItem.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSelectNextItem;
+                SelectNextItem.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSelectNextItem;
+                SelectNextItem.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSelectNextItem;
             }
             m_Wrapper.m_PlayerControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -432,6 +540,15 @@ public class InputController : IInputActionCollection, IDisposable
                 Dash.started += instance.OnDash;
                 Dash.performed += instance.OnDash;
                 Dash.canceled += instance.OnDash;
+                UseItem.started += instance.OnUseItem;
+                UseItem.performed += instance.OnUseItem;
+                UseItem.canceled += instance.OnUseItem;
+                SelectPrevItem.started += instance.OnSelectPrevItem;
+                SelectPrevItem.performed += instance.OnSelectPrevItem;
+                SelectPrevItem.canceled += instance.OnSelectPrevItem;
+                SelectNextItem.started += instance.OnSelectNextItem;
+                SelectNextItem.performed += instance.OnSelectNextItem;
+                SelectNextItem.canceled += instance.OnSelectNextItem;
             }
         }
     }
@@ -462,5 +579,8 @@ public class InputController : IInputActionCollection, IDisposable
         void OnDropWeapon(InputAction.CallbackContext context);
         void OnSwitchWeapon(InputAction.CallbackContext context);
         void OnDash(InputAction.CallbackContext context);
+        void OnUseItem(InputAction.CallbackContext context);
+        void OnSelectPrevItem(InputAction.CallbackContext context);
+        void OnSelectNextItem(InputAction.CallbackContext context);
     }
 }

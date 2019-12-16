@@ -17,6 +17,10 @@ namespace LAI
         private float delayCounter = 0.0f;
         private bool startDelay = false;
 
+        public override States Name()
+        {
+            return States.GoToPlayer;
+        }
 
         public override void Enter(Enemy agent)
         {
@@ -44,9 +48,9 @@ namespace LAI
                 setOA = true;
             }
 
-            var playerPos = agent.GetWorld().mPlayer.transform.position;
-            Vector3 dir = Vector3.Normalize(agent.transform.position - playerPos);
-            Vector3 attackPos =  playerPos + dir * attackRange;
+            var playPos = agent.GetWorld().mPlayer.transform.position;
+            Vector3 dir = Vector3.Normalize(agent.transform.position - agent.GetWorld().mPlayer.transform.position);
+            Vector3 attackPos = playPos + dir * attackRange;
             attackPos.y = agent.GetWorld().mPlayer.transform.position.y + attackRange;
             agent.SetDestination(attackPos);
         }

@@ -58,7 +58,7 @@ public class World : MonoBehaviour
 
     [SerializeField] private List<Wall> mWalls;
     [SerializeField] private List<Obstacle> mObstacles;
-    [SerializeField] private List<Agent> mAgents;
+    [SerializeField] public List<Agent> mAgents;
     [SerializeField] public Agent mPlayer;
     [SerializeField] public List<Platform> mPlatforms;
     [SerializeField] public List<Platform> mGround;
@@ -135,7 +135,7 @@ public class World : MonoBehaviour
                 }
             }
         }
-        return true ;
+        return true;
     }
 
     public void AddAgent(Agent a) { mAgents.Add(a); }
@@ -151,40 +151,40 @@ public class World : MonoBehaviour
         Wall w = new Wall();
         w.from = new Vector2(-7.0f, 3.0f);
         w.to = new Vector2(-7.0f, 2.0f);
-        
+
         mWalls.Add(w);
-         mWalls.Add(new Wall(new Vector2(-7.0f, 3.0f), new Vector2(-7.0f, 2.0f)));
-         mWalls.Add(new Wall(new Vector2(-7.0f, 2.0f), new Vector2(-1.0f, 2.0f)));
-         mWalls.Add(new Wall(new Vector2(-1.0f, 2.0f), new Vector2(-1.0f, 1.0f)));
-         mWalls.Add(new Wall(new Vector2(-1.0f, 1.0f), new Vector2(3.0f, 1.0f)));
-         mWalls.Add(new Wall(new Vector2(1.0f, 0.0f), new Vector2(-8.0f, 0.0f)));
-         mWalls.Add(new Wall(new Vector2(0.0f, 0.0f), new Vector2(0.0f, 1.0f)));
-         mWalls.Add(new Wall(new Vector2(-7.0f, 0.0f), new Vector2(-7.0f, 2.0f)));
-        
+        // mWalls.Add(new Wall(new Vector2(-7.0f, 3.0f), new Vector2(-7.0f, 2.0f)));
+        // mWalls.Add(new Wall(new Vector2(-7.0f, 2.0f), new Vector2(-1.0f, 2.0f)));
+        // mWalls.Add(new Wall(new Vector2(-1.0f, 2.0f), new Vector2(-1.0f, 1.0f)));
+        // mWalls.Add(new Wall(new Vector2(-1.0f, 1.0f), new Vector2(3.0f, 1.0f)));
+        // mWalls.Add(new Wall(new Vector2(1.0f, 0.0f), new Vector2(-8.0f, 0.0f)));
+        // mWalls.Add(new Wall(new Vector2(0.0f, 0.0f), new Vector2(0.0f, 1.0f)));
+        // mWalls.Add(new Wall(new Vector2(-7.0f, 0.0f), new Vector2(-7.0f, 2.0f)));
+
         mWalls.Add(new Wall(new Vector2(0.0f, 0.0f), new Vector2(1.0f, 0.0f)));
         mWalls.Add(new Wall(new Vector2(1.0f, 0.0f), new Vector2(1.0f, 1.0f)));
         mWalls.Add(new Wall(new Vector2(0.0f, 1.0f), new Vector2(0.0f, 0.0f)));
         mWalls.Add(new Wall(new Vector2(0.0f, 1.0f), new Vector2(1.0f, 1.0f)));
-        
+
         mWalls.Add(new Wall(new Vector2(3.0f, 1.0f), new Vector2(4.0f, 1.0f)));
         mWalls.Add(new Wall(new Vector2(4.0f, 1.0f), new Vector2(4.0f, 2.0f)));
         mWalls.Add(new Wall(new Vector2(4.0f, 2.0f), new Vector2(3.0f, 2.0f)));
         mWalls.Add(new Wall(new Vector2(3.0f, 2.0f), new Vector2(3.0f, 1.0f)));
-        
+
         mWalls.Add(new Wall(new Vector2(-2.0f, 1.0f), new Vector2(-3.0f, 1.0f)));
         mWalls.Add(new Wall(new Vector2(-3.0f, 1.0f), new Vector2(-3.0f, 2.0f)));
         mWalls.Add(new Wall(new Vector2(-3.0f, 2.0f), new Vector2(-2.0f, 2.0f)));
         mWalls.Add(new Wall(new Vector2(-2.0f, 2.0f), new Vector2(-2.0f, 1.0f)));
-        
+
         mWalls.Add(new Wall(new Vector2(-6.0f, -2.0f), new Vector2(6.0f, 1.0f)));
-        
+
         mObstacles = new List<Obstacle>();
         Obstacle o = new Obstacle();
         o.center.x = 0.5f;
         o.center.y = 0.5f;
         o.radius = 0.5f;
         mObstacles.Add(o);
-        
+
         o.center.x = 3.5f;
         o.center.y = 1.5f;
         mObstacles.Add(o);

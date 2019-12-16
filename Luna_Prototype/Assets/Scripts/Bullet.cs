@@ -17,6 +17,8 @@ public class Bullet : MonoBehaviour
     [SerializeField] private float mSpeed = 1.0f;
     [SerializeField] private float mLifeTime = 10.0f;
 
+    [SerializeField] private ParticleSystem mParticle;
+
     private float mLifeTimeCounter;
     private bool mIsMelee;
     private Vector3 mFireDirection;
@@ -74,6 +76,8 @@ public class Bullet : MonoBehaviour
             {
                 Die();
             }
+            ParticleSystem newParticle = Instantiate(mParticle, transform.position, Quaternion.identity);
+            newParticle.Play();
         }
     }
 
