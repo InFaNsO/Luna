@@ -44,7 +44,9 @@ namespace LAI
             if(attackSpeedCounter >= attackSpeed)
             {
                 Enemy_Bat batAgent = (Enemy_Bat)agent;
-                
+
+                batAgent.mBullet.tag = agent.gameObject.tag;
+
                 Bullet newBullet = Object.Instantiate(batAgent.mBullet, new Vector3(0, 0, 0), Quaternion.identity);
                 Vector3 dir = Vector3.Normalize(agent.transform.position - agent.GetWorld().mPlayer.transform.position);
                 newBullet.Fire(agent.tag, batAgent.mDamage, agent.transform.position, -dir, WeaponType.Range);

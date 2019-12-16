@@ -151,7 +151,7 @@ MonoBehaviour:
   mParryCD: 1
   mMoves:
   - name: air_attack
-    mDamage: 10
+    mDamage: 20
     mAttackSpeedMutiplier: 1
     mMoveContext:
       mMoveTimeSlices:
@@ -167,7 +167,7 @@ MonoBehaviour:
     mFirePosition: {fileID: 7576862504306509515}
     mAnimationClip: {fileID: 7400000, guid: f2792b2383216824691d716141676090, type: 2}
   - name: basic_attack_combo_0
-    mDamage: 10
+    mDamage: 20
     mAttackSpeedMutiplier: 1.5
     mMoveContext:
       mMoveTimeSlices:

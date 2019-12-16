@@ -99,6 +99,8 @@ MonoBehaviour:
   mDamage: 10
   mSpeed: 7
   mLifeTime: 10
+  mParticle: {fileID: 4765450087754312039, guid: a9f687b503c170044bd4709d26975d41,
+    type: 3}
   mElement: {fileID: 0}
 --- !u!58 &3906927897664690843
 CircleCollider2D:

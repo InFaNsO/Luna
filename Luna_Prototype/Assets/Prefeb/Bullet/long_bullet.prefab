@@ -99,6 +99,8 @@ MonoBehaviour:
   mDamage: 10
   mSpeed: 7
   mLifeTime: 10
+  mParticle: {fileID: 4765450087754312039, guid: eb3afe9c72673574fbf7244207468a53,
+    type: 3}
   mElement: {fileID: 0}
 --- !u!50 &-117960862592128723
 Rigidbody2D:

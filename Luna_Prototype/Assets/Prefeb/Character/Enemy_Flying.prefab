@@ -169,7 +169,7 @@ MonoBehaviour:
   mDropPrefbs: {fileID: 0}
   platformsAccesible: []
   mIsStuned: 0
-  mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05, type: 3}
+  mBullet: {fileID: 679799675015805979, guid: 68a8562ed65b5fc47a4de5c328a38945, type: 3}
   mMeleeBullet: {fileID: 679799675015805979, guid: 6c01c024dc34da940be37926f2f4bf7e,
     type: 3}
   mDamage: 10

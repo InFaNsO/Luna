@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4765450087754312039}
   - component: {fileID: 987392682389655303}
   m_Layer: 0
-  m_Name: Smalll_Spark_1
+  m_Name: haummer_Spark_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -46,7 +46,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 0
   useUnscaledTime: 0
@@ -222,7 +222,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 0
       minColor: {r: 1, g: 1, b: 1, a: 1}
-      maxColor: {r: 0.34376115, g: 0.7075472, b: 0.35053754, a: 1}
+      maxColor: {r: 0.9150943, g: 0.38416702, b: 0.38416696, a: 1}
       maxGradient:
         serializedVersion: 2
         key0: {r: 1, g: 1, b: 1, a: 1}

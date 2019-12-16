@@ -14,7 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainScene.unity
     guid: 2ddf5bcd2154c9e419d6ba65a16d8c95
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Week6_MignzhuoBranch/CombatTest.unity
     guid: 5a1aa26d27ccb1047b6c120292580298
   - enabled: 0
