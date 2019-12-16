@@ -27,8 +27,8 @@ namespace LAI
         public override void Update(Enemy agent)
         {
             time += Time.deltaTime * 5.0f;
-            newPos.x = agent.transform.position.x + Mathf.Sin(time * 2.0f) * 0.01f;
-            newPos.y = agent.transform.position.y + Mathf.Cos(time * 2.0f) * 0.005f;
+            newPos.x = agent.transform.position.x + Mathf.Sin(time * 2.0f) * 0.6f * Time.deltaTime ;
+            newPos.y = agent.transform.position.y + Mathf.Cos(time * 2.0f) * 0.3f * Time.deltaTime;
             agent.transform.position = newPos;
 
             idelCounter += Time.deltaTime;

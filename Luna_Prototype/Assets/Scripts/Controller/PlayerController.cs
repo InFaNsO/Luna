@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     float dashDuration = 0.14f;
     float dashCounter;
 
+    Inventory inventory;
 
     private void Awake()
     {
@@ -50,6 +51,9 @@ public class PlayerController : MonoBehaviour
         controls.PlayerControl.SwitchWeapon.performed += _switch => SwitchWeapon();
         controls.PlayerControl.DropWeapon.performed += _drop => DropWeapon();
         controls.PlayerControl.Dash.performed += _dash => Dash();
+        controls.PlayerControl.UseItem.performed += _use => UseItem();
+        controls.PlayerControl.SelectPrevItem.performed += _selectprev => SelectPrevItem();
+        controls.PlayerControl.SelectNextItem.performed += _selectnext => SelectNextItem();
 
         moveVec = new Vector3(0f, 0f, 0f);
         jumpVec = new Vector3(0f, 0f);
@@ -57,6 +61,7 @@ public class PlayerController : MonoBehaviour
         isGrounded = true;
 
         dashCounter = 1.0f;
+        inventory = GetComponent<Inventory>();
     }
 
     private void FixedUpdate()
@@ -74,6 +79,21 @@ public class PlayerController : MonoBehaviour
         Vector3 setZ = transform.position;
         setZ.z = 0.0f;
         transform.position = setZ;
+    }
+
+    public void UseItem()
+    {
+        inventory.UseItem();
+    }
+
+    public void SelectPrevItem()
+    {
+        inventory.SelectPrevItem();
+    }
+
+    public void SelectNextItem()
+    {
+        inventory.SelectNextItem();
     }
 
     public void Move()

@@ -79,7 +79,7 @@ public class Inventory : MonoBehaviour
         }
     }
 
-    private void UpdateUI(int whichSlot)
+    public void UpdateUI(int whichSlot)
     {
         //var image = _player._LocalLevelManager._InGameUI._InventoryItemButtons[whichSlot].GetComponent<Image>();
 
@@ -122,31 +122,23 @@ public class Inventory : MonoBehaviour
         image_next.sprite = _slots[nextIdx].sprite;
     }
 
-    //[Rick H], 2019-12-09, temporary code for testing
-    private void Update()
+    public int GetCount() { return _slots.Count; }
+
+    public void UseItem()
     {
-        //UIManager UIMngr = ServiceLocator.Get<UIManager>();
+        UsingItem(_uiMngr.GetSelectedItemInInventory());
+        UpdateUI(0);
+    }
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            _uiMngr.SelectPrevItem(_slots.Count);
-            UpdateUI(0);
-        }
+    public void SelectPrevItem()
+    {
+        _uiMngr.SelectPrevItem(_slots.Count);
+        UpdateUI(0);
+    }
 
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            _uiMngr.SelectNextItem(_slots.Count);
-            UpdateUI(0);
-
-        }
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            Debug.Log("use: curr = " + _uiMngr.GetSelectedItemInInventory().ToString());
-
-            UsingItem(_uiMngr.GetSelectedItemInInventory());
-            UpdateUI(0);
-
-        }
-
+    public void SelectNextItem()
+    {
+        _uiMngr.SelectNextItem(_slots.Count);
+        UpdateUI(0);
     }
 }
