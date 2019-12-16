@@ -2275,6 +2275,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugPlayer: {fileID: 0}
+  delay: 1
 --- !u!4 &73440106 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 174668337468433804, guid: 8899678ab56485642901e94ad8122557,
@@ -6791,6 +6792,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugPlayer: {fileID: 0}
+  delay: 0
 --- !u!1 &248513086
 GameObject:
   m_ObjectHideFlags: 0
@@ -21619,6 +21621,11 @@ PrefabInstance:
     - target: {fileID: 5793445532019093529, guid: 8899678ab56485642901e94ad8122557,
         type: 3}
       propertyPath: applyDebuff
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5793445532019093529, guid: 8899678ab56485642901e94ad8122557,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5793445532019093530, guid: 8899678ab56485642901e94ad8122557,
@@ -21636,8 +21643,7 @@ PrefabInstance:
       propertyPath: fireDuration
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents:
-    - {fileID: 5793445532019093530, guid: 8899678ab56485642901e94ad8122557, type: 3}
+    m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8899678ab56485642901e94ad8122557, type: 3}
 --- !u!1 &811546040
 GameObject:
@@ -34732,11 +34738,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 5913526906705443303, guid: 5cb4447c125519840808fe0cfa5ea2be,
-        type: 3}
-      propertyPath: m_Name
-      value: Weapon_hummer
-      objectReference: {fileID: 0}
     - target: {fileID: 8064114535432841098, guid: 5cb4447c125519840808fe0cfa5ea2be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -34791,6 +34792,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913526906705443303, guid: 5cb4447c125519840808fe0cfa5ea2be,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon_hummer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cb4447c125519840808fe0cfa5ea2be, type: 3}
@@ -46246,16 +46252,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2055398516}
     m_Modifications:
-    - target: {fileID: 4344426171327372247, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
-        type: 3}
-      propertyPath: m_Name
-      value: Weapon_ShotGun
-      objectReference: {fileID: 0}
-    - target: {fileID: 4344426171327372247, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 5418935356144147944, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46309,6 +46305,16 @@ PrefabInstance:
     - target: {fileID: 5418935356144147944, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344426171327372247, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon_ShotGun
+      objectReference: {fileID: 0}
+    - target: {fileID: 4344426171327372247, guid: fdb806c51f2c08a48a1dd44476c2e4bc,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -47326,6 +47332,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugPlayer: {fileID: 0}
+  delay: 0
 --- !u!1 &1611728684
 GameObject:
   m_ObjectHideFlags: 0
@@ -57151,7 +57158,7 @@ PrefabInstance:
     - target: {fileID: 5793445532019093530, guid: 8899678ab56485642901e94ad8122557,
         type: 3}
       propertyPath: fire
-      value: 5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5793445532019093530, guid: 8899678ab56485642901e94ad8122557,
         type: 3}
@@ -57162,6 +57169,11 @@ PrefabInstance:
         type: 3}
       propertyPath: fireDuration
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5793445532019093530, guid: 8899678ab56485642901e94ad8122557,
+        type: 3}
+      propertyPath: voidType
+      value: 10
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8899678ab56485642901e94ad8122557, type: 3}
@@ -63434,6 +63446,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugPlayer: {fileID: 0}
+  delay: 0
 --- !u!1 &2138590109
 GameObject:
   m_ObjectHideFlags: 0
@@ -63849,6 +63862,11 @@ PrefabInstance:
         type: 3}
       propertyPath: fireRes
       value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 199907317319625109, guid: d311b3f3097681b46a1df9b1524ca820,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.07
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d311b3f3097681b46a1df9b1524ca820, type: 3}
