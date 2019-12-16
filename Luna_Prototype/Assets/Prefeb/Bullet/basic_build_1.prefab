@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 3906927897664690843}
   - component: {fileID: -117960862592128723}
   m_Layer: 0
-  m_Name: basic_build
+  m_Name: basic_build_1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   mDamage: 10
   mSpeed: 7
   mLifeTime: 10
-  mParticle: {fileID: 4765450087754312039, guid: eb3afe9c72673574fbf7244207468a53,
+  mParticle: {fileID: 4765450087754312039, guid: a9f687b503c170044bd4709d26975d41,
     type: 3}
   mElement: {fileID: 0}
 --- !u!58 &3906927897664690843
