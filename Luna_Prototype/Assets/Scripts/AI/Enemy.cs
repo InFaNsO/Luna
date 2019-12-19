@@ -80,6 +80,20 @@ public class Enemy : Character
         mVelocity *= Time.deltaTime;
         base.Update();
 
+        if(mStateMachine.GetCurrentState() == LAI.States.GoToPlayer)
+        {
+            GetComponent<Renderer>().material.color = Color.yellow;
+        }
+        else if(mStateMachine.GetCurrentState() == LAI.States.Wander)
+        {
+            GetComponent<Renderer>().material.color = Color.green;
+        }
+        else if (mStateMachine.GetCurrentState() == LAI.States.Attack)
+        {
+            GetComponent<Renderer>().material.color = Color.red;
+        }
+
+
         if (mIsStuned != true)
         {
             //Do AI here

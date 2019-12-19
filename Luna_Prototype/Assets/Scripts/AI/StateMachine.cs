@@ -33,6 +33,11 @@ namespace LAI
             mStates[mCurrentState].Update(mAgent);
         }
 
+        public States GetCurrentState()
+        {
+            return mStates[mCurrentState].Name();
+        }
+
         public void ChangeState(int stateID)
         {
             Debug.Assert(stateID < mStates.Count);
