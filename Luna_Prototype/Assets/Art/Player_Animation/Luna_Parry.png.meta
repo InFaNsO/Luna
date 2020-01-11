@@ -1,7 +1,73 @@
 fileFormatVersion: 2
 guid: 96ac8a8895f0afc4a859de41723dbfef
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -1362614891620930087
+    second: Luna_Parry_0
+  - first:
+      213: -8181826582756339328
+    second: Luna_Parry_1
+  - first:
+      213: -3309658698296208250
+    second: Luna_Parry_2
+  - first:
+      213: 984934293033222689
+    second: Luna_Parry_3
+  - first:
+      213: 1334239337539844431
+    second: Luna_Parry_4
+  - first:
+      213: 1521959922997725266
+    second: Luna_Parry_5
+  - first:
+      213: -246502400737593994
+    second: Luna_Parry_6
+  - first:
+      213: -4461654830660238754
+    second: Luna_Parry_7
+  - first:
+      213: -2119429674333217342
+    second: Luna_Parry_8
+  - first:
+      213: -8767589254720041417
+    second: Luna_Parry_9
+  - first:
+      213: 7258809497824187590
+    second: Luna_Parry_10
+  - first:
+      213: 8682482547123288747
+    second: Luna_Parry_11
+  - first:
+      213: -4068026000969406529
+    second: Luna_Parry_12
+  - first:
+      213: 3380898839059398024
+    second: Luna_Parry_13
+  - first:
+      213: -8902740859415694749
+    second: Luna_Parry_14
+  - first:
+      213: 2351725516676854231
+    second: Luna_Parry_15
+  - first:
+      213: 8196473414893019333
+    second: Luna_Parry_16
+  - first:
+      213: 1861340130102436713
+    second: Luna_Parry_17
+  - first:
+      213: -615958860124754112
+    second: Luna_Parry_18
+  - first:
+      213: 5245420851936372075
+    second: Luna_Parry_19
+  - first:
+      213: -5353687928335653243
+    second: Luna_Parry_20
+  - first:
+      213: -4739458579697791524
+    second: Luna_Parry_21
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -93,7 +159,469 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Luna_Parry_0
+      rect:
+        serializedVersion: 2
+        x: 41
+        y: 782
+        width: 71
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d7c2980b511a04e8181543239fe6f7
+      internalID: -1362614891620930087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_1
+      rect:
+        serializedVersion: 2
+        x: 227
+        y: 782
+        width: 101
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9242d28f9478284e91f898ab87d6038
+      internalID: -8181826582756339328
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_2
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 782
+        width: 121
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a378a7ffacfd17642a112f4c36d92635
+      internalID: -3309658698296208250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_3
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 782
+        width: 115
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06234d9e1fae73241915aa3c3a6005af
+      internalID: 984934293033222689
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_4
+      rect:
+        serializedVersion: 2
+        x: 882
+        y: 782
+        width: 99
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf0f414957bdbaa42a254a730534032a
+      internalID: 1334239337539844431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_5
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 782
+        width: 152
+        height: 229
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5630bf90480e694ea62565368615ce1
+      internalID: 1521959922997725266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_6
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 522
+        width: 159
+        height: 244
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0adbe8b154c0e91449fa5947f8bada93
+      internalID: -246502400737593994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_7
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 522
+        width: 167
+        height: 257
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 37f95203e35771a46bd6f64c620df695
+      internalID: -4461654830660238754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_8
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 522
+        width: 106
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 70415face6664ed4092a4e1873f8ce13
+      internalID: -2119429674333217342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_9
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 522
+        width: 104
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7635a90d0e4111e44821c15528119dcb
+      internalID: -8767589254720041417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_10
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 522
+        width: 103
+        height: 196
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8860a778dd09e0b44a47d475689ede8a
+      internalID: 7258809497824187590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_11
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 522
+        width: 103
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ffbd264ba56f514583b1cd55aab50b3
+      internalID: 8682482547123288747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_12
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 262
+        width: 103
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b66819f6910deec4d97602f698a4e5b0
+      internalID: -4068026000969406529
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_13
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 262
+        width: 103
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cb193d048a67ee49a21e49aa8452486
+      internalID: 3380898839059398024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_14
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 262
+        width: 103
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf38689641128f04fa97ce3d52072fb6
+      internalID: -8902740859415694749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_15
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 262
+        width: 103
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f972463ce3ce4f40aa500f4d5336b47
+      internalID: 2351725516676854231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_16
+      rect:
+        serializedVersion: 2
+        x: 883
+        y: 262
+        width: 103
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cb5a32e46c983140bbe0e5a1a12c19f
+      internalID: 8196473414893019333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_17
+      rect:
+        serializedVersion: 2
+        x: 1093
+        y: 262
+        width: 103
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 304e04e7c85ddce45a1d995bcac56345
+      internalID: 1861340130102436713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_18
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 2
+        width: 103
+        height: 195
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dab8855ed6c7f1143a1be8c6ffad93a9
+      internalID: -615958860124754112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_19
+      rect:
+        serializedVersion: 2
+        x: 253
+        y: 1
+        width: 104
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd26bde233b98245938cf0e5330b537
+      internalID: 5245420851936372075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_20
+      rect:
+        serializedVersion: 2
+        x: 463
+        y: 1
+        width: 100
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35baed09b43b5f64bb443beba7b2a39e
+      internalID: -5353687928335653243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Parry_21
+      rect:
+        serializedVersion: 2
+        x: 673
+        y: 1
+        width: 86
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7213c2781b6515f488e806b80553bb27
+      internalID: -4739458579697791524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
