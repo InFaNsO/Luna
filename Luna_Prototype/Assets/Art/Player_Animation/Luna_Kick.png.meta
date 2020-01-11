@@ -1,7 +1,43 @@
 fileFormatVersion: 2
 guid: 5fa763c716cf55c4ead14674b0445722
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7638758660495942695
+    second: Luna_Kick_0
+  - first:
+      213: 3637974498823762253
+    second: Luna_Kick_1
+  - first:
+      213: 2545090771563621904
+    second: Luna_Kick_2
+  - first:
+      213: 8916364109205131711
+    second: Luna_Kick_3
+  - first:
+      213: 5164717310942871402
+    second: Luna_Kick_4
+  - first:
+      213: 2713177669448773620
+    second: Luna_Kick_5
+  - first:
+      213: -267361657963961561
+    second: Luna_Kick_6
+  - first:
+      213: 8973749182377207632
+    second: Luna_Kick_7
+  - first:
+      213: -4129760436273874368
+    second: Luna_Kick_9
+  - first:
+      213: 2126533927072255129
+    second: Luna_Kick_10
+  - first:
+      213: 7345130077522688054
+    second: Luna_Kick_11
+  - first:
+      213: 226763149114014325
+    second: Luna_Kick_12
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -93,7 +129,259 @@ TextureImporter:
     androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Luna_Kick_0
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 441
+        width: 67
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66ac4b949ff70ff4c8db766137a4bb36
+      internalID: 7638758660495942695
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Kick_1
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 440
+        width: 79
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b721bc94498c7834e8677c72e882e890
+      internalID: 3637974498823762253
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Kick_2
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 440
+        width: 101
+        height: 200
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54277c5495eb3024790dd7ea1983ea1f
+      internalID: 2545090771563621904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Kick_3
+      rect:
+        serializedVersion: 2
+        x: 688
+        y: 441
+        width: 157
+        height: 202
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c39961dc5f37d4f48a2aad7170b0640f
+      internalID: 8916364109205131711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Kick_4
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 223
+        width: 200
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c24ed33bd734d2499021a8f667cae43
+      internalID: 5164717310942871402
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Kick_5
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 222
+        width: 201
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b67f353b1c94fc0458380c9ed3e940e7
+      internalID: 2713177669448773620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Kick_6
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 222
+        width: 139
+        height: 199
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b8b2aa4bd25570418c3373e7119a88c
+      internalID: -267361657963961561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Kick_7
+      rect:
+        serializedVersion: 2
+        x: 694
+        y: 222
+        width: 119
+        height: 201
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1c474e6ad5943441984e3ea180d363d
+      internalID: 8973749182377207632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Kick_9
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 4
+        width: 100
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 709cbd0c345a6be4fb33061eaae295a3
+      internalID: -4129760436273874368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Kick_10
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 3
+        width: 86
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f63cd08d728e3c4ab061f89a084317f
+      internalID: 2126533927072255129
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Kick_11
+      rect:
+        serializedVersion: 2
+        x: 466
+        y: 0
+        width: 78
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9352902a4aa1fdb4284d53636c18a581
+      internalID: 7345130077522688054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Kick_12
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 0
+        width: 69
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcf88c0c43d92b84785b9323878348e6
+      internalID: 226763149114014325
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
