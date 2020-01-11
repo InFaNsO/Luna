@@ -21,14 +21,7 @@ public class Player : Character
     private float mIFrameDuration;
     [SerializeField]
     private float mDashSpeed = 14f;
-    [SerializeField]
-    private int mLaserDamage;
     private bool isDouleJumpEnabled;
-
-    public Laser laserObj;
-    private float laserDuration;
-    private Animator laserAnimator;
-
 
     [SerializeField]
     private int mLevel;
@@ -96,21 +89,6 @@ public class Player : Character
     public float GetDashSpeed()
     {
         return mDashSpeed;
-    }
-
-    public void LaserAttack()
-    {
-        //if((mWeapon1 == null) && (mWeapon2 == null))
-        //{
-            laserObj.gameObject.SetActive(true);
-            laserObj.Fire();
-            laserAnimator.SetBool("IsShooting", true);
-            laserDuration = 1.0f;
-            mLaserDamage = 10;
-            //mCurrentHealth -= 10;
-            UpdateHealth(-mLaserDamage);                                                                     //|--- [Mingzhuo Zhang] Edit: use update health function instead, so we can update UI
-            Debug.Log("laser damage = 10, health - 10");
-        //}
     }
 
     public void ObtainNewWeapon(Weapon newWeapon)
@@ -277,9 +255,7 @@ public class Player : Character
         mParryAttackable = GetComponent<ParryAttackable>();
         Assert.IsNotNull(mParryAttackable, "[Player] _ParryAttackable is null");
 
-        mLaserDamage = 0;
         isDouleJumpEnabled = true;
-        laserObj.gameObject.SetActive(false);
 
         mRequiredExp = 10;
         mCurrentExp = 0;
@@ -296,7 +272,6 @@ public class Player : Character
             mWeapon2.Picked(gameObject, mWeaponPosition.transform.position);                     //|    // second argument should be the [weapon position] as a individual variable in future
         }                                                                                   //|
                                                                                             //|
-        laserAnimator = laserObj.GetComponentInChildren<Animator>();
         //----------------------------------------------------------------------------------//|
         //- End Edit -----------------------------------------------------------------------//|
         //----------------------------------------------------------------------------------//|
@@ -315,11 +290,6 @@ public class Player : Character
     public void Update()
     {
         base.Update();
-        laserDuration -= Time.deltaTime;
-        if(laserDuration <= 0)
-        {
-            laserObj.gameObject.SetActive(false);
-        }
         ExpCheck();
     }
 
@@ -370,7 +340,6 @@ public class Player : Character
                 mCurrentWeapon = mWeapon2;                                              //|
         }                                                                               //|
                                                                                         //|
-        laserAnimator.SetBool("IsShooting", false);                                     //|
                                                                                         //|
     }                                                                                   //|
     //----------------------------------------------------------------------------------//|
