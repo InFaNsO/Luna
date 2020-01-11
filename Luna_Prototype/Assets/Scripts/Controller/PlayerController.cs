@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     Player player;
     BoxCollider2D playerCollider;
     Rigidbody2D rb;
+    Stamina stamina;
 
     [SerializeField]
     bool isPlayerFacingRight;
@@ -45,6 +46,7 @@ public class PlayerController : MonoBehaviour
         controls = new InputController();
         playerCollider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+        stamina = GetComponent<Stamina>();
 
         controls.PlayerControl.Jump.performed += _jump => Jump();
         controls.PlayerControl.Attack.performed += _attack => Attack();
@@ -157,7 +159,7 @@ public class PlayerController : MonoBehaviour
 
     public void Dash()
     {
-        if(player.Dodge())
+        if(stamina.IsStaminaSufficient() && (dashCounter >= dashDuration))
         {
             //if(isPlayerFacingRight)
             //    rb.AddForce(new Vector2(player.GetIFrameDistance(), 0f));
@@ -165,8 +167,8 @@ public class PlayerController : MonoBehaviour
             //    rb.AddForce(new Vector2(-player.GetIFrameDistance(), 0f));
             //transform.Translate(player.GetIFrameDistance() * Time.deltaTime, 0f, 0f);
             dashCounter = 0.0f;
+            stamina.UseStamina();
         }
-
     }
 
     void DashMovement()
