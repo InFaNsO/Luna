@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: -1040440155085845068}
   - component: {fileID: 1756336210}
   - component: {fileID: 1756336211}
+  - component: {fileID: 6691098470394504913}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -35,7 +36,7 @@ Transform:
   m_GameObject: {fileID: 109428899416447167}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -2.26, y: 2.54, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children:
   - {fileID: 7121127766758587546}
   - {fileID: 199907317319625109}
@@ -79,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -4163850496785918271, guid: 01d0b33379faff142996a8b740cf3ba4,
+  m_Sprite: {fileID: -5404214999839125399, guid: 0091e380eebd2b34086d2908df3203bb,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -202,18 +203,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0033409595, y: 0.0047496855}
+  m_Offset: {x: 0.014263988, y: 0.022354603}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.61, y: 0.61}
+    oldSize: {x: 1.39, y: 2.1}
     newSize: {x: 2.11, y: 3.63}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.6232958, y: 0.6154497}
+  m_Size: {x: 0.6585057, y: 2.0942593}
   m_EdgeRadius: 0
 --- !u!114 &-3068176382593199672
 MonoBehaviour:
@@ -361,6 +362,25 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 1024
   dashDuration: 0.1
+--- !u!95 &6691098470394504913
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109428899416447167}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 671011d69ef556f4a88b340f7e259f3e, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!61 &7501919403433636403
 BoxCollider2D:
   m_ObjectHideFlags: 0
