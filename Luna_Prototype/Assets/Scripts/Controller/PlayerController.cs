@@ -237,4 +237,17 @@ public class PlayerController : MonoBehaviour
     {
         controls.PlayerControl.Disable();
     }
+
+    public bool IsGrounded()
+    {
+        return isGrounded;
+    }
+
+    public bool IsMoving()
+    {
+        if (Mathf.Abs(controls.PlayerControl.Move.ReadValue<float>()) > 0.00f)
+            return true;
+        else
+            return false;
+    }
 }
