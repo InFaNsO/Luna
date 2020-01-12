@@ -1,0 +1,832 @@
+fileFormatVersion: 2
+guid: f5830cd4d774d7343ad6704c13d7398b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3587694014705357250
+    second: Luna_Duck_0
+  - first:
+      213: -7215544565844774370
+    second: Luna_Duck_1
+  - first:
+      213: -2343426752871978754
+    second: Luna_Duck_2
+  - first:
+      213: 6942099713824166940
+    second: Luna_Duck_3
+  - first:
+      213: -1883386499613463874
+    second: Luna_Duck_4
+  - first:
+      213: -8881255784894572539
+    second: Luna_Duck_5
+  - first:
+      213: -7470481230087552234
+    second: Luna_Duck_6
+  - first:
+      213: -2854558157752130987
+    second: Luna_Duck_7
+  - first:
+      213: 7987132266030176353
+    second: Luna_Duck_8
+  - first:
+      213: -6173524752298245917
+    second: Luna_Duck_9
+  - first:
+      213: -595623024385174821
+    second: Luna_Duck_10
+  - first:
+      213: 1826846975254158574
+    second: Luna_Duck_11
+  - first:
+      213: -5425710127635287338
+    second: Luna_Duck_12
+  - first:
+      213: 8352146357739282537
+    second: Luna_Duck_13
+  - first:
+      213: -1984470995902040211
+    second: Luna_Duck_14
+  - first:
+      213: 7549687190929702375
+    second: Luna_Duck_15
+  - first:
+      213: -5295438130338041199
+    second: Luna_Duck_16
+  - first:
+      213: -8554261192681110703
+    second: Luna_Duck_17
+  - first:
+      213: -5294983798594954747
+    second: Luna_Duck_18
+  - first:
+      213: -4227220371303786445
+    second: Luna_Duck_19
+  - first:
+      213: 786108219408792461
+    second: Luna_Duck_20
+  - first:
+      213: -2290017012141034264
+    second: Luna_Duck_21
+  - first:
+      213: 8401338323673122510
+    second: Luna_Duck_22
+  - first:
+      213: -4972312679462604056
+    second: Luna_Duck_23
+  - first:
+      213: -460804421400890980
+    second: Luna_Duck_24
+  - first:
+      213: 341896812454216987
+    second: Luna_Duck_25
+  - first:
+      213: 153776105719249785
+    second: Luna_Duck_26
+  - first:
+      213: -605936458206104829
+    second: Luna_Duck_27
+  - first:
+      213: 5747706119924032215
+    second: Luna_Duck_28
+  - first:
+      213: -4961128063395506419
+    second: Luna_Duck_29
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Luna_Duck_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1050
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c25a8573d51e80f4aa8dd932127cef9b
+      internalID: 3587694014705357250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 1050
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa2740c78f504404291bcce2b60d5523
+      internalID: -7215544565844774370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 1050
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a01bb5c3ba37fb442a0ab334a0b66bf3
+      internalID: -2343426752871978754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_3
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 1050
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aa1d2bc696e14d94f9c5d4819c65caa3
+      internalID: 6942099713824166940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_4
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 1050
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 880e9f1b950c891499fcbf01d9aa1ff7
+      internalID: -1883386499613463874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 840
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7741eebf46174194d9d425bdf0147e85
+      internalID: -8881255784894572539
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_6
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 840
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87ce5cb7d50522447b2205004c267009
+      internalID: -7470481230087552234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_7
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 840
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d576124ded956b843a3c947c41e656ab
+      internalID: -2854558157752130987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_8
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 840
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f919d343da50be44aa9d4c7925630dd
+      internalID: 7987132266030176353
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_9
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 840
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3878a9ae09a79b94ebf91acf32e7090b
+      internalID: -6173524752298245917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 630
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cff328aaa077894197252c72689574a
+      internalID: -595623024385174821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_11
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 630
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f30387f817cfac4c906818609461c96
+      internalID: 1826846975254158574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_12
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 630
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 590eb388018890142a7327be87ca9224
+      internalID: -5425710127635287338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_13
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 630
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a2a9a9b5bb1c5f47905ba21e60b20f1
+      internalID: 8352146357739282537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_14
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 630
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 216b70a3f53d58c4594def706b7d4366
+      internalID: -1984470995902040211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 420
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 893c6f1ac640b6c4d988713d6c469bc0
+      internalID: 7549687190929702375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_16
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 420
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cca7cd72bcbef94291bf24055ec87ba
+      internalID: -5295438130338041199
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_17
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 420
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a48ee02689359f44a84bc876383dcff0
+      internalID: -8554261192681110703
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_18
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 420
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b57c2ad91fefea44a03a5dac45018d4
+      internalID: -5294983798594954747
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_19
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 420
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26dccdaf2ec5d33478eb2f483094e9d7
+      internalID: -4227220371303786445
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2eb05ba20376a4c47933e5a569cfefe3
+      internalID: 786108219408792461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_21
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 210
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c42bfb9908441884c817f10eaadb5a56
+      internalID: -2290017012141034264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_22
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 210
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d17650614d166049ae75db540fe1eab
+      internalID: 8401338323673122510
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_23
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 210
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 531dcceb627f32e419c29423772dd78b
+      internalID: -4972312679462604056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_24
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 210
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 518b60a0ab3ba5545bff4ce837631525
+      internalID: -460804421400890980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d5d5b62d9419aea43bed8a96d4426ea4
+      internalID: 341896812454216987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_26
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12321e8a89050ed4ebae3edd84dfb77e
+      internalID: 153776105719249785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_27
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf69421557b976841a0837920a3d2103
+      internalID: -605936458206104829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_28
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 0
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e1a87e040230674490fc41859cb1d03
+      internalID: 5747706119924032215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Duck_29
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 125
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b33776a42ea4eaa4eb7a6405465dd37c
+      internalID: -4961128063395506419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 7ba17d2235ffe9047952aa96b94674fb
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
