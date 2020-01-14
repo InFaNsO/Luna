@@ -57,13 +57,15 @@ public class Weapon : MonoBehaviour
 
     public Vector3 mTargetPos;
 
+    public bool mIsAttacking;
+
     // Getter & Setter -------------------------------------------------------------------------------------------------------
     //public float AttackSpeed { get { return mAttackSpeed; } set { mAttackSpeed = value; } }
 
     // MonoBehaviour Functions -----------------------------------------------------------------------------------------------
     public void Awake()
     {
-
+        mIsAttacking = false;
         mAnimator = gameObject.GetComponentInChildren<Animator>();
         Assert.IsNotNull(mAnimator, "[Weapon] Dont have an animtor");                                                          //|--- [SAFTY]: Check to see if Animator is null
 
@@ -115,6 +117,7 @@ public class Weapon : MonoBehaviour
             if (mMoves[mCurrentMoveIndex].IsFinish())
             {
                 mCurrentMoveIndex = 0;
+                mIsAttacking = false;
             }
         }
     }
