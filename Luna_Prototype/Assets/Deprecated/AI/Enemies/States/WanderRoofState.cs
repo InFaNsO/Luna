@@ -21,6 +21,7 @@ namespace LAI
 
         public override void Enter(Enemy agent)
         {
+            agent.GetComponent<Rigidbody2D>().gravityScale = -1.0f;
             left = roof.transform.position;
             right = roof.transform.position;
 
@@ -73,7 +74,7 @@ namespace LAI
 
         public override void Exit(Enemy agent)
         {
-
+            agent.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
         }
     }
 }

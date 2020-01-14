@@ -23,7 +23,7 @@ public class EnemySmallBots : Enemy
         mStateMachine.AddState<LAI.AttackState>();
         mStateMachine.AddState<LAI.SupriseState>();
         mStateMachine.AddState(wanderState);
-        mStateMachine.AddState(gotoState);
+        mStateMachine.AddState<LAI.GoToPlayerState>();
         mStateMachine.ChangeState(LAI.States.Wander);
     }
 
@@ -35,6 +35,9 @@ public class EnemySmallBots : Enemy
     }
     public void OnDrawGizmos()
     {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(transform.position, transform.position +  new Vector3( mVelocity.x*10 , mVelocity.y * 10, 0.0f));
+
         for (int i = 0; i < pathFinder.mNodes.Count; ++i)
         {
             Gizmos.color = Color.magenta;
@@ -47,6 +50,9 @@ public class EnemySmallBots : Enemy
                 Gizmos.DrawLine(pathFinder.mNodes[i].coord, pathFinder.mNodes[pathFinder.mNodes[i].children[j]].coord);
             }
         }
+
+        if (mStateMachine.GetCurrentState() == LAI.States.GoToPlayer)
+            mStateMachine.DrawGizmo();
 
     }
 }

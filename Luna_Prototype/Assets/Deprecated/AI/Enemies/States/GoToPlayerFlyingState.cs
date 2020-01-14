@@ -20,6 +20,7 @@ namespace LAI
 
         public override void Enter(Enemy agent)
         {
+            agent.GetComponent<Rigidbody2D>().gravityScale = 0;
             if (isBat)
             {
                 hasReachedGround = true;
@@ -63,6 +64,7 @@ namespace LAI
 
         public override void Exit(Enemy agent)
         {
+            agent.GetComponent<Rigidbody2D>().gravityScale = 1;
 
         }
     }

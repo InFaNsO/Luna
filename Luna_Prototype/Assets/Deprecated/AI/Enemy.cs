@@ -19,7 +19,7 @@ public class Enemy : Character
     [SerializeField] protected Key mDropPrefbs;
     [SerializeField] public List<Platform> platformsAccesible = new List<Platform>();
     protected LAI.SteeringModule mSteeringModule = new LAI.SteeringModule();
-    protected LAI.Grid_PathFinding pathFinder = new LAI.Grid_PathFinding();
+    public LAI.Grid_PathFinding pathFinder = new LAI.Grid_PathFinding();
     public LAI.StateMachine mStateMachine = new LAI.StateMachine();
 
     [SerializeField] private List<int> PlatformRange = new List<int>();
@@ -39,14 +39,14 @@ public class Enemy : Character
 
     public void Start()
     {
-        if(PlatformRange.Count > 0)
-        {
-            pathFinder.PlatformsAccecible = PlatformRange;
-        }
-        if(groundID != -1)
-        {
-            pathFinder.groundID = groundID;
-        }
+        //if(PlatformRange.Count > 0)
+        //{
+        //    pathFinder.PlatformsAccecible = PlatformRange;
+        //}
+        //if(groundID != -1)
+        //{
+        //    pathFinder.groundID = groundID;
+        //}
 
         //set Walls
         if(world)
@@ -108,7 +108,8 @@ public class Enemy : Character
     {
         mStateMachine.Update();
         mVelocity += mSteeringModule.Calculate();
-        mVelocity *= Time.deltaTime;
+        //if(mStateMachine.GetCurrentState() != LAI.States.GoToPlayer)
+            mVelocity *= Time.deltaTime;
         base.Update();
 
         if (mIsStuned != true)

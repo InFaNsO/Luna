@@ -243,6 +243,8 @@ namespace LAI
                 {
                     Node n = new Node();
                     n.coord = platformIntersectionData[j].coordinate;
+                    float dX = (n.coord.x - platformNodes[i].left.coord.x) * 2.0f;
+                    n.coord.x -= dX;
                     mNodes.Add(n);
 
                     platformNodes[i].left.children.Add(mNodes.Count - 1);

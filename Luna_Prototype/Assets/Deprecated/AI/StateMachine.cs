@@ -20,6 +20,8 @@ namespace LAI
             mAgent = agent;
         }
 
+        public States GetCurrentState() { return mStates[mCurrentState].Name(); }
+
         public void AddState<StateType>(StateType state = null) where StateType : State, new()
         {
             if (state == null)
@@ -31,6 +33,11 @@ namespace LAI
         public void Update()
         {
             mStates[mCurrentState].Update(mAgent);
+        }
+
+        public void DrawGizmo()
+        {
+            mStates[mCurrentState].DrawGizmo(mAgent);
         }
 
         public void ChangeState(int stateID)

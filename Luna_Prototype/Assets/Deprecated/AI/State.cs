@@ -15,6 +15,7 @@ namespace LAI
 
     public abstract class State
     {
+        public virtual void DrawGizmo(Enemy agent) { }
         public abstract void Enter(Enemy agent);
         public abstract void Update(Enemy agent);
         public abstract void Exit(Enemy agent);

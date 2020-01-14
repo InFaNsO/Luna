@@ -19,15 +19,17 @@ namespace LAI
 
         public override void Enter(Enemy agent)
         {
-            if (finder.mNodes.Count == 0)
-            {
-                if (finder.gameWorld == null)
-                    finder.gameWorld = agent.GetWorld();
-                if (agent.platformsAccesible.Count == 0)
-                    finder.Initialize();
-                else
-                    finder.Initialize(ref agent.platformsAccesible);
-            }
+            agent.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
+            finder = agent.pathFinder;
+           // if (finder.mNodes.Count == 0)
+           // {
+           //     if (finder.gameWorld == null)
+           //         finder.gameWorld = agent.GetWorld();
+           //     if (agent.platformsAccesible.Count == 0)
+           //         finder.Initialize();
+           //     else
+           //         finder.Initialize(ref agent.platformsAccesible);
+           // }
 
             finder.Calculate(agent.transform.position);
 
@@ -63,7 +65,7 @@ namespace LAI
                 calculateAgain = true;
             }
 
-            if(calculateAgain)
+            if(calculateAgain || Path.Count == 0)
             {
                 finder.Calculate(agent.transform.position);
                 Path.Clear();
@@ -91,9 +93,26 @@ namespace LAI
             }
         }
 
-        public override void Exit(Enemy agent)
-    {
+        public override void DrawGizmo(Enemy agent)
+        {
+            Gizmos.color = Color.red;
+            if (Path.Count > 0)
+            {
+                Gizmos.DrawLine(agent.transform.position, agent.GetDestination());
+                for (int i = 1; i < Path.Count; ++i)
+                {
+                    Gizmos.DrawWireSphere(Path[i - 1], 0.3f);
+                    Gizmos.DrawLine(Path[i - 1], Path[i]);
+                }
+                Gizmos.DrawLine(Path[Path.Count - 1], agent.GetWorld().mPlayer.transform.position);
+            }
+            else
+                Gizmos.DrawLine(agent.transform.position, agent.GetWorld().mPlayer.transform.position);
+        }
 
-    }
+        public override void Exit(Enemy agent)
+        {
+
+        }
     }
 }

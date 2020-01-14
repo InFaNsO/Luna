@@ -58,7 +58,7 @@ namespace LAI
                 return;
             }
 
-            float rangeDis = agent.GetSafeDistanceExtended(); //choose it based on the weapon
+            float rangeDis = agent.GetSafeDistance(); //choose it based on the weapon
             if (agent.IsNearPlayer(rangeDis))
             {
                 //use weapons
