@@ -12,7 +12,7 @@ namespace LAI
 
         public override States Name()
         {
-            return States.GoToPlayer;
+            return States.Attack;
         }
 
         public override void Enter(Enemy agent)

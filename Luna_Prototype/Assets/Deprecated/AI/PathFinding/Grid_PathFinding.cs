@@ -50,6 +50,10 @@ namespace LAI
             public Vector3 coordinate = new Vector3();
         }
 
+        public List<int> PlatformsAccecible = new List<int>();
+        public int groundID = -1;
+
+
         public List<Node> mNodes = new List<Node>();
         [SerializeField] public World gameWorld;
         //private LayerMask mask;
@@ -275,17 +279,69 @@ namespace LAI
 
         private void GetAllPLatforms()
         {
-            for (int i = 0; i < gameWorld.mPlatforms.Count; ++i)
+            //platforms
+            if(PlatformsAccecible.Count == 0)
+                for (int i = 0; i < gameWorld.mPlatforms.Count; ++i)
+                {
+                    Platform_Line pl = new Platform_Line();
+                    pl.left.coord = gameWorld.mPlatforms[i].transform.position;
+                    pl.right.coord = gameWorld.mPlatforms[i].transform.position;
+
+                    pl.left.coord.x -= gameWorld.mPlatforms[i].Width * 0.5f;
+                    pl.right.coord.x += gameWorld.mPlatforms[i].Width * 0.5f;
+
+                    pl.left.coord.y += gameWorld.mPlatforms[i].Height * 0.5f;
+                    pl.right.coord.y += gameWorld.mPlatforms[i].Height * 0.5f;
+
+                    mNodes.Add(pl.left);
+                    pl.leftID = mNodes.Count - 1;
+                    mNodes.Add(pl.right);
+                    pl.rightID = mNodes.Count - 1;
+
+                    //add each other as a child
+                    mNodes[pl.leftID].children.Add(pl.rightID);
+                    mNodes[pl.rightID].children.Add(pl.leftID);
+
+                    platformNodes.Add(pl);
+                }
+            else
+                for (int i = 0; i < PlatformsAccecible.Count; ++i)
+                {
+                    Platform_Line pl = new Platform_Line();
+                    pl.left.coord = gameWorld.mPlatforms[PlatformsAccecible[i]].transform.position;
+                    pl.right.coord = gameWorld.mPlatforms[PlatformsAccecible[i]].transform.position;
+
+                    pl.left.coord.x -= gameWorld.mPlatforms[PlatformsAccecible[i]].Width * 0.5f;
+                    pl.right.coord.x += gameWorld.mPlatforms[PlatformsAccecible[i]].Width * 0.5f;
+
+                    pl.left.coord.y += gameWorld.mPlatforms[PlatformsAccecible[i]].Height * 0.5f;
+                    pl.right.coord.y += gameWorld.mPlatforms[PlatformsAccecible[i]].Height * 0.5f;
+
+                    mNodes.Add(pl.left);
+                    pl.leftID = mNodes.Count - 1;
+                    mNodes.Add(pl.right);
+                    pl.rightID = mNodes.Count - 1;
+
+                    //add each other as a child
+                    mNodes[pl.leftID].children.Add(pl.rightID);
+                    mNodes[pl.rightID].children.Add(pl.leftID);
+
+                    platformNodes.Add(pl);
+                }
+
+            //ground
+            if(groundID == -1)
+                for (int i = 0; i < gameWorld.mGround.Count; ++i)
             {
                 Platform_Line pl = new Platform_Line();
-                pl.left.coord = gameWorld.mPlatforms[i].transform.position;
-                pl.right.coord = gameWorld.mPlatforms[i].transform.position;
+                pl.left.coord = gameWorld.mGround[i].transform.position;
+                pl.right.coord = gameWorld.mGround[i].transform.position;
 
-                pl.left.coord.x -= gameWorld.mPlatforms[i].Width * 0.5f;
-                pl.right.coord.x += gameWorld.mPlatforms[i].Width * 0.5f;
+                pl.left.coord.x -= gameWorld.mGround[i].Width * 0.5f;
+                pl.right.coord.x += gameWorld.mGround[i].Width * 0.5f;
 
-                pl.left.coord.y += gameWorld.mPlatforms[i].Height * 0.5f;
-                pl.right.coord.y += gameWorld.mPlatforms[i].Height * 0.5f;
+                pl.left.coord.y += gameWorld.mGround[i].Height * 0.5f;
+                pl.right.coord.y += gameWorld.mGround[i].Height * 0.5f;
 
                 mNodes.Add(pl.left);
                 pl.leftID = mNodes.Count - 1;
@@ -298,7 +354,29 @@ namespace LAI
 
                 platformNodes.Add(pl);
             }
+            else
+            {
+                Platform_Line pl = new Platform_Line();
+                pl.left.coord = gameWorld.mGround[groundID].transform.position;
+                pl.right.coord = gameWorld.mGround[groundID].transform.position;
 
+                pl.left.coord.x -= gameWorld.mGround[groundID].Width * 0.5f;
+                pl.right.coord.x += gameWorld.mGround[groundID].Width * 0.5f;
+
+                pl.left.coord.y += gameWorld.mGround[groundID].Height * 0.5f;
+                pl.right.coord.y += gameWorld.mGround[groundID].Height * 0.5f;
+
+                mNodes.Add(pl.left);
+                pl.leftID = mNodes.Count - 1;
+                mNodes.Add(pl.right);
+                pl.rightID = mNodes.Count - 1;
+
+                //add each other as a child
+                mNodes[pl.leftID].children.Add(pl.rightID);
+                mNodes[pl.rightID].children.Add(pl.leftID);
+
+                platformNodes.Add(pl);
+            }
             GenerateJumpPoints();
         }
 

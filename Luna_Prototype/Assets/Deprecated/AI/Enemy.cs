@@ -22,6 +22,12 @@ public class Enemy : Character
     protected LAI.Grid_PathFinding pathFinder = new LAI.Grid_PathFinding();
     public LAI.StateMachine mStateMachine = new LAI.StateMachine();
 
+    [SerializeField] private List<int> PlatformRange = new List<int>();
+    [SerializeField] private List<int> WallRange = new List<int>();
+    [SerializeField] private int groundID = -1;
+    [SerializeField] private int RoofID = -1;
+
+
     //[SerializeField] protected Agent mAgent;
     //[SerializeField] protected World world;
 
@@ -33,6 +39,31 @@ public class Enemy : Character
 
     public void Start()
     {
+        if(PlatformRange.Count > 0)
+        {
+            pathFinder.PlatformsAccecible = PlatformRange;
+        }
+        if(groundID != -1)
+        {
+            pathFinder.groundID = groundID;
+        }
+
+        //set Walls
+        if(world)
+        {
+            int numberWalls = world.GetWalls().Count;
+            for(int i = 0; i < PlatformRange.Count; ++i)
+            {
+                int offset = PlatformRange[i] * 4;
+                WallRange.Add(offset);
+                WallRange.Add(offset + 1);
+                WallRange.Add(offset + 2);
+                WallRange.Add(offset + 3);
+            }
+            WallRange.Add(numberWalls + groundID);
+            WallRange.Add(numberWalls + world.mGround.Count + RoofID);
+        }
+
         //mAgent = new Agent();
         //mAgent.SetWorld(world);
         world.AddAgent(this);

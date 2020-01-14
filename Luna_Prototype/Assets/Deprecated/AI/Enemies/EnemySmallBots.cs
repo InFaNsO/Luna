@@ -10,7 +10,8 @@ public class EnemySmallBots : Enemy
     private new void Awake()
     {
         base.Awake();
-        mSteeringModule.AddState<LAI.BehaviourSeek>();
+        if(!mSteeringModule.Exists(LAI.SteeringType.Seek))
+            mSteeringModule.AddState<LAI.BehaviourSeek>();
         mSteeringModule.SetActive(LAI.SteeringType.Seek, true);
     }
 
@@ -21,8 +22,8 @@ public class EnemySmallBots : Enemy
         mStateMachine.SetAgent(this);
         mStateMachine.AddState<LAI.AttackState>();
         mStateMachine.AddState<LAI.SupriseState>();
-        mStateMachine.AddState<LAI.WanderRoofState>(wanderState);
-        mStateMachine.AddState<LAI.GoToPlayerFlyingState>(gotoState);
+        mStateMachine.AddState(wanderState);
+        mStateMachine.AddState(gotoState);
         mStateMachine.ChangeState(LAI.States.Wander);
     }
 
@@ -31,5 +32,21 @@ public class EnemySmallBots : Enemy
     {
         base.Update();
         //state machine update will handle switching state
+    }
+    public void OnDrawGizmos()
+    {
+        for (int i = 0; i < pathFinder.mNodes.Count; ++i)
+        {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(pathFinder.mNodes[i].coord, 0.3f);
+
+            Gizmos.color = Color.cyan;
+
+            for (int j = 0; j < pathFinder.mNodes[i].children.Count; ++j)
+            {
+                Gizmos.DrawLine(pathFinder.mNodes[i].coord, pathFinder.mNodes[pathFinder.mNodes[i].children[j]].coord);
+            }
+        }
+
     }
 }

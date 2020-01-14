@@ -147,47 +147,108 @@ public class World : MonoBehaviour
     public void Start()
     {
         mWalls = new List<Wall>();
-
         Wall w = new Wall();
-        w.from = new Vector2(-7.0f, 3.0f);
-        w.to = new Vector2(-7.0f, 2.0f);
 
-        mWalls.Add(w);
-        // mWalls.Add(new Wall(new Vector2(-7.0f, 3.0f), new Vector2(-7.0f, 2.0f)));
-        // mWalls.Add(new Wall(new Vector2(-7.0f, 2.0f), new Vector2(-1.0f, 2.0f)));
-        // mWalls.Add(new Wall(new Vector2(-1.0f, 2.0f), new Vector2(-1.0f, 1.0f)));
-        // mWalls.Add(new Wall(new Vector2(-1.0f, 1.0f), new Vector2(3.0f, 1.0f)));
-        // mWalls.Add(new Wall(new Vector2(1.0f, 0.0f), new Vector2(-8.0f, 0.0f)));
-        // mWalls.Add(new Wall(new Vector2(0.0f, 0.0f), new Vector2(0.0f, 1.0f)));
-        // mWalls.Add(new Wall(new Vector2(-7.0f, 0.0f), new Vector2(-7.0f, 2.0f)));
+        //general platforms (has 4 sides exposed)
+        for (int i = 0; i < mPlatforms.Count; ++i)
+        {
+            //left
+            w.from.x = mPlatforms[i].transform.position.x - (mPlatforms[i].Width * 0.5f);
+            w.from.y = mPlatforms[i].transform.position.y - (mPlatforms[i].Height * 0.5f);
+            w.to.x = mPlatforms[i].transform.position.x - (mPlatforms[i].Width * 0.5f);
+            w.to.y = mPlatforms[i].transform.position.y + (mPlatforms[i].Height * 0.5f);
 
-        mWalls.Add(new Wall(new Vector2(0.0f, 0.0f), new Vector2(1.0f, 0.0f)));
-        mWalls.Add(new Wall(new Vector2(1.0f, 0.0f), new Vector2(1.0f, 1.0f)));
-        mWalls.Add(new Wall(new Vector2(0.0f, 1.0f), new Vector2(0.0f, 0.0f)));
-        mWalls.Add(new Wall(new Vector2(0.0f, 1.0f), new Vector2(1.0f, 1.0f)));
+            mWalls.Add(w);
+            //right
+            w.from.x = mPlatforms[i].transform.position.x + (mPlatforms[i].Width * 0.5f);
+            w.from.y = mPlatforms[i].transform.position.y - (mPlatforms[i].Height * 0.5f);
+            w.to.x = mPlatforms[i].transform.position.x + (mPlatforms[i].Width * 0.5f);
+            w.to.y = mPlatforms[i].transform.position.y + (mPlatforms[i].Height * 0.5f);
 
-        mWalls.Add(new Wall(new Vector2(3.0f, 1.0f), new Vector2(4.0f, 1.0f)));
-        mWalls.Add(new Wall(new Vector2(4.0f, 1.0f), new Vector2(4.0f, 2.0f)));
-        mWalls.Add(new Wall(new Vector2(4.0f, 2.0f), new Vector2(3.0f, 2.0f)));
-        mWalls.Add(new Wall(new Vector2(3.0f, 2.0f), new Vector2(3.0f, 1.0f)));
+            mWalls.Add(w);
+            //top
+            w.from.x = mPlatforms[i].transform.position.x - (mPlatforms[i].Width * 0.5f);
+            w.from.y = mPlatforms[i].transform.position.y + (mPlatforms[i].Height * 0.5f);
+            w.to.x = mPlatforms[i].transform.position.x + (mPlatforms[i].Width * 0.5f);
+            w.to.y = mPlatforms[i].transform.position.y + (mPlatforms[i].Height * 0.5f);
 
-        mWalls.Add(new Wall(new Vector2(-2.0f, 1.0f), new Vector2(-3.0f, 1.0f)));
-        mWalls.Add(new Wall(new Vector2(-3.0f, 1.0f), new Vector2(-3.0f, 2.0f)));
-        mWalls.Add(new Wall(new Vector2(-3.0f, 2.0f), new Vector2(-2.0f, 2.0f)));
-        mWalls.Add(new Wall(new Vector2(-2.0f, 2.0f), new Vector2(-2.0f, 1.0f)));
+            mWalls.Add(w);
+            //buttom
+            w.from.x = mPlatforms[i].transform.position.x - (mPlatforms[i].Width * 0.5f);
+            w.from.y = mPlatforms[i].transform.position.y - (mPlatforms[i].Height * 0.5f);
+            w.to.x = mPlatforms[i].transform.position.x + (mPlatforms[i].Width * 0.5f);
+            w.to.y = mPlatforms[i].transform.position.y - (mPlatforms[i].Height * 0.5f);
 
-        mWalls.Add(new Wall(new Vector2(-6.0f, -2.0f), new Vector2(6.0f, 1.0f)));
+            mWalls.Add(w);
+        }
 
-        mObstacles = new List<Obstacle>();
-        Obstacle o = new Obstacle();
-        o.center.x = 0.5f;
-        o.center.y = 0.5f;
-        o.radius = 0.5f;
-        mObstacles.Add(o);
+        //ground and roof have only 1 side exposed
+        for(int i = 0; i < mRoof.Count; ++i)
+        {
+            //Buttom Side
+            w.from.x = mRoof[i].transform.position.x - (mRoof[i].Width * 0.5f);
+            w.from.y = mRoof[i].transform.position.y - (mRoof[i].Height * 0.5f);
+            w.to.x = mRoof[i].transform.position.x + (mRoof[i].Width * 0.5f);
+            w.to.y = mRoof[i].transform.position.y - (mRoof[i].Height * 0.5f);
 
-        o.center.x = 3.5f;
-        o.center.y = 1.5f;
-        mObstacles.Add(o);
+            mWalls.Add(w);
+        }
+        for (int i = 0; i < mGround.Count; ++i)
+        {
+            //Top Side
+            w.from.x = mGround[i].transform.position.x - (mGround[i].Width * 0.5f);
+            w.from.y = mGround[i].transform.position.y + (mGround[i].Height * 0.5f);
+            w.to.x = mGround[i].transform.position.x + (mGround[i].Width * 0.5f);
+            w.to.y = mGround[i].transform.position.y + (mGround[i].Height * 0.5f);
+
+            mWalls.Add(w);
+        }
+
+        if(true)
+        {
+
+        }
+
+        // Wall w = new Wall();
+        // w.from = new Vector2(-7.0f, 3.0f);
+        // w.to = new Vector2(-7.0f, 2.0f);
+        //
+        // mWalls.Add(w);
+        // // mWalls.Add(new Wall(new Vector2(-7.0f, 3.0f), new Vector2(-7.0f, 2.0f)));
+        // // mWalls.Add(new Wall(new Vector2(-7.0f, 2.0f), new Vector2(-1.0f, 2.0f)));
+        // // mWalls.Add(new Wall(new Vector2(-1.0f, 2.0f), new Vector2(-1.0f, 1.0f)));
+        // // mWalls.Add(new Wall(new Vector2(-1.0f, 1.0f), new Vector2(3.0f, 1.0f)));
+        // // mWalls.Add(new Wall(new Vector2(1.0f, 0.0f), new Vector2(-8.0f, 0.0f)));
+        // // mWalls.Add(new Wall(new Vector2(0.0f, 0.0f), new Vector2(0.0f, 1.0f)));
+        // // mWalls.Add(new Wall(new Vector2(-7.0f, 0.0f), new Vector2(-7.0f, 2.0f)));
+        //
+        // mWalls.Add(new Wall(new Vector2(0.0f, 0.0f), new Vector2(1.0f, 0.0f)));
+        // mWalls.Add(new Wall(new Vector2(1.0f, 0.0f), new Vector2(1.0f, 1.0f)));
+        // mWalls.Add(new Wall(new Vector2(0.0f, 1.0f), new Vector2(0.0f, 0.0f)));
+        // mWalls.Add(new Wall(new Vector2(0.0f, 1.0f), new Vector2(1.0f, 1.0f)));
+        //
+        // mWalls.Add(new Wall(new Vector2(3.0f, 1.0f), new Vector2(4.0f, 1.0f)));
+        // mWalls.Add(new Wall(new Vector2(4.0f, 1.0f), new Vector2(4.0f, 2.0f)));
+        // mWalls.Add(new Wall(new Vector2(4.0f, 2.0f), new Vector2(3.0f, 2.0f)));
+        // mWalls.Add(new Wall(new Vector2(3.0f, 2.0f), new Vector2(3.0f, 1.0f)));
+        //
+        // mWalls.Add(new Wall(new Vector2(-2.0f, 1.0f), new Vector2(-3.0f, 1.0f)));
+        // mWalls.Add(new Wall(new Vector2(-3.0f, 1.0f), new Vector2(-3.0f, 2.0f)));
+        // mWalls.Add(new Wall(new Vector2(-3.0f, 2.0f), new Vector2(-2.0f, 2.0f)));
+        // mWalls.Add(new Wall(new Vector2(-2.0f, 2.0f), new Vector2(-2.0f, 1.0f)));
+        //
+        // mWalls.Add(new Wall(new Vector2(-6.0f, -2.0f), new Vector2(6.0f, 1.0f)));
+        //
+        // mObstacles = new List<Obstacle>();
+        // Obstacle o = new Obstacle();
+        // o.center.x = 0.5f;
+        // o.center.y = 0.5f;
+        // o.radius = 0.5f;
+        // mObstacles.Add(o);
+        //
+        // o.center.x = 3.5f;
+        // o.center.y = 1.5f;
+        // mObstacles.Add(o);
     }
 
     public void AddWall(Wall w) { mWalls.Add(w); }
