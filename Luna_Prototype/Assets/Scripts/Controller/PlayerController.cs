@@ -37,6 +37,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float dashDuration = 0.14f;
     float dashCounter;
+    bool isDashing;
 
     Inventory inventory;
 
@@ -176,6 +177,11 @@ public class PlayerController : MonoBehaviour
         if(dashCounter < dashDuration)
         {
             transform.Translate(player.GetDashSpeed() * Time.deltaTime, 0f, 0f);
+            isDashing = true;
+        }
+        else
+        {
+            isDashing = false;
         }
         if (dashCounter < 5.0f)
             dashCounter += Time.deltaTime;
@@ -249,5 +255,10 @@ public class PlayerController : MonoBehaviour
             return true;
         else
             return false;
+    }
+
+    public bool IsDashing()
+    {
+        return isDashing;
     }
 }
