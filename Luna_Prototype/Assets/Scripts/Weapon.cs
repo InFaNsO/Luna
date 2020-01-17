@@ -36,6 +36,7 @@ public class Weapon : MonoBehaviour
 
     //------------------------------------------------------------------------------------//|
     [SerializeField] protected GameObject InLevelBody;                                    //|
+    [SerializeField] protected GameObject mWeaponBody;                                    //|
     [SerializeField] protected CircleCollider2D pickUpCollider;                           //|--- Render purpose
     [SerializeField] protected SpriteRenderer inlevelBody_spriteRender;                   //|
     //------------------------------------------------------------------------------------//|
@@ -44,8 +45,9 @@ public class Weapon : MonoBehaviour
     private BoxCollider2D boxCollider;
     //public bool isOnGround = false;
 
-    public Animation mAnimation;
+    public AnimatorOverrideController mAnimatorOverrideController;
     [System.NonSerialized] public Animator mAnimator;
+    [System.NonSerialized] public Animator mWeaponDefaultAnimator;
 
     bool mHaveAttack = false;
 
@@ -66,7 +68,8 @@ public class Weapon : MonoBehaviour
     public void Awake()
     {
         mIsAttacking = false;
-        mAnimator = gameObject.GetComponentInChildren<Animator>();
+        mWeaponDefaultAnimator = gameObject.GetComponentInChildren<Animator>();
+        mAnimator = mWeaponDefaultAnimator;
         Assert.IsNotNull(mAnimator, "[Weapon] Dont have an animtor");                                                          //|--- [SAFTY]: Check to see if Animator is null
 
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -76,6 +79,9 @@ public class Weapon : MonoBehaviour
 
         Assert.IsNotNull(pickUpCollider, "[Weapon] Dont have pickUpCollider");                                                 //|--- [SAFTY]: Check to see is there a collider
         Assert.IsNotNull(inlevelBody_spriteRender, "[Weapon] Dont have inlevelBody_spriteRender");                             //|--- [SAFTY]: Check to see is there a inlevelBody_spriteRender
+
+        mWeaponBody = transform.GetChild(1).gameObject;                                                                        //|--- [Warning]: Hardcode child index 1. Change it later.
+        Assert.IsNotNull(mWeaponBody, "[Weapon] Dont have mWeaponBody");                                                       //|--- [SAFTY]: Check to see is there a collider
 
         _localLevelManagerTransform = GameObject.Find("LocalLevelManager").gameObject.transform;                               //|--- [INIT]: Get the global transform from LocalLevelManager gameObject
         Assert.IsNotNull(_localLevelManagerTransform, "[Weapon] Doesnt found localLevelManager");                              //|--- [SAFTY]: Check to see is there a collider
@@ -165,13 +171,13 @@ public class Weapon : MonoBehaviour
         {
             if (isOnGournd)
             {
-                mAnimator.SetBool("IsOnGround", true);
+                mAnimator.SetBool("isGrounded", true);
                 mCurrentMoveIndex = mAirMoveIndex + 1;
                 mMoves[mCurrentMoveIndex].Enter();
             }
             else
             {
-                mAnimator.SetBool("IsOnGround", false);
+                mAnimator.SetBool("isGrounded", false);
                 mCurrentMoveIndex = mAirMoveIndex;
                 mMoves[mCurrentMoveIndex].Enter();
             }
@@ -217,6 +223,7 @@ public class Weapon : MonoBehaviour
             parry.mParryCooldown = mParryCD;
 
         InLevelBody.gameObject.SetActive(false);
+        mWeaponBody.SetActive(false);
         boxCollider.enabled = false;
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
@@ -224,6 +231,19 @@ public class Weapon : MonoBehaviour
         gameObject.transform.SetParent(owner.transform);
         gameObject.transform.position = position;
         gameObject.transform.rotation = new Quaternion();
+
+        if (owner.tag == "Player")
+        {
+            mAnimator = GetComponentInParent<Animator>();
+            //mAnimator.runtimeAnimatorController = mAnimatorOverrideController;
+            RefreshMoveAnimator();
+        }
+        else
+        {
+            mAnimator = mWeaponDefaultAnimator;
+            RefreshMoveAnimator();
+        }
+
     }
 
     public void ThrowAway(Vector2 directionForce)
@@ -233,6 +253,7 @@ public class Weapon : MonoBehaviour
         rb.isKinematic = false;
         boxCollider.enabled = true;
         InLevelBody.gameObject.SetActive(true);
+        mWeaponBody.SetActive(true);
         rb.AddForce(directionForce, ForceMode2D.Impulse);
 
         gameObject.tag = "PickUp";
@@ -260,4 +281,12 @@ public class Weapon : MonoBehaviour
     //----------------------------------------------------------------------------------//|
     //- End Edit -----------------------------------------------------------------------//|
     //----------------------------------------------------------------------------------//|
+
+    private void RefreshMoveAnimator()
+    {
+        for (int i = 0; i < mMoves.Length; ++i)
+        {
+            mMoves[i].RefreshAnimator(mAnimator);
+        }
+    }
 }

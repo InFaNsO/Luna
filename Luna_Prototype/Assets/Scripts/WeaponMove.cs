@@ -127,4 +127,9 @@ public class WeaponMove
     {
         mMoveContext.Reset();
     }
+
+    public void RefreshAnimator(Animator animator)
+    {
+        mWeaponAnimator = animator;
+    }
 }
