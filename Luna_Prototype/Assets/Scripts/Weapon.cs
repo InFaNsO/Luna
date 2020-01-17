@@ -124,6 +124,7 @@ public class Weapon : MonoBehaviour
             {
                 mCurrentMoveIndex = 0;
                 mIsAttacking = false;
+
             }
         }
     }
