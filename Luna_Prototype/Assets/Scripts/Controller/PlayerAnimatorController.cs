@@ -31,7 +31,7 @@ public class PlayerAnimatorController : MonoBehaviour
         if (mAnimator.gameObject.activeSelf)
         {
             mAnimator.SetInteger("playerState", (int)PlayerAnimationState.PLAYER_IDLE);
-            mAnimator.SetBool("isGrounded", mPlayerController.IsGrounded());
+            mAnimator.SetBool("IsOnGround", mPlayerController.IsGrounded());
         }
     }
 }

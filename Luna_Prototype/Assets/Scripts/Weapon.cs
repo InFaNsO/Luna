@@ -133,7 +133,6 @@ public class Weapon : MonoBehaviour
     {
         if ((mAnimator.gameObject.activeSelf)/*&&(mMoves[mCurrentMoveIndex].GetMoveCurrentTimeSliceType() == MoveTimeSliceType.Type_Reset)*/)
         {
-            mAnimator.SetInteger("State", 0);
             mAnimator.SetInteger("ToNextCombo", -1);
             mAnimator.SetBool("IsReseting", false);
         }
@@ -172,13 +171,13 @@ public class Weapon : MonoBehaviour
         {
             if (isOnGournd)
             {
-                mAnimator.SetBool("isGrounded", true);
+                mAnimator.SetBool("IsOnGround", true);
                 mCurrentMoveIndex = mAirMoveIndex + 1;
                 mMoves[mCurrentMoveIndex].Enter();
             }
             else
             {
-                mAnimator.SetBool("isGrounded", false);
+                mAnimator.SetBool("IsOnGround", false);
                 mCurrentMoveIndex = mAirMoveIndex;
                 mMoves[mCurrentMoveIndex].Enter();
             }
@@ -219,10 +218,6 @@ public class Weapon : MonoBehaviour
         mOwnerElement = chara.mElement;
         Assert.IsNotNull(mOwnerElement);
 
-        var parry = owner.GetComponent<ParryAttackable>();
-        if (parry)
-            parry.mParryCooldown = mParryCD;
-
         InLevelBody.gameObject.SetActive(false);
         mWeaponBody.SetActive(false);
         boxCollider.enabled = false;
@@ -233,18 +228,28 @@ public class Weapon : MonoBehaviour
         gameObject.transform.position = position;
         gameObject.transform.rotation = new Quaternion();
 
+        //Equip(owner);
+
+    }
+    public void Equip(GameObject owner)
+    {
+        var parry = owner.GetComponent<ParryAttackable>();
+        if (parry)
+            parry.mParryCooldown = mParryCD;
+
         if (owner.tag == "Player")
         {
+            mWeaponBody.SetActive(false);
             mAnimator = GetComponentInParent<Animator>();
-            //mAnimator.runtimeAnimatorController = mAnimatorOverrideController;
+            mAnimator.runtimeAnimatorController = mAnimatorOverrideController;
             RefreshMoveAnimator();
         }
         else
         {
+            mWeaponBody.SetActive(true);
             mAnimator = mWeaponDefaultAnimator;
             RefreshMoveAnimator();
         }
-
     }
 
     public void ThrowAway(Vector2 directionForce)

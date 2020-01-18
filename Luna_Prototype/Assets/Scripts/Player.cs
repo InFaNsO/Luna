@@ -96,12 +96,12 @@ public class Player : Character
         if(mWeapon1 == null)
         {
             mWeapon1 = newWeapon;
-            mCurrentWeapon = mWeapon1;
+            EquipWeapon(mWeapon1);
         }
         else if(mWeapon2 == null)
         {
             mWeapon2 = newWeapon;
-            mCurrentWeapon = mWeapon2;
+            EquipWeapon(mWeapon2);
         }
     }
 
@@ -119,7 +119,7 @@ public class Player : Character
                 mWeapon1 = null;
                 mCurrentWeapon = null;
                 if (mWeapon2 != null)                                                                                           //|--- [Mingzhuo Zhang] Edit: achieve automatic switch weapon
-                    mCurrentWeapon = mWeapon2;                                                                                  //|
+                    EquipWeapon(mWeapon2);                                                                                  //|
             }
             //                                 |  add a condition |                                                             //|--- [Mingzhuo Zhang] Edit: prevent trying drop NULL Weapon
             //                                 v                  v                                                             //|
@@ -132,7 +132,7 @@ public class Player : Character
                 mCurrentWeapon = null;
 
                 if (mWeapon1 != null)                                                                                           //|--- [Mingzhuo Zhang] Edit: achieve automatic switch weapon
-                    mCurrentWeapon = mWeapon1;                                                                                  //|
+                    EquipWeapon(mWeapon1);                                                                                  //|
             }
         }
         else
@@ -147,14 +147,14 @@ public class Player : Character
         {
             if(mWeapon2 != null)
             {
-                mCurrentWeapon = mWeapon2;
+                EquipWeapon(mWeapon2);
                 Debug.Log("Switch to Weapon 2");
             }
         }else if(mCurrentWeapon == mWeapon2)
         {
             if (mWeapon1 != null)
             {
-                mCurrentWeapon = mWeapon1;
+                EquipWeapon(mWeapon1);
                 Debug.Log("Switch to Weapon 1");
             }
         }
@@ -223,13 +223,13 @@ public class Player : Character
         {
             if(mWeapon1 != null)
             {
-                mCurrentWeapon = mWeapon1;
+                EquipWeapon(mWeapon1);
                 Debug.Log("Weapon 1 equipped");
                 mCurrentWeapon.Attack(isGrounded);
             }
             else
             {
-                mCurrentWeapon = mWeapon2;
+                EquipWeapon(mWeapon2);
                 Debug.Log("Weapon 2 equipped");
                 mCurrentWeapon.Attack(isGrounded);
             }
@@ -330,14 +330,14 @@ public class Player : Character
             mWeapon1 = newWeapon;                                                       //|
             mWeapon1.Picked(gameObject, mWeaponPosition.transform.position);                 //|
             if (mCurrentWeapon == null)                                                 //|
-                mCurrentWeapon = mWeapon1;                                              //|
+                EquipWeapon(mWeapon1);                                              //|
         }                                                                               //|
         else if (mWeapon2 == null)                                                      //|--- [Mingzhuo Zhang] add a public function for pickUp weapon. This function will trigger by the collision of the weapon collider
         {                                                                               //|
             mWeapon2 = newWeapon;                                                       //|
             mWeapon2.Picked(gameObject, mWeaponPosition.transform.position);                 //|
             if (mCurrentWeapon == null)                                                 //|
-                mCurrentWeapon = mWeapon2;                                              //|
+                EquipWeapon(mWeapon2);                                              //|
         }                                                                               //|
                                                                                         //|
                                                                                         //|
@@ -360,6 +360,18 @@ public class Player : Character
         {                                                                               //|
             Die();                                                                      //|
         }                                                                               //|
+    }                                                                                   //|
+    //----------------------------------------------------------------------------------//|
+    //- End Edit -----------------------------------------------------------------------//|
+    //----------------------------------------------------------------------------------//|
+
+    //----------------------------------------------------------------------------------//|
+    //- Mingzhuo Zhang Edit ------------------------------------------------------------//|
+    //----------------------------------------------------------------------------------//|
+    private void EquipWeapon(Weapon nextWeapon)                                         //|
+    {                                                                                   //|
+        mCurrentWeapon = nextWeapon;                                                    //|--- [Mingzhuo Zhang] Add a function for equip weapon;
+        mCurrentWeapon.Equip(gameObject);                                               //|
     }                                                                                   //|
     //----------------------------------------------------------------------------------//|
     //- End Edit -----------------------------------------------------------------------//|

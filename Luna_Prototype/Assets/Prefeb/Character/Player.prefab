@@ -20,8 +20,9 @@ GameObject:
   - component: {fileID: 1756336210}
   - component: {fileID: 1756336211}
   - component: {fileID: 6171437158726952309}
-  - component: {fileID: 1525562978}
   - component: {fileID: 1525562980}
+  - component: {fileID: 1525562978}
+  - component: {fileID: 7557835133210629315}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -377,6 +378,18 @@ MonoBehaviour:
   mCurrentStamina: 0
   mStaminaCostPerDash: 20
   staminaBar: {fileID: 0}
+--- !u!114 &1525562980
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109428899416447167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ef79c0913fa5a543803ca3d5c6dabc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1525562978
 Animator:
   serializedVersion: 3
@@ -396,7 +409,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &1525562980
+--- !u!114 &7557835133210629315
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
