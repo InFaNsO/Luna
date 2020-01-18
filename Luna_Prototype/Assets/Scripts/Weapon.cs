@@ -221,7 +221,8 @@ public class Weapon : MonoBehaviour
         Assert.IsNotNull(mOwnerElement);
 
         InLevelBody.gameObject.SetActive(false);
-        mWeaponBody.enabled = false;
+        if (owner.tag == "Player")
+            mWeaponBody.enabled = false;
         boxCollider.enabled = false;
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;

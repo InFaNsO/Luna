@@ -77,7 +77,8 @@ public abstract class Character : Agent
         else
         {
             mAttackMomentumPos = new GameObject().transform;
-            mAttackMomentumPos.position = new Vector3(0.0f, 0.0f, 0.0f);
+            mAttackMomentumPos.SetParent(gameObject.transform);
+            mAttackMomentumPos.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
         }
         
 
