@@ -12,6 +12,7 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     //Gauges
     [Header("Gauges")]
     public Image hp_Image;
+    public Image stamina_Image;
 
     //quick slots
     [Header("Quick Slots")]
@@ -93,16 +94,24 @@ public class UI_InGame : MonoBehaviour, UI_Interface
 
     }
 
-    #region HPGauge
+    #region Gauge
     public void UpdateHPGauge(float value)
     {
         hp_Image.fillAmount = value;
+    }
+    public void UpdateStaminaGauge(float value)
+    {
+        stamina_Image.fillAmount = value;
     }
 
     #endregion
 
 
     #region PopUp_MsgBox
+    public void SetText_MsgBox(string text)
+    {
+        popUp_msgbox.GetComponentInChildren<Text>().text = text;
+    }
     public void PopUp_MsgBox()
     {
         if (!msgBox_isActive)
