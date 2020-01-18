@@ -45670,7 +45670,7 @@ PrefabInstance:
     - target: {fileID: 7281698943840582382, guid: 87d5b8b38ff9e8d43a7d92caf90f8edd,
         type: 3}
       propertyPath: mMoves.Array.data[2].mAttackSpeedMutiplier
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7281698943840582382, guid: 87d5b8b38ff9e8d43a7d92caf90f8edd,
         type: 3}

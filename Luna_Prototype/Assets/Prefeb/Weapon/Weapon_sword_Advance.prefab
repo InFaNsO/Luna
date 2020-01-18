@@ -168,7 +168,7 @@ MonoBehaviour:
     mAnimationClip: {fileID: 7400000, guid: f2792b2383216824691d716141676090, type: 2}
   - name: basic_attack_combo_0
     mDamage: 20
-    mAttackSpeedMutiplier: 2
+    mAttackSpeedMutiplier: 0.5
     mMoveContext:
       mMoveTimeSlices:
       - mType: 1
@@ -211,7 +211,7 @@ MonoBehaviour:
     mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05,
       type: 3}
     mFirePosition: {fileID: 8135096088201637637}
-    mAnimationClip: {fileID: 7400000, guid: 5ba2c9ac59af1ea4ca72fa3c53b33af8, type: 2}
+    mAnimationClip: {fileID: 7400000, guid: 9c533085ed15b1e4da868effc8aff4c0, type: 2}
   - name: basic_attack_combo_2
     mDamage: 20
     mAttackSpeedMutiplier: 1.2
