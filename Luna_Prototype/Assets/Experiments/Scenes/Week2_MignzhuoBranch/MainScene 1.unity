@@ -45672,6 +45672,16 @@ PrefabInstance:
       propertyPath: mMoves.Array.data[2].mAttackSpeedMutiplier
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7281698943840582382, guid: 87d5b8b38ff9e8d43a7d92caf90f8edd,
+        type: 3}
+      propertyPath: mMoves.Array.data[1].mAttackSpeedMutiplier
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 7281698943840582382, guid: 87d5b8b38ff9e8d43a7d92caf90f8edd,
+        type: 3}
+      propertyPath: mMoves.Array.data[1].mMoveContext.mMoveTimeSlices.Array.data[4].mTimeSlicePropotion
+      value: 0.99
+      objectReference: {fileID: 0}
     - target: {fileID: 6606600559324767001, guid: 87d5b8b38ff9e8d43a7d92caf90f8edd,
         type: 3}
       propertyPath: m_LocalPosition.x
