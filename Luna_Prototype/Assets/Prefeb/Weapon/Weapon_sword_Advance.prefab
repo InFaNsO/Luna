@@ -220,9 +220,9 @@ MonoBehaviour:
       - mType: 1
         mTimeSlicePropotion: 0.2
       - mType: 0
-        mTimeSlicePropotion: 0.7
+        mTimeSlicePropotion: 0.9
       - mType: 2
-        mTimeSlicePropotion: 0.8
+        mTimeSlicePropotion: 0.95
       - mType: 4
         mTimeSlicePropotion: 1
     mToMoveId: 
@@ -259,8 +259,7 @@ MonoBehaviour:
   mOwnerElement: {fileID: 0}
   mTargetPos: {x: 0, y: 0, z: 0}
   mIsAttacking: 0
-  mOwnerTransfrom: {fileID: 0}
-  mAttackMomentumPos: {fileID: 0}
+  mOwner: {fileID: 0}
 --- !u!50 &2856706057600177519
 Rigidbody2D:
   serializedVersion: 4
@@ -594,7 +593,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8651365135766843430}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.02, y: -0.08, z: -1.599683}
+  m_LocalPosition: {x: -0.02, y: -0.46, z: -1.599683}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8064114535432841098}
