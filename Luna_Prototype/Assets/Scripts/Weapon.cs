@@ -257,6 +257,11 @@ public class Weapon : MonoBehaviour
 
     public void ThrowAway(Vector2 directionForce)
     {
+        if(mOwner.GetComponent<Player>() != null)
+        {
+            mAnimator.runtimeAnimatorController = mOwner.GetComponent<Player>().mDefaultRunTimeAniamtorController;
+        }
+
         gameObject.transform.SetParent(_localLevelManagerTransform);
 
         rb.isKinematic = false;

@@ -1,0 +1,843 @@
+fileFormatVersion: 2
+guid: 99f184acef4a9fd4ca782716a29d13a1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4576372309634547800
+    second: Luna_Idle_sword_0
+  - first:
+      213: 6712018869882718279
+    second: Luna_Idle_sword_1
+  - first:
+      213: -3990383685375017975
+    second: Luna_Idle_sword_2
+  - first:
+      213: -3768760115643439927
+    second: Luna_Idle_sword_3
+  - first:
+      213: 8148809398003945776
+    second: Luna_Idle_sword_4
+  - first:
+      213: -3412823911892304060
+    second: Luna_Idle_sword_5
+  - first:
+      213: 4086165125819466781
+    second: Luna_Idle_sword_6
+  - first:
+      213: 6923434756236428758
+    second: Luna_Idle_sword_7
+  - first:
+      213: 6341592570249960744
+    second: Luna_Idle_sword_8
+  - first:
+      213: 5293992163727601140
+    second: Luna_Idle_sword_9
+  - first:
+      213: -7460724995162210554
+    second: Luna_Idle_sword_10
+  - first:
+      213: 6408723797238633334
+    second: Luna_Idle_sword_11
+  - first:
+      213: -5638491912478316437
+    second: Luna_Idle_sword_12
+  - first:
+      213: 4069250911826503986
+    second: Luna_Idle_sword_13
+  - first:
+      213: 7665852104796500605
+    second: Luna_Idle_sword_14
+  - first:
+      213: 8787541630798573947
+    second: Luna_Idle_sword_15
+  - first:
+      213: -4955120409922582256
+    second: Luna_Idle_sword_16
+  - first:
+      213: -710569597810251571
+    second: Luna_Idle_sword_17
+  - first:
+      213: -3427100848703884080
+    second: Luna_Idle_sword_18
+  - first:
+      213: -1274381826062272885
+    second: Luna_Idle_sword_19
+  - first:
+      213: -4534528800478586149
+    second: Luna_Idle_sword_20
+  - first:
+      213: 8428522787990657292
+    second: Luna_Idle_sword_21
+  - first:
+      213: 6030863387514546321
+    second: Luna_Idle_sword_22
+  - first:
+      213: 7601081228462651016
+    second: Luna_Idle_sword_23
+  - first:
+      213: 3431678551353241577
+    second: Luna_Idle_sword_24
+  - first:
+      213: -6652486460339806775
+    second: Luna_Idle_sword_25
+  - first:
+      213: -2686878838098200082
+    second: Luna_Idle_sword_26
+  - first:
+      213: 4309952086601306746
+    second: Luna_Idle_sword_27
+  - first:
+      213: 1715576060955270207
+    second: Luna_Idle_sword_28
+  - first:
+      213: 5395841797889137856
+    second: Luna_Idle_sword_29
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Luna_Idle_sword_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 828
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e89cf3e51f94b0c4392e14d551d437ca
+      internalID: 4576372309634547800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_1
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 828
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a55c40cc44dc33b4cba5548dfa93d1b1
+      internalID: 6712018869882718279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_2
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 828
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f22aef88cdbc87840923e5ae692a52ba
+      internalID: -3990383685375017975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_3
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 828
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d92604cf3358c8a4aaccc0807374a1f1
+      internalID: -3768760115643439927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_4
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 828
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c0cdd70450141a4285ff975454ec47a
+      internalID: 8148809398003945776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_5
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 828
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abdc068dc1935d0449c2c65f121c8201
+      internalID: -3412823911892304060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 621
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35b83bc1a2779a440abb6b3b62898591
+      internalID: 4086165125819466781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_7
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 621
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bab0a0f5a09f75346b8061d137882a8c
+      internalID: 6923434756236428758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_8
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 621
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fa9a0bfe580ecf46990da9a0269a435
+      internalID: 6341592570249960744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_9
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 621
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b7229bc74dde84449ba1fea0420d733
+      internalID: 5293992163727601140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_10
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 621
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecd7d33ae377e7d459845ee6c76ecf96
+      internalID: -7460724995162210554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_11
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 621
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9a003cc7a23a1d46a1c7641acb401bc
+      internalID: 6408723797238633334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 414
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0733018ff60b2c944a014277e6c6209e
+      internalID: -5638491912478316437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_13
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 414
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 049c9f1366c02dd4aba4adac39514afc
+      internalID: 4069250911826503986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_14
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 414
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2284c25b921bfd4ba742030c3f5fe7d
+      internalID: 7665852104796500605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_15
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 414
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2903638eb6d58dd45832f4a560c42c8e
+      internalID: 8787541630798573947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_16
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 414
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36f22af653a40ac4682a765188390e09
+      internalID: -4955120409922582256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_17
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 414
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a9090643f82b401479d27aab8fb9b7ca
+      internalID: -710569597810251571
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 207
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51bc181903b69424a945c069bdd76264
+      internalID: -3427100848703884080
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_19
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 207
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c23a647c65937947b2c737b5363e772
+      internalID: -1274381826062272885
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_20
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 207
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d29b1c733111ec642b6a3699ca505360
+      internalID: -4534528800478586149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_21
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 207
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c3e712f65b6d43346a3b760028fd6654
+      internalID: 8428522787990657292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_22
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 207
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e39809735c70e74e88df44af6485b32
+      internalID: 6030863387514546321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_23
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 207
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59dfbe1dbc54ed1498334a44761b1d2c
+      internalID: 7601081228462651016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90f788da5444dba4bbf770cedf390bc3
+      internalID: 3431678551353241577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_25
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 0
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8ffb65d0b8d7004f8d386211656c970
+      internalID: -6652486460339806775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_26
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b87b6f53a206b084aa0e48231a782522
+      internalID: -2686878838098200082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_27
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 0
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1a1ddeafd9da204e8d1f9901de1ee68
+      internalID: 4309952086601306746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_28
+      rect:
+        serializedVersion: 2
+        x: 300
+        y: 0
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98cc382886901d849af162c848591e46
+      internalID: 1715576060955270207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Idle_sword_29
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 0
+        width: 75
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cb064bfafe7198b468f4283f67d2344a
+      internalID: 5395841797889137856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: afa4122e4fefa794ea13e122b74f88f6
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

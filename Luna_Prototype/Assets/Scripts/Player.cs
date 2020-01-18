@@ -42,6 +42,7 @@ public class Player : Character
 
     private ParryAttackable mParryAttackable;
 
+    public RuntimeAnimatorController mDefaultRunTimeAniamtorController;
     // Getter & Setter
     public Weapon CurrentWeapon { get { return mCurrentWeapon; } }
 
@@ -254,6 +255,7 @@ public class Player : Character
         mParryAttackable = GetComponent<ParryAttackable>();
         Assert.IsNotNull(mParryAttackable, "[Player] _ParryAttackable is null");
 
+        mDefaultRunTimeAniamtorController = GetComponent<Animator>().runtimeAnimatorController;
 
         isDouleJumpEnabled = true;
 
