@@ -78,6 +78,11 @@ public class Enemy : Character
         }
     }
 
+    public void UseWerapon()
+    {
+        mWeapon.Attack(true, world.mPlayer.transform.position);
+    }
+
     public float GetMoveSpeed()
     {
         return mMovementSpeed;

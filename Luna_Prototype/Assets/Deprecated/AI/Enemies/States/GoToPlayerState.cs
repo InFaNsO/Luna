@@ -47,10 +47,10 @@ namespace LAI
             //this will be changed by checking the weapon the enemy has
             //if weapon is ranged use extended range
             //if weapon is meele use normal range
-            float attackRange = agent.GetSafeDistanceExtended();
+            float attackRange = agent.GetSafeDistance()- 1.0f;
 
             //if player is close enought to attck switch to attack
-            if (agent.IsNearPlayer(agent.GetSafeDistanceExtended()) && 
+            if (agent.IsNearPlayer(Mathf.Abs(attackRange)) && 
                 agent.GetWorld().HasLineOfSight(new World.Wall(agent.transform.position, agent.GetWorld().mPlayer.transform.position)))
             {
                 agent.mStateMachine.ChangeState(States.Attack);
@@ -65,7 +65,7 @@ namespace LAI
                 calculateAgain = true;
             }
 
-            if(calculateAgain || Path.Count == 0)
+            if (calculateAgain)  //or
             {
                 finder.Calculate(agent.transform.position);
                 Path.Clear();
@@ -74,19 +74,33 @@ namespace LAI
                 Path.RemoveAt(0);
                 agent.SetFinalDestination(Path[Path.Count - 1]);
             }
-
-            bool isClose = agent.IsNearDestination(agent.GetSafeDistanceReduced());
-
-            //if player is far away than range then switch to wander 
-            if (Path.Count == 0)
+            else if (Path.Count == 0)
             {
-                if (!agent.IsNearPlayer(agent.GetSafeDistanceExtended()))
+                //if player is far away than range then switch to wander 
+                if (!agent.IsNearPlayer(agent.GetSafeDistanceExtended() + 5.0f))
                 {
                     agent.mStateMachine.ChangeState(States.Wander);
+                    return;
+                }
+                finder.Calculate(agent.transform.position);
+                Path.Clear();
+                Path = finder.GetPath();
+
+                if (Path.Count > 0)
+                {
+                    agent.SetDestination(Path[0]);
+                    Path.RemoveAt(0);
+                    agent.SetFinalDestination(Path[Path.Count - 1]);
+                }
+                else
+                {
+                    agent.SetDestination(agent.GetWorld().mPlayer.transform.position);
                 }
             }
 
-            if (isClose)
+            bool isClose = agent.IsNearDestination(agent.GetSafeDistanceReduced());
+
+            if (isClose && Path.Count > 0)
             {
                 agent.SetDestination(Path[0]);
                 Path.RemoveAt(0);

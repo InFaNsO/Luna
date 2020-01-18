@@ -62,6 +62,7 @@ namespace LAI
             if (agent.IsNearPlayer(rangeDis))
             {
                 //use weapons
+                agent.UseWerapon();
             }
             else
             {

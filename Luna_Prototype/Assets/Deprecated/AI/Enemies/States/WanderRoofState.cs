@@ -12,7 +12,11 @@ namespace LAI
         Vector3 left = new Vector3();
         Vector3 right = new Vector3();
 
+        float yPrv = 0.0f;
+
         bool isGoingLeft = false;
+        bool shouldFall = false;
+        bool isGrounded = false;
 
         public override States Name()
         {
@@ -21,6 +25,8 @@ namespace LAI
 
         public override void Enter(Enemy agent)
         {
+            agent.transform.Rotate(new Vector3(0.0f, 0.0f, 1.0f), 180.0f);
+
             agent.GetComponent<Rigidbody2D>().gravityScale = -1.0f;
             left = roof.transform.position;
             right = roof.transform.position;
@@ -48,10 +54,28 @@ namespace LAI
 
         public override void Update(Enemy agent)
         {
+            if(shouldFall)
+            {
+                //check if its grounded
+                if(agent.transform.position.y < yPrv + 0.01f && agent.transform.position.y > yPrv - 0.01f)
+                {
+                    agent.mStateMachine.ChangeState(States.GoToPlayer);
+                    return;
+                }
+                else
+                {
+                    yPrv = agent.transform.position.y;
+                    return;
+                }
+            }
+
             float findRange = agent.GetSafeDistanceExtended(); 
             if (agent.IsNearPlayer(findRange) && agent.GetWorld().HasLineOfSight(new World.Wall(agent.transform.position, agent.GetWorld().mPlayer.transform.position)))
             {
-                agent.mStateMachine.ChangeState(States.GoToPlayer);
+                agent.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
+                yPrv = agent.transform.position.y;
+                shouldFall = true;
+                agent.transform.Rotate(new Vector3(0.0f, 0.0f, 1.0f), 180.0f);
                 return;
             }
 
