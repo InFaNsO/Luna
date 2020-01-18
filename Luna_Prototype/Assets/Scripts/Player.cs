@@ -42,7 +42,6 @@ public class Player : Character
 
     private ParryAttackable mParryAttackable;
 
-
     // Getter & Setter
     public Weapon CurrentWeapon { get { return mCurrentWeapon; } }
 
@@ -254,6 +253,7 @@ public class Player : Character
 
         mParryAttackable = GetComponent<ParryAttackable>();
         Assert.IsNotNull(mParryAttackable, "[Player] _ParryAttackable is null");
+
 
         isDouleJumpEnabled = true;
 

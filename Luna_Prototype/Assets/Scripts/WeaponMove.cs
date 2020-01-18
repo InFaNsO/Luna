@@ -71,7 +71,9 @@ public class WeaponMove
 
         if (mMoveContext.Active)
         {
-            
+            Vector3 attackMomentum = mWeapon.mOwner.mAttackMomentumPos.position - mWeapon.mOwner.transform.position;
+            mWeapon.mOwner.transform.position += attackMomentum * deltaTime;
+
             if (mMoveContext.GetCurrentTimeSliceType() == MoveTimeSliceType.Type_Parryable)
             {
                 //TODO :: make weapon become parrable

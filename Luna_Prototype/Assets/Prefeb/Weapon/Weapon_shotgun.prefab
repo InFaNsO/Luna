@@ -1,5 +1,35 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3553070824056519374
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3489373843016178276}
+  m_Layer: 0
+  m_Name: AttackMomentumPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3489373843016178276
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3553070824056519374}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.229, y: 0.1, z: -1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 8421697784191205500}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4344426171327372247
 GameObject:
   m_ObjectHideFlags: 0
@@ -94,12 +124,16 @@ MonoBehaviour:
     mAnimationClip: {fileID: 7400000, guid: 0f5811181193cf54196f396775932080, type: 2}
   mAirMoveIndex: 0
   InLevelBody: {fileID: 5109421896086811871}
+  mWeaponBody: {fileID: 0}
   pickUpCollider: {fileID: 8627927540468529358}
   inlevelBody_spriteRender: {fileID: 2034812478211811839}
-  mAnimation: {fileID: 0}
+  mAnimatorOverrideController: {fileID: 0}
   mElement: {fileID: 0}
   mOwnerElement: {fileID: 0}
   mTargetPos: {x: 0, y: 0, z: 0}
+  mIsAttacking: 0
+  mPlayer: {fileID: 0}
+  mAttackMomentumPos: {fileID: 0}
 --- !u!50 &6546134547383184133
 Rigidbody2D:
   serializedVersion: 4
@@ -338,7 +372,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0.05, y: 0.1, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 3489373843016178276}
   m_Father: {fileID: 5418935356144147944}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

@@ -119,7 +119,7 @@ Transform:
   m_GameObject: {fileID: 5913526906705443303}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
   m_Children:
   - {fileID: 6606600559324767001}
   - {fileID: 5262413194630774346}
@@ -168,7 +168,7 @@ MonoBehaviour:
     mAnimationClip: {fileID: 7400000, guid: f2792b2383216824691d716141676090, type: 2}
   - name: basic_attack_combo_0
     mDamage: 20
-    mAttackSpeedMutiplier: 0.5
+    mAttackSpeedMutiplier: 3
     mMoveContext:
       mMoveTimeSlices:
       - mType: 1
@@ -180,7 +180,7 @@ MonoBehaviour:
       - mType: 3
         mTimeSlicePropotion: 0.9
       - mType: 4
-        mTimeSlicePropotion: 1
+        mTimeSlicePropotion: 0.99
     mToMoveId: 0400000002000000
     mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05,
       type: 3}
@@ -188,7 +188,7 @@ MonoBehaviour:
     mAnimationClip: {fileID: 7400000, guid: 6daa6a26ad1c2354b8bceb146a81ff30, type: 2}
   - name: basic_attack_combo_1
     mDamage: 20
-    mAttackSpeedMutiplier: 1
+    mAttackSpeedMutiplier: 2
     mMoveContext:
       mMoveTimeSlices:
       - mType: 1
@@ -259,6 +259,8 @@ MonoBehaviour:
   mOwnerElement: {fileID: 0}
   mTargetPos: {x: 0, y: 0, z: 0}
   mIsAttacking: 0
+  mOwnerTransfrom: {fileID: 0}
+  mAttackMomentumPos: {fileID: 0}
 --- !u!50 &2856706057600177519
 Rigidbody2D:
   serializedVersion: 4
@@ -388,7 +390,8 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0.179, y: 0.2, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 2}
-  m_Children: []
+  m_Children:
+  - {fileID: 3676478491477669271}
   m_Father: {fileID: 8064114535432841098}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -460,6 +463,36 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!1 &6720195909138997874
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3676478491477669271}
+  m_Layer: 0
+  m_Name: AttackMomentumPos
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3676478491477669271
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6720195909138997874}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_Children: []
+  m_Father: {fileID: 5262413194630774346}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6839786739058806641
 GameObject:
   m_ObjectHideFlags: 0

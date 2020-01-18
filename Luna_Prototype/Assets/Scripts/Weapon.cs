@@ -36,7 +36,7 @@ public class Weapon : MonoBehaviour
 
     //------------------------------------------------------------------------------------//|
     [SerializeField] protected GameObject InLevelBody;                                    //|
-    [SerializeField] protected GameObject mWeaponBody;                                    //|
+    [SerializeField] protected SpriteRenderer mWeaponBody;                                    //|
     [SerializeField] protected CircleCollider2D pickUpCollider;                           //|--- Render purpose
     [SerializeField] protected SpriteRenderer inlevelBody_spriteRender;                   //|
     //------------------------------------------------------------------------------------//|
@@ -61,6 +61,8 @@ public class Weapon : MonoBehaviour
 
     public bool mIsAttacking;
 
+    public Character mOwner;
+
     // Getter & Setter -------------------------------------------------------------------------------------------------------
     //public float AttackSpeed { get { return mAttackSpeed; } set { mAttackSpeed = value; } }
 
@@ -80,7 +82,7 @@ public class Weapon : MonoBehaviour
         Assert.IsNotNull(pickUpCollider, "[Weapon] Dont have pickUpCollider");                                                 //|--- [SAFTY]: Check to see is there a collider
         Assert.IsNotNull(inlevelBody_spriteRender, "[Weapon] Dont have inlevelBody_spriteRender");                             //|--- [SAFTY]: Check to see is there a inlevelBody_spriteRender
 
-        mWeaponBody = transform.GetChild(1).gameObject;                                                                        //|--- [Warning]: Hardcode child index 1. Change it later.
+        mWeaponBody = transform.GetChild(1).GetComponent<SpriteRenderer>();                                                                        //|--- [Warning]: Hardcode child index 1. Change it later.
         Assert.IsNotNull(mWeaponBody, "[Weapon] Dont have mWeaponBody");                                                       //|--- [SAFTY]: Check to see is there a collider
 
         _localLevelManagerTransform = GameObject.Find("LocalLevelManager").gameObject.transform;                               //|--- [INIT]: Get the global transform from LocalLevelManager gameObject
@@ -219,7 +221,7 @@ public class Weapon : MonoBehaviour
         Assert.IsNotNull(mOwnerElement);
 
         InLevelBody.gameObject.SetActive(false);
-        mWeaponBody.SetActive(false);
+        mWeaponBody.enabled = false;
         boxCollider.enabled = false;
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
@@ -228,6 +230,7 @@ public class Weapon : MonoBehaviour
         gameObject.transform.position = position;
         gameObject.transform.rotation = new Quaternion();
 
+        mOwner = owner.GetComponent<Character>();
         //Equip(owner);
 
     }
@@ -239,14 +242,14 @@ public class Weapon : MonoBehaviour
 
         if (owner.tag == "Player")
         {
-            mWeaponBody.SetActive(false);
+            mWeaponBody.enabled = false;
             mAnimator = GetComponentInParent<Animator>();
             mAnimator.runtimeAnimatorController = mAnimatorOverrideController;
             RefreshMoveAnimator();
         }
         else
         {
-            mWeaponBody.SetActive(true);
+            mWeaponBody.enabled = true;
             mAnimator = mWeaponDefaultAnimator;
             RefreshMoveAnimator();
         }
@@ -259,7 +262,7 @@ public class Weapon : MonoBehaviour
         rb.isKinematic = false;
         boxCollider.enabled = true;
         InLevelBody.gameObject.SetActive(true);
-        mWeaponBody.SetActive(true);
+        mWeaponBody.enabled = true;
         rb.AddForce(directionForce, ForceMode2D.Impulse);
 
         gameObject.tag = "PickUp";
