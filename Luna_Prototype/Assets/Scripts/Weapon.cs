@@ -19,9 +19,9 @@ public class Weapon : MonoBehaviour
     public float Range;
     [SerializeField] protected string mName;                                    //|
     [SerializeField] protected WeaponGrade mGrade;                              //|--- TODO:: make them as WeaponPorperty struct
-    [SerializeField] public WeaponType mType;                                //|
+    [SerializeField] public WeaponType mType;                                   //|
     public float mParryCD = 1.0f;
-                                                                                //--------------------------------------------------------------------------//|
+    //--------------------------------------------------------------------------//|
 
     //[SerializeField] protected int mDamage;
     //[SerializeField] protected float mAttackSpeed; // wait how many second to next attack
@@ -131,7 +131,7 @@ public class Weapon : MonoBehaviour
 
     void LateUpdate()
     {
-        if ((mAnimator.gameObject.activeSelf)/*&&(mMoves[mCurrentMoveIndex].GetMoveCurrentTimeSliceType() == MoveTimeSliceType.Type_Reset)*/)
+        if ((mAnimator.gameObject.activeSelf) && (mMoves[mCurrentMoveIndex].GetMoveCurrentTimeSliceType() == MoveTimeSliceType.Type_Reset))
         {
             mAnimator.SetInteger("ToNextCombo", -1);
             mAnimator.SetBool("IsReseting", false);
