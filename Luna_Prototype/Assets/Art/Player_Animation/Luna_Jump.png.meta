@@ -1,0 +1,472 @@
+fileFormatVersion: 2
+guid: 79f674c4d357d234996194784260f85f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -139784451606202422
+    second: Luna_Jump_0
+  - first:
+      213: -7125947159489004173
+    second: Luna_Jump_1
+  - first:
+      213: 7433276030662095963
+    second: Luna_Jump_2
+  - first:
+      213: 4837533642803554399
+    second: Luna_Jump_3
+  - first:
+      213: 7643836012410728869
+    second: Luna_Jump_4
+  - first:
+      213: 2307123616034813901
+    second: Luna_Jump_5
+  - first:
+      213: -2620228063767874313
+    second: Luna_Jump_6
+  - first:
+      213: 6326306397251953998
+    second: Luna_Jump_7
+  - first:
+      213: -6698297044259914536
+    second: Luna_Jump_8
+  - first:
+      213: -6896111155890999178
+    second: Luna_Jump_9
+  - first:
+      213: 3399360554981906097
+    second: Luna_Jump_10
+  - first:
+      213: 7449084750891983477
+    second: Luna_Jump_11
+  - first:
+      213: -8091404937752705494
+    second: Luna_Jump_12
+  - first:
+      213: -4567865966334546342
+    second: Luna_Jump_13
+  - first:
+      213: 3735166955353601439
+    second: Luna_Jump_14
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Luna_Jump_0
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 1159
+        width: 72
+        height: 207
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 638d6b1a735033e41a976b358a1c50f5
+      internalID: -139784451606202422
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Jump_1
+      rect:
+        serializedVersion: 2
+        x: 122
+        y: 1158
+        width: 68
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b356647bcd3b5d84d8bd0ced5a09ba10
+      internalID: -7125947159489004173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Jump_2
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 1158
+        width: 70
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5db14691141590b4192e6edb26817ab0
+      internalID: 7433276030662095963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Jump_3
+      rect:
+        serializedVersion: 2
+        x: 13
+        y: 870
+        width: 74
+        height: 198
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3863f9aedf42b1479064dc2f4ea8d5c
+      internalID: 4837533642803554399
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Jump_4
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 870
+        width: 78
+        height: 189
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f44f436186c26154aa029bbd448df075
+      internalID: 7643836012410728869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Jump_5
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 870
+        width: 81
+        height: 175
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e17460379e80f684b98f9333428298d2
+      internalID: 2307123616034813901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Jump_6
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 581
+        width: 88
+        height: 159
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 240ead3c032f7d54e8c259525a609d30
+      internalID: -2620228063767874313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Jump_7
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 581
+        width: 92
+        height: 153
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca61a18a54dcf4c45a1c8ea572dea836
+      internalID: 6326306397251953998
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Jump_8
+      rect:
+        serializedVersion: 2
+        x: 239
+        y: 580
+        width: 90
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd276b6cc50480346987713d426265a2
+      internalID: -6698297044259914536
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Jump_9
+      rect:
+        serializedVersion: 2
+        x: 21
+        y: 291
+        width: 84
+        height: 197
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 148d9887c5156c848a34bd84d10bd797
+      internalID: -6896111155890999178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Jump_10
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 309
+        width: 73
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 153ef0ae70ead644483d029cd4c67559
+      internalID: 3399360554981906097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Jump_11
+      rect:
+        serializedVersion: 2
+        x: 241
+        y: 328
+        width: 66
+        height: 218
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77dc3167f2d9a0b43ab57f94f0113524
+      internalID: 7449084750891983477
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Jump_12
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 53
+        width: 65
+        height: 220
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7cead22c74a14441a6352c266d15402
+      internalID: -8091404937752705494
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Jump_13
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 59
+        width: 65
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c50787a1b55fafc4a9b0a075e5eb729c
+      internalID: -4567865966334546342
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Jump_14
+      rect:
+        serializedVersion: 2
+        x: 233
+        y: 70
+        width: 73
+        height: 208
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f8725498faae0b4182b854df45818c1
+      internalID: 3735166955353601439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: f30d92884f7fc8246a6a84ce7667ee49
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
