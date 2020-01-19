@@ -21,9 +21,9 @@ namespace LAI
         {
             if (finder.mNodes.Count == 0)
             {
-                if (finder.gameWorld == null)
-                    finder.gameWorld = agent.GetWorld();
-                finder.Initialize(ref PlatformsToWander);
+                if (finder.GameWorld == null)
+                    finder.GameWorld = agent.GetWorld();
+                //finder.Initialize(ref PlatformsToWander);
             }
 
             Vector3 final = PlatformsToWander[PlatformsToWander.Count - 1].transform.position;

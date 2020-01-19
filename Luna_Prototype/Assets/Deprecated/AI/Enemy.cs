@@ -69,7 +69,7 @@ public class Enemy : Character
         world.AddAgent(this);
         mSteeringModule.SetAgent(this);
 
-        pathFinder.gameWorld = world;
+        pathFinder.GameWorld = world;
         pathFinder.Initialize();
 
         if (mWeapon != null)

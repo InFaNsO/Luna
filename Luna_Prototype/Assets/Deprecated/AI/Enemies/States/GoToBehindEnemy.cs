@@ -24,12 +24,12 @@ namespace LAI
         {
             if (finder.mNodes.Count == 0)
             {
-                if (finder.gameWorld == null)
-                    finder.gameWorld = agent.GetWorld();
+                if (finder.GameWorld == null)
+                    finder.GameWorld = agent.GetWorld();
                 if (agent.platformsAccesible.Count == 0)
                     finder.Initialize();
                 else
-                    finder.Initialize(ref agent.platformsAccesible);
+                    finder.Initialize();//ref agent.platformsAccesible);
             }
 
             float distance = 100.0f;

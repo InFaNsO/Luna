@@ -6,9 +6,16 @@ namespace LAI
 {
     public class Grid_PathFinding
     {
+        public World GameWorld = new World();
+        int playerNodeId = -1;
+
         public class Node
         {
-            public Vector3 coord = new Vector3();
+            public int id = -1;
+            public Platform platform;
+            public Vector3 pos = new Vector3();
+            public List<int> childrenID = new List<int>();
+
             public float gCost = 0.0f;
             public float hCost = 0.0f;
             public bool open = false;
@@ -16,418 +23,186 @@ namespace LAI
             public bool blocked = false;
 
             public int parentID = -1;
+        }
+        class Plat
+        {
+            public Node Left = new Node();
+            public Node Right = new Node();
 
-            public List<int> children = new List<int>();
-
-            public Node(Node n)
+            public Plat(Node l, Node r)
             {
-                coord = n.coord;
-                gCost = n.gCost;
-                hCost = n.hCost;
-                open = n.open;
-                closed = n.closed;
-                blocked = n.blocked;
-                children = new List<int>();
-                children = n.children;
-            }
-            public Node()
-            {
-
+                Left = l;
+                Right = r;
             }
         }
-
-        public class Platform_Line
-        {
-            public Node left = new Node();
-            public int leftID = -1;
-            public Node right = new Node();
-            public int rightID = -1;
-        }
-
-        private class IntersectionData
-        {
-            public int platformID = -1;
-            public Vector3 coordinate = new Vector3();
-        }
-
-        public List<int> PlatformsAccecible = new List<int>();
-        public int groundID = -1;
-
 
         public List<Node> mNodes = new List<Node>();
-        [SerializeField] public World gameWorld;
-        //private LayerMask mask;
-        //private List<LayerMask> toBlock = new List<LayerMask>();          Could be used to set spme paths as blocked
-
-        private List<Platform_Line> platformNodes = new List<Platform_Line>();
-        private List<Platform> platforms = new List<Platform>();
-
-        private List<IntersectionData> platformIntersectionData = new List<IntersectionData>();
+        List<Plat> mPlats = new List<Plat>();
 
         private List<Vector3> openList = new List<Vector3>();
         private List<Vector3> closedList = new List<Vector3>();
 
-        int PlayeNodeID = -1;
-
-        [SerializeField] private float jumpHeight = 3.0f;
-
-        private float sgn(float f)
+        public void Initialize(float length = 3.0f)
         {
-            if (f < 0.0f)
-                return -1.0f;
-            else
-                return 1.0f;
+            Generate(length);
         }
-
-        private void CheckInterseactions(Platform_Line self, Vector3 coord)
+        void ResetNodes()
         {
-            bool isLeftCoord = false;
-            if (coord == self.left.coord)
-                isLeftCoord = true;
-
-
-            for (int i = 0; i < platformNodes.Count; ++i)
+            for(int i = 0; i < mNodes.Count; ++i)
             {
-                if (platformNodes[i].left.coord == self.left.coord)
-                {
-                    //its the same so go to next one
-                    continue;
-                }
-
-                IntersectionData id = new IntersectionData();
-                id.platformID = i;
-
-                float lenLefSq = (platformNodes[i].left.coord - coord).sqrMagnitude;
-                float lenRigSq = (platformNodes[i].right.coord - coord).sqrMagnitude;
-
-                if (lenLefSq < (jumpHeight * jumpHeight) && lenRigSq < (jumpHeight * jumpHeight))    //the platform is inside the circle
-                {
-                    if (platformNodes[i].left.coord.y > coord.y)     //check if above then leave if below then add
-                        continue;   //above
-                    else
-                    {
-                        float difL = platformNodes[i].left.coord.x - coord.x;
-                        float difR = platformNodes[i].right.coord.x - coord.x;
-                        if (coord == self.left.coord)
-                            if (difL < difR && difL < 0.0f) //add left
-                            { id.coordinate = new Vector3(platformNodes[i].left.coord.x + 0.01f, platformNodes[i].left.coord.y, platformNodes[i].left.coord.z); platformIntersectionData.Add(id); }
-                            else //add right
-                            { id.coordinate = new Vector3(platformNodes[i].right.coord.x - 0.01f, platformNodes[i].right.coord.y, platformNodes[i].right.coord.z); platformIntersectionData.Add(id); }
-                        else    //get the closest point on its right
-                            if (difL < difR && difL > 0.0f) //add left
-                        { id.coordinate = new Vector3(platformNodes[i].left.coord.x + 0.01f, platformNodes[i].left.coord.y, platformNodes[i].left.coord.z); platformIntersectionData.Add(id); }
-                        else //add right
-                        { id.coordinate = new Vector3(platformNodes[i].right.coord.x - 0.01f, platformNodes[i].right.coord.y, platformNodes[i].right.coord.z); }
-                    }
-                    continue;
-                }
-
-                //left side is inside
-                if (lenLefSq < jumpHeight * jumpHeight)
-                {
-                    if (platformNodes[i].left.coord.y > coord.y)     //ITS ABOVE
-                    {
-                        //if the platforms left node is on its right then it is a node 
-                        if (platformNodes[i].left.coord.x > coord.x)
-                        {
-                            //it is add
-                            Vector3 jpN = platformNodes[i].left.coord;
-                            jpN.x += 0.1f;
-                            id.coordinate = jpN;
-                            platformIntersectionData.Add(id);
-                        }
-                        continue;
-                    }
-
-                    if (isLeftCoord)
-                    {
-                        //Its Below
-                        if (platformNodes[i].left.coord.x < coord.x)
-                        {
-                            //it is add
-                            Vector3 jpN = platformNodes[i].left.coord;
-                            jpN.x += 0.1f;
-                            id.coordinate = jpN;
-                            platformIntersectionData.Add(id);
-                        }
-                    }
-                    else
-                    {
-                        //Its Below
-                        if (platformNodes[i].left.coord.x > coord.x)
-                        {
-                            //it is add
-                            Vector3 jpN = platformNodes[i].left.coord;
-                            jpN.x += 0.1f;
-                            id.coordinate = jpN;
-                            platformIntersectionData.Add(id);
-                        }
-
-                    }
-                    continue;
-                }
-                //right side is inside
-                if (lenRigSq < jumpHeight * jumpHeight)
-                {
-                    if (platformNodes[i].right.coord.y > coord.y)     //ITS ABOVE
-                    {
-                        //if the platforms right node is on its left then it is a node 
-                        if (platformNodes[i].right.coord.x < coord.x)
-                        {
-                            //it is add
-                            Vector3 jpN = platformNodes[i].right.coord;
-                            jpN.x += 0.1f;
-                            id.coordinate = jpN;
-                            platformIntersectionData.Add(id);
-
-                        }
-                        continue;
-                    }
-                    if (isLeftCoord)                                            //Its Below
-                    {
-                        if (platformNodes[i].right.coord.x < coord.x)
-                        {
-                            //it is add
-                            Vector3 jpN = platformNodes[i].left.coord;
-                            jpN.x += 0.1f;
-                            id.coordinate = jpN;
-                            platformIntersectionData.Add(id);
-                        }
-                    }
-                    else
-                    {
-                        if (platformNodes[i].right.coord.x > coord.x)
-                        {
-                            //it is add
-                            Vector3 jpN = platformNodes[i].left.coord;
-                            jpN.x += 0.1f;
-                            id.coordinate = jpN;
-                            platformIntersectionData.Add(id);
-                        }
-                    }
-                    continue;
-                }
-
-
-                if (platformNodes[i].left.coord.y > coord.y - jumpHeight && platformNodes[i].left.coord.y < coord.y)
-                {
-                    //the platform might be in the range but the points are outside of the circle
-                    if (platformNodes[i].left.coord.x < coord.x)
-                    {
-                        if (platformNodes[i].right.coord.x > coord.x)
-                        {
-                            //the platform is in the range find the point
-                            float x2 = Mathf.Sqrt((jumpHeight * jumpHeight) - ((platformNodes[i].left.coord.y - coord.y) * (platformNodes[i].left.coord.y - coord.y))) + coord.x;
-
-                            Vector3 jpn = platformNodes[i].right.coord;
-                            jpn.x = x2;
-                            id.coordinate = jpn;
-                            platformIntersectionData.Add(id);
-                            continue;
-
-                        }
-                    }
-                }
-            }
-        }
-
-        private void GenerateJumpPoints()
-        {
-            //check intersection and get all the points and connect them
-            for (int i = 0; i < platformNodes.Count; ++i)
-            {
-                //left
-                CheckInterseactions(platformNodes[i], platformNodes[i].left.coord);
-
-                for (int j = 0; j < platformIntersectionData.Count; ++j)
-                {
-                    Node n = new Node();
-                    n.coord = platformIntersectionData[j].coordinate;
-                    float dX = (n.coord.x - platformNodes[i].left.coord.x) * 2.0f;
-                    n.coord.x -= dX;
-                    mNodes.Add(n);
-
-                    platformNodes[i].left.children.Add(mNodes.Count - 1);
-                    platformNodes[platformIntersectionData[j].platformID].left.children.Add(mNodes.Count - 1);
-                    platformNodes[platformIntersectionData[j].platformID].right.children.Add(mNodes.Count - 1);
-
-                    mNodes[mNodes.Count - 1].children.Add(platformNodes[i].leftID);
-                    mNodes[mNodes.Count - 1].children.Add(platformNodes[platformIntersectionData[j].platformID].leftID);
-                    mNodes[mNodes.Count - 1].children.Add(platformNodes[platformIntersectionData[j].platformID].rightID);
-                }
-
-                platformIntersectionData.Clear();
-
-                //repeat for right
-                CheckInterseactions(platformNodes[i], platformNodes[i].right.coord);
-
-                for (int j = 0; j < platformIntersectionData.Count; ++j)
-                {
-                    Node n = new Node();
-                    n.coord = platformIntersectionData[j].coordinate;
-                    mNodes.Add(n);
-
-                    platformNodes[i].right.children.Add(mNodes.Count - 1);
-                    platformNodes[platformIntersectionData[j].platformID].left.children.Add(mNodes.Count - 1);
-                    platformNodes[platformIntersectionData[j].platformID].right.children.Add(mNodes.Count - 1);
-
-                    mNodes[mNodes.Count - 1].children.Add(platformNodes[i].rightID);
-                    mNodes[mNodes.Count - 1].children.Add(platformNodes[platformIntersectionData[j].platformID].leftID);
-                    mNodes[mNodes.Count - 1].children.Add(platformNodes[platformIntersectionData[j].platformID].rightID);
-                }
-                platformIntersectionData.Clear();
-            }
-        }
-
-        private void GetAllPLatforms()
-        {
-            //platforms
-            if(PlatformsAccecible.Count == 0)
-                for (int i = 0; i < gameWorld.mPlatforms.Count; ++i)
-                {
-                    Platform_Line pl = new Platform_Line();
-                    pl.left.coord = gameWorld.mPlatforms[i].transform.position;
-                    pl.right.coord = gameWorld.mPlatforms[i].transform.position;
-
-                    pl.left.coord.x -= gameWorld.mPlatforms[i].Width * 0.5f;
-                    pl.right.coord.x += gameWorld.mPlatforms[i].Width * 0.5f;
-
-                    pl.left.coord.y += gameWorld.mPlatforms[i].Height * 0.5f;
-                    pl.right.coord.y += gameWorld.mPlatforms[i].Height * 0.5f;
-
-                    mNodes.Add(pl.left);
-                    pl.leftID = mNodes.Count - 1;
-                    mNodes.Add(pl.right);
-                    pl.rightID = mNodes.Count - 1;
-
-                    //add each other as a child
-                    mNodes[pl.leftID].children.Add(pl.rightID);
-                    mNodes[pl.rightID].children.Add(pl.leftID);
-
-                    platformNodes.Add(pl);
-                }
-            else
-                for (int i = 0; i < PlatformsAccecible.Count; ++i)
-                {
-                    Platform_Line pl = new Platform_Line();
-                    pl.left.coord = gameWorld.mPlatforms[PlatformsAccecible[i]].transform.position;
-                    pl.right.coord = gameWorld.mPlatforms[PlatformsAccecible[i]].transform.position;
-
-                    pl.left.coord.x -= gameWorld.mPlatforms[PlatformsAccecible[i]].Width * 0.5f;
-                    pl.right.coord.x += gameWorld.mPlatforms[PlatformsAccecible[i]].Width * 0.5f;
-
-                    pl.left.coord.y += gameWorld.mPlatforms[PlatformsAccecible[i]].Height * 0.5f;
-                    pl.right.coord.y += gameWorld.mPlatforms[PlatformsAccecible[i]].Height * 0.5f;
-
-                    mNodes.Add(pl.left);
-                    pl.leftID = mNodes.Count - 1;
-                    mNodes.Add(pl.right);
-                    pl.rightID = mNodes.Count - 1;
-
-                    //add each other as a child
-                    mNodes[pl.leftID].children.Add(pl.rightID);
-                    mNodes[pl.rightID].children.Add(pl.leftID);
-
-                    platformNodes.Add(pl);
-                }
-
-            //ground
-            if(groundID == -1)
-                for (int i = 0; i < gameWorld.mGround.Count; ++i)
-            {
-                Platform_Line pl = new Platform_Line();
-                pl.left.coord = gameWorld.mGround[i].transform.position;
-                pl.right.coord = gameWorld.mGround[i].transform.position;
-
-                pl.left.coord.x -= gameWorld.mGround[i].Width * 0.5f;
-                pl.right.coord.x += gameWorld.mGround[i].Width * 0.5f;
-
-                pl.left.coord.y += gameWorld.mGround[i].Height * 0.5f;
-                pl.right.coord.y += gameWorld.mGround[i].Height * 0.5f;
-
-                mNodes.Add(pl.left);
-                pl.leftID = mNodes.Count - 1;
-                mNodes.Add(pl.right);
-                pl.rightID = mNodes.Count - 1;
-
-                //add each other as a child
-                mNodes[pl.leftID].children.Add(pl.rightID);
-                mNodes[pl.rightID].children.Add(pl.leftID);
-
-                platformNodes.Add(pl);
-            }
-            else
-            {
-                Platform_Line pl = new Platform_Line();
-                pl.left.coord = gameWorld.mGround[groundID].transform.position;
-                pl.right.coord = gameWorld.mGround[groundID].transform.position;
-
-                pl.left.coord.x -= gameWorld.mGround[groundID].Width * 0.5f;
-                pl.right.coord.x += gameWorld.mGround[groundID].Width * 0.5f;
-
-                pl.left.coord.y += gameWorld.mGround[groundID].Height * 0.5f;
-                pl.right.coord.y += gameWorld.mGround[groundID].Height * 0.5f;
-
-                mNodes.Add(pl.left);
-                pl.leftID = mNodes.Count - 1;
-                mNodes.Add(pl.right);
-                pl.rightID = mNodes.Count - 1;
-
-                //add each other as a child
-                mNodes[pl.leftID].children.Add(pl.rightID);
-                mNodes[pl.rightID].children.Add(pl.leftID);
-
-                platformNodes.Add(pl);
-            }
-            GenerateJumpPoints();
-        }
-
-        public void Initialize()
-        {
-            GetAllPLatforms();
-        }
-        public void Initialize(ref List<Platform> platforms)
-        {
-            for (int i = 0; i < platforms.Count; ++i)
-            {
-                Platform_Line pl = new Platform_Line();
-                pl.left.coord = platforms[i].transform.position;
-                pl.right.coord = platforms[i].transform.position;
-
-                pl.left.coord.x -= platforms[i].Width * 0.5f;
-                pl.right.coord.x += platforms[i].Width * 0.5f;
-
-                pl.left.coord.y += platforms[i].Height * 0.5f;
-                pl.right.coord.y += platforms[i].Height * 0.5f;
-
-                mNodes.Add(pl.left);
-                pl.leftID = mNodes.Count - 1;
-                mNodes.Add(pl.right);
-                pl.rightID = mNodes.Count - 1;
-
-                //add each other as a child
-                mNodes[pl.leftID].children.Add(pl.rightID);
-                mNodes[pl.rightID].children.Add(pl.leftID);
-
-                platformNodes.Add(pl);
-            }
-
-            GenerateJumpPoints();
-        }
-
-        private void Reset()
-        {
-            for (int i = 0; i < mNodes.Count; ++i)
-            {
-                mNodes[i].closed = false;
-                mNodes[i].open = false;
                 mNodes[i].gCost = 0.0f;
                 mNodes[i].hCost = 0.0f;
+                mNodes[i].open = false;
+                mNodes[i].closed = false;
                 mNodes[i].parentID = -1;
             }
-
             openList.Clear();
             closedList.Clear();
+        }
+
+        void Generate(float length)
+        {
+            //platform nodes
+            for (int i = 0; i < GameWorld.mPlatforms.Count; ++i)
+            {
+                Node left = new Node();
+                left.pos = GameWorld.mPlatforms[i].transform.position;
+                left.pos.x -= GameWorld.mPlatforms[i].Width * 0.5f;
+                left.pos.y += GameWorld.mPlatforms[i].Height;
+                left.id = mNodes.Count;
+                left.platform = GameWorld.mPlatforms[i];
+                mNodes.Add(left);
+
+                Node right = new Node();
+                right.pos = left.pos;
+                right.pos.x += GameWorld.mPlatforms[i].Width;
+                right.id = mNodes.Count;
+                right.platform = left.platform;
+                mNodes.Add(right);
+
+                right.childrenID.Add(left.id);
+                left.childrenID.Add(right.id);
+                mPlats.Add(new Plat(left, right));
+
+                
+
+            }
+            //Jump Nodes
+            for (int i = 0; i < mPlats.Count; ++i)
+            {
+                for(int j = 0; j < mPlats.Count; ++j)
+                {
+                    if (i == j)
+                        continue;
+
+                    var points = IntersectionPoint(mPlats[j].Left.pos, mPlats[j].Right.pos, mPlats[i].Left.pos, length);
+                    if(points.Count > 0)
+                    {
+                        //add the points as nodes and mark children
+                        for(int k = 0; i < points.Count; ++k)
+                        {
+                            if(points[k].x < mPlats[i].Left.pos.x)
+                            {
+                                Node n = new Node();
+                                n.pos = points[k];
+                                n.id = mNodes.Count;
+                                n.platform = GameWorld.mPlatforms[j];
+                                n.childrenID.Add(mPlats[i].Left.id);
+                                n.childrenID.Add(mPlats[j].Left.id);
+                                n.childrenID.Add(mPlats[j].Right.id);
+                                mNodes.Add(n);
+                                continue;
+                            }
+                        }
+                        continue;
+                    }
+                    points = IntersectionPoint(mPlats[j].Left.pos, mPlats[j].Right.pos, mPlats[i].Right.pos, length);
+                    if(points.Count > 0)
+                    {
+                        for (int k = 0; i < points.Count; ++k)
+                        {
+                            if (points[k].x > mPlats[i].Right.pos.x)
+                            {
+                                Node n = new Node();
+                                n.pos = points[k];
+                                n.id = mNodes.Count;
+                                n.platform = GameWorld.mPlatforms[j];
+                                n.childrenID.Add(mPlats[i].Right.id);
+                                n.childrenID.Add(mPlats[j].Left.id);
+                                n.childrenID.Add(mPlats[j].Right.id);
+                                mNodes.Add(n);
+                                continue;
+                            }
+                        }
+                    }
+                }
+            }
+
+            //Connect other jumpnodes that belong in the platform
+            for(int i = 0; i < mNodes.Count; ++i)
+            {
+                for(int j = 0; j < mNodes.Count; ++j)
+                {
+                    if (i == j)
+                        continue;
+
+                    if (mNodes[i].platform != mNodes[j].platform)
+                    {
+                        continue;
+                    }
+
+                    bool existAsChild = false;
+                    //if the node exist as its child already leave it
+                    for(int k = 0; k < mNodes[i].childrenID.Count; ++k)
+                    {
+                        if(mNodes[i].childrenID[k] == mNodes[j].id)
+                        {
+                            existAsChild = true;
+                            break;
+                        }
+                    }
+                    if (existAsChild)
+                        continue;
+                    //now add
+                    mNodes[i].childrenID.Add(mNodes[j].id);
+                    mNodes[j].childrenID.Add(mNodes[i].id);
+                }
+            }
+
+        }
+
+        public List<Vector3> IntersectionPoint(Vector3 p1, Vector3 p2, Vector3 center, float radius)
+        {
+            Vector3 dp = new Vector3();
+            List<Vector3> sect = new List<Vector3>();
+            float a, b, c;
+            float bb4ac;
+            float mu1;
+            float mu2;
+
+            //  get the distance between X and Z on the segment
+            dp.x = p2.x - p1.x;
+            dp.z = p2.z - p1.z;
+            //   I don't get the math here
+            a = dp.x * dp.x + dp.z * dp.z;
+            b = 2 * (dp.x * (p1.x - center.x) + dp.z * (p1.z - center.z));
+            c = center.x * center.x + center.z * center.z;
+            c += p1.x * p1.x + p1.z * p1.z;
+            c -= 2 * (center.x * p1.x + center.z * p1.z);
+            c -= radius * radius;
+            bb4ac = b * b - 4 * a * c;
+            if (Mathf.Abs(a) < float.Epsilon || bb4ac < 0)
+            {
+                //  line does not intersect
+                return new List<Vector3>();
+            }
+            mu1 = (-b + Mathf.Sqrt(bb4ac)) / (2 * a);
+            mu2 = (-b - Mathf.Sqrt(bb4ac)) / (2 * a);
+            //sect = new Vector3[2];
+            sect.Add(new Vector3(p1.x + mu1 * (p2.x - p1.x), 0, p1.z + mu1 * (p2.z - p1.z)));
+            sect.Add(new Vector3(p1.x + mu2 * (p2.x - p1.x), 0, p1.z + mu2 * (p2.z - p1.z)));
+
+            return sect;
         }
 
         public int GetNearestNodeID(Vector3 pos)
@@ -435,11 +210,11 @@ namespace LAI
             int nID = 0;
             Node nearest = mNodes[nID];
 
-            float minDisSq = (pos - nearest.coord).sqrMagnitude;
+            float minDisSq = (pos - nearest.pos).sqrMagnitude;
 
             for (int i = 1; i < mNodes.Count; ++i)
             {
-                float disSq = (pos - mNodes[i].coord).sqrMagnitude;
+                float disSq = (pos - mNodes[i].pos).sqrMagnitude;
                 if (disSq < minDisSq)
                 {
                     minDisSq = disSq;
@@ -455,7 +230,7 @@ namespace LAI
         {
             for (int i = 0; i < mNodes.Count; ++i)
             {
-                if (pos == mNodes[i].coord)
+                if (pos == mNodes[i].pos)
                 {
                     return i;
                 }
@@ -464,19 +239,19 @@ namespace LAI
             return -1;
         }
 
-        void UninformedChecker(int tempID, int parentID)
+        void UninformedChecker(Node tempID, int parentID)
         {
-            if (!mNodes[tempID].open && !mNodes[tempID].closed)
+            if (!tempID.open && !tempID.closed)
             {
-                mNodes[tempID].open = true;
-                openList.Add(mNodes[tempID].coord);
-                mNodes[tempID].parentID = parentID;
+                tempID.open = true;
+                openList.Add(tempID.pos);
+                tempID.parentID = parentID;
             }
         }
 
         private bool FindPath(Vector3 enemyPos)     //uses BFS can be switched to a*
         {
-            Reset();
+            ResetNodes();
             openList.Add(enemyPos);
 
             mNodes[GetNearestNodeID(enemyPos)].open = true;
@@ -487,15 +262,15 @@ namespace LAI
                 int current = GetNearestNodeID(openList[0]);
                 openList.RemoveAt(0);
 
-                if (current == PlayeNodeID)
+                if (current == playerNodeId)
                     found = true;
                 else
-                    for (int i = 0; i < mNodes[current].children.Count; ++i)
+                    for (int i = 0; i < mNodes[current].childrenID.Count; ++i)
                     {
-                        UninformedChecker(mNodes[current].children[i], current);
+                        UninformedChecker(mNodes[mNodes[current].childrenID[i]], current);
                     }
 
-                closedList.Add(mNodes[current].coord);
+                closedList.Add(mNodes[current].pos);
                 mNodes[current].closed = true;
             }
 
@@ -517,7 +292,7 @@ namespace LAI
             while (current != start)
             {
                 currentID = mNodes[currentID].parentID;
-                current = mNodes[currentID].coord;
+                current = mNodes[currentID].pos;
                 path.Add(current);
             }
 
@@ -526,17 +301,17 @@ namespace LAI
             return path;
         }
 
-        // Update is called once per frame
         public void Calculate(Vector3 pos)
         {
-            PlayeNodeID = GetNearestNodeID(gameWorld.mPlayer.transform.position);
+            playerNodeId = GetNearestNodeID(GameWorld.mPlayer.transform.position);
             FindPath(pos);
         }
-
-        public void Calculate(Vector3 start, Vector3 end)
+        public void Calculate(Vector3 Start, Vector3 end)
         {
-            PlayeNodeID = GetNodeIDFrom(end);
-            FindPath(start);
+            playerNodeId = GetNearestNodeID(GameWorld.mPlayer.transform.position);
+            int endNodeId = GetNearestNodeID(end);
+            FindPath(mNodes[endNodeId].pos);
         }
+
     }
 }

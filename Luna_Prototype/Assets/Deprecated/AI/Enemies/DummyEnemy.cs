@@ -27,13 +27,13 @@ public class DummyEnemy : Enemy
         for (int i = 0; i < pathFinder.mNodes.Count; ++i)
         {
             Gizmos.color = Color.magenta;
-            Gizmos.DrawWireSphere(pathFinder.mNodes[i].coord, 0.3f);
+            Gizmos.DrawWireSphere(pathFinder.mNodes[i].pos, 0.3f);
 
             Gizmos.color = Color.cyan;
 
-            for(int j = 0; j < pathFinder.mNodes[i].children.Count; ++j)
+            for(int j = 0; j < pathFinder.mNodes[i].childrenID.Count; ++j)
             {
-                Gizmos.DrawLine(pathFinder.mNodes[i].coord, pathFinder.mNodes[pathFinder.mNodes[i].children[j]].coord);
+                Gizmos.DrawLine(pathFinder.mNodes[i].pos, pathFinder.mNodes[pathFinder.mNodes[i].childrenID[j]].pos);
             }
         }
 

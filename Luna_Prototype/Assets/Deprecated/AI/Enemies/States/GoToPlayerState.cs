@@ -70,6 +70,7 @@ namespace LAI
                 finder.Calculate(agent.transform.position);
                 Path.Clear();
                 Path = finder.GetPath();
+                Path.Add(agent.transform.position);
                 agent.SetDestination(Path[0]);
                 Path.RemoveAt(0);
                 agent.SetFinalDestination(Path[Path.Count - 1]);
@@ -85,6 +86,7 @@ namespace LAI
                 finder.Calculate(agent.transform.position);
                 Path.Clear();
                 Path = finder.GetPath();
+                Path.Add(agent.transform.position);
 
                 if (Path.Count > 0)
                 {
