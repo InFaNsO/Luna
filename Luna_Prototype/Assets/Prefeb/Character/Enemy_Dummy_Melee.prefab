@@ -36,8 +36,8 @@ Transform:
   m_LocalPosition: {x: -4.43, y: 0.41, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4482791700852598562}
   - {fileID: 4059065115599568495}
+  - {fileID: 4482791700852598562}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -122,6 +122,7 @@ MonoBehaviour:
   mReceivedHazardDuration: 0
   isGrounded: 0
   mElement: {fileID: 0}
+  mAttackMomentumPos: {fileID: 0}
   mWeapon: {fileID: 3806285672904325702}
   mIsDropping: 0
   mDropPrefbs: {fileID: 0}
@@ -307,7 +308,7 @@ Transform:
   m_LocalScale: {x: 1, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 1382053527553314527}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1199981739829267806
 SpriteRenderer:
@@ -364,11 +365,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1382053527553314527}
     m_Modifications:
-    - target: {fileID: 5913526906705443303, guid: 5cb4447c125519840808fe0cfa5ea2be,
-        type: 3}
-      propertyPath: m_Name
-      value: Weapon_hummer
-      objectReference: {fileID: 0}
     - target: {fileID: 8064114535432841098, guid: 5cb4447c125519840808fe0cfa5ea2be,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -407,7 +403,7 @@ PrefabInstance:
     - target: {fileID: 8064114535432841098, guid: 5cb4447c125519840808fe0cfa5ea2be,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8064114535432841098, guid: 5cb4447c125519840808fe0cfa5ea2be,
         type: 3}
@@ -423,6 +419,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913526906705443303, guid: 5cb4447c125519840808fe0cfa5ea2be,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon_hummer
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5cb4447c125519840808fe0cfa5ea2be, type: 3}

@@ -200,6 +200,7 @@ public class Weapon : MonoBehaviour
     public void WeaponReset()
     {
         mAnimator.SetBool("IsReseting", true);
+        mAnimator.SetInteger("ToNextCombo", -1);
         foreach (var move in mMoves)
         {
             move.Reset();
