@@ -37,8 +37,8 @@ public class PlayerAnimatorController : MonoBehaviour
     {
         float currentVelY = rb.velocity.y;
         float currentAccelation = (currentVelY - mLastYVel);
-        Core.Debug.Log("" + currentAccelation);
-        if (currentAccelation > mLastAccelration && currentVelY > 0.0f)
+       
+        if (currentAccelation > 0.0f && currentVelY > 0.0f)
         {
             Core.Debug.Log(" Jump !!!!!!!!!!!!!!!!!");
             mAnimator.SetBool("IsDoubleJump", true);
