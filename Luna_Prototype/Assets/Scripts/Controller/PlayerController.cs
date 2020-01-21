@@ -9,6 +9,7 @@ public class PlayerController : MonoBehaviour
     Player player;
     BoxCollider2D playerCollider;
     Rigidbody2D rb;
+    Stamina stamina;
 
     [SerializeField]
     bool isPlayerFacingRight;
@@ -36,6 +37,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     float dashDuration = 0.14f;
     float dashCounter;
+    bool isDashing;
 
     Inventory inventory;
 
@@ -45,6 +47,7 @@ public class PlayerController : MonoBehaviour
         controls = new InputController();
         playerCollider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
+        stamina = GetComponent<Stamina>();
 
         controls.PlayerControl.Jump.performed += _jump => Jump();
         controls.PlayerControl.Attack.performed += _attack => Attack();
@@ -157,7 +160,7 @@ public class PlayerController : MonoBehaviour
 
     public void Dash()
     {
-        if(player.Dodge())
+        if(stamina.IsStaminaSufficient() && (dashCounter >= dashDuration))
         {
             //if(isPlayerFacingRight)
             //    rb.AddForce(new Vector2(player.GetIFrameDistance(), 0f));
@@ -165,8 +168,8 @@ public class PlayerController : MonoBehaviour
             //    rb.AddForce(new Vector2(-player.GetIFrameDistance(), 0f));
             //transform.Translate(player.GetIFrameDistance() * Time.deltaTime, 0f, 0f);
             dashCounter = 0.0f;
+            stamina.UseStamina();
         }
-
     }
 
     void DashMovement()
@@ -174,6 +177,11 @@ public class PlayerController : MonoBehaviour
         if(dashCounter < dashDuration)
         {
             transform.Translate(player.GetDashSpeed() * Time.deltaTime, 0f, 0f);
+            isDashing = true;
+        }
+        else
+        {
+            isDashing = false;
         }
         if (dashCounter < 5.0f)
             dashCounter += Time.deltaTime;
@@ -234,5 +242,23 @@ public class PlayerController : MonoBehaviour
     private void OnDisable()
     {
         controls.PlayerControl.Disable();
+    }
+
+    public bool IsGrounded()
+    {
+        return isGrounded;
+    }
+
+    public bool IsMoving()
+    {
+        if (Mathf.Abs(controls.PlayerControl.Move.ReadValue<float>()) > 0.00f)
+            return true;
+        else
+            return false;
+    }
+
+    public bool IsDashing()
+    {
+        return isDashing;
     }
 }

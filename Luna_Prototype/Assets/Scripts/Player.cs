@@ -21,14 +21,7 @@ public class Player : Character
     private float mIFrameDuration;
     [SerializeField]
     private float mDashSpeed = 14f;
-    [SerializeField]
-    private int mLaserDamage;
     private bool isDouleJumpEnabled;
-
-    public Laser laserObj;
-    private float laserDuration;
-    private Animator laserAnimator;
-
 
     [SerializeField]
     private int mLevel;
@@ -49,7 +42,7 @@ public class Player : Character
 
     private ParryAttackable mParryAttackable;
 
-
+    public RuntimeAnimatorController mDefaultRunTimeAniamtorController;
     // Getter & Setter
     public Weapon CurrentWeapon { get { return mCurrentWeapon; } }
 
@@ -98,32 +91,17 @@ public class Player : Character
         return mDashSpeed;
     }
 
-    public void LaserAttack()
-    {
-        //if((mWeapon1 == null) && (mWeapon2 == null))
-        //{
-            laserObj.gameObject.SetActive(true);
-            laserObj.Fire();
-            laserAnimator.SetBool("IsShooting", true);
-            laserDuration = 1.0f;
-            mLaserDamage = 10;
-            //mCurrentHealth -= 10;
-            UpdateHealth(-mLaserDamage);                                                                     //|--- [Mingzhuo Zhang] Edit: use update health function instead, so we can update UI
-            Debug.Log("laser damage = 10, health - 10");
-        //}
-    }
-
     public void ObtainNewWeapon(Weapon newWeapon)
     {
         if(mWeapon1 == null)
         {
             mWeapon1 = newWeapon;
-            mCurrentWeapon = mWeapon1;
+            EquipWeapon(mWeapon1);
         }
         else if(mWeapon2 == null)
         {
             mWeapon2 = newWeapon;
-            mCurrentWeapon = mWeapon2;
+            EquipWeapon(mWeapon2);
         }
     }
 
@@ -141,7 +119,7 @@ public class Player : Character
                 mWeapon1 = null;
                 mCurrentWeapon = null;
                 if (mWeapon2 != null)                                                                                           //|--- [Mingzhuo Zhang] Edit: achieve automatic switch weapon
-                    mCurrentWeapon = mWeapon2;                                                                                  //|
+                    EquipWeapon(mWeapon2);                                                                                  //|
             }
             //                                 |  add a condition |                                                             //|--- [Mingzhuo Zhang] Edit: prevent trying drop NULL Weapon
             //                                 v                  v                                                             //|
@@ -154,7 +132,7 @@ public class Player : Character
                 mCurrentWeapon = null;
 
                 if (mWeapon1 != null)                                                                                           //|--- [Mingzhuo Zhang] Edit: achieve automatic switch weapon
-                    mCurrentWeapon = mWeapon1;                                                                                  //|
+                    EquipWeapon(mWeapon1);                                                                                  //|
             }
         }
         else
@@ -169,14 +147,14 @@ public class Player : Character
         {
             if(mWeapon2 != null)
             {
-                mCurrentWeapon = mWeapon2;
+                EquipWeapon(mWeapon2);
                 Debug.Log("Switch to Weapon 2");
             }
         }else if(mCurrentWeapon == mWeapon2)
         {
             if (mWeapon1 != null)
             {
-                mCurrentWeapon = mWeapon1;
+                EquipWeapon(mWeapon1);
                 Debug.Log("Switch to Weapon 1");
             }
         }
@@ -245,13 +223,13 @@ public class Player : Character
         {
             if(mWeapon1 != null)
             {
-                mCurrentWeapon = mWeapon1;
+                EquipWeapon(mWeapon1);
                 Debug.Log("Weapon 1 equipped");
                 mCurrentWeapon.Attack(isGrounded);
             }
             else
             {
-                mCurrentWeapon = mWeapon2;
+                EquipWeapon(mWeapon2);
                 Debug.Log("Weapon 2 equipped");
                 mCurrentWeapon.Attack(isGrounded);
             }
@@ -277,9 +255,9 @@ public class Player : Character
         mParryAttackable = GetComponent<ParryAttackable>();
         Assert.IsNotNull(mParryAttackable, "[Player] _ParryAttackable is null");
 
-        mLaserDamage = 0;
+        mDefaultRunTimeAniamtorController = GetComponent<Animator>().runtimeAnimatorController;
+
         isDouleJumpEnabled = true;
-        laserObj.gameObject.SetActive(false);
 
         mRequiredExp = 10;
         mCurrentExp = 0;
@@ -296,7 +274,6 @@ public class Player : Character
             mWeapon2.Picked(gameObject, mWeaponPosition.transform.position);                     //|    // second argument should be the [weapon position] as a individual variable in future
         }                                                                                   //|
                                                                                             //|
-        laserAnimator = laserObj.GetComponentInChildren<Animator>();
         //----------------------------------------------------------------------------------//|
         //- End Edit -----------------------------------------------------------------------//|
         //----------------------------------------------------------------------------------//|
@@ -315,11 +292,6 @@ public class Player : Character
     public void Update()
     {
         base.Update();
-        laserDuration -= Time.deltaTime;
-        if(laserDuration <= 0)
-        {
-            laserObj.gameObject.SetActive(false);
-        }
         ExpCheck();
     }
 
@@ -360,17 +332,16 @@ public class Player : Character
             mWeapon1 = newWeapon;                                                       //|
             mWeapon1.Picked(gameObject, mWeaponPosition.transform.position);                 //|
             if (mCurrentWeapon == null)                                                 //|
-                mCurrentWeapon = mWeapon1;                                              //|
+                EquipWeapon(mWeapon1);                                              //|
         }                                                                               //|
         else if (mWeapon2 == null)                                                      //|--- [Mingzhuo Zhang] add a public function for pickUp weapon. This function will trigger by the collision of the weapon collider
         {                                                                               //|
             mWeapon2 = newWeapon;                                                       //|
             mWeapon2.Picked(gameObject, mWeaponPosition.transform.position);                 //|
             if (mCurrentWeapon == null)                                                 //|
-                mCurrentWeapon = mWeapon2;                                              //|
+                EquipWeapon(mWeapon2);                                              //|
         }                                                                               //|
                                                                                         //|
-        laserAnimator.SetBool("IsShooting", false);                                     //|
                                                                                         //|
     }                                                                                   //|
     //----------------------------------------------------------------------------------//|
@@ -391,6 +362,18 @@ public class Player : Character
         {                                                                               //|
             Die();                                                                      //|
         }                                                                               //|
+    }                                                                                   //|
+    //----------------------------------------------------------------------------------//|
+    //- End Edit -----------------------------------------------------------------------//|
+    //----------------------------------------------------------------------------------//|
+
+    //----------------------------------------------------------------------------------//|
+    //- Mingzhuo Zhang Edit ------------------------------------------------------------//|
+    //----------------------------------------------------------------------------------//|
+    private void EquipWeapon(Weapon nextWeapon)                                         //|
+    {                                                                                   //|
+        mCurrentWeapon = nextWeapon;                                                    //|--- [Mingzhuo Zhang] Add a function for equip weapon;
+        mCurrentWeapon.Equip(gameObject);                                               //|
     }                                                                                   //|
     //----------------------------------------------------------------------------------//|
     //- End Edit -----------------------------------------------------------------------//|
