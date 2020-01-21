@@ -30,7 +30,10 @@ public class PlayerAnimatorController : MonoBehaviour
 
         mAnimator.SetInteger("playerState", (int)mCurrentState);
 
-       
+        if(mPlayerController.IsDashing())
+            mAnimator.SetBool("IsDashing", true);
+
+
     }
 
     private void FixedUpdate()
@@ -54,6 +57,7 @@ public class PlayerAnimatorController : MonoBehaviour
             mAnimator.SetInteger("playerState", (int)PlayerAnimationState.PLAYER_IDLE);
             mAnimator.SetBool("IsOnGround", mPlayerController.IsGrounded());
             mAnimator.SetBool("IsDoubleJump", false);
+            mAnimator.SetBool("IsDashing", false);
         }
     }
 }
