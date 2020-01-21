@@ -19,6 +19,8 @@ namespace LAI
 
         public override void Enter(Enemy agent)
         {
+            agent.GetComponent<SpriteRenderer>().color = Color.yellow;
+
             agent.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
             finder = agent.pathFinder;
            // if (finder.mNodes.Count == 0)

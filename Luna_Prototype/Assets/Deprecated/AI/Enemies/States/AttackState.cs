@@ -17,7 +17,10 @@ namespace LAI
 
         public override void Enter(Enemy agent)
         {
-            if(canHeal)
+            agent.GetComponent<SpriteRenderer>().color = Color.red;
+
+
+            if (canHeal)
             {
                 float smalldistance = 100.0f;
                 for (int i = 0; i < agent.GetWorld().mAgents.Count; ++i)

@@ -6,7 +6,7 @@ namespace LAI
 {
     public class Grid_PathFinding
     {
-        public World GameWorld = new World();
+        public World GameWorld;
         int playerNodeId = -1;
 
         public class Node
@@ -24,7 +24,7 @@ namespace LAI
 
             public int parentID = -1;
         }
-        class Plat
+        public class Plat
         {
             public Node Left = new Node();
             public Node Right = new Node();
@@ -42,7 +42,7 @@ namespace LAI
         private List<Vector3> openList = new List<Vector3>();
         private List<Vector3> closedList = new List<Vector3>();
 
-        public void Initialize(float length = 3.0f)
+        public void Initialize(float length = 1.8f)
         {
             Generate(length);
         }
@@ -59,6 +59,16 @@ namespace LAI
             openList.Clear();
             closedList.Clear();
         }
+
+        private float CostFunction(Vector3 start, Vector3 current)
+        {
+            return Mathf.Abs(Vector3.SqrMagnitude(current - start));
+        }
+        private float HeuristicFunction(Vector3 current, Vector3 end)
+        {
+            return Mathf.Abs(Vector3.SqrMagnitude(end - current));
+        }
+
 
         void Generate(float length)
         {
@@ -90,52 +100,80 @@ namespace LAI
             //Jump Nodes
             for (int i = 0; i < mPlats.Count; ++i)
             {
-                for(int j = 0; j < mPlats.Count; ++j)
+                float xLeft = mPlats[i].Left.pos.x - length;
+                float xRight = mPlats[i].Right.pos.x + length;
+
+
+                List<Plat> possibleLeft = new List<Plat>();
+                List<Plat> possibleRight = new List<Plat>();
+
+                for (int j = 0; j < mPlats.Count; ++j)
                 {
                     if (i == j)
                         continue;
 
-                    var points = IntersectionPoint(mPlats[j].Left.pos, mPlats[j].Right.pos, mPlats[i].Left.pos, length);
-                    if(points.Count > 0)
+                    if (mPlats[j].Left.pos.x < xLeft && mPlats[j].Right.pos.x > xLeft && mPlats[j].Right.pos.y < mPlats[i].Right.pos.y)
                     {
-                        //add the points as nodes and mark children
-                        for(int k = 0; i < points.Count; ++k)
-                        {
-                            if(points[k].x < mPlats[i].Left.pos.x)
-                            {
-                                Node n = new Node();
-                                n.pos = points[k];
-                                n.id = mNodes.Count;
-                                n.platform = GameWorld.mPlatforms[j];
-                                n.childrenID.Add(mPlats[i].Left.id);
-                                n.childrenID.Add(mPlats[j].Left.id);
-                                n.childrenID.Add(mPlats[j].Right.id);
-                                mNodes.Add(n);
-                                continue;
-                            }
-                        }
-                        continue;
+                        possibleLeft.Add(mPlats[j]);
                     }
-                    points = IntersectionPoint(mPlats[j].Left.pos, mPlats[j].Right.pos, mPlats[i].Right.pos, length);
-                    if(points.Count > 0)
+                    if (mPlats[j].Left.pos.x < xRight && mPlats[j].Right.pos.x > xRight && mPlats[j].Right.pos.y < mPlats[i].Right.pos.y)
                     {
-                        for (int k = 0; i < points.Count; ++k)
+                        possibleRight.Add(mPlats[j]);
+                    }
+
+                }
+
+                //get the highest platform
+                int leftTop = -1;
+                for(int j = 0; j < possibleLeft.Count; ++j)
+                {
+                    if (leftTop == -1)
+                        leftTop = 0;
+                    else if(leftTop > -1)
+                    {
+                        if(possibleLeft[leftTop].Left.pos.y < possibleLeft[j].Left.pos.y)
                         {
-                            if (points[k].x > mPlats[i].Right.pos.x)
-                            {
-                                Node n = new Node();
-                                n.pos = points[k];
-                                n.id = mNodes.Count;
-                                n.platform = GameWorld.mPlatforms[j];
-                                n.childrenID.Add(mPlats[i].Right.id);
-                                n.childrenID.Add(mPlats[j].Left.id);
-                                n.childrenID.Add(mPlats[j].Right.id);
-                                mNodes.Add(n);
-                                continue;
-                            }
+                            leftTop = j;
                         }
                     }
                 }
+                int rightTop = -1;
+                for (int j = 0; j < possibleRight.Count; ++j)
+                {
+                    if (rightTop == -1)
+                        rightTop = 0;
+                    else if (rightTop > -1)
+                    {
+                        if (possibleRight[rightTop].Left.pos.y < possibleRight[j].Left.pos.y)
+                        {
+                            rightTop = j;
+                        }
+                    }
+                }
+
+                if(leftTop > -1)
+                {
+                    Node n = new Node();
+                    n.pos = possibleLeft[leftTop].Left.pos;
+                    n.pos.x = xLeft;
+                    n.platform = possibleLeft[leftTop].Left.platform;
+                    n.id = mNodes.Count;
+                    n.childrenID.Add(mPlats[i].Left.id);
+                    mPlats[i].Left.childrenID.Add(n.id);
+                    mNodes.Add(n);
+                }
+                if(rightTop > -1)
+                {
+                    Node n = new Node();
+                    n.pos = possibleRight[rightTop].Left.pos;
+                    n.pos.x = xRight;
+                    n.platform = possibleRight[rightTop].Left.platform;
+                    n.id = mNodes.Count;
+                    n.childrenID.Add(mPlats[i].Right.id);
+                    mPlats[i].Right.childrenID.Add(n.id);
+                    mNodes.Add(n);
+                }
+
             }
 
             //Connect other jumpnodes that belong in the platform
@@ -171,38 +209,35 @@ namespace LAI
 
         }
 
-        public List<Vector3> IntersectionPoint(Vector3 p1, Vector3 p2, Vector3 center, float radius)
+        public List<Vector3> IntersectionPoint(Plat platform, Vector3 center, float radius)
         {
-            Vector3 dp = new Vector3();
-            List<Vector3> sect = new List<Vector3>();
-            float a, b, c;
-            float bb4ac;
-            float mu1;
-            float mu2;
+            List<Vector3> intersections = new List<Vector3>();
+            
 
-            //  get the distance between X and Z on the segment
-            dp.x = p2.x - p1.x;
-            dp.z = p2.z - p1.z;
-            //   I don't get the math here
-            a = dp.x * dp.x + dp.z * dp.z;
-            b = 2 * (dp.x * (p1.x - center.x) + dp.z * (p1.z - center.z));
-            c = center.x * center.x + center.z * center.z;
-            c += p1.x * p1.x + p1.z * p1.z;
-            c -= 2 * (center.x * p1.x + center.z * p1.z);
-            c -= radius * radius;
-            bb4ac = b * b - 4 * a * c;
-            if (Mathf.Abs(a) < float.Epsilon || bb4ac < 0)
+            
+            
+            /////
+            CircleCollider2D LLLLLLL = new CircleCollider2D();            
+
+            LLLLLLL.transform.position = center;
+            LLLLLLL.radius = radius;
+            //trye to add circle to a layer to make this more quick
+            LLLLLLL.enabled = true;
+
+            
+            RaycastHit2D hit = Physics2D.Raycast(center, platform.Left.pos - center);
+            if (hit.collider == LLLLLLL)
             {
-                //  line does not intersect
-                return new List<Vector3>();
+                intersections.Add(hit.point);
             }
-            mu1 = (-b + Mathf.Sqrt(bb4ac)) / (2 * a);
-            mu2 = (-b - Mathf.Sqrt(bb4ac)) / (2 * a);
-            //sect = new Vector3[2];
-            sect.Add(new Vector3(p1.x + mu1 * (p2.x - p1.x), 0, p1.z + mu1 * (p2.z - p1.z)));
-            sect.Add(new Vector3(p1.x + mu2 * (p2.x - p1.x), 0, p1.z + mu2 * (p2.z - p1.z)));
-
-            return sect;
+            hit = Physics2D.Raycast(center, platform.Right.pos - center);
+            if (hit.collider == LLLLLLL)
+            {
+                intersections.Add(hit.point);
+            }
+            
+            return intersections;
+            
         }
 
         public int GetNearestNodeID(Vector3 pos)
@@ -252,26 +287,61 @@ namespace LAI
         private bool FindPath(Vector3 enemyPos)     //uses BFS can be switched to a*
         {
             ResetNodes();
-            openList.Add(enemyPos);
+            var startNode= mNodes[GetNearestNodeID(enemyPos)];
+            openList.Add(startNode.pos);
 
-            mNodes[GetNearestNodeID(enemyPos)].open = true;
+            startNode.open = true;
+            startNode.parentID = -1;
+
             bool found = false;
 
             while (!found && openList.Count > 0)
             {
-                int current = GetNearestNodeID(openList[0]);
+                var current = mNodes[GetNearestNodeID(openList[0])];
                 openList.RemoveAt(0);
 
-                if (current == playerNodeId)
+                if (current.id == playerNodeId)
                     found = true;
                 else
-                    for (int i = 0; i < mNodes[current].childrenID.Count; ++i)
+                    for (int i = 0; i < current.childrenID.Count; ++i)
                     {
-                        UninformedChecker(mNodes[mNodes[current].childrenID[i]], current);
+                        var child = mNodes[current.childrenID[i]];
+                        float newG = CostFunction(current.pos, child.pos);
+
+                        if (!child.open)
+                        {
+                            child.gCost = newG;
+                            child.hCost = HeuristicFunction(child.pos, GameWorld.mPlayer.transform.position);
+
+                            child.parentID = current.id;
+                            int c = 0;
+                            for (int k = 1; k < openList.Count; ++k)
+                            {
+                                var thisNode = mNodes[GetNearestNodeID(openList[k])];
+                                var prvNode = mNodes[GetNearestNodeID(openList[k - 1])];
+                                if (thisNode.gCost + thisNode.hCost > prvNode.gCost + prvNode.hCost)
+                                {
+                                    openList.Insert(k, child.pos);
+                                    child.open = true;
+                                    break;
+                                }
+                            }
+                        }
+                        else if(!child.closed)
+                        {
+                            if(newG < child.gCost)
+                            {
+                                child.parentID = current.id;
+                                child.gCost = newG;
+                                openList.Sort();
+                            }
+                        }
+
+                        //UninformedChecker(mNodes[mNodes[current].childrenID[i]], current);
                     }
 
-                closedList.Add(mNodes[current].pos);
-                mNodes[current].closed = true;
+                closedList.Add(current.pos);
+                current.closed = true;
             }
 
             return found;

@@ -8,7 +8,7 @@ namespace LAI
     {
         private Enemy mAgent;
         private List<State> mStates = new List<State>();
-        private int mCurrentState = -1;
+        private int mCurrentState = 1000;
 
         public void SetAgent(Enemy at)
         {
@@ -44,7 +44,7 @@ namespace LAI
         {
             Debug.Assert(stateID < mStates.Count);
 
-            if(mCurrentState != -1)
+            if(mCurrentState != 1000)
             {
                 mStates[mCurrentState].Exit(mAgent);
             }

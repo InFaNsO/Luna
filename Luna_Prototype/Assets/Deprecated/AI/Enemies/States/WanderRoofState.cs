@@ -25,6 +25,8 @@ namespace LAI
 
         public override void Enter(Enemy agent)
         {
+            agent.GetComponent<SpriteRenderer>().color = Color.green;
+
             agent.transform.Rotate(new Vector3(0.0f, 0.0f, 1.0f), 180.0f);
 
             agent.GetComponent<Rigidbody2D>().gravityScale = -1.0f;
@@ -57,7 +59,7 @@ namespace LAI
             if(shouldFall)
             {
                 //check if its grounded
-                if(agent.transform.position.y < yPrv + 0.01f && agent.transform.position.y > yPrv - 0.01f)
+                if(agent.transform.position.y < agent.ground.transform.position.y + agent.ground.Height)
                 {
                     agent.mStateMachine.ChangeState(States.GoToPlayer);
                     return;

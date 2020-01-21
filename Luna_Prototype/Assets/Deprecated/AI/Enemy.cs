@@ -24,6 +24,7 @@ public class Enemy : Character
 
     [SerializeField] private List<int> PlatformRange = new List<int>();
     [SerializeField] private List<int> WallRange = new List<int>();
+    [SerializeField] public Platform ground;
     [SerializeField] private int groundID = -1;
     [SerializeField] private int RoofID = -1;
 

@@ -13,7 +13,8 @@ namespace LAI
 
         public override void Enter(Enemy agent)
         {
-           
+            agent.GetComponent<SpriteRenderer>().color = Color.cyan;
+
         }
 
         public override void Update(Enemy agent)
