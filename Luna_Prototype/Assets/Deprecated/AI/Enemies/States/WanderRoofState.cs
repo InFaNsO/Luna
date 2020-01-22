@@ -16,7 +16,6 @@ namespace LAI
 
         bool isGoingLeft = false;
         bool shouldFall = false;
-        bool isGrounded = false;
 
         public override States Name()
         {
@@ -26,7 +25,7 @@ namespace LAI
         public override void Enter(Enemy agent)
         {
             agent.GetComponent<SpriteRenderer>().color = Color.green;
-
+            shouldFall = false;
             agent.transform.Rotate(new Vector3(0.0f, 0.0f, 1.0f), 180.0f);
 
             agent.GetComponent<Rigidbody2D>().gravityScale = -1.0f;
@@ -59,7 +58,7 @@ namespace LAI
             if(shouldFall)
             {
                 //check if its grounded
-                if(agent.transform.position.y < agent.ground.transform.position.y + agent.ground.Height)
+                if(agent.transform.position.y > yPrv - 0.01f && agent.transform.position.y < yPrv + 0.01f)
                 {
                     agent.mStateMachine.ChangeState(States.GoToPlayer);
                     return;

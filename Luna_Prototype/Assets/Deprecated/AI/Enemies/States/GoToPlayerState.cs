@@ -76,6 +76,7 @@ namespace LAI
                 agent.SetDestination(Path[0]);
                 Path.RemoveAt(0);
                 agent.SetFinalDestination(Path[Path.Count - 1]);
+                agent.SetFinalDestination(agent.GetWorld().mPlayer.transform.position);
             }
             else if (Path.Count == 0)
             {
@@ -88,7 +89,7 @@ namespace LAI
                 finder.Calculate(agent.transform.position);
                 Path.Clear();
                 Path = finder.GetPath();
-                Path.Add(agent.transform.position);
+                Path.Add(agent.GetWorld().mPlayer.transform.position);
 
                 if (Path.Count > 0)
                 {

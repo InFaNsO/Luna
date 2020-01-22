@@ -1,4 +1,5 @@
 ﻿using System.Collections;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -41,6 +42,8 @@ namespace LAI
 
         private List<Vector3> openList = new List<Vector3>();
         private List<Vector3> closedList = new List<Vector3>();
+
+        private List<int> nodesComparer = new List<int>();
 
         public void Initialize(float length = 1.8f)
         {
@@ -209,37 +212,6 @@ namespace LAI
 
         }
 
-        public List<Vector3> IntersectionPoint(Plat platform, Vector3 center, float radius)
-        {
-            List<Vector3> intersections = new List<Vector3>();
-            
-
-            
-            
-            /////
-            CircleCollider2D LLLLLLL = new CircleCollider2D();            
-
-            LLLLLLL.transform.position = center;
-            LLLLLLL.radius = radius;
-            //trye to add circle to a layer to make this more quick
-            LLLLLLL.enabled = true;
-
-            
-            RaycastHit2D hit = Physics2D.Raycast(center, platform.Left.pos - center);
-            if (hit.collider == LLLLLLL)
-            {
-                intersections.Add(hit.point);
-            }
-            hit = Physics2D.Raycast(center, platform.Right.pos - center);
-            if (hit.collider == LLLLLLL)
-            {
-                intersections.Add(hit.point);
-            }
-            
-            return intersections;
-            
-        }
-
         public int GetNearestNodeID(Vector3 pos)
         {
             int nID = 0;
@@ -289,7 +261,6 @@ namespace LAI
             ResetNodes();
             var startNode= mNodes[GetNearestNodeID(enemyPos)];
             openList.Add(startNode.pos);
-
             startNode.open = true;
             startNode.parentID = -1;
 
@@ -306,7 +277,10 @@ namespace LAI
                     for (int i = 0; i < current.childrenID.Count; ++i)
                     {
                         var child = mNodes[current.childrenID[i]];
-                        float newG = CostFunction(current.pos, child.pos);
+
+                        UninformedChecker(child, current.id);
+
+                        /*float newG = CostFunction(current.pos, child.pos);
 
                         if (!child.open)
                         {
@@ -314,17 +288,22 @@ namespace LAI
                             child.hCost = HeuristicFunction(child.pos, GameWorld.mPlayer.transform.position);
 
                             child.parentID = current.id;
-                            int c = 0;
+                            int c = -1;
                             for (int k = 1; k < openList.Count; ++k)
                             {
                                 var thisNode = mNodes[GetNearestNodeID(openList[k])];
                                 var prvNode = mNodes[GetNearestNodeID(openList[k - 1])];
                                 if (thisNode.gCost + thisNode.hCost > prvNode.gCost + prvNode.hCost)
                                 {
-                                    openList.Insert(k, child.pos);
+                                    c = k;
                                     child.open = true;
                                     break;
                                 }
+                            }
+                            if (c > -1)
+                            {
+                                openList.Insert(c, child.pos);
+                                nodesComparer.Insert(c, child.id);
                             }
                         }
                         else if(!child.closed)
@@ -333,11 +312,21 @@ namespace LAI
                             {
                                 child.parentID = current.id;
                                 child.gCost = newG;
-                                openList.Sort();
+
+                                 
+                                //mOpenList.sort([this](const Coord&first, const Coord&second)
+                                //{
+                                //     float fOne = GetNode(first).g + GetNode(first).h;
+                                //     float fSecond = GetNode(second).g + GetNode(second).h;
+                                //     return fOne < fSecond;
+                                // });
+
+
+                                openList.Sort((first, second) => { return mNodes[GetNodeIDFrom(first)].gCost + mNodes[GetNodeIDFrom(first)].hCost < mNodes[GetNodeIDFrom(second)].gCost + mNodes[GetNodeIDFrom(second)].hCost ? 1 : 0; });
                             }
                         }
 
-                        //UninformedChecker(mNodes[mNodes[current].childrenID[i]], current);
+                        //UninformedChecker(mNodes[mNodes[current].childrenID[i]], current);*/
                     }
 
                 closedList.Add(current.pos);

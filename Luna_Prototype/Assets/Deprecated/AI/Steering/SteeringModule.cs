@@ -115,7 +115,7 @@ namespace LAI
             {
                 if (mBehaviours[i].IsActive())
                 {
-                    total += (mBehaviours[i].Calculate(mAgent)).normalized;
+                    total += mBehaviours[i].Calculate(mAgent).normalized;
                 }
             }
 
