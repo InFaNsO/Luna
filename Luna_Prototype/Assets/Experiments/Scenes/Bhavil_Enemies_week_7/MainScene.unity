@@ -36942,8 +36942,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ded025225932d489ad6325871ef029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Width: 4.25
-  Height: 0.28
+  Width: 2.56
+  Height: 0.34
 --- !u!61 &1318589877
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -52880,7 +52880,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e0ded025225932d489ad6325871ef029, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Width: 2.13
+  Width: 2.14
   Height: 0.28
 --- !u!61 &1893905330
 BoxCollider2D:

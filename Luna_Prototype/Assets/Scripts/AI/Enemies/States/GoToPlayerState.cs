@@ -58,6 +58,12 @@ namespace LAI
                 agent.mStateMachine.ChangeState(States.Attack);
                 return;
             }
+            //if player is far away than range then switch to wander 
+            if (!agent.IsNearPlayer(agent.GetSafeDistanceExtended() + 5.0f))
+            {
+                agent.mStateMachine.ChangeState(States.Wander);
+                return;
+            }
 
             bool calculateAgain = false;
             int pNID = finder.GetNearestNodeID(agent.GetWorld().mPlayer.transform.position);
@@ -80,12 +86,6 @@ namespace LAI
             }
             else if (Path.Count == 0)
             {
-                //if player is far away than range then switch to wander 
-                if (!agent.IsNearPlayer(agent.GetSafeDistanceExtended() + 5.0f))
-                {
-                    agent.mStateMachine.ChangeState(States.Wander);
-                    return;
-                }
                 finder.Calculate(agent.transform.position);
                 Path.Clear();
                 Path = finder.GetPath();
