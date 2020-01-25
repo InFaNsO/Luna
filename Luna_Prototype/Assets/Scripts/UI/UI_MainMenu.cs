@@ -4,16 +4,16 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class MainMenu : MonoBehaviour, UI_Interface
+public class UI_MainMenu : MonoBehaviour, UI_Interface
 {
     [Header("Cover of game")]
-    private Button startScreen;
+    private GameObject startScreen;
 
     private int levelToLoad = 1;
 
     private void Awake()
     {
-        startScreen = transform.Find("cover").gameObject.GetComponent<Button>();
+        startScreen = transform.Find("cover").gameObject;
     }
     public void ResetUI()
     {

@@ -1,0 +1,113 @@
+{
+    "name": "UI_InputController",
+    "maps": [
+        {
+            "name": "UIMainmenuCtrl",
+            "id": "fb1c64f5-7d88-4906-aebc-a78ed66b1f3f",
+            "actions": [
+                {
+                    "name": "ClickTitleCover",
+                    "type": "Button",
+                    "id": "15ecc827-9ee3-4ca3-a3e1-59d1fcd42f2e",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "test",
+                    "type": "Button",
+                    "id": "84aebf9f-65ef-48ee-a78f-ceba7d3984df",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "bfc56ebc-0b9e-483a-a793-cf4a7b1da34a",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboardmouse",
+                    "action": "ClickTitleCover",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "485d9d9c-72a9-4f56-b4fa-ca91cd8b4dfa",
+                    "path": "<Mouse>/rightButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboardmouse",
+                    "action": "ClickTitleCover",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "22ec2315-45cc-4812-8991-56e3256a6e6b",
+                    "path": "<Keyboard>/anyKey",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboardmouse",
+                    "action": "ClickTitleCover",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7af5834f-32f8-4f77-9466-1a9247aa46c0",
+                    "path": "<XInputController>/buttonWest",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "gamepad",
+                    "action": "ClickTitleCover",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7151a310-d39a-4549-9af3-623ae9e4e849",
+                    "path": "<Keyboard>/h",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "keyboardmouse",
+                    "action": "test",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "keyboardmouse",
+            "bindingGroup": "keyboardmouse",
+            "devices": [
+                {
+                    "devicePath": "<Keyboard>",
+                    "isOptional": false,
+                    "isOR": false
+                },
+                {
+                    "devicePath": "<Mouse>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        },
+        {
+            "name": "gamepad",
+            "bindingGroup": "gamepad",
+            "devices": [
+                {
+                    "devicePath": "<Gamepad>",
+                    "isOptional": false,
+                    "isOR": false
+                }
+            ]
+        }
+    ]
+}
