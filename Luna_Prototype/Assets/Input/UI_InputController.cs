@@ -42,7 +42,18 @@ public class UI_InputController : IInputActionCollection, IDisposable
                     ""path"": ""<Mouse>/leftButton"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""keyboard"",
+                    ""groups"": ""keyboardmouse"",
+                    ""action"": ""ClickTitleCover"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""485d9d9c-72a9-4f56-b4fa-ca91cd8b4dfa"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""keyboardmouse"",
                     ""action"": ""ClickTitleCover"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -50,10 +61,21 @@ public class UI_InputController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""22ec2315-45cc-4812-8991-56e3256a6e6b"",
-                    ""path"": ""<Keyboard>/x"",
+                    ""path"": ""<Keyboard>/anyKey"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""keyboard"",
+                    ""groups"": ""keyboardmouse"",
+                    ""action"": ""ClickTitleCover"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""7af5834f-32f8-4f77-9466-1a9247aa46c0"",
+                    ""path"": ""<XInputController>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""gamepad"",
                     ""action"": ""ClickTitleCover"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -64,7 +86,7 @@ public class UI_InputController : IInputActionCollection, IDisposable
                     ""path"": ""<Keyboard>/h"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""keyboard"",
+                    ""groups"": ""keyboardmouse"",
                     ""action"": ""test"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
@@ -74,11 +96,27 @@ public class UI_InputController : IInputActionCollection, IDisposable
     ],
     ""controlSchemes"": [
         {
-            ""name"": ""keyboard"",
-            ""bindingGroup"": ""keyboard"",
+            ""name"": ""keyboardmouse"",
+            ""bindingGroup"": ""keyboardmouse"",
             ""devices"": [
                 {
                     ""devicePath"": ""<Keyboard>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                },
+                {
+                    ""devicePath"": ""<Mouse>"",
+                    ""isOptional"": false,
+                    ""isOR"": false
+                }
+            ]
+        },
+        {
+            ""name"": ""gamepad"",
+            ""bindingGroup"": ""gamepad"",
+            ""devices"": [
+                {
+                    ""devicePath"": ""<Gamepad>"",
                     ""isOptional"": false,
                     ""isOR"": false
                 }
@@ -176,13 +214,22 @@ public class UI_InputController : IInputActionCollection, IDisposable
         }
     }
     public UIMainmenuCtrlActions @UIMainmenuCtrl => new UIMainmenuCtrlActions(this);
-    private int m_keyboardSchemeIndex = -1;
-    public InputControlScheme keyboardScheme
+    private int m_keyboardmouseSchemeIndex = -1;
+    public InputControlScheme keyboardmouseScheme
     {
         get
         {
-            if (m_keyboardSchemeIndex == -1) m_keyboardSchemeIndex = asset.FindControlSchemeIndex("keyboard");
-            return asset.controlSchemes[m_keyboardSchemeIndex];
+            if (m_keyboardmouseSchemeIndex == -1) m_keyboardmouseSchemeIndex = asset.FindControlSchemeIndex("keyboardmouse");
+            return asset.controlSchemes[m_keyboardmouseSchemeIndex];
+        }
+    }
+    private int m_gamepadSchemeIndex = -1;
+    public InputControlScheme gamepadScheme
+    {
+        get
+        {
+            if (m_gamepadSchemeIndex == -1) m_gamepadSchemeIndex = asset.FindControlSchemeIndex("gamepad");
+            return asset.controlSchemes[m_gamepadSchemeIndex];
         }
     }
     public interface IUIMainmenuCtrlActions
