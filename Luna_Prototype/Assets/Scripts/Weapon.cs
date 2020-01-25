@@ -19,9 +19,9 @@ public class Weapon : MonoBehaviour
     public float Range;
     [SerializeField] protected string mName;                                    //|
     [SerializeField] protected WeaponGrade mGrade;                              //|--- TODO:: make them as WeaponPorperty struct
-    [SerializeField] public WeaponType mType;                                //|
+    [SerializeField] public WeaponType mType;                                   //|
     public float mParryCD = 1.0f;
-                                                                                //--------------------------------------------------------------------------//|
+    //--------------------------------------------------------------------------//|
 
     //[SerializeField] protected int mDamage;
     //[SerializeField] protected float mAttackSpeed; // wait how many second to next attack
@@ -36,6 +36,7 @@ public class Weapon : MonoBehaviour
 
     //------------------------------------------------------------------------------------//|
     [SerializeField] protected GameObject InLevelBody;                                    //|
+    [SerializeField] protected SpriteRenderer mWeaponBody;                                    //|
     [SerializeField] protected CircleCollider2D pickUpCollider;                           //|--- Render purpose
     [SerializeField] protected SpriteRenderer inlevelBody_spriteRender;                   //|
     //------------------------------------------------------------------------------------//|
@@ -44,8 +45,9 @@ public class Weapon : MonoBehaviour
     private BoxCollider2D boxCollider;
     //public bool isOnGround = false;
 
-    public Animation mAnimation;
+    public AnimatorOverrideController mAnimatorOverrideController;
     [System.NonSerialized] public Animator mAnimator;
+    [System.NonSerialized] public Animator mWeaponDefaultAnimator;
 
     bool mHaveAttack = false;
 
@@ -59,6 +61,8 @@ public class Weapon : MonoBehaviour
 
     public bool mIsAttacking;
 
+    public Character mOwner;
+
     // Getter & Setter -------------------------------------------------------------------------------------------------------
     //public float AttackSpeed { get { return mAttackSpeed; } set { mAttackSpeed = value; } }
 
@@ -66,7 +70,8 @@ public class Weapon : MonoBehaviour
     public void Awake()
     {
         mIsAttacking = false;
-        mAnimator = gameObject.GetComponentInChildren<Animator>();
+        mWeaponDefaultAnimator = gameObject.GetComponentInChildren<Animator>();
+        mAnimator = mWeaponDefaultAnimator;
         Assert.IsNotNull(mAnimator, "[Weapon] Dont have an animtor");                                                          //|--- [SAFTY]: Check to see if Animator is null
 
         rb = gameObject.GetComponent<Rigidbody2D>();
@@ -76,6 +81,9 @@ public class Weapon : MonoBehaviour
 
         Assert.IsNotNull(pickUpCollider, "[Weapon] Dont have pickUpCollider");                                                 //|--- [SAFTY]: Check to see is there a collider
         Assert.IsNotNull(inlevelBody_spriteRender, "[Weapon] Dont have inlevelBody_spriteRender");                             //|--- [SAFTY]: Check to see is there a inlevelBody_spriteRender
+
+        mWeaponBody = transform.GetChild(1).GetComponent<SpriteRenderer>();                                                                        //|--- [Warning]: Hardcode child index 1. Change it later.
+        Assert.IsNotNull(mWeaponBody, "[Weapon] Dont have mWeaponBody");                                                       //|--- [SAFTY]: Check to see is there a collider
 
         _localLevelManagerTransform = GameObject.Find("LocalLevelManager").gameObject.transform;                               //|--- [INIT]: Get the global transform from LocalLevelManager gameObject
         Assert.IsNotNull(_localLevelManagerTransform, "[Weapon] Doesnt found localLevelManager");                              //|--- [SAFTY]: Check to see is there a collider
@@ -118,15 +126,15 @@ public class Weapon : MonoBehaviour
             {
                 mCurrentMoveIndex = 0;
                 mIsAttacking = false;
+
             }
         }
     }
 
     void LateUpdate()
     {
-        if ((mAnimator.gameObject.activeSelf)/*&&(mMoves[mCurrentMoveIndex].GetMoveCurrentTimeSliceType() == MoveTimeSliceType.Type_Reset)*/)
+        if ((mAnimator.gameObject.activeSelf) && (mMoves[mCurrentMoveIndex].GetMoveCurrentTimeSliceType() == MoveTimeSliceType.Type_Reset))
         {
-            mAnimator.SetInteger("State", 0);
             mAnimator.SetInteger("ToNextCombo", -1);
             mAnimator.SetBool("IsReseting", false);
         }
@@ -192,6 +200,7 @@ public class Weapon : MonoBehaviour
     public void WeaponReset()
     {
         mAnimator.SetBool("IsReseting", true);
+        mAnimator.SetInteger("ToNextCombo", -1);
         foreach (var move in mMoves)
         {
             move.Reset();
@@ -212,11 +221,9 @@ public class Weapon : MonoBehaviour
         mOwnerElement = chara.mElement;
         Assert.IsNotNull(mOwnerElement);
 
-        var parry = owner.GetComponent<ParryAttackable>();
-        if (parry)
-            parry.mParryCooldown = mParryCD;
-
         InLevelBody.gameObject.SetActive(false);
+        if (owner.tag == "Player")
+            mWeaponBody.enabled = false;
         boxCollider.enabled = false;
         rb.velocity = Vector2.zero;
         rb.isKinematic = true;
@@ -224,15 +231,45 @@ public class Weapon : MonoBehaviour
         gameObject.transform.SetParent(owner.transform);
         gameObject.transform.position = position;
         gameObject.transform.rotation = new Quaternion();
+
+        mOwner = owner.GetComponent<Character>();
+        //Equip(owner);
+
+    }
+    public void Equip(GameObject owner)
+    {
+        var parry = owner.GetComponent<ParryAttackable>();
+        if (parry)
+            parry.mParryCooldown = mParryCD;
+
+        if (owner.tag == "Player")
+        {
+            mWeaponBody.enabled = false;
+            mAnimator = GetComponentInParent<Animator>();
+            mAnimator.runtimeAnimatorController = mAnimatorOverrideController;
+            RefreshMoveAnimator();
+        }
+        else
+        {
+            mWeaponBody.enabled = true;
+            mAnimator = mWeaponDefaultAnimator;
+            RefreshMoveAnimator();
+        }
     }
 
     public void ThrowAway(Vector2 directionForce)
     {
+        if(mOwner.GetComponent<Player>() != null)
+        {
+            mAnimator.runtimeAnimatorController = mOwner.GetComponent<Player>().mDefaultRunTimeAniamtorController;
+        }
+
         gameObject.transform.SetParent(_localLevelManagerTransform);
 
         rb.isKinematic = false;
         boxCollider.enabled = true;
         InLevelBody.gameObject.SetActive(true);
+        mWeaponBody.enabled = true;
         rb.AddForce(directionForce, ForceMode2D.Impulse);
 
         gameObject.tag = "PickUp";
@@ -260,4 +297,12 @@ public class Weapon : MonoBehaviour
     //----------------------------------------------------------------------------------//|
     //- End Edit -----------------------------------------------------------------------//|
     //----------------------------------------------------------------------------------//|
+
+    private void RefreshMoveAnimator()
+    {
+        for (int i = 0; i < mMoves.Length; ++i)
+        {
+            mMoves[i].RefreshAnimator(mAnimator);
+        }
+    }
 }

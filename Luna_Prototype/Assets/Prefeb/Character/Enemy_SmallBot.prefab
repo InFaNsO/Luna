@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 1382053527553314524}
   - component: {fileID: 1382053527553314526}
   - component: {fileID: 1382053527553314521}
-  - component: {fileID: 7442752176976350015}
   - component: {fileID: -7123632943287126223}
+  - component: {fileID: 541675787025517580}
   m_Layer: 9
   m_Name: Enemy_SmallBot
   m_TagString: Enemy
@@ -131,45 +131,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.3312748}
   m_EdgeRadius: 0
---- !u!114 &7442752176976350015
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1382053527553314530}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c8568e962fe3ddd44ade6f4de3692eb9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mDestination: {x: 0, y: 0}
-  mVelocity: {x: 0, y: 0}
-  mHeading: {x: 0, y: 0}
-  mFinalDestination: {x: 0, y: 0}
-  mMass: 100
-  mMaxSpeed: 1
-  mSafeDistanceReduced: 1
-  mSafeDistance: 1
-  mSafeDistanceExtended: 2.2
-  mRadius: 0.75
-  world: {fileID: 0}
-  mMaxHealth: 10
-  mCurrentHealth: 10
-  mMovementSpeed: 0
-  mJumpStrength: 0
-  mWasTheCharacterInAnHazardInThePastSecond: 0
-  mReceiveHazardDebuffCD: 0
-  mReceivedHazardDamage: 0
-  mReceivedHazardDuration: 0
-  isGrounded: 0
-  mElement: {fileID: 0}
-  mWeapon: {fileID: 5001615152560556114}
-  mIsDropping: 0
-  mDropPrefbs: {fileID: 0}
-  mSteeringModule:
-    mAgent: {fileID: 0}
-  mIsStuned: 0
 --- !u!114 &-7123632943287126223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -224,6 +185,49 @@ MonoBehaviour:
   lightningDuration: 0
   mPlayer: {fileID: 0}
   mEnemy: {fileID: 0}
+--- !u!114 &541675787025517580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1382053527553314530}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aec241f79973e8749a0f297d85aa5176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mDestination: {x: 0, y: 0}
+  mVelocity: {x: 0, y: 0}
+  mHeading: {x: 0, y: 0}
+  mFinalDestination: {x: 0, y: 0}
+  mMass: 100
+  mMaxSpeed: 10
+  mSafeDistanceReduced: 5
+  mSafeDistance: 10
+  mSafeDistanceExtended: 15
+  mRadius: 0.75
+  world: {fileID: 0}
+  mMaxHealth: 10
+  mCurrentHealth: 10
+  mMovementSpeed: 0
+  mJumpStrength: 0
+  mWasTheCharacterInAnHazardInThePastSecond: 0
+  mReceiveHazardDebuffCD: 0
+  mReceivedHazardDamage: 0
+  mReceivedHazardDuration: 0
+  isGrounded: 0
+  mElement: {fileID: 0}
+  mWeapon: {fileID: 0}
+  mIsDropping: 0
+  mDropPrefbs: {fileID: 0}
+  platformsAccesible: []
+  mIsStuned: 0
+  wanderState:
+    roof: {fileID: 0}
+  gotoState:
+    ground: {fileID: 0}
+    isBat: 0
 --- !u!1001 &2334136607636009660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -299,15 +303,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 2334136607636009660}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &5001615152560556114 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7281698943840582382, guid: a31afef3ea2353845847fc556dbee13b,
-    type: 3}
-  m_PrefabInstance: {fileID: 2334136607636009660}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b17c4cd7d81885741a5884f2cb273b03, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

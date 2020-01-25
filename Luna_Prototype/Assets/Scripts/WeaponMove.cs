@@ -53,6 +53,7 @@ public class WeaponMove
 
         mWeaponAnimator.SetInteger("ToNextCombo", mMoveID);
         mWeaponAnimator.SetFloat("PlaySpeed", mAttackSpeedMutiplier);
+        mWeaponAnimator.SetBool("IsReseting", false);
         Core.Debug.Log($"{mAttackSpeedMutiplier}, {mMoveID}");
         mMoveContext.Active = true;
     }
@@ -71,7 +72,9 @@ public class WeaponMove
 
         if (mMoveContext.Active)
         {
-            
+            Vector3 attackMomentum = mWeapon.mOwner.mAttackMomentumPos.position - mWeapon.mOwner.transform.position;
+            mWeapon.mOwner.transform.position += attackMomentum * deltaTime;
+
             if (mMoveContext.GetCurrentTimeSliceType() == MoveTimeSliceType.Type_Parryable)
             {
                 //TODO :: make weapon become parrable
@@ -126,5 +129,10 @@ public class WeaponMove
     public void Reset()
     {
         mMoveContext.Reset();
+    }
+
+    public void RefreshAnimator(Animator animator)
+    {
+        mWeaponAnimator = animator;
     }
 }

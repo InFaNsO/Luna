@@ -28,6 +28,8 @@ public abstract class Character : Agent
 
     public ElementalAttributes mElement;
 
+    public Transform mAttackMomentumPos;                                //--- [Mingzhuo Zhang] Edit: For weapon attack change player position
+
     public abstract void GetHit(float dmg);
     public abstract void Die();
     public void GetHit(ElementalAttributes element)
@@ -68,6 +70,18 @@ public abstract class Character : Agent
 
     public void Awake()
     {
+        if (transform.Find("AttackMomentumPos") != null)
+        {
+            mAttackMomentumPos = transform.Find("AttackMomentumPos").transform;                              //|--- [Mingzhuo Zhang] Edit: finding the mAttackMomentumPos
+        }
+        else
+        {
+            mAttackMomentumPos = new GameObject().transform;
+            mAttackMomentumPos.SetParent(gameObject.transform);
+            mAttackMomentumPos.localPosition = new Vector3(0.0f, 0.0f, 0.0f);
+        }
+        
+
         mCurrentHealth = mMaxHealth;
         mWasTheCharacterInAnHazardInThePastSecond = false;
         mReceiveHazardDebuffCD = 0.0f;

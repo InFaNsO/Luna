@@ -1,0 +1,699 @@
+fileFormatVersion: 2
+guid: 7b77a1f7ae47a84498d0a7d810c25ae8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8694197938605113487
+    second: Luna_Runcycle_sword_0
+  - first:
+      213: -5726473410697506833
+    second: Luna_Runcycle_sword_1
+  - first:
+      213: 5456943019422453031
+    second: Luna_Runcycle_sword_2
+  - first:
+      213: 2701194757784264829
+    second: Luna_Runcycle_sword_3
+  - first:
+      213: -6367316842443284673
+    second: Luna_Runcycle_sword_4
+  - first:
+      213: -6161706337456905618
+    second: Luna_Runcycle_sword_5
+  - first:
+      213: -3112029055660479597
+    second: Luna_Runcycle_sword_6
+  - first:
+      213: -1398875816430158787
+    second: Luna_Runcycle_sword_7
+  - first:
+      213: 324504034249927266
+    second: Luna_Runcycle_sword_8
+  - first:
+      213: -3332803713602646411
+    second: Luna_Runcycle_sword_9
+  - first:
+      213: 1480026715812606801
+    second: Luna_Runcycle_sword_10
+  - first:
+      213: -789963590086446790
+    second: Luna_Runcycle_sword_11
+  - first:
+      213: -2562721275230444482
+    second: Luna_Runcycle_sword_12
+  - first:
+      213: 2597244975046534755
+    second: Luna_Runcycle_sword_13
+  - first:
+      213: 8970875789247043082
+    second: Luna_Runcycle_sword_14
+  - first:
+      213: 8269050360491689968
+    second: Luna_Runcycle_sword_15
+  - first:
+      213: 6528982859129681215
+    second: Luna_Runcycle_sword_16
+  - first:
+      213: -999622636806266420
+    second: Luna_Runcycle_sword_17
+  - first:
+      213: 5894441888793815466
+    second: Luna_Runcycle_sword_18
+  - first:
+      213: -6712917642732903774
+    second: Luna_Runcycle_sword_19
+  - first:
+      213: 8384508274573707012
+    second: Luna_Runcycle_sword_20
+  - first:
+      213: -97962724310954466
+    second: Luna_Runcycle_sword_21
+  - first:
+      213: 5242262292784605834
+    second: Luna_Runcycle_sword_22
+  - first:
+      213: -6024708593367717880
+    second: Luna_Runcycle_sword_23
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 618
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5fde8fba6ebbfd458633ddfb82e341e
+      internalID: 8694197938605113487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_1
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 618
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6031a5f1d03628488519f36880a9e69
+      internalID: -5726473410697506833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_2
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 618
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26279bc9f9a888243b5a7a68075074d9
+      internalID: 5456943019422453031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_3
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 618
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40fd64c835f368a41aaefb722300ab58
+      internalID: 2701194757784264829
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_4
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 618
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dcc6e342b4a856f4b827ede97e70cbee
+      internalID: -6367316842443284673
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_5
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 618
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a4c9bbf481ced04994dd8cda01ab8ba
+      internalID: -6161706337456905618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 412
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8b63e899441f544c8d0c7f111d24491
+      internalID: -3112029055660479597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_7
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 412
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 956712a9a10fcd54796eb810b2ee7625
+      internalID: -1398875816430158787
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_8
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 412
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1b989164229ea0c42ae84aa56d2f1755
+      internalID: 324504034249927266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_9
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 412
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1f600dbf73899fd48ba0c2b8f65bae9e
+      internalID: -3332803713602646411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_10
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 412
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c2e59afc5796dcf47baf0f3a0e6ba92d
+      internalID: 1480026715812606801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_11
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 412
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e52f3363a2cb3d44bb3a12daa86acf10
+      internalID: -789963590086446790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 206
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a1b525ab055bfb488c6764fd8aca8fa
+      internalID: -2562721275230444482
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_13
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 206
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bc15806a1e23e3948ae226c5aecd86ba
+      internalID: 2597244975046534755
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_14
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 206
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24663aabbdb75f64abe1d17139c80e51
+      internalID: 8970875789247043082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_15
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 206
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c57bab31a1c2cf4781534343f0f447c
+      internalID: 8269050360491689968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_16
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 206
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 973ae3d42bae2d841bed9766a01f178c
+      internalID: 6528982859129681215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_17
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 206
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 79c9dd41febc8fa49ad9ece5f43f4c16
+      internalID: -999622636806266420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cc5f3a5c24b9ab4b8428624abcf4010
+      internalID: 5894441888793815466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_19
+      rect:
+        serializedVersion: 2
+        x: 161
+        y: 0
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03eb5967fbac85543bb9c2687eec0f72
+      internalID: -6712917642732903774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_20
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 0
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 870769c79f1265c4db42ddd43a6d7ae2
+      internalID: 8384508274573707012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_21
+      rect:
+        serializedVersion: 2
+        x: 483
+        y: 0
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c9c81408c23c654aa041c5b70462e35
+      internalID: -97962724310954466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_22
+      rect:
+        serializedVersion: 2
+        x: 644
+        y: 0
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 366c3afde8826b141ba59efbe35d14f5
+      internalID: 5242262292784605834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_Runcycle_sword_23
+      rect:
+        serializedVersion: 2
+        x: 805
+        y: 0
+        width: 161
+        height: 206
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: af9b0fb007a130a44931daf4599c9427
+      internalID: -6024708593367717880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5885f5e84531998488f89d83ed87f660
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
