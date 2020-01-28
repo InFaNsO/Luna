@@ -13,7 +13,7 @@ public class EnemyStunColorChanger : MonoBehaviour
         mEnemy = GetComponent<Enemy>();
         Assert.IsNotNull(mEnemy, "GameObject dont have Enemy script componet");
 
-        mSpriteRender = GetComponentInChildren<SpriteRenderer>();
+        mSpriteRender = transform.GetChild(0).GetComponent<SpriteRenderer>();
         Assert.IsNotNull(mSpriteRender, "GameObject dont have sprite render componet");
     }
 
@@ -26,7 +26,7 @@ public class EnemyStunColorChanger : MonoBehaviour
         }
         else
         {
-            mSpriteRender.color = Color.white;
+            mSpriteRender.color = Color.green;
         }
     }
 }

@@ -53,6 +53,7 @@ public class WeaponMove
 
         mWeaponAnimator.SetInteger("ToNextCombo", mMoveID);
         mWeaponAnimator.SetFloat("PlaySpeed", mAttackSpeedMutiplier);
+        mWeaponAnimator.SetBool("IsReseting", false);
         Core.Debug.Log($"{mAttackSpeedMutiplier}, {mMoveID}");
         mMoveContext.Active = true;
     }
