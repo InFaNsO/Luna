@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using UnityEngine.EventSystems;
 /// <summary>
 /// [Rick H] 2019-11-15
 /// service for UI requests
@@ -22,10 +22,19 @@ public class UIManager : MonoBehaviour
 
     private List<Canvas> _uiInstances = new List<Canvas>();
     private UI_InGame _uiInGame;//a reference to 'UI_Ingame' in 'inGamePrefab'
+    private EventSystem _eventSystem;
+
 
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
+
+        _eventSystem = GetComponentInChildren<EventSystem>();
+
+        if (_eventSystem == null)
+        {
+            Debug.Log("[UIManager] _eventSystem is null");
+        }
 
         if (mainmenuPrefab != null)//index 0
         {
@@ -66,6 +75,11 @@ public class UIManager : MonoBehaviour
         currentCanvas = _uiInstances[(int)type];
         currentCanvas.gameObject.GetComponent<UI_Interface>().ResetUI();
         currentCanvas.gameObject.SetActive(true);
+    }
+
+    public void SetSelected(GameObject gameObject)
+    {
+        _eventSystem.SetSelectedGameObject(gameObject);
     }
 
 
