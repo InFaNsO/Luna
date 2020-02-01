@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: 64dba84e7cce1e34a8d2e31edb37c8cb
+guid: 61abd26689c6ea545a8b4407fc70a34a
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8546345058061711059
-    second: Luna_Fall_0
+      213: 7566860522278350043
+    second: Sword_Fall_0
   - first:
-      213: -2502486943419724338
-    second: Luna_Fall_1
+      213: -5340990882457270857
+    second: Sword_Fall_1
   - first:
-      213: 2864250001669699444
-    second: Luna_Fall_2
+      213: 3285458832024882152
+    second: Sword_Fall_2
   - first:
-      213: 7845747412175325045
-    second: Luna_Fall_3
+      213: -5770907445729487648
+    second: Sword_Fall_3
   - first:
-      213: 2173479340957093323
-    second: Luna_Fall_4
+      213: -3310876108599786232
+    second: Sword_Fall_4
   - first:
-      213: 8316849058313091139
-    second: Luna_Fall_5
+      213: -2582943698609358957
+    second: Sword_Fall_5
   - first:
-      213: 4613503358632844561
-    second: Luna_Fall_6
+      213: -5442327369747688671
+    second: Sword_Fall_6
   - first:
-      213: -4663950772404629813
-    second: Luna_Fall_7
+      213: -5318286094101245621
+    second: Sword_Fall_7
   - first:
-      213: 8677984022347547049
-    second: Luna_Fall_8
+      213: 7516833367879344884
+    second: Sword_Fall_8
   - first:
-      213: 4052328367343955568
-    second: Luna_Fall_9
+      213: 4262442234968290712
+    second: Sword_Fall_9
   - first:
-      213: 1485576087697818298
-    second: Luna_Fall_10
+      213: -2133010062701081887
+    second: Sword_Fall_10
   - first:
-      213: -6152753318979623190
-    second: Luna_Fall_11
+      213: 6446213352997105182
+    second: Sword_Fall_11
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -67,7 +67,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -116,268 +116,257 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Luna_Fall_0
+      name: Sword_Fall_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 870
-        width: 137
-        height: 290
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 837402b46b14bec4e8e78380010f4200
-      internalID: 8546345058061711059
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Luna_Fall_1
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 870
-        width: 137
-        height: 290
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1ad5c27dd1c32a4b8141385d62f2d91
-      internalID: -2502486943419724338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Luna_Fall_2
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 870
-        width: 137
-        height: 290
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ddd8255a39f529648ad6d320b14133bf
-      internalID: 2864250001669699444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Luna_Fall_3
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 580
-        width: 137
-        height: 290
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4dd22c6a1267eef4e96751d6d449b3ff
-      internalID: 7845747412175325045
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Luna_Fall_4
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 580
-        width: 137
-        height: 290
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c699accabfc663648b93a81a8c391a10
-      internalID: 2173479340957093323
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Luna_Fall_5
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 580
-        width: 137
-        height: 290
+        y: 600
+        width: 279
+        height: 300
       alignment: 9
-      pivot: {x: 0.45, y: 0.35}
+      pivot: {x: 0.31115758, y: 0.61942405}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d86331c517cc31740a61fe8ba794510a
-      internalID: 8316849058313091139
+      spriteID: 067e5b647fa07e846ac2da6f78bbc6f4
+      internalID: 7566860522278350043
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna_Fall_6
+      name: Sword_Fall_1
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 600
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.31115755, y: 0.5632245}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 175da12186b6e8545bc1e3656333570b
+      internalID: -5340990882457270857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Fall_2
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 600
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3073807, y: 0.51756245}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301885c34c70e5f43b1831cfc1eb5249
+      internalID: 3285458832024882152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Fall_3
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 600
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.30360395, y: 0.47190022}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d88b27540b8b4e54191a657ff25c25ae
+      internalID: -5770907445729487648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Fall_4
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 600
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3036042, y: 0.43326315}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb227d260b17984984dd70ca0c79747
+      internalID: -3310876108599786232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Fall_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 290
-        width: 137
-        height: 290
+        y: 300
+        width: 279
+        height: 300
       alignment: 9
-      pivot: {x: 0.45, y: 0.35}
+      pivot: {x: 0.3, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f2d9b736d56d0743ba82729ebb89cdc
-      internalID: 4613503358632844561
+      spriteID: ab67a455172064142b6c1e882a874a00
+      internalID: -2582943698609358957
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna_Fall_7
+      name: Sword_Fall_6
       rect:
         serializedVersion: 2
-        x: 137
-        y: 290
-        width: 137
-        height: 290
+        x: 279
+        y: 300
+        width: 279
+        height: 300
       alignment: 9
-      pivot: {x: 0.45, y: 0.35}
+      pivot: {x: 0.3, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dbe9ad84e373b34e8f4c254d74a24d0
-      internalID: -4663950772404629813
+      spriteID: 596c01ca3b58f3344afe53c318f6e706
+      internalID: -5442327369747688671
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna_Fall_8
+      name: Sword_Fall_7
       rect:
         serializedVersion: 2
-        x: 274
-        y: 290
-        width: 137
-        height: 290
+        x: 558
+        y: 300
+        width: 279
+        height: 300
       alignment: 9
-      pivot: {x: 0.45, y: 0.35}
+      pivot: {x: 0.3, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d558df7cff6dab44d85b3596ad4828ad
-      internalID: 8677984022347547049
+      spriteID: 6bf92c597e6aa6f41a57a64cddfaf610
+      internalID: -5318286094101245621
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna_Fall_9
+      name: Sword_Fall_8
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 300
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3188282af17e04744ba0ba467c924f19
+      internalID: 7516833367879344884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Fall_9
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 300
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b99be91ea1e5bee469bb63cb13501942
+      internalID: 4262442234968290712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Fall_10
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 137
-        height: 290
+        y: 1
+        width: 279
+        height: 300
       alignment: 9
-      pivot: {x: 0.45, y: 0.35}
+      pivot: {x: 0.3, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 702d634e3c53185459f81a092fbac192
-      internalID: 4052328367343955568
+      spriteID: 93937f234ebec064688e1768f310f204
+      internalID: -2133010062701081887
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna_Fall_10
+      name: Sword_Fall_11
       rect:
         serializedVersion: 2
-        x: 137
+        x: 279
         y: 0
-        width: 137
-        height: 290
+        width: 279
+        height: 300
       alignment: 9
-      pivot: {x: 0.45, y: 0.35}
+      pivot: {x: 0.3, y: 0.375}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 641b332fadd937744a16819f994f1e2b
-      internalID: 1485576087697818298
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Luna_Fall_11
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 0
-        width: 137
-        height: 290
-      alignment: 9
-      pivot: {x: 0.45, y: 0.35}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db6e814904b020f4099cb13b7d213aa8
-      internalID: -6152753318979623190
+      spriteID: f8a88a796e4eb8f49b223e76569cd9d9
+      internalID: 6446213352997105182
       vertices: []
       indices: 
       edges: []
@@ -385,7 +374,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 9bbacf1badb0e3e4b83e6ba1d1a34472
+    spriteID: 2bcc6f1440f31ec4690ccc594310d296
     internalID: 0
     vertices: []
     indices: 

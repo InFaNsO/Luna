@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: 64dba84e7cce1e34a8d2e31edb37c8cb
+guid: 8f3dcf28eb1cabc44a030b460a208d2b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8546345058061711059
-    second: Luna_Fall_0
+      213: -4810693122739956970
+    second: GreatSword_Poke_0
   - first:
-      213: -2502486943419724338
-    second: Luna_Fall_1
+      213: -3311476178394871111
+    second: GreatSword_Poke_1
   - first:
-      213: 2864250001669699444
-    second: Luna_Fall_2
+      213: 8698895646969924423
+    second: GreatSword_Poke_2
   - first:
-      213: 7845747412175325045
-    second: Luna_Fall_3
+      213: 6559028502159348584
+    second: GreatSword_Poke_3
   - first:
-      213: 2173479340957093323
-    second: Luna_Fall_4
+      213: -7749311367342207052
+    second: GreatSword_Poke_4
   - first:
-      213: 8316849058313091139
-    second: Luna_Fall_5
+      213: -1233254011107846424
+    second: GreatSword_Poke_5
   - first:
-      213: 4613503358632844561
-    second: Luna_Fall_6
+      213: -2554221125796754350
+    second: GreatSword_Poke_6
   - first:
-      213: -4663950772404629813
-    second: Luna_Fall_7
+      213: 2532359718724352770
+    second: GreatSword_Poke_7
   - first:
-      213: 8677984022347547049
-    second: Luna_Fall_8
+      213: 8577907487171486709
+    second: GreatSword_Poke_8
   - first:
-      213: 4052328367343955568
-    second: Luna_Fall_9
+      213: 3335555062467804277
+    second: GreatSword_Poke_9
   - first:
-      213: 1485576087697818298
-    second: Luna_Fall_10
+      213: 4546904347207475
+    second: GreatSword_Poke_10
   - first:
-      213: -6152753318979623190
-    second: Luna_Fall_11
+      213: -8810540275464777964
+    second: GreatSword_Poke_11
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -67,7 +67,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: -1
     aniso: -1
     mipBias: -100
     wrapU: 1
@@ -116,268 +116,257 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
-  - serializedVersion: 2
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Luna_Fall_0
+      name: GreatSword_Poke_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 870
-        width: 137
-        height: 290
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 837402b46b14bec4e8e78380010f4200
-      internalID: 8546345058061711059
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Luna_Fall_1
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 870
-        width: 137
-        height: 290
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f1ad5c27dd1c32a4b8141385d62f2d91
-      internalID: -2502486943419724338
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Luna_Fall_2
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 870
-        width: 137
-        height: 290
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ddd8255a39f529648ad6d320b14133bf
-      internalID: 2864250001669699444
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Luna_Fall_3
-      rect:
-        serializedVersion: 2
-        x: 3
-        y: 580
-        width: 137
-        height: 290
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4dd22c6a1267eef4e96751d6d449b3ff
-      internalID: 7845747412175325045
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Luna_Fall_4
-      rect:
-        serializedVersion: 2
-        x: 137
-        y: 580
-        width: 137
-        height: 290
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c699accabfc663648b93a81a8c391a10
-      internalID: 2173479340957093323
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Luna_Fall_5
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 580
-        width: 137
-        height: 290
+        y: 502
+        width: 346
+        height: 251
       alignment: 9
-      pivot: {x: 0.45, y: 0.35}
+      pivot: {x: 0.22, y: 0.47}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d86331c517cc31740a61fe8ba794510a
-      internalID: 8316849058313091139
+      spriteID: 00b200a8091ffdf4bafe346f83e482ae
+      internalID: -4810693122739956970
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna_Fall_6
+      name: GreatSword_Poke_1
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 502
+        width: 346
+        height: 251
+      alignment: 9
+      pivot: {x: 0.27649066, y: 0.5296154}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cd0acd68124856478d3b9fc37405bc0
+      internalID: -3311476178394871111
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreatSword_Poke_2
+      rect:
+        serializedVersion: 2
+        x: 692
+        y: 502
+        width: 346
+        height: 251
+      alignment: 9
+      pivot: {x: 0.27824798, y: 0.534159}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72353448f147d984e924764ae01e09d3
+      internalID: 8698895646969924423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreatSword_Poke_3
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 502
+        width: 346
+        height: 251
+      alignment: 9
+      pivot: {x: 0.27824798, y: 0.53085876}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6375d27685da1ec4796b844c2ebefab8
+      internalID: 6559028502159348584
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreatSword_Poke_4
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 502
+        width: 346
+        height: 251
+      alignment: 9
+      pivot: {x: 0.27965745, y: 0.5362612}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8c3ab917a1e92545ac79274ebb43492
+      internalID: -7749311367342207052
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreatSword_Poke_5
       rect:
         serializedVersion: 2
         x: 0
-        y: 290
-        width: 137
-        height: 290
+        y: 251
+        width: 346
+        height: 251
       alignment: 9
-      pivot: {x: 0.45, y: 0.35}
+      pivot: {x: 0.27742168, y: 0.5334509}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5f2d9b736d56d0743ba82729ebb89cdc
-      internalID: 4613503358632844561
+      spriteID: 3ba0266b7b279af4a9e2985f8d1d9ca2
+      internalID: -1233254011107846424
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna_Fall_7
+      name: GreatSword_Poke_6
       rect:
         serializedVersion: 2
-        x: 137
-        y: 290
-        width: 137
-        height: 290
+        x: 346
+        y: 251
+        width: 346
+        height: 251
       alignment: 9
-      pivot: {x: 0.45, y: 0.35}
+      pivot: {x: 0.2774217, y: 0.5334509}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2dbe9ad84e373b34e8f4c254d74a24d0
-      internalID: -4663950772404629813
+      spriteID: 70a7f711b9a009e40b014e88970818c1
+      internalID: -2554221125796754350
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna_Fall_8
+      name: GreatSword_Poke_7
       rect:
         serializedVersion: 2
-        x: 274
-        y: 290
-        width: 137
-        height: 290
+        x: 692
+        y: 251
+        width: 346
+        height: 251
       alignment: 9
-      pivot: {x: 0.45, y: 0.35}
+      pivot: {x: 0.2774217, y: 0.5288148}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: d558df7cff6dab44d85b3596ad4828ad
-      internalID: 8677984022347547049
+      spriteID: 569c43bf7a2b2fd4da3a9d153afdc68e
+      internalID: 2532359718724352770
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna_Fall_9
+      name: GreatSword_Poke_8
+      rect:
+        serializedVersion: 2
+        x: 1038
+        y: 251
+        width: 346
+        height: 251
+      alignment: 9
+      pivot: {x: 0.27237698, y: 0.52649665}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: df2ad6c96e45807468b38510ed6536c2
+      internalID: 8577907487171486709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreatSword_Poke_9
+      rect:
+        serializedVersion: 2
+        x: 1384
+        y: 251
+        width: 346
+        height: 251
+      alignment: 9
+      pivot: {x: 0.26228747, y: 0.52186054}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e5b297230da66134497ee4d01813bab5
+      internalID: 3335555062467804277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GreatSword_Poke_10
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 137
-        height: 290
+        width: 346
+        height: 251
       alignment: 9
-      pivot: {x: 0.45, y: 0.35}
+      pivot: {x: 0.2538791, y: 0.5149062}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 702d634e3c53185459f81a092fbac192
-      internalID: 4052328367343955568
+      spriteID: e7aa13652470a7845a0732915db20627
+      internalID: 4546904347207475
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Luna_Fall_10
+      name: GreatSword_Poke_11
       rect:
         serializedVersion: 2
-        x: 137
+        x: 346
         y: 0
-        width: 137
-        height: 290
+        width: 346
+        height: 251
       alignment: 9
-      pivot: {x: 0.45, y: 0.35}
+      pivot: {x: 0.22865498, y: 0.50563395}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 641b332fadd937744a16819f994f1e2b
-      internalID: 1485576087697818298
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Luna_Fall_11
-      rect:
-        serializedVersion: 2
-        x: 274
-        y: 0
-        width: 137
-        height: 290
-      alignment: 9
-      pivot: {x: 0.45, y: 0.35}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: db6e814904b020f4099cb13b7d213aa8
-      internalID: -6152753318979623190
+      spriteID: 723930f464047874da7b0ab1a85bb2db
+      internalID: -8810540275464777964
       vertices: []
       indices: 
       edges: []
@@ -385,7 +374,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 9bbacf1badb0e3e4b83e6ba1d1a34472
+    spriteID: e5bc36e9663c3cb4dbd51d2d490cad5e
     internalID: 0
     vertices: []
     indices: 

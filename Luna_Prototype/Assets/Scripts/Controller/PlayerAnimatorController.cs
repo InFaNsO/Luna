@@ -11,6 +11,7 @@ public class PlayerAnimatorController : MonoBehaviour
     }
 
     PlayerController mPlayerController;
+    ParryAttackable mParryAttackableObj;
     Animator mAnimator;
     Rigidbody2D rb;
     float mLastYVel = 0.0f;
@@ -20,6 +21,7 @@ public class PlayerAnimatorController : MonoBehaviour
     void Awake()
     {
         mPlayerController = GetComponent<PlayerController>();
+        mParryAttackableObj = GetComponent<ParryAttackable>();
         mAnimator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
     }
@@ -32,8 +34,8 @@ public class PlayerAnimatorController : MonoBehaviour
 
         if(mPlayerController.IsDashing())
             mAnimator.SetBool("IsDashing", true);
-
-
+        if (mParryAttackableObj.GetParrySignalForAnimator())
+            mAnimator.SetBool("IsParrying", true);
     }
 
     private void FixedUpdate()
@@ -58,6 +60,7 @@ public class PlayerAnimatorController : MonoBehaviour
             mAnimator.SetBool("IsOnGround", mPlayerController.IsGrounded());
             mAnimator.SetBool("IsDoubleJump", false);
             mAnimator.SetBool("IsDashing", false);
+            mAnimator.SetBool("IsParrying", false);
         }
     }
 }
