@@ -13,8 +13,10 @@ public class Stamina : MonoBehaviour
     private float mStaminaCostPerDash= 20f;
     private bool isStaminaSufficient;
 
-    public Slider staminaBar;
-
+    //public Image staminaBar;
+    private void Awake()
+    {
+    }
     private void Start()
     {
         mCurrentStamina = mMaxStamina;
@@ -45,7 +47,9 @@ public class Stamina : MonoBehaviour
 
     private void UpdateStaminaBar()
     {
-        staminaBar.value = mCurrentStamina / mMaxStamina;
+        ServiceLocator.Get<UIManager>().UpdateStaminaGauge(mCurrentStamina/mMaxStamina);
+
+        //staminaBar.value = mCurrentStamina / mMaxStamina;
     }
     public bool IsStaminaSufficient()
     {
