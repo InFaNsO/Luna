@@ -374,7 +374,7 @@ public class InputController : IInputActionCollection, IDisposable
             ""id"": ""40a5159e-0713-4a31-9e70-5dd6cb04d725"",
             ""actions"": [
                 {
-                    ""name"": ""GameStart"",
+                    ""name"": ""PopUpMenu"",
                     ""type"": ""Button"",
                     ""id"": ""91444265-4e70-4c16-b2b8-dc042b4c6c8d"",
                     ""expectedControlType"": """",
@@ -386,11 +386,11 @@ public class InputController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""0943db0f-541b-479c-b403-299fc7105e12"",
-                    ""path"": ""<Keyboard>/anyKey"",
+                    ""path"": ""*/{Menu}"",
                     ""interactions"": """",
                     ""processors"": """",
-                    ""groups"": ""Keyboard and Mouse"",
-                    ""action"": ""GameStart"",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""PopUpMenu"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -440,7 +440,7 @@ public class InputController : IInputActionCollection, IDisposable
         m_PlayerControl_SelectNextItem = m_PlayerControl.FindAction("SelectNextItem", throwIfNotFound: true);
         // UIControl
         m_UIControl = asset.FindActionMap("UIControl", throwIfNotFound: true);
-        m_UIControl_GameStart = m_UIControl.FindAction("GameStart", throwIfNotFound: true);
+        m_UIControl_PopUpMenu = m_UIControl.FindAction("PopUpMenu", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -587,12 +587,12 @@ public class InputController : IInputActionCollection, IDisposable
     // UIControl
     private readonly InputActionMap m_UIControl;
     private IUIControlActions m_UIControlActionsCallbackInterface;
-    private readonly InputAction m_UIControl_GameStart;
+    private readonly InputAction m_UIControl_PopUpMenu;
     public struct UIControlActions
     {
         private InputController m_Wrapper;
         public UIControlActions(InputController wrapper) { m_Wrapper = wrapper; }
-        public InputAction @GameStart => m_Wrapper.m_UIControl_GameStart;
+        public InputAction @PopUpMenu => m_Wrapper.m_UIControl_PopUpMenu;
         public InputActionMap Get() { return m_Wrapper.m_UIControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -602,16 +602,16 @@ public class InputController : IInputActionCollection, IDisposable
         {
             if (m_Wrapper.m_UIControlActionsCallbackInterface != null)
             {
-                GameStart.started -= m_Wrapper.m_UIControlActionsCallbackInterface.OnGameStart;
-                GameStart.performed -= m_Wrapper.m_UIControlActionsCallbackInterface.OnGameStart;
-                GameStart.canceled -= m_Wrapper.m_UIControlActionsCallbackInterface.OnGameStart;
+                PopUpMenu.started -= m_Wrapper.m_UIControlActionsCallbackInterface.OnPopUpMenu;
+                PopUpMenu.performed -= m_Wrapper.m_UIControlActionsCallbackInterface.OnPopUpMenu;
+                PopUpMenu.canceled -= m_Wrapper.m_UIControlActionsCallbackInterface.OnPopUpMenu;
             }
             m_Wrapper.m_UIControlActionsCallbackInterface = instance;
             if (instance != null)
             {
-                GameStart.started += instance.OnGameStart;
-                GameStart.performed += instance.OnGameStart;
-                GameStart.canceled += instance.OnGameStart;
+                PopUpMenu.started += instance.OnPopUpMenu;
+                PopUpMenu.performed += instance.OnPopUpMenu;
+                PopUpMenu.canceled += instance.OnPopUpMenu;
             }
         }
     }
@@ -648,6 +648,6 @@ public class InputController : IInputActionCollection, IDisposable
     }
     public interface IUIControlActions
     {
-        void OnGameStart(InputAction.CallbackContext context);
+        void OnPopUpMenu(InputAction.CallbackContext context);
     }
 }

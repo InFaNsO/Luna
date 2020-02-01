@@ -93,6 +93,13 @@ public class GameLoader : AsyncLoader
         ServiceLocator.Register<UIManager>(UIManageComp);
         yield return null;
 
+        //AudioManager 
+        AudioManager AudioManagerComp = FindObjectOfType<AudioManager>();
+        Assert.IsNotNull(AudioManagerComp, "[GameLoader] AudioManager not found in scene [GameLoader]");
+        AudioManagerComp.transform.SetParent(systemsParent);
+        ServiceLocator.Register<AudioManager>(AudioManagerComp);
+        yield return null;
+
         //
         //GameObject DataSourceManagerGO = new GameObject("DataSourceManager");
         //DataSourceManagerGO.transform.SetParent(systemsParent);

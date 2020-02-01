@@ -9,6 +9,9 @@ using UnityEngine.UI;
 /// </summary>
 public class UI_InGame : MonoBehaviour, UI_Interface
 {
+    //gamepad control
+    InputController _inputController ;
+
     //Gauges
     [Header("Gauges")]
     public Image hp_Image;
@@ -52,9 +55,13 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     private float msgBox_timer = 0f;// used by movebox function
     private bool msgBox_isActive = false;//is msg box currently functioning 
 
+    private UIManager _uIManager;
+
     //
     private void Awake()
     {
+        _inputController = new InputController();
+        _inputController.UIControl.PopUpMenu.performed += _menu => Button_PauseGame();
         //if (popUp_pauseGame == null)
         {
             popUp_pauseGame = transform.Find("popup_pausegame").gameObject;
@@ -80,6 +87,21 @@ public class UI_InGame : MonoBehaviour, UI_Interface
 
         selectedSlotInInventory = 0;
     }
+    private void OnEnable()
+    {
+        _inputController.UIControl.Enable();
+        if (_uIManager == null)
+            _uIManager = ServiceLocator.Get<UIManager>();
+        //_uIManager.SetSelected(transform.Find("pause").gameObject);
+
+    }
+    private void OnDisable()
+    {
+
+    }
+
+
+
     public void ResetUI()
     {
         foreach (var comp in _uiPopUpComponents)
@@ -158,13 +180,16 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     public void Button_PauseGame()
     {
         popUp_pauseGame.SetActive(true);
-        Time.timeScale = 0.0f;
+        _uIManager.SetSelected(popUp_pauseGame.transform.Find("Quit").gameObject);
+
+        //Time.timeScale = 0.0f;
     }
 
     public void Button_Resume()
     {
         Debug.Log("Button_Resume pressed");
         popUp_pauseGame.SetActive(false);
+ 
         Time.timeScale = 1.0f;
 
     }
@@ -174,11 +199,13 @@ public class UI_InGame : MonoBehaviour, UI_Interface
         Debug.Log("Button_Quit pressed");
         popUp_sureToQuit.SetActive(true);
         popUp_pauseGame.SetActive(false);
- 
+        _uIManager.SetSelected(transform.Find("popup_suretoquit").transform.Find("no").gameObject);
+
     }
 
     public void Button_SureToQuit(int val)//0 no 1 yes
     {
+
         if (val == 0)
         {
             popUp_sureToQuit.SetActive(false);
