@@ -56,7 +56,7 @@ public class World : MonoBehaviour
         }
     }
 
-    [SerializeField] private List<Wall> mWalls;
+    [SerializeField] private List<Wall> mWalls = new List<Wall>();
     [SerializeField] private List<Obstacle> mObstacles;
     [SerializeField] public List<Agent> mAgents;
     [SerializeField] public Agent mPlayer;
@@ -146,7 +146,6 @@ public class World : MonoBehaviour
     }
     public void Start()
     {
-        mWalls = new List<Wall>();
         Wall w = new Wall();
 
         //general platforms (has 4 sides exposed)
