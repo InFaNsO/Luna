@@ -1,7 +1,79 @@
 fileFormatVersion: 2
 guid: 7d5fae49392913d48bf2968cae5e90f9
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 1056916606723433148
+    second: Sword_Dash_0
+  - first:
+      213: 4767998333557394855
+    second: Sword_Dash_1
+  - first:
+      213: -1710094962492526778
+    second: Sword_Dash_2
+  - first:
+      213: -4021759360427304937
+    second: Sword_Dash_3
+  - first:
+      213: -5961409014892754962
+    second: Sword_Dash_4
+  - first:
+      213: -8406761150576989318
+    second: Sword_Dash_5
+  - first:
+      213: 3402385464438704516
+    second: Sword_Dash_6
+  - first:
+      213: 6458379039074537356
+    second: Sword_Dash_7
+  - first:
+      213: -6739123049307271675
+    second: Sword_Dash_8
+  - first:
+      213: -6690732007497743389
+    second: Sword_Dash_9
+  - first:
+      213: -2834447895047689232
+    second: Sword_Dash_10
+  - first:
+      213: 5870146540892159647
+    second: Sword_Dash_11
+  - first:
+      213: -6710421873130544762
+    second: Sword_Dash_12
+  - first:
+      213: -8614087917927800869
+    second: Sword_Dash_13
+  - first:
+      213: 7056107482003322574
+    second: Sword_Dash_14
+  - first:
+      213: -1675718292737021864
+    second: Sword_Dash_15
+  - first:
+      213: 3184030933733708437
+    second: Sword_Dash_16
+  - first:
+      213: 2743292955661393643
+    second: Sword_Dash_17
+  - first:
+      213: -5239818840135708483
+    second: Sword_Dash_18
+  - first:
+      213: -352825314616476576
+    second: Sword_Dash_19
+  - first:
+      213: 9053703276583073929
+    second: Sword_Dash_20
+  - first:
+      213: -2700867206864924288
+    second: Sword_Dash_21
+  - first:
+      213: -3886472558585140260
+    second: Sword_Dash_22
+  - first:
+      213: 2478730434888324880
+    second: Sword_Dash_23
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +112,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +141,524 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Sword_Dash_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1232
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.1251249, y: 0.6246932}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3e8afaabc83a104e81e6babe628de9e
+      internalID: 1056916606723433148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_1
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 1232
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.1256301, y: 0.6255465}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0af10a8fbd566604db0483fdf687259f
+      internalID: 4767998333557394855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_2
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 1232
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.1237814, y: 0.6220588}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52d52f019f5e7ca4dad697c7b12c6cb9
+      internalID: -1710094962492526778
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_3
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 1232
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.12193269, y: 0.62380266}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cf23e33907a2a54d950e00eea25e541
+      internalID: -4021759360427304937
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_4
+      rect:
+        serializedVersion: 2
+        x: 2324
+        y: 1232
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.19942129, y: 0.63626814}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da9269dcda7085f428257c4597c03fa6
+      internalID: -5961409014892754962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 924
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.30045116, y: 0.6501679}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15d2f675de4b33f478ff11ebcd8973fa
+      internalID: -8406761150576989318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_6
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 924
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.41933128, y: 0.6381547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65612e4ad91924142b3172119e7b4137
+      internalID: 3402385464438704516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_7
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 924
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.54458004, y: 0.6381547}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6202a0e1e823fd941b2360f424fd4a90
+      internalID: 6458379039074537356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_8
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 924
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.6167572, y: 0.63415015}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6987ece9f087c54b8de59a2a9e29684
+      internalID: -6739123049307271675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_9
+      rect:
+        serializedVersion: 2
+        x: 2324
+        y: 924
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.62312585, y: 0.6281433}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9373b61c21cdea4b98c04edb6bc5e06
+      internalID: -6690732007497743389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 616
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.6296337, y: 0.61810935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91e300890f44c8a4a8392e9dac8f86cf
+      internalID: -2834447895047689232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_11
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 616
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.6375704, y: 0.61810935}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61ba13a7e3b02c14c9e571f3e89dac7b
+      internalID: 5870146540892159647
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_12
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 616
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.6490346, y: 0.6048013}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ef8f10e867ad0d499ef37c0483129fc
+      internalID: -6710421873130544762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_13
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 616
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.6507982, y: 0.60313773}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ae632abd5aac9f4ca52b898a8cf357c
+      internalID: -8614087917927800869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_14
+      rect:
+        serializedVersion: 2
+        x: 2324
+        y: 616
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.64799964, y: 0.6050385}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d53269f1a0b82a648905d2fe824b303a
+      internalID: 7056107482003322574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 308
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.6478992, y: 0.60636574}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c418969c18443743b8f122983c279ca
+      internalID: -1675718292737021864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_16
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 308
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.6525212, y: 0.6115968}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5510d86ae4e1274aaaf99990b0de87f
+      internalID: 3184030933733708437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_17
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 308
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.65437, y: 0.6185717}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d60f7468ec2cbd342a577f9025077e6d
+      internalID: 2743292955661393643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_18
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 308
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.65437, y: 0.622059}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b603d5b908a62224da8dbabdf1b8c450
+      internalID: -5239818840135708483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_19
+      rect:
+        serializedVersion: 2
+        x: 2324
+        y: 308
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.65274966, y: 0.62387383}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc17a9bddd5f51742b04bc9b1850d6e6
+      internalID: -352825314616476576
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.6534963, y: 0.6263782}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de70d36b243d1964ea06b496df057cea
+      internalID: 9053703276583073929
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_21
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 0
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.6543444, y: 0.6231788}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9294b0956c821d43a910f2450160492
+      internalID: -2700867206864924288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_22
+      rect:
+        serializedVersion: 2
+        x: 1162
+        y: 0
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.6534964, y: 0.621579}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a53b1c81a714b80479ea2cae594b2cd0
+      internalID: -3886472558585140260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Dash_23
+      rect:
+        serializedVersion: 2
+        x: 1743
+        y: 0
+        width: 581
+        height: 308
+      alignment: 9
+      pivot: {x: 0.6534964, y: 0.6231788}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aef21981ff5044148aa82c2a21729a87
+      internalID: 2478730434888324880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

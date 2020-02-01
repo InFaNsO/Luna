@@ -1,7 +1,43 @@
 fileFormatVersion: 2
 guid: 61abd26689c6ea545a8b4407fc70a34a
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 7566860522278350043
+    second: Sword_Fall_0
+  - first:
+      213: -5340990882457270857
+    second: Sword_Fall_1
+  - first:
+      213: 3285458832024882152
+    second: Sword_Fall_2
+  - first:
+      213: -5770907445729487648
+    second: Sword_Fall_3
+  - first:
+      213: -3310876108599786232
+    second: Sword_Fall_4
+  - first:
+      213: -2582943698609358957
+    second: Sword_Fall_5
+  - first:
+      213: -5442327369747688671
+    second: Sword_Fall_6
+  - first:
+      213: -5318286094101245621
+    second: Sword_Fall_7
+  - first:
+      213: 7516833367879344884
+    second: Sword_Fall_8
+  - first:
+      213: 4262442234968290712
+    second: Sword_Fall_9
+  - first:
+      213: -2133010062701081887
+    second: Sword_Fall_10
+  - first:
+      213: 6446213352997105182
+    second: Sword_Fall_11
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +76,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +105,272 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Sword_Fall_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 600
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.31115758, y: 0.61942405}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 067e5b647fa07e846ac2da6f78bbc6f4
+      internalID: 7566860522278350043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Fall_1
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 600
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.31115755, y: 0.5632245}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 175da12186b6e8545bc1e3656333570b
+      internalID: -5340990882457270857
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Fall_2
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 600
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3073807, y: 0.51756245}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 301885c34c70e5f43b1831cfc1eb5249
+      internalID: 3285458832024882152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Fall_3
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 600
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.30360395, y: 0.47190022}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d88b27540b8b4e54191a657ff25c25ae
+      internalID: -5770907445729487648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Fall_4
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 600
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3036042, y: 0.43326315}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5eb227d260b17984984dd70ca0c79747
+      internalID: -3310876108599786232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Fall_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 300
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab67a455172064142b6c1e882a874a00
+      internalID: -2582943698609358957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Fall_6
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 300
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 596c01ca3b58f3344afe53c318f6e706
+      internalID: -5442327369747688671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Fall_7
+      rect:
+        serializedVersion: 2
+        x: 558
+        y: 300
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6bf92c597e6aa6f41a57a64cddfaf610
+      internalID: -5318286094101245621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Fall_8
+      rect:
+        serializedVersion: 2
+        x: 837
+        y: 300
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3188282af17e04744ba0ba467c924f19
+      internalID: 7516833367879344884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Fall_9
+      rect:
+        serializedVersion: 2
+        x: 1116
+        y: 300
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b99be91ea1e5bee469bb63cb13501942
+      internalID: 4262442234968290712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Fall_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93937f234ebec064688e1768f310f204
+      internalID: -2133010062701081887
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Fall_11
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 0
+        width: 279
+        height: 300
+      alignment: 9
+      pivot: {x: 0.3, y: 0.375}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8a88a796e4eb8f49b223e76569cd9d9
+      internalID: 6446213352997105182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

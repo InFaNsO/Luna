@@ -134,10 +134,10 @@ TextureImporter:
       name: Luna_Fall_0
       rect:
         serializedVersion: 2
-        x: 17
-        y: 958
-        width: 89
-        height: 193
+        x: 0
+        y: 870
+        width: 137
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -145,7 +145,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f05d53ddc66bbf2409746a088beffd0d
+      spriteID: 837402b46b14bec4e8e78380010f4200
       internalID: 8546345058061711059
       vertices: []
       indices: 
@@ -155,10 +155,10 @@ TextureImporter:
       name: Luna_Fall_1
       rect:
         serializedVersion: 2
-        x: 150
-        y: 936
-        width: 88
-        height: 201
+        x: 137
+        y: 870
+        width: 137
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -166,7 +166,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 01d3b87ec13a69a49af4cc2066c595fb
+      spriteID: f1ad5c27dd1c32a4b8141385d62f2d91
       internalID: -2502486943419724338
       vertices: []
       indices: 
@@ -176,10 +176,10 @@ TextureImporter:
       name: Luna_Fall_2
       rect:
         serializedVersion: 2
-        x: 284
-        y: 915
-        width: 92
-        height: 207
+        x: 274
+        y: 870
+        width: 137
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -187,7 +187,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 22c3f4a01264dc148ba5ed8d1fdddeb7
+      spriteID: ddd8255a39f529648ad6d320b14133bf
       internalID: 2864250001669699444
       vertices: []
       indices: 
@@ -197,10 +197,10 @@ TextureImporter:
       name: Luna_Fall_3
       rect:
         serializedVersion: 2
-        x: 7
-        y: 607
-        width: 97
-        height: 211
+        x: 3
+        y: 580
+        width: 137
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -208,7 +208,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: db49708915cc3d14faa47b88507a2d9a
+      spriteID: 4dd22c6a1267eef4e96751d6d449b3ff
       internalID: 7845747412175325045
       vertices: []
       indices: 
@@ -218,10 +218,10 @@ TextureImporter:
       name: Luna_Fall_4
       rect:
         serializedVersion: 2
-        x: 141
-        y: 591
-        width: 101
-        height: 213
+        x: 137
+        y: 580
+        width: 137
+        height: 290
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -229,7 +229,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cdd2317e8019f3e4394275879274edce
+      spriteID: c699accabfc663648b93a81a8c391a10
       internalID: 2173479340957093323
       vertices: []
       indices: 
@@ -239,18 +239,18 @@ TextureImporter:
       name: Luna_Fall_5
       rect:
         serializedVersion: 2
-        x: 281
-        y: 582
-        width: 106
-        height: 207
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 274
+        y: 580
+        width: 137
+        height: 290
+      alignment: 9
+      pivot: {x: 0.45, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e5f4c52f9e8258c4189d838d76f3937c
+      spriteID: d86331c517cc31740a61fe8ba794510a
       internalID: 8316849058313091139
       vertices: []
       indices: 
@@ -260,18 +260,18 @@ TextureImporter:
       name: Luna_Fall_6
       rect:
         serializedVersion: 2
-        x: 16
+        x: 0
         y: 290
-        width: 109
-        height: 190
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 137
+        height: 290
+      alignment: 9
+      pivot: {x: 0.45, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 19c808a1a391c6b4e9ae1efbd95d5410
+      spriteID: 5f2d9b736d56d0743ba82729ebb89cdc
       internalID: 4613503358632844561
       vertices: []
       indices: 
@@ -281,18 +281,18 @@ TextureImporter:
       name: Luna_Fall_7
       rect:
         serializedVersion: 2
-        x: 162
-        y: 294
-        width: 107
-        height: 161
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 137
+        y: 290
+        width: 137
+        height: 290
+      alignment: 9
+      pivot: {x: 0.45, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a6fee90f63cae2b4aa677571b7f8d498
+      spriteID: 2dbe9ad84e373b34e8f4c254d74a24d0
       internalID: -4663950772404629813
       vertices: []
       indices: 
@@ -302,18 +302,18 @@ TextureImporter:
       name: Luna_Fall_8
       rect:
         serializedVersion: 2
-        x: 297
-        y: 292
-        width: 101
-        height: 179
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 274
+        y: 290
+        width: 137
+        height: 290
+      alignment: 9
+      pivot: {x: 0.45, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 89415020de41dcc4da30885d265a6995
+      spriteID: d558df7cff6dab44d85b3596ad4828ad
       internalID: 8677984022347547049
       vertices: []
       indices: 
@@ -323,18 +323,18 @@ TextureImporter:
       name: Luna_Fall_9
       rect:
         serializedVersion: 2
-        x: 23
-        y: 3
-        width: 92
-        height: 193
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 0
+        y: 0
+        width: 137
+        height: 290
+      alignment: 9
+      pivot: {x: 0.45, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 87ebe5b3f42c0c14692f847a7144664c
+      spriteID: 702d634e3c53185459f81a092fbac192
       internalID: 4052328367343955568
       vertices: []
       indices: 
@@ -344,18 +344,18 @@ TextureImporter:
       name: Luna_Fall_10
       rect:
         serializedVersion: 2
-        x: 162
-        y: 3
-        width: 81
-        height: 201
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 137
+        y: 0
+        width: 137
+        height: 290
+      alignment: 9
+      pivot: {x: 0.45, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 926df6d2e174f194e895b79e47e11194
+      spriteID: 641b332fadd937744a16819f994f1e2b
       internalID: 1485576087697818298
       vertices: []
       indices: 
@@ -365,18 +365,18 @@ TextureImporter:
       name: Luna_Fall_11
       rect:
         serializedVersion: 2
-        x: 300
-        y: 3
-        width: 72
-        height: 205
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 274
+        y: 0
+        width: 137
+        height: 290
+      alignment: 9
+      pivot: {x: 0.45, y: 0.35}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: aebe85ef3fc15ba449ee346010b6e37d
+      spriteID: db6e814904b020f4099cb13b7d213aa8
       internalID: -6152753318979623190
       vertices: []
       indices: 

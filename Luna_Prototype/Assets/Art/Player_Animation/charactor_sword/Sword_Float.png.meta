@@ -1,7 +1,52 @@
 fileFormatVersion: 2
 guid: a975990f2dc959f4692763aecaf83c9c
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -3164905991111137205
+    second: Sword_Float_0
+  - first:
+      213: -5393664394745446358
+    second: Sword_Float_1
+  - first:
+      213: -11607028915007851
+    second: Sword_Float_2
+  - first:
+      213: -2802495733047007047
+    second: Sword_Float_3
+  - first:
+      213: -5173054505823345266
+    second: Sword_Float_4
+  - first:
+      213: 7948236759596761554
+    second: Sword_Float_5
+  - first:
+      213: 7262402331387035754
+    second: Sword_Float_6
+  - first:
+      213: 1912224391206775884
+    second: Sword_Float_7
+  - first:
+      213: -9095332679195049980
+    second: Sword_Float_8
+  - first:
+      213: -8066152749051941100
+    second: Sword_Float_9
+  - first:
+      213: 1749424195359492645
+    second: Sword_Float_10
+  - first:
+      213: 2333906588574900526
+    second: Sword_Float_11
+  - first:
+      213: 1418247235883112457
+    second: Sword_Float_12
+  - first:
+      213: 7185836356915114599
+    second: Sword_Float_13
+  - first:
+      213: -6987410695039644578
+    second: Sword_Float_14
   externalObjects: {}
   serializedVersion: 10
   mipmaps:
@@ -40,7 +85,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +114,335 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Sword_Float_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 430
+        width: 228
+        height: 215
+      alignment: 9
+      pivot: {x: 0.33938935, y: 0.45954818}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c9f6e90b59018c649bdd7ff60d8ed20e
+      internalID: -3164905991111137205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Float_1
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 430
+        width: 228
+        height: 215
+      alignment: 9
+      pivot: {x: 0.33738172, y: 0.45954844}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9947916d7bb552a429747ea1f19727a6
+      internalID: -5393664394745446358
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Float_2
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 430
+        width: 228
+        height: 215
+      alignment: 9
+      pivot: {x: 0.33938947, y: 0.4574193}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3faa388d7934a5a4993e89165661e681
+      internalID: -11607028915007851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Float_3
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 430
+        width: 228
+        height: 215
+      alignment: 9
+      pivot: {x: 0.33738172, y: 0.46167758}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a2c2d7a352823ae4ebb4ba54cdeb84e1
+      internalID: -2802495733047007047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Float_4
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 430
+        width: 228
+        height: 215
+      alignment: 9
+      pivot: {x: 0.33738172, y: 0.45954844}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80df8914fb1352c46a28cf32a771135b
+      internalID: -5173054505823345266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Float_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 215
+        width: 228
+        height: 215
+      alignment: 9
+      pivot: {x: 0.3373817, y: 0.46167743}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c5bb5b3665042a439624ad914836fce
+      internalID: 7948236759596761554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Float_6
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 215
+        width: 228
+        height: 215
+      alignment: 9
+      pivot: {x: 0.33738172, y: 0.46167743}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0de0590d551415140b0206627f90218c
+      internalID: 7262402331387035754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Float_7
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 215
+        width: 228
+        height: 215
+      alignment: 9
+      pivot: {x: 0.33738172, y: 0.46167743}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a477c16d62cd2e4db965fe71c9609c6
+      internalID: 1912224391206775884
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Float_8
+      rect:
+        serializedVersion: 2
+        x: 683
+        y: 215
+        width: 228
+        height: 215
+      alignment: 9
+      pivot: {x: 0.34139693, y: 0.4574193}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da0f52adee6aa449afc553f705bfe12
+      internalID: -9095332679195049980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Float_9
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 215
+        width: 228
+        height: 215
+      alignment: 9
+      pivot: {x: 0.33738172, y: 0.46167743}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db36beb28a209d24f9bb68bf701640bc
+      internalID: -8066152749051941100
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Float_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 228
+        height: 215
+      alignment: 9
+      pivot: {x: 0.3373817, y: 0.46167737}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 745f81107b6fce646bdb7016d08559b9
+      internalID: 1749424195359492645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Float_11
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 0
+        width: 228
+        height: 215
+      alignment: 9
+      pivot: {x: 0.33738172, y: 0.45954835}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6778268685951984287afc18307ea416
+      internalID: 2333906588574900526
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Float_12
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 0
+        width: 228
+        height: 215
+      alignment: 9
+      pivot: {x: 0.33738172, y: 0.46593544}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 56ac29d4f46927a45a24119f39bd343b
+      internalID: 1418247235883112457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Float_13
+      rect:
+        serializedVersion: 2
+        x: 684
+        y: 0
+        width: 228
+        height: 215
+      alignment: 9
+      pivot: {x: 0.33738172, y: 0.46380627}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a1313bdea43ca4a4fb785d74a6d699b7
+      internalID: 7185836356915114599
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Float_14
+      rect:
+        serializedVersion: 2
+        x: 912
+        y: 0
+        width: 228
+        height: 215
+      alignment: 9
+      pivot: {x: 0.33938947, y: 0.46167737}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e29374559340f28488ce9ed9de9054ea
+      internalID: -6987410695039644578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
