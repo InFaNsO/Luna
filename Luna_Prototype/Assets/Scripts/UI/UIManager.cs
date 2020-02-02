@@ -89,6 +89,10 @@ public class UIManager : MonoBehaviour
     {
         _uiInGame.UpdateHPGauge(val);
     }
+    public void UpdateStaminaGauge(float val)
+    {
+        _uiInGame.UpdateStaminaGauge(val);
+    }
 
     public List<Image> GetQuickSlot()
     {
