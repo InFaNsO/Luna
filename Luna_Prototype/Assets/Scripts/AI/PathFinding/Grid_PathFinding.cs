@@ -355,12 +355,12 @@ namespace LAI
             int nID = 0;
             Node nearest = mNodes[nID];
 
-            float minDisSq = (pos - nearest.pos).sqrMagnitude;
+            float minDisSq = Vector3.Distance(pos , nearest.pos);
 
             for (int i = 1; i < mNodes.Count; ++i)
             {
-                float disSq = (pos - mNodes[i].pos).sqrMagnitude;
-                if (disSq < minDisSq)
+                float disSq = Vector3.Distance(pos, mNodes[i].pos);
+                if (disSq < minDisSq && mNodes[i].pos.y <= pos.y)
                 {
                     minDisSq = disSq;
                     nearest = mNodes[i];
@@ -507,6 +507,13 @@ namespace LAI
         {
             playerNodeId = GetNearestNodeID(GameWorld.mPlayer.transform.position);
             int endNodeId = GetNearestNodeID(end);
+            FindPath(mNodes[endNodeId].pos);
+        }
+
+        public void FindPath(Vector3 enemyPos, int endID)
+        {
+            playerNodeId = endID;
+            int endNodeId = GetNearestNodeID(enemyPos);
             FindPath(mNodes[endNodeId].pos);
         }
 

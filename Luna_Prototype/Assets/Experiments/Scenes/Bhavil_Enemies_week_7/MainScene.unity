@@ -3632,7 +3632,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 136618880}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 7.61, y: -1.48, z: 0}
+  m_LocalPosition: {x: 3.13, y: -1.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 308563474}
@@ -3654,17 +3654,17 @@ MonoBehaviour:
   mVelocity: {x: 0, y: 0}
   mHeading: {x: 0, y: 0}
   mFinalDestination: {x: 0, y: 0}
-  mMass: 100
-  mMaxSpeed: 10
-  mSafeDistanceReduced: 1
-  mSafeDistance: 2
-  mSafeDistanceExtended: 3
+  mMass: 1
+  mMaxSpeed: 2
+  mSafeDistanceReduced: 0.25
+  mSafeDistance: 1
+  mSafeDistanceExtended: 2
   mRadius: 0.75
   world: {fileID: 1333234407}
   mMaxHealth: 10
   mCurrentHealth: 10
   mMovementSpeed: 0
-  mJumpStrength: 0
+  mJumpStrength: 6
   mWasTheCharacterInAnHazardInThePastSecond: 0
   mReceiveHazardDebuffCD: 0
   mReceivedHazardDamage: 0
@@ -3672,7 +3672,7 @@ MonoBehaviour:
   isGrounded: 0
   mElement: {fileID: 0}
   mAttackMomentumPos: {fileID: 0}
-  mWeapon: {fileID: 649313139}
+  mWeapon: {fileID: 0}
   mIsDropping: 0
   mDropPrefbs: {fileID: 0}
   platformsAccesible: []
@@ -3761,7 +3761,7 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
-  m_Interpolate: 0
+  m_Interpolate: 1
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
@@ -19335,16 +19335,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2055398516}
     m_Modifications:
-    - target: {fileID: 5913526906705443303, guid: a31afef3ea2353845847fc556dbee13b,
-        type: 3}
-      propertyPath: m_Name
-      value: Weapon_Sword (1)
-      objectReference: {fileID: 0}
-    - target: {fileID: 5913526906705443303, guid: a31afef3ea2353845847fc556dbee13b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8064114535432841098, guid: a31afef3ea2353845847fc556dbee13b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -19398,6 +19388,16 @@ PrefabInstance:
     - target: {fileID: 8064114535432841098, guid: a31afef3ea2353845847fc556dbee13b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913526906705443303, guid: a31afef3ea2353845847fc556dbee13b,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon_Sword (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913526906705443303, guid: a31afef3ea2353845847fc556dbee13b,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6606600559324767001, guid: a31afef3ea2353845847fc556dbee13b,
@@ -46602,16 +46602,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 2055398516}
     m_Modifications:
-    - target: {fileID: 5913526906705443303, guid: a31afef3ea2353845847fc556dbee13b,
-        type: 3}
-      propertyPath: m_Name
-      value: Weapon_Sword
-      objectReference: {fileID: 0}
-    - target: {fileID: 5913526906705443303, guid: a31afef3ea2353845847fc556dbee13b,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 8064114535432841098, guid: a31afef3ea2353845847fc556dbee13b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -46665,6 +46655,16 @@ PrefabInstance:
     - target: {fileID: 8064114535432841098, guid: a31afef3ea2353845847fc556dbee13b,
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913526906705443303, guid: a31afef3ea2353845847fc556dbee13b,
+        type: 3}
+      propertyPath: m_Name
+      value: Weapon_Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 5913526906705443303, guid: a31afef3ea2353845847fc556dbee13b,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5262413194630774346, guid: a31afef3ea2353845847fc556dbee13b,

@@ -23,6 +23,11 @@ namespace LAI
             Gizmos.color = Color.yellow;
             Gizmos.DrawLine(agent.transform.position, agent.transform.position + new Vector3(agent.GetVelocity().x * 10, agent.GetVelocity().y * 10, 0.0f));
 
+            Gizmos.DrawWireSphere(new Vector3(agent.GetDestination().x, agent.GetDestination().y, 0.0f), 0.5f);
+
+            Gizmos.color = Color.green;
+            Gizmos.DrawWireSphere(new Vector3(agent.GetFinalDestination().x, agent.GetFinalDestination().y, 0.0f), 0.5f);
+
             for (int i = 0; i < finder.mNodes.Count; ++i)
             {
                 Gizmos.color = Color.magenta;
@@ -35,6 +40,19 @@ namespace LAI
                     Gizmos.DrawLine(finder.mNodes[i].pos, finder.mNodes[finder.mNodes[i].childrenID[j]].pos);
                 }
             }
+
+            Gizmos.color = Color.red;
+            if (Path.Count > 0)
+            {
+                for (int i = 1; i < Path.Count; ++i)
+                {
+                    Gizmos.DrawWireSphere(Path[i - 1], 0.3f);
+                    Gizmos.DrawLine(Path[i - 1], Path[i]);
+                }
+                Gizmos.DrawLine(Path[Path.Count - 1], agent.GetWorld().mPlayer.transform.position);
+            }
+            else
+                Gizmos.DrawLine(agent.transform.position, agent.GetWorld().mPlayer.transform.position);
         }
 
         public override void Enter(Enemy agent)
@@ -45,14 +63,15 @@ namespace LAI
             {
                 if (finder.GameWorld == null)
                     finder.GameWorld = agent.GetWorld();
-                finder.Generate(PlatformsToWander);
+                finder.Generate(PlatformsToWander, 1.5f);
             }
             agent.GetComponent<Rigidbody2D>().gravityScale = 1.0f;
 
-            target = (int)Random.Range(0.0f, (float)finder.mNodes.Count - 1);
+            float f = Random.value;// Range(0.0f, (float)finder.mNodes.Count - 1);
 
+            target = (int)(f * finder.mNodes.Count);
 
-            finder.Calculate(agent.transform.position, finder.mNodes[target].pos);
+            finder.FindPath(agent.transform.position, target);
             Path = finder.GetPath();
             agent.SetDestination(Path[0]);
             agent.SetFinalDestination(Path[Path.Count - 1]);
@@ -70,40 +89,36 @@ namespace LAI
 
 
             bool calculateAgain = false;
-            if (Vector3.Distance(agent.transform.position, finder.mNodes[target].pos) < agent.GetSafeDistanceReduced())
+            if (Vector2.Distance(agent.transform.position, finder.mNodes[target].pos) < agent.GetSafeDistanceReduced())
             {
                 calculateAgain = true;
             }
 
             if (calculateAgain)  //or
             {
-                target = (int)Random.Range(0.0f, (float)finder.mNodes.Count - 1);
-                finder.Calculate(agent.transform.position, finder.mNodes[target].pos);
+                target = (int)(Random.value * finder.mNodes.Count);
+                finder.FindPath(agent.transform.position, target);
                 Path.Clear();
                 Path = finder.GetPath();
-                Path.Add(agent.transform.position);
-                agent.SetDestination(Path[0]);
-                Path.RemoveAt(0);
-                agent.SetFinalDestination(Path[Path.Count - 1]);
-                agent.SetFinalDestination(agent.GetWorld().mPlayer.transform.position);
+                if (Path.Count != 0)
+                {
+                    agent.SetDestination(Path[0]);
+                    Path.RemoveAt(0);
+                    agent.SetFinalDestination(Path[Path.Count - 1]);
+                }
             }
-            else if (Path.Count == 0)
+            if (Path.Count == 0 && calculateAgain)
             {
-                target = (int)Random.Range(0.0f, (float)finder.mNodes.Count - 1);
-                finder.Calculate(agent.transform.position, finder.mNodes[target].pos);
+                target = (int)(Random.value * finder.mNodes.Count);
+                finder.FindPath(agent.transform.position, target);
                 Path.Clear();
                 Path = finder.GetPath();
-                Path.Add(agent.GetWorld().mPlayer.transform.position);
 
                 if (Path.Count > 0)
                 {
                     agent.SetDestination(Path[0]);
                     Path.RemoveAt(0);
                     agent.SetFinalDestination(Path[Path.Count - 1]);
-                }
-                else
-                {
-                    agent.SetDestination(agent.GetWorld().mPlayer.transform.position);
                 }
             }
 
@@ -113,11 +128,14 @@ namespace LAI
             {
                 if(agent.GetDestination().y < Path[0].y)
                 {
-                    agent.myRB.AddForce(new Vector2(0.0f, agent.mJumpStrength));
+                    agent.myRB.AddForce(new Vector2(0.4f * (agent.transform.position.x < Path[0].x ? agent.GetMaxSpeed() : agent.GetMaxSpeed( )* -1), agent.mJumpStrength * 0.5f), ForceMode2D.Impulse);
+                }
+                else if(agent.GetDestination().y != Path[0].y)
+                {
+                    agent.myRB.AddForce(new Vector2(0.2f * (agent.transform.position.x < Path[0].x ? agent.GetMaxSpeed() : agent.GetMaxSpeed( )* -1), agent.mJumpStrength * 0.3f), ForceMode2D.Impulse);
                 }
                 agent.SetDestination(Path[0]);
                 Path.RemoveAt(0);
-
             }
         }
 

@@ -52,7 +52,7 @@ public class Enemy : Character
         //{
         //    pathFinder.groundID = groundID;
         //}
-
+        myRB.drag = 0.0f;
         //set Walls
         if(world)
         {
@@ -73,6 +73,7 @@ public class Enemy : Character
         //mAgent.SetWorld(world);
         world.AddAgent(this);
         mSteeringModule.SetAgent(this);
+        mMass = myRB.mass;
 
         pathFinder.GameWorld = world;
         pathFinder.Initialize();
@@ -119,9 +120,9 @@ public class Enemy : Character
     public new void Update()
     {
         mStateMachine.Update();
-        mVelocity += mSteeringModule.Calculate();
+        mVelocity = mSteeringModule.Calculate();
         //if(mStateMachine.GetCurrentState() != LAI.States.GoToPlayer)
-        mVelocity *= Time.deltaTime;
+      //  mVelocity *= Time.deltaTime;
         base.Update();
 
         mVelocity.y = 0.0f;
@@ -140,7 +141,6 @@ public class Enemy : Character
             }
             mStunCounter -= Time.deltaTime;
         }
-        mVelocity.x *= mMaxSpeed;
 
         myRB.AddForce(mVelocity);
     }

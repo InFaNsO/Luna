@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class EnemyAttackBot : Enemy
 {
-    LAI.States mCurrentState = LAI.States.None;
     [SerializeField] LAI.WanderGroundState stateWander = new LAI.WanderGroundState();
 
     private new void Awake()
@@ -23,8 +22,7 @@ public class EnemyAttackBot : Enemy
         mStateMachine.AddState<LAI.SupriseState>();
         mStateMachine.AddState<LAI.GoToPlayerState>();
         mStateMachine.AddState(stateWander);
-        mCurrentState = LAI.States.Wander;
-        mStateMachine.ChangeState((int)mCurrentState);
+        mStateMachine.ChangeState(LAI.States.Wander);
     }
 
     // Update is called once per frame
