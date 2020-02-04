@@ -98,7 +98,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1382053527553314530}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 251fe90c10dc8944d8ac0fa44c2deee3, type: 3}
+  m_Script: {fileID: 11500000, guid: 11c82ac98dcdb574a8b688a31943d508, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mDestination: {x: 0, y: 0}
@@ -112,8 +112,8 @@ MonoBehaviour:
   mSafeDistanceExtended: 15
   mRadius: 0.75
   world: {fileID: 0}
-  mMaxHealth: 100
-  mCurrentHealth: 100
+  mMaxHealth: 10
+  mCurrentHealth: 10
   mMovementSpeed: 0
   mJumpStrength: 0
   mWasTheCharacterInAnHazardInThePastSecond: 0
@@ -127,6 +127,11 @@ MonoBehaviour:
   mIsDropping: 0
   mDropPrefbs: {fileID: 0}
   platformsAccesible: []
+  PlatformRange: 
+  WallRange: 
+  ground: {fileID: 0}
+  groundID: -1
+  RoofID: -1
   mIsStuned: 0
 --- !u!50 &1382053527553314526
 Rigidbody2D:

@@ -361,7 +361,7 @@
             "id": "40a5159e-0713-4a31-9e70-5dd6cb04d725",
             "actions": [
                 {
-                    "name": "GameStart",
+                    "name": "PopUpMenu",
                     "type": "Button",
                     "id": "91444265-4e70-4c16-b2b8-dc042b4c6c8d",
                     "expectedControlType": "",
@@ -373,11 +373,11 @@
                 {
                     "name": "",
                     "id": "0943db0f-541b-479c-b403-299fc7105e12",
-                    "path": "<Keyboard>/anyKey",
+                    "path": "*/{Menu}",
                     "interactions": "",
                     "processors": "",
-                    "groups": "Keyboard and Mouse",
-                    "action": "GameStart",
+                    "groups": "Gamepad",
+                    "action": "PopUpMenu",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

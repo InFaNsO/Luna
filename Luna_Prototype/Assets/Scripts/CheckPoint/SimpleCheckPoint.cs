@@ -7,6 +7,7 @@ public class SimpleCheckPoint : MonoBehaviour
     public bool activated = false;
     public bool currentPoint = false;
     public GameObject Player;
+    public GameObject particleEffect;
 
     // Checkpoint Trigger Function
     private void OnTriggerEnter2D(Collider2D collider)
@@ -22,7 +23,10 @@ public class SimpleCheckPoint : MonoBehaviour
                 Player.GetComponent<CheckPointTracker>().respawnPoint.GetComponent<SimpleCheckPoint>().currentPoint = false;
             }
             */
+
+
             Player.GetComponent<CheckPointTracker>().respawnPoint = gameObject;
+            Instantiate(particleEffect, Player.transform.position, new Quaternion());
         }
     }
 }
