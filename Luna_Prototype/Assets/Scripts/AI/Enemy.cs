@@ -28,6 +28,10 @@ public class Enemy : Character
     [SerializeField] private int groundID = -1;
     [SerializeField] private int RoofID = -1;
 
+    public bool shouldJump = false;
+    public bool isFyCapable = false;
+
+    public Rigidbody2D myRB;
 
     //[SerializeField] protected Agent mAgent;
     //[SerializeField] protected World world;
@@ -101,6 +105,8 @@ public class Enemy : Character
 
         //Starter();
 
+        myRB = GetComponent<Rigidbody2D>();
+
         mMovementSpeed = 5.0f;
         mJumpStrength = 20.0f;
 
@@ -115,8 +121,10 @@ public class Enemy : Character
         mStateMachine.Update();
         mVelocity += mSteeringModule.Calculate();
         //if(mStateMachine.GetCurrentState() != LAI.States.GoToPlayer)
-            mVelocity *= Time.deltaTime;
+        mVelocity *= Time.deltaTime;
         base.Update();
+
+        mVelocity.y = 0.0f;
 
         if (mIsStuned != true)
         {
@@ -132,8 +140,9 @@ public class Enemy : Character
             }
             mStunCounter -= Time.deltaTime;
         }
-        Vector2 pos = new Vector2(transform.position.x + mVelocity.x, transform.position.y + mVelocity.y);
-        SetPosition(pos);
+        mVelocity.x *= mMaxSpeed;
+
+        myRB.AddForce(mVelocity);
     }
 
     public void LateUpdate()

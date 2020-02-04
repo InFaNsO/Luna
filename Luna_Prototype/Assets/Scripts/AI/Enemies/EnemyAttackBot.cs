@@ -22,7 +22,7 @@ public class EnemyAttackBot : Enemy
         mStateMachine.AddState<LAI.AttackState>();
         mStateMachine.AddState<LAI.SupriseState>();
         mStateMachine.AddState<LAI.GoToPlayerState>();
-        mStateMachine.AddState<LAI.WanderGroundState>(stateWander);
+        mStateMachine.AddState(stateWander);
         mCurrentState = LAI.States.Wander;
         mStateMachine.ChangeState((int)mCurrentState);
     }
@@ -32,5 +32,10 @@ public class EnemyAttackBot : Enemy
     {
         base.Update();
         //state machine update will handle switching state
+    }
+
+    public void OnDrawGizmos()
+    {
+        mStateMachine.DrawGizmo();
     }
 }
