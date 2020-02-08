@@ -78,8 +78,10 @@ public class Enemy : Character
         pathFinder.GameWorld = world;
         pathFinder.Initialize();
 
-        if (mWeapon != null)
+        var wep = GetComponentInChildren<Weapon>();
+        if (wep != null)
         {
+            mWeapon = wep;
             mWeapon.Picked(gameObject, gameObject.transform.position); // second argument should be the [weapon position] as a individual variable in future
         }
     }

@@ -103,8 +103,8 @@ namespace LAI
                 if (Path.Count != 0)
                 {
                     agent.SetDestination(Path[0]);
-                    Path.RemoveAt(0);
                     agent.SetFinalDestination(Path[Path.Count - 1]);
+                    Path.RemoveAt(0);
                 }
             }
             if (Path.Count == 0 && calculateAgain)
