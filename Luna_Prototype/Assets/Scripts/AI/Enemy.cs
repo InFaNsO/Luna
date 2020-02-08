@@ -190,7 +190,7 @@ public class Enemy : Character
         // [Maybe] Change anmation state
 
         //--------------------------//|
-        Destroy(gameObject);        //|--- Set this by routin function in future: For giveing time to died animation 
+        Destroy(gameObject);        //|--- Set this by routin function in future: For giving time to died animation 
         //--------------------------//|
     }
 
