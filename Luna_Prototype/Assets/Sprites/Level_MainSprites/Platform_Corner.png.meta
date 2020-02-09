@@ -131,12 +131,12 @@ TextureImporter:
       weights: []
     outline: []
     physicsShape:
-    - - {x: -131, y: 281}
+    - - {x: -132, y: 281}
       - {x: -297, y: 281}
       - {x: -297, y: -281}
       - {x: 297, y: -281}
-      - {x: 297, y: -113}
-      - {x: -131, y: -113}
+      - {x: 297, y: -115}
+      - {x: -132, y: -115}
     bones: []
     spriteID: 6308b25e813e6db438c4647bfede4ed1
     internalID: 0
