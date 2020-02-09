@@ -7,6 +7,7 @@ using UnityEngine.Assertions;
 public class WeaponMove
 {
     public string name;
+    [SerializeField] public bool mIsAirMove = false;
     [SerializeField] protected int mDamage;
     [System.NonSerialized] public float mAnimationPlayTime;
     [System.NonSerialized] public float mAttackSpendTime;

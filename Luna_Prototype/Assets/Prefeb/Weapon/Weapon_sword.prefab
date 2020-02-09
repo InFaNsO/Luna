@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 6265158075424372803}
   - component: {fileID: 3557299318776782642}
   m_Layer: 8
-  m_Name: Weapon_greatSword
+  m_Name: Weapon_sword
   m_TagString: PickUp
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -153,7 +153,7 @@ MonoBehaviour:
   - name: air_attack
     mIsAirMove: 1
     mDamage: 20
-    mAttackSpeedMutiplier: 1
+    mAttackSpeedMutiplier: 2
     mMoveContext:
       mMoveTimeSlices:
       - mType: 1
@@ -166,7 +166,7 @@ MonoBehaviour:
     mBullet: {fileID: 679799675015805979, guid: bfcf100f8ac490e41a7fb3c3a6c9af3d,
       type: 3}
     mFirePosition: {fileID: 7576862504306509515}
-    mAnimationClip: {fileID: 7400000, guid: 7b0eb42d0f71ef6439ab10f07e88925f, type: 2}
+    mAnimationClip: {fileID: 7400000, guid: 34e4a8924237d8744827911dee2addbd, type: 2}
   - name: basic_attack_combo_0
     mIsAirMove: 0
     mDamage: 20
@@ -187,7 +187,7 @@ MonoBehaviour:
     mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05,
       type: 3}
     mFirePosition: {fileID: 4618335564853006436}
-    mAnimationClip: {fileID: 7400000, guid: 38bd1183b4801c5488add7a66e90f422, type: 2}
+    mAnimationClip: {fileID: 7400000, guid: 78c9de21616b0044fb35294ec191256a, type: 2}
   - name: basic_attack_combo_1
     mIsAirMove: 0
     mDamage: 40
@@ -197,22 +197,51 @@ MonoBehaviour:
       - mType: 1
         mTimeSlicePropotion: 0.2
       - mType: 0
+        mTimeSlicePropotion: 0.4
+      - mType: 2
+        mTimeSlicePropotion: 0.45
+      - mType: 2
         mTimeSlicePropotion: 0.5
+      - mType: 2
+        mTimeSlicePropotion: 0.55
+      - mType: 3
+        mTimeSlicePropotion: 0.75
+      - mType: 4
+        mTimeSlicePropotion: 1
+    mToMoveId: 03000000
+    mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05,
+      type: 3}
+    mFirePosition: {fileID: 8135096088201637637}
+    mAnimationClip: {fileID: 7400000, guid: eee50da6bc88902438607bc7898cd13e, type: 2}
+  - name: basic_attack_combo_2
+    mIsAirMove: 1
+    mDamage: 40
+    mAttackSpeedMutiplier: 2
+    mMoveContext:
+      mMoveTimeSlices:
+      - mType: 1
+        mTimeSlicePropotion: 0.2
+      - mType: 0
+        mTimeSlicePropotion: 0.4
+      - mType: 2
+        mTimeSlicePropotion: 0.5
+      - mType: 2
+        mTimeSlicePropotion: 0.6
       - mType: 2
         mTimeSlicePropotion: 0.7
       - mType: 4
         mTimeSlicePropotion: 1
-    mToMoveId: 
+    mToMoveId: 03000000
     mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05,
       type: 3}
     mFirePosition: {fileID: 8135096088201637637}
-    mAnimationClip: {fileID: 7400000, guid: e126156b949110447bf0ffa6e1aa4b84, type: 2}
+    mAnimationClip: {fileID: 7400000, guid: e30fc09fa28cef945b7ce23c3eb8c55d, type: 2}
   mAirMoveIndex: 0
   InLevelBody: {fileID: 8750058408465014227}
   mWeaponBody: {fileID: 0}
   pickUpCollider: {fileID: 4321841681249314965}
   inlevelBody_spriteRender: {fileID: 2128419624135272632}
-  mAnimatorOverrideController: {fileID: 22100000, guid: 33197ea548e32a747895d70b8b550b42,
+  mAnimatorOverrideController: {fileID: 22100000, guid: 9888c4f00b4e4a74eb40173604c22561,
     type: 2}
   mElement: {fileID: 0}
   mOwnerElement: {fileID: 0}
@@ -346,7 +375,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6511158193159856056}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.126, y: 0.468, z: 0}
+  m_LocalPosition: {x: -0.174, y: 0.267, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 3676478491477669271}
@@ -390,7 +419,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: e53c5c2aeee3bd2429a68b03f4d34ce9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: bd256eecee0413e4eb0412974966ea5e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -411,7 +440,7 @@ Animator:
   m_GameObject: {fileID: 6511158193159856056}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 11f9aad09af8814409197c3ad229ad02, type: 2}
+  m_Controller: {fileID: 9100000, guid: 8608a86a97590a54eadeb790e79d5fcf, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
