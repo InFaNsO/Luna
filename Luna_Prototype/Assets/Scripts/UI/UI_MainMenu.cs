@@ -10,11 +10,22 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
     private GameObject startScreen;
 
     private int levelToLoad = 1;
-
+    private UIManager _uIManager;
     private void Awake()
     {
+        //_uIManager = transform.parent.GetComponent<UIManager>();
+    }
+    private void OnEnable()
+    {
+        if (_uIManager == null)
+            _uIManager = ServiceLocator.Get<UIManager>();
         startScreen = transform.Find("cover").gameObject;
     }
+    private void OnDisable()
+    {
+        
+    }
+
     public void ResetUI()
     {
          {
@@ -41,6 +52,11 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
     public void Touch_StartScreen()
     {
         startScreen.gameObject.SetActive(false);
+//        if (_uIManager != null)
+        {
+            _uIManager.SetSelected(transform.Find("start").gameObject);
+        }
+
     }
 
 

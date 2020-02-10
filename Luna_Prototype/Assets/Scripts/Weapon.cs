@@ -126,7 +126,10 @@ public class Weapon : MonoBehaviour
             {
                 mCurrentMoveIndex = 0;
                 mIsAttacking = false;
-
+            }
+            if (mOwner.isGrounded != true)
+            {
+                DisableGroundMove();
             }
         }
     }
@@ -204,6 +207,18 @@ public class Weapon : MonoBehaviour
         foreach (var move in mMoves)
         {
             move.Reset();
+        }
+    }
+
+    public void DisableGroundMove()
+    {
+        foreach (var move in mMoves)
+        {
+            if (!move.mIsAirMove)
+            {
+                //mAnimator.SetInteger("ToNextCombo", -1);
+                move.Reset();
+            }
         }
     }
 

@@ -87,6 +87,7 @@ MonoBehaviour:
   mParryCD: 1
   mMoves:
   - name: 
+    mIsAirMove: 1
     mDamage: 10
     mAttackSpeedMutiplier: 1
     mMoveContext:
@@ -105,6 +106,7 @@ MonoBehaviour:
     mFirePosition: {fileID: 5993130400498516385}
     mAnimationClip: {fileID: 7400000, guid: 0f5811181193cf54196f396775932080, type: 2}
   - name: 
+    mIsAirMove: 1
     mDamage: 10
     mAttackSpeedMutiplier: 1
     mMoveContext:
@@ -132,8 +134,7 @@ MonoBehaviour:
   mOwnerElement: {fileID: 0}
   mTargetPos: {x: 0, y: 0, z: 0}
   mIsAttacking: 0
-  mPlayer: {fileID: 0}
-  mAttackMomentumPos: {fileID: 0}
+  mOwner: {fileID: 0}
 --- !u!50 &6546134547383184133
 Rigidbody2D:
   serializedVersion: 4

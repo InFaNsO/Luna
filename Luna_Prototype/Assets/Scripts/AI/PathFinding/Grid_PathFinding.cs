@@ -212,17 +212,155 @@ namespace LAI
 
         }
 
+        public void Generate(List<Platform> platformsAcc, float length = 1.8f)
+        {
+            //platform nodes
+            for (int i = 0; i < platformsAcc.Count; ++i)
+            {
+                Node left = new Node();
+                left.pos = platformsAcc[i].transform.position;
+                left.pos.x -= platformsAcc[i].Width * 0.5f;
+                left.pos.y += platformsAcc[i].Height;
+                left.id = mNodes.Count;
+                left.platform = platformsAcc[i];
+                mNodes.Add(left);
+
+                Node right = new Node();
+                right.pos = left.pos;
+                right.pos.x += platformsAcc[i].Width;
+                right.id = mNodes.Count;
+                right.platform = left.platform;
+                mNodes.Add(right);
+
+                right.childrenID.Add(left.id);
+                left.childrenID.Add(right.id);
+                mPlats.Add(new Plat(left, right));
+
+
+
+            }
+            //Jump Nodes
+            for (int i = 0; i < mPlats.Count; ++i)
+            {
+                float xLeft = mPlats[i].Left.pos.x - length;
+                float xRight = mPlats[i].Right.pos.x + length;
+
+
+                List<Plat> possibleLeft = new List<Plat>();
+                List<Plat> possibleRight = new List<Plat>();
+
+                for (int j = 0; j < mPlats.Count; ++j)
+                {
+                    if (i == j)
+                        continue;
+
+                    if (mPlats[j].Left.pos.x < xLeft && mPlats[j].Right.pos.x > xLeft && mPlats[j].Right.pos.y < mPlats[i].Right.pos.y)
+                    {
+                        possibleLeft.Add(mPlats[j]);
+                    }
+                    if (mPlats[j].Left.pos.x < xRight && mPlats[j].Right.pos.x > xRight && mPlats[j].Right.pos.y < mPlats[i].Right.pos.y)
+                    {
+                        possibleRight.Add(mPlats[j]);
+                    }
+
+                }
+
+                //get the highest platform
+                int leftTop = -1;
+                for (int j = 0; j < possibleLeft.Count; ++j)
+                {
+                    if (leftTop == -1)
+                        leftTop = 0;
+                    else if (leftTop > -1)
+                    {
+                        if (possibleLeft[leftTop].Left.pos.y < possibleLeft[j].Left.pos.y)
+                        {
+                            leftTop = j;
+                        }
+                    }
+                }
+                int rightTop = -1;
+                for (int j = 0; j < possibleRight.Count; ++j)
+                {
+                    if (rightTop == -1)
+                        rightTop = 0;
+                    else if (rightTop > -1)
+                    {
+                        if (possibleRight[rightTop].Left.pos.y < possibleRight[j].Left.pos.y)
+                        {
+                            rightTop = j;
+                        }
+                    }
+                }
+
+                if (leftTop > -1)
+                {
+                    Node n = new Node();
+                    n.pos = possibleLeft[leftTop].Left.pos;
+                    n.pos.x = xLeft;
+                    n.platform = possibleLeft[leftTop].Left.platform;
+                    n.id = mNodes.Count;
+                    n.childrenID.Add(mPlats[i].Left.id);
+                    mPlats[i].Left.childrenID.Add(n.id);
+                    mNodes.Add(n);
+                }
+                if (rightTop > -1)
+                {
+                    Node n = new Node();
+                    n.pos = possibleRight[rightTop].Left.pos;
+                    n.pos.x = xRight;
+                    n.platform = possibleRight[rightTop].Left.platform;
+                    n.id = mNodes.Count;
+                    n.childrenID.Add(mPlats[i].Right.id);
+                    mPlats[i].Right.childrenID.Add(n.id);
+                    mNodes.Add(n);
+                }
+
+            }
+
+            //Connect other jumpnodes that belong in the platform
+            for (int i = 0; i < mNodes.Count; ++i)
+            {
+                for (int j = 0; j < mNodes.Count; ++j)
+                {
+                    if (i == j)
+                        continue;
+
+                    if (mNodes[i].platform != mNodes[j].platform)
+                    {
+                        continue;
+                    }
+
+                    bool existAsChild = false;
+                    //if the node exist as its child already leave it
+                    for (int k = 0; k < mNodes[i].childrenID.Count; ++k)
+                    {
+                        if (mNodes[i].childrenID[k] == mNodes[j].id)
+                        {
+                            existAsChild = true;
+                            break;
+                        }
+                    }
+                    if (existAsChild)
+                        continue;
+                    //now add
+                    mNodes[i].childrenID.Add(mNodes[j].id);
+                    mNodes[j].childrenID.Add(mNodes[i].id);
+                }
+            }
+        }
+
         public int GetNearestNodeID(Vector3 pos)
         {
             int nID = 0;
             Node nearest = mNodes[nID];
 
-            float minDisSq = (pos - nearest.pos).sqrMagnitude;
+            float minDisSq = Vector3.Distance(pos , nearest.pos);
 
             for (int i = 1; i < mNodes.Count; ++i)
             {
-                float disSq = (pos - mNodes[i].pos).sqrMagnitude;
-                if (disSq < minDisSq)
+                float disSq = Vector3.Distance(pos, mNodes[i].pos);
+                if (disSq < minDisSq && mNodes[i].pos.y <= pos.y)
                 {
                     minDisSq = disSq;
                     nearest = mNodes[i];
@@ -369,6 +507,13 @@ namespace LAI
         {
             playerNodeId = GetNearestNodeID(GameWorld.mPlayer.transform.position);
             int endNodeId = GetNearestNodeID(end);
+            FindPath(mNodes[endNodeId].pos);
+        }
+
+        public void FindPath(Vector3 enemyPos, int endID)
+        {
+            playerNodeId = endID;
+            int endNodeId = GetNearestNodeID(enemyPos);
             FindPath(mNodes[endNodeId].pos);
         }
 

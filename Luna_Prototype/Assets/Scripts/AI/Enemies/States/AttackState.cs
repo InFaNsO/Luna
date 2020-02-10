@@ -70,6 +70,11 @@ namespace LAI
             else
             {
                 //out of range to attack so switch back to go to
+                agent.SetDestination(agent.GetWorld().mPlayer.transform.position);
+            }
+
+            if(agent.IsNearPlayer(agent.GetSafeDistanceExtended()))
+            {
                 agent.mStateMachine.ChangeState(States.GoToPlayer);
             }
         }
