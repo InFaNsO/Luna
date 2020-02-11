@@ -105,8 +105,12 @@ public class Player : Character
     }
     public void PickUpNearbyWeapon()
     {
-        PickWeaopn(mNearbyWeapon);
-        ClearNearbyWeapon();
+        if (mNearbyWeapon != null)
+        {
+
+            PickWeaopn(mNearbyWeapon);
+            ClearNearbyWeapon();
+        }
     }
     //[RH] press button to pick up weapon
 
