@@ -58,6 +58,9 @@ public class PlayerController : MonoBehaviour
         controls.PlayerControl.SelectPrevItem.performed += _selectprev => SelectPrevItem();
         controls.PlayerControl.SelectNextItem.performed += _selectnext => SelectNextItem();
 
+        controls.PlayerControl.PickUpWeapon.performed += _pickupitem => PickUpWeapon();
+
+
         moveVec = new Vector3(0f, 0f, 0f);
         jumpVec = new Vector3(0f, 0f);
         isPlayerFacingRight = true;
@@ -83,7 +86,10 @@ public class PlayerController : MonoBehaviour
         setZ.z = 0.0f;
         transform.position = setZ;
     }
-
+    public void PickUpWeapon()
+    {
+        player.PickUpNearbyWeapon();
+    }
     public void UseItem()
     {
         inventory.UseItem();

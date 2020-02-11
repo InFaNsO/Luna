@@ -89,6 +89,14 @@ public class InputController : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""PickUpWeapon"",
+                    ""type"": ""Button"",
+                    ""id"": ""835b573c-bda4-475b-8c8c-442e34ca7163"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -366,6 +374,28 @@ public class InputController : IInputActionCollection, IDisposable
                     ""action"": ""SelectNextItem"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1b05f325-0081-4b1a-a030-bb361f0d3606"",
+                    ""path"": ""<Keyboard>/z"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard and Mouse"",
+                    ""action"": ""PickUpWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d5ab48f2-9fb4-4a0d-801a-f96791f6eadd"",
+                    ""path"": ""<XInputController>/leftShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""PickUpWeapon"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -438,6 +468,7 @@ public class InputController : IInputActionCollection, IDisposable
         m_PlayerControl_UseItem = m_PlayerControl.FindAction("UseItem", throwIfNotFound: true);
         m_PlayerControl_SelectPrevItem = m_PlayerControl.FindAction("SelectPrevItem", throwIfNotFound: true);
         m_PlayerControl_SelectNextItem = m_PlayerControl.FindAction("SelectNextItem", throwIfNotFound: true);
+        m_PlayerControl_PickUpWeapon = m_PlayerControl.FindAction("PickUpWeapon", throwIfNotFound: true);
         // UIControl
         m_UIControl = asset.FindActionMap("UIControl", throwIfNotFound: true);
         m_UIControl_PopUpMenu = m_UIControl.FindAction("PopUpMenu", throwIfNotFound: true);
@@ -499,6 +530,7 @@ public class InputController : IInputActionCollection, IDisposable
     private readonly InputAction m_PlayerControl_UseItem;
     private readonly InputAction m_PlayerControl_SelectPrevItem;
     private readonly InputAction m_PlayerControl_SelectNextItem;
+    private readonly InputAction m_PlayerControl_PickUpWeapon;
     public struct PlayerControlActions
     {
         private InputController m_Wrapper;
@@ -512,6 +544,7 @@ public class InputController : IInputActionCollection, IDisposable
         public InputAction @UseItem => m_Wrapper.m_PlayerControl_UseItem;
         public InputAction @SelectPrevItem => m_Wrapper.m_PlayerControl_SelectPrevItem;
         public InputAction @SelectNextItem => m_Wrapper.m_PlayerControl_SelectNextItem;
+        public InputAction @PickUpWeapon => m_Wrapper.m_PlayerControl_PickUpWeapon;
         public InputActionMap Get() { return m_Wrapper.m_PlayerControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -548,6 +581,9 @@ public class InputController : IInputActionCollection, IDisposable
                 SelectNextItem.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSelectNextItem;
                 SelectNextItem.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSelectNextItem;
                 SelectNextItem.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnSelectNextItem;
+                PickUpWeapon.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnPickUpWeapon;
+                PickUpWeapon.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnPickUpWeapon;
+                PickUpWeapon.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnPickUpWeapon;
             }
             m_Wrapper.m_PlayerControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -579,6 +615,9 @@ public class InputController : IInputActionCollection, IDisposable
                 SelectNextItem.started += instance.OnSelectNextItem;
                 SelectNextItem.performed += instance.OnSelectNextItem;
                 SelectNextItem.canceled += instance.OnSelectNextItem;
+                PickUpWeapon.started += instance.OnPickUpWeapon;
+                PickUpWeapon.performed += instance.OnPickUpWeapon;
+                PickUpWeapon.canceled += instance.OnPickUpWeapon;
             }
         }
     }
@@ -645,6 +684,7 @@ public class InputController : IInputActionCollection, IDisposable
         void OnUseItem(InputAction.CallbackContext context);
         void OnSelectPrevItem(InputAction.CallbackContext context);
         void OnSelectNextItem(InputAction.CallbackContext context);
+        void OnPickUpWeapon(InputAction.CallbackContext context);
     }
     public interface IUIControlActions
     {
