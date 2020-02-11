@@ -127,7 +127,7 @@ public class Weapon : MonoBehaviour
                 mCurrentMoveIndex = 0;
                 mIsAttacking = false;
             }
-            if (mOwner.isGrounded != true)
+            if (mOwner != null && mOwner.isGrounded != true)
             {
                 DisableGroundMove();
             }
@@ -212,14 +212,21 @@ public class Weapon : MonoBehaviour
 
     public void DisableGroundMove()
     {
-        foreach (var move in mMoves)
+        var currentMove = mMoves[mCurrentMoveIndex];
+        if (!currentMove.mIsAirMove)
         {
-            if (!move.mIsAirMove)
-            {
-                //mAnimator.SetInteger("ToNextCombo", -1);
-                move.Reset();
-            }
+            mAnimator.SetInteger("ToNextCombo", -1);
+            mAnimator.SetBool("IsReseting", true);
+            currentMove.Reset();
         }
+        //foreach (var move in mMoves)
+        //{
+        //    if (!move.mIsAirMove)
+        //    {
+        //        mAnimator.SetInteger("ToNextCombo", -1);
+        //        move.Reset();
+        //    }
+        //}
     }
 
     public float GetCurrentAttackTime()
