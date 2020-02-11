@@ -312,13 +312,30 @@ public class Weapon : MonoBehaviour
             if (other.GetComponent<Player>() != null)
             {
                 if (gameObject.CompareTag("PickUp"))
-                other.GetComponent<Player>().PickWeaopn(gameObject.GetComponent<Weapon>());
+                    //other.GetComponent<Player>().PickWeaopn(gameObject.GetComponent<Weapon>());
+                    //[RH] press button to pick up weapon
+                    other.GetComponent<Player>().AddNearbyWeapon(gameObject.GetComponent<Weapon>());
+
             }
         }
     }
     //----------------------------------------------------------------------------------//|
     //- End Edit -----------------------------------------------------------------------//|
     //----------------------------------------------------------------------------------//|
+
+    //[RH] press button to pick up weapon
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (other.GetComponent<Player>() != null)
+            {
+                if (gameObject.CompareTag("PickUp"))
+                     other.GetComponent<Player>().ClearNearbyWeapon();
+            }
+        }
+    }
+
 
     private void RefreshMoveAnimator()
     {

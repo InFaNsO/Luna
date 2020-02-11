@@ -14,6 +14,9 @@ public class Player : Character
     public Weapon mCurrentWeapon;
 
     [SerializeField]
+    private Weapon mNearbyWeapon;
+
+    [SerializeField]
     private bool mIsIFrameOn;
     [SerializeField]
     private float mIFrameCD;
@@ -91,19 +94,22 @@ public class Player : Character
         return mDashSpeed;
     }
 
-    public void ObtainNewWeapon(Weapon newWeapon)
+    //[RH] press button to pick up weapon
+    public void AddNearbyWeapon(Weapon newWeapon)
     {
-        if(mWeapon1 == null)
-        {
-            mWeapon1 = newWeapon;
-            EquipWeapon(mWeapon1);
-        }
-        else if(mWeapon2 == null)
-        {
-            mWeapon2 = newWeapon;
-            EquipWeapon(mWeapon2);
-        }
+        mNearbyWeapon = newWeapon;
     }
+    public void ClearNearbyWeapon()
+    {
+        mNearbyWeapon = null;
+    }
+    public void PickUpNearbyWeapon()
+    {
+        PickWeaopn(mNearbyWeapon);
+        ClearNearbyWeapon();
+    }
+    //[RH] press button to pick up weapon
+
 
     public void DropWeapon()
     {
