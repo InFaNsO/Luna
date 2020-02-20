@@ -1,4 +1,4 @@
-![Game Logo](images/Logo.jpg)
+![Game Logo](images/Logo.JPG)
 # LuneBots
 
 It is a Rogue-Like 2D platformer & shooter for PC, Made in Uinty 2019.
