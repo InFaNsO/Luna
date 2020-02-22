@@ -1,5 +1,5 @@
 ![Game Logo](images/Logo.JPG)
-# LuneBots
+# Luna
 
 It is a Rogue-Like 2D platformer & shooter for PC, Made in Uinty 2019.
 
