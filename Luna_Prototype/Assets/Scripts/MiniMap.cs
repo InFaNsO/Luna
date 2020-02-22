@@ -4,12 +4,20 @@ using UnityEngine;
 
 public class MiniMap : MonoBehaviour
 {
-    public Transform player;
+    private Transform player;
 
-    private void LateUpdate()
+    private void Awake()
     {
-        Vector3 newPosition = player.position;
-        newPosition.z = -10;
-        transform.position = newPosition;
+        player = FindObjectOfType<Player>().transform;
+    }
+
+    private void Update()
+    {
+        if(player)
+        {
+            Vector3 newPosition = player.position;
+            newPosition.z = -10;
+            transform.position = newPosition;
+        }
     }
 }
