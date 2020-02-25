@@ -8,7 +8,7 @@ namespace LAI
     {
         private Enemy mAgent;
         private List<State> mStates = new List<State>();
-        private int mCurrentState = 1000;
+        private int mCurrentState = 0;
 
         public void SetAgent(Enemy at)
         {

@@ -28,6 +28,10 @@ public class Enemy : Character
     [SerializeField] private int groundID = -1;
     [SerializeField] private int RoofID = -1;
 
+    public bool shouldJump = false;
+    public bool isFyCapable = false;
+
+    public Rigidbody2D myRB;
 
     //[SerializeField] protected Agent mAgent;
     //[SerializeField] protected World world;
@@ -48,7 +52,7 @@ public class Enemy : Character
         //{
         //    pathFinder.groundID = groundID;
         //}
-
+        myRB.drag = 0.0f;
         //set Walls
         if(world)
         {
@@ -69,12 +73,15 @@ public class Enemy : Character
         //mAgent.SetWorld(world);
         world.AddAgent(this);
         mSteeringModule.SetAgent(this);
+        mMass = myRB.mass;
 
         pathFinder.GameWorld = world;
         pathFinder.Initialize();
 
-        if (mWeapon != null)
+        var wep = GetComponentInChildren<Weapon>();
+        if (wep != null)
         {
+            mWeapon = wep;
             mWeapon.Picked(gameObject, gameObject.transform.position); // second argument should be the [weapon position] as a individual variable in future
         }
     }
@@ -101,6 +108,8 @@ public class Enemy : Character
 
         //Starter();
 
+        myRB = GetComponent<Rigidbody2D>();
+
         mMovementSpeed = 5.0f;
         mJumpStrength = 20.0f;
 
@@ -113,10 +122,12 @@ public class Enemy : Character
     public new void Update()
     {
         mStateMachine.Update();
-        mVelocity += mSteeringModule.Calculate();
+        mVelocity = mSteeringModule.Calculate();
         //if(mStateMachine.GetCurrentState() != LAI.States.GoToPlayer)
-            mVelocity *= Time.deltaTime;
+      //  mVelocity *= Time.deltaTime;
         base.Update();
+
+        mVelocity.y = 0.0f;
 
         if (mIsStuned != true)
         {
@@ -132,8 +143,8 @@ public class Enemy : Character
             }
             mStunCounter -= Time.deltaTime;
         }
-        Vector2 pos = new Vector2(transform.position.x + mVelocity.x, transform.position.y + mVelocity.y);
-        SetPosition(pos);
+
+        myRB.AddForce(mVelocity);
     }
 
     public void LateUpdate()

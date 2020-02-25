@@ -105,7 +105,7 @@ GameObject:
   - component: {fileID: 3273979103530575280}
   m_Layer: 8
   m_Name: Weapon_hummer
-  m_TagString: PickUp
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -147,6 +147,7 @@ MonoBehaviour:
   mParryCD: 1
   mMoves:
   - name: air_attack
+    mIsAirMove: 1
     mDamage: 20
     mAttackSpeedMutiplier: 1
     mMoveContext:
@@ -163,6 +164,7 @@ MonoBehaviour:
     mFirePosition: {fileID: 7576862504306509515}
     mAnimationClip: {fileID: 7400000, guid: 29a5cc5bb9f7b394abc7f32931621e3c, type: 2}
   - name: basic_attack_combo_0
+    mIsAirMove: 0
     mDamage: 20
     mAttackSpeedMutiplier: 1
     mMoveContext:
@@ -183,6 +185,7 @@ MonoBehaviour:
     mFirePosition: {fileID: 4618335564853006436}
     mAnimationClip: {fileID: 7400000, guid: f5fd08b7a2726dc45a3397e8d133a857, type: 2}
   - name: basic_attack_combo_1
+    mIsAirMove: 0
     mDamage: 20
     mAttackSpeedMutiplier: 0.8
     mMoveContext:
@@ -215,8 +218,7 @@ MonoBehaviour:
   mOwnerElement: {fileID: 0}
   mTargetPos: {x: 0, y: 0, z: 0}
   mIsAttacking: 0
-  mOwnerTransfrom: {fileID: 0}
-  mAttackMomentumPos: {fileID: 0}
+  mOwner: {fileID: 0}
 --- !u!50 &2856706057600177519
 Rigidbody2D:
   serializedVersion: 4
@@ -545,7 +547,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &6606600559324767001
 Transform:
   m_ObjectHideFlags: 0

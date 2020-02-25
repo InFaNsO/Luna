@@ -151,6 +151,7 @@ MonoBehaviour:
   mParryCD: 1
   mMoves:
   - name: air_attack
+    mIsAirMove: 1
     mDamage: 20
     mAttackSpeedMutiplier: 1
     mMoveContext:
@@ -167,6 +168,7 @@ MonoBehaviour:
     mFirePosition: {fileID: 7576862504306509515}
     mAnimationClip: {fileID: 7400000, guid: 7b0eb42d0f71ef6439ab10f07e88925f, type: 2}
   - name: basic_attack_combo_0
+    mIsAirMove: 0
     mDamage: 20
     mAttackSpeedMutiplier: 2
     mMoveContext:
@@ -187,6 +189,7 @@ MonoBehaviour:
     mFirePosition: {fileID: 4618335564853006436}
     mAnimationClip: {fileID: 7400000, guid: 38bd1183b4801c5488add7a66e90f422, type: 2}
   - name: basic_attack_combo_1
+    mIsAirMove: 0
     mDamage: 40
     mAttackSpeedMutiplier: 2
     mMoveContext:
@@ -342,8 +345,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6511158193159856056}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.118, y: 0.49, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.126, y: 0.468, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children:
   - {fileID: 3676478491477669271}

@@ -12,7 +12,7 @@ using UnityEngine.Assertions;
 public abstract class Character : Agent
 {
     public float mMovementSpeed;
-    public float mJumpStrength;
+    public float mJumpStrength = 10.0f;
 
     //the four variables below are used for hazard damage  - william
     [SerializeField]

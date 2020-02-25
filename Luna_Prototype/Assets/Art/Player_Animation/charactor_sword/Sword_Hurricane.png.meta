@@ -1,0 +1,651 @@
+fileFormatVersion: 2
+guid: 75ac9c927d956c946b6fe4a574c9e7e6
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 1984722975060431050
+    second: Sword_Hurricane_0
+  - first:
+      213: 7544874435849958415
+    second: Sword_Hurricane_1
+  - first:
+      213: -7757932380634500453
+    second: Sword_Hurricane_2
+  - first:
+      213: 8836901848358164899
+    second: Sword_Hurricane_3
+  - first:
+      213: 4903429910741343572
+    second: Sword_Hurricane_4
+  - first:
+      213: 2960326053092915213
+    second: Sword_Hurricane_5
+  - first:
+      213: 1186253060610458429
+    second: Sword_Hurricane_6
+  - first:
+      213: -123001013920607613
+    second: Sword_Hurricane_7
+  - first:
+      213: 5146125336789224601
+    second: Sword_Hurricane_8
+  - first:
+      213: 6744395408403856433
+    second: Sword_Hurricane_9
+  - first:
+      213: -599006833769602293
+    second: Sword_Hurricane_10
+  - first:
+      213: -2318032122231890280
+    second: Sword_Hurricane_11
+  - first:
+      213: -1249779884858261059
+    second: Sword_Hurricane_12
+  - first:
+      213: -6966862967010688447
+    second: Sword_Hurricane_13
+  - first:
+      213: -8631702439639033500
+    second: Sword_Hurricane_14
+  - first:
+      213: -6508912109204188096
+    second: Sword_Hurricane_15
+  - first:
+      213: -6228529416410670826
+    second: Sword_Hurricane_16
+  - first:
+      213: 1560031032026031175
+    second: Sword_Hurricane_17
+  - first:
+      213: 5776843644298814638
+    second: Sword_Hurricane_18
+  - first:
+      213: -6823133277826263794
+    second: Sword_Hurricane_19
+  - first:
+      213: 6926206559811825088
+    second: Sword_Hurricane_20
+  - first:
+      213: 3272429233292352598
+    second: Sword_Hurricane_21
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sword_Hurricane_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1568
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.32908532, y: 0.36094573}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1389935e5790154b9265996749d6afa
+      internalID: 1984722975060431050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_1
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 1568
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.37776467, y: 0.3785749}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bdd467b3d8dc7e54d8d164a1ee752b9a
+      internalID: 7544874435849958415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_2
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 1568
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.43548033, y: 0.39366928}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d28d6c10ea9e8ef47bbdc86b194674c6
+      internalID: -7757932380634500453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_3
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 1568
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.46725205, y: 0.42184168}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07a5350157798a549b5e50c3a84e35e5
+      internalID: 8836901848358164899
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_4
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1568
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.47256762, y: 0.4572103}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f7dab89f1b0f9344a94108b1d707212
+      internalID: 4903429910741343572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1176
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.46826276, y: 0.48340684}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ef881df119acea4686c94c59228a38f
+      internalID: 2960326053092915213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_6
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 1176
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.4633701, y: 0.5079383}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 835f85c2a3475404998d944a477f7af8
+      internalID: 1186253060610458429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_7
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 1176
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.4636727, y: 0.5087483}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d8e2c3e80acff143af612e9ee15c56c
+      internalID: -123001013920607613
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_8
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 1176
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.46602377, y: 0.51022774}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fd6a5d4ec5453141ad97966c546c82f
+      internalID: 5146125336789224601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_9
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 1176
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.46366787, y: 0.5103613}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ea767eb8f78b3a4d9da46a4b68f5549
+      internalID: 6744395408403856433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 784
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.46390584, y: 0.5102933}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9fc62aa60b356724ea8e6537268de4e2
+      internalID: -599006833769602293
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_11
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 784
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.4646184, y: 0.5013314}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e9433d03fddf40f4cbab4f56dce5350a
+      internalID: -2318032122231890280
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_12
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 784
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.46455634, y: 0.48056668}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 193a878bdd871ef418eabed7ff8364d5
+      internalID: -1249779884858261059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_13
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 784
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.46509928, y: 0.46397993}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f280875a3dafac41918b939f04070a2
+      internalID: -6966862967010688447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_14
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 784
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.46719825, y: 0.44204402}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fca1b7a3eb42e1b4198feb126dd8a765
+      internalID: -8631702439639033500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 392
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.46861315, y: 0.4232338}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22d68e8093698b54f82efc6ff38ed2e8
+      internalID: -6508912109204188096
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_16
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 392
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.46980345, y: 0.40092188}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9c62427bd4369bd48be4234908de2cc2
+      internalID: -6228529416410670826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_17
+      rect:
+        serializedVersion: 2
+        x: 708
+        y: 392
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.47135192, y: 0.40144348}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46ac1857257aa3a4790f344785cd8889
+      internalID: 1560031032026031175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_18
+      rect:
+        serializedVersion: 2
+        x: 1062
+        y: 392
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.470839, y: 0.4021882}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01a6bac9ea50ff1499a8a57e0b050048
+      internalID: 5776843644298814638
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_19
+      rect:
+        serializedVersion: 2
+        x: 1416
+        y: 392
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.47004658, y: 0.40294102}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd3840fc027543642ba0b198591cc44a
+      internalID: -6823133277826263794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.4731419, y: 0.3992503}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 233d168e0d33bea4ab62b849a3ce8265
+      internalID: 6926206559811825088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Hurricane_21
+      rect:
+        serializedVersion: 2
+        x: 354
+        y: 0
+        width: 354
+        height: 392
+      alignment: 9
+      pivot: {x: 0.47013742, y: 0.40164736}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4845c58ec86bae74981348bcfa96505c
+      internalID: 3272429233292352598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8314057ea03a59541bfa2a49a39bbecc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
