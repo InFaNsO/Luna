@@ -30,9 +30,17 @@ public class SceneBoot : MonoBehaviour
 
     private void Awake()
     {
+        var svc = GameObject.Find("[Services]");
+        if (svc != null)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
   
         // Setup System GameObject
-        GameObject systemsGO = new GameObject("[Services] from [" + SceneManager.GetActiveScene().name + "]");
+        //GameObject systemsGO = new GameObject("[Services] from [" + SceneManager.GetActiveScene().name + "]");
+        GameObject systemsGO = new GameObject("[Services]");
+
         systemsGO.tag = "Services";
         DontDestroyOnLoad(systemsGO);
         Transform systemsParent = systemsGO.transform;
@@ -55,7 +63,10 @@ public class SceneBoot : MonoBehaviour
             }
         }
     }
-    
+    private void Start()
+    {
+        
+    }
 
     private void CreateGameManager(Transform systemsParent)
     {

@@ -13,8 +13,10 @@ public class SetUpUI : MonoBehaviour
 
     private void Awake()
     {
+    }
+    private void Start()
+    {
         ServiceLocator.Get<UIManager>().SwitchUI(uiToUse);
     }
-
 
 }
