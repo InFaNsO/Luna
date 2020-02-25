@@ -516,6 +516,5 @@ namespace LAI
             int endNodeId = GetNearestNodeID(enemyPos);
             FindPath(mNodes[endNodeId].pos);
         }
-
     }
 }
