@@ -26,7 +26,7 @@ public class SimpleCheckPoint : MonoBehaviour
 
 
             Player.GetComponent<CheckPointTracker>().respawnPoint = gameObject;
-            Instantiate(particleEffect, Player.transform.position, new Quaternion());
+            Instantiate(particleEffect, transform.position, new Quaternion());
         }
     }
 }
