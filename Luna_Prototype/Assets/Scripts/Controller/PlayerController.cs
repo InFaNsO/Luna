@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     BoxCollider2D playerCollider;
     Rigidbody2D rb;
     Stamina stamina;
+    ParryAttackable parry;
 
     [SerializeField]
     bool isPlayerFacingRight;
@@ -48,6 +49,7 @@ public class PlayerController : MonoBehaviour
         playerCollider = GetComponent<BoxCollider2D>();
         rb = GetComponent<Rigidbody2D>();
         stamina = GetComponent<Stamina>();
+        parry = GetComponent<ParryAttackable>();
 
         controls.PlayerControl.Jump.performed += _jump => Jump();
         controls.PlayerControl.Attack.performed += _attack => Attack();
@@ -57,6 +59,10 @@ public class PlayerController : MonoBehaviour
         controls.PlayerControl.UseItem.performed += _use => UseItem();
         controls.PlayerControl.SelectPrevItem.performed += _selectprev => SelectPrevItem();
         controls.PlayerControl.SelectNextItem.performed += _selectnext => SelectNextItem();
+        controls.PlayerControl.Parry.performed += _parry => Parry();
+
+        controls.PlayerControl.PickUpWeapon.performed += _pickupitem => PickUpWeapon();
+
 
         moveVec = new Vector3(0f, 0f, 0f);
         jumpVec = new Vector3(0f, 0f);
@@ -76,6 +82,11 @@ public class PlayerController : MonoBehaviour
         Resets();
     }
 
+    public void Parry()
+    {
+        parry.Parry();
+    }
+
     void Resets()
     {
         jumpVec.y = 0.0f;
@@ -83,7 +94,10 @@ public class PlayerController : MonoBehaviour
         setZ.z = 0.0f;
         transform.position = setZ;
     }
-
+    public void PickUpWeapon()
+    {
+        player.PickUpNearbyWeapon();
+    }
     public void UseItem()
     {
         inventory.UseItem();

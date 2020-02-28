@@ -126,7 +126,10 @@ public class Weapon : MonoBehaviour
             {
                 mCurrentMoveIndex = 0;
                 mIsAttacking = false;
-
+            }
+            if (mOwner != null && mOwner.isGrounded != true)
+            {
+                DisableGroundMove();
             }
         }
     }
@@ -205,6 +208,25 @@ public class Weapon : MonoBehaviour
         {
             move.Reset();
         }
+    }
+
+    public void DisableGroundMove()
+    {
+        var currentMove = mMoves[mCurrentMoveIndex];
+        if (!currentMove.mIsAirMove)
+        {
+            mAnimator.SetInteger("ToNextCombo", -1);
+            mAnimator.SetBool("IsReseting", true);
+            currentMove.Reset();
+        }
+        //foreach (var move in mMoves)
+        //{
+        //    if (!move.mIsAirMove)
+        //    {
+        //        mAnimator.SetInteger("ToNextCombo", -1);
+        //        move.Reset();
+        //    }
+        //}
     }
 
     public float GetCurrentAttackTime()
@@ -290,13 +312,30 @@ public class Weapon : MonoBehaviour
             if (other.GetComponent<Player>() != null)
             {
                 if (gameObject.CompareTag("PickUp"))
-                other.GetComponent<Player>().PickWeaopn(gameObject.GetComponent<Weapon>());
+                    //other.GetComponent<Player>().PickWeaopn(gameObject.GetComponent<Weapon>());
+                    //[RH] press button to pick up weapon
+                    other.GetComponent<Player>().AddNearbyWeapon(gameObject.GetComponent<Weapon>());
+
             }
         }
     }
     //----------------------------------------------------------------------------------//|
     //- End Edit -----------------------------------------------------------------------//|
     //----------------------------------------------------------------------------------//|
+
+    //[RH] press button to pick up weapon
+    private void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            if (other.GetComponent<Player>() != null)
+            {
+                if (gameObject.CompareTag("PickUp"))
+                     other.GetComponent<Player>().ClearNearbyWeapon();
+            }
+        }
+    }
+
 
     private void RefreshMoveAnimator()
     {

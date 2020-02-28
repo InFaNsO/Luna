@@ -111,7 +111,7 @@ public class MoveContext
         }
 
         mOwnerMoveIndex = moveId;
-        Assert.AreEqual(totalTransitionSlice, totalTransitionMove, $"{mOwnerMoveIndex }MoveContext [transition time slice] count not match [transition move count]");
+        Assert.AreEqual(totalTransitionSlice, totalTransitionMove, $"{mOwnerMoveIndex } MoveContext [transition time slice] count not match [transition move count]");
 
         totalSliceCount = mMoveTimeSlices.Length;
         Reset();

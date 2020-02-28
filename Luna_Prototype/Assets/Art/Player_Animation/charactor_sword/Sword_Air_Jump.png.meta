@@ -1,0 +1,627 @@
+fileFormatVersion: 2
+guid: 66a332b9b22294642beec36fea090f3a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -195950151396922152
+    second: Sword_Air_Jump_0
+  - first:
+      213: -4169076837626848908
+    second: Sword_Air_Jump_1
+  - first:
+      213: 5749023721761463124
+    second: Sword_Air_Jump_2
+  - first:
+      213: -6168613103660153691
+    second: Sword_Air_Jump_3
+  - first:
+      213: -3992475080446126436
+    second: Sword_Air_Jump_4
+  - first:
+      213: -5979501460050663257
+    second: Sword_Air_Jump_5
+  - first:
+      213: -559017282073213011
+    second: Sword_Air_Jump_6
+  - first:
+      213: -8189050863622429430
+    second: Sword_Air_Jump_7
+  - first:
+      213: -8638205630748479043
+    second: Sword_Air_Jump_8
+  - first:
+      213: 6830629345732104762
+    second: Sword_Air_Jump_9
+  - first:
+      213: 3246231691230659474
+    second: Sword_Air_Jump_10
+  - first:
+      213: 1767765527933285092
+    second: Sword_Air_Jump_11
+  - first:
+      213: -8914096858503210250
+    second: Sword_Air_Jump_12
+  - first:
+      213: 5741148484245745682
+    second: Sword_Air_Jump_13
+  - first:
+      213: 419179485799869366
+    second: Sword_Air_Jump_14
+  - first:
+      213: 6093145267202899099
+    second: Sword_Air_Jump_15
+  - first:
+      213: 4483108724993399243
+    second: Sword_Air_Jump_16
+  - first:
+      213: 528088146090899657
+    second: Sword_Air_Jump_17
+  - first:
+      213: -1416032907545560423
+    second: Sword_Air_Jump_18
+  - first:
+      213: -545509085713670855
+    second: Sword_Air_Jump_19
+  - first:
+      213: 1459088916582297012
+    second: Sword_Air_Jump_20
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sword_Air_Jump_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1516
+        width: 164
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2d0ebd04ea46b04418b6a87490fff359
+      internalID: -195950151396922152
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_1
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 1516
+        width: 164
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8783e3c27edfcc48bd59e0a50e0cee2
+      internalID: -4169076837626848908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_2
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1516
+        width: 164
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbaae530560866d498f2c6ef08187550
+      internalID: 5749023721761463124
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_3
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 1516
+        width: 164
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9e2aa79fe435f14e9308da047800ae7
+      internalID: -6168613103660153691
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_4
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 1516
+        width: 164
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a8b88611a33874094f4d1a2fd0b72d
+      internalID: -3992475080446126436
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1137
+        width: 164
+        height: 379
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 707fced22af05e34f85058e9f904ef42
+      internalID: -5979501460050663257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_6
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 1137
+        width: 164
+        height: 379
+      alignment: 9
+      pivot: {x: 0.40450054, y: 0.32178894}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a2c374bd796298459975b46445b545a
+      internalID: -559017282073213011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_7
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 1137
+        width: 164
+        height: 379
+      alignment: 9
+      pivot: {x: 0.38062567, y: 0.36569625}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2df7236a04ca6d243b64e111060407b2
+      internalID: -8189050863622429430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_8
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 1137
+        width: 164
+        height: 379
+      alignment: 9
+      pivot: {x: 0.39853203, y: 0.4354309}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3de7ad46be60fc4aa0623041f874ebc
+      internalID: -8638205630748479043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_9
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 1137
+        width: 164
+        height: 379
+      alignment: 9
+      pivot: {x: 0.39256322, y: 0.4922519}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5927789f0632d7148a2a2d5c1306ddd1
+      internalID: 6830629345732104762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 758
+        width: 164
+        height: 379
+      alignment: 9
+      pivot: {x: 0.3870139, y: 0.5510165}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce04bdc34ff524741947338e86b41a59
+      internalID: 3246231691230659474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_11
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 758
+        width: 164
+        height: 379
+      alignment: 9
+      pivot: {x: 0.38917896, y: 0.60719144}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b36dc3e4f53cbe40a3fb9b0e3ac723f
+      internalID: 1767765527933285092
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_12
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 758
+        width: 164
+        height: 379
+      alignment: 9
+      pivot: {x: 0.38679355, y: 0.63471264}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 32168c3b21917b545ac480ca88cb7b28
+      internalID: -8914096858503210250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_13
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 758
+        width: 164
+        height: 379
+      alignment: 9
+      pivot: {x: 0.3908364, y: 0.64171076}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7e870679a2b4f478440d8476671ae6
+      internalID: 5741148484245745682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_14
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 758
+        width: 164
+        height: 379
+      alignment: 9
+      pivot: {x: 0.37870753, y: 0.6469591}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b499355201b8094798510e89fd46493
+      internalID: 419179485799869366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 379
+        width: 164
+        height: 379
+      alignment: 9
+      pivot: {x: 0.37559253, y: 0.65315574}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fb19bda768d7f549956af3176c52512
+      internalID: 6093145267202899099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_16
+      rect:
+        serializedVersion: 2
+        x: 164
+        y: 379
+        width: 164
+        height: 379
+      alignment: 9
+      pivot: {x: 0.36830968, y: 0.6613694}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef5fe40262d3064ebdfb1db72351af0
+      internalID: 4483108724993399243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_17
+      rect:
+        serializedVersion: 2
+        x: 328
+        y: 379
+        width: 164
+        height: 379
+      alignment: 9
+      pivot: {x: 0.36412477, y: 0.66616184}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 26094a47828751b4d8a627fe5c6f23ff
+      internalID: 528088146090899657
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_18
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 379
+        width: 164
+        height: 379
+      alignment: 9
+      pivot: {x: 0.36644578, y: 0.6733741}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22f61a8f59680cf4c898fbefb76c3f9a
+      internalID: -1416032907545560423
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_19
+      rect:
+        serializedVersion: 2
+        x: 656
+        y: 379
+        width: 164
+        height: 379
+      alignment: 9
+      pivot: {x: 0.36199394, y: 0.6830061}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24a8064b1cde7c44b9522ee1f5a98abb
+      internalID: -545509085713670855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Jump_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 164
+        height: 379
+      alignment: 9
+      pivot: {x: 0.3584463, y: 0.6875087}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c36f124bfbed26441b16473c2e46e271
+      internalID: 1459088916582297012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 76e95aa08148c604782cdc4aab511847
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
