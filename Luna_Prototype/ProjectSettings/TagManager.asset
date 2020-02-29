@@ -13,6 +13,7 @@ TagManager:
   - Platform
   - Roof
   - Parry
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
@@ -34,7 +35,7 @@ TagManager:
   - 
   - 
   - jumpColliders
-  - 
+  - Post
   - 
   - 
   - 

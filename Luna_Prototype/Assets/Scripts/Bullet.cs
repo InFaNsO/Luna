@@ -70,7 +70,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if ((collision.gameObject.tag != gameObject.tag) && (gameObject.tag != "Parry"))
+        if ((collision.gameObject.tag != gameObject.tag) && (gameObject.tag != "Parry") && (collision.gameObject.tag != "Parry"))
         {
             if ((collision.GetComponent<Character>() != null) || ( !mIsMelee && collision.CompareTag("Ground")))
             {
@@ -78,6 +78,11 @@ public class Bullet : MonoBehaviour
             }
             ParticleSystem newParticle = Instantiate(mParticle, transform.position, Quaternion.identity);
             newParticle.Play();
+        }
+        else if(collision.gameObject.tag == "Parry" /*&& !mIsMelee*/)
+        {
+            Vector3 flipDir = Vector3.Normalize(gameObject.transform.position - collision.gameObject.transform.position);
+            mFireDirection = flipDir;
         }
     }
 

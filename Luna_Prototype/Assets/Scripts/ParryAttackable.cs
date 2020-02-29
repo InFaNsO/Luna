@@ -31,10 +31,10 @@ public class ParryAttackable : MonoBehaviour
 
         // Take this out when set up with controller
 
-        if(Input.GetKeyDown(KeyCode.P))
-        {
-            Parry();
-        }
+        //if(Input.GetKeyDown(KeyCode.P))
+        //{
+        //    Parry();
+        //}
 
         //-------------------------------------------
     }

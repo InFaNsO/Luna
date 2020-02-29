@@ -1,5 +1,5 @@
 ![Game Logo](images/Logo.JPG)
-# Luna
+# Lune Bots
 
 It is a Rogue-Like 2D platformer & shooter for PC, Made in Uinty 2019.
 
@@ -17,7 +17,7 @@ In the future, climate change has massively changed the world that we know today
 * **Roland Lilakarsa** - *Designer* - [RolandRooT](https://github.com/RolandRooT)
 
 * **Bhavil Gupta** - *Programmer* - [InFaNsO](https://github.com/InFaNsO)
-* **Ruxin Huang** - *Programmer* - [xrhrepus](https://github.com/xrhrepus)
+* **R Huang** - *Programmer* - [xrhrepus](https://github.com/xrhrepus)
 * **Peter Zhang** - *Programmer* - [peterzmz](https://github.com/peterMingzhuoZhang)
 * **William Chi** - *Programmer* - [wallchi](https://github.com/wallchi)
 
