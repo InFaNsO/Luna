@@ -25,6 +25,8 @@ public class E_Enemy : MonoBehaviour
     public E_PathFinding mPathFinding;
     public E_SteeringModule mSteering;
 
+    public bool IsRunning = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -34,7 +36,7 @@ public class E_Enemy : MonoBehaviour
     {
         mAgent = GetComponent<E_Agent2D>();
 
-        mRigidBody = GetComponentInChildren<Rigidbody2D>();
+        mRigidBody = GetComponent<Rigidbody2D>();
         mStateMachine = GetComponentInChildren<E_StateMachine>();
         mSteering = GetComponentInChildren<E_SteeringModule>();
     }

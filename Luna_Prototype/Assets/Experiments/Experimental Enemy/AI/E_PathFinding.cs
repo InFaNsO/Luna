@@ -42,6 +42,15 @@ public class E_PathFinding : MonoBehaviour
 
     private List<int> nodesComparer = new List<int>();
 
+
+
+
+
+    private void Awake()
+    {
+        GameWorld = GetComponent<E_AI_Zone>();
+    }
+
     public void Initialize(float length = 1.8f)
     {
         Generate(length);

@@ -14,11 +14,18 @@ public class E_StateMachine : MonoBehaviour
         mEnemy = GetComponentInParent<E_Enemy>();
         Debug.AssertFormat(mStates.Count > 0, "No states in state machine");
 
+        var states = GetComponentsInChildren<E_State>();
+        for (int i = 0; i < states.Length; ++i)
+            mStates.Add(states[i]);
+
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (!mEnemy.IsRunning)
+            return;
+
         if (mCurrentState == -1)
         {
             mCurrentState = 0;
@@ -26,7 +33,7 @@ public class E_StateMachine : MonoBehaviour
         }
         mStates[mCurrentState].MyUpdate();
     }
-    private void OnDrawGizmos()
+    public void OnDrawGizmos()
     {
         mStates[mCurrentState].DebugDraw();
     }

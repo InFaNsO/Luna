@@ -13,12 +13,15 @@ public class E_WanderGroundState : E_State
 
     int target;
 
-    public override void Enter()
+    private void Start()
     {
         agent = GetComponentInParent<E_Enemy>();
-        finder = agent.mPathFinding;
         mSteeringModule = agent.mSteering;
+    }
 
+    public override void Enter()
+    {
+        finder = agent.mPathFinding;
 
         mSteeringModule.TurnAllOff();
         mSteeringModule.SetActive(SteeringType.Arrive, true);
@@ -39,36 +42,39 @@ public class E_WanderGroundState : E_State
     }
     public override void MyUpdate()
     {
-        RaycastHit2D hitInfo = Physics2D.Raycast(agent.transform.position, agent.transform.forward);
+        if(mPlayerCollider == null)
+        {
+            mPlayerCollider = agent.mZone.mPlayerTransform.GetComponent<Collider2D>();
+            if (mPlayerCollider == null)
+                return;
+        }
 
-        if (agent.mAttackRange.IsTouching(mPlayerCollider) && hitInfo.collider == mPlayerCollider)
+        RaycastHit2D hitInfo = Physics2D.Raycast(agent.transform.position, agent.transform.forward, agent.mPlayerVisibilityRange.radius, LayerMask.NameToLayer("Charachter"));
+
+        if (agent.mAttackRange.IsTouching(mPlayerCollider))// && hitInfo.collider == mPlayerCollider)
         {
             agent.mStateMachine.ChangeState("Attack");
+            return;
         }
-        else if(agent.mPlayerVisibilityRange.IsTouching(mPlayerCollider) && hitInfo.collider == mPlayerCollider)
+        else if(agent.mPlayerVisibilityRange.IsTouching(mPlayerCollider))// && hitInfo.collider == mPlayerCollider)
         {
             agent.mStateMachine.ChangeState("Chase");
+            return;
         }
 
-        bool calculateAgain = false;
-        if (Vector2.Distance(agent.transform.position, finder.mNodes[target].pos) < agent.mNodeRange.radius)
-        {
-            calculateAgain = true;
-        }
-
-        if (calculateAgain)  //or
-        {
-            target = (int)(Random.value * finder.mNodes.Count);
-            finder.FindPath(agent.transform.position, target);
-            agent.mAgent.mPath.Clear();
-            agent.mAgent.mPath = finder.GetPath();
-            if (agent.mAgent.mPath.Count != 0)
-            {
-                agent.mAgent.mTarget = agent.mAgent.mPath[0];
-                agent.mAgent.mPath.RemoveAt(0);
-            }
-        }
-        if (agent.mAgent.mPath.Count == 0 && calculateAgain)
+        //if (calculateAgain)  //or
+        //{
+        //    target = (int)(Random.value * finder.mNodes.Count);
+        //    finder.FindPath(agent.transform.position, target);
+        //    agent.mAgent.mPath.Clear();
+        //    agent.mAgent.mPath = finder.GetPath();
+        //    if (agent.mAgent.mPath.Count != 0)
+        //    {
+        //        agent.mAgent.mTarget = agent.mAgent.mPath[0];
+        //        agent.mAgent.mPath.RemoveAt(0);
+        //    }
+        //}
+        if (agent.mAgent.mPath.Count == 0)
         {
             target = (int)(Random.value * finder.mNodes.Count);
             finder.FindPath(agent.transform.position, target);
@@ -84,15 +90,17 @@ public class E_WanderGroundState : E_State
 
         bool isClose = agent.IsNearTarget(agent.mNodeRange.radius);
 
-        if (isClose && agent.mAgent.mPath.Count > 0)
+        if (isClose && agent.mAgent.mPath.Count != 0)
         {
             if (agent.mAgent.mTarget.y < agent.mAgent.mPath[0].y)
             {
-                agent.mRigidBody.AddForce(new Vector2(0.4f * (agent.transform.position.x < agent.mAgent.mPath[0].x ? agent.mAgent.mMaxSpeed : agent.mAgent.mMaxSpeed * -1), agent.mAgent.mJumpStrength * 0.5f), ForceMode2D.Impulse);
+                var force = new Vector2((agent.transform.position.x < agent.mAgent.mPath[0].x ? agent.mAgent.mMaxSpeed : agent.mAgent.mMaxSpeed * -1), agent.mAgent.mJumpStrength * 2);
+                agent.mRigidBody.AddForce(force , ForceMode2D.Impulse);
             }
             else if (agent.mAgent.mTarget.y != agent.mAgent.mPath[0].y)
             {
-                agent.mRigidBody.AddForce(new Vector2(0.2f * (agent.transform.position.x < agent.mAgent.mPath[0].x ? agent.mAgent.mMaxSpeed : agent.mAgent.mMaxSpeed * -1), agent.mAgent.mJumpStrength * 0.3f), ForceMode2D.Impulse);
+                var force = new Vector2((agent.transform.position.x < agent.mAgent.mPath[0].x ? agent.mAgent.mMaxSpeed : agent.mAgent.mMaxSpeed * -1), agent.mAgent.mJumpStrength * 0.5f);
+                agent.mRigidBody.AddForce(force, ForceMode2D.Impulse);
             }
             agent.mAgent.mTarget = agent.mAgent.mPath[0];
             agent.mAgent.mPath.RemoveAt(0);

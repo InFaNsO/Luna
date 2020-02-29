@@ -36,4 +36,14 @@ public class Platform : MonoBehaviour
         Gizmos.DrawWireSphere(tl, 0.1f);
         Gizmos.DrawWireSphere(br, 0.1f);
     }
+
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        var zone = collision.GetComponent<E_AI_Zone>();
+        if(zone != null)
+        {
+            zone.mPlatforms.Add(this);
+        }
+    }
 }

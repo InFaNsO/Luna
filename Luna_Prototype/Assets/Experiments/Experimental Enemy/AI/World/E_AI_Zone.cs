@@ -19,7 +19,8 @@ public class E_AI_Zone : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        mPathFinding.Initialize(mMaxDistanceTravelled);
+        if(mPlatforms.Count > 0)
+            mPathFinding.Initialize(mMaxDistanceTravelled);
     }
 
     private void Awake()
@@ -30,6 +31,12 @@ public class E_AI_Zone : MonoBehaviour
         }
         myArea = GetComponent<BoxCollider2D>();
         mPathFinding = GetComponent<E_PathFinding>();
+
+        var plats = GetComponentsInChildren<Platform>();
+        for (int i = 0; i < plats.Length; ++i)
+            mPlatforms.Add(plats[i]);
+
+        mPlayerTransform = mWorld.mPlayer.GetComponent<Transform>();
     }
 
     // Update is called once per frame
@@ -42,10 +49,12 @@ public class E_AI_Zone : MonoBehaviour
     {
         if (enem.mZone == this)
             return;
+
         myEnemies.Add(enem);
         mWorld.mEnemies.Add(enem);
         enem.mZone = this;
         enem.mPathFinding = mPathFinding;
+        enem.IsRunning = false;
         //enem.gameObject.SetActive(false);
     }
 
@@ -56,16 +65,19 @@ public class E_AI_Zone : MonoBehaviour
         {
             AwakeEnemies();
             mPlayerTransform = collision.GetComponent<Transform>();
+            return;
         }
         var enem = collision.GetComponentInParent<E_Enemy>();
         if(enem != null)
         {
             Register(enem);
+            return;
         }
-        var plat = collision.GetComponentInParent<Platform>();
+        var plat = collision.GetComponent<Platform>();
         if(plat != null)
         {
             mPlatforms.Add(plat);
+            return;
         }
     }
 
@@ -82,14 +94,14 @@ public class E_AI_Zone : MonoBehaviour
     {
         for (int i = 0; i < myEnemies.Count; ++i)
         {
-            myEnemies[i].gameObject.SetActive(true);
+            myEnemies[i].IsRunning = true;
         }
     }
     void SleepEnemies()
     {
         for (int i = 0; i < myEnemies.Count; ++i)
         {
-            myEnemies[i].gameObject.SetActive(false);
+            myEnemies[i].IsRunning = false;
         }
     }
 }

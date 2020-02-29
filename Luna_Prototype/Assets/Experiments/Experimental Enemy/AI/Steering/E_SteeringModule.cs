@@ -6,17 +6,35 @@ public class E_SteeringModule : MonoBehaviour
 {
     E_Enemy mAgent;
     [SerializeField] List<E_SteeringBase> mBehaviours = new List<E_SteeringBase>();
+    [SerializeField] bool CanFly;
+    Transform mAgentTransform;
+    Rigidbody2D mAgentBody;
+
     // Start is called before the first frame update
     void Start()
     {
-        mAgent = GetComponentInParent<E_Enemy>();
+        mAgent = GetComponent<E_Enemy>();
+        mAgentTransform = GetComponent<Transform>();
 
+        mAgentBody = mAgent.GetComponent<Rigidbody2D>();
+
+        var behaviours = GetComponentsInChildren<E_SteeringBase>();
+        for(int i = 0; i < behaviours.Length; ++i)
+        {
+            mBehaviours.Add(behaviours[i]);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (!mAgent.IsRunning)
+            return;
+
+        Vector3 force = Calculate() * Time.deltaTime;
+        if(!CanFly)
+            force.y = 0.0f;
+        mAgentBody.MovePosition(mAgentTransform.position + force);
     }
 
     public Vector3 Calculate()
