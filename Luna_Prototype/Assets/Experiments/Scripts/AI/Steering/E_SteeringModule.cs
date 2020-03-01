@@ -16,7 +16,7 @@ public class E_SteeringModule : MonoBehaviour
         mAgent = GetComponent<E_Enemy>();
         mAgentTransform = GetComponent<Transform>();
 
-        mAgentBody = mAgent.GetComponent<Rigidbody2D>();
+        mAgentBody = GetComponent<Rigidbody2D>();
 
         var behaviours = GetComponentsInChildren<E_SteeringBase>();
         for(int i = 0; i < behaviours.Length; ++i)
@@ -34,7 +34,11 @@ public class E_SteeringModule : MonoBehaviour
         Vector3 force = Calculate() * Time.deltaTime;
         if(!CanFly)
             force.y = 0.0f;
-        mAgentBody.MovePosition(mAgentTransform.position + force);
+        //mAgentBody.AddRelativeForce(force);
+
+        //mAgentBody.MovePosition(mAgentTransform.position + force);
+
+        mAgent.transform.position += force;
     }
 
     public Vector3 Calculate()

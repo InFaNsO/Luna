@@ -33,7 +33,9 @@ public class E_AttackState : E_State
     public override void MyUpdate()
     {
         if (mAgent.mAttackRange.IsTouching(mPlayerCollider))
-            myWeapon.Attack(true, mPlayer.transform.position);
+        {
+            //myWeapon.Attack(true, mPlayer.transform.position);
+        }
         else
             mAgent.mAgent.mTarget = mPlayer.transform.position;
 

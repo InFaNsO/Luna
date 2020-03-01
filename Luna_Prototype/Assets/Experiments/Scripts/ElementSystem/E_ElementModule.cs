@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E_Health : MonoBehaviour
+public class E_ElementModule : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()

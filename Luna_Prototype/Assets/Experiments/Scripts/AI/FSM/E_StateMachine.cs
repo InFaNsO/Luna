@@ -33,7 +33,7 @@ public class E_StateMachine : MonoBehaviour
         }
         mStates[mCurrentState].MyUpdate();
     }
-    public void OnDrawGizmos()
+    void OnDrawGizmos()
     {
         mStates[mCurrentState].DebugDraw();
     }

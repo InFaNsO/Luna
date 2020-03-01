@@ -94,7 +94,8 @@ public class E_WanderGroundState : E_State
         {
             if (agent.mAgent.mTarget.y < agent.mAgent.mPath[0].y)
             {
-                var force = new Vector2((agent.transform.position.x < agent.mAgent.mPath[0].x ? agent.mAgent.mMaxSpeed : agent.mAgent.mMaxSpeed * -1), agent.mAgent.mJumpStrength * 2);
+               // agent.mRigidBody.velocity = new Vector2(agent.mRigidBody.velocity.x ,  0.0f);
+                var force = new Vector2((agent.transform.position.x < agent.mAgent.mPath[0].x ? agent.mAgent.mMaxSpeed : agent.mAgent.mMaxSpeed * -1), agent.mAgent.mJumpStrength * 1);
                 agent.mRigidBody.AddForce(force , ForceMode2D.Impulse);
             }
             else if (agent.mAgent.mTarget.y != agent.mAgent.mPath[0].y)

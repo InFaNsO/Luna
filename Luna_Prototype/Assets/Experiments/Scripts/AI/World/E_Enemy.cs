@@ -7,7 +7,7 @@ using UnityEngine;
  * New Enemy class based on ECS
  */
 
-public class E_Enemy : MonoBehaviour
+public class E_Enemy : E_Character
 {
     //[SerializeField] E_AI_Zone mZone;
     //Physics Triggers
@@ -15,7 +15,6 @@ public class E_Enemy : MonoBehaviour
     public CircleCollider2D mAttackRange;
     public CircleCollider2D mPlayerVisibilityRange;
 
-    public Rigidbody2D mRigidBody;
 
     public E_AI_Zone mZone;
 
@@ -26,6 +25,8 @@ public class E_Enemy : MonoBehaviour
     public E_SteeringModule mSteering;
 
     public bool IsRunning = false;
+
+    public Weapon myWeapon;
 
     // Start is called before the first frame update
     void Start()
@@ -39,6 +40,8 @@ public class E_Enemy : MonoBehaviour
         mRigidBody = GetComponent<Rigidbody2D>();
         mStateMachine = GetComponentInChildren<E_StateMachine>();
         mSteering = GetComponentInChildren<E_SteeringModule>();
+
+        myWeapon = GetComponentInChildren<Weapon>();
     }
 
     // Update is called once per frame
