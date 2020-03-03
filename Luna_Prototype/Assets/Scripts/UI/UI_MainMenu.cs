@@ -19,7 +19,7 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
     {
         if (_uIManager == null)
             _uIManager = ServiceLocator.Get<UIManager>();
-        startScreen = transform.Find("cover").gameObject;
+        //startScreen = transform.Find("cover").gameObject;
     }
     private void OnDisable()
     {
