@@ -34,7 +34,7 @@ public class AttackState : State
     {
         if (mAgent.mAttackRange.IsTouching(mPlayerCollider))
         {
-            //myWeapon.Attack(true, mPlayer.transform.position);
+            myWeapon.Attack(true, mPlayer.transform.position);
         }
         else
             mAgent.mAgent.mTarget = mPlayer.transform.position;

@@ -319,8 +319,9 @@ public class Player : Character
 
             var bullet = other.GetComponent<Bullet>();
             if ((bullet != null) && (other.tag != "Parry"))       //|
-            {                                                                           //|
-                GetHit(bullet.mElement);
+            {     //|
+                if(bullet.mElement != null)
+                    GetHit(bullet.mElement);
                 GetHit(bullet.Damage);
                 mLastGotHitPosition = other.gameObject.transform.position;              //|
             }                                                                           //|

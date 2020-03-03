@@ -53,6 +53,7 @@ GameObject:
   - component: {fileID: 1525562980}
   - component: {fileID: 1525562978}
   - component: {fileID: 7557835133210629315}
+  - component: {fileID: 93239081621486054}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -151,31 +152,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ce6bb200dfc464448806d5ea366de706, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mDestination: {x: 0, y: 0}
-  mVelocity: {x: 0, y: 0}
-  mHeading: {x: 0, y: 0}
-  mFinalDestination: {x: 0, y: 0}
-  mMass: 100
-  mMaxSpeed: 10
-  mSafeDistanceReduced: 5
-  mSafeDistance: 10
-  mSafeDistanceExtended: 15
-  mRadius: 0.75
-  world: {fileID: 0}
-  mMaxHealth: 100
-  mCurrentHealth: 0
-  mMovementSpeed: 10
+  myHealth: {fileID: 0}
+  mRigidBody: {fileID: 0}
   mJumpStrength: 260
-  mWasTheCharacterInAnHazardInThePastSecond: 0
-  mReceiveHazardDebuffCD: 0
-  mReceivedHazardDamage: 0
-  mReceivedHazardDuration: 0
+  mMovementSpeed: 10
   isGrounded: 0
-  mElement: {fileID: 0}
   mAttackMomentumPos: {fileID: 0}
+  element: {fileID: 0}
+  knockBackX: 1
+  knockBackY: 1
   mWeapon1: {fileID: 0}
   mWeapon2: {fileID: 0}
   mCurrentWeapon: {fileID: 0}
+  mNearbyWeapon: {fileID: 0}
   mIsIFrameOn: 0
   mIFrameCD: 0
   mIFrameDuration: 0
@@ -187,6 +176,7 @@ MonoBehaviour:
   mDefense: 0
   _LocalLevelManager: {fileID: 0}
   mWeaponPosition: {fileID: 7207892155501631397}
+  mDefaultRunTimeAniamtorController: {fileID: 0}
 --- !u!114 &646634882694904650
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -409,7 +399,6 @@ MonoBehaviour:
   mMaxStamina: 100
   mCurrentStamina: 0
   mStaminaCostPerDash: 20
-  staminaBar: {fileID: 0}
 --- !u!114 &1525562980
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -453,6 +442,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef79c0913fa5a543803ca3d5c6dabc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &93239081621486054
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109428899416447167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa1fe5d579d028d47b4e2e4734330a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHealth: 30
+  myElement: 0
 --- !u!1 &7207892155501631397
 GameObject:
   m_ObjectHideFlags: 0

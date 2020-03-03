@@ -37,6 +37,7 @@ public class Enemy : Character
     // Start is called before the first frame update
     void Start()
     {
+        base.Start();
         var wep = GetComponentInChildren<Weapon>();
         if (wep != null)
         {

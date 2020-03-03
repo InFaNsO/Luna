@@ -40,7 +40,12 @@ public class Bullet : MonoBehaviour
             mElement = new ElementalAttributes();
         Assert.IsNotNull(mElement);
     }
-
+    public void Start()
+    {
+        if (mElement == null)
+           mElement = GetComponent<ElementalAttributes>();
+        Assert.IsNotNull(mElement);
+    }
     public void Update()
     {
         if (mLifeTimeCounter > 0.0f)
