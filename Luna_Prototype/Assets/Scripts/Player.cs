@@ -37,6 +37,8 @@ public class Player : Character
     [SerializeField]
     private int mDefense;
 
+
+
     public LocalLevelManager _LocalLevelManager;                       //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
     public GameObject mWeaponPosition;
 
@@ -48,6 +50,7 @@ public class Player : Character
     public RuntimeAnimatorController mDefaultRunTimeAniamtorController;
     // Getter & Setter
     public Weapon CurrentWeapon { get { return mCurrentWeapon; } }
+
 
     public void LevelUp()
     {
@@ -203,18 +206,18 @@ public class Player : Character
     }
     override public void Die()
     {
-        Debug.Log("[Player] Player Dead, curr hp : " + mCurrentHealth + "max hp " + mMaxHealth);
+        Debug.Log("[Player] Player Dead, curr hp : " + myHealth.GetHealth() + "max hp " + myHealth.GetMaxHealth());
 
         if (gameObject.GetComponent<CheckPointTracker>() != null)
         {
             if (gameObject.GetComponent<CheckPointTracker>().respawnPoint != null)
             {
                 gameObject.GetComponent<CheckPointTracker>().Respawn(true);
-                ServiceLocator.Get<UIManager>().UpdateHPGauge(mCurrentHealth / mMaxHealth);
+                ServiceLocator.Get<UIManager>().UpdateHPGauge(myHealth.GetHealth() / myHealth.GetMaxHealth());
             }
             else
             {
-                ServiceLocator.Get<UIManager>().UpdateHPGauge(mCurrentHealth / mMaxHealth);
+                ServiceLocator.Get<UIManager>().UpdateHPGauge(myHealth.GetHealth()  / myHealth.GetMaxHealth());
                 gameObject.SetActive(false);
                 ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);             //|--- [Rick H] Edit: Call GameMngr
             }
@@ -255,10 +258,8 @@ public class Player : Character
         }
     }
 
-    public new void Awake()
+    public void Awake()
     {
-        base.Awake();
-
         _LocalLevelManager = GameObject.Find("LocalLevelManager").GetComponent<LocalLevelManager>();    //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
         Assert.IsNotNull(_LocalLevelManager, "[Player] _LocalLevelManager is null");                    //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
 
@@ -301,7 +302,6 @@ public class Player : Character
 
     public void Update()
     {
-        base.Update();
         ExpCheck();
     }
 
@@ -363,15 +363,14 @@ public class Player : Character
     //- Mingzhuo Zhang Edit ------------------------------------------------------------//|
     //----------------------------------------------------------------------------------//|
     public void UpdateHealth(float changeValue)                                         //|
-    {                                                                                   //|
-        mCurrentHealth += changeValue;                                                  //|
-        //_LocalLevelManager._InGameUI.UpdateHealthBar(mCurrentHealth / mMaxHealth);      //|--- [Mingzhuo Zhang] add a function for all heathchange event, that we can update ui all in one
-        ServiceLocator.Get<UIManager>().UpdateHPGauge(mCurrentHealth / mMaxHealth);
-                                                                                        //|
-        if (mCurrentHealth <= 0)                                                        //|
-        {                                                                               //|
-            Die();                                                                      //|
-        }                                                                               //|
+    {
+        if (changeValue > 0)
+            myHealth.TakeHealth(changeValue);
+        else
+            myHealth.TakeDamage(Mathf.Abs(changeValue));
+
+        ServiceLocator.Get<UIManager>().UpdateHPGauge(myHealth.GetHealth() / myHealth.GetMaxHealth());
+                                                                    //|
     }                                                                                   //|
     //----------------------------------------------------------------------------------//|
     //- End Edit -----------------------------------------------------------------------//|

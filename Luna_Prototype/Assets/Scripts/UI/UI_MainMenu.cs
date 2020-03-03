@@ -19,7 +19,7 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
     {
         if (_uIManager == null)
             _uIManager = ServiceLocator.Get<UIManager>();
-        startScreen = transform.Find("cover").gameObject;
+        //startScreen = transform.Find("cover").gameObject;
     }
     private void OnDisable()
     {
@@ -29,7 +29,7 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
     public void ResetUI()
     {
          {
-            startScreen.gameObject.SetActive(true);
+            //startScreen.gameObject.SetActive(true);
         }
     }
 
@@ -51,10 +51,14 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
 
     public void Touch_StartScreen()
     {
-        startScreen.gameObject.SetActive(false);
-//        if (_uIManager != null)
+        if (startScreen != null)
         {
-            _uIManager.SetSelected(transform.Find("start").gameObject);
+
+            startScreen.gameObject.SetActive(false);
+            //        if (_uIManager != null)
+            {
+                _uIManager.SetSelected(transform.Find("start").gameObject);
+            }
         }
 
     }

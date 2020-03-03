@@ -342,6 +342,7 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
     }
     private void OnMouseDown() //Debug Mode only
     {
+
         //if (debugMode)
         //{
         //    if (mPlayer != null)
@@ -353,5 +354,10 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
         //        ApplyDamage(ref mEnemy, true);
         //    }
         //}
+    }
+
+    public void Randomize()
+    {
+
     }
 }

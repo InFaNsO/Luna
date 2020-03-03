@@ -14,7 +14,7 @@ public class CheckPointTracker : MonoBehaviour
         {
             if (heal)
             {
-                GetComponent<Player>().mCurrentHealth = GetComponent<Player>().mMaxHealth; // heal the player before respawning them
+                GetComponent<Player>().myHealth.Respawn(); // heal the player before respawning them
                 respawnFlag = true;
                 invulnerableTime = originalInvTime;
             }
@@ -40,7 +40,7 @@ public class CheckPointTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (GetComponent<Player>().mCurrentHealth <= 0)
+        if (!GetComponent<Player>().myHealth.IsAlive())
         {
             Respawn(true);
         }
@@ -48,7 +48,7 @@ public class CheckPointTracker : MonoBehaviour
         {
             if (GetComponent<ElementalAttributes>() != null)
             {
-                GetComponent<Player>().mCurrentHealth = GetComponent<Player>().mMaxHealth;
+                GetComponent<Player>().myHealth.Respawn();
                 ElementalAttributes mEle;
                 mEle = GetComponent<ElementalAttributes>();
                 for (int i = 0; i < mEle.mElement.Length; i++) //reset debuff counters
