@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f64966c634d5e94bab5dbc07325a6fb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainmenuPrefab: {fileID: 1871207717477208346, guid: d6be4d91338fb224ab30b122c9cc5ab5,
+  mainmenuPrefab: {fileID: 1871207717477208346, guid: 71bdb472b4a9c1c4ca56980621caf0b9,
     type: 3}
   inGamePrefab: {fileID: 9083532986528994905, guid: 46257875ed8cdd84aaad995965ad79b1,
     type: 3}
