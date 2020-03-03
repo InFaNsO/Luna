@@ -240,7 +240,7 @@ public class Weapon : MonoBehaviour
         gameObject.tag = owner.tag;
 
         Character chara = owner.GetComponent<Character>();
-        mOwnerElement = chara.mElement;
+        mOwnerElement = chara.element;
         Assert.IsNotNull(mOwnerElement);
 
         InLevelBody.gameObject.SetActive(false);

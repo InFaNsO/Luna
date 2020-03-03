@@ -20,7 +20,7 @@ public class BossDead : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bossHp = _boss.mCurrentHealth;
+        bossHp = _boss.myHealth.GetHealth();
         if (bossHp <= 40.0f)
         {
             ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);

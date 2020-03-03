@@ -40,7 +40,7 @@ public class Platform : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        var zone = collision.GetComponent<E_AI_Zone>();
+        var zone = collision.GetComponent<AI_Zone>();
         if(zone != null)
         {
             zone.mPlatforms.Add(this);

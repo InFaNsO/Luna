@@ -155,12 +155,12 @@ public abstract class Elemental
         if(mElementalAttribute.mPlayer != null)
         {
             Debug.Log("Player Elemental damage taken");
-            mElementalAttribute.mPlayer.mCurrentHealth -= dmg * (resistance / 100.0f);
+            mElementalAttribute.mPlayer.myHealth.TakeDamage( dmg * (resistance / 100.0f));
         }
         if(mElementalAttribute.mEnemy != null)
         {
             Debug.Log("Enemy Elemental damage taken");
-            mElementalAttribute.mEnemy.mCurrentHealth -= dmg * (resistance / 100.0f);
+            mElementalAttribute.mEnemy.myHealth.TakeDamage(dmg * (resistance / 100.0f));
         }
     } //Mainly for debug only, do not use unless you know what you are doing
     public ElementalAttributes GetAttribute()

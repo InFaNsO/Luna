@@ -41,15 +41,26 @@ MonoBehaviour:
   m_GameObject: {fileID: 166111477432347562}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 268fc47861a38de4cb151c7ddc2da042, type: 3}
+  m_Script: {fileID: 11500000, guid: b17c4cd7d81885741a5884f2cb273b03, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Damage: 1
-  Resistance: 1
-  Chance: 1
-  Intensity: 1
-  Duration: 1
-  Type: 0
+  Range: 0
+  mName: 
+  mGrade: 0
+  mType: 0
+  mParryCD: 1
+  mMoves: []
+  mAirMoveIndex: 0
+  InLevelBody: {fileID: 0}
+  mWeaponBody: {fileID: 0}
+  pickUpCollider: {fileID: 0}
+  inlevelBody_spriteRender: {fileID: 0}
+  mAnimatorOverrideController: {fileID: 0}
+  mElement: {fileID: 0}
+  mOwnerElement: {fileID: 0}
+  mTargetPos: {x: 0, y: 0, z: 0}
+  mIsAttacking: 0
+  mOwner: {fileID: 0}
 --- !u!1 &1989147362966143443
 GameObject:
   m_ObjectHideFlags: 0

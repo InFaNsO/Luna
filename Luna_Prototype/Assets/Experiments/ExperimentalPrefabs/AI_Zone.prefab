@@ -69,7 +69,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 817192022415352496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b835e74dbbddf94faa604a16072188a, type: 3}
+  m_Script: {fileID: 11500000, guid: d593365bf26a5204c990087cc05648cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mConnections: []
@@ -88,7 +88,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 817192022415352496}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94021095c95880e4491b3cf383e05ad9, type: 3}
+  m_Script: {fileID: 11500000, guid: 62bb8cfc532246f4ca55f32a11f334d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   GameWorld: {fileID: 0}
