@@ -320,7 +320,7 @@ MonoBehaviour:
   mWeaponBody: {fileID: 0}
   pickUpCollider: {fileID: 4321841681249314965}
   inlevelBody_spriteRender: {fileID: 2128419624135272632}
-  mAnimatorOverrideController: {fileID: 22100000, guid: 9888c4f00b4e4a74eb40173604c22561,
+  mAnimatorOverrideController: {fileID: 22100000, guid: 2d366884a2a0f5c41a50cc98b1757a75,
     type: 2}
   mElement: {fileID: 0}
   mOwnerElement: {fileID: 0}
