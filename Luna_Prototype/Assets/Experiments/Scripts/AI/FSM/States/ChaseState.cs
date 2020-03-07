@@ -26,6 +26,7 @@ public class ChaseState : State
 
         mAgent.mSteering.TurnAllOff();
         mAgent.mSteering.SetActive(SteeringType.Arrive, true);
+        mAgent.mSteering.SetActive(SteeringType.Seek, true);
 
         mAgent.GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
 
@@ -38,6 +39,11 @@ public class ChaseState : State
 
     public override void MyUpdate()
     {
+        if (!mAgent.myHealth.IsAlive())
+        {
+            mAgent.mStateMachine.ChangeState("Die");
+            return;
+        }
         if (mAgent.mAttackRange.IsTouching(mPlayerCollider))
         {
             mAgent.mStateMachine.ChangeState("Attack");

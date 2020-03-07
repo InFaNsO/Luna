@@ -76995,12 +76995,12 @@ PrefabInstance:
     - target: {fileID: 8325768657582379025, guid: 898088d21a6e5ad448dec27655c792cf,
         type: 3}
       propertyPath: mJumpStrength
-      value: 20
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 8325768657582379025, guid: 898088d21a6e5ad448dec27655c792cf,
         type: 3}
       propertyPath: mMovementSpeed
-      value: 20
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2841537992339382550, guid: 898088d21a6e5ad448dec27655c792cf,
         type: 3}
@@ -77020,15 +77020,35 @@ PrefabInstance:
     - target: {fileID: 8178183789483284133, guid: 898088d21a6e5ad448dec27655c792cf,
         type: 3}
       propertyPath: mJumpStrength
-      value: 20
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 8178183789483284133, guid: 898088d21a6e5ad448dec27655c792cf,
         type: 3}
       propertyPath: mMaxSpeed
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2777235399598698508, guid: 898088d21a6e5ad448dec27655c792cf, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 898088d21a6e5ad448dec27655c792cf, type: 3}
+--- !u!1 &1500677933 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1676270518697839149, guid: 898088d21a6e5ad448dec27655c792cf,
+    type: 3}
+  m_PrefabInstance: {fileID: 1500677932}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1500677934
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500677933}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68bb5bdb6dcb59b4681c75662d6e5f0e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mIsActive: 0
 --- !u!1 &1501837833
 GameObject:
   m_ObjectHideFlags: 0
