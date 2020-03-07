@@ -1,0 +1,843 @@
+fileFormatVersion: 2
+guid: c872655c5dfd27344b0e5f828303f5f8
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -403801272153165569
+    second: Sword_Spinning_Sword_0
+  - first:
+      213: -6012638183394859178
+    second: Sword_Spinning_Sword_1
+  - first:
+      213: -1422042233027169804
+    second: Sword_Spinning_Sword_2
+  - first:
+      213: 3803348715238988315
+    second: Sword_Spinning_Sword_3
+  - first:
+      213: -1139708795201179138
+    second: Sword_Spinning_Sword_4
+  - first:
+      213: 2023976711034651847
+    second: Sword_Spinning_Sword_5
+  - first:
+      213: 915788402384368143
+    second: Sword_Spinning_Sword_6
+  - first:
+      213: -569454561465164090
+    second: Sword_Spinning_Sword_7
+  - first:
+      213: 8669998070051406255
+    second: Sword_Spinning_Sword_8
+  - first:
+      213: 7247339689928644962
+    second: Sword_Spinning_Sword_9
+  - first:
+      213: -1447903849910500501
+    second: Sword_Spinning_Sword_10
+  - first:
+      213: -5391613056512003245
+    second: Sword_Spinning_Sword_11
+  - first:
+      213: 7867437390346651736
+    second: Sword_Spinning_Sword_12
+  - first:
+      213: -5350698873443514651
+    second: Sword_Spinning_Sword_13
+  - first:
+      213: 7815779755486876167
+    second: Sword_Spinning_Sword_14
+  - first:
+      213: -7319743177453078753
+    second: Sword_Spinning_Sword_15
+  - first:
+      213: -5161952151913552251
+    second: Sword_Spinning_Sword_16
+  - first:
+      213: -7537376713084120190
+    second: Sword_Spinning_Sword_17
+  - first:
+      213: -1352363213677081021
+    second: Sword_Spinning_Sword_18
+  - first:
+      213: 6003837581748435334
+    second: Sword_Spinning_Sword_19
+  - first:
+      213: 8360808101809278574
+    second: Sword_Spinning_Sword_20
+  - first:
+      213: 4250024283953610360
+    second: Sword_Spinning_Sword_21
+  - first:
+      213: -2203348901906603452
+    second: Sword_Spinning_Sword_22
+  - first:
+      213: -1727788338464440175
+    second: Sword_Spinning_Sword_23
+  - first:
+      213: -7595549781878637349
+    second: Sword_Spinning_Sword_24
+  - first:
+      213: -6000037808839219318
+    second: Sword_Spinning_Sword_25
+  - first:
+      213: -1511024831286297301
+    second: Sword_Spinning_Sword_26
+  - first:
+      213: -6422726976667548441
+    second: Sword_Spinning_Sword_27
+  - first:
+      213: 5731748586706839329
+    second: Sword_Spinning_Sword_28
+  - first:
+      213: -8509380348808350783
+    second: Sword_Spinning_Sword_29
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1335
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb73c0a0a4c4d87458e1c38780f2f2b0
+      internalID: -403801272153165569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_1
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 1335
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2af37698c24ccd445b7924d7f7d30e3e
+      internalID: -6012638183394859178
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_2
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 1335
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7ee3c4d27cc2aa4381dc19ae74de7dc
+      internalID: -1422042233027169804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_3
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 1335
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0767867c605f9df4ebd46c003d507cef
+      internalID: 3803348715238988315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_4
+      rect:
+        serializedVersion: 2
+        x: 2356
+        y: 1335
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ec8edc5bdd52954a98b2bd01ed6dbf0
+      internalID: -1139708795201179138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1068
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1eda2d9dcde994741a8c7b3e200a7ed1
+      internalID: 2023976711034651847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_6
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 1068
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7264bfb5ea4ff284b81aa0c3b550751b
+      internalID: 915788402384368143
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_7
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 1068
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fdf6a2730798bc47b63d1046f7de699
+      internalID: -569454561465164090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_8
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 1068
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe182ae68548be3439aa75cf9e93dcd8
+      internalID: 8669998070051406255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_9
+      rect:
+        serializedVersion: 2
+        x: 2356
+        y: 1068
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 515949d05e6395543bfa10e22e081326
+      internalID: 7247339689928644962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 801
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea98f67f359c018489866a0e7ec5655e
+      internalID: -1447903849910500501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_11
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 801
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d52d01a5b980ab743b4c2bcbf97ac4a4
+      internalID: -5391613056512003245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_12
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 801
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: def817e1917b8044f9750b051fe2a48a
+      internalID: 7867437390346651736
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_13
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 801
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48dd0b32437f04946a717a1671694a04
+      internalID: -5350698873443514651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_14
+      rect:
+        serializedVersion: 2
+        x: 2356
+        y: 801
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f982aa2c1a34322419021a147a202094
+      internalID: 7815779755486876167
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 534
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d7fbeb6a3e37bc84da5dfdc0ecdf6b94
+      internalID: -7319743177453078753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_16
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 534
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c4eb55c75d443d4d9d1b793e41e3ef0
+      internalID: -5161952151913552251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_17
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 534
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9da2d251dee990044acc3b1e67757737
+      internalID: -7537376713084120190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_18
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 534
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9f1f08ff61f41fb4795d0a693d5e0215
+      internalID: -1352363213677081021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_19
+      rect:
+        serializedVersion: 2
+        x: 2356
+        y: 534
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5fdb9c753c9c244398a12fb9c4ee102
+      internalID: 6003837581748435334
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 267
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a74a4b769e7bb243966882a4a86154e
+      internalID: 8360808101809278574
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_21
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 267
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: accaf4a299510bc4ca63f8cf1198296b
+      internalID: 4250024283953610360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_22
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 267
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d34597cabe293954b85162e6fabcc6cf
+      internalID: -2203348901906603452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_23
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 267
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5f4ee92aa14ae144ca6818d0b25bf0a1
+      internalID: -1727788338464440175
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_24
+      rect:
+        serializedVersion: 2
+        x: 2356
+        y: 267
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8567f3b8f4dac8941af583c1431024a0
+      internalID: -7595549781878637349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a7b8dba146354e043b519491dc85d5c9
+      internalID: -6000037808839219318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_26
+      rect:
+        serializedVersion: 2
+        x: 589
+        y: 0
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1fe84e29befec914581edc2e96417a4d
+      internalID: -1511024831286297301
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_27
+      rect:
+        serializedVersion: 2
+        x: 1178
+        y: 0
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b2f3ded745baff442a902949d063aac2
+      internalID: -6422726976667548441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_28
+      rect:
+        serializedVersion: 2
+        x: 1767
+        y: 0
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d37405339d3baed4e9562e57771beddc
+      internalID: 5731748586706839329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Spinning_Sword_29
+      rect:
+        serializedVersion: 2
+        x: 2356
+        y: 0
+        width: 589
+        height: 267
+      alignment: 9
+      pivot: {x: 0.2, y: 0.36}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6619fcb02d397ae42a1c7cb4b80326e0
+      internalID: -8509380348808350783
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 2ce52de81e2760d46b1fe4eb7748caa1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
