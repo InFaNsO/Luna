@@ -1,0 +1,1131 @@
+fileFormatVersion: 2
+guid: 1ec0a8b2b0a7c52449781d3d08c15d66
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6790308973027854225
+    second: Sword_Rain_0
+  - first:
+      213: -8340002637845498923
+    second: Sword_Rain_1
+  - first:
+      213: -9162960426523279626
+    second: Sword_Rain_2
+  - first:
+      213: -7002712399689975891
+    second: Sword_Rain_3
+  - first:
+      213: -4538696114944962931
+    second: Sword_Rain_4
+  - first:
+      213: -2555483672997340345
+    second: Sword_Rain_5
+  - first:
+      213: -3499094705524991229
+    second: Sword_Rain_6
+  - first:
+      213: 1437971108611569580
+    second: Sword_Rain_7
+  - first:
+      213: -8256374209406379035
+    second: Sword_Rain_8
+  - first:
+      213: -6106460038319303350
+    second: Sword_Rain_9
+  - first:
+      213: -4330319216101556556
+    second: Sword_Rain_10
+  - first:
+      213: -9038706962981994303
+    second: Sword_Rain_11
+  - first:
+      213: 6961754751816089607
+    second: Sword_Rain_12
+  - first:
+      213: 2596718002990776141
+    second: Sword_Rain_13
+  - first:
+      213: 798046219702798851
+    second: Sword_Rain_14
+  - first:
+      213: -6629124266025572807
+    second: Sword_Rain_15
+  - first:
+      213: 5385908506257368356
+    second: Sword_Rain_16
+  - first:
+      213: -6257528320495367597
+    second: Sword_Rain_17
+  - first:
+      213: 8429098431082858441
+    second: Sword_Rain_18
+  - first:
+      213: 5390644875368864040
+    second: Sword_Rain_19
+  - first:
+      213: -3397112002103333572
+    second: Sword_Rain_20
+  - first:
+      213: 901733860585059640
+    second: Sword_Rain_21
+  - first:
+      213: -1173313100934595633
+    second: Sword_Rain_22
+  - first:
+      213: -5185935505012970954
+    second: Sword_Rain_23
+  - first:
+      213: -7351131670418522507
+    second: Sword_Rain_24
+  - first:
+      213: -4974202631846361139
+    second: Sword_Rain_25
+  - first:
+      213: -7805740031370326693
+    second: Sword_Rain_26
+  - first:
+      213: 3450891964348553764
+    second: Sword_Rain_27
+  - first:
+      213: -681859683189001660
+    second: Sword_Rain_28
+  - first:
+      213: 4272537815729236784
+    second: Sword_Rain_29
+  - first:
+      213: -8190695735061485190
+    second: Sword_Rain_30
+  - first:
+      213: 3282408349214640185
+    second: Sword_Rain_31
+  - first:
+      213: 4777713339882780709
+    second: Sword_Rain_32
+  - first:
+      213: -5987513714301975791
+    second: Sword_Rain_33
+  - first:
+      213: 7275308475577976757
+    second: Sword_Rain_34
+  - first:
+      213: 5460770203654047525
+    second: Sword_Rain_35
+  - first:
+      213: -1523830972808932583
+    second: Sword_Rain_36
+  - first:
+      213: 1242283765948930218
+    second: Sword_Rain_37
+  - first:
+      213: 3140430025203209867
+    second: Sword_Rain_38
+  - first:
+      213: -4435125424732605989
+    second: Sword_Rain_39
+  - first:
+      213: 583461200087761315
+    second: Sword_Rain_40
+  - first:
+      213: 4495620975937163298
+    second: Sword_Rain_41
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: WebGL
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sword_Rain_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4272
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9c466a60774b9741ba3a22e29961923
+      internalID: -6790308973027854225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_1
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 4272
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1f16da5321d9c4429d0fbb9481c2e78
+      internalID: -8340002637845498923
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_2
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 4272
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 93ad310f59ada1c48b591cadd52510a2
+      internalID: -9162960426523279626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_3
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 4272
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a888419de5e2d11448726ee66699ea91
+      internalID: -7002712399689975891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_4
+      rect:
+        serializedVersion: 2
+        x: 3856
+        y: 4272
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: abf21c681b7c9d347bf7365e6622b992
+      internalID: -4538696114944962931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_5
+      rect:
+        serializedVersion: 2
+        x: 4820
+        y: 4272
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53df590d7d64f8a4aba0cf6b1f12669c
+      internalID: -2555483672997340345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3560
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f90869dd035aa294993382e6de02ab94
+      internalID: -3499094705524991229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_7
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 3560
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3b132a276d0e3c4b9b36cbdac6ce43b
+      internalID: 1437971108611569580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_8
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 3560
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7e4b93c4412c80e4787ec906b2b0980b
+      internalID: -8256374209406379035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_9
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 3560
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f09a992af4ec7046b24096a8f777384
+      internalID: -6106460038319303350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_10
+      rect:
+        serializedVersion: 2
+        x: 3856
+        y: 3560
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06379df870346e442a40ed4bc33ae3b8
+      internalID: -4330319216101556556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_11
+      rect:
+        serializedVersion: 2
+        x: 4820
+        y: 3560
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 478f2615884ca5a43bb4edd00998de9d
+      internalID: -9038706962981994303
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2848
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e163e6a31c2ac44b9a96e13d81f8734
+      internalID: 6961754751816089607
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_13
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 2848
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2911a465e580d2549b1e27a83c657828
+      internalID: 2596718002990776141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_14
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 2848
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b8038195cfc3a543a6505ac12cb1275
+      internalID: 798046219702798851
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_15
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 2848
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7dbd88ed3185ed4eaf7e115fee81ed0
+      internalID: -6629124266025572807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_16
+      rect:
+        serializedVersion: 2
+        x: 3856
+        y: 2848
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a221f303b3b47d440afb2530c9e8010c
+      internalID: 5385908506257368356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_17
+      rect:
+        serializedVersion: 2
+        x: 4820
+        y: 2848
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e56c9d34291f264e986d6ed1d0740bb
+      internalID: -6257528320495367597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2136
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 169a603e4a74ae0459991284f33c8ee6
+      internalID: 8429098431082858441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_19
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 2136
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f19852e5303565240b15692e08a8671f
+      internalID: 5390644875368864040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_20
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 2136
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 73d07dfaaf23f2c47965f86202d5e50d
+      internalID: -3397112002103333572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_21
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 2136
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c711df0bfd394a14c981221dd6e89999
+      internalID: 901733860585059640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_22
+      rect:
+        serializedVersion: 2
+        x: 3856
+        y: 2136
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8a51dc40d7122484d9ae6f8ddba12490
+      internalID: -1173313100934595633
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_23
+      rect:
+        serializedVersion: 2
+        x: 4820
+        y: 2136
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 773e1044ee0033a4c907d3afcd0d2577
+      internalID: -5185935505012970954
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1424
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91fa05b7230c5ca40ac7e12e77741a80
+      internalID: -7351131670418522507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_25
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 1424
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d9da7b00d5fb99d4fa90418513b45aaf
+      internalID: -4974202631846361139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_26
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 1424
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d778b66bab9ce7f4fa42c2b7f0e03154
+      internalID: -7805740031370326693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_27
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 1424
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c967b75f71d53d40b5d2568a33e91a3
+      internalID: 3450891964348553764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_28
+      rect:
+        serializedVersion: 2
+        x: 3856
+        y: 1424
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 502243e2602e47345aec5c6b37db5988
+      internalID: -681859683189001660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_29
+      rect:
+        serializedVersion: 2
+        x: 4820
+        y: 1424
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 836ba35b7e64a804e9b1417de2500dd5
+      internalID: 4272537815729236784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 712
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b56dceed1b263df4eab5d7a51aeb47b0
+      internalID: -8190695735061485190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_31
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 712
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9dc9d03630477784cac74e8c4fba067e
+      internalID: 3282408349214640185
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_32
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 712
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71a91965062f4994aa9453aa1f32ed9a
+      internalID: 4777713339882780709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_33
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 712
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cf580d3ee72f4e439c9ae6bb372a83e
+      internalID: -5987513714301975791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_34
+      rect:
+        serializedVersion: 2
+        x: 3856
+        y: 712
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5976e5fd56881f44db221162b9dbb7bc
+      internalID: 7275308475577976757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_35
+      rect:
+        serializedVersion: 2
+        x: 4820
+        y: 712
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aae7911190014304f95f85a762a17061
+      internalID: 5460770203654047525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e7e2691c3f3b3a4da3797ac6041df1c
+      internalID: -1523830972808932583
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_37
+      rect:
+        serializedVersion: 2
+        x: 964
+        y: 0
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 576fcd765c55d474c800781d46e67ccb
+      internalID: 1242283765948930218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_38
+      rect:
+        serializedVersion: 2
+        x: 1928
+        y: 0
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 489fe73a30ac864448f7b934eee49cc8
+      internalID: 3140430025203209867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_39
+      rect:
+        serializedVersion: 2
+        x: 2892
+        y: 0
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ac5a453d25ac443a296f5f3bce62aa
+      internalID: -4435125424732605989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_40
+      rect:
+        serializedVersion: 2
+        x: 3856
+        y: 0
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9653f8b6803b194796a5d0d152027b4
+      internalID: 583461200087761315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Rain_41
+      rect:
+        serializedVersion: 2
+        x: 4820
+        y: 0
+        width: 964
+        height: 712
+      alignment: 9
+      pivot: {x: 0.5, y: 0.13}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f07fdc89f670394698d851e856bc738
+      internalID: 4495620975937163298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: af3bc43081b4b6d46bbe30e00e18f54e
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
