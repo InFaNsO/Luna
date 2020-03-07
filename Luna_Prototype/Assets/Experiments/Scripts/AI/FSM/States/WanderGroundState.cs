@@ -25,13 +25,12 @@ public class WanderGroundState : State
 
         mSteeringModule.TurnAllOff();
         mSteeringModule.SetActive(SteeringType.Arrive, true);
+        mSteeringModule.SetActive(SteeringType.Seek, true);
 
         agent.GetComponentInChildren<SpriteRenderer>().color = Color.green;
         agent.mRigidBody.gravityScale = 1.0f;
 
-        float f = Random.value;
-
-        target = (int)(f * finder.mNodes.Count);
+        target = Random.Range(0, finder.mNodes.Count);
 
         finder.FindPath(agent.transform.position, target);
         agent.mAgent.mPath = finder.GetPath();
@@ -42,7 +41,12 @@ public class WanderGroundState : State
     }
     public override void MyUpdate()
     {
-        if(mPlayerCollider == null)
+        if (!agent.myHealth.IsAlive())
+        {
+            agent.mStateMachine.ChangeState("Die");
+            return;
+        }
+        if (mPlayerCollider == null)
         {
             mPlayerCollider = agent.mZone.mPlayerTransform.GetComponent<Collider2D>();
             if (mPlayerCollider == null)
@@ -74,12 +78,16 @@ public class WanderGroundState : State
         //        agent.mAgent.mPath.RemoveAt(0);
         //    }
         //}
-        if (agent.mAgent.mPath.Count == 0)
+        bool isX = (int)agent.transform.position.x == (int)agent.mAgent.mTarget.x;
+        bool isClose = agent.IsNearTarget(agent.mNodeRange.radius);
+        if (agent.mAgent.mPath.Count == 0 && isClose || agent.mAgent.mPath.Count == 0 && isX)
         {
-            target = (int)(Random.value * finder.mNodes.Count);
+            target = Random.Range(0, finder.mNodes.Count);
             finder.FindPath(agent.transform.position, target);
             agent.mAgent.mPath.Clear();
             agent.mAgent.mPath = finder.GetPath();
+
+            Debug.Log("Target Random is: " + target.ToString());
 
             if (agent.mAgent.mPath.Count > 0)
             {
@@ -88,9 +96,9 @@ public class WanderGroundState : State
             }
         }
 
-        bool isClose = agent.IsNearTarget(agent.mNodeRange.radius);
+        bool isEnd = isClose && agent.mAgent.mPath.Count != 0;
 
-        if (isClose && agent.mAgent.mPath.Count != 0)
+        if (isEnd || isX)
         {
             if (agent.mAgent.mTarget.y < agent.mAgent.mPath[0].y)
             {

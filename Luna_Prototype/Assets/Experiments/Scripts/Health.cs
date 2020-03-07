@@ -6,7 +6,7 @@ public class Health : MonoBehaviour
 {
     // Start is called before the first frame update
 
-                     float health = 0.0f;
+    [SerializeField] float health = 0.0f;
     [SerializeField] float MaxHealth = 30.0f;
 
     public Element myElement;
