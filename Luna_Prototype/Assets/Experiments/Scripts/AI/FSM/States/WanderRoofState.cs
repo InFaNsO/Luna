@@ -35,6 +35,7 @@ public class WanderRoofState : State
 
         mAgent.mSteering.TurnAllOff();
         mAgent.mSteering.SetActive(SteeringType.Arrive, true);
+        mAgent.mSteering.SetActive(SteeringType.Seek, true);
 
         mAgent.GetComponentInChildren<SpriteRenderer>().color = Color.green;
         mAgent.mRigidBody.gravityScale = -1.0f;
@@ -69,6 +70,11 @@ public class WanderRoofState : State
 
     public override void MyUpdate()
     {
+        if (!mAgent.myHealth.IsAlive())
+        {
+            mAgent.mStateMachine.ChangeState("Die");
+            return;
+        }
         if (shouldFall)
         {
             //check if its grounded

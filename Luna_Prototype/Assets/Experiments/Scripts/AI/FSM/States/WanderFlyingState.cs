@@ -30,6 +30,11 @@ public class WanderFlyingState : State
 
     public override void MyUpdate()
     {
+        if (!mAgent.myHealth.IsAlive())
+        {
+            mAgent.mStateMachine.ChangeState("Die");
+            return;
+        }
         if (mAgent.mAttackRange.IsTouching(mPlayerCollider))// && hitInfo.collider == mPlayerCollider)
         {
             mAgent.mStateMachine.ChangeState("Attack");

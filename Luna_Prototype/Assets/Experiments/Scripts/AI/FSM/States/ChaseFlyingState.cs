@@ -23,6 +23,7 @@ public class ChaseFlyingState : State
 
         mAgent.mSteering.TurnAllOff();
         mAgent.mSteering.SetActive(SteeringType.Arrive, true);
+        mAgent.mSteering.SetActive(SteeringType.Seek, true);
 
         mAgent.GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
 

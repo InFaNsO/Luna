@@ -25,13 +25,12 @@ public class WanderGroundState : State
 
         mSteeringModule.TurnAllOff();
         mSteeringModule.SetActive(SteeringType.Arrive, true);
+        mSteeringModule.SetActive(SteeringType.Seek, true);
 
         agent.GetComponentInChildren<SpriteRenderer>().color = Color.green;
         agent.mRigidBody.gravityScale = 1.0f;
 
-        float f = Random.value;
-
-        target = (int)(f * finder.mNodes.Count);
+        target = Random.Range(0, finder.mNodes.Count);
 
         finder.FindPath(agent.transform.position, target);
         agent.mAgent.mPath = finder.GetPath();
@@ -42,7 +41,12 @@ public class WanderGroundState : State
     }
     public override void MyUpdate()
     {
-        if(mPlayerCollider == null)
+        if (!agent.myHealth.IsAlive())
+        {
+            agent.mStateMachine.ChangeState("Die");
+            return;
+        }
+        if (mPlayerCollider == null)
         {
             mPlayerCollider = agent.mZone.mPlayerTransform.GetComponent<Collider2D>();
             if (mPlayerCollider == null)
@@ -78,10 +82,12 @@ public class WanderGroundState : State
         bool isClose = agent.IsNearTarget(agent.mNodeRange.radius);
         if (agent.mAgent.mPath.Count == 0 && isClose || agent.mAgent.mPath.Count == 0 && isX)
         {
-            target = (int)(Random.value * finder.mNodes.Count);
+            target = Random.Range(0, finder.mNodes.Count);
             finder.FindPath(agent.transform.position, target);
             agent.mAgent.mPath.Clear();
             agent.mAgent.mPath = finder.GetPath();
+
+            Debug.Log("Target Random is: " + target.ToString());
 
             if (agent.mAgent.mPath.Count > 0)
             {

@@ -24,6 +24,7 @@ public class AttackState : State
 
         mAgent.mSteering.TurnAllOff();
         mAgent.mSteering.SetActive(SteeringType.Arrive, true);
+        mAgent.mSteering.SetActive(SteeringType.Seek, true);
 
         mAgent.GetComponentInChildren<SpriteRenderer>().color = Color.red;
 
@@ -32,6 +33,11 @@ public class AttackState : State
 
     public override void MyUpdate()
     {
+        if(!mAgent.myHealth.IsAlive())
+        {
+            mAgent.mStateMachine.ChangeState("Die");
+            return;
+        }
         if (mPlayer.transform.forward.x > 0.0f && mAgent.transform.forward.x > 0.0f
             || mPlayer.transform.forward.x < 0.0f && mAgent.transform.forward.x < 0.0f)
         {
