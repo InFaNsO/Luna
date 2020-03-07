@@ -74,7 +74,9 @@ public class WanderGroundState : State
         //        agent.mAgent.mPath.RemoveAt(0);
         //    }
         //}
-        if (agent.mAgent.mPath.Count == 0)
+        bool isX = (int)agent.transform.position.x == (int)agent.mAgent.mTarget.x;
+        bool isClose = agent.IsNearTarget(agent.mNodeRange.radius);
+        if (agent.mAgent.mPath.Count == 0 && isClose || agent.mAgent.mPath.Count == 0 && isX)
         {
             target = (int)(Random.value * finder.mNodes.Count);
             finder.FindPath(agent.transform.position, target);
@@ -88,9 +90,9 @@ public class WanderGroundState : State
             }
         }
 
-        bool isClose = agent.IsNearTarget(agent.mNodeRange.radius);
+        bool isEnd = isClose && agent.mAgent.mPath.Count != 0;
 
-        if (isClose && agent.mAgent.mPath.Count != 0)
+        if (isEnd || isX)
         {
             if (agent.mAgent.mTarget.y < agent.mAgent.mPath[0].y)
             {
