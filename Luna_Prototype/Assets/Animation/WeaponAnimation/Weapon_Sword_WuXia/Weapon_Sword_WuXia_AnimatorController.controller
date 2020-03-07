@@ -328,7 +328,7 @@ AnimatorController:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Weapon_sword_advance
+  m_Name: Weapon_Sword_WuXia_AnimatorController
   serializedVersion: 5
   m_AnimatorParameters:
   - m_Name: State
@@ -671,28 +671,28 @@ AnimatorStateMachine:
     m_Position: {x: 10, y: 430, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 4496564803672548177}
-    m_Position: {x: 70, y: 500, z: 0}
+    m_Position: {x: 0, y: 500, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6789123862975782110}
-    m_Position: {x: 70, y: 550, z: 0}
+    m_Position: {x: 0, y: 550, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 917589532022088915}
-    m_Position: {x: 70, y: 600, z: 0}
+    m_Position: {x: 0, y: 600, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1446251013042620026}
-    m_Position: {x: 280, y: 500, z: 0}
+    m_Position: {x: 220, y: 500, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 9035953209227859437}
-    m_Position: {x: 280, y: 550, z: 0}
+    m_Position: {x: 220, y: 550, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 449063398662658626}
-    m_Position: {x: 280, y: 600, z: 0}
+    m_Position: {x: 220, y: 600, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 745932867383196073}
-    m_Position: {x: 490, y: 500, z: 0}
+    m_Position: {x: 430, y: 500, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7899025081467333482}
-    m_Position: {x: 490, y: 550, z: 0}
+    m_Position: {x: 430, y: 550, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
