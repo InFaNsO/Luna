@@ -22,32 +22,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &-8098553861619120260
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Weapon_sword_attack_2
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: e30fc09fa28cef945b7ce23c3eb8c55d, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &-7484169369975750219
 AnimatorState:
   serializedVersion: 5
@@ -201,6 +175,32 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1102 &-4127254242108814690
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Weapon_Sword_WuXia_Attack_1
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: c334bfa0e7119484eb71703631fcddb3, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1102 &-4053301761494601996
 AnimatorState:
   serializedVersion: 5
@@ -249,14 +249,14 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &-2330378388618530213
+--- !u!1102 &-2805689361890622964
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Weapon_sword_attack_0
+  m_Name: Weapon_Sword_WuXia_Attack_0_1
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -269,7 +269,33 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 78c9de21616b0044fb35294ec191256a, type: 2}
+  m_Motion: {fileID: 7400000, guid: c1887a53b2f28e745ada84cf93a14a54, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
+--- !u!1102 &-2677808934290296831
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Weapon_Sword_WuXia_Attack_2
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: 7f8e27739a27b054c8e682eb37f6d911, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -323,32 +349,6 @@ AnimatorState:
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
   m_Motion: {fileID: 7400000, guid: e30fc09fa28cef945b7ce23c3eb8c55d, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
---- !u!1102 &-1172037001930855801
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Weapon_sword_attack_1
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: eee50da6bc88902438607bc7898cd13e, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
@@ -718,19 +718,7 @@ AnimatorStateMachine:
     m_Position: {x: 612.6583, y: 268.34668, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -103022861420557769}
-    m_Position: {x: 260, y: 430, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -1172037001930855801}
-    m_Position: {x: 290, y: 490, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: 5087303981194773958}
-    m_Position: {x: 330, y: 560, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -8098553861619120260}
-    m_Position: {x: 360, y: 620, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -2330378388618530213}
-    m_Position: {x: 400, y: 680, z: 0}
+    m_Position: {x: 280, y: 480, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4053301761494601996}
     m_Position: {x: 760, y: 730, z: 0}
@@ -751,10 +739,22 @@ AnimatorStateMachine:
     m_Position: {x: 740, y: 330, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2367496378484358444}
-    m_Position: {x: 775, y: 395, z: 0}
+    m_Position: {x: 760, y: 660, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -4879690790751798703}
-    m_Position: {x: 810, y: 460, z: 0}
+    m_Position: {x: 330, y: 550, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: 5768515028402807324}
+    m_Position: {x: 365, y: 615, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -4127254242108814690}
+    m_Position: {x: 400, y: 680, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -2677808934290296831}
+    m_Position: {x: 435, y: 745, z: 0}
+  - serializedVersion: 1
+    m_State: {fileID: -2805689361890622964}
+    m_Position: {x: 470, y: 810, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -765,32 +765,6 @@ AnimatorStateMachine:
   m_ExitPosition: {x: 490, y: 20, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 1826936869620626107}
---- !u!1102 &5087303981194773958
-AnimatorState:
-  serializedVersion: 5
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Weapon_sword_attack_air
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 34e4a8924237d8744827911dee2addbd, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1101 &5182917382352556885
 AnimatorStateTransition:
   m_ObjectHideFlags: 1
@@ -844,6 +818,32 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
+--- !u!1102 &5768515028402807324
+AnimatorState:
+  serializedVersion: 5
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_Name: Weapon_Sword_WuXia_Attack_0
+  m_Speed: 1
+  m_CycleOffset: 0
+  m_Transitions: []
+  m_StateMachineBehaviours: []
+  m_Position: {x: 50, y: 50, z: 0}
+  m_IKOnFeet: 0
+  m_WriteDefaultValues: 1
+  m_Mirror: 0
+  m_SpeedParameterActive: 0
+  m_MirrorParameterActive: 0
+  m_CycleOffsetParameterActive: 0
+  m_TimeParameterActive: 0
+  m_Motion: {fileID: 7400000, guid: b0d94a1360606e145bc5b545799fc4c3, type: 2}
+  m_Tag: 
+  m_SpeedParameter: 
+  m_MirrorParameter: 
+  m_CycleOffsetParameter: 
+  m_TimeParameter: 
 --- !u!1101 &5964622737956522938
 AnimatorStateTransition:
   m_ObjectHideFlags: 1

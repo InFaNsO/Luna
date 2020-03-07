@@ -163,7 +163,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5825930185705217884}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.65, y: 0.03, z: -1.599683}
+  m_LocalPosition: {x: -0.09, y: 0.09, z: -1.599683}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8064114535432841098}
@@ -245,7 +245,7 @@ MonoBehaviour:
     mBullet: {fileID: 679799675015805979, guid: bfcf100f8ac490e41a7fb3c3a6c9af3d,
       type: 3}
     mFirePosition: {fileID: 7576862504306509515}
-    mAnimationClip: {fileID: 7400000, guid: 34e4a8924237d8744827911dee2addbd, type: 2}
+    mAnimationClip: {fileID: 7400000, guid: 26589bc747d6b4c498f6f511fee5d5c3, type: 2}
   - name: basic_attack_combo_0
     mIsAirMove: 0
     mDamage: 20
@@ -255,22 +255,24 @@ MonoBehaviour:
       - mType: 1
         mTimeSlicePropotion: 0.15
       - mType: 0
-        mTimeSlicePropotion: 0.3
+        mTimeSlicePropotion: 0.2
+      - mType: 3
+        mTimeSlicePropotion: 0.4
       - mType: 2
         mTimeSlicePropotion: 0.6
       - mType: 3
         mTimeSlicePropotion: 0.9
       - mType: 4
         mTimeSlicePropotion: 0.99
-    mToMoveId: 02000000
+    mToMoveId: 0400000002000000
     mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05,
       type: 3}
     mFirePosition: {fileID: 4618335564853006436}
-    mAnimationClip: {fileID: 7400000, guid: 78c9de21616b0044fb35294ec191256a, type: 2}
+    mAnimationClip: {fileID: 7400000, guid: b0d94a1360606e145bc5b545799fc4c3, type: 2}
   - name: basic_attack_combo_1
     mIsAirMove: 0
     mDamage: 40
-    mAttackSpeedMutiplier: 2
+    mAttackSpeedMutiplier: 0.5
     mMoveContext:
       mMoveTimeSlices:
       - mType: 1
@@ -291,8 +293,31 @@ MonoBehaviour:
     mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05,
       type: 3}
     mFirePosition: {fileID: 8135096088201637637}
-    mAnimationClip: {fileID: 7400000, guid: eee50da6bc88902438607bc7898cd13e, type: 2}
+    mAnimationClip: {fileID: 7400000, guid: c334bfa0e7119484eb71703631fcddb3, type: 2}
   - name: basic_attack_combo_2
+    mIsAirMove: 1
+    mDamage: 40
+    mAttackSpeedMutiplier: 0.5
+    mMoveContext:
+      mMoveTimeSlices:
+      - mType: 1
+        mTimeSlicePropotion: 0.2
+      - mType: 0
+        mTimeSlicePropotion: 0.4
+      - mType: 2
+        mTimeSlicePropotion: 0.5
+      - mType: 2
+        mTimeSlicePropotion: 0.6
+      - mType: 2
+        mTimeSlicePropotion: 0.7
+      - mType: 4
+        mTimeSlicePropotion: 1
+    mToMoveId: 
+    mBullet: {fileID: 679799675015805979, guid: 1c55d9edcda61044f8a772448720645b,
+      type: 3}
+    mFirePosition: {fileID: 5179275462183709343}
+    mAnimationClip: {fileID: 7400000, guid: 7f8e27739a27b054c8e682eb37f6d911, type: 2}
+  - name: basic_attack_combo_0_1(3)
     mIsAirMove: 1
     mDamage: 40
     mAttackSpeedMutiplier: 2
@@ -314,13 +339,13 @@ MonoBehaviour:
     mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05,
       type: 3}
     mFirePosition: {fileID: 8135096088201637637}
-    mAnimationClip: {fileID: 7400000, guid: e30fc09fa28cef945b7ce23c3eb8c55d, type: 2}
+    mAnimationClip: {fileID: 7400000, guid: c1887a53b2f28e745ada84cf93a14a54, type: 2}
   mAirMoveIndex: 0
   InLevelBody: {fileID: 8750058408465014227}
   mWeaponBody: {fileID: 0}
   pickUpCollider: {fileID: 4321841681249314965}
   inlevelBody_spriteRender: {fileID: 2128419624135272632}
-  mAnimatorOverrideController: {fileID: 22100000, guid: 2d366884a2a0f5c41a50cc98b1757a75,
+  mAnimatorOverrideController: {fileID: 22100000, guid: 64d1452570df1d1469cb9de97fd875e0,
     type: 2}
   mElement: {fileID: 0}
   mOwnerElement: {fileID: 0}
