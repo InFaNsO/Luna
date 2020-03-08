@@ -25,9 +25,12 @@ public class Inventory : MonoBehaviour
     void Awake()
     {
         Assert.IsNotNull(_player, "[Inventroy] _Player is null");
-        _uiMngr = ServiceLocator.Get<UIManager>();
     }
+    private void Start()
+    {
+        _uiMngr = ServiceLocator.Get<UIManager>();
 
+    }
     public void UsingItem(int whichSlot)
     {
         if (whichSlot > _slots.Count - 1)
