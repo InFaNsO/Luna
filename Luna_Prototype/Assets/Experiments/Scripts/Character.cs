@@ -40,7 +40,7 @@ public class Character : MonoBehaviour
         if (element == null)
             element = new ElementalAttributes();
 
-        element.Randomize();        //Empty for now
+        //element.Randomize();        //Empty for now
     }
 
     protected virtual void Start()
