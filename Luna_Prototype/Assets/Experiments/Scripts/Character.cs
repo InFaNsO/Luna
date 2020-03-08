@@ -43,7 +43,7 @@ public class Character : MonoBehaviour
         element.Randomize();        //Empty for now
     }
 
-    protected void Start()
+    protected virtual void Start()
     {
         myHealth = GetComponent<Health>();
         isGrounded = true;

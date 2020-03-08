@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 174668337468433804}
   - component: {fileID: 174668337468433806}
   - component: {fileID: 174668337468433805}
-  - component: {fileID: 5793445532019093529}
   - component: {fileID: 5793445532019093530}
   m_Layer: 10
   m_Name: HazardVolume
@@ -111,20 +110,6 @@ PolygonCollider2D:
       - {x: 3.531952, y: 0.58804256}
       - {x: -3.6526012, y: 0.5930597}
       - {x: -3.6599998, y: -0.60499996}
---- !u!114 &5793445532019093529
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 174668337468433803}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 2f741a064a70ac9419393b42ac4eb493, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  timePerTick: 1
-  applyDebuff: 1
 --- !u!114 &5793445532019093530
 MonoBehaviour:
   m_ObjectHideFlags: 0

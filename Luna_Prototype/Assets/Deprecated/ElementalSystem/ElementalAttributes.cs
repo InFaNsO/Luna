@@ -360,4 +360,22 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
     {
 
     }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(tag != "Hazard")
+        {
+            return;
+        }
+
+        var c = collision.GetComponent<Player>();
+        if (c == null)
+        {
+            c = collision.GetComponentInParent<Player>();
+            if(c == null)
+                return;
+        }
+
+        ApplyDamage(c, true);
+    }
 }
