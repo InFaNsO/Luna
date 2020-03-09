@@ -1,12 +1,13 @@
-﻿
+﻿using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
-public class MovingPlatform : MonoBehaviour
+public class Platform_Attach : MonoBehaviour
 {
     public GameObject player;
 
     // Enter Platform
-    private void OnTriggerEnter2D (Collider2D other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject == player)
         {
@@ -15,7 +16,7 @@ public class MovingPlatform : MonoBehaviour
     }
 
     // Exit Platform
-    private void OnTriggerExit2D (Collider2D other)
+    private void OnTriggerExit(Collider other)
     {
         if (other.gameObject == player)
         {
