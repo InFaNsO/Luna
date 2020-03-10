@@ -16,7 +16,7 @@ public class SteeringSeek : SteeringBase
         Vector3 v;
         v = agent.mAgent.mTarget - agent.transform.position;
         v.Normalize();
-        v *= agent.mAgent.mMaxSpeed;
+        v *= agent.mMovementSpeed;
         v /= agent.mRigidBody.mass;
         return v;
     }

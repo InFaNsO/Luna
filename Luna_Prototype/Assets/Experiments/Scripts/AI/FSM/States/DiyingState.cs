@@ -28,7 +28,7 @@ public class DiyingState : State
 
     public override string GetName()
     {
-        return "Die";
+        return EnemyStates.Die.ToString();
     }
 
 }

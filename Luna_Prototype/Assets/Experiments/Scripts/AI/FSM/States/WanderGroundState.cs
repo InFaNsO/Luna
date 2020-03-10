@@ -13,6 +13,9 @@ public class WanderGroundState : State
 
     int target;
 
+    [SerializeField] float LowJumpMultiplier = 0.8f;
+    [SerializeField] float HighJumpMultiplier = 1.0f;
+
     private void Start()
     {
         agent = GetComponentInParent<Enemy>();
@@ -34,16 +37,19 @@ public class WanderGroundState : State
 
         finder.FindPath(agent.transform.position, target);
         agent.mAgent.mPath = finder.GetPath();
-        agent.mAgent.mTarget = agent.mAgent.mPath[0];
-        agent.mAgent.mPath.RemoveAt(0);
+
+        UpdatePath();
 
         mPlayerCollider = agent.mZone.mPlayerTransform.GetComponent<Collider2D>();
+
+
+
     }
     public override void MyUpdate()
     {
         if (!agent.myHealth.IsAlive())
         {
-            agent.mStateMachine.ChangeState("Die");
+            agent.mStateMachine.ChangeState(EnemyStates.Die.ToString());
             return;
         }
         if (mPlayerCollider == null)
@@ -53,31 +59,19 @@ public class WanderGroundState : State
                 return;
         }
 
-        RaycastHit2D hitInfo = Physics2D.Raycast(agent.transform.position, agent.transform.forward, agent.mPlayerVisibilityRange.radius, LayerMask.NameToLayer("Charachter"));
+        CheckTurn();
 
-        if (agent.mAttackRange.IsTouching(mPlayerCollider))// && hitInfo.collider == mPlayerCollider)
+        if (agent.mAttackRange.IsTouching(mPlayerCollider))
         {
-            agent.mStateMachine.ChangeState("Attack");
+            agent.mStateMachine.ChangeState(EnemyStates.Attack.ToString());
             return;
         }
-        else if(agent.mPlayerVisibilityRange.IsTouching(mPlayerCollider))// && hitInfo.collider == mPlayerCollider)
+        else if(agent.mPlayerVisibilityRange.IsTouching(mPlayerCollider))
         {
-            agent.mStateMachine.ChangeState("Chase");
+            agent.mStateMachine.ChangeState(EnemyStates.Chase.ToString());
             return;
         }
 
-        //if (calculateAgain)  //or
-        //{
-        //    target = (int)(Random.value * finder.mNodes.Count);
-        //    finder.FindPath(agent.transform.position, target);
-        //    agent.mAgent.mPath.Clear();
-        //    agent.mAgent.mPath = finder.GetPath();
-        //    if (agent.mAgent.mPath.Count != 0)
-        //    {
-        //        agent.mAgent.mTarget = agent.mAgent.mPath[0];
-        //        agent.mAgent.mPath.RemoveAt(0);
-        //    }
-        //}
         bool isX = (int)agent.transform.position.x == (int)agent.mAgent.mTarget.x;
         bool isClose = agent.IsNearTarget(agent.mNodeRange.radius);
         if (agent.mAgent.mPath.Count == 0 && isClose || agent.mAgent.mPath.Count == 0 && isX)
@@ -87,12 +81,9 @@ public class WanderGroundState : State
             agent.mAgent.mPath.Clear();
             agent.mAgent.mPath = finder.GetPath();
 
-            Debug.Log("Target Random is: " + target.ToString());
-
             if (agent.mAgent.mPath.Count > 0)
             {
-                agent.mAgent.mTarget = agent.mAgent.mPath[0];
-                agent.mAgent.mPath.RemoveAt(0);
+                UpdatePath();
             }
         }
 
@@ -103,19 +94,34 @@ public class WanderGroundState : State
             if (agent.mAgent.mTarget.y < agent.mAgent.mPath[0].y)
             {
                // agent.mRigidBody.velocity = new Vector2(agent.mRigidBody.velocity.x ,  0.0f);
-                var force = new Vector2((agent.transform.position.x < agent.mAgent.mPath[0].x ? agent.mAgent.mMaxSpeed : agent.mAgent.mMaxSpeed * -1), agent.mAgent.mJumpStrength * 1);
+                var force = new Vector2((agent.transform.position.x < agent.mAgent.mPath[0].x ? agent.mMovementSpeed : agent.mMovementSpeed  * -1), agent.mJumpStrength * HighJumpMultiplier);
                 agent.mRigidBody.AddForce(force , ForceMode2D.Impulse);
             }
             else if (agent.mAgent.mTarget.y != agent.mAgent.mPath[0].y)
             {
-                var force = new Vector2((agent.transform.position.x < agent.mAgent.mPath[0].x ? agent.mAgent.mMaxSpeed : agent.mAgent.mMaxSpeed * -1), agent.mAgent.mJumpStrength * 0.5f);
+                var force = new Vector2(agent.mMovementSpeed * agent.transform.position.x < agent.mAgent.mPath[0].x ? 1.0f : -1.0f, agent.mJumpStrength * LowJumpMultiplier);
                 agent.mRigidBody.AddForce(force, ForceMode2D.Impulse);
             }
-            agent.mAgent.mTarget = agent.mAgent.mPath[0];
-            agent.mAgent.mPath.RemoveAt(0);
+
+            UpdatePath();
         }
 
     }
+
+    void UpdatePath()
+    {
+        agent.mAgent.mTarget = agent.mAgent.mPath[0];
+        agent.mAgent.mPath.RemoveAt(0);
+    }
+
+    void CheckTurn()
+    {
+        if (agent.mAgent.mTarget.x < agent.transform.position.x && !agent.IsFacingLeft)
+            agent.Turn();
+        else if (agent.mAgent.mTarget.x > agent.transform.position.x && agent.IsFacingLeft)
+            agent.Turn();
+    }
+
 
     public override void Exit()
     {
@@ -130,6 +136,10 @@ public class WanderGroundState : State
         Gizmos.DrawWireSphere(agent.mAgent.mTarget, 0.5f);
 
         Gizmos.color = Color.green;
+
+        if (agent.mAgent.mPath.Count == 0)
+            return;
+
         Gizmos.DrawWireSphere(agent.mAgent.mPath[agent.mAgent.mPath.Count - 1], 0.5f);
 
         for (int i = 0; i < finder.mNodes.Count; ++i)
@@ -162,6 +172,6 @@ public class WanderGroundState : State
 
     public override string GetName()
     {
-        return "Wander";
+        return EnemyStates.Wander.ToString();
     }
 }

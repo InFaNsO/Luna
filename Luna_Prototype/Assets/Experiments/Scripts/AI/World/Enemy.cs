@@ -19,20 +19,20 @@ public class Enemy : Character
     public AI_Zone mZone;
 
     //AI
-    public Agent2D mAgent;
-    public StateMachine mStateMachine;
-    public PathFinding mPathFinding;
-    public SteeringModule mSteering;
+    [HideInInspector] public Agent2D mAgent;
+    [HideInInspector] public StateMachine mStateMachine;
+    [HideInInspector] public PathFinding mPathFinding;
+    [HideInInspector] public SteeringModule mSteering;
 
-    public bool IsRunning = false;
+    [HideInInspector] public bool IsRunning = false;
 
-    public Weapon mWeapon;
+    [HideInInspector] public Weapon mWeapon;
     [SerializeField] protected bool mIsDropping;
     [SerializeField] protected Key mDropPrefbs;
 
     //private Animator mAnimator;
-    public bool mIsStuned = false;
-    float mStunCounter;
+    [HideInInspector] public bool mIsStuned = false;
+    [HideInInspector] float mStunCounter;
 
     // Start is called before the first frame update
     void Start()

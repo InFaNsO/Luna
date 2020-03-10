@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
-    public Health myHealth;
-    public Rigidbody2D mRigidBody;
+    [HideInInspector] public Health myHealth;
+    [HideInInspector] public Rigidbody2D mRigidBody;
 
     [SerializeField]
     public float mJumpStrength = 2.0f;
@@ -13,15 +13,18 @@ public class Character : MonoBehaviour
     public float mMovementSpeed = 2.0f;
 
     //Weapon Minghuo
-    public bool isGrounded;
+    [HideInInspector] public bool isGrounded;
     public Transform mAttackMomentumPos;
 
     //Elemental Parts
     //public ElementalAttributes elementalAttributes;
-    public ElementalAttributes element;
+    [HideInInspector] public ElementalAttributes element;
 
     public float knockBackX = 1.0f;
     public float knockBackY = 1.0f;
+
+    //Keep Movement Track
+    [HideInInspector] public bool IsFacingLeft = false;
 
     protected virtual void Awake()
     {
@@ -66,6 +69,11 @@ public class Character : MonoBehaviour
         element.ApplyDamage(this, false);
     }
     
+    public void Turn()
+    {
+        transform.Rotate(Vector3.up, 180.0f);
+        IsFacingLeft = !IsFacingLeft;
+    }
 
     public virtual void Die()
     {

@@ -10,6 +10,8 @@ public class AttackState : State
     Collider2D mPlayerCollider;
     Weapon myWeapon;
 
+    bool steeringOff = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,39 +25,59 @@ public class AttackState : State
         mPlayerCollider = mPlayer.GetComponent<Collider2D>();
 
         mAgent.mSteering.TurnAllOff();
-        mAgent.mSteering.SetActive(SteeringType.Arrive, true);
-        mAgent.mSteering.SetActive(SteeringType.Seek, true);
+        SetSteering();
+        steeringOff = true;
+
 
         mAgent.GetComponentInChildren<SpriteRenderer>().color = Color.red;
 
         myWeapon = mAgent.GetComponentInChildren<Weapon>();
+
+        mAgent.mAgent.mTarget = mPlayer.transform.position;
+        CheckTurn();
     }
 
     public override void MyUpdate()
     {
-        if(!mAgent.myHealth.IsAlive())
+        mAgent.mAgent.mTarget = mPlayer.transform.position;
+        CheckTurn();
+
+        if (!mAgent.myHealth.IsAlive())
         {
-            mAgent.mStateMachine.ChangeState("Die");
+            mAgent.mStateMachine.ChangeState(EnemyStates.Die.ToString());
             return;
         }
-        if (mPlayer.transform.forward.x > 0.0f && mAgent.transform.forward.x > 0.0f
-            || mPlayer.transform.forward.x < 0.0f && mAgent.transform.forward.x < 0.0f)
+        if (!mAgent.mPlayerVisibilityRange.IsTouching(mPlayerCollider))
         {
-            mAgent.transform.Rotate(0.0f,180.0f, 0.0f);
+            mAgent.mStateMachine.ChangeState(EnemyStates.Wander.ToString());
+            return;
         }
+
 
         if (mAgent.mAttackRange.IsTouching(mPlayerCollider))
         {
+            mAgent.mSteering.TurnAllOff();
+            steeringOff = true;
+
             myWeapon.Attack(true, mPlayer.transform.position);
         }
-        else
-            mAgent.mAgent.mTarget = mPlayer.transform.position;
+        else if (!steeringOff)
+            SetSteering();
 
-        if (!mAgent.mPlayerVisibilityRange.IsTouching(mPlayerCollider))
-        {
-            mAgent.mStateMachine.ChangeState("Wander");
-            return;
-        }
+    }
+
+    void CheckTurn()
+    {
+        if (mAgent.mAgent.mTarget.x < mAgent.transform.position.x && !mAgent.IsFacingLeft)
+            mAgent.Turn();
+        else if (mAgent.mAgent.mTarget.x > mAgent.transform.position.x && mAgent.IsFacingLeft)
+            mAgent.Turn();
+    }
+
+    void SetSteering()
+    {
+        mAgent.mSteering.SetActive(SteeringType.Arrive, true);
+        mAgent.mSteering.SetActive(SteeringType.Seek, true);
     }
 
     public override void Exit()
@@ -64,7 +86,7 @@ public class AttackState : State
 
     public override string GetName()
     {
-        return "Attack";
+        return EnemyStates.Attack.ToString();
     }
 
 }

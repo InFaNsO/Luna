@@ -32,17 +32,17 @@ public class WanderFlyingState : State
     {
         if (!mAgent.myHealth.IsAlive())
         {
-            mAgent.mStateMachine.ChangeState("Die");
+            mAgent.mStateMachine.ChangeState(EnemyStates.Die.ToString());
             return;
         }
         if (mAgent.mAttackRange.IsTouching(mPlayerCollider))// && hitInfo.collider == mPlayerCollider)
         {
-            mAgent.mStateMachine.ChangeState("Attack");
+            mAgent.mStateMachine.ChangeState(EnemyStates.Attack.ToString());
             return;
         }
         else if (mAgent.mPlayerVisibilityRange.IsTouching(mPlayerCollider))// && hitInfo.collider == mPlayerCollider)
         {
-            mAgent.mStateMachine.ChangeState("Chase");
+            mAgent.mStateMachine.ChangeState(EnemyStates.Chase.ToString());
             return;
         }
     }
@@ -59,7 +59,7 @@ public class WanderFlyingState : State
 
     public override string GetName()
     {
-        return "Wander";
+        return EnemyStates.Wander.ToString();
     }
 
 }

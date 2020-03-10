@@ -2,13 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChaseState : State
+public class ChasePathFindingState : State
 {
     Enemy mAgent;
     Player mPlayer;
 
     Collider2D mPlayerCollider;
 
+    PathFinding finder;
 
     int mPlayerNodeID = 0;
 
@@ -28,11 +29,13 @@ public class ChaseState : State
         mAgent.mSteering.SetActive(SteeringType.Seek, true);
 
         mAgent.GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
+        finder = mAgent.mZone.mPathFinding;
+
+        UpdatePath();
     }
 
     public override void MyUpdate()
     {
-        mAgent.mAgent.mTarget = mPlayer.transform.position;
         CheckTurn();
 
         //check for states
@@ -51,6 +54,14 @@ public class ChaseState : State
             mAgent.mStateMachine.ChangeState(EnemyStates.Wander.ToString());
             return;
         }
+        int pnid = finder.GetNearestNodeID(mPlayer.transform.position);
+
+        if (mPlayerNodeID != pnid)
+            UpdatePath(pnid);
+        else if (mAgent.mAgent.mPath.Count == 0)
+            UpdatePath();
+
+        UpdateNode();
     }
 
     void CheckTurn()
@@ -61,7 +72,35 @@ public class ChaseState : State
             mAgent.Turn();
     }
 
-    
+    void UpdatePath(int id = -1)
+    {
+        if (id == -1)
+            mPlayerNodeID = finder.GetNearestNodeID(mPlayer.transform.position);
+        else
+            mPlayerNodeID = id;
+
+        mAgent.mAgent.mPath.Clear();
+        mAgent.mAgent.mPath = finder.GetPath();
+        mAgent.mAgent.mPath.Add(mPlayer.transform.position);
+
+        mAgent.mAgent.mTarget = mAgent.mAgent.mPath[0];
+        mAgent.mAgent.mPath.RemoveAt(0);
+    }
+
+    void UpdateNode()
+    {
+        bool isX = (int)mAgent.transform.position.x == (int)mAgent.mAgent.mTarget.x;
+        bool isClose = mAgent.IsNearTarget(mAgent.mNodeRange.radius);
+        if (isClose || isX)
+        {
+            if (mAgent.mAgent.mPath.Count > 0)
+            {
+                mAgent.mAgent.mTarget = mAgent.mAgent.mPath[0];
+                mAgent.mAgent.mPath.RemoveAt(0);
+            }
+        }
+    }
+
     public override void Exit()
     {
     }
