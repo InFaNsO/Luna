@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WanderRoofState : State
 {
-    [SerializeField] Platform mRoof;
+    [SerializeField] Platform mRoof = null;
 
     Enemy mAgent;
     Player mPlayer;
@@ -85,8 +85,8 @@ public class WanderRoofState : State
             }
         }
 
-        if (mAgent.mPlayerVisibilityRange.IsTouching(mPlayerCollider))
-        {
+        if ( Vector3.Distance(mAgent.transform.position, mPlayer.transform.position) < mAgent.mPlayerVisibilityRange.radius) //mAgent.mPlayerVisibilityRange.IsTouching(mPlayerCollider))
+        {   
             mAgent.mRigidBody.gravityScale = 1.0f;
             yPrv = mAgent.transform.position.y;
             shouldFall = true;

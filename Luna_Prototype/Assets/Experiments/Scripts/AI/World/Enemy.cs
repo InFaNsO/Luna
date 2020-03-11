@@ -16,7 +16,7 @@ public class Enemy : Character
     public CircleCollider2D mPlayerVisibilityRange;
 
 
-    public AI_Zone mZone;
+    [HideInInspector] public AI_Zone mZone;
 
     //AI
     [HideInInspector] public Agent2D mAgent;
@@ -27,8 +27,8 @@ public class Enemy : Character
     [HideInInspector] public bool IsRunning = false;
 
     [HideInInspector] public Weapon mWeapon;
-    [SerializeField] protected bool mIsDropping;
-    [SerializeField] protected Key mDropPrefbs;
+    protected bool mIsDropping = false;
+    [SerializeField] protected GameObject mDropPrefbs = null;
 
     //private Animator mAnimator;
     [HideInInspector] public bool mIsStuned = false;
@@ -53,22 +53,19 @@ public class Enemy : Character
         mRigidBody = GetComponent<Rigidbody2D>();
         mStateMachine = GetComponentInChildren<StateMachine>();
         mSteering = GetComponentInChildren<SteeringModule>();
+
+        if (mDropPrefbs != null)
+            mIsDropping = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (mIsStuned != true)
-        {
-            //Do AI here
-
-        }
-        else
+        if (mIsStuned)
         {
             if (mStunCounter <= 0.0f)
             {
                 mIsStuned = false;
-                // Do animation
             }
             mStunCounter -= Time.deltaTime;
         }
@@ -130,7 +127,7 @@ public class Enemy : Character
         if (mIsDropping)
         {
             //spwn inventory
-            Instantiate(mDropPrefbs);
+            Instantiate(mDropPrefbs, transform.position, transform.rotation);
 
         }
 

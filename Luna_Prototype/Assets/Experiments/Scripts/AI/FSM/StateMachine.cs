@@ -5,7 +5,7 @@ using UnityEngine;
 public class StateMachine : MonoBehaviour
 {
     private Enemy mEnemy;
-    [SerializeField] List<State> mStates = new List<State>();
+    List<State> mStates = new List<State>();
     private int mCurrentState = 0;
 
     // Start is called before the first frame update

@@ -47,14 +47,14 @@ public class AttackState : State
             mAgent.mStateMachine.ChangeState(EnemyStates.Die.ToString());
             return;
         }
-        if (!mAgent.mPlayerVisibilityRange.IsTouching(mPlayerCollider))
+        if (Vector3.Distance(mAgent.transform.position, mPlayer.transform.position) > mAgent.mPlayerVisibilityRange.radius)
         {
             mAgent.mStateMachine.ChangeState(EnemyStates.Wander.ToString());
             return;
         }
 
 
-        if (mAgent.mAttackRange.IsTouching(mPlayerCollider))
+        if (Vector3.Distance(mAgent.transform.position, mPlayer.transform.position) <= mAgent.mAttackRange.radius)
         {
             mAgent.mSteering.TurnAllOff();
             steeringOff = true;

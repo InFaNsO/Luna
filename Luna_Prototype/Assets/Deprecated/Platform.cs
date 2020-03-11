@@ -12,7 +12,10 @@ public class Platform : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (Width < 0.0f)
+            Width = -Width;
+        if (Height < 0.0f)
+            Height = -Height;
     }
 
     // Update is called once per frame

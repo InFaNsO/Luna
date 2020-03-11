@@ -5,7 +5,7 @@ using UnityEngine;
 public class SteeringModule : MonoBehaviour
 {
     Enemy mAgent;
-    [SerializeField] List<SteeringBase> mBehaviours = new List<SteeringBase>();
+    List<SteeringBase> mBehaviours = new List<SteeringBase>();
     [SerializeField] bool CanFly;
     Transform mAgentTransform;
     Rigidbody2D mAgentBody;
