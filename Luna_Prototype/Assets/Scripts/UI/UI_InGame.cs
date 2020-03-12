@@ -23,6 +23,10 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     [SerializeField] private Sprite _EmptySlot;
     public int selectedSlotInInventory { get; set; }
 
+    //event item slots
+    [Header("Event Item Slots")]
+    public List<Image> eventItemSlots = new List<Image>();
+
     //pop up pause menu
     [Header("Pause")]
     [SerializeField]

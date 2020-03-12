@@ -56,6 +56,14 @@ public class EnvObj_Door : MonoBehaviour, EnvironmentalObject
         if(collision.gameObject.CompareTag("Player"))
         {
             collidePlayer = true;
+
+            var inventory = collision.gameObject.GetComponent<Inventory>();
+            if (inventory)
+            {
+                var itemIndex = inventory.SearchEventItem("KeyDoor");
+                if (itemIndex != -1)
+                    inventory.UsingEventItem(itemIndex);
+            }
         }
     }
     private void OnCollisionExit2D(Collision2D collision)

@@ -15,8 +15,19 @@ public class Inventory : MonoBehaviour
         public Sprite sprite;
     }
 
+    //---------------------------------------------------//|
+    public class EventItemSlot                           //|
+    {                                                    //|
+        public IInventoryItem theItem;                   //|--- [Mingzhuo Zhang] new added 2020-03-12
+        public Sprite sprite;                            //|
+    }                                                    //|
+    //---------------------------------------------------//|
+
     public List<InventoryItemSlot> _slots = new List<InventoryItemSlot>();
     private int _totalSlot = 9;
+
+    public List<EventItemSlot> _eventItemSlots = new List<EventItemSlot>();
+    private int _totalEventItemSlot = 3;
 
 
     //[Rick H], 2019-12-09, uimanager cache
@@ -43,10 +54,11 @@ public class Inventory : MonoBehaviour
                 _slots[whichSlot].sprite = _EmptySprite;
                 _slots[whichSlot].theItem = null;
                 _slots.RemoveAt(whichSlot);//[Rick H], 2019-12-09, swaped this line with the one below
-                UpdateUI(whichSlot);
+                UpdateUI();
             }
         }
     }
+
 
     public void AddItem(IInventoryItem item)
     {
@@ -75,11 +87,54 @@ public class Inventory : MonoBehaviour
             newItemSlot.sprite = item.GetSprite();
 
             _slots.Add(newItemSlot);
-            UpdateUI(_slots.Count - 1);
+            UpdateUI();
         }
     }
 
-    public void UpdateUI(int whichSlot)
+    //--------------------------------------------------------------------------------------------------------------------//|
+    public void AddEventItem(IInventoryItem item)                                                                         //|
+    {                                                                                                                     //|
+                                                                                                                          //|
+            if (_eventItemSlots.Count == _totalEventItemSlot)                                                             //|
+                return;                                                 // early out                                      //|
+            EventItemSlot newItemSlot = new EventItemSlot();                                                              //|
+            newItemSlot.theItem = item;                                                                                   //|
+            newItemSlot.theItem.DisableFromLevel();                                                                       //|
+            newItemSlot.sprite = item.GetSprite();                                                                        //|
+                                                                                                                          //|
+            _eventItemSlots.Add(newItemSlot);                                                                             //|
+            UpdateUI();                                                                                                   //|
+                                                                                                                          //|
+    }                                                                                                                     //|
+                                                                                                                          //|--- [Mingzhuo Zhang] added 2020-03-12
+    public int SearchEventItem(string name) // return the index if found, otherwise return -1                             //|
+    {                                                                                                                     //|
+        for (int i = 0; i < _eventItemSlots.Count; i++)                                                                   //|
+        {                                                                                                                 //|
+            if (_eventItemSlots[i].theItem.GetTypeName() == name)                                                         //|
+                return i;                                                                                                 //|
+        }                                                                                                                 //|
+        return -1;                                                                                                        //|
+    }                                                                                                                     //|
+                                                                                                                          //|
+    public void UsingEventItem(int whichSlot)                                                                             //|
+    {                                                                                                                     //|
+        if (whichSlot > _eventItemSlots.Count - 1)                                                                        //|
+            return;                                                                                                       //|
+        if (_eventItemSlots[whichSlot].theItem == null)                                                                   //|
+            return;                                                                                                       //|
+                                                                                                                          //|
+        if (!_eventItemSlots[whichSlot].theItem.Use(ref _player))                                                         //|
+        {                                                                                                                 //|
+            _slots[whichSlot].sprite = _EmptySprite;                                                                      //|
+            _slots[whichSlot].theItem = null;                                                                             //|
+            _slots.RemoveAt(whichSlot);//[Rick H], 2019-12-09, swaped this line with the one below                        //|
+            UpdateUI();                                                                                                   //|
+        }                                                                                                                 //|
+    }                                                                                                                     //|
+    //--------------------------------------------------------------------------------------------------------------------//|
+
+    public void UpdateUI()
     {
         //var image = _player._LocalLevelManager._InGameUI._InventoryItemButtons[whichSlot].GetComponent<Image>();
 
@@ -124,6 +179,17 @@ public class Inventory : MonoBehaviour
         image_centre.sprite = _slots[selected].sprite;
 
         image_next.sprite = nextIdx > _slots.Count - 1 ? _EmptySprite : _slots[nextIdx].sprite;
+
+        //--------------------------------------------------------------------------------//|
+        var eventItemSlots = _uiMngr.GetEventItemSlot();                                  //|
+        for (int i = 0; i < eventItemSlots.Count; i++)                                    //|
+        {                                                                                 //|
+            if (i >=_eventItemSlots.Count)                                                //|--- [Mingzhuo Zhang] added 2020-03-12
+                break;                                                                    //|
+                                                                                          //|
+            eventItemSlots[i].sprite = _eventItemSlots[i].sprite;                         //|
+        }                                                                                 //|
+        //--------------------------------------------------------------------------------//|
     }
 
     public int GetCount() { return _slots.Count; }
@@ -131,18 +197,18 @@ public class Inventory : MonoBehaviour
     public void UseItem()
     {
         UsingItem(_uiMngr.GetSelectedItemInInventory());
-        UpdateUI(0);
+        UpdateUI();
     }
 
     public void SelectPrevItem()
     {
         _uiMngr.SelectPrevItem(_slots.Count);
-        UpdateUI(0);
+        UpdateUI();
     }
 
     public void SelectNextItem()
     {
         _uiMngr.SelectNextItem(_slots.Count);
-        UpdateUI(0);
+        UpdateUI();
     }
 }

@@ -104,6 +104,18 @@ public class UIManager : MonoBehaviour
         return null;
     }
 
+    //-------------------------------------------------------------------------------------------------------//|
+    public List<Image> GetEventItemSlot()                                                                    //|
+    {                                                                                                        //|
+        if (currentCanvas == _uiInstances[(int)ECanvasType.InGame])                                          //|
+        {                                                                                                    //|
+            return _uiInGame.eventItemSlots;                                                                     //|--- [Mingzhuo Zhang] added 2020-03-12
+        }                                                                                                    //|
+        Debug.Log("[UIManager] event item slot not avaliable, current scene does not contain such ui");           //|
+        return null;                                                                                         //|
+    }                                                                                                        //|
+    //-------------------------------------------------------------------------------------------------------//|
+
     public int GetSelectedItemInInventory()
     {
         if (currentCanvas == _uiInstances[(int)ECanvasType.InGame])
