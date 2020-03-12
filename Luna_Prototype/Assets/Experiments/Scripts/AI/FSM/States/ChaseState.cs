@@ -9,7 +9,6 @@ public class ChaseState : State
 
     Collider2D mPlayerCollider;
 
-    PathFinding finder;
 
     int mPlayerNodeID = 0;
 
@@ -29,62 +28,47 @@ public class ChaseState : State
         mAgent.mSteering.SetActive(SteeringType.Seek, true);
 
         mAgent.GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
-
-        mPlayerNodeID = finder.GetNearestNodeID(mPlayer.transform.position);
-        finder = mAgent.mZone.mPathFinding;
-        finder.Calculate(mAgent.transform.position, mPlayer.transform.position);
-        mAgent.mAgent.mPath = finder.GetPath();
-
     }
 
     public override void MyUpdate()
     {
+        mAgent.mAgent.mTarget = mPlayer.transform.position;
+        CheckTurn();
+
+        //check for states
         if (!mAgent.myHealth.IsAlive())
         {
-            mAgent.mStateMachine.ChangeState("Die");
+            mAgent.mStateMachine.ChangeState(EnemyStates.Die.ToString());
             return;
         }
-        if (mAgent.mAttackRange.IsTouching(mPlayerCollider))
+        if (Vector3.Distance(mAgent.transform.position, mPlayer.transform.position) <= mAgent.mAttackRange.radius)
         {
-            mAgent.mStateMachine.ChangeState("Attack");
+            mAgent.mStateMachine.ChangeState(EnemyStates.Attack.ToString());
             return;
         }
-        if (!mAgent.mPlayerVisibilityRange.IsTouching(mPlayerCollider))
+        if (Vector3.Distance(mAgent.transform.position, mPlayer.transform.position) > mAgent.mPlayerVisibilityRange.radius) //mAgent.mPlayerVisibilityRange.IsTouching(mPlayerCollider))
         {
-            mAgent.mStateMachine.ChangeState("Wander");
+            mAgent.mStateMachine.ChangeState(EnemyStates.Wander.ToString());
             return;
         }
-        int pnid = finder.GetNearestNodeID(mPlayer.transform.position);
-        if(mPlayerNodeID != pnid)
-        {
-            mPlayerNodeID = pnid;
-            finder.FindPath(mAgent.transform.position, mPlayerNodeID);
-            mAgent.mAgent.mPath.Clear();
-            mAgent.mAgent.mPath = finder.GetPath();
-            mAgent.mAgent.mPath.Add(mPlayer.transform.position);
-        }
-        else if (mAgent.mAgent.mPath.Count == 0)
-        {
-            mPlayerNodeID = finder.GetNearestNodeID(mPlayer.transform.position);
-            finder.FindPath(mAgent.transform.position, mPlayerNodeID);
-            mAgent.mAgent.mPath.Clear();
-            mAgent.mAgent.mPath = finder.GetPath();
-            mAgent.mAgent.mPath.Add(mPlayer.transform.position);
-            
-            mAgent.mAgent.mTarget = mAgent.mAgent.mPath[0];
-            mAgent.mAgent.mPath.RemoveAt(0);
-        }
-        
-
     }
 
+    void CheckTurn()
+    {
+        if (mAgent.mAgent.mTarget.x < mAgent.transform.position.x && !mAgent.IsFacingLeft)
+            mAgent.Turn();
+        else if (mAgent.mAgent.mTarget.x > mAgent.transform.position.x && mAgent.IsFacingLeft)
+            mAgent.Turn();
+    }
+
+    
     public override void Exit()
     {
     }
 
     public override string GetName()
     {
-        return "Chase";
+        return EnemyStates.Chase.ToString();
     }
 
 }

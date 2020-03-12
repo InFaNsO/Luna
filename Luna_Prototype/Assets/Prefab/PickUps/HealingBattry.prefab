@@ -71,7 +71,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.1688999}
+  m_Offset: {x: 0, y: 0.09201467}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -82,7 +82,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.25, y: 0.41059327}
+  m_Size: {x: 0.25, y: 0.25682282}
   m_EdgeRadius: 0
 --- !u!114 &9155475267164746617
 MonoBehaviour:
@@ -376,6 +376,11 @@ PrefabInstance:
       propertyPath: InitialModule.maxNumParticles
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 198980426768027484, guid: 9e4577abe56a95f4a91d29a0473cd30c,
+        type: 3}
+      propertyPath: InitialModule.maxNumParticles
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 198568851183111830, guid: 9e4577abe56a95f4a91d29a0473cd30c,
         type: 3}
       propertyPath: InitialModule.maxNumParticles
@@ -405,11 +410,6 @@ PrefabInstance:
         type: 3}
       propertyPath: simulationSpeed
       value: 0.68
-      objectReference: {fileID: 0}
-    - target: {fileID: 198980426768027484, guid: 9e4577abe56a95f4a91d29a0473cd30c,
-        type: 3}
-      propertyPath: InitialModule.maxNumParticles
-      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9e4577abe56a95f4a91d29a0473cd30c, type: 3}

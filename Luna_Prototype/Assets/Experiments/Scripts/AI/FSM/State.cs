@@ -25,6 +25,6 @@ public class State : MonoBehaviour
     }
     public virtual string GetName()
     {
-        return "Base";
+        return EnemyStates.none.ToString();
     }
 }

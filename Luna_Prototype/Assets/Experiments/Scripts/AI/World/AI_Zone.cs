@@ -5,16 +5,17 @@ using UnityEngine;
 public class AI_Zone : MonoBehaviour
 {
     public List<ZoneConnector> mConnections = new List<ZoneConnector>();
-    public List<Platform> mPlatforms = new List<Platform>();
-    public List<Enemy> myEnemies = new List<Enemy>();
     public AIWorld mWorld;
-    public Transform mPlayerTransform;
-
-    public PathFinding mPathFinding;
-
-    BoxCollider2D myArea;
-
     public float mMaxDistanceTravelled = 2.0f;
+
+    [HideInInspector] public List<Platform> mPlatforms = new List<Platform>();
+    [HideInInspector] public List<Enemy> myEnemies = new List<Enemy>();
+
+    [HideInInspector] public Transform mPlayerTransform;
+    [HideInInspector] public PathFinding mPathFinding;
+
+    [HideInInspector] BoxCollider2D myArea;
+
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +56,7 @@ public class AI_Zone : MonoBehaviour
         enem.mZone = this;
         enem.mPathFinding = mPathFinding;
         enem.IsRunning = false;
+        enem.mRigidBody.simulated = false;
         //enem.gameObject.SetActive(false);
     }
 
@@ -95,12 +97,14 @@ public class AI_Zone : MonoBehaviour
         for (int i = 0; i < myEnemies.Count; ++i)
         {
             myEnemies[i].IsRunning = true;
+            myEnemies[i].mRigidBody.simulated = true;
         }
     }
     void SleepEnemies()
     {
         for (int i = 0; i < myEnemies.Count; ++i)
         {
+            myEnemies[i].mRigidBody.simulated = false;
             myEnemies[i].IsRunning = false;
         }
     }

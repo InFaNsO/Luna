@@ -34,12 +34,12 @@ public class ChaseFlyingState : State
     {
         if (mAgent.mAttackRange.IsTouching(mPlayerCollider))
         {
-            mAgent.mStateMachine.ChangeState("Attack");
+            mAgent.mStateMachine.ChangeState(EnemyStates.Attack.ToString());
             return;
         }
         if (!mAgent.mPlayerVisibilityRange.IsTouching(mPlayerCollider))
         {
-            mAgent.mStateMachine.ChangeState("Wander");
+            mAgent.mStateMachine.ChangeState(EnemyStates.Wander.ToString());
             return;
         }
         mAgent.mAgent.mTarget = mPlayer.transform.position;
@@ -52,7 +52,7 @@ public class ChaseFlyingState : State
 
     public override string GetName()
     {
-        return "Chase";
+        return EnemyStates.Chase.ToString();
     }
 
 }

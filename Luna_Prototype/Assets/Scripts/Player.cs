@@ -37,7 +37,7 @@ public class Player : Character
     [SerializeField]
     private int mDefense;
 
-
+    private CheckPointTracker myCheckpointTracker;
 
     public LocalLevelManager _LocalLevelManager;                       //|--- [Mingzhuo Zhang] Edit: add localLevelManager to create a way to communicate with UI
     public GameObject mWeaponPosition;
@@ -50,6 +50,14 @@ public class Player : Character
     public RuntimeAnimatorController mDefaultRunTimeAniamtorController;
     // Getter & Setter
     public Weapon CurrentWeapon { get { return mCurrentWeapon; } }
+
+
+    protected override void Start()
+    {
+        base.Start();
+
+        myCheckpointTracker = GetComponent<CheckPointTracker>();
+    }
 
 
     public void LevelUp()
@@ -308,6 +316,10 @@ public class Player : Character
 
     public void LateUpdate()
     {
+        if(!myHealth.IsAlive())
+        {
+            myCheckpointTracker.Respawn(true);            
+        }
     }
 
     //----------------------------------------------------------------------------------//|

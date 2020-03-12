@@ -56,7 +56,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5726249245310081199}
-  - component: {fileID: 2777235399598698508}
+  - component: {fileID: 6290289708059304097}
   m_Layer: 15
   m_Name: Steering
   m_TagString: Untagged
@@ -78,7 +78,7 @@ Transform:
   m_Father: {fileID: 1931950814238149953}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2777235399598698508
+--- !u!114 &6290289708059304097
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -87,7 +87,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1676270518697839149}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 880fd1b1c3814c34ca9ee4692e05eb70, type: 3}
+  m_Script: {fileID: 11500000, guid: 68bb5bdb6dcb59b4681c75662d6e5f0e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mIsActive: 0
@@ -159,7 +159,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7ddda95dbd0f54007b8531f7d48c082e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 1d34a9c9c4889499385ae57a53c8ca93, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

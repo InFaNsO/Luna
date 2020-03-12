@@ -34,6 +34,8 @@ public class Health : MonoBehaviour
     public void Respawn()
     {
         health = MaxHealth;
+        ServiceLocator.Get<UIManager>().UpdateHPGauge(health / MaxHealth);
+
     }
 
     public float GetHealth() { return health; }

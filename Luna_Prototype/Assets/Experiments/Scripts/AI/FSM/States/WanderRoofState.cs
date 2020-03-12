@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WanderRoofState : State
 {
-    [SerializeField] Platform mRoof;
+    [SerializeField] Platform mRoof = null;
 
     Enemy mAgent;
     Player mPlayer;
@@ -15,7 +15,6 @@ public class WanderRoofState : State
     Vector3 left = new Vector3();
     Vector3 right = new Vector3();
 
-    bool isGoingLeft = false;
     bool shouldFall = false;
 
 
@@ -57,22 +56,18 @@ public class WanderRoofState : State
         float distanceRight = Vector3.Distance(mAgent.transform.position, right);
 
         if (distanceLeft > distanceRight)
-        {
-            isGoingLeft = false;
             mAgent.mAgent.mTarget = right;
-        }
         else
-        {
-            isGoingLeft = true;
             mAgent.mAgent.mTarget = left;
-        }
+
+        CheckTurn();
     }
 
     public override void MyUpdate()
     {
         if (!mAgent.myHealth.IsAlive())
         {
-            mAgent.mStateMachine.ChangeState("Die");
+            mAgent.mStateMachine.ChangeState(EnemyStates.Die.ToString());
             return;
         }
         if (shouldFall)
@@ -80,7 +75,7 @@ public class WanderRoofState : State
             //check if its grounded
             if (mAgent.transform.position.y > yPrv - 0.01f && mAgent.transform.position.y < yPrv + 0.01f)
             {
-                mAgent.mStateMachine.ChangeState("Chase");
+                mAgent.mStateMachine.ChangeState(EnemyStates.Chase.ToString());
                 return;
             }
             else
@@ -90,8 +85,8 @@ public class WanderRoofState : State
             }
         }
 
-        if (mAgent.mPlayerVisibilityRange.IsTouching(mPlayerCollider))
-        {
+        if ( Vector3.Distance(mAgent.transform.position, mPlayer.transform.position) < mAgent.mPlayerVisibilityRange.radius) //mAgent.mPlayerVisibilityRange.IsTouching(mPlayerCollider))
+        {   
             mAgent.mRigidBody.gravityScale = 1.0f;
             yPrv = mAgent.transform.position.y;
             shouldFall = true;
@@ -103,19 +98,23 @@ public class WanderRoofState : State
 
         if (isClose)
         {
-            if (isGoingLeft)
-            {
+            if (mAgent.IsFacingLeft)
                 mAgent.mAgent.mTarget = right;
-                isGoingLeft = false;
-            }
             else
-            {
                 mAgent.mAgent.mTarget = left;
-                isGoingLeft = true;
-            }
+
+            CheckTurn();
         }
+
     }
 
+    void CheckTurn()
+    {
+        if (mAgent.mAgent.mTarget.x < mAgent.transform.position.x && !mAgent.IsFacingLeft)
+            mAgent.Turn();
+        else if (mAgent.mAgent.mTarget.x > mAgent.transform.position.x && mAgent.IsFacingLeft)
+            mAgent.Turn();
+    }
     public override void DebugDraw()
     {
         Gizmos.color = Color.green;
@@ -133,6 +132,6 @@ public class WanderRoofState : State
 
     public override string GetName()
     {
-        return "Wander";
+        return EnemyStates.Wander.ToString();
     }
 }

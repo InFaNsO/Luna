@@ -5,7 +5,6 @@ public class MovingPlatform : MonoBehaviour
 {
     public GameObject player;
 
-
     // Enter Platform
     private void OnTriggerEnter2D (Collider2D other)
     {

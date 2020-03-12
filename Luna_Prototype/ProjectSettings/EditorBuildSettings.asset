@@ -15,13 +15,14 @@ EditorBuildSettings:
     path: Assets/Scenes/MainScene.unity
     guid: 2ddf5bcd2154c9e419d6ba65a16d8c95
   - enabled: 0
-    path: Assets/Experiments/Scenes/Week2_MignzhuoBranch/CombatTest.unity
+    path: Assets/Experiments/ExperimentalPrefabs/Scenes/Week2_MignzhuoBranch/CombatTest.unity
     guid: 5a1aa26d27ccb1047b6c120292580298
   - enabled: 0
-    path: Assets/Experiments/Scenes/Week2_MignzhuoBranch/UITest 1.unity
+    path: Assets/Experiments/ExperimentalPrefabs/Scenes/Week2_MignzhuoBranch/UITest
+      1.unity
     guid: 98111d674d62a5748998c80db359eb77
   - enabled: 0
-    path: Assets/Experiments/Scenes/CombatTest.unity
+    path: Assets/Experiments/ExperimentalPrefabs/Scenes/CombatTest.unity
     guid: a2b22303193184944ac21576674b7d32
   - enabled: 0
     path: 
