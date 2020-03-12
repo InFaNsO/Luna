@@ -129,9 +129,9 @@ public class Inventory : MonoBehaviour
                                                                                                                           //|
         if (!_eventItemSlots[whichSlot].theItem.Use(ref _player))                                                         //|
         {                                                                                                                 //|
-            _slots[whichSlot].sprite = _EmptySprite;                                                                      //|
-            _slots[whichSlot].theItem = null;                                                                             //|
-            _slots.RemoveAt(whichSlot);//[Rick H], 2019-12-09, swaped this line with the one below                        //|
+            _eventItemSlots[whichSlot].sprite = _EmptySprite;                                                             //|
+            _eventItemSlots[whichSlot].theItem = null;                                                                    //|
+            _eventItemSlots.RemoveAt(whichSlot);//[Rick H], 2019-12-09, swaped this line with the one below               //|
             UpdateUI();                                                                                                   //|
         }                                                                                                                 //|
     }                                                                                                                     //|
@@ -148,6 +148,30 @@ public class Inventory : MonoBehaviour
         var image_prev = quickSlots[0];//[Rick H] replaced with UIManager service
         var image_centre = quickSlots[1];//[Rick H] replaced with UIManager service
         var image_next = quickSlots[2];//[Rick H] replaced with UIManager service
+
+        //--------------------------------------------------------------------------------//|
+        var eventItemSlots = _uiMngr.GetEventItemSlot();                                  //|
+        if (_eventItemSlots.Count <= 0)
+        {
+            foreach (var item in eventItemSlots)
+            {
+                item.sprite = _EmptySprite;
+            }
+
+        }
+        else
+        {
+            for (int i = 0; i < _eventItemSlots.Count; i++)                               //|
+            {                                                                             //|
+                if (i >= eventItemSlots.Count)                                            //|--- [Mingzhuo Zhang] added 2020-03-12
+                    break;                                                                //|
+                                                                                          //|
+                eventItemSlots[i].sprite = _eventItemSlots[i].sprite;                     //|
+            }                                                                             //|
+                                                                                          
+        }
+        //--------------------------------------------------------------------------------//|
+
 
         if (_slots.Count <= 0)
         {
@@ -183,16 +207,7 @@ public class Inventory : MonoBehaviour
 
         image_next.sprite = nextIdx > _slots.Count - 1 ? _EmptySprite : _slots[nextIdx].sprite;
 
-        //--------------------------------------------------------------------------------//|
-        var eventItemSlots = _uiMngr.GetEventItemSlot();                                  //|
-        for (int i = 0; i < eventItemSlots.Count; i++)                                    //|
-        {                                                                                 //|
-            if (i >=_eventItemSlots.Count)                                                //|--- [Mingzhuo Zhang] added 2020-03-12
-                break;                                                                    //|
-                                                                                          //|
-            eventItemSlots[i].sprite = _eventItemSlots[i].sprite;                         //|
-        }                                                                                 //|
-        //--------------------------------------------------------------------------------//|
+       
     }
 
     public int GetCount() { return _slots.Count; }
