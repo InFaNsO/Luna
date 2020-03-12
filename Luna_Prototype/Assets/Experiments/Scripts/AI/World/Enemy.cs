@@ -34,8 +34,10 @@ public class Enemy : Character
     [HideInInspector] public bool mIsStuned = false;
     [HideInInspector] float mStunCounter;
 
+    public EnemyTypes MyType = EnemyTypes.none;
+
     // Start is called before the first frame update
-    void Start()
+    protected override void Start()
     {
         base.Start();
         var wep = GetComponentInChildren<Weapon>();
@@ -56,6 +58,9 @@ public class Enemy : Character
 
         if (mDropPrefbs != null)
             mIsDropping = true;
+
+        if (MyType == EnemyTypes.BatBot)
+            mRigidBody.gravityScale = 0.0f;
     }
 
     // Update is called once per frame
