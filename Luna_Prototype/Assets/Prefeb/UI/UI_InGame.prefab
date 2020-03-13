@@ -271,7 +271,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7158821127875502971}
   m_Layer: 5
-  m_Name: sec_weapon
+  m_Name: second_weapon
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1020,7 +1020,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: bd256eecee0413e4eb0412974966ea5e, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1117,6 +1117,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1393586166054311698}
+  - component: {fileID: 126554921744088157}
   m_Layer: 5
   m_Name: weapon_slots
   m_TagString: Untagged
@@ -1145,6 +1146,18 @@ RectTransform:
   m_AnchoredPosition: {x: 49.6, y: -23.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 1, y: 0}
+--- !u!114 &126554921744088157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7520230465172536301}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 032d337a80153eb40a54daf83acf4bea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8022539672605536491
 GameObject:
   m_ObjectHideFlags: 0
@@ -1365,7 +1378,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 21300000, guid: e53c5c2aeee3bd2429a68b03f4d34ce9, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1483,7 +1496,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 84.89993, y: -37.699997}
+  m_AnchoredPosition: {x: 84.89993, y: -37.69995}
   m_SizeDelta: {x: 126, y: 19}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &9083532984985450973
