@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class ParryAttackable : MonoBehaviour
 {
+    public enum ParryLevel
+    {
+        poor = 0,
+        great = 1,
+        perfect = 2
+    }
+
     public Bullet mParryCollider;
     Player mOwner;
 
@@ -15,7 +22,16 @@ public class ParryAttackable : MonoBehaviour
     public bool IsParrying() { return mParryCounter < mParryCooldown; }
     public int ParryCooldown { set { mParryCooldown = value; } }
 
-    public 
+    [System.Serializable]
+    public struct ParryContext
+    {
+        public float poor_check_distance;
+        public float great_check_distance;
+        public float perfect_check_distance;
+    }
+
+    public ParryContext mContext;
+
     void Awake()
     {
         mOwner = GetComponent<Player>();
@@ -59,5 +75,28 @@ public class ParryAttackable : MonoBehaviour
             mParrySignal = false;
         }
         return ret;
+    }
+
+    public ParryLevel GetParryLevel(Vector3 bulletPosition)
+    {
+        float currentDistance = Vector3.Distance(gameObject.transform.position, bulletPosition);
+
+        if (currentDistance <= mContext.perfect_check_distance)
+            return ParryLevel.perfect;
+        if (currentDistance <= mContext.great_check_distance)
+            return ParryLevel.great;
+        if (currentDistance <= mContext.poor_check_distance)
+            return ParryLevel.poor;
+        return ParryLevel.poor;
+    }
+
+    public void OnDrawGizmos()
+    {
+        Gizmos.color = new Color(1.0f, 0.0f, 0.0f,0.3f);
+        Gizmos.DrawSphere(transform.position, mContext.poor_check_distance);
+        Gizmos.color = new Color(1.0f, 1.0f, 0.0f, 0.3f);
+        Gizmos.DrawSphere(transform.position, mContext.great_check_distance);
+        Gizmos.color = new Color(0.0f, 1.0f, 0.0f, 0.3f);
+        Gizmos.DrawSphere(transform.position, mContext.perfect_check_distance);
     }
 }

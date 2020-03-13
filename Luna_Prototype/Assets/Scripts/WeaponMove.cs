@@ -25,6 +25,8 @@ public class WeaponMove
 
     private ElementalAttributes mElement;
 
+    public bool isMelee = true;
+
     // Getter & Setter -------------------------------------------------------------------------------------------------------
     public float AttackSpeed { get { return mAttackSpendTime; } set { mAttackSpendTime = value; } }
 
@@ -103,7 +105,7 @@ public class WeaponMove
             mWeapon.mTargetPos = mWeapon.transform.position + mWeapon.transform.right;
         }
         Vector3 dir = Vector3.Normalize(mWeapon.mTargetPos - mWeapon.transform.position);
-        newBullet.Fire(mWeapon.tag, mDamage, shootPos, dir, mWeapon.mType);
+        newBullet.Fire(mWeapon.tag, mDamage, shootPos, dir, isMelee ? WeaponType.Melee : WeaponType.Range);
         newBullet.Awake();
         newBullet.mElement = mWeapon.mOwnerElement + mElement;
         Core.Debug.Log(newBullet.mElement.ToString() + newBullet.mElement.fire);
