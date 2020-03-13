@@ -57,6 +57,9 @@ public class UI_InGame : MonoBehaviour, UI_Interface
 
     private UIManager _uIManager;
 
+    //weapon slots
+    private UI_InGame_WeaponSlot _weaponSlots;
+
     //
     private void Awake()
     {
@@ -86,6 +89,10 @@ public class UI_InGame : MonoBehaviour, UI_Interface
 
 
         selectedSlotInInventory = 0;
+
+        //weapon slots
+        _weaponSlots = transform.Find("weapon_slots").gameObject.GetComponent<UI_InGame_WeaponSlot>();
+
     }
     private void OnEnable()
     {
@@ -115,7 +122,14 @@ public class UI_InGame : MonoBehaviour, UI_Interface
         selectedSlotInInventory = 0;
 
     }
+    #region Weaponslot
+    public void UI_Ingame_UpdateWeaponSprite(Sprite currWeapon, Sprite secWeapon)
+    {
+        _weaponSlots.UI_Ingame_UpdateWeaponSprite(currWeapon, secWeapon);
+    }
 
+
+    #endregion
     #region Gauge
     public void UpdateHPGauge(float value)
     {
