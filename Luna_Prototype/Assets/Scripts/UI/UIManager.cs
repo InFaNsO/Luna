@@ -88,6 +88,13 @@ public class UIManager : MonoBehaviour
 
 
     #region public In-game UI Services
+
+    public void InGame_QuickSlot_Itemcount_UpdateItemCount(int slot, int count)
+    {
+        _uiInGame.UpdateItemCount(slot, count);
+    }
+
+
     public void UI_Ingame_UpdateWeaponSprite(Sprite currWeapon, Sprite secWeapon)
     {
         _uiInGame.UI_Ingame_UpdateWeaponSprite(currWeapon, secWeapon);
