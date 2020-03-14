@@ -332,7 +332,7 @@ public class InputController : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""bb75f05e-e704-42be-a305-4eb39bff69a7"",
                     ""path"": ""<XInputController>/rightTrigger"",
-                    ""interactions"": """",
+                    ""interactions"": ""Press"",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""UseItem"",

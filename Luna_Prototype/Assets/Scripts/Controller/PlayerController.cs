@@ -18,6 +18,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField]
     bool isGrounded;
 
+    public float controllerSensitivity = 0.5f;
+
     [SerializeField]
     Vector3 moveVec;
     [SerializeField]
@@ -116,12 +118,14 @@ public class PlayerController : MonoBehaviour
     public void Move()
     {
         moveVec.x = controls.PlayerControl.Move.ReadValue<float>();
+        if (Mathf.Abs(moveVec.x) < controllerSensitivity)
+            moveVec.x = 0.0f;
         Flip();
         float acc = isGrounded ? walkAcc : airAcc;
         float dec = isGrounded ? groundDec : 0;
 
         moveVec.x = Mathf.MoveTowards(moveVec.x, player.GetMoveSpeed() * moveVec.x, acc * Time.deltaTime);
-        if(!isPlayerFacingRight && moveVec.x < 0.0f || !isPlayerFacingRight && moveVec.x > 0.0f)
+        if (!isPlayerFacingRight && moveVec.x < 0.0f || !isPlayerFacingRight && moveVec.x > 0.0f)
         {
             moveVec.x = -moveVec.x;
         }
@@ -132,6 +136,7 @@ public class PlayerController : MonoBehaviour
     {
         if ((moveVec.x > 0 && !isPlayerFacingRight) || (moveVec.x < 0 && isPlayerFacingRight))
         {
+
             if (player.mCurrentWeapon == null || !player.mCurrentWeapon.mIsAttacking)
             {
                 isPlayerFacingRight = !isPlayerFacingRight;
@@ -153,7 +158,7 @@ public class PlayerController : MonoBehaviour
     public void Jump()
     {
         jumpVec.y = 1.0f;
-        if(jumpCount > 0)
+        if (jumpCount > 0)
             jumpCount--;
     }
 
@@ -174,7 +179,7 @@ public class PlayerController : MonoBehaviour
 
     public void Dash()
     {
-        if(stamina.IsStaminaSufficient() && (dashCounter >= dashDuration))
+        if (stamina.IsStaminaSufficient() && (dashCounter >= dashDuration))
         {
             //if(isPlayerFacingRight)
             //    rb.AddForce(new Vector2(player.GetIFrameDistance(), 0f));
@@ -188,7 +193,7 @@ public class PlayerController : MonoBehaviour
 
     void DashMovement()
     {
-        if(dashCounter < dashDuration)
+        if (dashCounter < dashDuration)
         {
             transform.Translate(player.GetDashSpeed() * Time.deltaTime, 0f, 0f);
             isDashing = true;
@@ -265,7 +270,7 @@ public class PlayerController : MonoBehaviour
 
     public bool IsMoving()
     {
-        if (Mathf.Abs(controls.PlayerControl.Move.ReadValue<float>()) > 0.00f)
+        if (Mathf.Abs(controls.PlayerControl.Move.ReadValue<float>()) > controllerSensitivity)
             return true;
         else
             return false;
