@@ -91,8 +91,10 @@ public class Bullet : MonoBehaviour
         }
         else if(collision.gameObject.tag == "Parry" /*&& !mIsMelee*/)
         {
-            ParryAttackable parryObj = collision.gameObject.GetComponent<ParryAttackable>();
-            ParryAttackable.ParryLevel parryLevel= parryObj.GetParryLevel(gameObject.transform.position);
+            ParryAttackable parryObj = collision.gameObject.GetComponentInParent<ParryAttackable>();
+            ParryAttackable.ParryLevel parryLevel = parryObj.GetParryLevel(gameObject.transform.position);
+
+            gameObject.tag = collision.gameObject.transform.parent.tag;
 
             switch (parryLevel)
             {

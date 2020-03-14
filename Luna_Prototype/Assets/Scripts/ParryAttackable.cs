@@ -60,7 +60,7 @@ public class ParryAttackable : MonoBehaviour
         if (mParryCounter >= mParryCooldown && mOwner.CurrentWeapon != null)
         {
             mOwner.CurrentWeapon.WeaponReset();
-            Bullet newBullet = Object.Instantiate(mParryCollider, new Vector3(0, 0, 0), Quaternion.identity);
+            Bullet newBullet = Instantiate(mParryCollider, gameObject.transform);
             newBullet.Fire("Parry", 0, mOwner.transform.position, mOwner.transform.right, WeaponType.Melee);
             mParryCounter = 0.0f;
         }

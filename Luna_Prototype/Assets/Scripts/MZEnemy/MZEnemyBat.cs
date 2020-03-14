@@ -12,6 +12,10 @@ public class MZEnemyBat : Character
 
     public AIPath aiPath;
     private GameObject mPlayer;
+    public MZEnemy_AnimationController mAnimationController;
+
+    protected bool mIsDropping = false;
+    [SerializeField] protected GameObject mDropPrefbs = null;
 
     public enum States
     {
@@ -63,10 +67,10 @@ public class MZEnemyBat : Character
         public float attackSpeedCounter = 0.0f;
     }
 
-    IdleContext mIdleContext;
-    GotoContext mGotoContext;
-    RangeAttackContext mRangeAttackContext;
-    MeleeAttackContext mMeleeAttackContext;
+    public IdleContext mIdleContext;
+    public GotoContext mGotoContext;
+    public RangeAttackContext mRangeAttackContext;
+    public MeleeAttackContext mMeleeAttackContext;
 
     States mCurrentState;
     // Start is called before the first frame update
@@ -78,13 +82,18 @@ public class MZEnemyBat : Character
 
         aiPath = GetComponent<AIPath>();
         mPlayer = GameObject.Find("Player");
+        mRigidBody = GetComponent<Rigidbody2D>();
 
-        gameObject.GetComponent<Rigidbody2D>().gravityScale = 0.0f;
+        mRigidBody.gravityScale = 0.0f;
+
+        if (mDropPrefbs != null)
+            mIsDropping = true;
     }
 
     // Update is called once per frame
     void Update()
     {
+        base.Update();
         switch (mCurrentState)
         {
             case States.none:
@@ -120,7 +129,7 @@ public class MZEnemyBat : Character
 
                 if (mGotoContext.delayCounter >= mGotoContext.attackDelay)
                 {
-                    int rand = Random.Range(1, 2);
+                    int rand = Random.Range(0, 2);
                     if (rand == 0)
                         GoToRangeAttack();
                     else
@@ -136,11 +145,8 @@ public class MZEnemyBat : Character
 
                 if (mRangeAttackContext.attackSpeedCounter >= mRangeAttackContext.attackSpeed)
                 {
-
-                    // TODO let animator does it job
-                    //Bullet newBullet = Object.Instantiate(batAgent.mBullet, new Vector3(0, 0, 0), Quaternion.identity);
-                    //Vector3 dir = Vector3.Normalize(agent.transform.position - agent.GetWorld().mPlayer.transform.position);
-                    //newBullet.Fire(agent.tag, batAgent.mDamage, agent.transform.position, -dir, WeaponType.Range);
+                    aiPath.destination = gameObject.transform.position + Vector3.Normalize( mPlayer.transform.position - transform.position);
+                    mAnimationController.GoRangeAttackAnimation();
 
                     Vector3 dir = Vector3.Normalize(transform.position - mPlayer.transform.position);
                     //recoil force to make it looks good
@@ -163,12 +169,9 @@ public class MZEnemyBat : Character
                 Vector3 agentPos = transform.position;
                 Vector3 playerPos =mPlayer.transform.position;
 
-                if (Vector3.SqrMagnitude(mPlayer.transform.position - transform.position) < 0.25f && !mMeleeAttackContext.isAttacked)
+                if (Vector3.SqrMagnitude(mPlayer.transform.position - transform.position) < mMeleeAttackRange * mMeleeAttackRange && !mMeleeAttackContext.isAttacked)
                 {
-                    // TODO let animimator handle this
-                    //Bullet newBullet = Object.Instantiate(batAgent.mMeleeBullet, new Vector3(0, 0, 0), Quaternion.identity);
-                    //newBullet.Awake();
-                    //newBullet.Fire(agent.tag, batAgent.mDamage, agent.transform.position, Vector3.down, WeaponType.Melee);
+                    mAnimationController.GoMeleeAttackAnimation();
                     mMeleeAttackContext.isAttacked = true;
                 }
 
@@ -177,6 +180,8 @@ public class MZEnemyBat : Character
             default:
                 break;
         }
+
+        
     }
 
     void GoToIdle()
@@ -216,12 +221,92 @@ public class MZEnemyBat : Character
         mMeleeAttackContext.isOnPlayerleft = transform.position.x < mPlayer.transform.position.x;
         mMeleeAttackContext.yDifferent = transform.position.y - mPlayer.transform.position.y;
 
-        Vector3 dir = Vector3.Normalize(mPlayer.transform.position - transform.position);
-        float distance = Vector3.Magnitude(mPlayer.transform.position - transform.position);
-        mMeleeAttackContext.destPos = dir * distance;
-        aiPath.destination = mMeleeAttackContext.destPos;
+        //Vector3 dir = Vector3.Normalize(mPlayer.transform.position - transform.position);
+        //float distance = Vector3.Magnitude(mPlayer.transform.position - transform.position);
+        //mMeleeAttackContext.destPos = dir * distance;
+        aiPath.destination = mPlayer.transform.position;
 
         mMeleeAttackContext.toIdelCounter = 0.0f;
         mCurrentState = States.meleeAttack;
     }
+
+    public void RangeAttack()
+    {
+       
+        Bullet newBullet = Object.Instantiate(mRangeAttackContext.mRangeBullet, new Vector3(0, 0, 0), Quaternion.identity);
+        Vector3 dir = Vector3.Normalize(transform.position - mPlayer.transform.position);
+        newBullet.Fire(gameObject.tag, mRangeAttackContext.mRangeDamage, transform.position, -dir, WeaponType.Range, this);
+    }
+
+    public void MeleeAttack()
+    {
+        Bullet newBullet = Object.Instantiate(mMeleeAttackContext.mMeleeBullet, new Vector3(0, 0, 0), Quaternion.identity);
+        newBullet.Awake();
+        newBullet.Fire(gameObject.tag, mMeleeAttackContext.mMeleeDamage, transform.position, Vector3.down, WeaponType.Melee);
+    }
+
+    public void GetHit(float dmg, string tag)
+    {
+        myHealth.TakeDamage(dmg);
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag != gameObject.tag)
+        {
+            var bullet = other.GetComponent<Bullet>();
+            if (bullet != null)
+            {
+                //1. Bullet.ElementAttribute = Player.ElementAttribute + Weapon.ElementAttribute                \\ TODO
+                //2. Bullet.ApplyDamage()                                                                       \\ TODO
+                //GetHit(bullet.mElement);
+                GetHit(bullet.Damage, other.tag);
+                var rb = GetComponent<Rigidbody2D>();
+                if (rb)
+                {
+                    var direction = other.gameObject.transform.position.x - transform.position.x;
+                    if (direction > 0.0f)
+                    {
+                        rb.AddForce(new Vector2(-knockBackX, knockBackY));
+                    }
+                    else if (direction < 0.0f)
+                    {
+                        rb.AddForce(new Vector2(knockBackX, knockBackY));
+                    }
+                }
+            }
+        }
+    }
+
+    override public void Die()
+    {
+        //effect
+        Debug.Log("enemy destory");
+
+        if (mIsDropping)
+        {
+            //spwn inventory
+            Instantiate(mDropPrefbs, transform.position, transform.rotation);
+
+        }
+
+        // [Maybe] Update game Score
+        // [Maybe] Change anmation state
+
+        //--------------------------//|
+        Destroy(gameObject);        //|--- Set this by routin function in future: For giving time to died animation 
+        //--------------------------//|
+    }
+
+    private void OnDrawGizmos()
+    {
+        
+        Gizmos.color = new Color(1.0f, 0.0f, 0.0f, 0.3f);
+        Gizmos.DrawSphere(transform.position, mMeleeAttackRange);
+        Gizmos.color = new Color(1.0f, 1.0f, 0.0f, 0.3f);
+        Gizmos.DrawSphere(transform.position, mRangeAttackRange);
+        Gizmos.color = new Color(0.0f, 1.0f, 0.0f, 0.3f);
+        Gizmos.DrawSphere(transform.position, mVisibilityRange);
+    }
 }
+
