@@ -6,6 +6,11 @@ using System;
 public class Key : MonoBehaviour, IInventoryItem
 {
     public Sprite _sprite;
+    public void Awake()
+    {
+        _sprite = GetComponent<SpriteRenderer>().sprite;
+    }
+
     public void DisableFromLevel()
     {
         gameObject.SetActive(false);
