@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChasePathFindingState : State
+public class ChasePathfindingState : State
 {
     Enemy mAgent;
     Player mPlayer;
@@ -97,6 +97,34 @@ public class ChasePathFindingState : State
             {
                 mAgent.mAgent.mTarget = mAgent.mAgent.mPath[0];
                 mAgent.mAgent.mPath.RemoveAt(0);
+            }
+        }
+    }
+
+    public override void DebugDraw()
+    {
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(mAgent.transform.position, mAgent.transform.position + new Vector3(mAgent.mRigidBody.velocity.x * 10, mAgent.mRigidBody.velocity.y * 10, 0.0f));
+
+        Gizmos.DrawWireSphere(mAgent.mAgent.mTarget, 0.5f);
+
+        Gizmos.color = Color.green;
+
+        if (mAgent.mAgent.mPath.Count == 0)
+            return;
+
+        Gizmos.DrawWireSphere(mAgent.mAgent.mPath[mAgent.mAgent.mPath.Count - 1], 0.5f);
+
+        for (int i = 0; i < finder.mNodes.Count; ++i)
+        {
+            Gizmos.color = Color.magenta;
+            Gizmos.DrawWireSphere(finder.mNodes[i].pos, 0.3f);
+
+            Gizmos.color = Color.cyan;
+
+            for (int j = 0; j < finder.mNodes[i].childrenID.Count; ++j)
+            {
+                Gizmos.DrawLine(finder.mNodes[i].pos, finder.mNodes[finder.mNodes[i].childrenID[j]].pos);
             }
         }
     }
