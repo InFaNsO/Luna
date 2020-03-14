@@ -58,7 +58,7 @@ public class Key : MonoBehaviour, IInventoryItem
         {
             if (other.GetComponent<Player>() != null)
             {
-                other.GetComponent<Inventory>().AddItem(this);
+                other.GetComponent<Inventory>().AddEventItem(this);
             }
         }
     }
