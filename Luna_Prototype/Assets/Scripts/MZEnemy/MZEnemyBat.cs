@@ -169,7 +169,8 @@ public class MZEnemyBat : Character
                 Vector3 agentPos = transform.position;
                 Vector3 playerPos =mPlayer.transform.position;
 
-                if (Vector3.SqrMagnitude(mPlayer.transform.position - transform.position) < mMeleeAttackRange * mMeleeAttackRange && !mMeleeAttackContext.isAttacked)
+                //if (Vector3.SqrMagnitude(mPlayer.transform.position - transform.position) < mMeleeAttackRange * mMeleeAttackRange && !mMeleeAttackContext.isAttacked)
+                if(Vector3.Distance(transform.position, aiPath.destination) <= 0.1f && !mMeleeAttackContext.isAttacked)
                 {
                     mAnimationController.GoMeleeAttackAnimation();
                     mMeleeAttackContext.isAttacked = true;
