@@ -32,16 +32,22 @@ public class ChaseFlyingState : State
 
     public override void MyUpdate()
     {
-        if (mAgent.mAttackRange.IsTouching(mPlayerCollider))
+        if (!mAgent.myHealth.IsAlive())
+        {
+            mAgent.mStateMachine.ChangeState(EnemyStates.Die.ToString());
+            return;
+        }
+        if (Vector3.Distance(mAgent.transform.position, mPlayer.transform.position) <= mAgent.mAttackRange.radius)
         {
             mAgent.mStateMachine.ChangeState(EnemyStates.Attack.ToString());
             return;
         }
-        if (!mAgent.mPlayerVisibilityRange.IsTouching(mPlayerCollider))
+        if (Vector3.Distance(mAgent.transform.position, mPlayer.transform.position) > mAgent.mPlayerVisibilityRange.radius)
         {
             mAgent.mStateMachine.ChangeState(EnemyStates.Wander.ToString());
             return;
         }
+
         mAgent.mAgent.mTarget = mPlayer.transform.position;
         mAgent.mAgent.mTarget.y += mAgent.mNodeRange.radius;
     }

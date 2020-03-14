@@ -26,7 +26,6 @@ public class AttackState : State
 
         mAgent.mSteering.TurnAllOff();
         SetSteering();
-        steeringOff = true;
 
 
         mAgent.GetComponentInChildren<SpriteRenderer>().color = Color.red;
@@ -56,12 +55,14 @@ public class AttackState : State
 
         if (Vector3.Distance(mAgent.transform.position, mPlayer.transform.position) <= mAgent.mAttackRange.radius)
         {
-            mAgent.mSteering.TurnAllOff();
-            steeringOff = true;
-
+            if (!steeringOff)
+            {
+                mAgent.mSteering.TurnAllOff();
+                steeringOff = true;
+            }
             myWeapon.Attack(true, mPlayer.transform.position);
         }
-        else if (!steeringOff)
+        else if (steeringOff)
             SetSteering();
 
     }
@@ -78,6 +79,14 @@ public class AttackState : State
     {
         mAgent.mSteering.SetActive(SteeringType.Arrive, true);
         mAgent.mSteering.SetActive(SteeringType.Seek, true);
+        steeringOff = false;
+    }
+
+
+    public override void DebugDraw()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawWireSphere(mAgent.mAgent.mTarget, 0.5f);
     }
 
     public override void Exit()
