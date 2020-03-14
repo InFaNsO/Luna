@@ -155,6 +155,8 @@ public class Player : Character
                 if (mWeapon1 != null)                                                                                           //|--- [Mingzhuo Zhang] Edit: achieve automatic switch weapon
                     EquipWeapon(mWeapon1);                                                                                  //|
             }
+            UpdateWeaponSlotInUI();
+
         }
         else
         {
@@ -183,6 +185,8 @@ public class Player : Character
                 Debug.Log("Switch to Weapon 1");
             }
         }
+        UpdateWeaponSlotInUI();
+
     }
 
     public float GetAttackSpeed()
@@ -370,6 +374,7 @@ public class Player : Character
                 EquipWeapon(mWeapon2);                                              //|
         }                                                                               //|
                                                                                         //|
+        UpdateWeaponSlotInUI();
                                                                                         //|
     }                                                                                   //|
     //----------------------------------------------------------------------------------//|
@@ -399,10 +404,39 @@ public class Player : Character
     //----------------------------------------------------------------------------------//|
     private void EquipWeapon(Weapon nextWeapon)                                         //|
     {                                                                                   //|
+
+
         mCurrentWeapon = nextWeapon;                                                    //|--- [Mingzhuo Zhang] Add a function for equip weapon;
         mCurrentWeapon.Equip(gameObject);                                               //|
+
     }                                                                                   //|
     //----------------------------------------------------------------------------------//|
     //- End Edit -----------------------------------------------------------------------//|
     //----------------------------------------------------------------------------------//|
+
+
+    private void UpdateWeaponSlotInUI()
+    {
+        //[RH] performance?
+        Sprite currWeaponSprite = null, secWeaponSprite = null;
+        if (mCurrentWeapon != null)
+        {
+            if (mCurrentWeapon == mWeapon1)
+            {
+                currWeaponSprite = mWeapon1.transform.Find("WeaponSprite").GetComponent<SpriteRenderer>().sprite;
+                secWeaponSprite = mWeapon2 != null ? mWeapon2.transform.Find("WeaponSprite").GetComponent<SpriteRenderer>().sprite : null;
+            }
+            else if (mCurrentWeapon == mWeapon2)
+            {
+                currWeaponSprite = mWeapon2.transform.Find("WeaponSprite").GetComponent<SpriteRenderer>().sprite;
+                secWeaponSprite = mWeapon1 != null ? mWeapon1.transform.Find("WeaponSprite").GetComponent<SpriteRenderer>().sprite : null;
+            }
+
+        }
+
+
+        ServiceLocator.Get<UIManager>().
+            UI_Ingame_UpdateWeaponSprite(currWeaponSprite, secWeaponSprite);
+
+    }
 }
