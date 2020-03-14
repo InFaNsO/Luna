@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     private EventSystem _eventSystem;
 
 
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -60,6 +61,9 @@ public class UIManager : MonoBehaviour
             ui.gameObject.SetActive(false);
         }
         currentCanvas = _uiInstances[0];
+
+
+
     }
     private void CreateUI(Canvas canvanPrefab)
     {
@@ -84,6 +88,12 @@ public class UIManager : MonoBehaviour
 
 
     #region public In-game UI Services
+    public void UI_Ingame_UpdateWeaponSprite(Sprite currWeapon, Sprite secWeapon)
+    {
+        _uiInGame.UI_Ingame_UpdateWeaponSprite(currWeapon, secWeapon);
+    }
+
+
 
     public void UpdateHPGauge(float val)
     {
