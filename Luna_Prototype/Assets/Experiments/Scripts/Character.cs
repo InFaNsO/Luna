@@ -23,8 +23,11 @@ public class Character : MonoBehaviour
     public float knockBackX = 1.0f;
     public float knockBackY = 1.0f;
 
+    public ParticleSystem mGetHitParticle;
+    protected Vector3 mLastGotHitPosition;
     //Keep Movement Track
     [HideInInspector] public bool IsFacingLeft = false;
+
 
     protected virtual void Awake()
     {
@@ -68,7 +71,17 @@ public class Character : MonoBehaviour
     {
         element.ApplyDamage(this, false);
     }
-    
+
+    protected void GetHit(float dmg, Vector3 hitPosition)
+    {
+        GetHit(dmg);
+        if (!mGetHitParticle)
+            return;
+
+        ParticleSystem newParticle = Instantiate(mGetHitParticle, hitPosition, Quaternion.identity);
+        newParticle.Play();
+    }
+
     public void Turn()
     {
         transform.Rotate(Vector3.up, 180.0f);

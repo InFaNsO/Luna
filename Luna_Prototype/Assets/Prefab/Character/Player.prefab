@@ -50,10 +50,10 @@ GameObject:
   - component: {fileID: 1756336211}
   - component: {fileID: 6171437158726952309}
   - component: {fileID: 1525562980}
-  - component: {fileID: 7557835133210629315}
   - component: {fileID: 93239081621486054}
-  - component: {fileID: 1525562978}
   - component: {fileID: 9065200051110396261}
+  - component: {fileID: 1525562978}
+  - component: {fileID: 3096675518229367161}
   m_Layer: 9
   m_Name: Player
   m_TagString: Player
@@ -326,6 +326,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isPlayerFacingRight: 0
   isGrounded: 0
+  controllerSensitivity: 0.5
   moveVec: {x: 0, y: 0, z: 0}
   jumpVec: {x: 0, y: 0}
   walkAcc: 140
@@ -362,18 +363,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ef79c0913fa5a543803ca3d5c6dabc8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &7557835133210629315
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 109428899416447167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7ef79c0913fa5a543803ca3d5c6dabc8, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &93239081621486054
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -389,6 +378,18 @@ MonoBehaviour:
   health: 0
   MaxHealth: 100
   myElement: 0
+--- !u!114 &9065200051110396261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 109428899416447167}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ef79c0913fa5a543803ca3d5c6dabc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!95 &1525562978
 Animator:
   serializedVersion: 3
@@ -408,7 +409,7 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &9065200051110396261
+--- !u!114 &3096675518229367161
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

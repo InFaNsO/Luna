@@ -159,6 +159,8 @@ MonoBehaviour:
   element: {fileID: 0}
   knockBackX: 1
   knockBackY: 1
+  mGetHitParticle: {fileID: 198157547220164012, guid: 4961a16ba01e09547be3e1c9d16d5ad0,
+    type: 3}
   IsFacingLeft: 0
   mMeleeAttackRange: 1
   mRangeAttackRange: 3
