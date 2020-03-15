@@ -82,6 +82,7 @@ public class MoveContext
     public MoveTimeSlice[] mMoveTimeSlices;
     [System.NonSerialized] public int mCurrentSlice = 0;
     [System.NonSerialized] public int mTransitionSliceCount = 0;
+    [System.NonSerialized] public int mTotalTransitionSliceCount = 0;
     [System.NonSerialized] public MoveTimeSliceType mCurrentTimeSliceType;
     [System.NonSerialized] public float mCounter;
     [System.NonSerialized] public bool mHaveDealtDmg = false;
@@ -100,18 +101,18 @@ public class MoveContext
         mTotalTime = totalTime;
 
         //----------------------------------------------------------------------
-        int totalTransitionSlice = 0;
+        mTotalTransitionSliceCount = 0;
         float lastTimeSlicePropotion = 0.0f;
         foreach (var timeSlice in mMoveTimeSlices)
         {
             timeSlice.Load(mTotalTime, lastTimeSlicePropotion);
             if (timeSlice.mType == MoveTimeSliceType.Type_Transition)
-                ++totalTransitionSlice;
+                ++mTotalTransitionSliceCount;
             lastTimeSlicePropotion = timeSlice.mTimeSlicePropotion;
         }
 
         mOwnerMoveIndex = moveId;
-        Assert.AreEqual(totalTransitionSlice, totalTransitionMove, $"{mOwnerMoveIndex } MoveContext [transition time slice] count not match [transition move count]");
+        Assert.AreEqual(mTotalTransitionSliceCount, totalTransitionMove, $"{mOwnerMoveIndex } MoveContext [transition time slice] count not match [transition move count]");
 
         totalSliceCount = mMoveTimeSlices.Length;
         Reset();

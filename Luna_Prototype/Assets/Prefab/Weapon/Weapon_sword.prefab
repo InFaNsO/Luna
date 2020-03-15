@@ -246,6 +246,7 @@ MonoBehaviour:
       type: 3}
     mFirePosition: {fileID: 7576862504306509515}
     mAnimationClip: {fileID: 7400000, guid: 34e4a8924237d8744827911dee2addbd, type: 2}
+    isMelee: 1
   - name: basic_attack_combo_0
     mIsAirMove: 0
     mDamage: 20
@@ -267,6 +268,7 @@ MonoBehaviour:
       type: 3}
     mFirePosition: {fileID: 4618335564853006436}
     mAnimationClip: {fileID: 7400000, guid: 78c9de21616b0044fb35294ec191256a, type: 2}
+    isMelee: 1
   - name: basic_attack_combo_1
     mIsAirMove: 0
     mDamage: 20
@@ -292,6 +294,7 @@ MonoBehaviour:
       type: 3}
     mFirePosition: {fileID: 8135096088201637637}
     mAnimationClip: {fileID: 7400000, guid: eee50da6bc88902438607bc7898cd13e, type: 2}
+    isMelee: 1
   - name: basic_attack_combo_2
     mIsAirMove: 1
     mDamage: 40
@@ -319,6 +322,7 @@ MonoBehaviour:
       type: 3}
     mFirePosition: {fileID: 8135096088201637637}
     mAnimationClip: {fileID: 7400000, guid: e30fc09fa28cef945b7ce23c3eb8c55d, type: 2}
+    isMelee: 1
   mAirMoveIndex: 0
   InLevelBody: {fileID: 8750058408465014227}
   mWeaponBody: {fileID: 0}
@@ -331,6 +335,7 @@ MonoBehaviour:
   mTargetPos: {x: 0, y: 0, z: 0}
   mIsAttacking: 0
   mOwner: {fileID: 0}
+  mComboBar: {fileID: 0}
 --- !u!50 &2856706057600177519
 Rigidbody2D:
   serializedVersion: 4
@@ -757,10 +762,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6606600559324767001}
     m_Modifications:
-    - target: {fileID: 1844191813266838, guid: 968c924d2be019d4b9e67647551eec3e, type: 3}
-      propertyPath: m_Name
-      value: CFX4 Aura Bubble C
-      objectReference: {fileID: 0}
     - target: {fileID: 4299952606933750, guid: 968c924d2be019d4b9e67647551eec3e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.05
@@ -816,6 +817,10 @@ PrefabInstance:
     - target: {fileID: 4299952606933750, guid: 968c924d2be019d4b9e67647551eec3e, type: 3}
       propertyPath: m_LocalScale.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1844191813266838, guid: 968c924d2be019d4b9e67647551eec3e, type: 3}
+      propertyPath: m_Name
+      value: CFX4 Aura Bubble C
       objectReference: {fileID: 0}
     - target: {fileID: 198858562690846188, guid: 968c924d2be019d4b9e67647551eec3e,
         type: 3}
