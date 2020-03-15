@@ -103,7 +103,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2407043931451807729}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.9, y: 0.036, z: 0}
+  m_LocalPosition: {x: 0.52, y: 0.036, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8064114535432841098}
@@ -133,7 +133,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4199664946097683278}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.89, y: 0.01, z: -1.599683}
+  m_LocalPosition: {x: 0.68, y: 0.01, z: -1.599683}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8064114535432841098}
@@ -242,7 +242,7 @@ MonoBehaviour:
       - mType: 4
         mTimeSlicePropotion: 1
     mToMoveId: 
-    mBullet: {fileID: 679799675015805979, guid: bfcf100f8ac490e41a7fb3c3a6c9af3d,
+    mBullet: {fileID: 679799675015805979, guid: 16982ae8ef5629346b5f83e8db9434d3,
       type: 3}
     mFirePosition: {fileID: 7576862504306509515}
     mAnimationClip: {fileID: 7400000, guid: 7b0eb42d0f71ef6439ab10f07e88925f, type: 2}
@@ -263,7 +263,7 @@ MonoBehaviour:
       - mType: 4
         mTimeSlicePropotion: 0.99
     mToMoveId: 02000000
-    mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05,
+    mBullet: {fileID: 679799675015805979, guid: 66fe876025037244bad159cdf4795571,
       type: 3}
     mFirePosition: {fileID: 4618335564853006436}
     mAnimationClip: {fileID: 7400000, guid: 38bd1183b4801c5488add7a66e90f422, type: 2}
@@ -275,14 +275,18 @@ MonoBehaviour:
       mMoveTimeSlices:
       - mType: 1
         mTimeSlicePropotion: 0.2
-      - mType: 0
-        mTimeSlicePropotion: 0.5
+      - mType: 2
+        mTimeSlicePropotion: 0.25
+      - mType: 2
+        mTimeSlicePropotion: 0.3
+      - mType: 2
+        mTimeSlicePropotion: 0.4
       - mType: 2
         mTimeSlicePropotion: 0.7
       - mType: 4
         mTimeSlicePropotion: 1
     mToMoveId: 
-    mBullet: {fileID: 679799675015805979, guid: 1714a3cdea6ea8f429ef574c03771f05,
+    mBullet: {fileID: 679799675015805979, guid: 5a424f2e4c011e643b9690e19a19a0bd,
       type: 3}
     mFirePosition: {fileID: 8135096088201637637}
     mAnimationClip: {fileID: 7400000, guid: e126156b949110447bf0ffa6e1aa4b84, type: 2}
@@ -600,7 +604,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7824953579075252853}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.189, y: 0.085, z: -1.599683}
+  m_LocalPosition: {x: 0.21, y: 0.15, z: -1.599683}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8064114535432841098}

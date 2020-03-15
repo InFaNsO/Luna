@@ -1,0 +1,653 @@
+fileFormatVersion: 2
+guid: 98b524eb9984bf049abe5906fff8a40b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6037390979130515900
+    second: Sword_Air_Dash_1_0
+  - first:
+      213: 8001886993660409688
+    second: Sword_Air_Dash_1_1
+  - first:
+      213: -4830350524621146005
+    second: Sword_Air_Dash_1_2
+  - first:
+      213: 5829129592851056026
+    second: Sword_Air_Dash_1_3
+  - first:
+      213: -1191355225341562862
+    second: Sword_Air_Dash_1_4
+  - first:
+      213: 7872832805424189856
+    second: Sword_Air_Dash_1_5
+  - first:
+      213: -8196344938226424493
+    second: Sword_Air_Dash_1_6
+  - first:
+      213: -6398519853357016471
+    second: Sword_Air_Dash_1_7
+  - first:
+      213: 2477476475935375113
+    second: Sword_Air_Dash_1_8
+  - first:
+      213: 6076099338861664644
+    second: Sword_Air_Dash_1_9
+  - first:
+      213: -2499708945916460148
+    second: Sword_Air_Dash_1_10
+  - first:
+      213: -6199921719836796945
+    second: Sword_Air_Dash_1_11
+  - first:
+      213: -6424732384541342952
+    second: Sword_Air_Dash_1_12
+  - first:
+      213: -7265407617173076738
+    second: Sword_Air_Dash_1_13
+  - first:
+      213: -2548011310601741831
+    second: Sword_Air_Dash_1_14
+  - first:
+      213: -8270038083533559524
+    second: Sword_Air_Dash_1_15
+  - first:
+      213: 3093762907900561295
+    second: Sword_Air_Dash_1_16
+  - first:
+      213: 6766311359670805036
+    second: Sword_Air_Dash_1_17
+  - first:
+      213: -8265504187182175754
+    second: Sword_Air_Dash_1_18
+  - first:
+      213: 728491068757790867
+    second: Sword_Air_Dash_1_19
+  - first:
+      213: 2828217123387898913
+    second: Sword_Air_Dash_1_20
+  - first:
+      213: 1326991250468980989
+    second: Sword_Air_Dash_1_21
+  - first:
+      213: 7761200956343607485
+    second: Sword_Air_Dash_1_22
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 786
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cc67c8871538c6747a400d3471661cf0
+      internalID: 6037390979130515900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_1
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 786
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668f8791f1725c440b75538217cda649
+      internalID: 8001886993660409688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_2
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 786
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25db5348c404c644aaa4f1df995afaa6
+      internalID: -4830350524621146005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_3
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 786
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 540afc02f8d95a2489dad868420dbc8b
+      internalID: 5829129592851056026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_4
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 786
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee9940acdff42d143b60b1404956e0a7
+      internalID: -1191355225341562862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 524
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 940aa3bd380bf0f4cbcc35b24f22035a
+      internalID: 7872832805424189856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_6
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 524
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2de2f223738bf804d9b48204a95d6e22
+      internalID: -8196344938226424493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_7
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 524
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d649c199fb378684ab1319998e8494f1
+      internalID: -6398519853357016471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_8
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 524
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcea716f831966d4cbb4f0c1d3e46fae
+      internalID: 2477476475935375113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_9
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 524
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae2fdeb4da91533439cd01f7a5b0e8dc
+      internalID: 6076099338861664644
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_10
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 524
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232b31556d51cae4a8579577bca11710
+      internalID: -2499708945916460148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 262
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61b7417a11770374a8e603b986643d59
+      internalID: -6199921719836796945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_12
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 262
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c05eda9be74bea4da6dce5eb05a5da3
+      internalID: -6424732384541342952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_13
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 262
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5b269724a775d744931f7ee2cada141
+      internalID: -7265407617173076738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_14
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 262
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 176302e767d1dfd4ca2582fbecbdbf39
+      internalID: -2548011310601741831
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_15
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 262
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cf792b6440d06342a094c6dda3c2091
+      internalID: -8270038083533559524
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_16
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 262
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff0c538ce3636c74184e0ff2d85d4f1f
+      internalID: 3093762907900561295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9dcdc5d951dcea45bf272ce64e74a60
+      internalID: 6766311359670805036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_18
+      rect:
+        serializedVersion: 2
+        x: 648
+        y: 0
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4aa799c0b6ceeb145864f8a30f1ba2a0
+      internalID: -8265504187182175754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_19
+      rect:
+        serializedVersion: 2
+        x: 1296
+        y: 0
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 06876d747297a764eb3f1d03b9fb2ac8
+      internalID: 728491068757790867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_20
+      rect:
+        serializedVersion: 2
+        x: 1944
+        y: 0
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5be012a8ef21030439eb7e7a8faaddae
+      internalID: 2828217123387898913
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_21
+      rect:
+        serializedVersion: 2
+        x: 2592
+        y: 0
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02a5949aa19828847a2d22bc678be8e6
+      internalID: 1326991250468980989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_Air_Dash_1_22
+      rect:
+        serializedVersion: 2
+        x: 3240
+        y: 0
+        width: 648
+        height: 262
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4179023d208f32646a93995774a28656
+      internalID: 7761200956343607485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 8398be6d693985f4d9cef4494a9e68d1
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -166,6 +166,10 @@ public class Player : Character
 
     public void SwitchWeapon()
     {
+        if (CurrentWeapon.mIsAttacking)
+        {
+            return;
+        }
         if(mCurrentWeapon == mWeapon1)
         {
             if(mWeapon2 != null)

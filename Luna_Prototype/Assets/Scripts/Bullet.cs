@@ -29,6 +29,8 @@ public class Bullet : MonoBehaviour
     public ElementalAttributes mElement;
 
     int exitFrameCount = 1;
+
+    public Character mOwner;
     // MonoBehaviour Functions -----------------------------------------------------------------------------------------------
     public void Awake()
     {
@@ -75,6 +77,9 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        if (collision.gameObject.tag == "Util")
+            return;
+
         if ((collision.gameObject.tag != gameObject.tag) && (gameObject.tag != "Parry") && (collision.gameObject.tag != "Parry"))
         {
             if ((collision.GetComponent<Character>() != null) || ( !mIsMelee && collision.CompareTag("Ground")))
@@ -86,13 +91,47 @@ public class Bullet : MonoBehaviour
         }
         else if(collision.gameObject.tag == "Parry" /*&& !mIsMelee*/)
         {
-            Vector3 flipDir = Vector3.Normalize(gameObject.transform.position - collision.gameObject.transform.position);
-            mFireDirection = flipDir;
+            ParryAttackable parryObj = collision.gameObject.GetComponentInParent<ParryAttackable>();
+            ParryAttackable.ParryLevel parryLevel = parryObj.GetParryLevel(gameObject.transform.position);
+
+            gameObject.tag = collision.gameObject.transform.parent.tag;
+
+            switch (parryLevel)
+            {
+                case ParryAttackable.ParryLevel.poor:
+                    {
+                        Vector3 flipDir = Vector3.Normalize(mFireDirection + new Vector3(0.0f,1.0f,0.0f));
+                        mFireDirection = flipDir;
+                    }
+                    break;
+                case ParryAttackable.ParryLevel.great:
+                    {
+                        Vector3 flipDir = Vector3.Normalize(gameObject.transform.position - collision.gameObject.transform.position);
+                        mFireDirection = flipDir;
+                    }
+                    break;
+                case ParryAttackable.ParryLevel.perfect:
+                    if (mOwner)
+                    {
+                        Vector3 flipDir = Vector3.Normalize(mOwner.transform.position - gameObject.transform.position);
+                        mFireDirection = flipDir;
+                    }
+                    else
+                    {
+                        Vector3 flipDir = Vector3.Normalize(gameObject.transform.position - collision.gameObject.transform.position);
+                        mFireDirection = flipDir;
+                    }
+                    break;
+                default:
+                    break;
+            }
+
+            
         }
     }
 
     // Self-define functions --------------------------------------------------------------------------------------------------
-    public void Fire(string tag, float dmg, Vector3 initPos, Vector3 direction, WeaponType weaponType)
+    public void Fire(string tag, float dmg, Vector3 initPos, Vector3 direction, WeaponType weaponType, Character owner = null)
     {
         //mElement.RefreshStats();
 
@@ -110,6 +149,9 @@ public class Bullet : MonoBehaviour
             mSpeed = 0.0f;
         }
         gameObject.SetActive(true);
+
+        if (owner != null)
+            mOwner = owner;
     }
 
     public void Die()

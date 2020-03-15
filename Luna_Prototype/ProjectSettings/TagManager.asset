@@ -15,6 +15,7 @@ TagManager:
   - Parry
   - FxTemporaire
   - Hazard
+  - Util
   layers:
   - Default
   - TransparentFX
