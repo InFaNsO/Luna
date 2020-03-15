@@ -46,7 +46,9 @@ public class AttackState : State
             mAgent.mStateMachine.ChangeState(EnemyStates.Die.ToString());
             return;
         }
-        if (Vector3.Distance(mAgent.transform.position, mPlayer.transform.position) > mAgent.mPlayerVisibilityRange.radius)
+        var DIS = Vector3.Distance(mAgent.transform.position, mPlayer.transform.position);
+        Debug.Log("player distsance: " + DIS.ToString());
+        if (DIS > mAgent.mPlayerVisibilityRange.radius)
         {
             mAgent.mStateMachine.ChangeState(EnemyStates.Wander.ToString());
             return;

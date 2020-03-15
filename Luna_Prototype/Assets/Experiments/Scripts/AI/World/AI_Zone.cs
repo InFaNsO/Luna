@@ -9,7 +9,7 @@ public class AI_Zone : MonoBehaviour
     public float mMaxDistanceTravelled = 2.0f;
 
     [HideInInspector] public List<Platform> mPlatforms = new List<Platform>();
-    [HideInInspector] public List<Enemy> myEnemies = new List<Enemy>();
+     public List<Enemy> myEnemies = new List<Enemy>();
 
     [HideInInspector] public Transform mPlayerTransform;
     [HideInInspector] public PathFinding mPathFinding;
@@ -48,7 +48,7 @@ public class AI_Zone : MonoBehaviour
 
     public void Register(Enemy enem)
     {
-        if (enem.mZone == this)
+        if (enem.mZone != null)
             return;
 
         myEnemies.Add(enem);
@@ -62,13 +62,7 @@ public class AI_Zone : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        var player = collision.GetComponent<Player>();
-        if (player != null)
-        {
-            AwakeEnemies();
-            mPlayerTransform = collision.GetComponent<Transform>();
-            return;
-        }
+
         var enem = collision.GetComponentInParent<Enemy>();
         if(enem != null)
         {
@@ -83,16 +77,9 @@ public class AI_Zone : MonoBehaviour
         }
     }
 
-    private void OnTriggerExit2D(Collider2D collision)
-    {
-        var player = collision.GetComponent<Player>();
-        if (player != null)
-        {
-            SleepEnemies();
-        }
-    }
 
-    void AwakeEnemies()
+
+    public void AwakeEnemies()
     {
         for (int i = 0; i < myEnemies.Count; ++i)
         {
@@ -100,7 +87,7 @@ public class AI_Zone : MonoBehaviour
             myEnemies[i].mRigidBody.simulated = true;
         }
     }
-    void SleepEnemies()
+    public void SleepEnemies()
     {
         for (int i = 0; i < myEnemies.Count; ++i)
         {

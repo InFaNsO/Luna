@@ -32,7 +32,8 @@ public class SteeringModule : MonoBehaviour
             return;
 
         Vector3 force = Calculate() * Time.deltaTime;
-        if(!CanFly)
+        force.z = 0.0f;
+        if (!CanFly)
             force.y = 0.0f;
         //mAgentBody.AddRelativeForce(force);
 
