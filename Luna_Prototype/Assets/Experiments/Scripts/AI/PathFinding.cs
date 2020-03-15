@@ -121,11 +121,11 @@ public class PathFinding : MonoBehaviour
                 if (i == j)
                     continue;
 
-                if (mPlats[j].Left.pos.x < xLeft && mPlats[j].Right.pos.x > xLeft && mPlats[j].Right.pos.y < mPlats[i].Right.pos.y)
+                if (mPlats[j].Left.pos.x < xLeft && mPlats[j].Right.pos.x > xLeft && mPlats[j].Right.pos.y < mPlats[i].Right.pos.y && mPlats[j].Right.pos.y - mPlats[i].Right.pos.y < length)
                 {
                     possibleLeft.Add(mPlats[j]);
                 }
-                if (mPlats[j].Left.pos.x < xRight && mPlats[j].Right.pos.x > xRight && mPlats[j].Right.pos.y < mPlats[i].Right.pos.y)
+                if (mPlats[j].Left.pos.x < xRight && mPlats[j].Right.pos.x > xRight && mPlats[j].Right.pos.y < mPlats[i].Right.pos.y && mPlats[j].Right.pos.y - mPlats[i].Right.pos.y < length)
                 {
                     possibleRight.Add(mPlats[j]);
                 }

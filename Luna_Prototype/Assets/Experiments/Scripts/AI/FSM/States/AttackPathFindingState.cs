@@ -2,68 +2,86 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ChasePathfindingState : State
+public class AttackPathFindingState : State
 {
     Enemy mAgent;
     Player mPlayer;
 
     Collider2D mPlayerCollider;
+    Weapon myWeapon;
 
     PathFinding finder;
-
-    int mPlayerNodeID = 0;
+    bool steeringOff = false;
+    int mPlayerNodeID = -1;
+    // Start is called before the first frame update    
     [SerializeField] float LowJumpMultiplier = 0.8f;
     [SerializeField] float HighJumpMultiplier = 1.0f;
-
-    // Start is called before the first frame update
     void Start()
     {
         mAgent = GetComponentInParent<Enemy>();
+
     }
 
     public override void Enter()
     {
+        finder = mAgent.mZone.mPathFinding;
         mPlayer = mAgent.mZone.mPlayerTransform.GetComponent<Player>();
         mPlayerCollider = mPlayer.GetComponent<Collider2D>();
 
         mAgent.mSteering.TurnAllOff();
-        mAgent.mSteering.SetActive(SteeringType.Arrive, true);
-        mAgent.mSteering.SetActive(SteeringType.Seek, true);
+        SetSteering();
 
-        mAgent.GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
-        finder = mAgent.mZone.mPathFinding;
 
-        UpdatePath();
+        mAgent.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+
+        myWeapon = mAgent.GetComponentInChildren<Weapon>();
+
+        mAgent.mAgent.mTarget = mPlayer.transform.position;
+        CheckTurn();
     }
 
     public override void MyUpdate()
     {
+        mAgent.mAgent.mTarget = mPlayer.transform.position;
         CheckTurn();
 
-        //check for states
         if (!mAgent.myHealth.IsAlive())
         {
             mAgent.mStateMachine.ChangeState(EnemyStates.Die.ToString());
             return;
         }
-        if (Vector3.Distance(mAgent.transform.position, mPlayer.transform.position) <= mAgent.mAttackRange.radius)
-        {
-            mAgent.mStateMachine.ChangeState(EnemyStates.Attack.ToString());
-            return;
-        }
-        if (!mAgent.mPlayerVisibilityRange.IsTouching(mPlayerCollider) && mAgent.mAgent.mPath.Count <= 1)
+        var DIS = Vector3.Distance(mAgent.transform.position, mPlayer.transform.position);
+        Debug.Log("player distsance: " + DIS.ToString());
+        if (DIS > mAgent.mPlayerVisibilityRange.radius && mAgent.mAgent.mPath.Count <= 1)
         {
             mAgent.mStateMachine.ChangeState(EnemyStates.Wander.ToString());
             return;
         }
-        int pnid = finder.GetNearestNodeID(mPlayer.transform.position);
 
-        if (mPlayerNodeID != pnid)
-            UpdatePath(pnid);
-        else if (mAgent.mAgent.mPath.Count == 0)
-            UpdatePath();
 
-        UpdateNode();
+        if (Vector3.Distance(mAgent.transform.position, mPlayer.transform.position) <= mAgent.mAttackRange.radius)
+        {
+            if (!steeringOff)
+            {
+                mAgent.mSteering.TurnAllOff();
+                steeringOff = true;
+            }
+            myWeapon.Attack(true, mPlayer.transform.position);
+        }
+        else if (steeringOff)
+            SetSteering();
+
+        if (!steeringOff)
+        {
+            int pnid = finder.GetNearestNodeID(mPlayer.transform.position);
+
+            if (mPlayerNodeID != pnid)
+                UpdatePath(pnid);
+            else if (mAgent.mAgent.mPath.Count == 0)
+                UpdatePath();
+
+            UpdateNode();
+        }
     }
 
     void CheckTurn()
@@ -74,6 +92,12 @@ public class ChasePathfindingState : State
             mAgent.Turn();
     }
 
+    void SetSteering()
+    {
+        mAgent.mSteering.SetActive(SteeringType.Arrive, true);
+        mAgent.mSteering.SetActive(SteeringType.Seek, true);
+        steeringOff = false;
+    }
     void UpdatePath(int id = -1)
     {
         if (id == -1)
@@ -91,9 +115,9 @@ public class ChasePathfindingState : State
         mAgent.mAgent.mPath.RemoveAt(0);
     }
 
+
     void UpdateNode()
     {
-
         bool isX = (int)mAgent.transform.position.x == (int)mAgent.mAgent.mTarget.x;
         bool isClose = mAgent.IsNearTarget(mAgent.mNodeRange.radius);
         if (isClose || isX)
@@ -122,50 +146,14 @@ public class ChasePathfindingState : State
             }
 
         }
-
         if(mAgent.mAgent.mPath.Count > 0)
             mAgent.mAgent.mPath[mAgent.mAgent.mPath.Count - 1] = mPlayer.transform.position;
     }
+
     public override void DebugDraw()
     {
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawLine(mAgent.transform.position, mAgent.transform.position + new Vector3(mAgent.mRigidBody.velocity.x * 10, mAgent.mRigidBody.velocity.y * 10, 0.0f));
-
-        Gizmos.DrawWireSphere(mAgent.mAgent.mTarget, 0.5f);
-
-        Gizmos.color = Color.green;
-
-        if (mAgent.mAgent.mPath.Count == 0)
-            return;
-
-        Gizmos.DrawWireSphere(mAgent.mAgent.mPath[mAgent.mAgent.mPath.Count - 1], 0.5f);
-
-        for (int i = 0; i < finder.mNodes.Count; ++i)
-        {
-            Gizmos.color = Color.magenta;
-            Gizmos.DrawWireSphere(finder.mNodes[i].pos, 0.3f);
-
-            Gizmos.color = Color.cyan;
-
-            for (int j = 0; j < finder.mNodes[i].childrenID.Count; ++j)
-            {
-                Gizmos.DrawLine(finder.mNodes[i].pos, finder.mNodes[finder.mNodes[i].childrenID[j]].pos);
-            }
-        }
-
-        var Path = mAgent.mAgent.mPath;
         Gizmos.color = Color.red;
-        if (Path.Count > 0)
-        {
-            for (int i = 1; i < Path.Count; ++i)
-            {
-                Gizmos.DrawWireSphere(Path[i - 1], 0.3f);
-                Gizmos.DrawLine(Path[i - 1], Path[i]);
-            }
-            Gizmos.DrawLine(Path[Path.Count - 1], mAgent.mZone.mPlayerTransform.position);
-        }
-        else
-            Gizmos.DrawLine(mAgent.transform.position, mAgent.mZone.mPlayerTransform.position);
+        Gizmos.DrawWireSphere(mAgent.mAgent.mTarget, 0.5f);
     }
 
     public override void Exit()
@@ -174,7 +162,7 @@ public class ChasePathfindingState : State
 
     public override string GetName()
     {
-        return EnemyStates.Chase.ToString();
+        return EnemyStates.Attack.ToString();
     }
 
 }
