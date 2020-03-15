@@ -8,6 +8,9 @@ public class EnvObj_Door : MonoBehaviour, EnvironmentalObject
     public string _name = "door";
     public bool locked = true;
     public bool collidePlayer = false;
+    public int mKeyCount = 1;
+    private int mKeyUsed = 0;
+
     public string GetObjectName()
     {
         return _name;
@@ -39,7 +42,11 @@ public class EnvObj_Door : MonoBehaviour, EnvironmentalObject
     {
         if(locked)
         {
-            locked = false;
+            ++mKeyUsed;
+            if (mKeyUsed >= mKeyCount)
+            {
+                locked = false;
+            }
         }
     }
 
@@ -60,9 +67,22 @@ public class EnvObj_Door : MonoBehaviour, EnvironmentalObject
             var inventory = collision.gameObject.GetComponent<Inventory>();
             if (inventory)
             {
-                var itemIndex = inventory.SearchEventItem("KeyDoor");
-                if (itemIndex != -1)
-                    inventory.UsingEventItem(itemIndex);
+                int keyCount = inventory.GetSpecificEventItem("KeyDoor");
+
+                if (keyCount >= mKeyCount)
+                {
+                    for (int i = 0; i < mKeyCount; i++)
+                    {
+                        var itemIndex = inventory.SearchEventItem("KeyDoor");
+                        if (itemIndex != -1)
+                            inventory.UsingEventItem(itemIndex);
+                    }
+                }
+                else
+                {
+                    return;
+                }
+                
             }
         }
     }

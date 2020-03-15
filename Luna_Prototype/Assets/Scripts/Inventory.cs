@@ -119,7 +119,18 @@ public class Inventory : MonoBehaviour
         }                                                                                                                 //|
         return -1;                                                                                                        //|
     }                                                                                                                     //|
-                                                                                                                          //|
+
+    public int GetSpecificEventItem(string name) // return the index if found, otherwise return -1                             //|
+    {                                                                                                                     //|
+        int count = 0;
+        for (int i = 0; i < _eventItemSlots.Count; i++)                                                                   //|
+        {                                                                                                                 //|
+            if (_eventItemSlots[i].theItem.GetTypeName() == name)                                                         //|
+                ++count;
+        }                                                                                                                 //|
+        return count;                                                                                                        //|
+    }
+    //|
     public void UsingEventItem(int whichSlot)                                                                             //|
     {                                                                                                                     //|
         if (whichSlot > _eventItemSlots.Count - 1)                                                                        //|
