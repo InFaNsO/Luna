@@ -174,11 +174,11 @@ public class UIManager : MonoBehaviour
     }
 
 
-    public void PopUpMessageBox()
+    public void PopUpMessageBox(float duration, string text, Sprite background)
     {
-        if (currentCanvas == inGamePrefab)
+        //if (currentCanvas == inGamePrefab)
         {
-            _uiInGame.PopUp_MsgBox();
+            _uiInGame.PopUp_MsgBox(duration,text,background);
         }
     }
 

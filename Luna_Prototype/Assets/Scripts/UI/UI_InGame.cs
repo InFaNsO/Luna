@@ -61,6 +61,10 @@ public class UI_InGame : MonoBehaviour, UI_Interface
 
     private UIManager _uIManager;
 
+    private Image _background;
+    private Text _messageText;
+
+
     //weapon slots
     private UI_InGame_WeaponSlot _weaponSlots;
 
@@ -92,6 +96,13 @@ public class UI_InGame : MonoBehaviour, UI_Interface
             msgBox_To = msgboxtrans.Find("msgbox_to").gameObject.transform;
             popUp_msgbox.transform.position = msgBox_From.position;
             _uiPopUpComponents.Add(popUp_msgbox);
+
+            //
+            var pmsgb = msgboxtrans.Find("popup_msgbox");
+            _messageText = pmsgb.Find("message").GetComponent<Text>();
+            _background = pmsgb.Find("background").GetComponent<Image>();
+            
+            //
             popUp_msgbox.SetActive(false);
         }
 
@@ -103,6 +114,8 @@ public class UI_InGame : MonoBehaviour, UI_Interface
 
             //item count
         _InGame_QuickSlot_Itemcount = transform.Find("quickslots_vertical").gameObject.GetComponent<UI_InGame_QuickSlot_itemcount>();
+
+
 
     }
 private void OnEnable()
@@ -159,10 +172,14 @@ private void OnEnable()
     {
         popUp_msgbox.GetComponentInChildren<Text>().text = text;
     }
-    public void PopUp_MsgBox()
+    public void PopUp_MsgBox(float duration,string text, Sprite background)
     {
         if (!msgBox_isActive)
         {
+            msgBox_stay_time = duration;
+            _messageText.text = text;
+            _background.sprite = background;
+
             popUp_msgbox.SetActive(true);
             StartCoroutine("movebox");
         }
