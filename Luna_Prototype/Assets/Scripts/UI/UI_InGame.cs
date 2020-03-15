@@ -23,6 +23,10 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     [SerializeField] private Sprite _EmptySlot;
     public int selectedSlotInInventory { get; set; }
 
+    //event item slots
+    [Header("Event Item Slots")]
+    public List<Image> eventItemSlots = new List<Image>();
+
     //pop up pause menu
     [Header("Pause")]
     [SerializeField]
@@ -57,7 +61,18 @@ public class UI_InGame : MonoBehaviour, UI_Interface
 
     private UIManager _uIManager;
 
-    //
+    private Image _background;
+    private Text _messageText;
+
+
+    //weapon slots
+    private UI_InGame_WeaponSlot _weaponSlots;
+
+    //item count
+    private UI_InGame_QuickSlot_itemcount _InGame_QuickSlot_Itemcount;
+
+
+
     private void Awake()
     {
         _inputController = new InputController();
@@ -81,13 +96,29 @@ public class UI_InGame : MonoBehaviour, UI_Interface
             msgBox_To = msgboxtrans.Find("msgbox_to").gameObject.transform;
             popUp_msgbox.transform.position = msgBox_From.position;
             _uiPopUpComponents.Add(popUp_msgbox);
+
+            //
+            var pmsgb = msgboxtrans.Find("popup_msgbox");
+            _messageText = pmsgb.Find("message").GetComponent<Text>();
+            _background = pmsgb.Find("background").GetComponent<Image>();
+            
+            //
             popUp_msgbox.SetActive(false);
         }
 
 
         selectedSlotInInventory = 0;
+
+        //weapon slots
+        _weaponSlots = transform.Find("weapon_slots").gameObject.GetComponent<UI_InGame_WeaponSlot>();
+
+            //item count
+        _InGame_QuickSlot_Itemcount = transform.Find("quickslots_vertical").gameObject.GetComponent<UI_InGame_QuickSlot_itemcount>();
+
+
+
     }
-    private void OnEnable()
+private void OnEnable()
     {
         _inputController.UIControl.Enable();
         if (_uIManager == null)
@@ -115,7 +146,14 @@ public class UI_InGame : MonoBehaviour, UI_Interface
         selectedSlotInInventory = 0;
 
     }
+    #region Weaponslot
+    public void UI_Ingame_UpdateWeaponSprite(Sprite currWeapon, Sprite secWeapon)
+    {
+        _weaponSlots.UI_Ingame_UpdateWeaponSprite(currWeapon, secWeapon);
+    }
 
+
+    #endregion
     #region Gauge
     public void UpdateHPGauge(float value)
     {
@@ -134,10 +172,14 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     {
         popUp_msgbox.GetComponentInChildren<Text>().text = text;
     }
-    public void PopUp_MsgBox()
+    public void PopUp_MsgBox(float duration,string text, Sprite background)
     {
         if (!msgBox_isActive)
         {
+            msgBox_stay_time = duration;
+            _messageText.text = text;
+            _background.sprite = background;
+
             popUp_msgbox.SetActive(true);
             StartCoroutine("movebox");
         }
@@ -274,5 +316,10 @@ public class UI_InGame : MonoBehaviour, UI_Interface
 
     //}
     #endregion
+
+    public void UpdateItemCount(int slot, int count)
+    {
+        _InGame_QuickSlot_Itemcount.UpdateItemCount(slot, count);
+    }
 
 }

@@ -25,6 +25,7 @@ public class UIManager : MonoBehaviour
     private EventSystem _eventSystem;
 
 
+
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
@@ -60,6 +61,9 @@ public class UIManager : MonoBehaviour
             ui.gameObject.SetActive(false);
         }
         currentCanvas = _uiInstances[0];
+
+
+
     }
     private void CreateUI(Canvas canvanPrefab)
     {
@@ -85,6 +89,19 @@ public class UIManager : MonoBehaviour
 
     #region public In-game UI Services
 
+    public void InGame_QuickSlot_Itemcount_UpdateItemCount(int slot, int count)
+    {
+        _uiInGame.UpdateItemCount(slot, count);
+    }
+
+
+    public void UI_Ingame_UpdateWeaponSprite(Sprite currWeapon, Sprite secWeapon)
+    {
+        _uiInGame.UI_Ingame_UpdateWeaponSprite(currWeapon, secWeapon);
+    }
+
+
+
     public void UpdateHPGauge(float val)
     {
         _uiInGame.UpdateHPGauge(val);
@@ -103,6 +120,18 @@ public class UIManager : MonoBehaviour
         Debug.Log("[UIManager] quick slot not avaliable, current scene does not contain such ui");
         return null;
     }
+
+    //-------------------------------------------------------------------------------------------------------//|
+    public List<Image> GetEventItemSlot()                                                                    //|
+    {                                                                                                        //|
+        if (currentCanvas == _uiInstances[(int)ECanvasType.InGame])                                          //|
+        {                                                                                                    //|
+            return _uiInGame.eventItemSlots;                                                                     //|--- [Mingzhuo Zhang] added 2020-03-12
+        }                                                                                                    //|
+        Debug.Log("[UIManager] event item slot not avaliable, current scene does not contain such ui");           //|
+        return null;                                                                                         //|
+    }                                                                                                        //|
+    //-------------------------------------------------------------------------------------------------------//|
 
     public int GetSelectedItemInInventory()
     {
@@ -145,11 +174,11 @@ public class UIManager : MonoBehaviour
     }
 
 
-    public void PopUpMessageBox()
+    public void PopUpMessageBox(float duration, string text, Sprite background)
     {
-        if (currentCanvas == inGamePrefab)
+        //if (currentCanvas == inGamePrefab)
         {
-            _uiInGame.PopUp_MsgBox();
+            _uiInGame.PopUp_MsgBox(duration,text,background);
         }
     }
 
