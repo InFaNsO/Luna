@@ -86,7 +86,8 @@ public class Enemy : Character
                 //1. Bullet.ElementAttribute = Player.ElementAttribute + Weapon.ElementAttribute                \\ TODO
                 //2. Bullet.ApplyDamage()                                                                       \\ TODO
                 GetHit(bullet.mElement);
-                GetHit(bullet.Damage, other.tag);
+                mLastGotHitPosition = other.gameObject.transform.position;              //|
+                GetHit(bullet.Damage, other.tag, mLastGotHitPosition);
                 var rb = GetComponent<Rigidbody2D>();
                 if (rb)
                 {
@@ -104,9 +105,10 @@ public class Enemy : Character
         }
     }
 
-    public void GetHit(float dmg, string tag)
+
+    public void GetHit(float dmg, string tag, Vector3 hitPosition)
     {
-        myHealth.TakeDamage(dmg);
+        GetHit(dmg, hitPosition);
 
         if ((mWeapon.GetAttackState() == AttacState.State_Parriable) && (tag == "Parry"))
         {

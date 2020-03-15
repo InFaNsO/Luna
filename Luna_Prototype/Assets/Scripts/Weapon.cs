@@ -63,6 +63,8 @@ public class Weapon : MonoBehaviour
 
     public Character mOwner;
 
+    public ComboBar mComboBar;
+
     // Getter & Setter -------------------------------------------------------------------------------------------------------
     //public float AttackSpeed { get { return mAttackSpeed; } set { mAttackSpeed = value; } }
 
@@ -114,6 +116,12 @@ public class Weapon : MonoBehaviour
         {
             mMoves[i].Load(gameObject.GetComponent<Weapon>(), mAnimator, i, mElement);
         }
+
+        if (GameObject.Find("ComboBar"))
+        {
+            mComboBar = GameObject.Find("ComboBar").GetComponent<ComboBar>();
+
+        }
     }
 
 
@@ -122,6 +130,7 @@ public class Weapon : MonoBehaviour
         if(mCurrentMoveIndex != -1)
         {
             mMoves[mCurrentMoveIndex].Update(Time.deltaTime);
+            
             if (mMoves[mCurrentMoveIndex].IsFinish())
             {
                 mCurrentMoveIndex = 0;

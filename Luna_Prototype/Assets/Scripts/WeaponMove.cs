@@ -28,6 +28,7 @@ public class WeaponMove
     public bool isMelee = true;
 
     // Getter & Setter -------------------------------------------------------------------------------------------------------
+    public MoveContext GetMoveContext() { return mMoveContext; }
     public float AttackSpeed { get { return mAttackSpendTime; } set { mAttackSpendTime = value; } }
 
     public void Load(Weapon weapon, Animator animator, int index, ElementalAttributes element)
@@ -59,6 +60,10 @@ public class WeaponMove
         mWeaponAnimator.SetBool("IsReseting", false);
         Core.Debug.Log($"{mAttackSpeedMutiplier}, {mMoveID}");
         mMoveContext.Active = true;
+        if (mWeapon.mComboBar)
+        {
+            mWeapon.mComboBar.Bind(GetMoveContext());
+        }
     }
 
     public void Exit()
@@ -67,6 +72,11 @@ public class WeaponMove
         //mWeaponAnimator.SetInteger("ToNextCombo", mToMoveId[ mMoveContext.GetTransitionSliceCount()]);
         mWeaponAnimator.SetFloat("PlaySpeed", 1.0f);
         mMoveContext.Reset();
+
+        if (mWeapon.mComboBar)
+        {
+            mWeapon.mComboBar.UnBind();
+        }
     }
 
     public void Update(float deltaTime)

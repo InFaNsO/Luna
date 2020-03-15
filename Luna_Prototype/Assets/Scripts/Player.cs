@@ -43,7 +43,7 @@ public class Player : Character
     public GameObject mWeaponPosition;
 
     public Vector3 LastGotHitPosition { get { return mLastGotHitPosition; } }       //|--- [Mingzhuo Zhang] Edit:  For Kevin(Element system)
-    private Vector3 mLastGotHitPosition;
+    
 
     private ParryAttackable mParryAttackable;
 
@@ -51,7 +51,9 @@ public class Player : Character
     // Getter & Setter
     public Weapon CurrentWeapon { get { return mCurrentWeapon; } }
 
+    private CameraController mMainCamera;
 
+    
     protected override void Start()
     {
         base.Start();
@@ -213,8 +215,11 @@ public class Player : Character
         return false;
     }
 
+    
     override public void GetHit(float dmg)
     {
+        mMainCamera.Shake();
+
         Debug.Log("[Player] Player receives damage");
         //if (mIsIFrameOn == false)
             //mCurrentHealth -= dmg;
@@ -302,9 +307,12 @@ public class Player : Character
             mWeapon2.Picked(gameObject, mWeaponPosition.transform.position);                     //|    // second argument should be the [weapon position] as a individual variable in future
         }                                                                                   //|
                                                                                             //|
-        //----------------------------------------------------------------------------------//|
-        //- End Edit -----------------------------------------------------------------------//|
-        //----------------------------------------------------------------------------------//|
+                                                                                            //----------------------------------------------------------------------------------//|
+                                                                                            //- End Edit -----------------------------------------------------------------------//|
+                                                                                            //----------------------------------------------------------------------------------//|
+
+        mMainCamera = GameObject.Find("Main Camera").GetComponent<CameraController>();
+        Assert.IsNotNull(mMainCamera, "[Player.cs] Can not find MainCamera controller in the scene.");
     }
 
     private void FixedUpdate()
@@ -343,9 +351,10 @@ public class Player : Character
             {     //|
                 if(bullet.mElement != null)
                     GetHit(bullet.mElement);
-                GetHit(bullet.Damage);
+                
                 mLastGotHitPosition = other.gameObject.transform.position;              //|
-            }                                                                           //|
+                GetHit(bullet.Damage, mLastGotHitPosition);
+            }                                                                       //|
         }                                                                               //|
     }                                                                                   //|
     //----------------------------------------------------------------------------------//|

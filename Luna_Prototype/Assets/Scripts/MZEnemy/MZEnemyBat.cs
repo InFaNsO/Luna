@@ -74,6 +74,7 @@ public class MZEnemyBat : Character
 
     States mCurrentState;
     // Start is called before the first frame update
+    
     new void Awake()
     {
         Assert.IsNotNull(mRangeAttackContext.mRangeBullet, "[Enemy_Bat] mRangeBullet is Null");
@@ -85,6 +86,7 @@ public class MZEnemyBat : Character
         mRigidBody = GetComponent<Rigidbody2D>();
 
         mRigidBody.gravityScale = 0.0f;
+        
 
         if (mDropPrefbs != null)
             mIsDropping = true;
@@ -170,7 +172,7 @@ public class MZEnemyBat : Character
                 Vector3 playerPos =mPlayer.transform.position;
 
                 //if (Vector3.SqrMagnitude(mPlayer.transform.position - transform.position) < mMeleeAttackRange * mMeleeAttackRange && !mMeleeAttackContext.isAttacked)
-                if(Vector3.Distance(transform.position, aiPath.destination) <= 0.1f && !mMeleeAttackContext.isAttacked)
+                if((Vector3.SqrMagnitude(mPlayer.transform.position - transform.position) < mMeleeAttackRange || Vector3.Distance(transform.position, aiPath.destination) <= 0.1f) && !mMeleeAttackContext.isAttacked)
                 {
                     mAnimationController.GoMeleeAttackAnimation();
                     mMeleeAttackContext.isAttacked = true;
@@ -182,7 +184,7 @@ public class MZEnemyBat : Character
                 break;
         }
 
-        
+       
     }
 
     void GoToIdle()
@@ -246,9 +248,9 @@ public class MZEnemyBat : Character
         newBullet.Fire(gameObject.tag, mMeleeAttackContext.mMeleeDamage, transform.position, Vector3.down, WeaponType.Melee);
     }
 
-    public void GetHit(float dmg, string tag)
+    public void GetHit(float dmg, string tag, Vector3 hitPosition)
     {
-        myHealth.TakeDamage(dmg);
+        GetHit(dmg, hitPosition);
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -261,7 +263,8 @@ public class MZEnemyBat : Character
                 //1. Bullet.ElementAttribute = Player.ElementAttribute + Weapon.ElementAttribute                \\ TODO
                 //2. Bullet.ApplyDamage()                                                                       \\ TODO
                 //GetHit(bullet.mElement);
-                GetHit(bullet.Damage, other.tag);
+                mLastGotHitPosition = other.gameObject.transform.position;              //|
+                GetHit(bullet.Damage, other.tag, mLastGotHitPosition);
                 var rb = GetComponent<Rigidbody2D>();
                 if (rb)
                 {
