@@ -74,6 +74,7 @@ public class MZEnemyBat : Character
 
     States mCurrentState;
     // Start is called before the first frame update
+    
     new void Awake()
     {
         Assert.IsNotNull(mRangeAttackContext.mRangeBullet, "[Enemy_Bat] mRangeBullet is Null");
@@ -85,6 +86,7 @@ public class MZEnemyBat : Character
         mRigidBody = GetComponent<Rigidbody2D>();
 
         mRigidBody.gravityScale = 0.0f;
+        
 
         if (mDropPrefbs != null)
             mIsDropping = true;
@@ -182,7 +184,7 @@ public class MZEnemyBat : Character
                 break;
         }
 
-        
+       
     }
 
     void GoToIdle()

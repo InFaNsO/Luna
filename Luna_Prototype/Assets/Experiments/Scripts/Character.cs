@@ -28,6 +28,7 @@ public class Character : MonoBehaviour
     //Keep Movement Track
     [HideInInspector] public bool IsFacingLeft = false;
 
+    private HealthBar mHealthBar;
 
     protected virtual void Awake()
     {
@@ -47,6 +48,7 @@ public class Character : MonoBehaviour
             element = new ElementalAttributes();
 
         //element.Randomize();        //Empty for now
+        mHealthBar = GetComponentInChildren<HealthBar>();
     }
 
     protected virtual void Start()
@@ -60,6 +62,8 @@ public class Character : MonoBehaviour
     {
         if (!myHealth.IsAlive())
             Die();
+
+        mHealthBar.UpdateHealthBar(myHealth.GetHealth() / myHealth.GetMaxHealth());
     }
 
 
