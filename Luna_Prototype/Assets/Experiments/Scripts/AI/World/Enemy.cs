@@ -110,7 +110,7 @@ public class Enemy : Character
     {
         GetHit(dmg, hitPosition);
 
-        if ((mWeapon.GetAttackState() == AttacState.State_Parriable) && (tag == "Parry"))
+        if ( mWeapon && (mWeapon.GetAttackState() == AttacState.State_Parriable) && (tag == "Parry"))
         {
             GetStun(1.5f);
         }
