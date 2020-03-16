@@ -64,6 +64,8 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     private Image _background;
     private Text _messageText;
 
+    private Text _timeCountDownText;
+
 
     //weapon slots
     private UI_InGame_WeaponSlot _weaponSlots;
@@ -104,6 +106,8 @@ public class UI_InGame : MonoBehaviour, UI_Interface
             
             //
             popUp_msgbox.SetActive(false);
+
+            _timeCountDownText = transform.Find("time_count_down").GetComponent<Text>();
         }
 
 
@@ -320,6 +324,12 @@ private void OnEnable()
     public void UpdateItemCount(int slot, int count)
     {
         _InGame_QuickSlot_Itemcount.UpdateItemCount(slot, count);
+    }
+
+    public void UpdateTimeCountDown(float time)
+    {
+        if (time < 0.0f) time = 0.0f;
+        _timeCountDownText.text = time.ToString("F2");
     }
 
 }

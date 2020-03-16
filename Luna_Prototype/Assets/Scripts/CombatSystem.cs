@@ -85,6 +85,7 @@ public class MoveContext
     [System.NonSerialized] public int mTotalTransitionSliceCount = 0;
     [System.NonSerialized] public MoveTimeSliceType mCurrentTimeSliceType;
     [System.NonSerialized] public float mCounter;
+    [System.NonSerialized] public float mTotalCounter;
     [System.NonSerialized] public bool mHaveDealtDmg = false;
     private int mOwnerMoveIndex;
 
@@ -141,8 +142,10 @@ public class MoveContext
                 }
                 mCounter = mMoveTimeSlices[mCurrentSlice].mSliceTotalTime;
             }                                                                    
-            mCounter -= deltaTime;                                               
-                                                                                 
+            mCounter -= deltaTime;
+            mTotalCounter += deltaTime;
+
+
         }                                                                        
     }                                                                            
                                                                                  
@@ -153,7 +156,8 @@ public class MoveContext
         mHaveDealtDmg = false;
         mCurrentSlice = 0;
         mTransitionSliceCount = 0;
-        mCounter = mMoveTimeSlices[0].mSliceTotalTime;         
+        mCounter = mMoveTimeSlices[0].mSliceTotalTime;
+        mTotalCounter = 0.0f;
     }
     
     public MoveTimeSliceType GetCurrentTimeSliceType()
