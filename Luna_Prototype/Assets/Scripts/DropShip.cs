@@ -10,6 +10,8 @@ public class DropShip : MonoBehaviour
     public float ShipTeleportDelay = 1.0f;
     public float ToWinSceneDelay = 3.0f;
 
+    public ParticleSystem mGetInShipParticle;
+
     void Awake()
     {
         mLocalLevelManager = GameObject.Find("LocalLevelManager").GetComponent<LocalLevelManager>();
@@ -31,6 +33,11 @@ public class DropShip : MonoBehaviour
                 mLocalLevelManager.mIsCountingDown = false;
 
                 other.gameObject.SetActive(false);
+                if(mGetInShipParticle)
+                {
+                    ParticleSystem newParticle = Instantiate(mGetInShipParticle, other.transform.position, Quaternion.identity);
+                    newParticle.Play();
+                }
                 StartCoroutine("TeleportShip");
                 StartCoroutine("ToWinScene");
             }
