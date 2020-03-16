@@ -94,13 +94,13 @@ public class Player : Character
 
     public float GetMoveSpeed()
     {
-        if (mCurrentWeapon && mCurrentWeapon.mIsAttacking)
+        if (mCurrentWeapon && mCurrentWeapon.mIsAttacking && isGrounded)
         {
             //return mMovementSpeed * 0.3f;
             return 0.0f;
         }
 
-        if (mParryAttackable.IsParrying())
+        if (mParryAttackable.IsParrying() && isGrounded)
         {
             return 0.0f;
         }
