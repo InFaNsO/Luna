@@ -66,6 +66,7 @@ public class Enemy : Character
     // Update is called once per frame
     void Update()
     {
+        base.Update();
         if (mIsStuned)
         {
             if (mStunCounter <= 0.0f)
