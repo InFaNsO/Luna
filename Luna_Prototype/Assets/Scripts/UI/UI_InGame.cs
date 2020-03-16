@@ -331,5 +331,10 @@ private void OnEnable()
         if (time < 0.0f) time = 0.0f;
         _timeCountDownText.text = time.ToString("F2");
     }
+    public void ClearTimeCountDown()
+    {
+        
+        _timeCountDownText.text = "";
+    }
 
 }

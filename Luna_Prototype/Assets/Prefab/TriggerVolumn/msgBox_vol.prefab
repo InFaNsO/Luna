@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sprite: {fileID: 21300008, guid: 86d5ee14dfb5a6342ad6aae1133f4561, type: 3}
-  text: svdbjbj
+  text: 
   duration_stay: 5
 --- !u!61 &3544260232238798089
 BoxCollider2D:

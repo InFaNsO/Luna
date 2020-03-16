@@ -35,7 +35,8 @@ public class DropShip : MonoBehaviour
                 other.gameObject.SetActive(false);
                 if(mGetInShipParticle)
                 {
-                    ParticleSystem newParticle = Instantiate(mGetInShipParticle, other.transform.position, Quaternion.identity);
+                    var spwanPos = new Vector3(other.transform.position.x, other.transform.position.y, -2.0f);
+                    ParticleSystem newParticle = Instantiate(mGetInShipParticle, spwanPos, Quaternion.identity);
                     newParticle.Play();
                 }
                 StartCoroutine("TeleportShip");

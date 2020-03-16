@@ -10,22 +10,26 @@ public class LocalLevelManager : MonoBehaviour
     //public UI_InGame _InGameUI; // [Rick H  replaced ]
     public GameObject mFinalBoss;
     public float mCountDown = 10.0f;
-    public bool mIsCountingDown = false; 
+    public float mStartCountDownDelay = 0.5f;
+    public bool mIsCountingDown = false;
+    private bool mIsStartDelay = false;
 
     void Start()
     {
         //Assert.IsNotNull(_InGameUI, "[LocalLevelManager] _InGameUI is null"); [Rick H Removed]
 
         mUIManager = ServiceLocator.Get<UIManager>();
+        mUIManager.ClearTimeCountDown();
     }
 
     void Update()
     {
         if (mFinalBoss!=null)
         {
-            if (!mFinalBoss.activeInHierarchy)
+            if (!mFinalBoss.activeInHierarchy && !mIsStartDelay)
             {
-                mIsCountingDown = true;
+                StartCoroutine("StartCountDelay");
+                mIsStartDelay = true;
             }
         }
 
@@ -38,5 +42,18 @@ public class LocalLevelManager : MonoBehaviour
                 ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.GameOverScene);
             }
         }
+    }
+
+    private IEnumerator StartCountDelay()
+    {
+        var localCounter = 0.0f;
+        while (localCounter < mStartCountDownDelay)
+        {
+            localCounter += Time.deltaTime;
+            yield return null;
+        }
+
+        mIsCountingDown = true;
+        yield return null;
     }
 }

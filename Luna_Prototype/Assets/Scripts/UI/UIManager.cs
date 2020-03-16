@@ -90,6 +90,10 @@ public class UIManager : MonoBehaviour
     {
         _uiInGame.UpdateTimeCountDown(time);
     }
+    public void ClearTimeCountDown()
+    {
+        _uiInGame.ClearTimeCountDown();
+    }
 
     #region public In-game UI Services
 
