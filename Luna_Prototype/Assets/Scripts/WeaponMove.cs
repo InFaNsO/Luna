@@ -72,16 +72,25 @@ public class WeaponMove
         //mWeaponAnimator.SetInteger("ToNextCombo", mToMoveId[ mMoveContext.GetTransitionSliceCount()]);
         mWeaponAnimator.SetFloat("PlaySpeed", 1.0f);
         mMoveContext.Reset();
-
         if (mWeapon.mComboBar)
         {
             mWeapon.mComboBar.UnBind();
         }
+
     }
 
     public void Update(float deltaTime)
     {
+        bool moveContextStatus = mMoveContext.Active;
         mMoveContext.Update(Time.deltaTime);
+        if (mMoveContext.Active != moveContextStatus && !mMoveContext.Active)
+        {
+            if (mWeapon.mComboBar)
+            {
+                mWeapon.mComboBar.UnBind();
+            }
+        }
+
 
         if (mMoveContext.Active)
         {
@@ -142,6 +151,7 @@ public class WeaponMove
     public void Reset()
     {
         mMoveContext.Reset();
+        
     }
 
     public void RefreshAnimator(Animator animator)

@@ -135,6 +135,7 @@ public class Weapon : MonoBehaviour
             {
                 mCurrentMoveIndex = 0;
                 mIsAttacking = false;
+                
             }
             if (mOwner != null && mOwner.isGrounded != true)
             {
@@ -204,6 +205,10 @@ public class Weapon : MonoBehaviour
                 mCurrentMoveIndex = currentMove.GetNextTransitionMoveIndex();
                 currentMove.Exit();
                 mMoves[mCurrentMoveIndex].Enter();
+                if (mComboBar)
+                {
+                    mComboBar.SpwanSuccessParticle();
+                }
             }
         }
 
@@ -213,6 +218,10 @@ public class Weapon : MonoBehaviour
     {
         mAnimator.SetBool("IsReseting", true);
         mAnimator.SetInteger("ToNextCombo", -1);
+        if (mComboBar)
+        {
+            mComboBar.UnBind();
+        }
         foreach (var move in mMoves)
         {
             move.Reset();
@@ -226,6 +235,10 @@ public class Weapon : MonoBehaviour
         {
             mAnimator.SetInteger("ToNextCombo", -1);
             mAnimator.SetBool("IsReseting", true);
+            if (mComboBar)
+            {
+                mComboBar.UnBind();
+            }
             currentMove.Reset();
         }
         //foreach (var move in mMoves)
