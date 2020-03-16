@@ -62,8 +62,10 @@ public class Character : MonoBehaviour
     {
         if (!myHealth.IsAlive())
             Die();
-
-        mHealthBar.UpdateHealthBar(myHealth.GetHealth() / myHealth.GetMaxHealth());
+        if (mHealthBar)
+        {
+            mHealthBar.UpdateHealthBar(myHealth.GetHealth() / myHealth.GetMaxHealth());
+        }
     }
 
 
