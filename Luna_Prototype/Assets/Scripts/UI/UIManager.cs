@@ -86,6 +86,10 @@ public class UIManager : MonoBehaviour
         _eventSystem.SetSelectedGameObject(gameObject);
     }
 
+    public void UpdateTimeCountDown(float time)
+    {
+        _uiInGame.UpdateTimeCountDown(time);
+    }
 
     #region public In-game UI Services
 

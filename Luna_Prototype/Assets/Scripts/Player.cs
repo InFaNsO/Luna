@@ -94,7 +94,7 @@ public class Player : Character
 
     public float GetMoveSpeed()
     {
-        if (mCurrentWeapon && mCurrentWeapon.mIsAttacking && isGrounded)
+        if (mCurrentWeapon && mCurrentWeapon.mIsAttacking && isGrounded && !mCurrentWeapon.mMoves[mCurrentWeapon.mCurrentMoveIndex].mIsAirMove)
         {
             //return mMovementSpeed * 0.3f;
             return 0.0f;
