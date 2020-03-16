@@ -12,7 +12,7 @@ public class LocalLevelManager : MonoBehaviour
     public float mCountDown = 10.0f;
     public bool mIsCountingDown = false; 
 
-    void Awake()
+    void Start()
     {
         //Assert.IsNotNull(_InGameUI, "[LocalLevelManager] _InGameUI is null"); [Rick H Removed]
 

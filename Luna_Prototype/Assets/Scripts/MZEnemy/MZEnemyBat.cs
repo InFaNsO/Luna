@@ -298,7 +298,7 @@ public class MZEnemyBat : Character
         // [Maybe] Change anmation state
 
         //--------------------------//|
-        Destroy(gameObject);        //|--- Set this by routin function in future: For giving time to died animation 
+        gameObject.SetActive(false);        //|--- Set this by routin function in future: For giving time to died animation 
         //--------------------------//|
     }
 
