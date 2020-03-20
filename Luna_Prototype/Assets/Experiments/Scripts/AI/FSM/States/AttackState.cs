@@ -11,6 +11,8 @@ public class AttackState : State
     Weapon myWeapon;
 
     bool steeringOff = false;
+    float attackTime = 2.0f;
+    float attackTimer = 0.0f;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class AttackState : State
 
     public override void Enter()
     {
+        attackTimer = 0.0f;
         mPlayer = mAgent.mZone.mPlayerTransform.GetComponent<Player>();
         mPlayerCollider = mPlayer.GetComponent<Collider2D>();
 
@@ -46,16 +49,16 @@ public class AttackState : State
             mAgent.mStateMachine.ChangeState(EnemyStates.Die.ToString());
             return;
         }
-        var DIS = Vector3.Distance(mAgent.transform.position, mPlayer.transform.position);
+        var DIS = Vector2.Distance(mAgent.transform.position, mPlayer.transform.position);
         Debug.Log("player distsance: " + DIS.ToString());
-        if (DIS > mAgent.mPlayerVisibilityRange.radius)
+        Debug.Log("visablity: " + mAgent.mPlayerVisibilityRange.radius);
+        if (DIS > mAgent.mPlayerVisibilityRange.radius && attackTimer > attackTime)
         {
             mAgent.mStateMachine.ChangeState(EnemyStates.Wander.ToString());
             return;
         }
 
-
-        if (Vector3.Distance(mAgent.transform.position, mPlayer.transform.position) <= mAgent.mAttackRange.radius)
+        if (DIS <= mAgent.mAttackRange.radius)
         {
             if (!steeringOff)
             {
@@ -63,10 +66,12 @@ public class AttackState : State
                 steeringOff = true;
             }
             myWeapon.Attack(true, mPlayer.transform.position);
+            Debug.Log("Attacjing");
         }
         else if (steeringOff)
             SetSteering();
 
+        attackTimer += Time.deltaTime;
     }
 
     void CheckTurn()

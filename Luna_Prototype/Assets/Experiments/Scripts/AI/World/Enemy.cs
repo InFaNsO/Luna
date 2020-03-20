@@ -45,6 +45,7 @@ public class Enemy : Character
         {
             mWeapon = wep;
             mWeapon.Picked(gameObject, gameObject.transform.position); // second argument should be the [weapon position] as a individual variable in future
+            mWeapon.mComboBar = null;
         }
     }
     protected override void Awake()
