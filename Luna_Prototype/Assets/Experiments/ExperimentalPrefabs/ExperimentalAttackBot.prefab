@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8199868040933135255}
   m_Layer: 15
   m_Name: PlayerInRange
-  m_TagString: Untagged
+  m_TagString: Util
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -182,7 +182,7 @@ GameObject:
   - component: {fileID: 8708851596474915860}
   m_Layer: 15
   m_Name: AttackRange
-  m_TagString: Untagged
+  m_TagString: Util
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -228,7 +228,7 @@ GameObject:
   - component: {fileID: 7144519068752237058}
   m_Layer: 15
   m_Name: Physics
-  m_TagString: Untagged
+  m_TagString: Util
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -580,7 +580,7 @@ GameObject:
   - component: {fileID: 8457876105188489803}
   m_Layer: 15
   m_Name: NodeTrigger
-  m_TagString: Untagged
+  m_TagString: Util
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
