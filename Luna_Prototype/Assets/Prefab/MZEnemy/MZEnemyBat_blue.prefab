@@ -110,7 +110,7 @@ PrefabInstance:
     - target: {fileID: 2200604411466338840, guid: 9948346239cc64f44b745d936dff57a0,
         type: 3}
       propertyPath: mRangeAttackContext.toIdelDelay
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2200604411466338840, guid: 9948346239cc64f44b745d936dff57a0,
         type: 3}
@@ -120,17 +120,17 @@ PrefabInstance:
     - target: {fileID: 2200604412119525136, guid: 9948346239cc64f44b745d936dff57a0,
         type: 3}
       propertyPath: m_Color.r
-      value: 0.46751517
+      value: 0.24528302
       objectReference: {fileID: 0}
     - target: {fileID: 2200604412119525136, guid: 9948346239cc64f44b745d936dff57a0,
         type: 3}
       propertyPath: m_Color.g
-      value: 0.7883108
+      value: 0.6591951
       objectReference: {fileID: 0}
     - target: {fileID: 2200604412119525136, guid: 9948346239cc64f44b745d936dff57a0,
         type: 3}
       propertyPath: m_Color.b
-      value: 0.9622642
+      value: 0.9811321
       objectReference: {fileID: 0}
     - target: {fileID: 2200604411466338841, guid: 9948346239cc64f44b745d936dff57a0,
         type: 3}
