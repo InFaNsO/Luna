@@ -33,7 +33,10 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     private GameObject popUp_pauseGame;
     [SerializeField]
     private GameObject popUp_sureToQuit;
-    [SerializeField] private GameObject _firstSelectedInPause;
+    [SerializeField]
+    private GameObject popUp_soundSettings;
+    [SerializeField]
+    private GameObject _firstSelectedInPause;
 
 
     //pop up message box
@@ -129,10 +132,10 @@ private void OnEnable()
         if (_uIManager == null)
         {
             _uIManager = ServiceLocator.Get<UIManager>();
-            if (_uIManager != null)
-            {
-                _uIManager.SetSelected(_firstSelectedInPause);
-            }
+        }
+        if (_uIManager != null)
+        {
+            _uIManager.SetSelected(_firstSelectedInPause);
         }
 
         //if (_uIManager == null)
@@ -145,7 +148,7 @@ private void OnEnable()
         _inputController.UIControl.Disable();
 
     }
-
+ 
 
 
     public void ResetUI()
@@ -237,6 +240,9 @@ private void OnEnable()
     public void Button_PauseGame()
     {
         popUp_pauseGame.SetActive(true);
+        popUp_sureToQuit.SetActive(false);
+        popUp_soundSettings.SetActive(false);
+
         _uIManager.SetSelected(popUp_pauseGame.transform.Find("Quit").gameObject);
 
  
@@ -246,10 +252,7 @@ private void OnEnable()
     {
         Debug.Log("Button_Resume pressed");
         popUp_pauseGame.SetActive(false);
- 
-        Time.timeScale = 1.0f;
-
-    }
+     }
 
     public void Button_Quit()
     {
@@ -271,8 +274,26 @@ private void OnEnable()
         {
             ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);
         }
-        Time.timeScale = 1.0f;
+ 
     }
+
+    public void Button_SoundSettings()
+    {
+        Debug.Log("Button_SoundSettings pressed");
+        popUp_soundSettings.SetActive(true);
+        popUp_pauseGame.SetActive(false);
+        _uIManager.SetSelected(transform.Find("popup_soundsettings").transform.Find("musicslider").gameObject);
+
+    }
+    public void Button_BackToPauseMenu()
+    {
+        popUp_pauseGame.SetActive(true);
+        popUp_soundSettings.SetActive(false);
+        popUp_sureToQuit.SetActive(false);
+
+        _uIManager.SetSelected(_firstSelectedInPause);
+    }
+
     #endregion
 
     #region SelectItem/roll up down

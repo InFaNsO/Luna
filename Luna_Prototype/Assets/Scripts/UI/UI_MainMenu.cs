@@ -21,13 +21,15 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
         if (_uIManager == null)
         {
             _uIManager = ServiceLocator.Get<UIManager>();
-            if (_uIManager != null)
-            {
-                _uIManager.SetSelected(_firstSelected);
-            }
         }
+        if (_uIManager != null)
+        {
+            _uIManager.SetSelected(_firstSelected);
+        }
+
         //startScreen = transform.Find("cover").gameObject;
     }
+
     private void OnDisable()
     {
         
