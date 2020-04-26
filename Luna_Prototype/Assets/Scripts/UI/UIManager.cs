@@ -23,8 +23,7 @@ public class UIManager : MonoBehaviour
     private List<Canvas> _uiInstances = new List<Canvas>();
     private UI_InGame _uiInGame;//a reference to 'UI_Ingame' in 'inGamePrefab'
     private EventSystem _eventSystem;
-
-
+ 
 
     private void Awake()
     {
@@ -84,7 +83,7 @@ public class UIManager : MonoBehaviour
     public void SetSelected(GameObject gameObject)
     {
         _eventSystem.SetSelectedGameObject(gameObject);
-    }
+     }
 
     public void UpdateTimeCountDown(float time)
     {

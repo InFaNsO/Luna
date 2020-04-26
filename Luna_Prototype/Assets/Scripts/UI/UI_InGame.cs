@@ -33,6 +33,7 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     private GameObject popUp_pauseGame;
     [SerializeField]
     private GameObject popUp_sureToQuit;
+    [SerializeField] private GameObject _firstSelectedInPause;
 
 
     //pop up message box
@@ -126,12 +127,22 @@ private void OnEnable()
     {
         _inputController.UIControl.Enable();
         if (_uIManager == null)
+        {
             _uIManager = ServiceLocator.Get<UIManager>();
+            if (_uIManager != null)
+            {
+                _uIManager.SetSelected(_firstSelectedInPause);
+            }
+        }
+
+        //if (_uIManager == null)
+        //    _uIManager = ServiceLocator.Get<UIManager>();
         //_uIManager.SetSelected(transform.Find("pause").gameObject);
 
     }
     private void OnDisable()
     {
+        _inputController.UIControl.Disable();
 
     }
 
@@ -228,7 +239,7 @@ private void OnEnable()
         popUp_pauseGame.SetActive(true);
         _uIManager.SetSelected(popUp_pauseGame.transform.Find("Quit").gameObject);
 
-        //Time.timeScale = 0.0f;
+ 
     }
 
     public void Button_Resume()
