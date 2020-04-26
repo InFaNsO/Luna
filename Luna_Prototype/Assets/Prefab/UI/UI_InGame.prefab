@@ -2934,6 +2934,7 @@ MonoBehaviour:
   - {fileID: 8738601691814879620}
   popUp_pauseGame: {fileID: 9083532986769632388}
   popUp_sureToQuit: {fileID: 2287839799037480740}
+  _firstSelectedInPause: {fileID: 9083532986182026904}
   msgBox_From: {fileID: 9083532985955771093}
   msgBox_To: {fileID: 9083532985158938735}
   popUp_msgbox: {fileID: 9083532985424266463}
@@ -3520,6 +3521,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9083532986528994906}
     m_Modifications:
+    - target: {fileID: 8800044976919599119, guid: 0ac461da37158f845b15a2b18816bf9b,
+        type: 3}
+      propertyPath: m_Name
+      value: MiniMapCanvas
+      objectReference: {fileID: 0}
     - target: {fileID: 8800044976919599115, guid: 0ac461da37158f845b15a2b18816bf9b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3625,11 +3631,6 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8800044976919599119, guid: 0ac461da37158f845b15a2b18816bf9b,
-        type: 3}
-      propertyPath: m_Name
-      value: MiniMapCanvas
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0ac461da37158f845b15a2b18816bf9b, type: 3}
 --- !u!224 &4397771956293133838 stripped
@@ -3645,6 +3646,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 9083532986528994906}
     m_Modifications:
+    - target: {fileID: 7348066131525758380, guid: e0741b1a8bab2d74aaefab8910ab2e9f,
+        type: 3}
+      propertyPath: m_Name
+      value: eventItem_horizontal
+      objectReference: {fileID: 0}
     - target: {fileID: 6993760416461109581, guid: e0741b1a8bab2d74aaefab8910ab2e9f,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -3749,11 +3755,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Pivot.y
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7348066131525758380, guid: e0741b1a8bab2d74aaefab8910ab2e9f,
-        type: 3}
-      propertyPath: m_Name
-      value: eventItem_horizontal
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e0741b1a8bab2d74aaefab8910ab2e9f, type: 3}

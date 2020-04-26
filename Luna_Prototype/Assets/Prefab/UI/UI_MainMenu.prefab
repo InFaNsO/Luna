@@ -1413,7 +1413,7 @@ GameObject:
   - component: {fileID: 1871207717477208804}
   - component: {fileID: 3745040426027913229}
   m_Layer: 5
-  m_Name: U_MainMenu
+  m_Name: UI_MainMenu
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1515,6 +1515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78cfd9e684038a64eb0cf6ccb0b07637, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _firstSelected: {fileID: 1871207716569773285}
 --- !u!1 &1871207717521559017
 GameObject:
   m_ObjectHideFlags: 0
