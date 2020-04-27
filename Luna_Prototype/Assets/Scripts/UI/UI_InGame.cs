@@ -77,7 +77,8 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     //item count
     private UI_InGame_QuickSlot_itemcount _InGame_QuickSlot_Itemcount;
 
-
+    //sound settings
+    private AudioManager _audioManager;
 
     private void Awake()
     {
@@ -137,7 +138,10 @@ private void OnEnable()
         {
             _uIManager.SetSelected(_firstSelectedInPause);
         }
-
+        if (_audioManager == null)
+        {
+            _audioManager = ServiceLocator.Get<AudioManager>();
+        }
         //if (_uIManager == null)
         //    _uIManager = ServiceLocator.Get<UIManager>();
         //_uIManager.SetSelected(transform.Find("pause").gameObject);
@@ -295,7 +299,21 @@ private void OnEnable()
     }
 
     #endregion
+    #region Popup_SoundSettings
+    public void SetMasterVolume(float vol)
+    {
+        _audioManager.SetMasterVolume(vol);
+    }
+    public void SetMusicVolume(float vol)
+    {
+        _audioManager.SetMusicVolume(vol);
 
+    }
+    public void SetSFXVolume(float vol)
+    {
+        _audioManager.SetSFXVolume(vol);
+    }
+    #endregion
     #region SelectItem/roll up down
     public void SelectPrevItem(int inventoryCount)
     {

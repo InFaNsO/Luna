@@ -57,6 +57,8 @@ public class SceneBoot : MonoBehaviour
                     CreateUIManager(systemsParent);
                     break;
                 case ComponentType.AudioManager:
+                    CreateAudioManager(systemsParent);
+
                     break;
                 default:
                     break;
