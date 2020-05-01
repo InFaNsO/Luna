@@ -178,6 +178,10 @@ public class Player : Character
 
     public void SwitchWeapon()
     {
+        if (!CurrentWeapon)
+        {
+            return;
+        }
         if (CurrentWeapon.mIsAttacking)
         {
             return;
