@@ -290,7 +290,12 @@ public class MZEnemyBat : Character
     {
         //effect
         Debug.Log("enemy destory");
+        mAnimationController.GoDeathAnimation();
+       
+    }
 
+    public void RealDie()
+    {
         if (mIsDropping)
         {
             //spwn inventory

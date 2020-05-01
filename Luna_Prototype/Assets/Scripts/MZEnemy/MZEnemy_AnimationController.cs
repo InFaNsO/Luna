@@ -35,6 +35,11 @@ public class MZEnemy_AnimationController : MonoBehaviour
         mAnimator.SetFloat("attackAnimationSpeedMultiplyer", animationSpeedMutiplyer);
     }
 
+    public void GoDeathAnimation()
+    {
+        mAnimator.SetTrigger("Death");
+    }
+
     public void MeleeAttack()
     {
         mEnemyBat.MeleeAttack();
@@ -43,5 +48,10 @@ public class MZEnemy_AnimationController : MonoBehaviour
     public void RangeAttack()
     {
         mEnemyBat.RangeAttack();
+    }
+
+    public void Die()
+    {
+        mEnemyBat.RealDie();
     }
 }
