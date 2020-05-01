@@ -1,7 +1,7 @@
-![Game Logo](images/Logo.JPG)
-# Lune Bots
+![Game Logo](images/Logo.jpg)
+# Luna
 
-It is a Rogue-Like 2D platformer & shooter for PC, Made in Uinty 2019.
+It is a Rogue-Like 2D platformer & shooter for PC, Made in Unity 2019.
 
 ## Story
 In the future, climate change has massively changed the world that we know today. Areas of the seas have risen, sinking lands beneath the waves and once flourishing forests have turned into deserts with shells of dead trees. Storms rage along the coast, of all types. Snowstorms, thunderstorms, hailstorms, and if you’re unlucky enough, firestorms. Oxygen levels have dropped in highly populated areas, and people have been trying to build shelters to escape the wrath of the weather that they had brought upon themselves.
