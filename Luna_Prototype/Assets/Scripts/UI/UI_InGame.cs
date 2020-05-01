@@ -33,6 +33,10 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     private GameObject popUp_pauseGame;
     [SerializeField]
     private GameObject popUp_sureToQuit;
+    [SerializeField]
+    private GameObject popUp_soundSettings;
+    [SerializeField]
+    private GameObject _firstSelectedInPause;
 
 
     //pop up message box
@@ -73,7 +77,8 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     //item count
     private UI_InGame_QuickSlot_itemcount _InGame_QuickSlot_Itemcount;
 
-
+    //sound settings
+    private AudioManager _audioManager;
 
     private void Awake()
     {
@@ -126,15 +131,28 @@ private void OnEnable()
     {
         _inputController.UIControl.Enable();
         if (_uIManager == null)
+        {
             _uIManager = ServiceLocator.Get<UIManager>();
+        }
+        if (_uIManager != null)
+        {
+            _uIManager.SetSelected(_firstSelectedInPause);
+        }
+        if (_audioManager == null)
+        {
+            _audioManager = ServiceLocator.Get<AudioManager>();
+        }
+        //if (_uIManager == null)
+        //    _uIManager = ServiceLocator.Get<UIManager>();
         //_uIManager.SetSelected(transform.Find("pause").gameObject);
 
     }
     private void OnDisable()
     {
+        _inputController.UIControl.Disable();
 
     }
-
+ 
 
 
     public void ResetUI()
@@ -226,19 +244,19 @@ private void OnEnable()
     public void Button_PauseGame()
     {
         popUp_pauseGame.SetActive(true);
+        popUp_sureToQuit.SetActive(false);
+        popUp_soundSettings.SetActive(false);
+
         _uIManager.SetSelected(popUp_pauseGame.transform.Find("Quit").gameObject);
 
-        //Time.timeScale = 0.0f;
+ 
     }
 
     public void Button_Resume()
     {
         Debug.Log("Button_Resume pressed");
         popUp_pauseGame.SetActive(false);
- 
-        Time.timeScale = 1.0f;
-
-    }
+     }
 
     public void Button_Quit()
     {
@@ -260,10 +278,42 @@ private void OnEnable()
         {
             ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);
         }
-        Time.timeScale = 1.0f;
+ 
+    }
+
+    public void Button_SoundSettings()
+    {
+        Debug.Log("Button_SoundSettings pressed");
+        popUp_soundSettings.SetActive(true);
+        popUp_pauseGame.SetActive(false);
+        _uIManager.SetSelected(transform.Find("popup_soundsettings").transform.Find("musicslider").gameObject);
+
+    }
+    public void Button_BackToPauseMenu()
+    {
+        popUp_pauseGame.SetActive(true);
+        popUp_soundSettings.SetActive(false);
+        popUp_sureToQuit.SetActive(false);
+
+        _uIManager.SetSelected(_firstSelectedInPause);
+    }
+
+    #endregion
+    #region Popup_SoundSettings
+    public void SetMasterVolume(float vol)
+    {
+        _audioManager.SetMasterVolume(vol);
+    }
+    public void SetMusicVolume(float vol)
+    {
+        _audioManager.SetMusicVolume(vol);
+
+    }
+    public void SetSFXVolume(float vol)
+    {
+        _audioManager.SetSFXVolume(vol);
     }
     #endregion
-
     #region SelectItem/roll up down
     public void SelectPrevItem(int inventoryCount)
     {

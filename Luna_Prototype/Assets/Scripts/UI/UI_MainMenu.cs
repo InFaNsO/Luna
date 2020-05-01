@@ -11,6 +11,7 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
 
     private int levelToLoad = 1;
     private UIManager _uIManager;
+    [SerializeField] private GameObject _firstSelected;
     private void Awake()
     {
         //_uIManager = transform.parent.GetComponent<UIManager>();
@@ -18,9 +19,17 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
     private void OnEnable()
     {
         if (_uIManager == null)
+        {
             _uIManager = ServiceLocator.Get<UIManager>();
+        }
+        if (_uIManager != null)
+        {
+            _uIManager.SetSelected(_firstSelected);
+        }
+
         //startScreen = transform.Find("cover").gameObject;
     }
+
     private void OnDisable()
     {
         
@@ -49,6 +58,7 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
         //StartCoroutine(LoadLevelRoutine());
     }
 
+    //no start screen anymore
     public void Touch_StartScreen()
     {
         if (startScreen != null)
