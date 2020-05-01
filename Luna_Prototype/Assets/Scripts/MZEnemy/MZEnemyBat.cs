@@ -10,7 +10,7 @@ public class MZEnemyBat : Character
     public float mRangeAttackRange;
     public float mVisibilityRange;
 
-    public AIPath aiPath;
+    [HideInInspector] public AIPath aiPath;
     private GameObject mPlayer;
     public MZEnemy_AnimationController mAnimationController;
 
@@ -30,16 +30,16 @@ public class MZEnemyBat : Character
     public class IdleContext
     {
         public float idelTime = 2.0f;
-        public float idelCounter = 0.0f;
-        public float time;
-        public Vector3 newPos;
+        [HideInInspector] public float idelCounter = 0.0f;
+        [HideInInspector] public float time;
+        [HideInInspector] public Vector3 newPos;
     }
     [System.Serializable]
     public class GotoContext
     {
         public float attackDelay = 0.5f;
-        public float delayCounter = 0.0f;
-        public bool startDelay = false;
+        [HideInInspector] public float delayCounter = 0.0f;
+        [HideInInspector] public bool startDelay = false;
         public float gotoSpeed = 2.0f;
     }
     [System.Serializable]
@@ -49,11 +49,11 @@ public class MZEnemyBat : Character
         public int mMeleeDamage = 10;
 
         public float toIdelDelay = 3.0f;
-        public float toIdelCounter = 0.0f;
-        public bool isOnPlayerleft = false;
-        public float yDifferent = 0.0f;
-        public Vector3 destPos;
-        public bool isAttacked = false;
+        [HideInInspector] public float toIdelCounter = 0.0f;
+        [HideInInspector] public bool isOnPlayerleft = false;
+        [HideInInspector] public float yDifferent = 0.0f;
+        [HideInInspector] public Vector3 destPos;
+        [HideInInspector] public bool isAttacked = false;
         public float chargeSpeed = 5.0f;
     }
     [System.Serializable]
@@ -62,9 +62,9 @@ public class MZEnemyBat : Character
         public Bullet mRangeBullet;
         public int mRangeDamage = 10;
         public float toIdelDelay = 3.0f;
-        public float toIdelCounter = 0.0f;
+        [HideInInspector] public float toIdelCounter = 0.0f;
         public float attackSpeed = 1.0f;
-        public float attackSpeedCounter = 0.0f;
+        [HideInInspector] public float attackSpeedCounter = 0.0f;
     }
 
     public IdleContext mIdleContext;
@@ -79,6 +79,7 @@ public class MZEnemyBat : Character
     {
         Assert.IsNotNull(mRangeAttackContext.mRangeBullet, "[Enemy_Bat] mRangeBullet is Null");
         Assert.IsNotNull(mMeleeAttackContext.mMeleeBullet, "[Enemy_Bat] mMeleeBullet is Null");
+        Assert.AreNotEqual(0, mRangeAttackContext.attackSpeed);
         base.Awake();
 
         aiPath = GetComponent<AIPath>();
@@ -148,7 +149,7 @@ public class MZEnemyBat : Character
                 if (mRangeAttackContext.attackSpeedCounter >= mRangeAttackContext.attackSpeed)
                 {
                     aiPath.destination = gameObject.transform.position + Vector3.Normalize( mPlayer.transform.position - transform.position);
-                    mAnimationController.GoRangeAttackAnimation();
+                    mAnimationController.GoRangeAttackAnimation(1.0f / mRangeAttackContext.attackSpeed);
 
                     Vector3 dir = Vector3.Normalize(transform.position - mPlayer.transform.position);
                     //recoil force to make it looks good
@@ -204,7 +205,10 @@ public class MZEnemyBat : Character
         var playPos = mPlayer.transform.position;
         Vector3 dir = Vector3.Normalize(transform.position - mPlayer.transform.position);
         Vector3 attackPos = playPos + dir * mRangeAttackRange;
-        attackPos.y = mPlayer.transform.position.y + mRangeAttackRange;
+        //if (attackPos.y < mPlayer.transform.position.y)
+        //{
+            attackPos.y = mPlayer.transform.position.y + mRangeAttackRange * 0.5f;
+        //}
         aiPath.destination = attackPos;
         mCurrentState = States.goTo;
     }

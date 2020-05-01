@@ -28,9 +28,11 @@ public class MZEnemy_AnimationController : MonoBehaviour
         mAnimator.SetTrigger("MeleeAttack");
     }
 
-    public void GoRangeAttackAnimation()
+    public void GoRangeAttackAnimation(float animationSpeedMutiplyer)
     {
+        if (animationSpeedMutiplyer < 1.0f) animationSpeedMutiplyer = 1.0f;
         mAnimator.SetTrigger("RangeAttack");
+        mAnimator.SetFloat("attackAnimationSpeedMultiplyer", animationSpeedMutiplyer);
     }
 
     public void MeleeAttack()
