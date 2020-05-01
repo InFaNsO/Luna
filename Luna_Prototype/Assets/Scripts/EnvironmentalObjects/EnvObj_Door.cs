@@ -4,10 +4,22 @@ using UnityEngine;
 
 public class EnvObj_Door : MonoBehaviour, EnvironmentalObject
 {
-    public Sprite _sprite;
+    private SpriteRenderer mRenderer;
+    public Sprite _spriteClosed;
+    public Sprite _spriteOpened;
     public string _name = "door";
     public bool locked = true;
     public bool collidePlayer = false;
+    public float openDelay = 0.5f;
+    public float moveMaxSpeed = 5.0f;
+    public float moveStartSpeed = 0.5f;
+    public float acceleration = 1.0f;
+    public float moveDistance = 3.0f;
+    private float distanceMoved = 0.0f;
+    private float currentSpeed;
+    private float timer = 0.0f;
+    private Vector3 mTransform;
+
     public int mKeyCount = 1;
     private int mKeyUsed = 0;
 
@@ -18,7 +30,7 @@ public class EnvObj_Door : MonoBehaviour, EnvironmentalObject
 
     public Sprite GetSprite()
     {
-        return _sprite;
+        return mRenderer.sprite;
     }
 
     public void interact(ref Player thePlayer)
@@ -50,13 +62,42 @@ public class EnvObj_Door : MonoBehaviour, EnvironmentalObject
         }
     }
 
+    public void Start()
+    {
+        mRenderer = gameObject.GetComponent<SpriteRenderer>();
+        mRenderer.sprite = _spriteClosed;
+        currentSpeed = moveStartSpeed;
+    }
+
     public void Update()
     {
-       if(!locked)
-        {
+       if(locked)
+       {
+            mRenderer.sprite = _spriteClosed;
+       }
+       else
+       {
+            mRenderer.sprite = _spriteOpened;
             // Door opening logics
-            gameObject.SetActive(false);
-        }
+            if (timer > openDelay)
+            {
+                if(distanceMoved < moveDistance)
+                {
+                    mTransform.y = currentSpeed * Time.deltaTime;
+                    gameObject.transform.position += mTransform;
+                    distanceMoved += mTransform.y;
+                }
+                if(currentSpeed < moveMaxSpeed)
+                {
+                    currentSpeed += acceleration * Time.deltaTime;
+                }
+            }
+            else
+            {
+                timer += Time.deltaTime;
+            }
+       }
+       
     }
     private void OnCollisionEnter2D(Collision2D collision)
     {

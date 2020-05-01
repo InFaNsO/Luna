@@ -12,21 +12,20 @@ public class SimpleCheckPoint : MonoBehaviour
     // Checkpoint Trigger Function
     private void OnTriggerEnter2D(Collider2D collider)
     {
-        if(collider.CompareTag("Player") && activated == false && currentPoint == false)
+        if(collider.CompareTag("Player"))
         {
             Player = collider.gameObject;
-            activated = true;
-            currentPoint = true;
-            /*
-            if (Player.GetComponent<CheckPointTracker>() != null)
+            Player.GetComponent<CheckPointTracker>().ResetCheckpoints();
+            if (activated == false && currentPoint == false)
             {
-                Player.GetComponent<CheckPointTracker>().respawnPoint.GetComponent<SimpleCheckPoint>().currentPoint = false;
+                activated = true;
+                currentPoint = true;
+
+                CheckPointTracker mCPTracker = Player.GetComponent<CheckPointTracker>();
+                mCPTracker.respawnPoint = gameObject;
+                mCPTracker.SetRecordedHealth(Player.GetComponent<Player>().myHealth.GetHealth());
+                Instantiate(particleEffect, transform.position, new Quaternion());
             }
-            */
-
-
-            Player.GetComponent<CheckPointTracker>().respawnPoint = gameObject;
-            Instantiate(particleEffect, transform.position, new Quaternion());
         }
     }
 }
