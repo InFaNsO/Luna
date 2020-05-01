@@ -113,9 +113,9 @@ public class MZEnemyBat : Character
 
                 if (Vector2.Distance(transform.position, mPlayer.transform.position) <= mVisibilityRange)
                 {
-                        if (Vector2.Distance(transform.position, mPlayer.transform.position) <= mRangeAttackRange)        //ready to attack
-                            GoToRangeAttack();
-                        else                                    //Go to player
+                        //if (Vector2.Distance(transform.position, mPlayer.transform.position) <= mRangeAttackRange)        //ready to attack
+                        //    GoToRangeAttack();
+                        //else                                    //Go to player
                             GoToGoto();
                 }
                 break;
@@ -148,13 +148,13 @@ public class MZEnemyBat : Character
 
                 if (mRangeAttackContext.attackSpeedCounter >= mRangeAttackContext.attackSpeed)
                 {
-                    aiPath.destination = gameObject.transform.position + Vector3.Normalize( mPlayer.transform.position - transform.position);
+                    
                     mAnimationController.GoRangeAttackAnimation(1.0f / mRangeAttackContext.attackSpeed);
 
                     Vector3 dir = Vector3.Normalize(transform.position - mPlayer.transform.position);
                     //recoil force to make it looks good
-                    mRigidBody.velocity = Vector2.zero;
-                    mRigidBody.AddForce(dir * 100.0f * Time.deltaTime, ForceMode2D.Impulse);
+                    //mRigidBody.velocity = Vector2.zero;
+                    //mRigidBody.AddForce(dir * 100.0f * Time.deltaTime, ForceMode2D.Impulse);
 
                     mRangeAttackContext.attackSpeedCounter = 0.0f;
                 }
@@ -214,7 +214,7 @@ public class MZEnemyBat : Character
     }
     void GoToRangeAttack()
     {
-        aiPath.destination = gameObject.transform.position;
+        aiPath.destination = gameObject.transform.position + 10.0f * Vector3.Normalize(mPlayer.transform.position - transform.position);
 
         mRangeAttackContext.toIdelCounter = 0.0f;
         mRangeAttackContext.attackSpeedCounter = 0.0f;
