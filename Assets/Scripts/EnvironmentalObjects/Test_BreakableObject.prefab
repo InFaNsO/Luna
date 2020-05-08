@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 2020718450984871858}
   - component: {fileID: 2020718450984871859}
-  - component: {fileID: -7281942778732934670}
   - component: {fileID: 2020718450984871857}
   - component: {fileID: -5293375870331715186}
+  - component: {fileID: -3811349794119877518}
   m_Layer: 0
   m_Name: Test_BreakableObject
   m_TagString: Door
@@ -27,7 +27,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2020718450984871853}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -60.17, y: -13.32, z: 20.867188}
   m_LocalScale: {x: 2.2477841, y: 2.236058, z: 0}
   m_Children: []
@@ -84,35 +84,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-7281942778732934670
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2020718450984871853}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0eaf39bbf7dd10145835bb2ebbaa3060, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myHealth: {fileID: 0}
-  mRigidBody: {fileID: 0}
-  mJumpStrength: 2
-  mMovementSpeed: 2
-  isGrounded: 0
-  mAttackMomentumPos: {fileID: 0}
-  element: {fileID: 0}
-  knockBackX: 1
-  knockBackY: 1
-  mGetHitParticle: {fileID: 0}
-  IsFacingLeft: 0
-  notBroken: {fileID: 0}
-  broken: {fileID: 0}
-  particlePosOffset: {x: 0, y: 0, z: 0}
-  particleOnBroken: {fileID: 0}
-  audioOnHit: {fileID: 0}
-  audioOnBroken: {fileID: 0}
 --- !u!61 &2020718450984871857
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -162,9 +133,22 @@ MonoBehaviour:
   knockBackY: 1
   mGetHitParticle: {fileID: 0}
   IsFacingLeft: 0
-  notBroken: {fileID: 0}
-  broken: {fileID: 0}
+  notBroken: {fileID: 21300000, guid: 0cdd2b4b66b7e144eb8cb7d63eeccdcc, type: 3}
+  broken: {fileID: 3019376691678374917, guid: e51be20fd861c8a43ae57bcd89ac6f71, type: 3}
   particlePosOffset: {x: 0, y: 0, z: 0}
   particleOnBroken: {fileID: 0}
-  audioOnHit: {fileID: 0}
-  audioOnBroken: {fileID: 0}
+--- !u!114 &-3811349794119877518
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2020718450984871853}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fa1fe5d579d028d47b4e2e4734330a79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  health: 0
+  MaxHealth: 30
+  myElement: 0

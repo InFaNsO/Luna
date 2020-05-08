@@ -17,7 +17,9 @@ public class BreakableObj : Character
     // Start is called before the first frame update
     void Start()
     {
+        myHealth = GetComponent<Health>();
         spriteRenderer = GetComponent<SpriteRenderer>();
+        spriteRenderer.sprite = notBroken;
     }
 
     // Update is called once per frame
@@ -48,7 +50,10 @@ public class BreakableObj : Character
 
         if(!isbroken && myHealth.GetHealth() <= 0)
         {
-            Instantiate(particleOnBroken, transform.position + particlePosOffset, Quaternion.identity);
+            if (particleOnBroken != null)
+            {
+                Instantiate(particleOnBroken, transform.position + particlePosOffset, Quaternion.identity);
+            }
             isbroken = true;
         }
     }
