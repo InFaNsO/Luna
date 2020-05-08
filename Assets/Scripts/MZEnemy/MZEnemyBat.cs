@@ -291,7 +291,7 @@ public class MZEnemyBat : Character
         //effect
         Debug.Log("enemy destory");
         mAnimationController.GoDeathAnimation();
-       
+        base.mHealthBar.gameObject.SetActive(false);
     }
 
     public void RealDie()
