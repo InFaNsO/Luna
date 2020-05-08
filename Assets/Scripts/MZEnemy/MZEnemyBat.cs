@@ -97,6 +97,12 @@ public class MZEnemyBat : Character
     void Update()
     {
         base.Update();
+
+        if (mIsStuned)
+        {
+            return;
+        }
+
         switch (mCurrentState)
         {
             case States.none:
@@ -255,6 +261,18 @@ public class MZEnemyBat : Character
     public void GetHit(float dmg, string tag, Vector3 hitPosition)
     {
         GetHit(dmg, hitPosition);
+        GetStun();
+    }
+
+    private void GetStun()
+    {
+        mIsStuned = true;
+        mAnimationController.GoStunAnimation();
+    }
+
+    public void RestFromStun()
+    {
+        mIsStuned = false;
     }
 
     void OnTriggerEnter2D(Collider2D other)
