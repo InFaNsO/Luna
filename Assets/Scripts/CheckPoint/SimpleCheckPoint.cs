@@ -24,6 +24,8 @@ public class SimpleCheckPoint : MonoBehaviour
                 CheckPointTracker mCPTracker = Player.GetComponent<CheckPointTracker>();
                 mCPTracker.respawnPoint = gameObject;
                 mCPTracker.SetRecordedHealth(Player.GetComponent<Player>().myHealth.GetHealth());
+                mCPTracker.InitializeEnemyStates();
+
                 Instantiate(particleEffect, transform.position, new Quaternion());
             }
         }
