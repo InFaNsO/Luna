@@ -1,0 +1,832 @@
+fileFormatVersion: 2
+guid: 22255103b8c9c9447940129cb83571f0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -260926862486664126
+    second: Luna_WalkcycleL_0
+  - first:
+      213: 1019450766203586355
+    second: Luna_WalkcycleL_1
+  - first:
+      213: -3858603157964953988
+    second: Luna_WalkcycleL_2
+  - first:
+      213: 2730507570266253201
+    second: Luna_WalkcycleL_3
+  - first:
+      213: -1810809774442333035
+    second: Luna_WalkcycleL_4
+  - first:
+      213: -4966841855975970473
+    second: Luna_WalkcycleL_5
+  - first:
+      213: -880562830257278099
+    second: Luna_WalkcycleL_6
+  - first:
+      213: 1392383135857785606
+    second: Luna_WalkcycleL_7
+  - first:
+      213: -1556418688740369670
+    second: Luna_WalkcycleL_8
+  - first:
+      213: 273637169279852299
+    second: Luna_WalkcycleL_9
+  - first:
+      213: -4082322136278061995
+    second: Luna_WalkcycleL_10
+  - first:
+      213: -3325923266190229321
+    second: Luna_WalkcycleL_11
+  - first:
+      213: -5552836216019472554
+    second: Luna_WalkcycleL_12
+  - first:
+      213: -6505232625341480261
+    second: Luna_WalkcycleL_13
+  - first:
+      213: -8605972861028878091
+    second: Luna_WalkcycleL_14
+  - first:
+      213: -8814448775960286591
+    second: Luna_WalkcycleL_15
+  - first:
+      213: 7570200939486464447
+    second: Luna_WalkcycleL_16
+  - first:
+      213: -4545539147467363890
+    second: Luna_WalkcycleL_17
+  - first:
+      213: 7074946814356062294
+    second: Luna_WalkcycleL_18
+  - first:
+      213: -1438234367231414693
+    second: Luna_WalkcycleL_19
+  - first:
+      213: 5622784989653730046
+    second: Luna_WalkcycleL_20
+  - first:
+      213: -5959220304359029146
+    second: Luna_WalkcycleL_21
+  - first:
+      213: 8540350443321197019
+    second: Luna_WalkcycleL_22
+  - first:
+      213: -2570215081151508928
+    second: Luna_WalkcycleL_23
+  - first:
+      213: -9089218749284532020
+    second: Luna_WalkcycleL_24
+  - first:
+      213: -7522756773242381636
+    second: Luna_WalkcycleL_25
+  - first:
+      213: 544706902591621155
+    second: Luna_WalkcycleL_26
+  - first:
+      213: -3763280149880947370
+    second: Luna_WalkcycleL_27
+  - first:
+      213: 4424392200072713500
+    second: Luna_WalkcycleL_28
+  - first:
+      213: -85434391413420378
+    second: Luna_WalkcycleL_29
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 864
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46244d980b3100d47bdebee20d940e2d
+      internalID: -260926862486664126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_1
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 864
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b9e363eaffeb9f6478f5d94762e2ae45
+      internalID: 1019450766203586355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_2
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 864
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ba4f542c2a67f44ca9fc97afff32ad7
+      internalID: -3858603157964953988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_3
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 864
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bcb4270b0bee434880a98b10ecab686
+      internalID: 2730507570266253201
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_4
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 864
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 861ccaad964d78c48afc257c2b93b91f
+      internalID: -1810809774442333035
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_5
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 864
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d7d922907080e540b85c70b0de628e7
+      internalID: -4966841855975970473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 648
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c20b96e74a6ad6c4e98d3fa84c4f2032
+      internalID: -880562830257278099
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_7
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 648
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9246b99dde9143341adc969dc89aea1d
+      internalID: 1392383135857785606
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_8
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 648
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1dfed9f76156f1141ba204888a1e4392
+      internalID: -1556418688740369670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_9
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 648
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eade53a92ac3e5c478466d1b0b0cb7ab
+      internalID: 273637169279852299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_10
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 648
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80e8b4f7fed730a45b73f44a49251603
+      internalID: -4082322136278061995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_11
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 648
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d5b19addce495440b8cc83833238c39
+      internalID: -3325923266190229321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ccd5c732e0f745443b5997dac5a0ab69
+      internalID: -5552836216019472554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_13
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 432
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fecdb88c9c996948a287fd1b219999f
+      internalID: -6505232625341480261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_14
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 432
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c69ec6c7c5ae29429722919a03f7104
+      internalID: -8605972861028878091
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_15
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 432
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1f62072be2c4fb4cb3b42f8b3d6bb9d
+      internalID: -8814448775960286591
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_16
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 432
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1003c8ca59da7534c95af35c4cf28462
+      internalID: 7570200939486464447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_17
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 432
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cda4a098cab627948a32da775f301b00
+      internalID: -4545539147467363890
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 216
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ecc61886f8a3d674a9c2fc0e06b9b1cb
+      internalID: 7074946814356062294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_19
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 216
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce937baf08eda4c4c94ea3a9e50f8576
+      internalID: -1438234367231414693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_20
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 216
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9550e5e404ef3ed4b8594396dcb58259
+      internalID: 5622784989653730046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_21
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 216
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8ca5745cd28a14b4483d13eeb5c69156
+      internalID: -5959220304359029146
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_22
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 216
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 885b64d3c7964914297f54a1b63e26b3
+      internalID: 8540350443321197019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_23
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 216
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9cd126dced7dd47b23144a15242ed1
+      internalID: -2570215081151508928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 703dc1b56daf2d34eacb9f8c08b859c8
+      internalID: -9089218749284532020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_25
+      rect:
+        serializedVersion: 2
+        x: 125
+        y: 0
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b320efc5a7c8e794f9a6504415243a7f
+      internalID: -7522756773242381636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_26
+      rect:
+        serializedVersion: 2
+        x: 250
+        y: 0
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fbe5de8b50e770740831e2708330d804
+      internalID: 544706902591621155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_27
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 0
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b63c9af8ee5db04fbff672009b21ede
+      internalID: -3763280149880947370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_28
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 0
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9866128d27378e64a98577fbe71fc585
+      internalID: 4424392200072713500
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Luna_WalkcycleL_29
+      rect:
+        serializedVersion: 2
+        x: 625
+        y: 0
+        width: 125
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6124f63d73dc70d46b08b702118e628f
+      internalID: -85434391413420378
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 4243b3983a4be3c4081a00cf3a22d8dd
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
