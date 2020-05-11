@@ -6,10 +6,12 @@ public class BreakableObject : MonoBehaviour
 {
     public Sprite originalObjectSprite;
     public Sprite brokenObjectSprite;
+    public AudioSource breakingThings;
 
     private void Awake()
     {
         GetComponent<SpriteRenderer>().sprite = originalObjectSprite;
+        breakingThings = GetComponent<AudioSource>();
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -17,5 +19,6 @@ public class BreakableObject : MonoBehaviour
         var bullet = collision.GetComponent<Bullet>();
         if (bullet)
             GetComponent<SpriteRenderer>().sprite = brokenObjectSprite;
+        breakingThings.Play();
     }
 }

@@ -53,12 +53,15 @@ public class Player : Character
 
     private CameraController mMainCamera;
 
+    public AudioSource weaponSwitch;
+
     
     protected override void Start()
     {
         base.Start();
 
         myCheckpointTracker = GetComponent<CheckPointTracker>();
+        weaponSwitch = GetComponent<AudioSource>();
     }
 
 
@@ -121,10 +124,12 @@ public class Player : Character
     public void AddNearbyWeapon(Weapon newWeapon)
     {
         mNearbyWeapon = newWeapon;
+        weaponSwitch.Play();
     }
     public void ClearNearbyWeapon()
     {
         mNearbyWeapon = null;
+        weaponSwitch.Play();
     }
     public void PickUpNearbyWeapon()
     {
@@ -133,6 +138,7 @@ public class Player : Character
 
             PickWeaopn(mNearbyWeapon);
             ClearNearbyWeapon();
+            weaponSwitch.Play();
         }
     }
     //[RH] press button to pick up weapon
