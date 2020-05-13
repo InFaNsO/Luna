@@ -79,6 +79,12 @@ public class UI_InGame : MonoBehaviour, UI_Interface
 
     //sound settings
     private AudioManager _audioManager;
+    public AudioSource buttonPressed;
+
+    void Start()
+    {
+        buttonPressed = GetComponent<AudioSource>();
+    }
 
     private void Awake()
     {
@@ -172,6 +178,7 @@ private void OnEnable()
     public void UI_Ingame_UpdateWeaponSprite(Sprite currWeapon, Sprite secWeapon)
     {
         _weaponSlots.UI_Ingame_UpdateWeaponSprite(currWeapon, secWeapon);
+        buttonPressed.Play();
     }
 
 
@@ -243,6 +250,7 @@ private void OnEnable()
 
     public void Button_PauseGame()
     {
+        buttonPressed.Play();
         popUp_pauseGame.SetActive(true);
         popUp_sureToQuit.SetActive(false);
         popUp_soundSettings.SetActive(false);
@@ -254,12 +262,14 @@ private void OnEnable()
 
     public void Button_Resume()
     {
+        buttonPressed.Play();
         Debug.Log("Button_Resume pressed");
         popUp_pauseGame.SetActive(false);
      }
 
     public void Button_Quit()
     {
+        buttonPressed.Play();
         Debug.Log("Button_Quit pressed");
         popUp_sureToQuit.SetActive(true);
         popUp_pauseGame.SetActive(false);
@@ -283,6 +293,7 @@ private void OnEnable()
 
     public void Button_SoundSettings()
     {
+        buttonPressed.Play();
         Debug.Log("Button_SoundSettings pressed");
         popUp_soundSettings.SetActive(true);
         popUp_pauseGame.SetActive(false);
@@ -291,6 +302,7 @@ private void OnEnable()
     }
     public void Button_BackToPauseMenu()
     {
+        buttonPressed.Play();
         popUp_pauseGame.SetActive(true);
         popUp_soundSettings.SetActive(false);
         popUp_sureToQuit.SetActive(false);
@@ -321,6 +333,7 @@ private void OnEnable()
             return;
         selectedSlotInInventory = selectedSlotInInventory - 1 < 0 ? inventoryCount - 1 : selectedSlotInInventory - 1;
         Debug.Log("prev: curr = " + selectedSlotInInventory.ToString());
+        buttonPressed.Play();
     }
 
     public void SelectNextItem(int inventoryCount)
@@ -329,6 +342,7 @@ private void OnEnable()
              return;
          selectedSlotInInventory = selectedSlotInInventory + 1 > inventoryCount - 1 ? 0 : selectedSlotInInventory + 1;
         Debug.Log("next: curr = " + selectedSlotInInventory.ToString());
+        buttonPressed.Play();
 
     }
 

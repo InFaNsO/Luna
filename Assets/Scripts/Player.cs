@@ -54,6 +54,9 @@ public class Player : Character
     private CameraController mMainCamera;
 
     public AudioSource weaponSwitch;
+    public AudioSource playerDamage;
+    public AudioSource useWeapon;
+    public AudioSource contactMade;
 
     
     protected override void Start()
@@ -61,7 +64,13 @@ public class Player : Character
         base.Start();
 
         myCheckpointTracker = GetComponent<CheckPointTracker>();
+
+        #region get audiosource component
         weaponSwitch = GetComponent<AudioSource>();
+        playerDamage = GetComponent<AudioSource>();
+        useWeapon = GetComponent<AudioSource>();
+        contactMade = GetComponent<AudioSource>();
+        #endregion
     }
 
 
