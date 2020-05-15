@@ -19,13 +19,13 @@ public class Health : MonoBehaviour
     public void TakeDamage(float damage)
     {
         health -= damage;
-        ServiceLocator.Get<UIManager>().UpdateHPGauge(health / MaxHealth);
+        //ServiceLocator.Get<UIManager>().UpdateHPGauge(health / MaxHealth);
     }
 
     public void TakeHealth(float hp)
     {
         health += hp;
-        ServiceLocator.Get<UIManager>().UpdateHPGauge(health / MaxHealth);
+        //ServiceLocator.Get<UIManager>().UpdateHPGauge(health / MaxHealth);
 
     }
 
