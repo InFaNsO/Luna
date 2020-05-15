@@ -243,11 +243,12 @@ public class Player : Character
     {
         Debug.Log("[Player] Player Dead, curr hp : " + myHealth.GetHealth() + "max hp " + myHealth.GetMaxHealth());
 
-        if (gameObject.GetComponent<CheckPointTracker>() != null)
+        if (myCheckpointTracker != null)
         {
-            if (gameObject.GetComponent<CheckPointTracker>().respawnPoint != null)
+            if (myCheckpointTracker.respawnPoint != null)
             {
-                gameObject.GetComponent<CheckPointTracker>().Respawn(true);
+                myCheckpointTracker.Respawn(true);
+                Respawn();
                 ServiceLocator.Get<UIManager>().UpdateHPGauge(myHealth.GetHealth() / myHealth.GetMaxHealth());
             }
             else
@@ -257,6 +258,11 @@ public class Player : Character
                 ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);             //|--- [Rick H] Edit: Call GameMngr
             }
         }
+    }
+
+    void Respawn()
+    {
+        myHealth.Respawn();
     }
 
     public void Attack()
@@ -339,17 +345,19 @@ public class Player : Character
         }
     }
 
-    public void Update()
+    public new void Update()
     {
         ExpCheck();
+        if (!myHealth.IsAlive())
+        {
+            Die();
+            myCheckpointTracker.Respawn(true);
+        }
     }
 
     public void LateUpdate()
     {
-        if(!myHealth.IsAlive())
-        {
-            myCheckpointTracker.Respawn(true);            
-        }
+        
     }
 
     //----------------------------------------------------------------------------------//|
