@@ -132,6 +132,17 @@ public class CheckPointTracker : MonoBehaviour
         }
     }
 
+    public void ResetSprites()
+    {
+        for (int i = 0; i < cpList.Count; ++i)
+        {
+            if (cpList[i].gameObject != respawnPoint)
+            {
+                cpList[i].GetComponent<SpriteRenderer>().sprite = cpList[i].offSprite;
+            }
+        }
+    }
+
     public void SetRecordedHealth(float val)
     {
         recordedHP = val;

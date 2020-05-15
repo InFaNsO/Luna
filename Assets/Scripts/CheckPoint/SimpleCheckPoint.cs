@@ -8,6 +8,16 @@ public class SimpleCheckPoint : MonoBehaviour
     public bool currentPoint = false;
     public GameObject Player;
     public GameObject particleEffect;
+    public GameObject particlePosition;
+    private SpriteRenderer mSpriteRenderer;
+    public Sprite offSprite;
+    public Sprite onSprite;
+
+    void Start()
+    {
+        mSpriteRenderer = GetComponent<SpriteRenderer>();
+        mSpriteRenderer.sprite = offSprite;
+    }
 
     // Checkpoint Trigger Function
     private void OnTriggerEnter2D(Collider2D collider)
@@ -23,10 +33,12 @@ public class SimpleCheckPoint : MonoBehaviour
 
                 CheckPointTracker mCPTracker = Player.GetComponent<CheckPointTracker>();
                 mCPTracker.respawnPoint = gameObject;
+                Player.GetComponent<CheckPointTracker>().ResetSprites();
                 mCPTracker.SetRecordedHealth(Player.GetComponent<Player>().myHealth.GetHealth());
                 mCPTracker.InitializeEnemyStates();
+                mSpriteRenderer.sprite = onSprite;
 
-                Instantiate(particleEffect, transform.position, new Quaternion());
+                Instantiate(particleEffect, particlePosition.transform.position, new Quaternion());
             }
         }
     }
