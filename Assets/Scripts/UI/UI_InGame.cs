@@ -276,7 +276,10 @@ private void OnEnable()
         }
         else
         {
-            ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);
+            //Bhavil's addition Friday May 15-16
+            GameEvents.current.OnDoTransitionAction(TransitionManager.TransitionType.LogoWipe, GameManager.ESceneIndex.Mainmenu);
+
+            //ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);
         }
  
     }

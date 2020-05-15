@@ -70,7 +70,10 @@ public class DropShip : MonoBehaviour
             yield return null;
         }
 
-        ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.WinScene);
+        //Bhavil's addition Friday May 15-16
+        GameEvents.current.OnDoTransitionAction(TransitionManager.TransitionType.LogoWipe, GameManager.ESceneIndex.Mainmenu);
+
+        //ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.WinScene);
         yield return null;
     }
 

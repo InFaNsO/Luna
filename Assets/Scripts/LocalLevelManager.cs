@@ -39,7 +39,10 @@ public class LocalLevelManager : MonoBehaviour
             mUIManager.UpdateTimeCountDown(mCountDown);
             if (mCountDown < 0.0f)
             {
-                ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.GameOverScene);
+                //Bhavil's addition Friday May 15-16
+                GameEvents.current.OnDoTransitionAction(TransitionManager.TransitionType.LogoWipe, GameManager.ESceneIndex.GameOverScene);
+
+                //ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.GameOverScene);
             }
         }
     }

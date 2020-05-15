@@ -1,4 +1,4 @@
-﻿ 
+﻿
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -43,7 +43,7 @@ public class Player : Character
     public GameObject mWeaponPosition;
 
     public Vector3 LastGotHitPosition { get { return mLastGotHitPosition; } }       //|--- [Mingzhuo Zhang] Edit:  For Kevin(Element system)
-    
+
 
     private ParryAttackable mParryAttackable;
 
@@ -53,7 +53,7 @@ public class Player : Character
 
     private CameraController mMainCamera;
 
-    
+
     protected override void Start()
     {
         base.Start();
@@ -229,7 +229,7 @@ public class Player : Character
         return false;
     }
 
-    
+
     override public void GetHit(float dmg)
     {
         mMainCamera.Shake();
@@ -255,7 +255,14 @@ public class Player : Character
             {
                 ServiceLocator.Get<UIManager>().UpdateHPGauge(myHealth.GetHealth()  / myHealth.GetMaxHealth());
                 gameObject.SetActive(false);
-                ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);             //|--- [Rick H] Edit: Call GameMngr
+
+
+                //Game event system will handle
+                //ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);             //|--- [Rick H] Edit: Call GameMngr
+
+                //Bhavil's addition Friday May 15-16
+                GameEvents.current.OnDoTransitionAction(TransitionManager.TransitionType.LogoWipe, GameManager.ESceneIndex.Mainmenu);
+
             }
         }
     }
@@ -357,7 +364,7 @@ public class Player : Character
 
     public void LateUpdate()
     {
-        
+
     }
 
     //----------------------------------------------------------------------------------//|
@@ -373,7 +380,7 @@ public class Player : Character
             {     //|
                 if(bullet.mElement != null)
                     GetHit(bullet.mElement);
-                
+
                 mLastGotHitPosition = other.gameObject.transform.position;              //|
                 GetHit(bullet.Damage, mLastGotHitPosition);
             }                                                                       //|

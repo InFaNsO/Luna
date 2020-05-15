@@ -37,7 +37,7 @@ public class StateMachine : MonoBehaviour
     }
     void OnDrawGizmos()
     {
-        mStates[mCurrentState].DebugDraw();
+        //mStates[mCurrentState].DebugDraw();
     }
 
     public void ChangeState(string name)

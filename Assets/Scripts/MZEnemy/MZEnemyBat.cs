@@ -315,6 +315,8 @@ public class MZEnemyBat : Character
 
     override public void Die()
     {
+        GameEvents.current.OnEnemyDiedAction(transform);
+
         //effect
         Debug.Log("enemy destory");
         mAnimationController.GoDeathAnimation();
