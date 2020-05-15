@@ -31,8 +31,6 @@ public class Enemy : Character
     [SerializeField] protected GameObject mDropPrefbs = null;
 
     //private Animator mAnimator;
-    [HideInInspector] public bool mIsStuned = false;
-    [HideInInspector] float mStunCounter;
 
     public EnemyTypes MyType = EnemyTypes.none;
 
@@ -65,17 +63,9 @@ public class Enemy : Character
     }
 
     // Update is called once per frame
-    void Update()
+    new void Update()
     {
         base.Update();
-        if (mIsStuned)
-        {
-            if (mStunCounter <= 0.0f)
-            {
-                mIsStuned = false;
-            }
-            mStunCounter -= Time.deltaTime;
-        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -96,11 +86,11 @@ public class Enemy : Character
                     var direction = other.gameObject.transform.position.x - transform.position.x;
                     if (direction > 0.0f)
                     {
-                        rb.AddForce(new Vector2(-knockBackX, knockBackY));
+                        rb.AddForce(new Vector2(-knockBackX, knockBackY),ForceMode2D.Impulse);
                     }
                     else if(direction < 0.0f)
                     {
-                        rb.AddForce(new Vector2(knockBackX, knockBackY));
+                        rb.AddForce(new Vector2(knockBackX, knockBackY), ForceMode2D.Impulse);
                     }
                 }
             }
@@ -118,10 +108,9 @@ public class Enemy : Character
         }
     }
 
-    public void GetStun(float stunHowLong)
+    public new void GetStun(float stunHowLong)
     {
-        mIsStuned = true;
-        mStunCounter = stunHowLong;
+        base.GetStun(stunHowLong);
 
         mWeapon.WeaponReset();
 

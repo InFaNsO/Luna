@@ -89,7 +89,7 @@ public class WanderGroundState : State
 
         bool isEnd = isClose && agent.mAgent.mPath.Count != 0;
 
-        if (isEnd || isX)
+        if (agent.mAgent.mPath.Count > 0 && isEnd || isX)
         {
             if (agent.mAgent.mTarget.y < agent.mAgent.mPath[0].y)
             {
