@@ -255,7 +255,14 @@ public class Player : Character
             {
                 ServiceLocator.Get<UIManager>().UpdateHPGauge(myHealth.GetHealth()  / myHealth.GetMaxHealth());
                 gameObject.SetActive(false);
-                ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);             //|--- [Rick H] Edit: Call GameMngr
+
+
+                //Game event system will handle
+                //ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);             //|--- [Rick H] Edit: Call GameMngr
+
+                //Bhavil's addition Friday May 15-16
+                GameEvents.current.OnDoTransitionAction(TransitionManager.TransitionType.LogoWipe, GameManager.ESceneIndex.Mainmenu);
+
             }
         }
     }

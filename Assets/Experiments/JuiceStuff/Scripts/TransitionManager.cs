@@ -19,13 +19,13 @@ public class TransitionManager : MonoBehaviour
     [SerializeField] Animator ShapeWipe = null;
     [SerializeField] Animator LogoWipe = null;
 
-    private void Awake()
+    private void Start()
     {
         GameEvents.current.DoTransition += HandleTransition;
     }
 
 
-    public void HandleTransition(TransitionType type, int buildIndex)
+    public void HandleTransition(TransitionType type, GameManager.ESceneIndex buildIndex)
     {
         switch (type)
         {
@@ -43,26 +43,26 @@ public class TransitionManager : MonoBehaviour
         }
     }
 
-    private void DoCrossFade(int buildIndex)
+    private void DoCrossFade(GameManager.ESceneIndex buildIndex)
     {
         StartCoroutine(SwitchScene(CrossFade, buildIndex));
     }
-    private void DoShapeWipe(int buildIndex)
+    private void DoShapeWipe(GameManager.ESceneIndex buildIndex)
     {
         StartCoroutine(SwitchScene(ShapeWipe, buildIndex));
     }
-    private void DoLogoWipe(int buildIndex)
+    private void DoLogoWipe(GameManager.ESceneIndex buildIndex)
     {
         StartCoroutine(SwitchScene(LogoWipe, buildIndex));
     }
 
-    IEnumerator SwitchScene(Animator anim, int buildIndex)
+    IEnumerator SwitchScene(Animator anim, GameManager.ESceneIndex buildIndex)
     {
         anim.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitionTime);
 
-        SceneManager.LoadScene(buildIndex);
+        ServiceLocator.Get<GameManager>().SwitchScene(buildIndex);
     }
 
 }

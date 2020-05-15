@@ -23,7 +23,10 @@ public class BossDead : MonoBehaviour
         bossHp = _boss.myHealth.GetHealth();
         if (bossHp <= 40.0f)
         {
-            ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);
+            //Bhavils Addition may 15-16
+            GameEvents.current.OnDoTransitionAction(TransitionManager.TransitionType.LogoWipe, GameManager.ESceneIndex.Mainmenu);
+
+            //ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);
         }
     }
 }
