@@ -243,6 +243,10 @@ public class Player : Character
     {
         Debug.Log("[Player] Player Dead, curr hp : " + myHealth.GetHealth() + "max hp " + myHealth.GetMaxHealth());
 
+        //Event test
+        GameEvents.current.OnDoFlashColorAction(Color.black);
+
+
         if (gameObject.GetComponent<CheckPointTracker>() != null)
         {
             if (gameObject.GetComponent<CheckPointTracker>().respawnPoint != null)
