@@ -268,11 +268,20 @@ public class MZEnemyBat : Character
     {
         mIsStuned = true;
         mAnimationController.GoStunAnimation();
+        aiPath.enabled = false;
+        
     }
 
     public void RestFromStun()
     {
         mIsStuned = false;
+        aiPath.enabled = true;
+        var rb = GetComponent<Rigidbody2D>();
+        if (rb)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = 0.0f;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -288,16 +297,16 @@ public class MZEnemyBat : Character
                 mLastGotHitPosition = other.gameObject.transform.position;              //|
                 GetHit(bullet.Damage, other.tag, mLastGotHitPosition);
                 var rb = GetComponent<Rigidbody2D>();
-                if (rb)
+                if (rb && myHealth.IsAlive())
                 {
-                    var direction = other.gameObject.transform.position.x - transform.position.x;
+                    var direction = mPlayer.transform.position.x - transform.position.x;
                     if (direction > 0.0f)
                     {
-                        rb.AddForce(new Vector2(-knockBackX, knockBackY));
+                        rb.AddForce(new Vector2(-knockBackX, knockBackY),ForceMode2D.Impulse);
                     }
-                    else if (direction < 0.0f)
+                    else if (direction <= 0.0f)
                     {
-                        rb.AddForce(new Vector2(knockBackX, knockBackY));
+                        rb.AddForce(new Vector2(knockBackX, knockBackY), ForceMode2D.Impulse);
                     }
                 }
             }

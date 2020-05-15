@@ -86,11 +86,11 @@ public class Enemy : Character
                     var direction = other.gameObject.transform.position.x - transform.position.x;
                     if (direction > 0.0f)
                     {
-                        rb.AddForce(new Vector2(-knockBackX, knockBackY));
+                        rb.AddForce(new Vector2(-knockBackX, knockBackY),ForceMode2D.Impulse);
                     }
                     else if(direction < 0.0f)
                     {
-                        rb.AddForce(new Vector2(knockBackX, knockBackY));
+                        rb.AddForce(new Vector2(knockBackX, knockBackY), ForceMode2D.Impulse);
                     }
                 }
             }
