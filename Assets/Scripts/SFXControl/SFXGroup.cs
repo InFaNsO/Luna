@@ -10,7 +10,7 @@ public class SFXGroup : MonoBehaviour
     /// </summary>
     [SerializeField]
     private List<SFXGroupItem> _SFXGroupItems;
-    
+
     /// <summary>
     /// dump data into a dictionary,then delete _SFXGroup List
     /// </summary>
@@ -18,9 +18,13 @@ public class SFXGroup : MonoBehaviour
 
     private void Awake()
     {
+        _SFXs = new Dictionary<string, AudioSource>();
         foreach (var s in _SFXGroupItems)
         {
-            _SFXs.Add(s.name, s.audioSource);
+            if (s != null)
+            {
+                _SFXs.Add(s.name, s.audioSource);
+            }
         }
         _SFXGroupItems.Clear();
     }
