@@ -292,7 +292,7 @@ MonoBehaviour:
       - mType: 4
         mTimeSlicePropotion: 1
     mToMoveId: 
-    mBullet: {fileID: 679799675015805979, guid: 3b98481901c89bb4fb81bb4d770888df,
+    mBullet: {fileID: 679799675015805979, guid: ff5a5fa81edd232489ffa62f056d7c8d,
       type: 3}
     mFirePosition: {fileID: 8135096088201637637}
     mAnimationClip: {fileID: 7400000, guid: e30fc09fa28cef945b7ce23c3eb8c55d, type: 2}

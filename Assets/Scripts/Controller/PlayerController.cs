@@ -62,6 +62,7 @@ public class PlayerController : MonoBehaviour
         controls.PlayerControl.SelectPrevItem.performed += _selectprev => SelectPrevItem();
         controls.PlayerControl.SelectNextItem.performed += _selectnext => SelectNextItem();
         controls.PlayerControl.Parry.performed += _parry => Parry();
+        controls.PlayerControl.Parry.canceled += _parry => CancelParry();
 
         controls.PlayerControl.PickUpWeapon.performed += _pickupitem => PickUpWeapon();
 
@@ -87,6 +88,11 @@ public class PlayerController : MonoBehaviour
     public void Parry()
     {
         parry.Parry();
+    }
+
+    public void CancelParry()
+    {
+        Core.Debug.LogError("Cancel Parry");
     }
 
     void Resets()
