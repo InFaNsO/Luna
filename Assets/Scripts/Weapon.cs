@@ -20,7 +20,10 @@ public class Weapon : MonoBehaviour
     [SerializeField] protected string mName;                                    //|
     [SerializeField] protected WeaponGrade mGrade;                              //|--- TODO:: make them as WeaponPorperty struct
     [SerializeField] public WeaponType mType;                                   //|
-    public float mParryCD = 1.0f;
+    public float mBaseStaminaCostForParry = 10.0f;
+    public float mParryStrenth = 1.0f;
+    public Collider2D parryCollider;
+
     //--------------------------------------------------------------------------//|
 
     //[SerializeField] protected int mDamage;
@@ -89,6 +92,12 @@ public class Weapon : MonoBehaviour
 
         _localLevelManagerTransform = GameObject.Find("LocalLevelManager").gameObject.transform;                               //|--- [INIT]: Get the global transform from LocalLevelManager gameObject
         Assert.IsNotNull(_localLevelManagerTransform, "[Weapon] Doesnt found localLevelManager");                              //|--- [SAFTY]: Check to see is there a collider
+
+        Assert.IsFalse(mParryStrenth <= 0.0f, "[Weapon] can not have parry strenth less than 0.");
+
+        Assert.IsNotNull(parryCollider, "[Weapon] Donest have Parry Collider");
+
+        parryCollider.enabled = false;
 
         switch (mGrade)
         {
@@ -214,6 +223,11 @@ public class Weapon : MonoBehaviour
 
     }
 
+    public float GetParryCost(float receiveDmg)
+    {
+        return receiveDmg / mParryStrenth;
+    }
+
     public void WeaponReset()
     {
         mAnimator.SetBool("IsReseting", true);
@@ -284,7 +298,7 @@ public class Weapon : MonoBehaviour
     {
         var parry = owner.GetComponent<ParryAttackable>();
         if (parry)
-            parry.mParryCooldown = mParryCD;
+            // [MAYBE] Rest Parry Range in the future
 
         if (owner.tag == "Player")
         {

@@ -13,6 +13,8 @@ public class Player : Character
     [SerializeField]
     public Weapon mCurrentWeapon;
 
+    public Stamina stamina;
+
     [SerializeField]
     private Weapon mNearbyWeapon;
 
@@ -340,6 +342,8 @@ public class Player : Character
 
         mMainCamera = GameObject.Find("Main Camera").GetComponent<CameraController>();
         Assert.IsNotNull(mMainCamera, "[Player.cs] Can not find MainCamera controller in the scene.");
+
+        stamina = GetComponent<Stamina>();
     }
 
     private void FixedUpdate()
@@ -360,6 +364,7 @@ public class Player : Character
             Die();
             myCheckpointTracker.Respawn(true);
         }
+
     }
 
     public void LateUpdate()
@@ -382,7 +387,11 @@ public class Player : Character
                     GetHit(bullet.mElement);
 
                 mLastGotHitPosition = other.gameObject.transform.position;              //|
-                GetHit(bullet.Damage, mLastGotHitPosition);
+
+                if (!mParryAttackable.IsParrying())
+                {
+                    GetHit(bullet.Damage, mLastGotHitPosition);
+                }
             }                                                                       //|
         }                                                                               //|
     }                                                                                   //|

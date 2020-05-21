@@ -45,6 +45,15 @@ public class Stamina : MonoBehaviour
             mCurrentStamina -= mStaminaCostPerDash;
     }
 
+    public void UseStamina_Overflow(float cost)
+    {
+        mCurrentStamina -= cost;
+        if (mCurrentStamina < 0.0f)
+        {
+            mCurrentStamina = 0.0f;
+        }
+    }
+
     private void UpdateStaminaBar()
     {
         ServiceLocator.Get<UIManager>().UpdateStaminaGauge(mCurrentStamina/mMaxStamina);
@@ -54,5 +63,9 @@ public class Stamina : MonoBehaviour
     public bool IsStaminaSufficient()
     {
         return isStaminaSufficient;
+    }
+    public bool IsStaminaSufficient(float cost)
+    {
+        return cost < mCurrentStamina;
     }
 }

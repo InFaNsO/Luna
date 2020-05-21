@@ -34,8 +34,20 @@ public class PlayerAnimatorController : MonoBehaviour
 
         if(mPlayerController.IsDashing())
             mAnimator.SetBool("IsDashing", true);
-        if (mParryAttackableObj.GetParrySignalForAnimator())
+
+        if (mParryAttackableObj.IsParrying())
+        {
             mAnimator.SetBool("IsParrying", true);
+            if (mParryAttackableObj.IsStartParrying())
+                mAnimator.SetTrigger("StartParry");
+        }
+        else
+            mAnimator.SetBool("IsParrying", false);
+
+        if (mParryAttackableObj.IsParryHit())
+        {
+            mAnimator.SetTrigger("ParryHit");
+        }
     }
 
     private void FixedUpdate()
@@ -60,7 +72,7 @@ public class PlayerAnimatorController : MonoBehaviour
             mAnimator.SetBool("IsOnGround", mPlayerController.IsGrounded());
             mAnimator.SetBool("IsDoubleJump", false);
             mAnimator.SetBool("IsDashing", false);
-            mAnimator.SetBool("IsParrying", false);
+            //mAnimator.SetBool("IsParrying", false);
         }
     }
 }

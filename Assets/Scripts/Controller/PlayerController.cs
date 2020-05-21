@@ -92,7 +92,7 @@ public class PlayerController : MonoBehaviour
 
     public void CancelParry()
     {
-        Core.Debug.LogError("Cancel Parry");
+        parry.StopParry();
     }
 
     void Resets()
