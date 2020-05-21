@@ -1,0 +1,752 @@
+fileFormatVersion: 2
+guid: 238c8259c8e62a5478b9b55df3c233a7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2366449332077032113
+    second: Sword_SlahsDown 1_0
+  - first:
+      213: 5945279916103885344
+    second: Sword_SlahsDown 1_1
+  - first:
+      213: -714878939296173723
+    second: Sword_SlahsDown 1_2
+  - first:
+      213: -3934643068676074946
+    second: Sword_SlahsDown 1_3
+  - first:
+      213: 4926755808328347014
+    second: Sword_SlahsDown 1_4
+  - first:
+      213: 4608131077736711794
+    second: Sword_SlahsDown 1_5
+  - first:
+      213: -8882868796751310839
+    second: Sword_SlahsDown 1_6
+  - first:
+      213: -741543926606411630
+    second: Sword_SlahsDown 1_7
+  - first:
+      213: 4961549495552636298
+    second: Sword_SlahsDown 1_8
+  - first:
+      213: -3055380302243753810
+    second: Sword_SlahsDown 1_9
+  - first:
+      213: 7856725288677540691
+    second: Sword_SlahsDown 1_10
+  - first:
+      213: -3811072811843731777
+    second: Sword_SlahsDown 1_11
+  - first:
+      213: 198830018262768131
+    second: Sword_SlahsDown 1_12
+  - first:
+      213: 499169782898050076
+    second: Sword_SlahsDown 1_13
+  - first:
+      213: 8415607244561647774
+    second: Sword_SlahsDown 1_14
+  - first:
+      213: -8299967918720714541
+    second: Sword_SlahsDown 1_15
+  - first:
+      213: -1130310484799245459
+    second: Sword_SlahsDown 1_16
+  - first:
+      213: -8210233509802752664
+    second: Sword_SlahsDown 1_17
+  - first:
+      213: 5318459836466288866
+    second: Sword_SlahsDown 1_18
+  - first:
+      213: -2859109020774622623
+    second: Sword_SlahsDown 1_19
+  - first:
+      213: -9072048805917670012
+    second: Sword_SlahsDown 1_20
+  - first:
+      213: -6538005160321899912
+    second: Sword_SlahsDown 1_21
+  - first:
+      213: 2525942640007245506
+    second: Sword_SlahsDown 1_22
+  - first:
+      213: -8465635343742134337
+    second: Sword_SlahsDown 1_23
+  - first:
+      213: 6603130401909736877
+    second: Sword_SlahsDown 1_0
+  - first:
+      213: 9045330935445265581
+    second: Sword_SlahsDown 1_1
+  - first:
+      213: 7742400059249558200
+    second: Sword_SlahsDown 1_2
+  - first:
+      213: 5184398514978842415
+    second: Sword_SlahsDown 1_3
+  - first:
+      213: -3044441227820244025
+    second: Sword_SlahsDown 1_4
+  - first:
+      213: -7821765937706591915
+    second: Sword_SlahsDown 1_5
+  - first:
+      213: 90329608054670031
+    second: Sword_SlahsDown 1_6
+  - first:
+      213: 6183329028959331176
+    second: Sword_SlahsDown 1_7
+  - first:
+      213: 3512926075488876535
+    second: Sword_SlahsDown 1_8
+  - first:
+      213: 443531003398525723
+    second: Sword_SlahsDown 1_9
+  - first:
+      213: 8213015986212658121
+    second: Sword_SlahsDown 1_10
+  - first:
+      213: -1732548028689253537
+    second: Sword_SlahsDown 1_11
+  - first:
+      213: -6549853266795909867
+    second: Sword_SlahsDown 1_12
+  - first:
+      213: 2132980563915153781
+    second: Sword_SlahsDown 1_13
+  - first:
+      213: -558462356823147903
+    second: Sword_SlahsDown 1_14
+  - first:
+      213: 5081913211004515968
+    second: Sword_SlahsDown 1_15
+  - first:
+      213: -5649004358689871473
+    second: Sword_SlahsDown 1_16
+  - first:
+      213: -3160118532411014389
+    second: Sword_SlahsDown 1_17
+  - first:
+      213: -4135327827125710474
+    second: Sword_SlahsDown 1_18
+  - first:
+      213: 5126992103845385551
+    second: Sword_SlahsDown 1_19
+  - first:
+      213: -5610804989377348725
+    second: Sword_SlahsDown 1_20
+  - first:
+      213: -2663076900900148183
+    second: Sword_SlahsDown 1_21
+  - first:
+      213: -767339547916518769
+    second: Sword_SlahsDown 1_22
+  - first:
+      213: -7171735025885529925
+    second: Sword_SlahsDown 1_23
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1002
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da5896b9d1803ab50800000000000000
+      internalID: 6603130401909736877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_1
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 1002
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dac1113cf88778d70800000000000000
+      internalID: 9045330935445265581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_2
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 1002
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b2888835d7827b60800000000000000
+      internalID: 7742400059249558200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_3
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 1002
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2760633bfea2f740800000000000000
+      internalID: 5184398514978842415
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_4
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 1002
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c3683c55d8ffb5d0800000000000000
+      internalID: -3044441227820244025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_5
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 1002
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5599fb63251837390800000000000000
+      internalID: -7821765937706591915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 668
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fc28cc8cc4ae04100800000000000000
+      internalID: 90329608054670031
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_7
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 668
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8636b7cbdf89fc550800000000000000
+      internalID: 6183329028959331176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_8
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 668
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f7b8b347ab60c030800000000000000
+      internalID: 3512926075488876535
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_9
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 668
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b131170091db72600800000000000000
+      internalID: 443531003398525723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_10
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 668
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9cb5fc8668e7af170800000000000000
+      internalID: 8213015986212658121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_11
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 668
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5b7ca15fb0c4f7e0800000000000000
+      internalID: -1732548028689253537
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 334
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51da2bd082f3a15a0800000000000000
+      internalID: -6549853266795909867
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_13
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 334
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 571a9f8958ed99d10800000000000000
+      internalID: 2132980563915153781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_14
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 334
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 18af0210271ff38f0800000000000000
+      internalID: -558462356823147903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_15
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 334
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 086f949e325968640800000000000000
+      internalID: 5081913211004515968
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_16
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 334
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8928a92774ba91b0800000000000000
+      internalID: -5649004358689871473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_17
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 334
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b03438310f00524d0800000000000000
+      internalID: -3160118532411014389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 671526a404d5c96c0800000000000000
+      internalID: -4135327827125710474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_19
+      rect:
+        serializedVersion: 2
+        x: 390
+        y: 0
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f45dfeb872cb62740800000000000000
+      internalID: 5126992103845385551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_20
+      rect:
+        serializedVersion: 2
+        x: 780
+        y: 0
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b8b7c28e69a6222b0800000000000000
+      internalID: -5610804989377348725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_21
+      rect:
+        serializedVersion: 2
+        x: 1170
+        y: 0
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 92c6c401ba9da0bd0800000000000000
+      internalID: -2663076900900148183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_22
+      rect:
+        serializedVersion: 2
+        x: 1560
+        y: 0
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8ab3582fbcd955f0800000000000000
+      internalID: -767339547916518769
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_SlahsDown 1_23
+      rect:
+        serializedVersion: 2
+        x: 1950
+        y: 0
+        width: 390
+        height: 334
+      alignment: 9
+      pivot: {x: 0.42, y: 0.58}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb8bddecdf0e87c90800000000000000
+      internalID: -7171735025885529925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

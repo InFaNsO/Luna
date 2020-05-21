@@ -1,0 +1,464 @@
+fileFormatVersion: 2
+guid: 814be698f48dd574a8776ea604a2675f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 411799345262569255
+    second: GSword_Float_0
+  - first:
+      213: 6951684616112981443
+    second: GSword_Float_1
+  - first:
+      213: -3917991400838228068
+    second: GSword_Float_2
+  - first:
+      213: -2302345767356893059
+    second: GSword_Float_3
+  - first:
+      213: -563701849773857043
+    second: GSword_Float_4
+  - first:
+      213: 2046980909618654061
+    second: GSword_Float_5
+  - first:
+      213: -8496478400114051660
+    second: GSword_Float_6
+  - first:
+      213: -1421246471677354945
+    second: GSword_Float_7
+  - first:
+      213: -299645715032268273
+    second: GSword_Float_8
+  - first:
+      213: 4282728273246162800
+    second: GSword_Float_9
+  - first:
+      213: -2688704234513106249
+    second: GSword_Float_10
+  - first:
+      213: -8459257803457016803
+    second: GSword_Float_11
+  - first:
+      213: 8858993749750026065
+    second: GSword_Float_12
+  - first:
+      213: -8349200500445159307
+    second: GSword_Float_13
+  - first:
+      213: -2610509386769131017
+    second: GSword_Float_14
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GSword_Float_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 630
+        width: 129
+        height: 315
+      alignment: 9
+      pivot: {x: 0.6, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7272d1d925107b500800000000000000
+      internalID: 411799345262569255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Float_1
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 630
+        width: 129
+        height: 315
+      alignment: 9
+      pivot: {x: 0.6, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c546f5a358597060800000000000000
+      internalID: 6951684616112981443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Float_2
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 630
+        width: 129
+        height: 315
+      alignment: 9
+      pivot: {x: 0.6, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c979000549f70a9c0800000000000000
+      internalID: -3917991400838228068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Float_3
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 630
+        width: 129
+        height: 315
+      alignment: 9
+      pivot: {x: 0.6, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d78719219bc6c00e0800000000000000
+      internalID: -2302345767356893059
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Float_4
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 630
+        width: 129
+        height: 315
+      alignment: 9
+      pivot: {x: 0.6, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de6affc77245d28f0800000000000000
+      internalID: -563701849773857043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Float_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 315
+        width: 129
+        height: 315
+      alignment: 9
+      pivot: {x: 0.6, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6b63dbba46586c10800000000000000
+      internalID: 2046980909618654061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Float_6
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 315
+        width: 129
+        height: 315
+      alignment: 9
+      pivot: {x: 0.6, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4b53c6f49e1761a80800000000000000
+      internalID: -8496478400114051660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Float_7
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 315
+        width: 129
+        height: 315
+      alignment: 9
+      pivot: {x: 0.6, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f3cd4653dd7b64ce0800000000000000
+      internalID: -1421246471677354945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Float_8
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 315
+        width: 129
+        height: 315
+      alignment: 9
+      pivot: {x: 0.6, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f02a80d4fc177dbf0800000000000000
+      internalID: -299645715032268273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Float_9
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 315
+        width: 129
+        height: 315
+      alignment: 9
+      pivot: {x: 0.6, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 07f0c547cae4f6b30800000000000000
+      internalID: 4282728273246162800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Float_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 129
+        height: 315
+      alignment: 9
+      pivot: {x: 0.6, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7baf1cb7ebdcfaad0800000000000000
+      internalID: -2688704234513106249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Float_11
+      rect:
+        serializedVersion: 2
+        x: 129
+        y: 0
+        width: 129
+        height: 315
+      alignment: 9
+      pivot: {x: 0.6, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d1c4e79c8ddaa9a80800000000000000
+      internalID: -8459257803457016803
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Float_12
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 0
+        width: 129
+        height: 315
+      alignment: 9
+      pivot: {x: 0.6, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15f8141e0e771fa70800000000000000
+      internalID: 8858993749750026065
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Float_13
+      rect:
+        serializedVersion: 2
+        x: 387
+        y: 0
+        width: 129
+        height: 315
+      alignment: 9
+      pivot: {x: 0.6, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 570e37c716ea12c80800000000000000
+      internalID: -8349200500445159307
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Float_14
+      rect:
+        serializedVersion: 2
+        x: 516
+        y: 0
+        width: 129
+        height: 315
+      alignment: 9
+      pivot: {x: 0.6, y: 0.65}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f99dc63b8b95cbd0800000000000000
+      internalID: -2610509386769131017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

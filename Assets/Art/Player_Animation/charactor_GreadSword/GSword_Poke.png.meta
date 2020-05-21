@@ -1,0 +1,536 @@
+fileFormatVersion: 2
+guid: 982304630ed62da429d382eb32f0d474
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 3196027441647693234
+    second: GSword_Poke_0
+  - first:
+      213: 4488797235433818352
+    second: GSword_Poke_1
+  - first:
+      213: -7964276444764040113
+    second: GSword_Poke_2
+  - first:
+      213: 8383707438810607010
+    second: GSword_Poke_3
+  - first:
+      213: 4392496062957467750
+    second: GSword_Poke_4
+  - first:
+      213: -8352090236002257397
+    second: GSword_Poke_5
+  - first:
+      213: 408130391018687698
+    second: GSword_Poke_6
+  - first:
+      213: 504393969824930205
+    second: GSword_Poke_7
+  - first:
+      213: -3469718246588472566
+    second: GSword_Poke_8
+  - first:
+      213: -2919802310560596631
+    second: GSword_Poke_9
+  - first:
+      213: -4554719926457207005
+    second: GSword_Poke_10
+  - first:
+      213: -8776820897995231953
+    second: GSword_Poke_11
+  - first:
+      213: 4484411792374079928
+    second: GSword_Poke_12
+  - first:
+      213: -6240145716341892097
+    second: GSword_Poke_13
+  - first:
+      213: 2403119312810738773
+    second: GSword_Poke_14
+  - first:
+      213: -8275570719609967416
+    second: GSword_Poke_15
+  - first:
+      213: -3817059361213482386
+    second: GSword_Poke_16
+  - first:
+      213: 1935861169468304125
+    second: GSword_Poke_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GSword_Poke_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1245
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bdafcf56029a5c20800000000000000
+      internalID: 3196027441647693234
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Poke_1
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 1245
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f8c9ce8d496b4e30800000000000000
+      internalID: 4488797235433818352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Poke_2
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 1245
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4414d025c4397190800000000000000
+      internalID: -7964276444764040113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Poke_3
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 996
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ad2b1f2f79e85470800000000000000
+      internalID: 8383707438810607010
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Poke_4
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 996
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 668b1e595e745fc30800000000000000
+      internalID: 4392496062957467750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Poke_5
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 996
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b06b31f7e2a671c80800000000000000
+      internalID: -8352090236002257397
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Poke_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 747
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dcc5b2ad68f9a500800000000000000
+      internalID: 408130391018687698
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Poke_7
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 747
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d999346a4a7fff600800000000000000
+      internalID: 504393969824930205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Poke_8
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 747
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a03276953a519dfc0800000000000000
+      internalID: -3469718246588472566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Poke_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 498
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96dbba0b447ca77d0800000000000000
+      internalID: -2919802310560596631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Poke_10
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 498
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 327ff1cdb526ac0c0800000000000000
+      internalID: -4554719926457207005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Poke_11
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 498
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2de4c515e7723680800000000000000
+      internalID: -8776820897995231953
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Poke_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 249
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b1a70704c4db3e30800000000000000
+      internalID: 4484411792374079928
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Poke_13
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 249
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ffb14ce588c8669a0800000000000000
+      internalID: -6240145716341892097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Poke_14
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 249
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 55407f06848995120800000000000000
+      internalID: 2403119312810738773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Poke_15
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8cc2600c644472d80800000000000000
+      internalID: -8275570719609967416
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Poke_16
+      rect:
+        serializedVersion: 2
+        x: 604
+        y: 0
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6a7a401cb4170bc0800000000000000
+      internalID: -3817059361213482386
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Poke_17
+      rect:
+        serializedVersion: 2
+        x: 1208
+        y: 0
+        width: 604
+        height: 249
+      alignment: 9
+      pivot: {x: 0.6, y: 0.52}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfa61ac1a7f8dda10800000000000000
+      internalID: 1935861169468304125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,671 @@
+fileFormatVersion: 2
+guid: 410684dab0ce93245bc3bb5b4bb6f8e0
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5386427613653212758
+    second: GSword_Idle_0
+  - first:
+      213: -7877576238433816775
+    second: GSword_Idle_1
+  - first:
+      213: -2552964162504784228
+    second: GSword_Idle_2
+  - first:
+      213: -1768959780992604821
+    second: GSword_Idle_3
+  - first:
+      213: 7507134290782230323
+    second: GSword_Idle_4
+  - first:
+      213: -5051224941246692771
+    second: GSword_Idle_5
+  - first:
+      213: 290455828170467703
+    second: GSword_Idle_6
+  - first:
+      213: 4054167218218241006
+    second: GSword_Idle_7
+  - first:
+      213: 485915040372146501
+    second: GSword_Idle_8
+  - first:
+      213: -5746564002977215271
+    second: GSword_Idle_9
+  - first:
+      213: 4896589253299480294
+    second: GSword_Idle_10
+  - first:
+      213: -1584237409322674270
+    second: GSword_Idle_11
+  - first:
+      213: -7141278262140312740
+    second: GSword_Idle_12
+  - first:
+      213: -6196498413182770076
+    second: GSword_Idle_13
+  - first:
+      213: 6603552083669430899
+    second: GSword_Idle_14
+  - first:
+      213: -6203918005659262627
+    second: GSword_Idle_15
+  - first:
+      213: -1802221671851186870
+    second: GSword_Idle_16
+  - first:
+      213: -687338966949244389
+    second: GSword_Idle_17
+  - first:
+      213: -4072331181100115601
+    second: GSword_Idle_18
+  - first:
+      213: -1970709119265944437
+    second: GSword_Idle_19
+  - first:
+      213: 5649533716282881684
+    second: GSword_Idle_20
+  - first:
+      213: 3921188540400076777
+    second: GSword_Idle_0
+  - first:
+      213: 4544325173888781357
+    second: GSword_Idle_1
+  - first:
+      213: -8799355247759739909
+    second: GSword_Idle_2
+  - first:
+      213: -1207945218730178388
+    second: GSword_Idle_3
+  - first:
+      213: -4163700846810556142
+    second: GSword_Idle_4
+  - first:
+      213: 7704336347582008084
+    second: GSword_Idle_5
+  - first:
+      213: 3270943030926249250
+    second: GSword_Idle_6
+  - first:
+      213: -731590247817928930
+    second: GSword_Idle_7
+  - first:
+      213: 8790388828235286556
+    second: GSword_Idle_8
+  - first:
+      213: 8813622198596064037
+    second: GSword_Idle_9
+  - first:
+      213: -976220296057251298
+    second: GSword_Idle_10
+  - first:
+      213: 8302574167605476847
+    second: GSword_Idle_11
+  - first:
+      213: 1505861918644393382
+    second: GSword_Idle_12
+  - first:
+      213: 4888920604079486894
+    second: GSword_Idle_13
+  - first:
+      213: -4854210157786599662
+    second: GSword_Idle_14
+  - first:
+      213: 49091157114485897
+    second: GSword_Idle_15
+  - first:
+      213: 7889083135104198916
+    second: GSword_Idle_16
+  - first:
+      213: -3919500394096414601
+    second: GSword_Idle_17
+  - first:
+      213: -7744861739371172858
+    second: GSword_Idle_18
+  - first:
+      213: -9022970844531504581
+    second: GSword_Idle_19
+  - first:
+      213: -7006827323861592550
+    second: GSword_Idle_20
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GSword_Idle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 420
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e701efb33cda6630800000000000000
+      internalID: 3921188540400076777
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_1
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 420
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2c81853bafa01f30800000000000000
+      internalID: 4544325173888781357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_2
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 420
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bf3bfcce50962e580800000000000000
+      internalID: -8799355247759739909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_3
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 420
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ca8c47939348c3fe0800000000000000
+      internalID: -1207945218730178388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_4
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 420
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2191ddad3209736c0800000000000000
+      internalID: -4163700846810556142
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_5
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 420
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41b81cbb61d4bea60800000000000000
+      internalID: 7704336347582008084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_6
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 420
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22d06ee3b59b46d20800000000000000
+      internalID: 3270943030926249250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 210
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1f1ca5bb8ed8d5f0800000000000000
+      internalID: -731590247817928930
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_8
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 210
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c18c688d01cbdf970800000000000000
+      internalID: 8790388828235286556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_9
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 210
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 523d0db61b6405a70800000000000000
+      internalID: 8813622198596064037
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_10
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 210
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e1a1bfe10d4c372f0800000000000000
+      internalID: -976220296057251298
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_11
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 210
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fed757d673ba83370800000000000000
+      internalID: 8302574167605476847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_12
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 210
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a55695cf65e5e410800000000000000
+      internalID: 1505861918644393382
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_13
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 210
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea7fe35036fe8d340800000000000000
+      internalID: 4888920604079486894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21f6908849162acb0800000000000000
+      internalID: -4854210157786599662
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_15
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 0
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98cfb65b5286ea000800000000000000
+      internalID: 49091157114485897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_16
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 0
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 409296f2057ab7d60800000000000000
+      internalID: 7889083135104198916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_17
+      rect:
+        serializedVersion: 2
+        x: 795
+        y: 0
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77031e078232b99c0800000000000000
+      internalID: -3919500394096414601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_18
+      rect:
+        serializedVersion: 2
+        x: 1060
+        y: 0
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 60c64463849b48490800000000000000
+      internalID: -7744861739371172858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_19
+      rect:
+        serializedVersion: 2
+        x: 1325
+        y: 0
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3a4ef892d7f7c280800000000000000
+      internalID: -9022970844531504581
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Idle_20
+      rect:
+        serializedVersion: 2
+        x: 1590
+        y: 0
+        width: 265
+        height: 210
+      alignment: 9
+      pivot: {x: 0.8, y: 0.54}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a169ab63cafb2ce90800000000000000
+      internalID: -7006827323861592550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
