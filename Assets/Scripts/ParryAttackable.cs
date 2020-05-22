@@ -67,7 +67,8 @@ public class ParryAttackable : MonoBehaviour
 
     public void StopParry()
     {
-        mOwner.CurrentWeapon.parryCollider.enabled = false;
+        if (mOwner.CurrentWeapon)
+            mOwner.CurrentWeapon.parryCollider.enabled = false;
         mParrySignal = false;
     }
 
@@ -90,6 +91,20 @@ public class ParryAttackable : MonoBehaviour
     {
         mOwner.stamina.UseStamina_Overflow(mOwner.CurrentWeapon.GetParryCost(receiveDmg));
         mIsParryHit = true;
+    }
+
+    public void AdjustFacing(float targetPosX)
+    {
+        var playerController = mOwner.gameObject.GetComponent<PlayerController>();
+        if (targetPosX > mOwner.transform.position.x && !playerController.IsPlayerFacingRight())
+        {   
+            playerController.Flip();
+        }
+
+        if (targetPosX < mOwner.transform.position.x && playerController.IsPlayerFacingRight())
+        {
+            playerController.Flip();
+        }
     }
 
     public ParryLevel GetParryLevel(Vector3 bulletPosition)

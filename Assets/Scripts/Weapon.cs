@@ -150,7 +150,14 @@ public class Weapon : MonoBehaviour
             {
                 DisableGroundMove();
             }
+
+            if (mOwner != null && (mCurrentMoveIndex == 0) && (mOwner.isGrounded) && mIsAttacking)
+            {
+                WeaponReset();
+            }
         }
+
+       
     }
 
     void LateUpdate()
@@ -335,6 +342,7 @@ public class Weapon : MonoBehaviour
 
     private void FixUpdate()
     {
+       
         
     }
 

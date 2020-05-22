@@ -242,8 +242,10 @@ MonoBehaviour:
       mMoveTimeSlices:
       - mType: 1
         mTimeSlicePropotion: 0.2
+      - mType: 0
+        mTimeSlicePropotion: 0.6
       - mType: 2
-        mTimeSlicePropotion: 0.5
+        mTimeSlicePropotion: 0.9
       - mType: 4
         mTimeSlicePropotion: 1
     mToMoveId: 
@@ -262,10 +264,12 @@ MonoBehaviour:
         mTimeSlicePropotion: 0.15
       - mType: 0
         mTimeSlicePropotion: 0.3
+      - mType: 0
+        mTimeSlicePropotion: 0.7
       - mType: 2
-        mTimeSlicePropotion: 0.6
+        mTimeSlicePropotion: 0.75
       - mType: 3
-        mTimeSlicePropotion: 0.9
+        mTimeSlicePropotion: 0.95
       - mType: 4
         mTimeSlicePropotion: 0.99
     mToMoveId: 02000000
@@ -283,11 +287,11 @@ MonoBehaviour:
       - mType: 1
         mTimeSlicePropotion: 0.2
       - mType: 2
-        mTimeSlicePropotion: 0.25
-      - mType: 2
         mTimeSlicePropotion: 0.3
       - mType: 2
-        mTimeSlicePropotion: 0.4
+        mTimeSlicePropotion: 0.5
+      - mType: 2
+        mTimeSlicePropotion: 0.6
       - mType: 2
         mTimeSlicePropotion: 0.7
       - mType: 4
