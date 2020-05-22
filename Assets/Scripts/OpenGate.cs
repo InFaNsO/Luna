@@ -4,12 +4,6 @@ public class OpenGate : MonoBehaviour
 {
     [SerializeField]
     private Animator animController;
-    public AudioSource opening;
-
-    void Start()
-    {
-        opening = GetComponent<AudioSource>();
-    }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -18,7 +12,6 @@ public class OpenGate : MonoBehaviour
         {
             Debug.Log("collided gate");
             animController.SetBool("Trigger1", true);
-            opening.Play();
         }
     }
 

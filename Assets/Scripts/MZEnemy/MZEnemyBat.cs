@@ -17,8 +17,6 @@ public class MZEnemyBat : Character
     protected bool mIsDropping = false;
     [SerializeField] protected GameObject mDropPrefbs = null;
 
-    public AudioSource attacking;
-
     public enum States
     {
         none = -1,
@@ -94,7 +92,6 @@ public class MZEnemyBat : Character
         if (mDropPrefbs != null)
             mIsDropping = true;
 
-        attacking = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -247,7 +244,6 @@ public class MZEnemyBat : Character
         Bullet newBullet = Object.Instantiate(mRangeAttackContext.mRangeBullet, new Vector3(0, 0, 0), Quaternion.identity);
         Vector3 dir = Vector3.Normalize(transform.position - mPlayer.transform.position);
         newBullet.Fire(gameObject.tag, mRangeAttackContext.mRangeDamage, transform.position, -dir, WeaponType.Range, this);
-        attacking.Play();
     }
 
     public void MeleeAttack()
@@ -255,7 +251,6 @@ public class MZEnemyBat : Character
         Bullet newBullet = Object.Instantiate(mMeleeAttackContext.mMeleeBullet, new Vector3(0, 0, 0), Quaternion.identity);
         newBullet.Awake();
         newBullet.Fire(gameObject.tag, mMeleeAttackContext.mMeleeDamage, transform.position, Vector3.down, WeaponType.Melee);
-        attacking.Play();
     }
 
     public void GetHit(float dmg, string tag, Vector3 hitPosition)

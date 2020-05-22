@@ -23,10 +23,6 @@ public class EnvObj_Door : MonoBehaviour, EnvironmentalObject
     public int mKeyCount = 1;
     private int mKeyUsed = 0;
 
-    public AudioSource unlocked;
-    public AudioSource opening;
-    public AudioSource closing;
-
     public string GetObjectName()
     {
         return _name;
@@ -62,7 +58,6 @@ public class EnvObj_Door : MonoBehaviour, EnvironmentalObject
             if (mKeyUsed >= mKeyCount)
             {
                 locked = false;
-                unlocked.Play();
             }
         }
     }
@@ -72,10 +67,6 @@ public class EnvObj_Door : MonoBehaviour, EnvironmentalObject
         mRenderer = gameObject.GetComponent<SpriteRenderer>();
         mRenderer.sprite = _spriteClosed;
         currentSpeed = moveStartSpeed;
-
-        unlocked = GetComponent<AudioSource>();
-        opening = GetComponent<AudioSource>();
-        closing = GetComponent<AudioSource>();
     }
 
     public void Update()
@@ -90,7 +81,6 @@ public class EnvObj_Door : MonoBehaviour, EnvironmentalObject
             // Door opening logics
             if (timer > openDelay)
             {
-                opening.Play();
                 if (distanceMoved < moveDistance)
                 {
                     mTransform.y = currentSpeed * Time.deltaTime;
