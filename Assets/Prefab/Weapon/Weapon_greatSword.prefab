@@ -231,7 +231,7 @@ MonoBehaviour:
   mGrade: 2
   mType: 0
   mBaseStaminaCostForParry: 10
-  mParryStrenth: 1
+  mParryStrenth: 0.5
   parryCollider: {fileID: 37104415407533706}
   mMoves:
   - name: air_attack
