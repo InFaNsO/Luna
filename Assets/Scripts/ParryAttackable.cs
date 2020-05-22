@@ -11,16 +11,11 @@ public class ParryAttackable : MonoBehaviour
         perfect = 2
     }
 
-    public Bullet mParryCollider;
     Player mOwner;
 
-    public float mParryCooldown = 1.0f;
-    float mParryCounter = 0.0f;
     bool mParrySignal = false;
-
-    // Getter & Setter
-    public bool IsParrying() { return mParryCounter < mParryCooldown; }
-    public int ParryCooldown { set { mParryCooldown = value; } }
+    bool mStartParry = false;
+    bool mIsParryHit = false;
 
     [System.Serializable]
     public struct ParryContext
@@ -35,15 +30,10 @@ public class ParryAttackable : MonoBehaviour
     void Awake()
     {
         mOwner = GetComponent<Player>();
-        mParryCounter = mParryCooldown;
     }
 
     void Update()
     {
-        if (mParryCounter < mParryCooldown)
-            mParryCounter += Time.deltaTime;
-        else
-            mParrySignal = true;
 
         // Take this out when set up with controller
 
@@ -55,26 +45,66 @@ public class ParryAttackable : MonoBehaviour
         //-------------------------------------------
     }
 
+    void LateUpdate()
+    {
+        mStartParry = false;
+        mIsParryHit = false;
+        if (mOwner.CurrentWeapon == null || !mOwner.stamina.IsStaminaSufficient(mOwner.CurrentWeapon.mBaseStaminaCostForParry) || !mOwner.isGrounded)
+        {
+            StopParry();
+        }
+    }
     public void Parry()
     {
-        if (mParryCounter >= mParryCooldown && mOwner.CurrentWeapon != null)
+        if (mOwner.CurrentWeapon != null && mOwner.stamina.IsStaminaSufficient(mOwner.CurrentWeapon.mBaseStaminaCostForParry) && mOwner.isGrounded)
         {
             mOwner.CurrentWeapon.WeaponReset();
-            Bullet newBullet = Instantiate(mParryCollider, gameObject.transform);
-            newBullet.Fire("Parry", 0, mOwner.transform.position, mOwner.transform.right, WeaponType.Melee);
-            mParryCounter = 0.0f;
+            mOwner.CurrentWeapon.parryCollider.enabled = true;
+            mParrySignal = true;
+            mStartParry = true;
         }
     }
 
-    public bool GetParrySignalForAnimator()
+    public void StopParry()
     {
-        bool ret = false;
-        if (IsParrying())
-        {
-            ret = mParrySignal;
-            mParrySignal = false;
+        if (mOwner.CurrentWeapon)
+            mOwner.CurrentWeapon.parryCollider.enabled = false;
+        mParrySignal = false;
+    }
+
+    public bool IsParrying()
+    {
+        return mParrySignal;
+    }
+
+    public bool IsParryHit()
+    {
+        return mIsParryHit;
+    }
+
+    public bool IsStartParrying()
+    {
+        return mStartParry;
+    }
+
+    public void ReduceStamine(float receiveDmg)
+    {
+        mOwner.stamina.UseStamina_Overflow(mOwner.CurrentWeapon.GetParryCost(receiveDmg));
+        mIsParryHit = true;
+    }
+
+    public void AdjustFacing(float targetPosX)
+    {
+        var playerController = mOwner.gameObject.GetComponent<PlayerController>();
+        if (targetPosX > mOwner.transform.position.x && !playerController.IsPlayerFacingRight())
+        {   
+            playerController.Flip();
         }
-        return ret;
+
+        if (targetPosX < mOwner.transform.position.x && playerController.IsPlayerFacingRight())
+        {
+            playerController.Flip();
+        }
     }
 
     public ParryLevel GetParryLevel(Vector3 bulletPosition)

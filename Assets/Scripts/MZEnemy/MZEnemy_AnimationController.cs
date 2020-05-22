@@ -40,6 +40,11 @@ public class MZEnemy_AnimationController : MonoBehaviour
         mAnimator.SetTrigger("Death");
     }
 
+    public void GoStunAnimation()
+    {
+        mAnimator.SetTrigger("Stun");
+    }
+
     public void MeleeAttack()
     {
         mEnemyBat.MeleeAttack();
@@ -53,5 +58,10 @@ public class MZEnemy_AnimationController : MonoBehaviour
     public void Die()
     {
         mEnemyBat.RealDie();
+    }
+
+    public void RestFromStun()
+    {
+        mEnemyBat.RestFromStun();
     }
 }

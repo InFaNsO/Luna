@@ -620,6 +620,9 @@ public class InputController : IInputActionCollection, IDisposable
                 Parry.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnParry;
                 Parry.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnParry;
                 Parry.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.OnParry;
+                Parry.started -= m_Wrapper.m_PlayerControlActionsCallbackInterface.CancelParry;
+                Parry.performed -= m_Wrapper.m_PlayerControlActionsCallbackInterface.CancelParry;
+                Parry.canceled -= m_Wrapper.m_PlayerControlActionsCallbackInterface.CancelParry;
             }
             m_Wrapper.m_PlayerControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -656,7 +659,7 @@ public class InputController : IInputActionCollection, IDisposable
                 PickUpWeapon.canceled += instance.OnPickUpWeapon;
                 Parry.started += instance.OnParry;
                 Parry.performed += instance.OnParry;
-                Parry.canceled += instance.OnParry;
+                Parry.canceled += instance.CancelParry;
             }
         }
     }
@@ -725,6 +728,7 @@ public class InputController : IInputActionCollection, IDisposable
         void OnSelectNextItem(InputAction.CallbackContext context);
         void OnPickUpWeapon(InputAction.CallbackContext context);
         void OnParry(InputAction.CallbackContext context);
+        void CancelParry(InputAction.CallbackContext context);
     }
     public interface IUIControlActions
     {

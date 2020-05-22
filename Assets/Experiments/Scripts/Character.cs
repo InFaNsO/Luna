@@ -28,7 +28,10 @@ public class Character : MonoBehaviour
     //Keep Movement Track
     [HideInInspector] public bool IsFacingLeft = false;
 
-    private HealthBar mHealthBar;
+    protected HealthBar mHealthBar;
+
+    [HideInInspector] public bool mIsStuned = false;
+    [HideInInspector] float mStunCounter;
 
     protected virtual void Awake()
     {
@@ -66,6 +69,14 @@ public class Character : MonoBehaviour
         {
             mHealthBar.UpdateHealthBar(myHealth.GetHealth() / myHealth.GetMaxHealth());
         }
+        if (mIsStuned)
+        {
+            if (mStunCounter <= 0.0f)
+            {
+                mIsStuned = false;
+            }
+            mStunCounter -= Time.deltaTime;
+        }
     }
 
 
@@ -86,6 +97,14 @@ public class Character : MonoBehaviour
 
         ParticleSystem newParticle = Instantiate(mGetHitParticle, hitPosition, Quaternion.identity);
         newParticle.Play();
+    }
+
+    public void GetStun(float stunHowLong)
+    {
+        mIsStuned = true;
+        mStunCounter = stunHowLong;
+
+        //SetAnimator(EnemyAnimation.Stun);
     }
 
     public void Turn()
