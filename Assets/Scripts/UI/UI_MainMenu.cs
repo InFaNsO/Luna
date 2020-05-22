@@ -55,7 +55,10 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
 
     public void Button_StartGame()
     {
-        ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Level1);
+        //Bhavil's addition Friday May 15-16
+        GameEvents.current.OnDoTransitionAction(TransitionManager.TransitionType.LogoWipe, GameManager.ESceneIndex.Level1);
+
+        //ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Level1);
         //StartCoroutine(LoadLevelRoutine());
     }
 

@@ -67,7 +67,8 @@ public class CameraController : MonoBehaviour
 
 
         SetCameraFocus(target);
-        
+
+        GameEvents.current.DoShakeCamera += Shake;
     }
     private void FixedUpdate()
     {

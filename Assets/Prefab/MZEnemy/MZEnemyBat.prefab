@@ -110,7 +110,7 @@ Rigidbody2D:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2200604411466338833}
-  m_BodyType: 1
+  m_BodyType: 0
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
@@ -158,11 +158,12 @@ MonoBehaviour:
   isGrounded: 0
   mAttackMomentumPos: {fileID: 0}
   element: {fileID: 0}
-  knockBackX: 1
-  knockBackY: 1
+  knockBackX: 3
+  knockBackY: 3
   mGetHitParticle: {fileID: 198157547220164012, guid: 4961a16ba01e09547be3e1c9d16d5ad0,
     type: 3}
   IsFacingLeft: 0
+  mIsStuned: 0
   mMeleeAttackRange: 1
   mRangeAttackRange: 3
   mVisibilityRange: 5

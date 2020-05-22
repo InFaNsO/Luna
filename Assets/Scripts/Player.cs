@@ -1,4 +1,4 @@
-﻿ 
+﻿
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +12,8 @@ public class Player : Character
     private Weapon mWeapon2;
     [SerializeField]
     public Weapon mCurrentWeapon;
+
+    public Stamina stamina;
 
     [SerializeField]
     private Weapon mNearbyWeapon;
@@ -43,7 +45,7 @@ public class Player : Character
     public GameObject mWeaponPosition;
 
     public Vector3 LastGotHitPosition { get { return mLastGotHitPosition; } }       //|--- [Mingzhuo Zhang] Edit:  For Kevin(Element system)
-    
+
 
     private ParryAttackable mParryAttackable;
 
@@ -52,7 +54,8 @@ public class Player : Character
     public Weapon CurrentWeapon { get { return mCurrentWeapon; } }
 
     private CameraController mMainCamera;
-    
+
+
     protected override void Start()
     {
         base.Start();
@@ -228,7 +231,7 @@ public class Player : Character
         return false;
     }
 
-    
+
     override public void GetHit(float dmg)
     {
         mMainCamera.Shake();
@@ -242,20 +245,33 @@ public class Player : Character
     {
         Debug.Log("[Player] Player Dead, curr hp : " + myHealth.GetHealth() + "max hp " + myHealth.GetMaxHealth());
 
-        if (gameObject.GetComponent<CheckPointTracker>() != null)
+        if (myCheckpointTracker != null)
         {
-            if (gameObject.GetComponent<CheckPointTracker>().respawnPoint != null)
+            if (myCheckpointTracker.respawnPoint != null)
             {
-                gameObject.GetComponent<CheckPointTracker>().Respawn(true);
+                myCheckpointTracker.Respawn(true);
+                Respawn();
                 ServiceLocator.Get<UIManager>().UpdateHPGauge(myHealth.GetHealth() / myHealth.GetMaxHealth());
             }
             else
             {
                 ServiceLocator.Get<UIManager>().UpdateHPGauge(myHealth.GetHealth()  / myHealth.GetMaxHealth());
                 gameObject.SetActive(false);
-                ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);             //|--- [Rick H] Edit: Call GameMngr
+
+
+                //Game event system will handle
+                //ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);             //|--- [Rick H] Edit: Call GameMngr
+
+                //Bhavil's addition Friday May 15-16
+                GameEvents.current.OnDoTransitionAction(TransitionManager.TransitionType.LogoWipe, GameManager.ESceneIndex.Mainmenu);
+
             }
         }
+    }
+
+    void Respawn()
+    {
+        myHealth.Respawn();
     }
 
     public void Attack()
@@ -326,6 +342,8 @@ public class Player : Character
 
         mMainCamera = GameObject.Find("Main Camera").GetComponent<CameraController>();
         Assert.IsNotNull(mMainCamera, "[Player.cs] Can not find MainCamera controller in the scene.");
+
+        stamina = GetComponent<Stamina>();
     }
 
     private void FixedUpdate()
@@ -338,17 +356,20 @@ public class Player : Character
         }
     }
 
-    public void Update()
+    public new void Update()
     {
         ExpCheck();
+        if (!myHealth.IsAlive())
+        {
+            Die();
+            myCheckpointTracker.Respawn(true);
+        }
+
     }
 
     public void LateUpdate()
     {
-        if(!myHealth.IsAlive())
-        {
-            myCheckpointTracker.Respawn(true);            
-        }
+
     }
 
     //----------------------------------------------------------------------------------//|
@@ -364,9 +385,13 @@ public class Player : Character
             {     //|
                 if(bullet.mElement != null)
                     GetHit(bullet.mElement);
-                
+
                 mLastGotHitPosition = other.gameObject.transform.position;              //|
-                GetHit(bullet.Damage, mLastGotHitPosition);
+
+                if (!mParryAttackable.IsParrying())
+                {
+                    GetHit(bullet.Damage, mLastGotHitPosition);
+                }
             }                                                                       //|
         }                                                                               //|
     }                                                                                   //|

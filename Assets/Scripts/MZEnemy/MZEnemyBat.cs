@@ -98,6 +98,12 @@ public class MZEnemyBat : Character
     void Update()
     {
         base.Update();
+
+        if (mIsStuned)
+        {
+            return;
+        }
+
         switch (mCurrentState)
         {
             case States.none:
@@ -256,6 +262,27 @@ public class MZEnemyBat : Character
     public void GetHit(float dmg, string tag, Vector3 hitPosition)
     {
         GetHit(dmg, hitPosition);
+        GetStun();
+    }
+
+    private void GetStun()
+    {
+        mIsStuned = true;
+        mAnimationController.GoStunAnimation();
+        aiPath.enabled = false;
+        
+    }
+
+    public void RestFromStun()
+    {
+        mIsStuned = false;
+        aiPath.enabled = true;
+        var rb = GetComponent<Rigidbody2D>();
+        if (rb)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = 0.0f;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -271,16 +298,16 @@ public class MZEnemyBat : Character
                 mLastGotHitPosition = other.gameObject.transform.position;              //|
                 GetHit(bullet.Damage, other.tag, mLastGotHitPosition);
                 var rb = GetComponent<Rigidbody2D>();
-                if (rb)
+                if (rb && myHealth.IsAlive())
                 {
-                    var direction = other.gameObject.transform.position.x - transform.position.x;
+                    var direction = mPlayer.transform.position.x - transform.position.x;
                     if (direction > 0.0f)
                     {
-                        rb.AddForce(new Vector2(-knockBackX, knockBackY));
+                        rb.AddForce(new Vector2(-knockBackX, knockBackY),ForceMode2D.Impulse);
                     }
-                    else if (direction < 0.0f)
+                    else if (direction <= 0.0f)
                     {
-                        rb.AddForce(new Vector2(knockBackX, knockBackY));
+                        rb.AddForce(new Vector2(knockBackX, knockBackY), ForceMode2D.Impulse);
                     }
                 }
             }
@@ -289,10 +316,12 @@ public class MZEnemyBat : Character
 
     override public void Die()
     {
+        GameEvents.current.OnEnemyDiedAction(transform);
+
         //effect
         Debug.Log("enemy destory");
         mAnimationController.GoDeathAnimation();
-       
+        base.mHealthBar.gameObject.SetActive(false);
     }
 
     public void RealDie()

@@ -52,8 +52,6 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     private GameObject popUp_msgbox;
 
     [SerializeField]
-    private float msgBox_move_time = 1f;
-    [SerializeField]
     private float msgBox_move_speed = 1f;
     [SerializeField]
     private float msgBox_stay_time = 1f;
@@ -99,7 +97,7 @@ public class UI_InGame : MonoBehaviour, UI_Interface
         {
             Transform msgboxtrans = transform.Find("MsgBox");
             popUp_msgbox = msgboxtrans.Find("popup_msgbox").gameObject;
-            msgBox_From = msgboxtrans.Find("msgbox_from").gameObject.transform;
+            SetMsgBox_Pos_To_From();
             msgBox_To = msgboxtrans.Find("msgbox_to").gameObject.transform;
             popUp_msgbox.transform.position = msgBox_From.position;
             _uiPopUpComponents.Add(popUp_msgbox);
@@ -190,6 +188,11 @@ private void OnEnable()
 
 
     #region PopUp_MsgBox
+    public void SetMsgBox_Pos_To_From()
+    {
+        popUp_msgbox.transform.position = msgBox_From.position;
+    }
+
     public void SetText_MsgBox(string text)
     {
         popUp_msgbox.GetComponentInChildren<Text>().text = text;
@@ -202,6 +205,7 @@ private void OnEnable()
             _messageText.text = text;
             _background.sprite = background;
 
+            SetMsgBox_Pos_To_From();
             popUp_msgbox.SetActive(true);
             StartCoroutine("movebox");
         }
@@ -211,11 +215,9 @@ private void OnEnable()
         msgBox_isActive = true;
 
         //move in
-        msgBox_timer = 0.0f;
-        while (msgBox_timer < msgBox_move_time)
+         while (Vector3.Distance(msgBox_To.position, popUp_msgbox.transform.position) > 0.001f)
         {
-            msgBox_timer += Time.deltaTime;
-            popUp_msgbox.transform.Translate(msgBox_move_speed * Time.deltaTime * new Vector3(msgBox_To.position.x - popUp_msgbox.transform.position.x, msgBox_To.position.y - popUp_msgbox.transform.position.y, msgBox_To.position.z - popUp_msgbox.transform.position.z));
+             popUp_msgbox.transform.Translate(msgBox_move_speed * Time.deltaTime * new Vector3(msgBox_To.position.x - popUp_msgbox.transform.position.x, msgBox_To.position.y - popUp_msgbox.transform.position.y, msgBox_To.position.z - popUp_msgbox.transform.position.z));
             yield return null;
         }
 
@@ -223,11 +225,9 @@ private void OnEnable()
         yield return new WaitForSeconds(msgBox_stay_time);
 
         //move out
-        msgBox_timer = 0.0f;
-        while (msgBox_timer < msgBox_move_time)
+         while (Vector3.Distance(msgBox_From.position, popUp_msgbox.transform.position) > 0.001f)
         {
-            msgBox_timer += Time.deltaTime;
-            popUp_msgbox.transform.Translate(msgBox_move_speed * Time.deltaTime * new Vector3( msgBox_From.transform.position.x - popUp_msgbox.transform.position.x, msgBox_From.transform.position.y - popUp_msgbox.transform.position.y, msgBox_From.transform.position.z - popUp_msgbox.transform.position.z));
+             popUp_msgbox.transform.Translate(msgBox_move_speed * Time.deltaTime * new Vector3( msgBox_From.transform.position.x - popUp_msgbox.transform.position.x, msgBox_From.transform.position.y - popUp_msgbox.transform.position.y, msgBox_From.transform.position.z - popUp_msgbox.transform.position.z));
             yield return null;
         }
 
@@ -276,7 +276,10 @@ private void OnEnable()
         }
         else
         {
-            ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);
+            //Bhavil's addition Friday May 15-16
+            GameEvents.current.OnDoTransitionAction(TransitionManager.TransitionType.LogoWipe, GameManager.ESceneIndex.Mainmenu);
+
+            //ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Mainmenu);
         }
  
     }
