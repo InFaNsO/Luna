@@ -23,6 +23,9 @@ public class EnvObj_Door : MonoBehaviour, EnvironmentalObject
     public int mKeyCount = 1;
     private int mKeyUsed = 0;
 
+    [SerializeField]
+    private SFXGroup _SFXGroup;
+
     public string GetObjectName()
     {
         return _name;
@@ -58,6 +61,9 @@ public class EnvObj_Door : MonoBehaviour, EnvironmentalObject
             if (mKeyUsed >= mKeyCount)
             {
                 locked = false;
+                _SFXGroup.PlaySFX("Door_Unlocking");
+                _SFXGroup.PlaySFX("Door_Opening");
+
             }
         }
     }

@@ -142,6 +142,7 @@ Transform:
   m_Children:
   - {fileID: 7549466205047464953}
   - {fileID: 7194581818262073986}
+  - {fileID: 4408014297284841895}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -202,7 +203,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a720961fd1285c439ec417a91aae418, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  elevatorSound: {fileID: 855856163699133108}
+  _SFXGroup: {fileID: 4408014297284841894}
 --- !u!82 &855856163699133108
 AudioSource:
   m_ObjectHideFlags: 0
@@ -380,3 +381,90 @@ SpriteRenderer:
   m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1001 &6717851723717049537
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 7549466204472333934}
+    m_Modifications:
+    - target: {fileID: 6923988842591022438, guid: 7f340974f2c30fb4780a932cf33eae1e,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923988842591022438, guid: 7f340974f2c30fb4780a932cf33eae1e,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923988842591022438, guid: 7f340974f2c30fb4780a932cf33eae1e,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923988842591022438, guid: 7f340974f2c30fb4780a932cf33eae1e,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923988842591022438, guid: 7f340974f2c30fb4780a932cf33eae1e,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923988842591022438, guid: 7f340974f2c30fb4780a932cf33eae1e,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923988842591022438, guid: 7f340974f2c30fb4780a932cf33eae1e,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923988842591022438, guid: 7f340974f2c30fb4780a932cf33eae1e,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923988842591022438, guid: 7f340974f2c30fb4780a932cf33eae1e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923988842591022438, guid: 7f340974f2c30fb4780a932cf33eae1e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923988842591022438, guid: 7f340974f2c30fb4780a932cf33eae1e,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6923988842591022441, guid: 7f340974f2c30fb4780a932cf33eae1e,
+        type: 3}
+      propertyPath: m_Name
+      value: SFX_Elevator
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 7f340974f2c30fb4780a932cf33eae1e, type: 3}
+--- !u!4 &4408014297284841895 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6923988842591022438, guid: 7f340974f2c30fb4780a932cf33eae1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6717851723717049537}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4408014297284841894 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6923988842591022439, guid: 7f340974f2c30fb4780a932cf33eae1e,
+    type: 3}
+  m_PrefabInstance: {fileID: 6717851723717049537}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda0c0a8008b0d1498e8fd5e7ba860f8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
