@@ -5,14 +5,19 @@ using UnityEngine;
 public class CheckPointTracker : MonoBehaviour
 {
     public GameObject respawnPoint;
+    private GameObject mTransitionManager;
     public bool healToFullOnRespawn = false;
+    public ParticleSystem onDeathParticle;
+    public ParticleSystem onRespawnParticle;
     private bool respawnFlag = false;
     private bool enemyRespawn = false;
     private bool flaggedForRespawn = false;
+    private bool playRespawnParticle = false;
     public float invulnerableTime = 3.0f;
     private float originalInvTime;
     public float recordedHP;
     public List<SimpleCheckPoint> cpList;
+    private TransitionManager mtrans;
     private ScreenTransition mScreenTransition;
     private bool hToFull;
 
@@ -28,14 +33,18 @@ public class CheckPointTracker : MonoBehaviour
         {
             hToFull = healToFull;
             mScreenTransition.FadeIn();
+            //mtrans.DoCrossFadeOnlyStart();
             flaggedForRespawn = true;
+            playRespawnParticle = true;
             if (mScreenTransition.Fade.canvasRenderer.GetAlpha() >= 0.99f && flaggedForRespawn)
             {
                 HealPlayer(healToFull);
+                ServiceLocator.Get<UIManager>().UpdateHPGauge(GetComponent<Player>().myHealth.GetHealth() / GetComponent<Player>().myHealth.GetMaxHealth());
                 transform.position = respawnPoint.transform.position;
                 ResetBuffs();
                 flaggedForRespawn = false;
                 mScreenTransition.FadeOut();
+                //mtrans.DoCrossFadeOnlyEnd();
             }
             else
             {
@@ -65,23 +74,28 @@ public class CheckPointTracker : MonoBehaviour
         }
 
         mScreenTransition = GameObject.FindGameObjectWithTag("ScreenEffectCanvas").GetComponent<ScreenTransition>();
+        mtrans = mTransitionManager.GetComponent<TransitionManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(flaggedForRespawn)
+        if (flaggedForRespawn)
         {
             Respawn(hToFull);
         }
         if (!GetComponent<Player>().myHealth.IsAlive())
         {
+            if (onDeathParticle != null)
+            {
+                Instantiate(onDeathParticle, gameObject.transform);
+            }
             Respawn(healToFullOnRespawn);
         }
-        if(respawnFlag)
+        if (respawnFlag)
         {
             ResetBuffs();
-            if(invulnerableTime <= 0.0f)
+            if (invulnerableTime <= 0.0f)
             {
                 respawnFlag = false;
             }
@@ -90,11 +104,21 @@ public class CheckPointTracker : MonoBehaviour
                 invulnerableTime -= Time.deltaTime;
             }
         }
+        
+        //Particle
+        if (playRespawnParticle && mScreenTransition.Fade.canvasRenderer.GetAlpha() <= 0.1f)
+        {
+            playRespawnParticle = false;
+            if (onRespawnParticle != null)
+            {
+                Instantiate(onRespawnParticle, transform);
+            }
+        }
     }
 
     private void HealPlayer(bool toFull)
     {
-        if(toFull)
+        if (toFull)
         {
             GetComponent<Player>().myHealth.Respawn(); // heal the player before respawning them
             respawnFlag = true;
@@ -124,7 +148,7 @@ public class CheckPointTracker : MonoBehaviour
     {
         for (int i = 0; i < cpList.Count; ++i)
         {
-            if(cpList[i].gameObject != respawnPoint)
+            if (cpList[i].gameObject != respawnPoint)
             {
                 cpList[i].activated = false;
                 cpList[i].currentPoint = false;
@@ -176,7 +200,7 @@ public class CheckPointTracker : MonoBehaviour
 
     public void RespawnEnemies()
     {
-        if(enemyRespawn)
+        if (enemyRespawn)
         {
             for (int i = 0; i < enemyList.Count; i++)
             {
