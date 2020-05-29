@@ -10,6 +10,9 @@ public class MZEnemyBat : Character
     public float mRangeAttackRange;
     public float mVisibilityRange;
 
+    [SerializeField]
+    private SFXGroup _SFXGroup;
+
     [HideInInspector] public AIPath aiPath;
     private GameObject mPlayer;
     public MZEnemy_AnimationController mAnimationController;
@@ -201,6 +204,10 @@ public class MZEnemyBat : Character
         mIdleContext.time = 0.0f;
         mIdleContext.idelCounter = 0.0f;
         mCurrentState = States.Idel;
+
+        _SFXGroup.PlaySFX("MZEnemy_Hovering");
+        
+        
     }
     void GoToGoto()
     {
@@ -250,6 +257,8 @@ public class MZEnemyBat : Character
         Bullet newBullet = Object.Instantiate(mRangeAttackContext.mRangeBullet, new Vector3(0, 0, 0), Quaternion.identity);
         Vector3 dir = Vector3.Normalize(transform.position - mPlayer.transform.position);
         newBullet.Fire(gameObject.tag, mRangeAttackContext.mRangeDamage, transform.position, -dir, WeaponType.Range, this);
+        _SFXGroup.PlaySFX("MZEnemy_Shooting");
+
     }
 
     public void MeleeAttack()
@@ -322,6 +331,7 @@ public class MZEnemyBat : Character
         Debug.Log("enemy destory");
         mAnimationController.GoDeathAnimation();
         base.mHealthBar.gameObject.SetActive(false);
+        _SFXGroup.PlaySFX("Death");
     }
 
     public void RealDie()

@@ -97,6 +97,7 @@ public class Character : MonoBehaviour
 
         ParticleSystem newParticle = Instantiate(mGetHitParticle, hitPosition, Quaternion.identity);
         newParticle.Play();
+        
     }
 
     public void GetStun(float stunHowLong)

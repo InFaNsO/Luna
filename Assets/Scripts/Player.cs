@@ -55,6 +55,8 @@ public class Player : Character
 
     private CameraController mMainCamera;
 
+    [SerializeField]
+    private SFXGroup _SFXGroup;
 
     protected override void Start()
     {
@@ -203,8 +205,10 @@ public class Player : Character
                 Debug.Log("Switch to Weapon 1");
             }
         }
+
         UpdateWeaponSlotInUI();
 
+        _SFXGroup.PlaySFX("Player_Switch_Weapon");
     }
 
     public float GetAttackSpeed()
@@ -240,6 +244,8 @@ public class Player : Character
         //if (mIsIFrameOn == false)
             //mCurrentHealth -= dmg;
             UpdateHealth(-dmg);                                                                     //|--- [Mingzhuo Zhang] Edit: use update health function instead, so we can update UI
+
+        _SFXGroup.PlaySFX("Player_Hit");
     }
     override public void Die()
     {
@@ -384,7 +390,7 @@ public class Player : Character
 
             var bullet = other.GetComponent<Bullet>();
             if ((bullet != null) && (other.tag != "Parry"))       //|
-            {     //|
+            {                                                        //|
                 if(bullet.mElement != null)
                     GetHit(bullet.mElement);
 
@@ -393,6 +399,7 @@ public class Player : Character
                 if (!mParryAttackable.IsParrying())
                 {
                     GetHit(bullet.Damage, mLastGotHitPosition);
+                    _SFXGroup.PlaySFX("Player_Hit");
                 }
             }                                                                       //|
         }                                                                               //|

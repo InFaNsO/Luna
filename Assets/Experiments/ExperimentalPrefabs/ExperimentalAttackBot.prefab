@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1556077331476083756}
   - component: {fileID: 8199868040933135255}
-  m_Layer: 15
+  m_Layer: 11
   m_Name: PlayerInRange
   m_TagString: Util
   m_Icon: {fileID: 0}
@@ -182,7 +182,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4584334142095310054}
   - component: {fileID: 8708851596474915860}
-  m_Layer: 15
+  m_Layer: 11
   m_Name: AttackRange
   m_TagString: Util
   m_Icon: {fileID: 0}
@@ -228,7 +228,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7144519068752237058}
-  m_Layer: 15
+  m_Layer: 11
   m_Name: Physics
   m_TagString: Util
   m_Icon: {fileID: 0}
@@ -417,6 +417,7 @@ MonoBehaviour:
   knockBackY: 1
   mGetHitParticle: {fileID: 0}
   IsFacingLeft: 0
+  mIsStuned: 0
   mNodeRange: {fileID: 8457876105188489803}
   mAttackRange: {fileID: 8708851596474915860}
   mPlayerVisibilityRange: {fileID: 8199868040933135255}
@@ -428,7 +429,6 @@ MonoBehaviour:
   IsRunning: 0
   mWeapon: {fileID: 0}
   mDropPrefbs: {fileID: 0}
-  mIsStuned: 0
   MyType: 0
 --- !u!114 &8703405756520388962
 MonoBehaviour:
@@ -591,7 +591,7 @@ AudioSource:
   SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
-  MinDistance: 1
+  MinDistance: 1.0788976
   MaxDistance: 8
   Pan2D: 0
   rolloffMode: 1
@@ -677,7 +677,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3238857060416819393}
   - component: {fileID: 8457876105188489803}
-  m_Layer: 15
+  m_Layer: 11
   m_Name: NodeTrigger
   m_TagString: Util
   m_Icon: {fileID: 0}

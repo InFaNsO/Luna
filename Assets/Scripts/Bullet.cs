@@ -77,7 +77,7 @@ public class Bullet : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.tag == "Util")
+        if (collision.gameObject.tag == "Util" || collision.GetComponent<Collider2D>().tag == "Util")
             return;
 
         if ((collision.gameObject.tag != gameObject.tag) && (gameObject.tag != "Parry") && (collision.gameObject.tag != "Parry"))

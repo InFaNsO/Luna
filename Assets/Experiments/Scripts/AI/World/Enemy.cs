@@ -70,6 +70,7 @@ public class Enemy : Character
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (other.tag != gameObject.tag)
         {
             var bullet = other.GetComponent<Bullet>();
