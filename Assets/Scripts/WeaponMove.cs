@@ -19,6 +19,7 @@ public class WeaponMove
     [SerializeField] protected Bullet mBullet;
     [SerializeField] protected Transform mFirePosition;
     [SerializeField] protected AnimationClip mAnimationClip;
+    [SerializeField] private AudioSource _Audio;
     private Weapon mWeapon;
     
     [System.NonSerialized] public Animator mWeaponAnimator;
@@ -64,6 +65,8 @@ public class WeaponMove
         {
             mWeapon.mComboBar.Bind(GetMoveContext());
         }
+
+        _Audio.Play();
     }
 
     public void Exit()
