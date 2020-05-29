@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 679799675015805979}
   - component: {fileID: -117960862592128723}
   - component: {fileID: 6108773353890686633}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: Air_sword_AirAttack_bullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
