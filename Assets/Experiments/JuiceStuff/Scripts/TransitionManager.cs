@@ -65,4 +65,9 @@ public class TransitionManager : MonoBehaviour
         ServiceLocator.Get<GameManager>().SwitchScene(buildIndex);
     }
 
+    public void DoCrossFadeOnly()
+    {
+        CrossFade.SetTrigger("Start");
+    }
+
 }
