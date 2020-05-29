@@ -1,0 +1,464 @@
+fileFormatVersion: 2
+guid: 55a0bbe922906df4d86ab3bd0dfee4d1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 2422475140661973969
+    second: GSword_Jump_0
+  - first:
+      213: -4962079019048950624
+    second: GSword_Jump_1
+  - first:
+      213: 4708802273357027266
+    second: GSword_Jump_2
+  - first:
+      213: 6413134248296374977
+    second: GSword_Jump_3
+  - first:
+      213: 4182421923303710172
+    second: GSword_Jump_4
+  - first:
+      213: 3297665843116287356
+    second: GSword_Jump_5
+  - first:
+      213: 2635770632488666682
+    second: GSword_Jump_6
+  - first:
+      213: 6327364694109101123
+    second: GSword_Jump_7
+  - first:
+      213: -6047121882217716753
+    second: GSword_Jump_8
+  - first:
+      213: -6221957875076595159
+    second: GSword_Jump_9
+  - first:
+      213: -7196107953113598551
+    second: GSword_Jump_10
+  - first:
+      213: 5386831026104753390
+    second: GSword_Jump_11
+  - first:
+      213: 4556557140309731717
+    second: GSword_Jump_12
+  - first:
+      213: -5899077092786760168
+    second: GSword_Jump_13
+  - first:
+      213: -6948614629716490368
+    second: GSword_Jump_14
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GSword_Jump_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 630
+        width: 284
+        height: 315
+      alignment: 9
+      pivot: {x: 0.77, y: 0.41}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1d31f5c3e4c5e9120800000000000000
+      internalID: 2422475140661973969
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Jump_1
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 630
+        width: 284
+        height: 315
+      alignment: 9
+      pivot: {x: 0.77, y: 0.41}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a42b222c67232bb0800000000000000
+      internalID: -4962079019048950624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Jump_2
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 630
+        width: 284
+        height: 315
+      alignment: 9
+      pivot: {x: 0.77, y: 0.41}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2c75ff428b6095140800000000000000
+      internalID: 4708802273357027266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Jump_3
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 630
+        width: 284
+        height: 315
+      alignment: 9
+      pivot: {x: 0.77, y: 0.41}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c2e89ede97000950800000000000000
+      internalID: 6413134248296374977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Jump_4
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 630
+        width: 284
+        height: 315
+      alignment: 9
+      pivot: {x: 0.77, y: 0.41}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cddd25f6492fa0a30800000000000000
+      internalID: 4182421923303710172
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Jump_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 315
+        width: 284
+        height: 315
+      alignment: 9
+      pivot: {x: 0.77, y: 0.41}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c75a2eecc99a3cd20800000000000000
+      internalID: 3297665843116287356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Jump_6
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 315
+        width: 284
+        height: 315
+      alignment: 9
+      pivot: {x: 0.77, y: 0.41}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a36c4e2ec63249420800000000000000
+      internalID: 2635770632488666682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Jump_7
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 315
+        width: 284
+        height: 315
+      alignment: 9
+      pivot: {x: 0.77, y: 0.41}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c98bc5aa05fc750800000000000000
+      internalID: 6327364694109101123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Jump_8
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 315
+        width: 284
+        height: 315
+      alignment: 9
+      pivot: {x: 0.77, y: 0.41}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe3ebe8efae441ca0800000000000000
+      internalID: -6047121882217716753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Jump_9
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 315
+        width: 284
+        height: 315
+      alignment: 9
+      pivot: {x: 0.77, y: 0.41}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9228d98274a27a9a0800000000000000
+      internalID: -6221957875076595159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Jump_10
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 284
+        height: 315
+      alignment: 9
+      pivot: {x: 0.78480536, y: 0.48786545}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a5fc4971f9422c90800000000000000
+      internalID: -7196107953113598551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Jump_11
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 0
+        width: 284
+        height: 315
+      alignment: 9
+      pivot: {x: 0.78727293, y: 0.5635062}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eecd600174ed1ca40800000000000000
+      internalID: 5386831026104753390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Jump_12
+      rect:
+        serializedVersion: 2
+        x: 568
+        y: 0
+        width: 284
+        height: 315
+      alignment: 9
+      pivot: {x: 0.7798703, y: 0.61467487}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5896ee2d3942c3f30800000000000000
+      internalID: 4556557140309731717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Jump_13
+      rect:
+        serializedVersion: 2
+        x: 852
+        y: 0
+        width: 284
+        height: 315
+      alignment: 9
+      pivot: {x: 0.7823379, y: 0.6257985}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8161dc583a4422ea0800000000000000
+      internalID: -5899077092786760168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Jump_14
+      rect:
+        serializedVersion: 2
+        x: 1136
+        y: 0
+        width: 284
+        height: 315
+      alignment: 9
+      pivot: {x: 0.7798703, y: 0.63024795}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0878aa24fcf819f90800000000000000
+      internalID: -6948614629716490368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

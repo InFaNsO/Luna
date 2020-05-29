@@ -81,7 +81,7 @@ public class EnvObj_Door : MonoBehaviour, EnvironmentalObject
             // Door opening logics
             if (timer > openDelay)
             {
-                if(distanceMoved < moveDistance)
+                if (distanceMoved < moveDistance)
                 {
                     mTransform.y = currentSpeed * Time.deltaTime;
                     gameObject.transform.position += mTransform;

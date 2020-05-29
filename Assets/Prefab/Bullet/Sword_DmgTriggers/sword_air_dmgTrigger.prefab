@@ -49,6 +49,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -60,6 +61,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -96,7 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   debugMode: 0
-  inclusiveElement: 0
+  inclusiveElement: 1
   initialized: 0
   isEquipment: 0
   voidType: 0
@@ -156,6 +158,7 @@ MonoBehaviour:
   mParticle: {fileID: 4765450087754312039, guid: eb3afe9c72673574fbf7244207468a53,
     type: 3}
   mElement: {fileID: 0}
+  mOwner: {fileID: 0}
 --- !u!58 &3906927897664690843
 CircleCollider2D:
   m_ObjectHideFlags: 0

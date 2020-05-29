@@ -91,6 +91,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -102,6 +103,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -161,10 +163,13 @@ MonoBehaviour:
   element: {fileID: 0}
   knockBackX: 1
   knockBackY: 1
+  mGetHitParticle: {fileID: 0}
   IsFacingLeft: 0
+  mIsStuned: 0
   mWeapon1: {fileID: 0}
   mWeapon2: {fileID: 0}
   mCurrentWeapon: {fileID: 0}
+  stamina: {fileID: 0}
   mNearbyWeapon: {fileID: 0}
   mIsIFrameOn: 0
   mIFrameCD: 0
@@ -191,7 +196,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   respawnPoint: {fileID: 0}
+  healToFullOnRespawn: 0
   invulnerableTime: 3
+  recordedHP: 0
+  cpList: []
 --- !u!50 &109428899416447138
 Rigidbody2D:
   serializedVersion: 4
@@ -251,13 +259,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4eaf56603217b8d428baef0ee62921fc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mParryCollider: {fileID: 679799675015805979, guid: b807743634ab2a64cbd581ab749fb03f,
-    type: 3}
-  mParryCooldown: 1
   mContext:
-    poor_check_distance: 1.5
-    great_check_distance: 1.2
-    perfect_check_distance: 1
+    poor_check_distance: 1.2
+    great_check_distance: 1
+    perfect_check_distance: 0.8
 --- !u!114 &-1040440155085845068
 MonoBehaviour:
   m_ObjectHideFlags: 0

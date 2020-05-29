@@ -44,6 +44,8 @@ public class PlayerController : MonoBehaviour
 
     Inventory inventory;
 
+    public bool IsPlayerFacingRight(){return isPlayerFacingRight;}
+
     private void Awake()
     {
         player = GetComponent<Player>();
@@ -62,6 +64,7 @@ public class PlayerController : MonoBehaviour
         controls.PlayerControl.SelectPrevItem.performed += _selectprev => SelectPrevItem();
         controls.PlayerControl.SelectNextItem.performed += _selectnext => SelectNextItem();
         controls.PlayerControl.Parry.performed += _parry => Parry();
+        controls.PlayerControl.Parry.canceled += _parry => CancelParry();
 
         controls.PlayerControl.PickUpWeapon.performed += _pickupitem => PickUpWeapon();
 
@@ -87,6 +90,11 @@ public class PlayerController : MonoBehaviour
     public void Parry()
     {
         parry.Parry();
+    }
+
+    public void CancelParry()
+    {
+        parry.StopParry();
     }
 
     void Resets()
@@ -120,7 +128,7 @@ public class PlayerController : MonoBehaviour
         moveVec.x = controls.PlayerControl.Move.ReadValue<float>();
         if (Mathf.Abs(moveVec.x) < controllerSensitivity)
             moveVec.x = 0.0f;
-        Flip();
+        InternalFlip();
         float acc = isGrounded ? walkAcc : airAcc;
         float dec = isGrounded ? groundDec : 0;
 
@@ -132,17 +140,22 @@ public class PlayerController : MonoBehaviour
         transform.Translate(moveVec * Time.deltaTime);
     }
 
-    void Flip()
+    void InternalFlip()
     {
         if ((moveVec.x > 0 && !isPlayerFacingRight) || (moveVec.x < 0 && isPlayerFacingRight))
         {
 
             if (player.mCurrentWeapon == null || !player.mCurrentWeapon.mIsAttacking)
             {
-                isPlayerFacingRight = !isPlayerFacingRight;
-                transform.Rotate(0f, 180f, 0f);
+                Flip();
             }
         }
+    }
+
+    public void Flip()
+    {
+        isPlayerFacingRight = !isPlayerFacingRight;
+        transform.Rotate(0f, 180f, 0f);
     }
 
     void JumpUpdate()

@@ -74,7 +74,7 @@ public class MZEnemyBat : Character
 
     States mCurrentState;
     // Start is called before the first frame update
-    
+
     new void Awake()
     {
         Assert.IsNotNull(mRangeAttackContext.mRangeBullet, "[Enemy_Bat] mRangeBullet is Null");
@@ -91,6 +91,7 @@ public class MZEnemyBat : Character
 
         if (mDropPrefbs != null)
             mIsDropping = true;
+
     }
 
     // Update is called once per frame

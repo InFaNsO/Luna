@@ -1,0 +1,632 @@
+fileFormatVersion: 2
+guid: 92ace088e33894747adc9f51f4dfdcf1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5985594831680186848
+    second: GSword_Parry_0
+  - first:
+      213: 8762668529669159972
+    second: GSword_Parry_1
+  - first:
+      213: 1570618368589214988
+    second: GSword_Parry_2
+  - first:
+      213: 5146115614161412997
+    second: GSword_Parry_3
+  - first:
+      213: 5359903034887954374
+    second: GSword_Parry_4
+  - first:
+      213: 2580217843577993029
+    second: GSword_Parry_5
+  - first:
+      213: -1391935002377934761
+    second: GSword_Parry_6
+  - first:
+      213: -6183995948131487374
+    second: GSword_Parry_7
+  - first:
+      213: -4130297128698279853
+    second: GSword_Parry_8
+  - first:
+      213: -6928404765930375355
+    second: GSword_Parry_9
+  - first:
+      213: 2061259388612937283
+    second: GSword_Parry_10
+  - first:
+      213: -7452225182744109433
+    second: GSword_Parry_11
+  - first:
+      213: 2391774455009855166
+    second: GSword_Parry_12
+  - first:
+      213: 5988788324768420826
+    second: GSword_Parry_13
+  - first:
+      213: 5689687220788997255
+    second: GSword_Parry_14
+  - first:
+      213: -6181332432305169247
+    second: GSword_Parry_15
+  - first:
+      213: 9067010042662214935
+    second: GSword_Parry_16
+  - first:
+      213: 8311886656273755168
+    second: GSword_Parry_17
+  - first:
+      213: -4736582755021948430
+    second: GSword_Parry_18
+  - first:
+      213: 460403939371369631
+    second: GSword_Parry_19
+  - first:
+      213: 5657992196288880764
+    second: GSword_Parry_20
+  - first:
+      213: 1370328790221793561
+    second: GSword_Parry_21
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: GSword_Parry_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 411
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e926bf49ca111350800000000000000
+      internalID: 5985594831680186848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_1
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 411
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42cbc63e9904b9970800000000000000
+      internalID: 8762668529669159972
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_2
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 411
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c05b671b515fbc510800000000000000
+      internalID: 1570618368589214988
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_3
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 411
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 583ae23c2ecaa6740800000000000000
+      internalID: 5146115614161412997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_4
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 411
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cfd8098963326a40800000000000000
+      internalID: 5359903034887954374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_5
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 411
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54737994576cec320800000000000000
+      internalID: 2580217843577993029
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_6
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 411
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 758a4d87d7adeace0800000000000000
+      internalID: -1391935002377934761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_7
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 411
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 271fa2b03780e2aa0800000000000000
+      internalID: -6183995948131487374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_8
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 411
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3588f1b05ac3ea6c0800000000000000
+      internalID: -4130297128698279853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_9
+      rect:
+        serializedVersion: 2
+        x: 3960
+        y: 411
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 547b89ad29c59df90800000000000000
+      internalID: -6928404765930375355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_10
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 411
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34686303e701b9c10800000000000000
+      internalID: 2061259388612937283
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78e115c0ea0649890800000000000000
+      internalID: -7452225182744109433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_12
+      rect:
+        serializedVersion: 2
+        x: 440
+        y: 0
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb647b5d13a413120800000000000000
+      internalID: 2391774455009855166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_13
+      rect:
+        serializedVersion: 2
+        x: 880
+        y: 0
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ad314dc50437c1350800000000000000
+      internalID: 5988788324768420826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_14
+      rect:
+        serializedVersion: 2
+        x: 1320
+        y: 0
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78c253ec164d5fe40800000000000000
+      internalID: 5689687220788997255
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_15
+      rect:
+        serializedVersion: 2
+        x: 1760
+        y: 0
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ac59d527ee773aa0800000000000000
+      internalID: -6181332432305169247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_16
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 0
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 71dd7cf389d74dd70800000000000000
+      internalID: 9067010042662214935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_17
+      rect:
+        serializedVersion: 2
+        x: 2640
+        y: 0
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 02ca18820e0c95370800000000000000
+      internalID: 8311886656273755168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_18
+      rect:
+        serializedVersion: 2
+        x: 3080
+        y: 0
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f9fcad6417444eb0800000000000000
+      internalID: -4736582755021948430
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_19
+      rect:
+        serializedVersion: 2
+        x: 3520
+        y: 0
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f94cb6b81fea36600800000000000000
+      internalID: 460403939371369631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_20
+      rect:
+        serializedVersion: 2
+        x: 3960
+        y: 0
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c702bb9dce9358e40800000000000000
+      internalID: 5657992196288880764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: GSword_Parry_21
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 0
+        width: 440
+        height: 411
+      alignment: 9
+      pivot: {x: 0.56, y: 0.44}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91929ae36c2640310800000000000000
+      internalID: 1370328790221793561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
