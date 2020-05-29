@@ -17,6 +17,7 @@ public class GameEvents : MonoBehaviour
     public event Action DoShakeCamera;
     public event Action<Transform> EnemyDied;
     public event Action<TransitionManager.TransitionType, GameManager.ESceneIndex> DoTransition;
+    public event Action PlayerDied;
     #endregion
 
     #region Action Functions
@@ -36,6 +37,11 @@ public class GameEvents : MonoBehaviour
     public void OnDoTransitionAction(TransitionManager.TransitionType type, GameManager.ESceneIndex buildIndex)
     {
         DoTransition?.Invoke(type, buildIndex);
+    }
+
+    public void OnPlayerDeath()
+    {
+        PlayerDied?.Invoke();
     }
 
     #endregion

@@ -22,6 +22,7 @@ public class TransitionManager : MonoBehaviour
     private void Start()
     {
         GameEvents.current.DoTransition += HandleTransition;
+        GameEvents.current.PlayerDied += DoCrossFadeOnly;
     }
 
 
@@ -69,5 +70,10 @@ public class TransitionManager : MonoBehaviour
     {
         CrossFade.SetTrigger("Start");
     }
+
+    //IEnumerator DoTransition()
+    //{
+    //    CrossFade
+    //}
 
 }
