@@ -258,6 +258,7 @@ public class Player : Character
                 myCheckpointTracker.Respawn(true);
                 Respawn();
                 ServiceLocator.Get<UIManager>().UpdateHPGauge(myHealth.GetHealth() / myHealth.GetMaxHealth());
+                GameEvents.current.OnPlayerDeath();
             }
             else
             {
@@ -270,10 +271,10 @@ public class Player : Character
 
                 //Bhavil's addition Friday May 15-16
                 GameEvents.current.OnDoTransitionAction(TransitionManager.TransitionType.LogoWipe, GameManager.ESceneIndex.Mainmenu);
-
             }
         }
-    }
+
+    }   
 
     void Respawn()
     {
