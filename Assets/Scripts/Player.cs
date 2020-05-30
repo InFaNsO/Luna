@@ -271,7 +271,6 @@ public class Player : Character
 
                 //Bhavil's addition Friday May 15-16
                 GameEvents.current.OnDoTransitionAction(TransitionManager.TransitionType.LogoWipe, GameManager.ESceneIndex.Mainmenu);
-
             }
         }
 

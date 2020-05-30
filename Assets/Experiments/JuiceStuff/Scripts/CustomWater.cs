@@ -67,7 +67,6 @@ public class CustomWater : MonoBehaviour
 
     public void Splash(float xpos, float velocity)
     {
-        return;
 
         //If the position is within the bounds of the water:
         if (xpos >= xPositions[0] && xpos <= xPositions[xPositions.Length - 1])
@@ -110,7 +109,7 @@ public class CustomWater : MonoBehaviour
 
 
         //increase here for more smoothness
-        int edgeCount = Mathf.RoundToInt(Width) * 5;
+        int edgeCount = Mathf.RoundToInt(Width) * 1;
         int nodeCount = edgeCount + 1;
 
         mEdgeCount = edgeCount;
@@ -268,7 +267,7 @@ public class CustomWater : MonoBehaviour
         {
             res += sineOffset[i] + sineAmplitude[i] * (Mathf.Sin(x * sineStreach[i] + sineStreatchOffset[i] * sineStreach[i]));
         }
-        return res;
+        return res % maxH;
     }
 
     private void FixedUpdate()
