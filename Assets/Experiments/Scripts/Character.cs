@@ -32,6 +32,7 @@ public class Character : MonoBehaviour
 
     protected HealthBar mHealthBar;
 
+    [HideInInspector] public bool mIsDying = false;
     [HideInInspector] public bool mIsStuned = false;
     [HideInInspector] float mStunCounter;
 
