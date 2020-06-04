@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Character : MonoBehaviour
 {
+    public GameObject mGraphics;
+
     [HideInInspector] public Health myHealth;
     [HideInInspector] public Rigidbody2D mRigidBody;
 
@@ -110,7 +112,15 @@ public class Character : MonoBehaviour
 
     public void Turn()
     {
-        transform.Rotate(Vector3.up, 180.0f);
+        if (mGraphics)
+        {
+            mGraphics.transform.Rotate(Vector3.up, 180.0f);
+        }
+        else
+        {
+            transform.Rotate(Vector3.up, 180.0f);
+        }
+        
         IsFacingLeft = !IsFacingLeft;
     }
 
