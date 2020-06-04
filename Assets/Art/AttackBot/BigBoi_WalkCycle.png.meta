@@ -1,0 +1,1112 @@
+fileFormatVersion: 2
+guid: ec13730e5788ddd468a45fc0dfd3977a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5272704359590890113
+    second: BigBoi_WalkCycle_0
+  - first:
+      213: 4488480702746302469
+    second: BigBoi_WalkCycle_1
+  - first:
+      213: 2472359531786671525
+    second: BigBoi_WalkCycle_2
+  - first:
+      213: 6470074440285908241
+    second: BigBoi_WalkCycle_3
+  - first:
+      213: 2419565659735158309
+    second: BigBoi_WalkCycle_4
+  - first:
+      213: -3811624687311698723
+    second: BigBoi_WalkCycle_5
+  - first:
+      213: -1769607446886281742
+    second: BigBoi_WalkCycle_6
+  - first:
+      213: 2115494857472677912
+    second: BigBoi_WalkCycle_7
+  - first:
+      213: -6505790516325615578
+    second: BigBoi_WalkCycle_8
+  - first:
+      213: -6158753774987707702
+    second: BigBoi_WalkCycle_9
+  - first:
+      213: 5924750139494193712
+    second: BigBoi_WalkCycle_10
+  - first:
+      213: 6657342538432500834
+    second: BigBoi_WalkCycle_11
+  - first:
+      213: -6248222889381538952
+    second: BigBoi_WalkCycle_12
+  - first:
+      213: -8025114643795884110
+    second: BigBoi_WalkCycle_13
+  - first:
+      213: -428582185036196005
+    second: BigBoi_WalkCycle_14
+  - first:
+      213: -4653139817404171186
+    second: BigBoi_WalkCycle_15
+  - first:
+      213: -8142516551170234438
+    second: BigBoi_WalkCycle_16
+  - first:
+      213: 1379133643135350702
+    second: BigBoi_WalkCycle_17
+  - first:
+      213: 7848554517628787743
+    second: BigBoi_WalkCycle_18
+  - first:
+      213: 1363819651673451587
+    second: BigBoi_WalkCycle_19
+  - first:
+      213: -2232219954629568825
+    second: BigBoi_WalkCycle_20
+  - first:
+      213: -3456338831544359717
+    second: BigBoi_WalkCycle_21
+  - first:
+      213: -8214656578077141004
+    second: BigBoi_WalkCycle_22
+  - first:
+      213: 3018505632358761911
+    second: BigBoi_WalkCycle_23
+  - first:
+      213: 2267333122673063962
+    second: BigBoi_WalkCycle_24
+  - first:
+      213: -601153863358306715
+    second: BigBoi_WalkCycle_25
+  - first:
+      213: -532448277179623261
+    second: BigBoi_WalkCycle_26
+  - first:
+      213: 3661876139357426506
+    second: BigBoi_WalkCycle_27
+  - first:
+      213: 2031051788945079916
+    second: BigBoi_WalkCycle_28
+  - first:
+      213: 2945691664660674284
+    second: BigBoi_WalkCycle_29
+  - first:
+      213: 1172923559114343818
+    second: BigBoi_WalkCycle_30
+  - first:
+      213: -4836738498105761105
+    second: BigBoi_WalkCycle_31
+  - first:
+      213: 2910136063125140278
+    second: BigBoi_WalkCycle_32
+  - first:
+      213: -3473437181070626786
+    second: BigBoi_WalkCycle_33
+  - first:
+      213: -3307639671564149760
+    second: BigBoi_WalkCycle_34
+  - first:
+      213: -4277216299361862705
+    second: BigBoi_WalkCycle_35
+  - first:
+      213: -3754147661822862711
+    second: BigBoi_WalkCycle_36
+  - first:
+      213: -6003698895860829024
+    second: BigBoi_WalkCycle_37
+  - first:
+      213: -7431954340259150820
+    second: BigBoi_WalkCycle_38
+  - first:
+      213: 303075128007254345
+    second: BigBoi_WalkCycle_39
+  - first:
+      213: 3148052401439978545
+    second: BigBoi_WalkCycle_40
+  - first:
+      213: 3355368343078705784
+    second: BigBoi_WalkCycle_41
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4404
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f757ee8225793d6b0800000000000000
+      internalID: -5272704359590890113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_1
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 4404
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 508936c0b694a4e30800000000000000
+      internalID: 4488480702746302469
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_2
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 4404
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a5123125e59f4220800000000000000
+      internalID: 2472359531786671525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_3
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 4404
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11d639b6c625ac950800000000000000
+      internalID: 6470074440285908241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_4
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 4404
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52e6f3be526049120800000000000000
+      internalID: 2419565659735158309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_5
+      rect:
+        serializedVersion: 2
+        x: 3160
+        y: 4404
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd44dafaa836a1bc0800000000000000
+      internalID: -3811624687311698723
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3670
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fd057027671177e0800000000000000
+      internalID: -1769607446886281742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_7
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 3670
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81813df4d5fbb5d10800000000000000
+      internalID: 2115494857472677912
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_8
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 3670
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6287e4b9ef9c6b5a0800000000000000
+      internalID: -6505790516325615578
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_9
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 3670
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: acaf2c67216b78aa0800000000000000
+      internalID: -6158753774987707702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_10
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 3670
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 03a5f777cd0f83250800000000000000
+      internalID: 5924750139494193712
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_11
+      rect:
+        serializedVersion: 2
+        x: 3160
+        y: 3670
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 264dd5f34c1a36c50800000000000000
+      internalID: 6657342538432500834
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2936
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 873d2f8f26ad949a0800000000000000
+      internalID: -6248222889381538952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_13
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 2936
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2b7c2c610c011a090800000000000000
+      internalID: -8025114643795884110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_14
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 2936
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b575bdff5ce5d0af0800000000000000
+      internalID: -428582185036196005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_15
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 2936
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e4cf56d4df9bc6fb0800000000000000
+      internalID: -4653139817404171186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_16
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 2936
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab762cd6658fffe80800000000000000
+      internalID: -8142516551170234438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_17
+      rect:
+        serializedVersion: 2
+        x: 3160
+        y: 2936
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ea77fd0ddbaa32310800000000000000
+      internalID: 1379133643135350702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2202
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f1c1d8710caabec60800000000000000
+      internalID: 7848554517628787743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_19
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 2202
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34c61b35fb24de210800000000000000
+      internalID: 1363819651673451587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_20
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 2202
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7c614cf27cf8501e0800000000000000
+      internalID: -2232219954629568825
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_21
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 2202
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd4e86a252e9800d0800000000000000
+      internalID: -3456338831544359717
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_22
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 2202
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f7d2e78d5daffd80800000000000000
+      internalID: -8214656578077141004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_23
+      rect:
+        serializedVersion: 2
+        x: 3160
+        y: 2202
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7b5824141e2e3e920800000000000000
+      internalID: 3018505632358761911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1468
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a18b764567f277f10800000000000000
+      internalID: 2267333122673063962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_25
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 1468
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 566ac2f0fb548a7f0800000000000000
+      internalID: -601153863358306715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_26
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 1468
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3a89079ec1d5c98f0800000000000000
+      internalID: -532448277179623261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_27
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 1468
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a43d0e182f891d230800000000000000
+      internalID: 3661876139357426506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_28
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 1468
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c6e3e7057debf2c10800000000000000
+      internalID: 2031051788945079916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_29
+      rect:
+        serializedVersion: 2
+        x: 3160
+        y: 1468
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce6bde946f231e820800000000000000
+      internalID: 2945691664660674284
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 734
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8582b933cf074010800000000000000
+      internalID: 1172923559114343818
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_31
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 734
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa223fc46f370ecb0800000000000000
+      internalID: -4836738498105761105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_32
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 734
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 633b0a2b451e26820800000000000000
+      internalID: 2910136063125140278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_33
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 734
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e10b6a0794fdbcfc0800000000000000
+      internalID: -3473437181070626786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_34
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 734
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00cdd6b4e37e812d0800000000000000
+      internalID: -3307639671564149760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_35
+      rect:
+        serializedVersion: 2
+        x: 3160
+        y: 734
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcb7609ff6644a4c0800000000000000
+      internalID: -4277216299361862705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_36
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 98a5fa6879696ebc0800000000000000
+      internalID: -3754147661822862711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_37
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 0
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a47fc5c9a39eaca0800000000000000
+      internalID: -6003698895860829024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_38
+      rect:
+        serializedVersion: 2
+        x: 1264
+        y: 0
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c144ee957e46cd890800000000000000
+      internalID: -7431954340259150820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_39
+      rect:
+        serializedVersion: 2
+        x: 1896
+        y: 0
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 941e021293db43400800000000000000
+      internalID: 303075128007254345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_40
+      rect:
+        serializedVersion: 2
+        x: 2528
+        y: 0
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1343522eaf020bb20800000000000000
+      internalID: 3148052401439978545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_WalkCycle_41
+      rect:
+        serializedVersion: 2
+        x: 3160
+        y: 0
+        width: 632
+        height: 734
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87a1cc30bb9a09e20800000000000000
+      internalID: 3355368343078705784
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
