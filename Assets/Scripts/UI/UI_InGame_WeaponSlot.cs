@@ -6,6 +6,7 @@ public class UI_InGame_WeaponSlot : MonoBehaviour
 {
     private Image _currWeapon;
     private Image _secWeapon;
+    [SerializeField] private Sprite _emptySprite;
 
     private void Awake()
     {
@@ -30,8 +31,8 @@ public class UI_InGame_WeaponSlot : MonoBehaviour
 
     public void UI_Ingame_UpdateWeaponSprite(Sprite currWeapon, Sprite secWeapon)
     {
-        _currWeapon.sprite = currWeapon;
-        _secWeapon.sprite = secWeapon;
+        _currWeapon.sprite = currWeapon ? currWeapon : _emptySprite;
+        _secWeapon.sprite = secWeapon ? secWeapon : _emptySprite;
     }
  
 }
