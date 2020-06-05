@@ -149,32 +149,7 @@ AudioMixerGroupController:
   m_Send: 00000000000000000000000000000000
   m_Effects:
   - {fileID: 1948187679357039177}
-  - {fileID: 9125465572859628059}
   m_UserColorIndex: 0
   m_Mute: 0
   m_Solo: 0
   m_BypassEffects: 0
---- !u!244 &9125465572859628059
-AudioMixerEffectController:
-  m_ObjectHideFlags: 3
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: 
-  m_EffectID: 3cee84e0ce391ac488d7ce652f65b15d
-  m_EffectName: Echo
-  m_MixLevel: cc2daf590d9e24d4e9cab1b8d1ac7ed6
-  m_Parameters:
-  - m_ParameterName: Delay
-    m_GUID: 6043bd830cc3e4d4ea60a7c6d0eaf420
-  - m_ParameterName: Decay
-    m_GUID: a1a63a2804c97784b9846649a32284fc
-  - m_ParameterName: Max channels
-    m_GUID: 2c9dfcf491cf22a4e8169df7d9c077ed
-  - m_ParameterName: Drymix
-    m_GUID: 44be26d3acb03c64bad5471986284fda
-  - m_ParameterName: Wetmix
-    m_GUID: 434dafa49657fb14fb59342f481d2dde
-  m_SendTarget: {fileID: 0}
-  m_EnableWetMix: 0
-  m_Bypass: 0

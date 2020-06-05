@@ -325,6 +325,11 @@ public class MZEnemyBat : Character
 
     override public void Die()
     {
+        if (mIsDying)
+            return;
+
+        mIsDying = true;
+
         GameEvents.current.OnEnemyDiedAction(transform);
 
         //effect

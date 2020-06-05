@@ -1,0 +1,824 @@
+fileFormatVersion: 2
+guid: 787338f4fa822c14d89cba25511a24b7
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6208091365581146527
+    second: BigBoi_MeleeAttack_0
+  - first:
+      213: -2363942066008905542
+    second: BigBoi_MeleeAttack_1
+  - first:
+      213: -4626158660098700801
+    second: BigBoi_MeleeAttack_2
+  - first:
+      213: 6174778844134713503
+    second: BigBoi_MeleeAttack_3
+  - first:
+      213: 8187601017954744121
+    second: BigBoi_MeleeAttack_4
+  - first:
+      213: 3138242104361324686
+    second: BigBoi_MeleeAttack_5
+  - first:
+      213: -474636266016930259
+    second: BigBoi_MeleeAttack_6
+  - first:
+      213: 3321603353661025025
+    second: BigBoi_MeleeAttack_7
+  - first:
+      213: 6316915490983333859
+    second: BigBoi_MeleeAttack_8
+  - first:
+      213: -6697034194188989048
+    second: BigBoi_MeleeAttack_9
+  - first:
+      213: -7455005678657137261
+    second: BigBoi_MeleeAttack_10
+  - first:
+      213: -5160193559431781359
+    second: BigBoi_MeleeAttack_11
+  - first:
+      213: -4617873552548396946
+    second: BigBoi_MeleeAttack_12
+  - first:
+      213: 1219796528775874338
+    second: BigBoi_MeleeAttack_13
+  - first:
+      213: 3336064405376480478
+    second: BigBoi_MeleeAttack_14
+  - first:
+      213: -2106277410260248340
+    second: BigBoi_MeleeAttack_15
+  - first:
+      213: 5608886158421797518
+    second: BigBoi_MeleeAttack_16
+  - first:
+      213: -7956731929551979598
+    second: BigBoi_MeleeAttack_17
+  - first:
+      213: -6292827027594429341
+    second: BigBoi_MeleeAttack_18
+  - first:
+      213: -359963936405330076
+    second: BigBoi_MeleeAttack_19
+  - first:
+      213: 3849964303797519963
+    second: BigBoi_MeleeAttack_20
+  - first:
+      213: -435777457135159313
+    second: BigBoi_MeleeAttack_21
+  - first:
+      213: 3592830491380761179
+    second: BigBoi_MeleeAttack_22
+  - first:
+      213: -4264345146512696594
+    second: BigBoi_MeleeAttack_23
+  - first:
+      213: 434635771779308882
+    second: BigBoi_MeleeAttack_24
+  - first:
+      213: -5009217889585958916
+    second: BigBoi_MeleeAttack_25
+  - first:
+      213: -4499665716824424924
+    second: BigBoi_MeleeAttack_26
+  - first:
+      213: 7628771602228102458
+    second: BigBoi_MeleeAttack_27
+  - first:
+      213: -7748086237846176704
+    second: BigBoi_MeleeAttack_28
+  - first:
+      213: 6890688465275852304
+    second: BigBoi_MeleeAttack_29
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3084
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 166bd5d7bcd68d9a0800000000000000
+      internalID: -6208091365581146527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_1
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 3084
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab8afe53737913fd0800000000000000
+      internalID: -2363942066008905542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_2
+      rect:
+        serializedVersion: 2
+        x: 1908
+        y: 3084
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff9483685359ccfb0800000000000000
+      internalID: -4626158660098700801
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_3
+      rect:
+        serializedVersion: 2
+        x: 2862
+        y: 3084
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f982f33b4a831b550800000000000000
+      internalID: 6174778844134713503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_4
+      rect:
+        serializedVersion: 2
+        x: 3816
+        y: 3084
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 937b1ddfeb330a170800000000000000
+      internalID: 8187601017954744121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_5
+      rect:
+        serializedVersion: 2
+        x: 4770
+        y: 3084
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8091a911964d8b20800000000000000
+      internalID: 3138242104361324686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2313
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d260b8ea4d0c969f0800000000000000
+      internalID: -474636266016930259
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_7
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 2313
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 10b26bbc6a4b81e20800000000000000
+      internalID: 3321603353661025025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_8
+      rect:
+        serializedVersion: 2
+        x: 1908
+        y: 2313
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ef493cab213aa750800000000000000
+      internalID: 6316915490983333859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_9
+      rect:
+        serializedVersion: 2
+        x: 2862
+        y: 2313
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 88d88bef1ea5f03a0800000000000000
+      internalID: -6697034194188989048
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_10
+      rect:
+        serializedVersion: 2
+        x: 3816
+        y: 2313
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3951f1565df7a8890800000000000000
+      internalID: -7455005678657137261
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_11
+      rect:
+        serializedVersion: 2
+        x: 4770
+        y: 2313
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1146fcd2c4f4368b0800000000000000
+      internalID: -5160193559431781359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1542
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e608ea278740aefb0800000000000000
+      internalID: -4617873552548396946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_13
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 1542
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 227c0fbea769de010800000000000000
+      internalID: 1219796528775874338
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_14
+      rect:
+        serializedVersion: 2
+        x: 1908
+        y: 1542
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ed43a46c6e41c4e20800000000000000
+      internalID: 3336064405376480478
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_15
+      rect:
+        serializedVersion: 2
+        x: 2862
+        y: 1542
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce8120bdadff4c2e0800000000000000
+      internalID: -2106277410260248340
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_16
+      rect:
+        serializedVersion: 2
+        x: 3816
+        y: 1542
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e8a26527e34c6dd40800000000000000
+      internalID: 5608886158421797518
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_17
+      rect:
+        serializedVersion: 2
+        x: 4770
+        y: 1542
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2bbbb067772049190800000000000000
+      internalID: -7956731929551979598
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 771
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 36cb143c8236ba8a0800000000000000
+      internalID: -6292827027594429341
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_19
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 771
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 467eb9ef4b6210bf0800000000000000
+      internalID: -359963936405330076
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_20
+      rect:
+        serializedVersion: 2
+        x: 1908
+        y: 771
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5609c5e222dd6530800000000000000
+      internalID: 3849964303797519963
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_21
+      rect:
+        serializedVersion: 2
+        x: 2862
+        y: 771
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe7f55a26bec3f9f0800000000000000
+      internalID: -435777457135159313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_22
+      rect:
+        serializedVersion: 2
+        x: 3816
+        y: 771
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5241f8db4c4cd130800000000000000
+      internalID: 3592830491380761179
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_23
+      rect:
+        serializedVersion: 2
+        x: 4770
+        y: 771
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eea1376cea002d4c0800000000000000
+      internalID: -4264345146512696594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 25d559f7ee2280600800000000000000
+      internalID: 434635771779308882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_25
+      rect:
+        serializedVersion: 2
+        x: 954
+        y: 0
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cff62b09edeab7ab0800000000000000
+      internalID: -5009217889585958916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_26
+      rect:
+        serializedVersion: 2
+        x: 1908
+        y: 0
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 42e3daceed9fd81c0800000000000000
+      internalID: -4499665716824424924
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_27
+      rect:
+        serializedVersion: 2
+        x: 2862
+        y: 0
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a35c46f6a57ded960800000000000000
+      internalID: 7628771602228102458
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_28
+      rect:
+        serializedVersion: 2
+        x: 3816
+        y: 0
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 04cf5182e94497490800000000000000
+      internalID: -7748086237846176704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_MeleeAttack_29
+      rect:
+        serializedVersion: 2
+        x: 4770
+        y: 0
+        width: 954
+        height: 771
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 01616a696a4a0af50800000000000000
+      internalID: 6890688465275852304
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
