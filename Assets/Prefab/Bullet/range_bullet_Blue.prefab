@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 679799675015805979}
   - component: {fileID: 3906927897664690843}
   - component: {fileID: -117960862592128723}
-  - component: {fileID: 3226838707764359958}
+  - component: {fileID: 6726693217921057573}
   m_Layer: 12
-  m_Name: range_bullet_0
+  m_Name: range_bullet_Blue
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -75,7 +75,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -8931642085408337577, guid: b8990e96e0b24594594f906e6b5da0a2,
+  m_Sprite: {fileID: -4759346966208987823, guid: 8356a3f02ddc7c94a98fa571345d165b,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -198,7 +198,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!95 &3226838707764359958
+--- !u!95 &6726693217921057573
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
@@ -208,7 +208,7 @@ Animator:
   m_GameObject: {fileID: 1603556981105384703}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 26c9979059a432645acfa56cfc330f39, type: 2}
+  m_Controller: {fileID: 22100000, guid: 0d1f94819c41f544f9b2132d4050b2bb, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
