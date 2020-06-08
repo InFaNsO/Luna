@@ -113,6 +113,11 @@ public class UI_InGame : MonoBehaviour, UI_Interface
             _timeCountDownText = transform.Find("time_count_down").GetComponent<Text>();
         }
 
+        {
+            _uiPopUpComponents.Add(popUp_soundSettings);
+            popUp_soundSettings.SetActive(false);
+
+        }
 
         selectedSlotInInventory = 0;
 
