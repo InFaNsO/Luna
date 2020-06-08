@@ -13,7 +13,7 @@ public class UI_InGame_QuickSlot_itemcount : MonoBehaviour
 
         foreach (var t in _ItemCount)
         {
-            t.text = "";
+            t.text = "0";
         }
     }
 

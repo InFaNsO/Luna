@@ -13,9 +13,15 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
     private UIManager _uIManager;
     [SerializeField] private GameObject _firstSelected;
 
+    [SerializeField] private SFXGroup _SFXGroup;
+
     private void Awake()
     {
         //_uIManager = transform.parent.GetComponent<UIManager>();
+        if (_SFXGroup == null)
+        {
+            _SFXGroup = GetComponentInChildren<SFXGroup>();
+        }
     }
     private void OnEnable()
     {
@@ -55,6 +61,8 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
 
     public void Button_StartGame()
     {
+        _SFXGroup.PlaySFX("Click");
+
         //Bhavil's addition Friday May 15-16
         GameEvents.current.OnDoTransitionAction(TransitionManager.TransitionType.LogoWipe, GameManager.ESceneIndex.Level1);
 

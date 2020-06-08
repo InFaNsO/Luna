@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3906927897664690843}
   - component: {fileID: -117960862592128723}
   - component: {fileID: 4775688401430227112}
-  m_Layer: 0
+  m_Layer: 12
   m_Name: big_Build
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -49,6 +49,7 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -60,6 +61,7 @@ SpriteRenderer:
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
   m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
@@ -102,6 +104,7 @@ MonoBehaviour:
   mParticle: {fileID: 4765450087754312039, guid: a9f687b503c170044bd4709d26975d41,
     type: 3}
   mElement: {fileID: 0}
+  mOwner: {fileID: 0}
 --- !u!58 &3906927897664690843
 CircleCollider2D:
   m_ObjectHideFlags: 0

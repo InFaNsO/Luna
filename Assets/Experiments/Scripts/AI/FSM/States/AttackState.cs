@@ -65,7 +65,11 @@ public class AttackState : State
                 mAgent.mSteering.TurnAllOff();
                 steeringOff = true;
             }
-            myWeapon.Attack(true, mPlayer.transform.position);
+
+            //[Mingzhuo Zhang Edit]VVVVVVVVVVVVV
+            mAgent.Attack();
+            //[Mingzhuo Zhang Edit]^^^^^^^^^^^^^
+
             Debug.Log("Attacjing");
         }
         else if (steeringOff)

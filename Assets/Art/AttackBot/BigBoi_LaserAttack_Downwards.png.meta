@@ -1,0 +1,968 @@
+fileFormatVersion: 2
+guid: 62eac98b29c750447b48e7e5b4fcfa28
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7125983385857224728
+    second: BigBoi_LaserAttack_Downwards_0
+  - first:
+      213: 2087209163188415793
+    second: BigBoi_LaserAttack_Downwards_1
+  - first:
+      213: 6880074636258144211
+    second: BigBoi_LaserAttack_Downwards_2
+  - first:
+      213: -7480735715091746151
+    second: BigBoi_LaserAttack_Downwards_3
+  - first:
+      213: 4142475640158723860
+    second: BigBoi_LaserAttack_Downwards_4
+  - first:
+      213: 2321447778871446611
+    second: BigBoi_LaserAttack_Downwards_5
+  - first:
+      213: -36851651369066003
+    second: BigBoi_LaserAttack_Downwards_6
+  - first:
+      213: -7524469374652079980
+    second: BigBoi_LaserAttack_Downwards_7
+  - first:
+      213: -5585073517303708822
+    second: BigBoi_LaserAttack_Downwards_8
+  - first:
+      213: -7268175193934351187
+    second: BigBoi_LaserAttack_Downwards_9
+  - first:
+      213: 8795932012434479792
+    second: BigBoi_LaserAttack_Downwards_10
+  - first:
+      213: -7875159855684999532
+    second: BigBoi_LaserAttack_Downwards_11
+  - first:
+      213: 6459499990715653209
+    second: BigBoi_LaserAttack_Downwards_12
+  - first:
+      213: 8290512652353265622
+    second: BigBoi_LaserAttack_Downwards_13
+  - first:
+      213: -5129500055910244550
+    second: BigBoi_LaserAttack_Downwards_14
+  - first:
+      213: 2248869192664801916
+    second: BigBoi_LaserAttack_Downwards_15
+  - first:
+      213: -2688232959697447597
+    second: BigBoi_LaserAttack_Downwards_16
+  - first:
+      213: -5452197378409241413
+    second: BigBoi_LaserAttack_Downwards_17
+  - first:
+      213: -1666510036861476835
+    second: BigBoi_LaserAttack_Downwards_18
+  - first:
+      213: -3004758510566766714
+    second: BigBoi_LaserAttack_Downwards_19
+  - first:
+      213: -8285367069980787560
+    second: BigBoi_LaserAttack_Downwards_20
+  - first:
+      213: 2625564961161039862
+    second: BigBoi_LaserAttack_Downwards_21
+  - first:
+      213: 6368519259212977764
+    second: BigBoi_LaserAttack_Downwards_22
+  - first:
+      213: -3502697025973028826
+    second: BigBoi_LaserAttack_Downwards_23
+  - first:
+      213: -1237317037429619313
+    second: BigBoi_LaserAttack_Downwards_24
+  - first:
+      213: -2196467452261363212
+    second: BigBoi_LaserAttack_Downwards_25
+  - first:
+      213: 3852439023772537947
+    second: BigBoi_LaserAttack_Downwards_26
+  - first:
+      213: 4625599536758758133
+    second: BigBoi_LaserAttack_Downwards_27
+  - first:
+      213: -9177714340459092883
+    second: BigBoi_LaserAttack_Downwards_28
+  - first:
+      213: 5198885593223929976
+    second: BigBoi_LaserAttack_Downwards_29
+  - first:
+      213: -6334094486235963001
+    second: BigBoi_LaserAttack_Downwards_30
+  - first:
+      213: -5443372568848870595
+    second: BigBoi_LaserAttack_Downwards_31
+  - first:
+      213: -8448510756746582250
+    second: BigBoi_LaserAttack_Downwards_32
+  - first:
+      213: 3663367063076923561
+    second: BigBoi_LaserAttack_Downwards_33
+  - first:
+      213: -2632545999253335123
+    second: BigBoi_LaserAttack_Downwards_34
+  - first:
+      213: 6241841715522727643
+    second: BigBoi_LaserAttack_Downwards_35
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3650
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 810fa55622494e260800000000000000
+      internalID: 7125983385857224728
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_1
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 3650
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13d29c7eca147fc10800000000000000
+      internalID: 2087209163188415793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_2
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 3650
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3df6752fd6fea7f50800000000000000
+      internalID: 6880074636258144211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_3
+      rect:
+        serializedVersion: 2
+        x: 2637
+        y: 3650
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 992f06370861f2890800000000000000
+      internalID: -7480735715091746151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_4
+      rect:
+        serializedVersion: 2
+        x: 3516
+        y: 3650
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 41f9e5e95a70d7930800000000000000
+      internalID: 4142475640158723860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_5
+      rect:
+        serializedVersion: 2
+        x: 4395
+        y: 3650
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35c80409470773020800000000000000
+      internalID: 2321447778871446611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2920
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de1a2ca4e931d7ff0800000000000000
+      internalID: -36851651369066003
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_7
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 2920
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 490ae8858f6b39790800000000000000
+      internalID: -7524469374652079980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_8
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 2920
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a63cbac1a35dd72b0800000000000000
+      internalID: -5585073517303708822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_9
+      rect:
+        serializedVersion: 2
+        x: 2637
+        y: 2920
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da4bc386b21422b90800000000000000
+      internalID: -7268175193934351187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_10
+      rect:
+        serializedVersion: 2
+        x: 3516
+        y: 2920
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bad4adff8d611a70800000000000000
+      internalID: 8795932012434479792
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_11
+      rect:
+        serializedVersion: 2
+        x: 4395
+        y: 2920
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 496aa7ce5dfc5b290800000000000000
+      internalID: -7875159855684999532
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2190
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 95cde358401c4a950800000000000000
+      internalID: 6459499990715653209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_13
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 2190
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6dfd5611551dd0370800000000000000
+      internalID: 8290512652353265622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_14
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 2190
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a3f9f1c50ea50d8b0800000000000000
+      internalID: -5129500055910244550
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_15
+      rect:
+        serializedVersion: 2
+        x: 2637
+        y: 2190
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c72ea1f9d96953f10800000000000000
+      internalID: 2248869192664801916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_16
+      rect:
+        serializedVersion: 2
+        x: 3516
+        y: 2190
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3559cb3bd5a71bad0800000000000000
+      internalID: -2688232959697447597
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_17
+      rect:
+        serializedVersion: 2
+        x: 4395
+        y: 2190
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb4e99e0f57e554b0800000000000000
+      internalID: -5452197378409241413
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_18
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1460
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d10af3673fd5fd8e0800000000000000
+      internalID: -1666510036861476835
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_19
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 1460
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 68706d5fd04fc46d0800000000000000
+      internalID: -3004758510566766714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_20
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 1460
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 89c73103c86740d80800000000000000
+      internalID: -8285367069980787560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_21
+      rect:
+        serializedVersion: 2
+        x: 2637
+        y: 1460
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ff47bcdb61ef6420800000000000000
+      internalID: 2625564961161039862
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_22
+      rect:
+        serializedVersion: 2
+        x: 3516
+        y: 1460
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4669f9e3686816850800000000000000
+      internalID: 6368519259212977764
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_23
+      rect:
+        serializedVersion: 2
+        x: 4395
+        y: 1460
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6287f0bec9be36fc0800000000000000
+      internalID: -3502697025973028826
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 730
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f850875c5ba24dee0800000000000000
+      internalID: -1237317037429619313
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_25
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 730
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4f111435d749481e0800000000000000
+      internalID: -2196467452261363212
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_26
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 730
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5490da81ec967530800000000000000
+      internalID: 3852439023772537947
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_27
+      rect:
+        serializedVersion: 2
+        x: 2637
+        y: 730
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5fa97bd654e613040800000000000000
+      internalID: 4625599536758758133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_28
+      rect:
+        serializedVersion: 2
+        x: 3516
+        y: 730
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d646de6de6532a080800000000000000
+      internalID: -9177714340459092883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_29
+      rect:
+        serializedVersion: 2
+        x: 4395
+        y: 730
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8702204f6e6262840800000000000000
+      internalID: 5198885593223929976
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_30
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781252ecf96c818a0800000000000000
+      internalID: -6334094486235963001
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_31
+      rect:
+        serializedVersion: 2
+        x: 879
+        y: 0
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3358a52d714574b0800000000000000
+      internalID: -5443372568848870595
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_32
+      rect:
+        serializedVersion: 2
+        x: 1758
+        y: 0
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 617ad079a3cd0ca80800000000000000
+      internalID: -8448510756746582250
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_33
+      rect:
+        serializedVersion: 2
+        x: 2637
+        y: 0
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9a8e09c3fe4e6d230800000000000000
+      internalID: 3663367063076923561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_34
+      rect:
+        serializedVersion: 2
+        x: 3516
+        y: 0
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: da311ab8c51577bd0800000000000000
+      internalID: -2632545999253335123
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_LaserAttack_Downwards_35
+      rect:
+        serializedVersion: 2
+        x: 4395
+        y: 0
+        width: 879
+        height: 730
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bde62f538f97f9650800000000000000
+      internalID: 6241841715522727643
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

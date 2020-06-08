@@ -15,6 +15,13 @@ public class Enemy : Character
     public CircleCollider2D mAttackRange;
     public CircleCollider2D mPlayerVisibilityRange;
 
+    // Combat Info
+    public Bullet mMeleeBullet;
+    public float mMeleeDmg = 10.0f;
+    public float mAttackSpeed = 1.0f;
+
+    // Animation control
+    public AttackBot_AnimationController mAnimationController;
 
     [HideInInspector] public AI_Zone mZone;
 
@@ -26,7 +33,6 @@ public class Enemy : Character
 
     [HideInInspector] public bool IsRunning = false;
 
-    [HideInInspector] public Weapon mWeapon;
     protected bool mIsDropping = false;
     [SerializeField] protected GameObject mDropPrefbs = null;
 
@@ -38,13 +44,6 @@ public class Enemy : Character
     protected override void Start()
     {
         base.Start();
-        var wep = GetComponentInChildren<Weapon>();
-        if (wep != null)
-        {
-            mWeapon = wep;
-            mWeapon.Picked(gameObject, gameObject.transform.position); // second argument should be the [weapon position] as a individual variable in future
-            mWeapon.mComboBar = null;
-        }
     }
     protected override void Awake()
     {
@@ -70,6 +69,7 @@ public class Enemy : Character
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        
         if (other.tag != gameObject.tag)
         {
             var bullet = other.GetComponent<Bullet>();
@@ -101,19 +101,12 @@ public class Enemy : Character
     public void GetHit(float dmg, string tag, Vector3 hitPosition)
     {
         GetHit(dmg, hitPosition);
-
-        if ( mWeapon && (mWeapon.GetAttackState() == AttacState.State_Parriable) && (tag == "Parry"))
-        {
-            GetStun(1.5f);
-        }
+        GetStunInternal();
     }
 
     public new void GetStun(float stunHowLong)
     {
-        base.GetStun(stunHowLong);
-
-        mWeapon.WeaponReset();
-
+        GetStun(stunHowLong);
         //SetAnimator(EnemyAnimation.Stun);
     }
 
@@ -121,7 +114,13 @@ public class Enemy : Character
     {
         //effect
         Debug.Log("enemy destory");
+        mAnimationController.GoDeathAnimation();
+        base.mHealthBar.gameObject.SetActive(false);
+        //_SFXGroup.PlaySFX("Death");
+    }
 
+    public void RealDie()
+    {
         if (mIsDropping)
         {
             //spwn inventory
@@ -139,44 +138,33 @@ public class Enemy : Character
 
     public void Attack()
     {
-        mWeapon.Attack(isGrounded);
-        //SetAnimator(EnemyAnimation.Attack);
-    }
-    //for future
-    /*
-     * enum EnemyAnimation
-        {
-            None = 0,
-            ToIdel,
-            Stun,
-            Attack,
-        }
-    void SetAnimator(EnemyAnimation animationType)
-    {
-        switch (animationType)
-        {
-            case EnemyAnimation.None:
-                break;
-            case EnemyAnimation.ToIdel:
-                // mAnimator.SetInteger("Condition", 0);
-                break;
-            case EnemyAnimation.Stun:
-                // mAnimator.SetInteger("Condition", 10);
-                break;
-            case EnemyAnimation.Attack:
-                // mAnimator.SetInteger("Condition", 8);
-                break;
-            default:
-                break;
-        }
+        mAnimationController.GoAttackAnimation(1.0f / mAttackSpeed);
     }
 
-    public void LateUpdate()
+    public void RealAttack()
     {
-        SetAnimator(EnemyAnimation.ToIdel);
+        Bullet newBullet = Object.Instantiate(mMeleeBullet, new Vector3(0, 0, 0), Quaternion.identity);
+        newBullet.Awake();
+        newBullet.Fire(gameObject.tag, mMeleeDmg, transform.position, Vector3.down, WeaponType.Melee);
     }
-    */
 
+    private void GetStunInternal()
+    {
+        mIsStuned = true;
+        mAnimationController.GoStunAnimation();
+
+    }
+
+    public void RestFromStun()
+    {
+        mIsStuned = false;
+        var rb = GetComponent<Rigidbody2D>();
+        if (rb)
+        {
+            rb.velocity = Vector3.zero;
+            rb.angularVelocity = 0.0f;
+        }
+    }
 
     public bool IsNearTarget(float range)
     {

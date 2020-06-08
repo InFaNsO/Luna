@@ -1,0 +1,776 @@
+fileFormatVersion: 2
+guid: 3faee8c7b8251724b8ec6cba444a46dc
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -6042788437006797011
+    second: BigBoi_Death_0
+  - first:
+      213: -2764783906197272751
+    second: BigBoi_Death_1
+  - first:
+      213: 1450504088929001493
+    second: BigBoi_Death_2
+  - first:
+      213: 1196524744285657444
+    second: BigBoi_Death_3
+  - first:
+      213: -2604947376326245363
+    second: BigBoi_Death_4
+  - first:
+      213: 1587369757910882922
+    second: BigBoi_Death_5
+  - first:
+      213: -5460595183521395527
+    second: BigBoi_Death_6
+  - first:
+      213: 4038892226593996275
+    second: BigBoi_Death_7
+  - first:
+      213: 3564867653231731000
+    second: BigBoi_Death_8
+  - first:
+      213: 7898676474662946706
+    second: BigBoi_Death_9
+  - first:
+      213: -5056015568730159579
+    second: BigBoi_Death_10
+  - first:
+      213: -6525102174211692725
+    second: BigBoi_Death_11
+  - first:
+      213: -588913775548442103
+    second: BigBoi_Death_12
+  - first:
+      213: 5147319931879968772
+    second: BigBoi_Death_13
+  - first:
+      213: -8365716997028033746
+    second: BigBoi_Death_14
+  - first:
+      213: 1999812895846930878
+    second: BigBoi_Death_15
+  - first:
+      213: -2489678972964637705
+    second: BigBoi_Death_16
+  - first:
+      213: -4582749957397642219
+    second: BigBoi_Death_17
+  - first:
+      213: -8932619399383209901
+    second: BigBoi_Death_18
+  - first:
+      213: -3423258815098430797
+    second: BigBoi_Death_19
+  - first:
+      213: 8351160587741248741
+    second: BigBoi_Death_20
+  - first:
+      213: 639001847602531471
+    second: BigBoi_Death_21
+  - first:
+      213: -6438496021424359057
+    second: BigBoi_Death_22
+  - first:
+      213: 7177057172982969480
+    second: BigBoi_Death_23
+  - first:
+      213: -7537237145453577462
+    second: BigBoi_Death_24
+  - first:
+      213: 8437010462014174846
+    second: BigBoi_Death_25
+  - first:
+      213: -9046024554241206952
+    second: BigBoi_Death_26
+  - first:
+      213: 8560634775961216785
+    second: BigBoi_Death_27
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 300
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BigBoi_Death_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4476
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d273f5fbee3b32ca0800000000000000
+      internalID: -6042788437006797011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_1
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 4476
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 157056e8fa381a9d0800000000000000
+      internalID: -2764783906197272751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_2
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 4476
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5106dd5a8c9312410800000000000000
+      internalID: 1450504088929001493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_3
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 4476
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4699c1c5ae8ea9010800000000000000
+      internalID: 1196524744285657444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3730
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d040d7fa92e59dbd0800000000000000
+      internalID: -2604947376326245363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_5
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 3730
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a6ad9737268770610800000000000000
+      internalID: 1587369757910882922
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_6
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 3730
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc8fffac911834b0800000000000000
+      internalID: -5460595183521395527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_7
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 3730
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3fdb834c4170d0830800000000000000
+      internalID: 4038892226593996275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2984
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 831682e3e34f87130800000000000000
+      internalID: 3564867653231731000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_9
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 2984
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 297050c976cbd9d60800000000000000
+      internalID: 7898676474662946706
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_10
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 2984
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5268efec0ac65d9b0800000000000000
+      internalID: -5056015568730159579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_11
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 2984
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b47abfed42e2275a0800000000000000
+      internalID: -6525102174211692725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2238
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 90ad9159a02c3d7f0800000000000000
+      internalID: -588913775548442103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_13
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 2238
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4005ef4d434fe6740800000000000000
+      internalID: 5147319931879968772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_14
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 2238
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2b42b4f6b007eb80800000000000000
+      internalID: -8365716997028033746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_15
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 2238
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb9933abb33c0cb10800000000000000
+      internalID: 1999812895846930878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_16
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1492
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7f3feab3a22e27dd0800000000000000
+      internalID: -2489678972964637705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_17
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 1492
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51480e6b13dc660c0800000000000000
+      internalID: -4582749957397642219
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_18
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 1492
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 358200abbf5f80480800000000000000
+      internalID: -8932619399383209901
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_19
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 1492
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3ba55dfae342e70d0800000000000000
+      internalID: -3423258815098430797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_20
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 746
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5ec3f86ee4845e370800000000000000
+      internalID: 8351160587741248741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_21
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 746
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f8cca297bc03ed800800000000000000
+      internalID: 639001847602531471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_22
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 746
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f693c3b2bfdd5a6a0800000000000000
+      internalID: -6438496021424359057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_23
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 746
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 884b15029770a9360800000000000000
+      internalID: 7177057172982969480
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_24
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a0b3c5d00ca566790800000000000000
+      internalID: -7537237145453577462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_25
+      rect:
+        serializedVersion: 2
+        x: 783
+        y: 0
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e76fb926058461570800000000000000
+      internalID: 8437010462014174846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_26
+      rect:
+        serializedVersion: 2
+        x: 1566
+        y: 0
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 855ddf68890167280800000000000000
+      internalID: -9046024554241206952
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BigBoi_Death_27
+      rect:
+        serializedVersion: 2
+        x: 2349
+        y: 0
+        width: 783
+        height: 746
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1172609f8fb7dc670800000000000000
+      internalID: 8560634775961216785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

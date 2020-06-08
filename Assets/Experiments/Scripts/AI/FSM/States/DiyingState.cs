@@ -14,7 +14,7 @@ public class DiyingState : State
 
     public override void Enter()
     {
-        mAgent.gameObject.SetActive(false);
+        //mAgent.gameObject.SetActive(false);
         mAgent.Die();
     }
 
