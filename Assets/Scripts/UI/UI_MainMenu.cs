@@ -15,6 +15,9 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
 
     [SerializeField] private SFXGroup _SFXGroup;
 
+    [SerializeField]
+    private GameObject _creditScreen;
+
     private void Awake()
     {
         //_uIManager = transform.parent.GetComponent<UIManager>();
@@ -22,6 +25,8 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
         {
             _SFXGroup = GetComponentInChildren<SFXGroup>();
         }
+        _creditScreen.SetActive(false);
+
     }
     private void OnEnable()
     {
@@ -33,6 +38,11 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
         {
             _uIManager.SetSelected(_firstSelected);
         }
+        if (_creditScreen == null)
+        {
+            _creditScreen = transform.Find("CreditsScreen").gameObject;
+        }
+        _creditScreen.SetActive(false);
 
         //startScreen = transform.Find("cover").gameObject;
     }
@@ -57,7 +67,14 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
         StartCoroutine(LoadLevelRoutine());
     }
 
-
+    public void Button_Credit()
+    {
+        _creditScreen.SetActive(true);
+    }
+    public void Button_Credit_Back()
+    {
+        _creditScreen.SetActive(false);
+    }
 
     public void Button_StartGame()
     {
