@@ -49,12 +49,24 @@ public class Hazard : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         Character cha = collision.gameObject.GetComponent<Character>();
-        if (cha != null)
+        CheckPointTracker plyr = null;
+        if (collision.gameObject.GetComponent<CheckPointTracker>() != null)
+        {
+            plyr = collision.gameObject.GetComponent<CheckPointTracker>();
+        }
+        if (cha != null && cha.myHealth.IsAlive())
         {
             //cha.ReceiveDebuff(hazardDamage, hazardDuration);
             if (currentTick <= 0.0f)
             {
-                if (GetComponent<ElementalAttributes>() != null)
+                if (GetComponent<ElementalAttributes>() != null && plyr != null)
+                {
+                    if (!plyr.GetRespawnFlag())
+                    {
+                        GetComponent<ElementalAttributes>().ApplyDamage(cha, applyDebuff);
+                    }
+                }
+                if (GetComponent<ElementalAttributes>() != null && plyr == null)
                 {
                     GetComponent<ElementalAttributes>().ApplyDamage(cha, applyDebuff);
                 }
