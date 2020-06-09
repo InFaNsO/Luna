@@ -32,7 +32,7 @@ public class AttackPathFindingState : State
         SetSteering();
 
 
-        mAgent.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+      //  mAgent.GetComponentInChildren<SpriteRenderer>().color = Color.red;
 
         myWeapon = mAgent.GetComponentInChildren<Weapon>();
 
