@@ -39,7 +39,7 @@ public class WanderFlyingState : State
         //mAgent.mSteering.SetActive(SteeringType.Wander, true);
         mAgent.mSteering.SetActive(SteeringType.Seek, true);
 
-        mAgent.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
+       // mAgent.GetComponentInChildren<SpriteRenderer>().color = Color.blue;
 
         mAgent.mRigidBody.gravityScale = 0.0f;
 

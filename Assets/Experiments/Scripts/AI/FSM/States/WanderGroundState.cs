@@ -30,7 +30,7 @@ public class WanderGroundState : State
         mSteeringModule.SetActive(SteeringType.Arrive, true);
         mSteeringModule.SetActive(SteeringType.Seek, true);
 
-        agent.GetComponentInChildren<SpriteRenderer>().color = Color.green;
+       // agent.GetComponentInChildren<SpriteRenderer>().color = Color.green;
         agent.mRigidBody.gravityScale = 1.0f;
 
         target = Random.Range(0, finder.mNodes.Count);

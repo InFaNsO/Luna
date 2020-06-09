@@ -30,7 +30,7 @@ public class ChasePathfindingState : State
         mAgent.mSteering.SetActive(SteeringType.Arrive, true);
         mAgent.mSteering.SetActive(SteeringType.Seek, true);
 
-        mAgent.GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
+     //   mAgent.GetComponentInChildren<SpriteRenderer>().color = Color.yellow;
         finder = mAgent.mZone.mPathFinding;
 
         UpdatePath();
