@@ -38,12 +38,14 @@ public class CheckPointTracker : MonoBehaviour
             playRespawnParticle = true;
             if (mScreenTransition.Fade.canvasRenderer.GetAlpha() >= 0.99f && flaggedForRespawn)
             {
-                HealPlayer(healToFull);
-                ServiceLocator.Get<UIManager>().UpdateHPGauge(GetComponent<Player>().myHealth.GetHealth() / GetComponent<Player>().myHealth.GetMaxHealth());
                 transform.position = respawnPoint.transform.position;
                 ResetBuffs();
                 flaggedForRespawn = false;
+                HealPlayer(healToFull);
+                ServiceLocator.Get<UIManager>().UpdateHPGauge(GetComponent<Player>().myHealth.GetHealth() / GetComponent<Player>().myHealth.GetMaxHealth());
                 mScreenTransition.FadeOut();
+                SpriteRenderer r = gameObject.GetComponent<SpriteRenderer>();
+                r.enabled = true;
                 //mtrans.DoCrossFadeOnlyEnd();
             }
             else
@@ -80,17 +82,20 @@ public class CheckPointTracker : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (flaggedForRespawn)
-        {
-            Respawn(hToFull);
-        }
-        if (!GetComponent<Player>().myHealth.IsAlive())
+        if (!GetComponent<Player>().myHealth.IsAlive() && respawnFlag == false)
         {
             if (onDeathParticle != null)
             {
                 Instantiate(onDeathParticle, gameObject.transform);
             }
-            Respawn(healToFullOnRespawn);
+            //Respawn(healToFullOnRespawn);
+            respawnFlag = true;
+        }
+        else if (flaggedForRespawn)
+        {
+            SpriteRenderer r = gameObject.GetComponent<SpriteRenderer>();
+            r.enabled = false;
+            Respawn(hToFull);
         }
         if (respawnFlag)
         {
@@ -214,5 +219,10 @@ public class CheckPointTracker : MonoBehaviour
                 }
             }
         }
+    }
+
+    public bool GetRespawnFlag()
+    {
+        return flaggedForRespawn;
     }
 }

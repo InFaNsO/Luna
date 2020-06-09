@@ -175,12 +175,20 @@ public class ElementalAttributes : MonoBehaviour, ElementalSystem
                     case (int)ElementIndex.wind: //Wind gives a buff to the user, therefore should not apply status to target
                         {
                             mElement[i].ApplyElementalDamage(t, false); //do damage to t without applying status
+                            if (mPlayer != null)
+                            {
+                                ServiceLocator.Get<UIManager>().UpdateHPGauge(mPlayer.myHealth.GetHealth() / GetComponent<Player>().myHealth.GetMaxHealth());
+                            }
                             mElement[i].ApplyStatusEffectSelf(); //Apply buff to self
                             break;
                         }
                     default:
                         {
                             mElement[i].ApplyElementalDamage(t, applyStatus);
+                            if (mPlayer != null)
+                            {
+                                ServiceLocator.Get<UIManager>().UpdateHPGauge(mPlayer.myHealth.GetHealth() / GetComponent<Player>().myHealth.GetMaxHealth());
+                            }
                             break;
                         }
 
