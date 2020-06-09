@@ -298,7 +298,7 @@ public class InputController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""78eecb8c-0e0c-4888-b99c-68b8307c8d9d"",
-                    ""path"": ""<Keyboard>/c"",
+                    ""path"": ""<Mouse>/middleButton"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard and Mouse"",
@@ -408,7 +408,7 @@ public class InputController : IInputActionCollection, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""b527c1d5-2793-4009-883f-4cf848766fcb"",
-                    ""path"": ""<Keyboard>/p"",
+                    ""path"": ""<Keyboard>/q"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard and Mouse"",
