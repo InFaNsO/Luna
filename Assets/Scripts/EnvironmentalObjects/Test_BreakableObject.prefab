@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: -1
-  m_Sprite: {fileID: 21300000, guid: 0cdd2b4b66b7e144eb8cb7d63eeccdcc, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 70b230d9e7999ef4ab95363589b58512, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,18 +97,18 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: -0.0000018030405, y: -0.010361731}
+  m_Offset: {x: -0.0000026226044, y: -0.19538713}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.74, y: 1.06}
+    oldSize: {x: 3.54, y: 2.81}
     newSize: {x: 8.8, y: 10.54}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.57922626, y: 0.88801694}
+  m_Size: {x: 0.88744855, y: 1.6146884}
   m_EdgeRadius: 0
 --- !u!114 &-5293375870331715186
 MonoBehaviour:
@@ -122,6 +122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0eaf39bbf7dd10145835bb2ebbaa3060, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  mGraphics: {fileID: 0}
   myHealth: {fileID: 0}
   mRigidBody: {fileID: 0}
   mJumpStrength: 2
@@ -133,6 +134,8 @@ MonoBehaviour:
   knockBackY: 1
   mGetHitParticle: {fileID: 0}
   IsFacingLeft: 0
+  mIsDying: 0
+  mIsStuned: 0
   notBroken: {fileID: 21300000, guid: 0cdd2b4b66b7e144eb8cb7d63eeccdcc, type: 3}
   broken: {fileID: 3019376691678374917, guid: e51be20fd861c8a43ae57bcd89ac6f71, type: 3}
   particlePosOffset: {x: 0, y: 0, z: 0}
@@ -150,5 +153,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 0
-  MaxHealth: 30
+  MaxHealth: 20
   myElement: 0
