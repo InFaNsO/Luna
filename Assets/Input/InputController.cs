@@ -440,6 +440,14 @@ public class InputController : IInputActionCollection, IDisposable
                     ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""BackToGamePad"",
+                    ""type"": ""Button"",
+                    ""id"": ""eb9e6fd2-7b02-4c1c-b66d-decaeeec6fb5"",
+                    ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -451,6 +459,39 @@ public class InputController : IInputActionCollection, IDisposable
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
                     ""action"": ""PopUpMenu"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""69508a6b-eada-4b8c-a7f7-a5aad953f984"",
+                    ""path"": ""<XInputController>/dpad"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""BackToGamePad"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1829cd9f-4e69-4f9f-a7bf-6d7b832da209"",
+                    ""path"": ""<XInputController>/leftStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""BackToGamePad"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""17e5bf29-34d6-47e8-a17f-3d6bdaa25bde"",
+                    ""path"": ""<XInputController>/buttonSouth"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""BackToGamePad"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -503,6 +544,7 @@ public class InputController : IInputActionCollection, IDisposable
         // UIControl
         m_UIControl = asset.FindActionMap("UIControl", throwIfNotFound: true);
         m_UIControl_PopUpMenu = m_UIControl.FindAction("PopUpMenu", throwIfNotFound: true);
+        m_UIControl_BackToGamePad = m_UIControl.FindAction("BackToGamePad", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -666,11 +708,13 @@ public class InputController : IInputActionCollection, IDisposable
     private readonly InputActionMap m_UIControl;
     private IUIControlActions m_UIControlActionsCallbackInterface;
     private readonly InputAction m_UIControl_PopUpMenu;
+    private readonly InputAction m_UIControl_BackToGamePad;
     public struct UIControlActions
     {
         private InputController m_Wrapper;
         public UIControlActions(InputController wrapper) { m_Wrapper = wrapper; }
         public InputAction @PopUpMenu => m_Wrapper.m_UIControl_PopUpMenu;
+        public InputAction @BackToGamePad => m_Wrapper.m_UIControl_BackToGamePad;
         public InputActionMap Get() { return m_Wrapper.m_UIControl; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -683,6 +727,9 @@ public class InputController : IInputActionCollection, IDisposable
                 PopUpMenu.started -= m_Wrapper.m_UIControlActionsCallbackInterface.OnPopUpMenu;
                 PopUpMenu.performed -= m_Wrapper.m_UIControlActionsCallbackInterface.OnPopUpMenu;
                 PopUpMenu.canceled -= m_Wrapper.m_UIControlActionsCallbackInterface.OnPopUpMenu;
+                BackToGamePad.started -= m_Wrapper.m_UIControlActionsCallbackInterface.OnBackToGamePad;
+                BackToGamePad.performed -= m_Wrapper.m_UIControlActionsCallbackInterface.OnBackToGamePad;
+                BackToGamePad.canceled -= m_Wrapper.m_UIControlActionsCallbackInterface.OnBackToGamePad;
             }
             m_Wrapper.m_UIControlActionsCallbackInterface = instance;
             if (instance != null)
@@ -690,6 +737,9 @@ public class InputController : IInputActionCollection, IDisposable
                 PopUpMenu.started += instance.OnPopUpMenu;
                 PopUpMenu.performed += instance.OnPopUpMenu;
                 PopUpMenu.canceled += instance.OnPopUpMenu;
+                BackToGamePad.started += instance.OnBackToGamePad;
+                BackToGamePad.performed += instance.OnBackToGamePad;
+                BackToGamePad.canceled += instance.OnBackToGamePad;
             }
         }
     }
@@ -729,5 +779,6 @@ public class InputController : IInputActionCollection, IDisposable
     public interface IUIControlActions
     {
         void OnPopUpMenu(InputAction.CallbackContext context);
+        void OnBackToGamePad(InputAction.CallbackContext context);
     }
 }

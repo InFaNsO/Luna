@@ -37,6 +37,7 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     private GameObject popUp_soundSettings;
     [SerializeField]
     private GameObject _firstSelectedInPause;
+    private GameObject _lastSelectedGO;
 
 
     //pop up message box
@@ -82,6 +83,8 @@ public class UI_InGame : MonoBehaviour, UI_Interface
     {
         _inputController = new InputController();
         _inputController.UIControl.PopUpMenu.performed += _menu => Button_PauseGame();
+        _inputController.UIControl.BackToGamePad.performed += _b2gp_ingame => SwitchBackToGamePadControl();
+
         //if (popUp_pauseGame == null)
         {
             popUp_pauseGame = transform.Find("popup_pausegame").gameObject;
@@ -130,7 +133,8 @@ public class UI_InGame : MonoBehaviour, UI_Interface
 
 
     }
-private void OnEnable()
+ 
+    private void OnEnable()
     {
         _inputController.UIControl.Enable();
         if (_uIManager == null)
@@ -155,8 +159,19 @@ private void OnEnable()
         _inputController.UIControl.Disable();
 
     }
- 
+    private void Update()
+    {
+        if (_uIManager.EventSystem.currentSelectedGameObject != null)
+        {
+            _lastSelectedGO = _uIManager.EventSystem.currentSelectedGameObject;
+        }
+    }
 
+    public void SwitchBackToGamePadControl()
+    {
+        _uIManager.SetSelected(_lastSelectedGO);
+
+    }
 
     public void ResetUI()
     {

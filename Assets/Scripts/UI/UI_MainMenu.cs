@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 
 public class UI_MainMenu : MonoBehaviour, UI_Interface
 {
+    //gamepad control
+    InputController _inputController;
+
     [Header("Cover of game")]
     private GameObject startScreen;
 
@@ -18,18 +21,27 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
     [SerializeField]
     private GameObject _creditScreen;
 
+
+    private GameObject _lastSelectedGO;
     private void Awake()
     {
         //_uIManager = transform.parent.GetComponent<UIManager>();
+        _inputController = new InputController();
+        _inputController.UIControl.BackToGamePad.performed += _b2gp_main => SwitchBackToGamePadControl();
+
         if (_SFXGroup == null)
         {
             _SFXGroup = GetComponentInChildren<SFXGroup>();
         }
         _creditScreen.SetActive(false);
 
+ 
     }
+ 
     private void OnEnable()
     {
+        _inputController.UIControl.Enable();
+
         if (_uIManager == null)
         {
             _uIManager = ServiceLocator.Get<UIManager>();
@@ -49,7 +61,15 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
 
     private void OnDisable()
     {
-        
+        _inputController.UIControl.Disable();
+
+    }
+    private void Update()
+    {
+        if (_uIManager.EventSystem.currentSelectedGameObject != null)
+        {
+            _lastSelectedGO = _uIManager.EventSystem.currentSelectedGameObject;
+        }
     }
 
     public void ResetUI()
@@ -57,6 +77,11 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
          {
             //startScreen.gameObject.SetActive(true);
         }
+    }
+    public void SwitchBackToGamePadControl()
+    {
+        _uIManager.SetSelected(_lastSelectedGO);
+
     }
 
 
@@ -69,11 +94,19 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
 
     public void Button_Credit()
     {
+        _SFXGroup.PlaySFX("Click");
+
         _creditScreen.SetActive(true);
+        _uIManager.SetSelected(_creditScreen.transform.Find("back").gameObject);
+
     }
     public void Button_Credit_Back()
     {
+        _SFXGroup.PlaySFX("Click");
+
         _creditScreen.SetActive(false);
+        _uIManager.SetSelected(_firstSelected);
+
     }
 
     public void Button_StartGame()
@@ -85,6 +118,12 @@ public class UI_MainMenu : MonoBehaviour, UI_Interface
 
         //ServiceLocator.Get<GameManager>().SwitchScene(GameManager.ESceneIndex.Level1);
         //StartCoroutine(LoadLevelRoutine());
+    }
+    public void Button_Quit()
+    {
+        _SFXGroup.PlaySFX("Click");
+
+        Application.Quit();
     }
 
     //no start screen anymore

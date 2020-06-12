@@ -427,6 +427,14 @@
                     "expectedControlType": "",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "BackToGamePad",
+                    "type": "Button",
+                    "id": "eb9e6fd2-7b02-4c1c-b66d-decaeeec6fb5",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -438,6 +446,39 @@
                     "processors": "",
                     "groups": "Gamepad",
                     "action": "PopUpMenu",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "69508a6b-eada-4b8c-a7f7-a5aad953f984",
+                    "path": "<XInputController>/dpad",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "BackToGamePad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1829cd9f-4e69-4f9f-a7bf-6d7b832da209",
+                    "path": "<XInputController>/leftStick",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "BackToGamePad",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "17e5bf29-34d6-47e8-a17f-3d6bdaa25bde",
+                    "path": "<XInputController>/buttonSouth",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Gamepad",
+                    "action": "BackToGamePad",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

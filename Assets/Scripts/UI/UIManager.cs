@@ -23,18 +23,22 @@ public class UIManager : MonoBehaviour
     private List<Canvas> _uiInstances = new List<Canvas>();
     private UI_InGame _uiInGame;//a reference to 'UI_Ingame' in 'inGamePrefab'
     private EventSystem _eventSystem;
- 
+    public EventSystem EventSystem { get => _eventSystem; }
+    private GameObject _lastSelectedGO;
+    //gamepad control
+    //private InputController _inputController;
+    //public InputController InputController { get=> _inputController; }
 
     private void Awake()
     {
         DontDestroyOnLoad(gameObject);
 
         _eventSystem = GetComponentInChildren<EventSystem>();
-
         if (_eventSystem == null)
         {
             Debug.Log("[UIManager] _eventSystem is null");
         }
+ 
 
         if (mainmenuPrefab != null)//index 0
         {
@@ -64,6 +68,22 @@ public class UIManager : MonoBehaviour
 
 
     }
+    private void OnEnable()
+    {
+        
+    }
+    private void OnDisable()
+    {
+        
+    }
+    //private void Update()
+    //{
+    //    if (_eventSystem.currentSelectedGameObject != null)
+    //    {
+    //        _lastSelectedGO = _eventSystem.currentSelectedGameObject;
+    //    }
+    //}
+
     private void CreateUI(Canvas canvanPrefab)
     {
         Canvas instance = Instantiate(canvanPrefab);
@@ -84,6 +104,10 @@ public class UIManager : MonoBehaviour
     {
         _eventSystem.SetSelectedGameObject(gameObject);
      }
+    //public void SetSelectedAsLastSelected()
+    //{
+    //    _eventSystem.SetSelectedGameObject(_lastSelectedGO);
+    //}
 
     public void UpdateTimeCountDown(float time)
     {
